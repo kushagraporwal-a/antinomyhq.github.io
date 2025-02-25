@@ -11,7 +11,7 @@ const project = "antinomyhq.github.io"
 export default {
   title,
   trailingSlash: true,
-  tagline: "GraphQL platform engineered for scale",
+  tagline: "AI for everyone",
   headTags: [
     {
       tagName: "script",
@@ -30,7 +30,7 @@ export default {
       innerHTML: JSON.stringify({
         "@context": "https://schema.org/",
         "@type": "WebSite",
-        name: "Tailcall",
+        name: "Antinomy",
         url: "https://antinomy.ai/",
       }),
     },
@@ -96,7 +96,7 @@ export default {
     algolia: {
       appId: "X27WDVHRQ3",
       apiKey: "35bc100f239853cd8a7195b23ed7393b",
-      indexName: "tailcall",
+      indexName: "antinomy",
       contextualSearch: false,
       searchParameters: {
         facetFilters: [],
