@@ -1,0 +1,57 @@
+---
+title: Getting Started with GraphQL
+slug: /
+sidebar_position: 2
+description: "Discover how to efficiently get started with GraphQL using Tailcall, enhancing your data access capabilities through optimized execution strategies."
+sidebar_label: Getting Started
+---
+
+# Installation Guide
+
+## Mac
+
+Using Homebrew (macOS package manager):
+
+```bash
+# Add Code-Forge's package repository to Homebrew
+brew tap antinomyhq/code-forge
+
+# Install Code-Forge
+brew install code-forge
+```
+
+## Linux
+
+Choose either method to install:
+
+```bash
+# Using curl (common download tool)
+curl -L https://raw.githubusercontent.com/antinomyhq/forge/main/install.sh | bash
+
+# Or using wget (alternative download tool)
+wget -qO- https://raw.githubusercontent.com/antinomyhq/forge/main/install.sh | bash
+```
+
+## Initial Setup
+
+1. Create a `.env` file in your home directory with your API credentials and model preferences:
+
+```bash
+# Your OpenRouter API key for accessing AI models
+OPEN_ROUTER_KEY=<Enter your Open Router Key>
+
+# Preferred model for complex tasks requiring deeper analysis
+FORGE_LARGE_MODEL=anthropic/claude-3.5-sonnet
+
+# Efficient model for quick, routine tasks
+FORGE_SMALL_MODEL=anthropic/claude-3.5-haiku
+```
+
+2. Start an interactive shell by typing `forge`:
+
+```bash
+forge
+⚡ # Write your task here and press enter or type
+```
+
+For additional configuration options and features, use `forge --help`.
