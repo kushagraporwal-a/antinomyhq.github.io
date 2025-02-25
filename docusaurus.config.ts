@@ -4,9 +4,9 @@ import prismTheme from "./src/theme/CodeBlock/theme"
 import type {Config} from "@docusaurus/types"
 import {getNavDropdownItemHtml} from "./src/utils"
 
-const title = "Tailcall"
-const organization = "tailcallhq"
-const project = "tailcallhq.github.io"
+const title = "Antinomy"
+const organization = "antinomyhq"
+const project = "antinomyhq.github.io"
 
 export default {
   title,
@@ -31,11 +31,11 @@ export default {
         "@context": "https://schema.org/",
         "@type": "WebSite",
         name: "Tailcall",
-        url: "https://tailcall.run/",
+        url: "https://antinomy.ai/",
       }),
     },
   ],
-  url: "https://tailcall.run",
+  url: "https://antinomy.ai",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
