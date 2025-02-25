@@ -7,7 +7,7 @@ on:
     branches:
       - "**"
   pull_request:
-    branches: [develop]
+    branches: [main]
     types: [opened, reopened, synchronize]
 
 permissions:
@@ -37,7 +37,7 @@ jobs:
           npm run test:cypress
 
       - name: Deploy 🚀
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
