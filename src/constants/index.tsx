@@ -246,25 +246,25 @@ export const tailcallFeatures: TailcallFeatures[] = [
     id: 1,
     title: "Powerful Batching Primitive",
     image: require("@site/static/images/choose-tailcall/rocket.png").default,
-    redirection_url: "/docs/graphql-n-plus-one-problem-solved-tailcall/#using-batch-apis",
+    redirection_url: "/docs/",
   },
   {
     id: 2,
     title: "Extensions with plugins and JS support",
     image: require("@site/static/images/choose-tailcall/grid.png").default,
-    redirection_url: "/docs/graphql-javascript-customization/",
+    redirection_url: "/docs/",
   },
   {
     id: 3,
     title: "Field based Authentication & Authorisation",
     image: require("@site/static/images/choose-tailcall/shield-tick.png").default,
-    redirection_url: "/docs/field-level-access-control-graphql-authentication/",
+    redirection_url: "/docs/",
   },
   {
     id: 4,
     title: "Protocol agnostic",
     image: require("@site/static/images/choose-tailcall/check-done.png").default,
-    redirection_url: "/docs/graphql-grpc-tailcall/",
+    redirection_url: "/docs/",
   },
   {
     id: 5,
@@ -276,19 +276,19 @@ export const tailcallFeatures: TailcallFeatures[] = [
     id: 6,
     title: "Security",
     image: require("@site/static/images/choose-tailcall/lock.png").default,
-    redirection_url: "/docs/field-level-access-control-graphql-authentication/",
+    redirection_url: "/docs/",
   },
   {
     id: 7,
     title: "Edge Compatible",
     image: require("@site/static/images/choose-tailcall/puzzle-piece.png").default,
-    redirection_url: "/docs/deploy-graphql-github-actions/",
+    redirection_url: "/docs/",
   },
   {
     id: 8,
     title: "Compile time checks",
     image: require("@site/static/images/choose-tailcall/clock-stopwatch.png").default,
-    redirection_url: "/docs/tailcall-graphql-cli/#check",
+    redirection_url: "/docs/",
   },
 ]
 
@@ -299,7 +299,7 @@ export const benefits: Benefits[] = [
     description:
       "Tailcall has been validated against a comprehensive database of GraphQL vulnerabilities. Rest easy knowing your GraphQL backends are secure.",
     image: require("@site/static/images/home/secure-icon.png").default,
-    redirection_url: "/docs/field-level-access-control-graphql-authentication/",
+    redirection_url: "/docs/",
   },
   {
     id: 2,
@@ -315,7 +315,7 @@ export const benefits: Benefits[] = [
     description:
       "Tailcall statically verifies that GraphQL schemas match resolvers and warns about N + 1 issues. Deploy new APIs with confidence.",
     image: require("@site/static/images/home/statically-verified-icon.png").default,
-    redirection_url: "/docs/graphql-n-plus-one-problem-solved-tailcall/",
+    redirection_url: "/docs/",
   },
   {
     id: 4,
@@ -323,7 +323,7 @@ export const benefits: Benefits[] = [
     description:
       "Tailcall configuration generator can integrate thousands of APIs in a matter of minutes. Configure with ease and deploy with confidence.",
     image: require("@site/static/images/home/simple-icon.png").default,
-    redirection_url: "/docs/tailcall-dsl-graphql-custom-directives/",
+    redirection_url: "/docs/",
   },
   {
     id: 5,
@@ -331,7 +331,7 @@ export const benefits: Benefits[] = [
     description:
       "Write custom Javascript to customize any aspect of your GraphQL backend. Leverage this escape hatch to satisfy any requirement.",
     image: require("@site/static/images/home/customizable-icon.png").default,
-    redirection_url: "/docs/graphql-javascript-customization/",
+    redirection_url: "/docs",
   },
   {
     id: 6,
@@ -439,35 +439,35 @@ export const pricingPlans: PricingPlans[] = [
     mostPopular: false,
     href: "/docs/getting-started-with-graphql",
   },
-  {
-    id: 2,
-    name: "Advanced plan",
-    price: "$600/year",
-    for: "per core",
-    billing: "Billed Annually",
-    volumeDiscounts: "(Volume discounts available)",
-    features: [
-      {
-        id: 1,
-        name: "Access to all open source features",
-      },
-      {
-        id: 2,
-        name: "Access to all enterprise features",
-      },
-      {
-        id: 3,
-        name: "GraphQL onboarding copilot",
-      },
-      {
-        id: 4,
-        name: "Full managed edge deployment",
-      },
-    ],
-    buttonText: "Contact Sales",
-    mostPopular: true,
-    href: "/contact",
-  },
+  // {
+  //   id: 2,
+  //   name: "Advanced plan",
+  //   price: "$600/year",
+  //   for: "per core",
+  //   billing: "Billed Annually",
+  //   volumeDiscounts: "(Volume discounts available)",
+  //   features: [
+  //     {
+  //       id: 1,
+  //       name: "Access to all open source features",
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Access to all enterprise features",
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "GraphQL onboarding copilot",
+  //     },
+  //     {
+  //       id: 4,
+  //       name: "Full managed edge deployment",
+  //     },
+  //   ],
+  //   buttonText: "Contact Sales",
+  //   mostPopular: true,
+  //   href: "/contact",
+  // },
   {
     id: 3,
     name: "Enterprise plan",
@@ -558,46 +558,46 @@ export const testimonials: CustomerFeedback[] = [
   },
 ]
 
-export const blogTagsMapping: Record<string, BlogTag[]> = {
-  "Technologies and Frameworks": [
-    {label: "Angular", permalink: "/blog/tags/angular"},
-    {label: "Apollo client", permalink: "/blog/tags/apollo-client"},
-    {label: "JavaScript", permalink: "/blog/tags/java-script"},
-    {label: "Node.js", permalink: "/blog/tags/node-js"},
-    {label: "URQL", permalink: "/blog/tags/urql"},
-    {label: "Villus", permalink: "/blog/tags/villus"},
-    {label: "Vue", permalink: "/blog/tags/vue"},
-  ],
-  "Debugging and Tooling": [
-    {label: "debugging", permalink: "/blog/tags/debugging"},
-    {label: "IDE", permalink: "/blog/tags/ide"},
-    {label: "Tooling", permalink: "/blog/tags/tooling"},
-  ],
-  "API Concepts and Tools": [
-    {label: "API", permalink: "/blog/tags/api"},
-    {label: "Fetch API", permalink: "/blog/tags/fetch-api"},
-    {label: "GraphiQL", permalink: "/blog/tags/graphi-ql"},
-    {label: "GraphQL", permalink: "/blog/tags/graph-ql"},
-    {label: "OpenAPI", permalink: "/blog/tags/open-api"},
-    {label: "Microservice", permalink: "/blog/tags/microservice"},
-    {label: "Microservices", permalink: "/blog/tags/microservices"},
-    {label: "Backend-for-Frontend", permalink: "/blog/tags/backend-for-frontend"},
-  ],
-  "Schema and Introspection": [
-    {label: "Introspection", permalink: "/blog/tags/introspection"},
-    {label: "Schema", permalink: "/blog/tags/schema"},
-  ],
-  "General Terms": [
-    {label: "Performance", permalink: "/blog/tags/performance"},
-    {label: "Scalability", permalink: "/blog/tags/scalability"},
-    {label: "Security", permalink: "/blog/tags/security"},
-    {label: "Strategy", permalink: "/blog/tags/strategy"},
-    {label: "Migration", permalink: "/blog/tags/migration"},
-    {label: "Design", permalink: "/blog/tags/design"},
-    {label: "Flexibility", permalink: "/blog/tags/flexibility"},
-  ],
-  "Development Practices": [{label: "Best Practices", permalink: "/blog/tags/best-practices"}],
-}
+// export const blogTagsMapping: Record<string, BlogTag[]> = {
+//   "Technologies and Frameworks": [
+//     {label: "Angular", permalink: "/blog/tags/angular"},
+//     {label: "Apollo client", permalink: "/blog/tags/apollo-client"},
+//     {label: "JavaScript", permalink: "/blog/tags/java-script"},
+//     {label: "Node.js", permalink: "/blog/tags/node-js"},
+//     {label: "URQL", permalink: "/blog/tags/urql"},
+//     {label: "Villus", permalink: "/blog/tags/villus"},
+//     {label: "Vue", permalink: "/blog/tags/vue"},
+//   ],
+//   "Debugging and Tooling": [
+//     {label: "debugging", permalink: "/blog/tags/debugging"},
+//     {label: "IDE", permalink: "/blog/tags/ide"},
+//     {label: "Tooling", permalink: "/blog/tags/tooling"},
+//   ],
+//   "API Concepts and Tools": [
+//     {label: "API", permalink: "/blog/tags/api"},
+//     {label: "Fetch API", permalink: "/blog/tags/fetch-api"},
+//     {label: "GraphiQL", permalink: "/blog/tags/graphi-ql"},
+//     {label: "GraphQL", permalink: "/blog/tags/graph-ql"},
+//     {label: "OpenAPI", permalink: "/blog/tags/open-api"},
+//     {label: "Microservice", permalink: "/blog/tags/microservice"},
+//     {label: "Microservices", permalink: "/blog/tags/microservices"},
+//     {label: "Backend-for-Frontend", permalink: "/blog/tags/backend-for-frontend"},
+//   ],
+//   "Schema and Introspection": [
+//     {label: "Introspection", permalink: "/blog/tags/introspection"},
+//     {label: "Schema", permalink: "/blog/tags/schema"},
+//   ],
+//   "General Terms": [
+//     {label: "Performance", permalink: "/blog/tags/performance"},
+//     {label: "Scalability", permalink: "/blog/tags/scalability"},
+//     {label: "Security", permalink: "/blog/tags/security"},
+//     {label: "Strategy", permalink: "/blog/tags/strategy"},
+//     {label: "Migration", permalink: "/blog/tags/migration"},
+//     {label: "Design", permalink: "/blog/tags/design"},
+//     {label: "Flexibility", permalink: "/blog/tags/flexibility"},
+//   ],
+//   "Development Practices": [{label: "Best Practices", permalink: "/blog/tags/best-practices"}],
+// }
 
 export enum CookiePreferenceCategory {
   NECESSARY = "Necessary",
@@ -605,22 +605,6 @@ export enum CookiePreferenceCategory {
   PREFERENCE = "Preference",
   MARKETING = "Marketing",
 }
-
-export const reb2bScriptContent = `
-!function () {var reb2b = window.reb2b = window.reb2b || [];
-    if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];
-    reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);
-    args.unshift(method);reb2b.push(args);return reb2b;};};
-    for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}
-    reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;
-    script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/reb2b.js.gz";
-    var first = document.getElementsByTagName("script")[0];
-    first.parentNode.insertBefore(script, first);};
-    reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("0OV0VHL3P56Z");}();
-`
-export const gtagScriptContent = `
-function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-JEP3QDWT0G",{})
-`
 
 export const footerItems: FooterItem[] = [
   {
@@ -630,23 +614,11 @@ export const footerItems: FooterItem[] = [
         name: "Docs",
         link: pageLinks.docs,
       },
-      {
-        name: "Releases",
-        link: pageLinks.releases,
-      },
-      {
-        name: "Learn",
-        link: pageLinks.introduction,
-      },
     ],
   },
   {
     title: "Company",
     items: [
-      {
-        name: "Blogs",
-        link: pageLinks.blog,
-      },
       {
         name: "Privacy Policy",
         link: pageLinks.privacyPolicy,

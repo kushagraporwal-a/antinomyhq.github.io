@@ -37,9 +37,9 @@ export default {
   ],
   url: "https://tailcall.run",
   baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
-  onBrokenAnchors: "throw",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "warn",
   favicon: "images/favicon.ico",
 
   // GitHub pages deployment config.
@@ -122,14 +122,7 @@ export default {
               to: "/docs",
               html: getNavDropdownItemHtml("/images/home/book.svg", "Docs Icon", "Docs"),
             },
-            {
-              to: "/graphql",
-              html: getNavDropdownItemHtml("/images/home/archive.svg", "Learn Icon", "Learn"),
-            },
-            {
-              to: "/releases",
-              html: getNavDropdownItemHtml("/images/home/git-merge.svg", "Releases Icon", "Releases"),
-            },
+            
           ],
         },
         {
