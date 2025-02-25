@@ -197,27 +197,27 @@ export const socials: Social[] = [
     id: 1,
     name: "github",
     image: require("@site/static/icons/companies/github-footer.svg").default,
-    href: "https://github.com/tailcallhq/tailcall",
+    href: "https://github.com/antinomyhq/forge",
   },
   {
     id: 2,
     name: "discord",
     image: require("@site/static/icons/companies/discord-gray.svg").default,
-    href: "https://discord.gg/kRZBPpkgwq",
+    href: "https://discord.gg/79V5DgHCyx",
   },
-  {
-    id: 3,
-    name: "linkedin",
-    image: require("@site/static/icons/companies/linkedin-gray.svg").default,
-    href: "https://www.linkedin.com/company/tailcall",
-  },
+  // {
+  //   id: 3,
+  //   name: "linkedin",
+  //   image: require("@site/static/icons/companies/linkedin-gray.svg").default,
+  //   href: "https://www.linkedin.com/company/tailcall",
+  // },
 
-  {
-    id: 4,
-    name: "twitter",
-    image: require("@site/static/icons/companies/x-gray.svg").default,
-    href: "https://twitter.com/tailcallhq",
-  },
+  // {
+  //   id: 4,
+  //   name: "twitter",
+  //   image: require("@site/static/icons/companies/x-gray.svg").default,
+  //   href: "https://twitter.com/tailcallhq",
+  // },
 ]
 
 export const chooseTailcall: ChooseTailcall[] = [
