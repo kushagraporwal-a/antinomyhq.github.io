@@ -114,6 +114,7 @@ export default {
         // {to: "/about", label: "About", position: "left"},
         // {to: "/enterprise", label: "Enterprise", position: "left"},
         {to: "/docs", label: "Docs", position: "left"},
+        {to: "/blog", label: "Blogs", position: "left"},
         // {
         //   label: "Developers",
         //   position: "left",
