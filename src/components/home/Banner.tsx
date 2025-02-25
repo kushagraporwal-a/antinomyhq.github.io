@@ -9,7 +9,7 @@ import Section from "../shared/Section"
 
 const Banner = (): JSX.Element => {
   return (
-    <main className="grid justify-center">
+    <main className="grid justify-center mb-SPACE_10 sm:mb-SPACE_12">
       <Section className="flex flex-col sm:items-center sm:text-center w-full !pb-0">
         <div className="h-full 2xl:min-h-0">
           <Heading

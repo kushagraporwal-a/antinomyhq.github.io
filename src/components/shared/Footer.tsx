@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "@docusaurus/Link"
 import {footerItems, socials} from "@site/src/constants"
-import TailcallLogo from "@site/static/icons/companies/tailcall-white.svg"
+import useBaseUrl from "@docusaurus/useBaseUrl"
 import {useCookieConsentManager} from "./CookieConsentProvider"
 
 const Footer = (): JSX.Element => {
@@ -10,7 +10,11 @@ const Footer = (): JSX.Element => {
   return (
     <footer className="flex flex-col relative w-full relative px-4 py-8 lg:px-40 lg:pt-20 lg:pb-0 bg-tailCall-dark-700 grid-dark gap-4 lg:gap-8">
       <div className="grid grid-cols-2 gap-8 lg:flex lg:gap-32 xl:gap-64 w-full z-10">
-        <TailcallLogo className="w-[120px] h-10 col-span-2" />
+        <img 
+          src={useBaseUrl("/icons/companies/antinomy-logo-dark.svg")}
+          alt="Antinomy Logo"
+          className="w-[120px] h-10 col-span-2"
+        />
         {footerItems.map((category: FooterItem, idx: number) => {
           return (
             <div className="flex flex-col gap-4 lg:gap-6" key={idx}>
