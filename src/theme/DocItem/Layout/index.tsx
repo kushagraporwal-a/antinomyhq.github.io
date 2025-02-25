@@ -39,15 +39,15 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
       <br />
       <Giscus
         id="comments"
-        repo="tailcallhq/tailcallhq.github.io"
-        repoId="R_kgDOH8lUfQ"
+        repo="antinomyhq/antinomyhq.github.io"
+        repoId="R_kgDON_Fcyw"
         category="General"
-        categoryId="DIC_kwDOH8lUfc4Ceff2"
+        categoryId="DIC_kwDON_Fcy84CnUHb"
         mapping="pathname"
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme={"https://tailcall.run/css/giscus-theme.css"}
+        theme={"https://antinomy.ai/css/giscus-theme.css"}
         lang="en"
         strict="0"
         loading="lazy"
