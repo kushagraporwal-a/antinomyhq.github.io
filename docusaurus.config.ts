@@ -122,7 +122,6 @@ export default {
               to: "/docs",
               html: getNavDropdownItemHtml("/images/home/book.svg", "Docs Icon", "Docs"),
             },
-            
           ],
         },
         {

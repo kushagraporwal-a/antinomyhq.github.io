@@ -9,10 +9,7 @@ interface GlobalHeadProps {
 
 const GlobalHead: React.FC<GlobalHeadProps> = ({isCookieConsentAccepted = false, preferences}) => {
   const injectAnalyticsScripts = () => {
-    return (
-      <>
-      </>
-    )
+    return <></>
   }
 
   const injectScripts = (preferences: string[] | undefined): JSX.Element[] => {
