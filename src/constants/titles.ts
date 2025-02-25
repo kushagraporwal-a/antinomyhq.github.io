@@ -1,4 +1,4 @@
-const tagline = "The modern GraphQL runtime"
+const tagline = "Code Smarter"
 
 export const PageTitle = {
   HOME: tagline,
