@@ -3,7 +3,7 @@ import {useCookieConsent} from "@site/src/utils/hooks/useCookieConsent"
 import "./style.css"
 
 const IntroductionVideo: React.FC = () => {
-  const videoId = "1011521201"
+  const videoId = "#todo"
   const videoRef = useRef<HTMLDivElement>(null)
   const {getCookieConsent} = useCookieConsent()
   const cookieConsent = getCookieConsent()
