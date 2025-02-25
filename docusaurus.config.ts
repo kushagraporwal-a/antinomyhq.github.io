@@ -94,8 +94,8 @@ export default {
     // Replace with your project's social card
     image: "icons/companies/antinomy-logo.svg",
     algolia: {
-      appId: "X27WDVHRQ3",
-      apiKey: "35bc100f239853cd8a7195b23ed7393b",
+      appId: "748OFOGLOE",
+      apiKey: "878290b0384a15f677fb6a4f94fe34cb",
       indexName: "antinomy",
       contextualSearch: false,
       searchParameters: {

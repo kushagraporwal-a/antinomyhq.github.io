@@ -1,7 +1,7 @@
 import React from "react"
 import {pageLinks} from "./routes"
 
-export const githubRepoURL = "https://github.com/tailcallhq/tailcall"
+export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
 export const tailCallBlogUrl = "https://blog.tailcall.run/"
 export const codeSandboxUrl = "https://codesandbox.io/p/github/tailcallhq/tailcall-sandbox/main"
@@ -14,7 +14,7 @@ export enum cookieConstants {
 
 export const algoliaConstants = {
   categoryFacet: "category",
-  searchModalPlaceholder: "What do you want to know about graphql ?",
+  searchModalPlaceholder: "What do you want to now about code forge ?",
 }
 
 export const companies: PartnerImage[] = [
@@ -321,7 +321,7 @@ export const benefits: Benefits[] = [
     description:
       "Full source code visibility with model flexibility. Use your own API keys and maintain complete control over your AI tools.",
     image: require("@site/static/images/home/open-source-icon.png").default,
-    redirection_url: "https://github.com/tailcallhq/tailcall",
+    redirection_url: "https://github.com/antinomyhq/forge",
   },
 ]
 
