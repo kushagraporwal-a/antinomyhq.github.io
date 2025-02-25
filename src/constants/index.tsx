@@ -304,16 +304,14 @@ export const benefits: Benefits[] = [
   {
     id: 2,
     title: "Contextual Code Generation",
-    description:
-      "Craft production-ready code that perfectly aligns with your architecture and standards",
+    description: "Craft production-ready code that perfectly aligns with your architecture and standards",
     image: require("@site/static/images/home/performance.png").default,
     redirection_url: "https://github.com/tailcallhq/graphql-benchmarks",
   },
   {
     id: 5,
     title: "Customizable",
-    description:
-      "Design your own workflows with configuration and use same tool for multiple use cases.",
+    description: "Design your own workflows with configuration and use same tool for multiple use cases.",
     image: require("@site/static/images/home/customizable-icon.png").default,
     redirection_url: "/docs",
   },
