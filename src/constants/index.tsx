@@ -503,7 +503,7 @@ export const pricingPlans: PricingPlans[] = [
     ],
     buttonText: "Contact Sales",
     mostPopular: false,
-    href: "/contact",
+    href: "/",
   },
 ]
 
