@@ -18,7 +18,7 @@ async function blogPluginEnhanced(context: LoadContext, options: PluginOptions) 
       const recentBlogPostsLimit = 10
 
       // Handle empty blog posts array safely
-      const blogPosts = content.blogPosts || [];
+      const blogPosts = content.blogPosts || []
       const recentBlogPosts = [...blogPosts].splice(0, recentBlogPostsLimit)
       const recentBlogPostsMetadata = recentBlogPosts.map((blog) => {
         const {

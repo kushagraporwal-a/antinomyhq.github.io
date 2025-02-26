@@ -6,15 +6,15 @@ function EmptyState(): JSX.Element {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
       <div className="mb-6">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="80" 
-          height="80" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="1" 
-          strokeLinecap="round" 
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="80"
+          height="80"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
           strokeLinejoin="round"
           className="text-gray-400"
         >
@@ -27,12 +27,10 @@ function EmptyState(): JSX.Element {
       </div>
       <h3 className="text-xl font-bold mb-2">No blog posts yet</h3>
       <p className="text-gray-600 max-w-md mb-6">
-        We're working on creating valuable content for you. Check back soon for our latest articles, insights, and updates.
+        We're working on creating valuable content for you. Check back soon for our latest articles, insights, and
+        updates.
       </p>
-      <a 
-        href="/docs" 
-        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-      >
+      <a href="/docs" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
         Explore our documentation
       </a>
     </div>

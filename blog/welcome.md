@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 # Welcome to the Antinomy Blog
 
-We're excited to share our journey, insights, and announcements with you. 
+We're excited to share our journey, insights, and announcements with you.
 
 Stay tuned for upcoming posts on our products, technology, and industry news.
 
