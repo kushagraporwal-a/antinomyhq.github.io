@@ -17,7 +17,9 @@ async function blogPluginEnhanced(context: LoadContext, options: PluginOptions) 
       const {setGlobalData} = actions
       const recentBlogPostsLimit = 10
 
-      const recentBlogPosts = [...content.blogPosts].splice(0, recentBlogPostsLimit)
+      // Handle empty blog posts array safely
+      const blogPosts = content.blogPosts || [];
+      const recentBlogPosts = [...blogPosts].splice(0, recentBlogPostsLimit)
       const recentBlogPostsMetadata = recentBlogPosts.map((blog) => {
         const {
           date,

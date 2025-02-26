@@ -9,6 +9,11 @@ interface BlogCategoriesProps {
 }
 
 export function BlogCategories({items, onCategoryClick, activeCategory}: BlogCategoriesProps): JSX.Element {
+  // If no items, don't display the categories section
+  if (!items.length) {
+    return <></>
+  }
+
   const categories = useMemo(() => {
     const categoryCounts: Record<string, number> = {All: items.length}
     items.map((item) => {
