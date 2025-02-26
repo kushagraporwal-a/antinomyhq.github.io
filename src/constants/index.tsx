@@ -3,7 +3,6 @@ import {pageLinks} from "./routes"
 
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
-export const tailCallBlogUrl = "https://blog.tailcall.run/"
 export const zapierLink = "https://hooks.zapier.com/hooks/catch/2793322/3a1gxp2/"
 
 export enum cookieConstants {
@@ -304,7 +303,7 @@ export const benefits: Benefits[] = [
     title: "Contextual Code Generation",
     description: "Craft production-ready code that perfectly aligns with your architecture and standards",
     image: require("@site/static/images/home/performance.png").default,
-    redirection_url: "https://github.com/tailcallhq/graphql-benchmarks",
+    redirection_url: "/docs",
   },
   {
     id: 5,
