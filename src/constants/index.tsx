@@ -600,3 +600,7 @@ export const footerItems: FooterItem[] = [
     ],
   },
 ]
+
+export const gtagScriptContent = `
+function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-FLJBT3GYVJ",{})
+`

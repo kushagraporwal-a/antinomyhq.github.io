@@ -9,7 +9,10 @@ interface GlobalHeadProps {
 
 const GlobalHead: React.FC<GlobalHeadProps> = ({isCookieConsentAccepted = false, preferences}) => {
   const injectAnalyticsScripts = () => {
-    return <></>
+    return <>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLJBT3GYVJ"></script>
+    <script>{gtagScriptContent}</script>
+    </>
   }
 
   const injectScripts = (preferences: string[] | undefined): JSX.Element[] => {
