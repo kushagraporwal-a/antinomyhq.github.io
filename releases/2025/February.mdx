@@ -1,0 +1,485 @@
+---
+sidebar_position: 11
+toc_max_heading_level: 2
+slug: /
+---
+
+import VersionUpdateCard from "@site/src/components/shared/VersionUpdateCard"
+
+<VersionUpdateCard />
+
+## v0.25.1
+
+### 🧰 Maintenance
+
+- refactor: update system prompts and add tool usage instructions [@tusharmath](https://github.com/tusharmath) ([#391](https://github.com/antinomyhq/forge/pull/391))
+- chore(ci): add build-release-pr job for pull requests with 'build-all… [@amitksingh1490](https://github.com/amitksingh1490) ([#387](https://github.com/antinomyhq/forge/pull/387))
+
+---
+
+## v0.25.0
+
+### 🚀 Features
+
+- feat: separate out `user_task` into `user_task_init` and `user_task_update` events [@tusharmath](https://github.com/tusharmath) ([#385](https://github.com/antinomyhq/forge/pull/385))
+
+### 🧰 Maintenance
+
+- feat: separate out `user_task` into `user_task_init` and `user_task_update` events [@tusharmath](https://github.com/tusharmath) ([#385](https://github.com/antinomyhq/forge/pull/385))
+
+---
+
+## v0.24.0
+
+- feat: add `/dump` command [@tusharmath](https://github.com/tusharmath) ([#381](https://github.com/antinomyhq/forge/pull/381))
+
+### 🚀 Features
+
+- feat: use YAML instead of TOML for defining workflows [@tusharmath](https://github.com/tusharmath) ([#384](https://github.com/antinomyhq/forge/pull/384))
+- feat: add a learning database [@tusharmath](https://github.com/tusharmath) ([#366](https://github.com/antinomyhq/forge/pull/366))
+
+### 🐛 Bug Fixes
+
+- fix: use openai embeddings api for generating embeddings [@amitksingh1490](https://github.com/amitksingh1490) ([#386](https://github.com/antinomyhq/forge/pull/386))
+
+### 🧰 Maintenance
+
+- feat: use YAML instead of TOML for defining workflows [@tusharmath](https://github.com/tusharmath) ([#384](https://github.com/antinomyhq/forge/pull/384))
+- chore: update dependencies to use specific features and disable defaults [@amitksingh1490](https://github.com/amitksingh1490) ([#382](https://github.com/antinomyhq/forge/pull/382))
+
+---
+
+## v0.23.0
+
+### 🚀 Features
+
+- feat: integrate anthropic provider [@laststylebender14](https://github.com/laststylebender14) ([#375](https://github.com/antinomyhq/forge/pull/375))
+
+### 🐛 Bug Fixes
+
+- fix: integration tests [@laststylebender14](https://github.com/laststylebender14) ([#379](https://github.com/antinomyhq/forge/pull/379))
+
+---
+
+## v0.22.0
+
+### 🚀 Features
+
+- feat: make open router impl compatible with open-ai [@laststylebender14](https://github.com/laststylebender14) ([#376](https://github.com/antinomyhq/forge/pull/376))
+
+### 🐛 Bug Fixes
+
+- fix: prevent workflow failure if agent fails to set the event [@laststylebender14](https://github.com/laststylebender14) ([#377](https://github.com/antinomyhq/forge/pull/377))
+
+---
+
+## v0.21.2
+
+### 🐛 Bug Fixes
+
+- fix: curl script to download binary [@amitksingh1490](https://github.com/amitksingh1490) ([#371](https://github.com/antinomyhq/forge/pull/371))
+
+---
+
+## v0.21.1
+
+### 🐛 Bug Fixes
+
+- refactor: add workflow service [@tusharmath](https://github.com/tusharmath) ([#369](https://github.com/antinomyhq/forge/pull/369))
+
+---
+
+## v0.21.0
+
+### 🚀 Features
+
+- refactor: remove unused provider and tool service modules; introduce new provider and tool traits [@tusharmath](https://github.com/tusharmath) ([#348](https://github.com/antinomyhq/forge/pull/348))
+
+### 🐛 Bug Fixes
+
+- fix: preserve agent state in init method [@amitksingh1490](https://github.com/amitksingh1490) ([#367](https://github.com/antinomyhq/forge/pull/367))
+
+### 🧰 Maintenance
+
+- refactor: remove unused provider and tool service modules; introduce new provider and tool traits [@tusharmath](https://github.com/tusharmath) ([#348](https://github.com/antinomyhq/forge/pull/348))
+
+---
+
+## v0.20.0
+
+### 🚀 Features
+
+- feat: read workflow from toml [@amitksingh1490](https://github.com/amitksingh1490) ([#350](https://github.com/antinomyhq/forge/pull/350))
+
+---
+
+## v0.19.1
+
+- No changes
+
+---
+
+## v0.19.0
+
+### 🚀 Features
+
+- feat: set default to gnu instead of throwing an error [@ssddOnTop](https://github.com/ssddOnTop) ([#362](https://github.com/antinomyhq/forge/pull/362))
+
+---
+
+## v0.18.0
+
+### 🚀 Features
+
+- feat: use success format for `/new` command [@laststylebender14](https://github.com/laststylebender14) ([#355](https://github.com/antinomyhq/forge/pull/355))
+
+### 🐛 Bug Fixes
+
+- fix(CI): update build-release job for aarch64 target [@amitksingh1490](https://github.com/amitksingh1490) ([#361](https://github.com/antinomyhq/forge/pull/361))
+- fix: remove unsupported commands [@laststylebender14](https://github.com/laststylebender14) ([#353](https://github.com/antinomyhq/forge/pull/353))
+- fix(CI): linux runtime errors [@ssddOnTop](https://github.com/ssddOnTop) ([#351](https://github.com/antinomyhq/forge/pull/351))
+
+---
+
+## v0.17.1
+
+### 🐛 Bug Fixes
+
+- fix: enhance cache setting logic in transformer pipeline [@amitksingh1490](https://github.com/amitksingh1490) ([#357](https://github.com/antinomyhq/forge/pull/357))
+
+---
+
+## v0.17.0
+
+### 🚀 Features
+
+- feat: add reset functionality to API and ExecutorService [@tusharmath](https://github.com/tusharmath) ([#347](https://github.com/antinomyhq/forge/pull/347))
+
+### 🐛 Bug Fixes
+
+- feat: support a pub/sub architecture for agent communication [@tusharmath](https://github.com/tusharmath) ([#346](https://github.com/antinomyhq/forge/pull/346))
+
+### 🧰 Maintenance
+
+- feat: support a pub/sub architecture for agent communication [@tusharmath](https://github.com/tusharmath) ([#346](https://github.com/antinomyhq/forge/pull/346))
+- refactor: support for workflow [@tusharmath](https://github.com/tusharmath) ([#343](https://github.com/antinomyhq/forge/pull/343))
+- chore: replace brackets with `<>` [@ssddOnTop](https://github.com/ssddOnTop) ([#342](https://github.com/antinomyhq/forge/pull/342))
+
+---
+
+## v0.16.0
+
+### 🚀 Features
+
+- feat: add support for additional target architectures in CI configura… [@amitksingh1490](https://github.com/amitksingh1490) ([#333](https://github.com/antinomyhq/forge/pull/333))
+
+---
+
+## v0.15.0
+
+### 🚀 Features
+
+- Revert "feat: add support for more target architectures and windows os" [@amitksingh1490](https://github.com/amitksingh1490) ([#332](https://github.com/antinomyhq/forge/pull/332))
+- feat: add support for more target architectures and windows os [@amitksingh1490](https://github.com/amitksingh1490) ([#331](https://github.com/antinomyhq/forge/pull/331))
+
+### 🧰 Maintenance
+
+- fix: use bundled sqlite [@ssddOnTop](https://github.com/ssddOnTop) ([#336](https://github.com/antinomyhq/forge/pull/336))
+
+---
+
+## v0.14.0
+
+### 🚀 Features
+
+- feat: add unrestricted shell mode and update environment handling in CLI [@tusharmath](https://github.com/tusharmath) ([#329](https://github.com/antinomyhq/forge/pull/329))
+
+---
+
+## v0.13.3
+
+### 🐛 Bug Fixes
+
+- fix: optimize CI configuration and release profile settings [@amitksingh1490](https://github.com/amitksingh1490) ([#330](https://github.com/antinomyhq/forge/pull/330))
+
+---
+
+## v0.13.2
+
+### 🐛 Bug Fixes
+
+- fix: update download URL in install script to remove file extension [@amitksingh1490](https://github.com/amitksingh1490) ([#328](https://github.com/antinomyhq/forge/pull/328))
+- fix: use APP_VERSION constant [@amitksingh1490](https://github.com/amitksingh1490) ([#327](https://github.com/antinomyhq/forge/pull/327))
+
+---
+
+## v0.13.1
+
+### 🧰 Maintenance
+
+- chore: add Apache License 2.0 to the repository [@amitksingh1490](https://github.com/amitksingh1490) ([#326](https://github.com/antinomyhq/forge/pull/326))
+
+---
+
+## v0.13.0
+
+### 🚀 Features
+
+- fix: implement event tracking with PostHog integration [@amitksingh1490](https://github.com/amitksingh1490) ([#323](https://github.com/antinomyhq/forge/pull/323))
+- doc: add installation script and README for Code-Forge [@tusharmath](https://github.com/tusharmath) ([#324](https://github.com/antinomyhq/forge/pull/324))
+
+### 📝 Documentation
+
+- doc: add installation script and README for Code-Forge [@tusharmath](https://github.com/tusharmath) ([#324](https://github.com/antinomyhq/forge/pull/324))
+
+---
+
+## v0.12.0
+
+### 🚀 Features
+
+- feat: add support for Mistralai Codestral 2501 model [@amitksingh1490](https://github.com/amitksingh1490) ([#320](https://github.com/antinomyhq/forge/pull/320))
+
+---
+
+## v0.11.1
+
+### 📝 Documentation
+
+- feat: add `-p` option to specify the prompt [@tusharmath](https://github.com/tusharmath) ([#321](https://github.com/antinomyhq/forge/pull/321))
+
+---
+
+## v0.11.0
+
+### 🚀 Features
+
+- fix: add 'Required' option to ToolChoice and set parallel tool calls [@amitksingh1490](https://github.com/amitksingh1490) ([#318](https://github.com/antinomyhq/forge/pull/318))
+
+---
+
+## v0.10.1
+
+### 📝 Documentation
+
+- fix: update system prompt to leverage shell commands more [@tusharmath](https://github.com/tusharmath) ([#319](https://github.com/antinomyhq/forge/pull/319))
+
+---
+
+## v0.10.0
+
+### 🚀 Features
+
+- feat: add tool choice for Gemini model in OpenRouter request [@amitksingh1490](https://github.com/amitksingh1490) ([#317](https://github.com/antinomyhq/forge/pull/317))
+
+---
+
+## v0.9.0
+
+### 🚀 Features
+
+- feat: add tool choice for Gemini model in OpenRouter request [@amitksingh1490](https://github.com/amitksingh1490) ([#317](https://github.com/antinomyhq/forge/pull/317))
+- feat: enhance output of search message [@tusharmath](https://github.com/tusharmath) ([#316](https://github.com/antinomyhq/forge/pull/316))
+
+---
+
+## v0.8.0
+
+### 🚀 Features
+
+- feat: add concurrency configuration to CI workflow [@amitksingh1490](https://github.com/amitksingh1490) ([#315](https://github.com/antinomyhq/forge/pull/315))
+- chore: remove deleted files [@tusharmath](https://github.com/tusharmath) ([#311](https://github.com/antinomyhq/forge/pull/311))
+
+### 🧰 Maintenance
+
+- fix: improve title formats [@tusharmath](https://github.com/tusharmath) ([#313](https://github.com/antinomyhq/forge/pull/313))
+- refactor: remove forge_pretty_diff crate and update dependencies [@tusharmath](https://github.com/tusharmath) ([#312](https://github.com/antinomyhq/forge/pull/312))
+
+---
+
+## v0.7.0
+
+### 🚀 Features
+
+- feat: add a tool for removing files [@tusharmath](https://github.com/tusharmath) ([#310](https://github.com/antinomyhq/forge/pull/310))
+
+---
+
+## v0.6.0
+
+- refactor: workflow iteration feb 6 [@tusharmath](https://github.com/tusharmath) ([#308](https://github.com/antinomyhq/forge/pull/308))
+- refactor: remove Errata [@tusharmath](https://github.com/tusharmath) ([#300](https://github.com/antinomyhq/forge/pull/300))
+
+### 🚀 Features
+
+- feat: display the output of search in ripgrep format [@laststylebender14](https://github.com/laststylebender14) ([#307](https://github.com/antinomyhq/forge/pull/307))
+- feat: show pretty diff for changed content [@laststylebender14](https://github.com/laststylebender14) ([#306](https://github.com/antinomyhq/forge/pull/306))
+- feat: stream the execution of shell commands to parent stream [@laststylebender14](https://github.com/laststylebender14) ([#285](https://github.com/antinomyhq/forge/pull/285))
+- feat: allow system prompt to configured from cli. [@laststylebender14](https://github.com/laststylebender14) ([#301](https://github.com/antinomyhq/forge/pull/301))
+
+### 🐛 Bug Fixes
+
+- fix: update binary paths in CI configuration [@amitksingh1490](https://github.com/amitksingh1490) ([#303](https://github.com/antinomyhq/forge/pull/303))
+
+### 🧰 Maintenance
+
+- refactor: remove unused model tests from api_spec [@amitksingh1490](https://github.com/amitksingh1490) ([#305](https://github.com/antinomyhq/forge/pull/305))
+
+---
+
+## v0.5.0
+
+### 🚀 Features
+
+- feat: impl config commands [@laststylebender14](https://github.com/laststylebender14) ([#288](https://github.com/antinomyhq/forge/pull/288))
+
+---
+
+## v0.4.0
+
+- refactor: improve folder structure for workflows [@tusharmath](https://github.com/tusharmath) ([#292](https://github.com/antinomyhq/forge/pull/292))
+
+### 🚀 Features
+
+- feat: show the models on `/models` command [@laststylebender14](https://github.com/laststylebender14) ([#289](https://github.com/antinomyhq/forge/pull/289))
+
+---
+
+## v0.3.3
+
+### 🐛 Bug Fixes
+
+- fix: better title generation, xml prompting, connection retries. [@tusharmath](https://github.com/tusharmath) ([#296](https://github.com/antinomyhq/forge/pull/296))
+- fix: Update prompts for tool use via XML [@tusharmath](https://github.com/tusharmath) ([#295](https://github.com/antinomyhq/forge/pull/295))
+
+### 🧰 Maintenance
+
+- refactor: rename ToolCallService trait to ExecutableTool and update references [@tusharmath](https://github.com/tusharmath) ([#291](https://github.com/antinomyhq/forge/pull/291))
+
+---
+
+## v0.3.2
+
+### 🐛 Bug Fixes
+
+- fix: the autocomplete bindings [@laststylebender14](https://github.com/laststylebender14) ([#287](https://github.com/antinomyhq/forge/pull/287))
+
+### 🧰 Maintenance
+
+- refactor: agentic workflows [@tusharmath](https://github.com/tusharmath) ([#284](https://github.com/antinomyhq/forge/pull/284))
+
+---
+
+## v0.3.1
+
+- refactor: enhance chat response handling and XML tool call parsing [@tusharmath](https://github.com/tusharmath) ([#281](https://github.com/antinomyhq/forge/pull/281))
+
+### 🐛 Bug Fixes
+
+- fix: shell issues [@laststylebender14](https://github.com/laststylebender14) ([#283](https://github.com/antinomyhq/forge/pull/283))
+
+---
+
+## v0.3.0
+
+### 🚀 Features
+
+- feat: enhance tool usage instructions and title generation process [@amitksingh1490](https://github.com/amitksingh1490) ([#275](https://github.com/antinomyhq/forge/pull/275))
+
+### 🐛 Bug Fixes
+
+- fix: update environment variable and repository references in CI [@amitksingh1490](https://github.com/amitksingh1490) ([#280](https://github.com/antinomyhq/forge/pull/280))
+
+---
+
+## v0.2.7
+
+### 🐛 Bug Fixes
+
+- fix: reduce CLI verbosity [@tusharmath](https://github.com/tusharmath) ([#278](https://github.com/antinomyhq/forge/pull/278))
+- fix(deps): update rust crate tree-sitter to v0.25.1 @[renovate[bot]](https://github.com/apps/renovate) (#276)
+
+### 🧰 Maintenance
+
+- refactor: move env constructors into domain [@tusharmath](https://github.com/tusharmath) ([#277](https://github.com/antinomyhq/forge/pull/277))
+
+---
+
+## v0.2.6
+
+### 🐛 Bug Fixes
+
+- fix(deps): update rust crate tree-sitter to v0.25.1 @[renovate[bot]](https://github.com/apps/renovate) (#276)
+
+---
+
+## v0.2.5
+
+- No changes
+
+---
+
+## v0.2.4
+
+### 🐛 Bug Fixes
+
+- fix(deps): update rust crate syn to v2.0.98 @[renovate[bot]](https://github.com/apps/renovate) (#274)
+
+---
+
+## v0.2.3
+
+### 🐛 Bug Fixes
+
+- fix(deps): update rust crate syn to v2.0.97 @[renovate[bot]](https://github.com/apps/renovate) (#273)
+- fix: crash with Open Router [@amitksingh1490](https://github.com/amitksingh1490) ([#272](https://github.com/antinomyhq/forge/pull/272))
+
+---
+
+## v0.2.2
+
+- No changes
+
+---
+
+## v0.2.1
+
+- No changes
+
+---
+
+## v0.2.0
+
+### 🚀 Features
+
+- feat: update CI workflow and release drafter configuration [@amitksingh1490](https://github.com/amitksingh1490) ([#268](https://github.com/antinomyhq/forge/pull/268))
+- feat: integrate reedline crate for cli prompting [@laststylebender14](https://github.com/laststylebender14) ([#263](https://github.com/antinomyhq/forge/pull/263))
+
+### 🐛 Bug Fixes
+
+- fix(deps): update rust crate tree-sitter to 0.25 @[renovate[bot]](https://github.com/apps/renovate) (#270)
+- fix(deps): update rust crate async-trait to v0.1.86 @[renovate[bot]](https://github.com/apps/renovate) (#269)
+
+---
+
+## v0.1.3
+
+### 🐛 Bug Fixes
+
+- fix: update CI workflow to use GITHUB_TOKEN for script execution [@amitksingh1490](https://github.com/amitksingh1490) ([#267](https://github.com/antinomyhq/forge/pull/267))
+
+---
+
+## v0.1.2
+
+- ci: update release drafter configuration for pull request_target [@amitksingh1490](https://github.com/amitksingh1490) ([#261](https://github.com/antinomyhq/forge/pull/261))
+
+### 🚀 Features
+
+- feat: enhance CI workflow with draft release and versioning support [@amitksingh1490](https://github.com/amitksingh1490) ([#266](https://github.com/antinomyhq/forge/pull/266))
+- feat: drop support for file parsing in user prompt [@laststylebender14](https://github.com/laststylebender14) ([#262](https://github.com/antinomyhq/forge/pull/262))
+
+### 🐛 Bug Fixes
+
+- fix(deps): update rust crate diesel to v2.2.7 @[renovate[bot]](https://github.com/apps/renovate) (#264)
+- fix: drop the task in chat.rs as soon as base stream is dropped [@laststylebender14](https://github.com/laststylebender14) ([#259](https://github.com/antinomyhq/forge/pull/259))
