@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://antinomy.ai/blog/</id>
     <title>Antinomy Blog</title>
-    <updated>2023-01-01T00:00:00.000Z</updated>
+    <updated>2025-02-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://antinomy.ai/blog/"/>
     <subtitle>Antinomy Blog</subtitle>
@@ -12,7 +12,7 @@
         <title type="html"><![CDATA[Welcome to the Antinomy Blog]]></title>
         <id>https://antinomy.ai/blog/welcome-to-antinomy-blog/</id>
         <link href="https://antinomy.ai/blog/welcome-to-antinomy-blog/"/>
-        <updated>2023-01-01T00:00:00.000Z</updated>
+        <updated>2025-02-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the Antinomy blog. Stay tuned for future posts!]]></summary>
         <content type="html"><![CDATA[<p>We're excited to share our journey, insights, and announcements with you.</p>
 <p>Stay tuned for upcoming posts on our products, technology, and industry news.</p>
