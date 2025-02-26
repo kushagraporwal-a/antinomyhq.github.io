@@ -4,9 +4,7 @@ import {pageLinks} from "./routes"
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
 export const tailCallBlogUrl = "https://blog.tailcall.run/"
-export const codeSandboxUrl = "https://codesandbox.io/p/github/tailcallhq/tailcall-sandbox/main"
 export const zapierLink = "https://hooks.zapier.com/hooks/catch/2793322/3a1gxp2/"
-export const playgroundAdsConversionId = "AW-16578154380/3FH_CJrawsgZEIyfiuE9"
 
 export enum cookieConstants {
   USER_CONSENT = "userConsent",

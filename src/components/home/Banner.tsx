@@ -3,7 +3,7 @@ import Heading from "@theme/Heading"
 
 import LinkButton from "../shared/LinkButton"
 import {analyticsHandler} from "@site/src/utils"
-import {Theme, codeSandboxUrl} from "@site/src/constants"
+import {Theme} from "@site/src/constants"
 import {pageLinks} from "@site/src/constants/routes"
 import Section from "../shared/Section"
 

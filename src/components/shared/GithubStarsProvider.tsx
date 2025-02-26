@@ -40,7 +40,7 @@ const GithubStarsProvider = ({children}: GithubStarsProviderProps) => {
 
   // Fetch Github stars count
   const fetchGithubStars = () => {
-    return fetch("https://api.github.com/repos/tailcallhq/tailcall")
+    return fetch("https://api.github.com/repos/antinomyhq/forge")
       .then((resp) => resp.json())
       .then((resp) => {
         const respStarsCount: number = resp.stargazers_count
