@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   update-releases:
-    if: github.repository == 'tailcallhq/tailcallhq.github.io' && github.ref == 'refs/heads/develop'
+    if: github.repository == 'antinomyhq/antinomyhq.github.io' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          EXISTING_PR=$(gh pr list --state open --base develop --json headRefName --jq '.[] | select(.headRefName | startswith("update-releases")) | .headRefName')
+          EXISTING_PR=$(gh pr list --state open --base main --json headRefName --jq '.[] | select(.headRefName | startswith("update-releases")) | .headRefName')
           if [ -n "$EXISTING_PR" ]; then
             echo "An existing PR is already open. Exiting workflow."
             exit 1
@@ -51,7 +51,7 @@ jobs:
           commit-message: "chore: updated releases"
           branch: update-releases
           branch-suffix: timestamp
-          base: develop
+          base: main
           title: "chore: updated releases"
           body: |
             This is an auto-generated pull request that updates releases.
