@@ -3,7 +3,7 @@ slug: welcome-to-antinomy-blog
 title: Welcome to the Antinomy Blog
 authors: [antinomy]
 tags: [welcome]
-date: 2023-01-01T00:00:00.000Z
+date: 2025-02-24T00:00:00.000Z
 description: Welcome to the Antinomy blog. Stay tuned for future posts!
 hide_table_of_contents: false
 ---
