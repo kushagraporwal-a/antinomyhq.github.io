@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://antinomy.ai/blog/</id>
+    <title>Antinomy Blog</title>
+    <updated>2023-01-01T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://antinomy.ai/blog/"/>
+    <subtitle>Antinomy Blog</subtitle>
+    <icon>https://antinomy.ai/images/favicon.ico</icon>
+    <rights>Copyright © 2025 Tailcall, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[Welcome to the Antinomy Blog]]></title>
+        <id>https://antinomy.ai/blog/welcome-to-antinomy-blog/</id>
+        <link href="https://antinomy.ai/blog/welcome-to-antinomy-blog/"/>
+        <updated>2023-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to the Antinomy blog. Stay tuned for future posts!]]></summary>
+        <content type="html"><![CDATA[<p>We're excited to share our journey, insights, and announcements with you.</p>
+<p>Stay tuned for upcoming posts on our products, technology, and industry news.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-to-expect">What to Expect<a href="https://antinomy.ai/blog/welcome-to-antinomy-blog/#what-to-expect" class="hash-link" aria-label="Direct link to What to Expect" title="Direct link to What to Expect">​</a></h2>
+<p>In the near future, we'll be publishing articles about:</p>
+<ul>
+<li>Product updates and releases</li>
+<li>Technical deep dives</li>
+<li>Industry trends and insights</li>
+<li>Tips and best practices</li>
+</ul>
+<p>Thank you for your interest in Antinomy!</p>]]></content>
+        <author>
+            <name>Antinomy Team</name>
+            <uri>https://antinomy.ai</uri>
+        </author>
+        <category label="welcome" term="welcome"/>
+    </entry>
+</feed>
