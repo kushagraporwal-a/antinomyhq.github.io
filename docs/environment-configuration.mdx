@@ -24,12 +24,12 @@ The `.env` file method is recommended for most users as it keeps your configurat
 
 Forge supports multiple AI providers and checks for API keys in the following priority order:
 
-| Environment Variable | Provider |
-|---------------------|----------|
-| `FORGE_KEY` | Antinomy's provider (OpenAI-compatible) |
+| Environment Variable | Provider                                 |
+| -------------------- | ---------------------------------------- |
+| `FORGE_KEY`          | Antinomy's provider (OpenAI-compatible)  |
 | `OPENROUTER_API_KEY` | Open Router (aggregates multiple models) |
-| `OPENAI_API_KEY` | Official OpenAI |
-| `ANTHROPIC_API_KEY` | Official Anthropic |
+| `OPENAI_API_KEY`     | Official OpenAI                          |
+| `ANTHROPIC_API_KEY`  | Official Anthropic                       |
 
 Example configuration in `.env` file:
 
@@ -62,6 +62,7 @@ OPENAI_URL=https://alternative-openrouter-endpoint.com/v1
 ```
 
 This is useful for:
+
 - Self-hosted models with OpenAI-compatible APIs
 - Enterprise OpenAI deployments
 - Proxy services or API gateways

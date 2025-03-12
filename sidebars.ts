@@ -24,13 +24,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Core Features",
       collapsed: false,
-      items: [
-        "commands", 
-        "operation-modes",
-        "environment-configuration", 
-        "custom-workflows",
-        "security-features"
-      ],
+      items: ["commands", "operation-modes", "environment-configuration", "custom-workflows", "security-features"],
     },
   ],
 }

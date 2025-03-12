@@ -59,6 +59,7 @@ Unix philosophy teaches us to make tools that compose well:
 - **Expressive Combinations**: Combine tools in ways not anticipated by creators
 
 Example of tool composition:
+
 ```bash
 # Find files, let Forge analyze them, then filter the results
 find . -name "*.js" | xargs forge "Identify security risks" | grep "High risk"
@@ -71,11 +72,13 @@ find . -name "*.js" | xargs forge "Identify security risks" | grep "High risk"
 When exploring an unfamiliar codebase:
 
 **IDE Approach**:
+
 - Open separate search panels for different types of searches
 - Navigate through multiple UI elements
 - Copy-paste between windows
 
 **Forge Shell Approach**:
+
 ```bash
 # Find key components and their usage patterns
 forge "Identify the main components of this project and show me how they interact"
@@ -86,11 +89,13 @@ forge "Identify the main components of this project and show me how they interac
 When refactoring code across multiple files:
 
 **IDE Approach**:
+
 - Use search and replace features
 - Manually verify changes
 - Navigate through files individually
 
 **Forge Shell Approach**:
+
 ```bash
 # Comprehensive refactoring with pattern identification
 forge "Refactor all instances of the legacy error handling pattern to use the new ErrorBoundary component"
@@ -101,11 +106,13 @@ forge "Refactor all instances of the legacy error handling pattern to use the ne
 When debugging a complex issue:
 
 **IDE Approach**:
+
 - Set breakpoints
 - Step through execution
 - Examine variables
 
 **Forge Shell Approach**:
+
 ```bash
 # Get a comprehensive analysis and solution
 forge "The application crashes when processing large files. Help me identify the root cause and fix it."
@@ -116,11 +123,13 @@ forge "The application crashes when processing large files. Help me identify the
 When setting up a new project:
 
 **IDE Approach**:
+
 - Use wizard interfaces
 - Navigate through multiple setup screens
 - Manually configure components
 
 **Forge Shell Approach**:
+
 ```bash
 # Quick, comprehensive setup
 forge "Set up a React project with TypeScript, ESLint, and Jest configured according to best practices"
@@ -130,25 +139,25 @@ forge "Set up a React project with TypeScript, ESLint, and Jest configured accor
 
 ### Forge vs. IDE Extensions
 
-| Aspect | Forge (Shell-Based) | IDE Extensions |
-|--------|---------------------|---------------|
-| **Startup Time** | Sub-50ms | Often seconds or more |
-| **Tool Integration** | Seamless with all CLI tools | Limited to what's specifically integrated |
-| **Cross-IDE Support** | Works with any terminal | Tied to specific IDE |
-| **Resource Usage** | Minimal | Often significant |
-| **Update Process** | Simple, single update | Multiple extensions to update |
-| **Customization** | Highly flexible | Limited to extension options |
+| Aspect                | Forge (Shell-Based)         | IDE Extensions                            |
+| --------------------- | --------------------------- | ----------------------------------------- |
+| **Startup Time**      | Sub-50ms                    | Often seconds or more                     |
+| **Tool Integration**  | Seamless with all CLI tools | Limited to what's specifically integrated |
+| **Cross-IDE Support** | Works with any terminal     | Tied to specific IDE                      |
+| **Resource Usage**    | Minimal                     | Often significant                         |
+| **Update Process**    | Simple, single update       | Multiple extensions to update             |
+| **Customization**     | Highly flexible             | Limited to extension options              |
 
 ### Forge vs. Web-Based AI Tools
 
-| Aspect | Forge (Shell-Based) | Web-Based Tools |
-|--------|---------------------|----------------|
-| **Context Awareness** | Full access to local environment | Limited to uploaded files |
-| **Privacy** | Local operation with direct API calls | Code often stored on third-party servers |
-| **Offline Capability** | Works with local assets | Requires constant internet connection |
-| **Integration** | Native integration with local tools | Limited to web APIs |
-| **Speed** | Instant local operations | Network-dependent latency |
-| **Workflow** | Stays in your existing environment | Context switching to browser |
+| Aspect                 | Forge (Shell-Based)                   | Web-Based Tools                          |
+| ---------------------- | ------------------------------------- | ---------------------------------------- |
+| **Context Awareness**  | Full access to local environment      | Limited to uploaded files                |
+| **Privacy**            | Local operation with direct API calls | Code often stored on third-party servers |
+| **Offline Capability** | Works with local assets               | Requires constant internet connection    |
+| **Integration**        | Native integration with local tools   | Limited to web APIs                      |
+| **Speed**              | Instant local operations              | Network-dependent latency                |
+| **Workflow**           | Stays in your existing environment    | Context switching to browser             |
 
 ## Best Practices for Shell-Based Development
 
