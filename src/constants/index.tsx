@@ -200,7 +200,7 @@ export const socials: Social[] = [
     id: 2,
     name: "discord",
     image: require("@site/static/icons/companies/discord-gray.svg").default,
-    href: "https://discord.gg/79V5DgHCyx",
+    href: "https://discord.gg/kRZBPpkgwq",
   },
   // {
   //   id: 3,
