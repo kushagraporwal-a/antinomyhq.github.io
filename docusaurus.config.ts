@@ -35,7 +35,7 @@ export default {
       }),
     },
   ],
-  url: "https://antinomy.ai",
+  url: "https://antinomyhq.github.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -46,7 +46,7 @@ export default {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: organization, // Usually your GitHub org/user name.
   projectName: project, // Usually your repo name.
-  deploymentBranch: "main", // Branch that GitHub pages will deploy from.
+  deploymentBranch: "gh-pages", // Branch that GitHub pages will deploy from.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
