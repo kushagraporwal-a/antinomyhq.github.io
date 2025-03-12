@@ -1,13 +1,13 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Antinomy Blog",
-    "home_page_url": "https://antinomy.ai/blog/",
+    "home_page_url": "https://antinomyhq.github.io/blog/",
     "description": "Antinomy Blog",
     "items": [
         {
-            "id": "https://antinomy.ai/blog/welcome-to-antinomy-blog/",
-            "content_html": "<p>We're excited to share our journey, insights, and announcements with you.</p>\n<p>Stay tuned for upcoming posts on our products, technology, and industry news.</p>\n<h2 class=\"anchor anchorWithHideOnScrollNavbar_WYt5\" id=\"what-to-expect\">What to Expect<a href=\"https://antinomy.ai/blog/welcome-to-antinomy-blog/#what-to-expect\" class=\"hash-link\" aria-label=\"Direct link to What to Expect\" title=\"Direct link to What to Expect\">​</a></h2>\n<p>In the near future, we'll be publishing articles about:</p>\n<ul>\n<li>Product updates and releases</li>\n<li>Technical deep dives</li>\n<li>Industry trends and insights</li>\n<li>Tips and best practices</li>\n</ul>\n<p>Thank you for your interest in Antinomy!</p>",
-            "url": "https://antinomy.ai/blog/welcome-to-antinomy-blog/",
+            "id": "https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/",
+            "content_html": "<p>We're excited to share our journey, insights, and announcements with you.</p>\n<p>Stay tuned for upcoming posts on our products, technology, and industry news.</p>\n<h2 class=\"anchor anchorWithHideOnScrollNavbar_WYt5\" id=\"what-to-expect\">What to Expect<a href=\"https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/#what-to-expect\" class=\"hash-link\" aria-label=\"Direct link to What to Expect\" title=\"Direct link to What to Expect\">​</a></h2>\n<p>In the near future, we'll be publishing articles about:</p>\n<ul>\n<li>Product updates and releases</li>\n<li>Technical deep dives</li>\n<li>Industry trends and insights</li>\n<li>Tips and best practices</li>\n</ul>\n<p>Thank you for your interest in Antinomy!</p>",
+            "url": "https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/",
             "title": "Welcome to the Antinomy Blog",
             "summary": "Welcome to the Antinomy blog. Stay tuned for future posts!",
             "date_modified": "2025-02-24T00:00:00.000Z",

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Antinomy Blog</title>
-        <link>https://antinomy.ai/blog/</link>
+        <link>https://antinomyhq.github.io/blog/</link>
         <description>Antinomy Blog</description>
         <lastBuildDate>Mon, 24 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -11,13 +11,13 @@
         <copyright>Copyright © 2025 Tailcall, Inc.</copyright>
         <item>
             <title><![CDATA[Welcome to the Antinomy Blog]]></title>
-            <link>https://antinomy.ai/blog/welcome-to-antinomy-blog/</link>
-            <guid>https://antinomy.ai/blog/welcome-to-antinomy-blog/</guid>
+            <link>https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/</link>
+            <guid>https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/</guid>
             <pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the Antinomy blog. Stay tuned for future posts!]]></description>
             <content:encoded><![CDATA[<p>We're excited to share our journey, insights, and announcements with you.</p>
 <p>Stay tuned for upcoming posts on our products, technology, and industry news.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-to-expect">What to Expect<a href="https://antinomy.ai/blog/welcome-to-antinomy-blog/#what-to-expect" class="hash-link" aria-label="Direct link to What to Expect" title="Direct link to What to Expect">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-to-expect">What to Expect<a href="https://antinomyhq.github.io/blog/welcome-to-antinomy-blog/#what-to-expect" class="hash-link" aria-label="Direct link to What to Expect" title="Direct link to What to Expect">​</a></h2>
 <p>In the near future, we'll be publishing articles about:</p>
 <ul>
 <li>Product updates and releases</li>
