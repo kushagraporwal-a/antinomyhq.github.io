@@ -10,7 +10,7 @@ const IntroductionGif: React.FC = () => {
           alt="Code Forge Demonstration"
           className="w-full h-full object-fill"
           loading="lazy"
-          style={{ objectPosition: "center" }}
+          style={{objectPosition: "center"}}
         />
       </div>
     </div>

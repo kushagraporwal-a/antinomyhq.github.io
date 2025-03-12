@@ -14,8 +14,8 @@ const Configuration = (): JSX.Element => {
           Get <span className="rounded-lg px-SPACE_02 bg-tailCall-yellow">Started</span>
         </Heading>
         <p className="text-content-small sm:text-content-medium mb-SPACE_11">
-          Forge is a comprehensive coding agent that integrates AI capabilities with your development environment, offering sophisticated 
-          assistance while maintaining the efficiency of your existing workflow.
+          Forge is a comprehensive coding agent that integrates AI capabilities with your development environment,
+          offering sophisticated assistance while maintaining the efficiency of your existing workflow.
         </p>
         <div className="mb-SPACE_06">
           <h5 className="font-semibold mb-2">Quick Setup</h5>
@@ -25,7 +25,9 @@ const Configuration = (): JSX.Element => {
           <p className="text-content-small sm:text-content-medium mb-2">
             2. Create a <code>.env</code> file in your home directory with:
           </p>
-          <pre className="bg-gray-100 p-2 rounded-md mb-4"><code>OPENROUTER_API_KEY=&lt;Your Open Router Key&gt;</code></pre>
+          <pre className="bg-gray-100 p-2 rounded-md mb-4">
+            <code>OPENROUTER_API_KEY=&lt;Your Open Router Key&gt;</code>
+          </pre>
           <p className="text-content-small sm:text-content-medium">
             3. Launch Forge by typing <code>forge</code> in your terminal
           </p>
@@ -33,7 +35,9 @@ const Configuration = (): JSX.Element => {
         <div>
           <h5 className="font-semibold">Learn More</h5>
           <p className="text-content-small sm:text-content-medium mb-SPACE_11">
-            Explore our <Link href="/docs">documentation</Link> to learn about Forge's <Link href="/docs/capabilities">powerful capabilities</Link> and how to leverage them in your development workflow.
+            Explore our <Link href="/docs">documentation</Link> to learn about Forge's{" "}
+            <Link href="/docs/capabilities">powerful capabilities</Link> and how to leverage them in your development
+            workflow.
           </p>
         </div>
       </div>
@@ -46,7 +50,7 @@ const CodeTabItem = ({
   code,
   language = "bash",
   showLineNumbers = false,
-  title
+  title,
 }: {
   code: string
   language?: "bash" | "json" | "yaml" | "graphql"

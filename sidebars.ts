@@ -18,25 +18,13 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Getting Started",
       collapsed: false,
-      items: ["introduction", "installation", "quick-setup"],
+      items: ["introduction", "installation", "quick-setup", "shell-integration"],
     },
     {
       type: "category",
       label: "Core Features",
       collapsed: false,
-      items: [
-        "commands", 
-        "operation-modes",
-        "environment-configuration", 
-        "custom-workflows",
-        "security-features"
-      ],
-    },
-    {
-      type: "category",
-      label: "Usage & Best Practices",
-      collapsed: false,
-      items: ["shell-integration", "logging", "best-practices", "why-shell"],
+      items: ["commands", "operation-modes", "environment-configuration", "custom-workflows", "security-features"],
     },
   ],
 }

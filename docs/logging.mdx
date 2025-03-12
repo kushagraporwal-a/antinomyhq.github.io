@@ -31,6 +31,7 @@ Forge logs are structured in JSON format, making them easy to parse and analyze.
 - **duration**: Time taken for operations (when applicable)
 
 Example log entry:
+
 ```json
 {
   "timestamp": "2025-03-07T14:32:18.567Z",
@@ -162,6 +163,7 @@ If you're experiencing problems with AI responses:
 3. Verify API key validity in error messages
 
 Example search:
+
 ```bash
 cat forge.log.2025-03-07 | jq 'select(.level == "error" and .message | contains("API"))'
 ```
@@ -175,6 +177,7 @@ To analyze performance:
 3. Check for patterns in slow operations
 
 Example search:
+
 ```bash
 cat forge.log.2025-03-07 | jq 'select(.duration > 2000) | {message, duration, timestamp}'
 ```
@@ -188,6 +191,7 @@ For file operation issues:
 3. Verify file content details
 
 Example search:
+
 ```bash
 cat forge.log.2025-03-07 | jq 'select(.level == "error" and .message | contains("file"))'
 ```
