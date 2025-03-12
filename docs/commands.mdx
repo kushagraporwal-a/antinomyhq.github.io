@@ -1,0 +1,111 @@
+---
+title: Built-in Commands
+sidebar_position: 1
+description: "Explore Forge's built-in commands and when to use them."
+sidebar_label: Built-in Commands
+---
+
+# Built-in Commands
+
+Forge provides a suite of built-in commands that enhance workflow efficiency and provide system control. These commands are prefixed with a forward slash (`/`) to differentiate them from standard input queries and task descriptions.
+
+## Available Commands
+
+| Command | Description | When to Use |
+|---------|-------------|------------|
+| `/new` | Start a new task | When you've completed your current task and want to begin a fresh conversation |
+| `/info` | View environment summary | When you need to check your environment configuration, logs location, or command history |
+| `/models` | List available AI models | When you want to see which AI models are available and their capabilities |
+| `/dump` | Save conversation to JSON | When you want to save the current conversation for reference or sharing |
+| `/act` | Switch to ACT mode | When you want Forge to execute commands and implement changes (this is the default mode) |
+| `/plan` | Switch to PLAN mode | When you want Forge to analyze and plan but not modify files |
+| `/help` | Display help information | When you need a reminder of available commands |
+
+## Command Details
+
+### `/new`
+
+The `/new` command clears the current conversation context and starts a fresh task. This is useful when you've completed your current task and want to begin something entirely different.
+
+```bash
+/new
+```
+
+**When to use**: Use this when switching between unrelated tasks to ensure a clean context.
+
+### `/info`
+
+The `/info` command displays information about your environment, including system details, logs location, and command history.
+
+```bash
+/info
+```
+
+**When to use**: Use this when you need to troubleshoot, find log files, or review your recent commands.
+
+### `/models`
+
+The `/models` command lists all available AI models with their capabilities and context limitations.
+
+```bash
+/models
+```
+
+**Example output**:
+```
+Available models:
+- anthropic/claude-3.7-sonnet (Context: 200K tokens)
+- anthropic/claude-3.5-haiku (Context: 200K tokens)
+```
+
+**When to use**: Use this when you want to check which models are available or understand their capabilities.
+
+### `/dump`
+
+The `/dump` command saves the current conversation in JSON format to a file for future reference.
+
+```bash
+/dump
+```
+
+**When to use**: Use this when you want to save a particularly useful conversation for documentation, sharing, or reference.
+
+### `/act`
+
+The `/act` command switches Forge to ACT mode, where it can execute commands and implement changes.
+
+```bash
+/act
+```
+
+**When to use**: This is the default mode. Use this command to switch back to ACT mode if you were previously in PLAN mode.
+
+### `/plan`
+
+The `/plan` command switches Forge to PLAN mode, where it analyzes and suggests changes without modifying files.
+
+```bash
+/plan
+```
+
+**When to use**: Use this when you want Forge to analyze your codebase and suggest changes without actually implementing them. This is useful for understanding what would happen before making changes.
+
+### `/help`
+
+The `/help` command displays information about available commands and their usage.
+
+```bash
+/help
+```
+
+**When to use**: Use this when you need a quick reminder of the available commands and their functions.
+
+## Best Practices
+
+- **Start Fresh**: Use `/new` when switching between unrelated tasks to ensure the context is clean.
+- **Preserve Knowledge**: Use `/dump` to save valuable conversations that you might want to reference later.
+- **Understand Before Acting**: Use `/plan` to see what actions Forge would take before allowing it to make changes.
+- **Check System Status**: Use `/info` when something isn't working as expected to diagnose potential issues.
+- **Select Appropriate Models**: Use `/models` to understand which model is best for your specific task.
+
+<!-- Note: This page focuses on built-in commands that enhance your interaction with Forge. For information about operating modes, see the Operation Modes section. -->

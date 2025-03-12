@@ -1,0 +1,87 @@
+---
+title: Shell Integration Features
+sidebar_position: 1
+description: "Learn about Forge's shell integration features including autocomplete and WYSIWYG experience."
+sidebar_label: Shell Integration
+---
+
+# Shell Integration Features
+
+Forge provides several features that enhance your shell experience, making it more efficient and user-friendly. This section covers key shell integration features including autocomplete, WYSIWYG shell experience, and command interruption.
+
+## Autocomplete
+
+Boost your productivity with Forge's intelligent command completion features:
+
+### File and Path Completion
+
+Type `@` followed by a partial path and press Tab to get contextual file/path completion:
+
+```bash
+# Type this and press Tab to complete file paths
+@src/com
+```
+
+This will complete to matching paths like `@src/components/` or `@src/common/`.
+
+### Command History Completion
+
+Access and reuse your command history efficiently:
+
+- **Right Arrow**: Press to complete previously executed commands
+- **Up Arrow**: Navigate through command history
+- **Ctrl+R**: Quick search through command history
+
+Example of history search with Ctrl+R:
+```
+(reverse-i-search)`git`: git commit -m "Fix login bug"
+```
+
+### Intelligent Suggestions
+
+Forge offers contextually relevant suggestions based on your current task and recent commands, helping you work more efficiently.
+
+## WYSIWYG Shell Experience
+
+Enhance your interactive shell experience with WYSIWYG (What You See Is What You Get) integration:
+
+### Rich Command Visualization
+
+Forge visualizes each command executed with colorful formatting, allowing you to see command outputs just as if you were typing them directly into your terminal.
+
+### Benefits of WYSIWYG Shell
+
+- **Visual Clarity**: Clearly distinguishes commands from their outputs
+- **Syntax Highlighting**: Code and command syntax are highlighted for better readability
+- **Error Highlighting**: Errors are visually distinct from successful operations
+- **Improved Readability**: Complex outputs are formatted for easier comprehension
+
+### Example WYSIWYG Experience
+
+When you ask Forge to list files in a directory, you'll see something like:
+
+```bash
+# This is what you'll see in the terminal
+$ ls -la
+total 32
+drwxr-xr-x  6 user  staff   192 Mar 15 14:22 .
+drwxr-xr-x  8 user  staff   256 Mar 10 09:31 ..
+-rw-r--r--  1 user  staff  1420 Mar 15 14:22 index.js
+drwxr-xr-x  4 user  staff   128 Mar 12 11:46 node_modules
+-rw-r--r--  1 user  staff   514 Mar 12 11:46 package.json
+drwxr-xr-x  4 user  staff   128 Mar 15 13:58 src
+```
+
+The command and its output are shown exactly as they would appear if you had typed the command yourself, making it easier to understand what's happening.
+
+## Command Interruption
+
+Stay in control of your shell environment with intuitive command handling:
+
+### Canceling Operations
+
+**Cancel with `CTRL+C`:** Gracefully interrupt ongoing operations, providing the flexibility to halt processes that no longer need execution.
+
+### Exiting Forge
+
+**Exit with `CTRL+D`:** Easily exit the shell session without hassle.

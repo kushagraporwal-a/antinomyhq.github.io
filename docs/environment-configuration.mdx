@@ -1,0 +1,167 @@
+---
+title: Environment Configuration
+sidebar_position: 3
+description: "Learn about environment variables and configuration options for Forge."
+sidebar_label: Environment Configuration
+---
+
+# Environment Configuration
+
+Forge can be configured through environment variables to control its behavior, API connections, and model preferences. This page describes the available configuration options and how to use them.
+
+## Configuration Methods
+
+You can configure Forge using either:
+
+1. **Environment Variables**: Set directly in your shell profile (`.bashrc`, `.zshrc`, etc.)
+2. **`.env` File**: Create a file named `.env` in your home directory
+
+The `.env` file method is recommended for most users as it keeps your configuration in one place and prevents exposing API keys in your shell history.
+
+## API Provider Configuration
+
+### API Keys
+
+Forge supports multiple AI providers and checks for API keys in the following priority order:
+
+| Environment Variable | Provider | Priority |
+|---------------------|----------|----------|
+| `FORGE_KEY` | Antinomy's provider (OpenAI-compatible) | Highest |
+| `OPENROUTER_API_KEY` | Open Router (aggregates multiple models) | High |
+| `OPENAI_API_KEY` | Official OpenAI | Medium |
+| `ANTHROPIC_API_KEY` | Official Anthropic | Low |
+
+Example configuration in `.env` file:
+
+```bash
+# For Open Router (recommended, provides access to multiple models)
+OPENROUTER_API_KEY=your_openrouter_key_here
+
+# For official OpenAI
+# OPENAI_API_KEY=your_openai_key_here
+
+# For official Anthropic
+# ANTHROPIC_API_KEY=your_anthropic_key_here
+
+# For Antinomy's provider
+# FORGE_KEY=your_forge_key_here
+```
+
+### Custom Provider URLs
+
+For OpenAI-compatible providers (including Open Router), you can customize the API endpoint URL:
+
+```bash
+# Custom OpenAI-compatible provider
+OPENAI_API_KEY=your_api_key_here
+OPENAI_URL=https://your-custom-provider.com/v1
+
+# Or with Open Router but custom endpoint
+OPENROUTER_API_KEY=your_openrouter_key_here
+OPENAI_URL=https://alternative-openrouter-endpoint.com/v1
+```
+
+This is useful for:
+- Self-hosted models with OpenAI-compatible APIs
+- Enterprise OpenAI deployments
+- Proxy services or API gateways
+- Regional API endpoints
+
+## Model Selection
+
+You can configure which models Forge uses for different tasks:
+
+```bash
+# Set the large model for complex tasks
+FORGE_LARGE_MODEL=anthropic/claude-3.7-sonnet
+
+# Set the small model for simpler tasks
+FORGE_SMALL_MODEL=anthropic/claude-3.5-haiku
+```
+
+## Shell Configuration
+
+Control which shell Forge uses and its security settings:
+
+```bash
+# Force a specific shell (default is your system shell)
+FORGE_SHELL=/bin/bash
+
+# Set the default mode (strict or standard, default is standard)
+FORGE_DEFAULT_SHELL_MODE=strict
+```
+
+## Logging Configuration
+
+Configure how Forge generates logs:
+
+```bash
+# Set the log level (debug, info, warn, error)
+FORGE_LOG_LEVEL=info
+
+# Disable logging completely
+FORGE_DISABLE_LOGGING=true
+
+# Custom log directory
+FORGE_LOG_DIR=/path/to/custom/logs
+```
+
+## Advanced Configuration
+
+For advanced users, additional configuration options are available:
+
+```bash
+# Set a custom configuration directory
+FORGE_CONFIG_DIR=/path/to/config
+
+# Enable experimental features
+FORGE_EXPERIMENTAL=true
+
+# Set request timeout in seconds
+FORGE_REQUEST_TIMEOUT=60
+```
+
+## Example Full Configuration
+
+Here's an example of a comprehensive `.env` file with various configuration options:
+
+```bash
+# API Provider
+OPENROUTER_API_KEY=your_openrouter_key_here
+
+# Custom API URL (if needed)
+# OPENAI_URL=https://custom-provider.com/v1
+
+# Model Selection
+FORGE_LARGE_MODEL=anthropic/claude-3.7-sonnet
+FORGE_SMALL_MODEL=anthropic/claude-3.5-haiku
+
+# Shell Configuration
+FORGE_SHELL=/bin/bash
+FORGE_DEFAULT_SHELL_MODE=standard
+
+# Logging
+FORGE_LOG_LEVEL=info
+FORGE_LOG_DIR=~/.forge/logs
+
+# Advanced
+FORGE_REQUEST_TIMEOUT=60
+```
+
+## Verifying Your Configuration
+
+To verify your configuration, start Forge and use the `/info` command:
+
+```bash
+forge
+```
+
+Then at the Forge prompt:
+
+```
+/info
+```
+
+This will display your current environment configuration and confirm which API provider and models are being used.
+
+<!-- Note: This page focuses on environment variables and configuration options. For information about workflow configuration files, see the Custom Workflows section. -->

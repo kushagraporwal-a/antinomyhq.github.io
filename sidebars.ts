@@ -16,9 +16,27 @@ const sidebars: SidebarsConfig = {
   docs: [
     {
       type: "category",
-      label: "Usage",
+      label: "Getting Started",
       collapsed: false,
-      items: ["getting-started"],
+      items: ["introduction", "installation", "quick-setup"],
+    },
+    {
+      type: "category",
+      label: "Core Features",
+      collapsed: false,
+      items: [
+        "commands", 
+        "operation-modes",
+        "environment-configuration", 
+        "custom-workflows",
+        "security-features"
+      ],
+    },
+    {
+      type: "category",
+      label: "Usage & Best Practices",
+      collapsed: false,
+      items: ["shell-integration", "logging", "best-practices", "why-shell"],
     },
   ],
 }

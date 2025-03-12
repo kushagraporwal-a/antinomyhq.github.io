@@ -1,0 +1,222 @@
+---
+title: Application Logging
+sidebar_position: 2
+description: "Learn about Forge's logging features and how to use logs for troubleshooting."
+sidebar_label: Logging
+---
+
+# Application Logging
+
+Forge generates detailed JSON-formatted logs that help with troubleshooting and understanding the application's behavior. These logs provide valuable insights into system operations and API interactions.
+
+## Log Location and Access
+
+Logs are stored in your application support directory with date-based filenames. The typical path looks like:
+
+```bash
+/Users/username/Library/Application Support/forge/logs/forge.log.YYYY-MM-DD
+```
+
+You can easily locate log files using the built-in command `/info`, which displays system information including the exact path to your log files.
+
+## Log Structure
+
+Forge logs are structured in JSON format, making them easy to parse and analyze. Each log entry contains fields such as:
+
+- **timestamp**: When the event occurred
+- **level**: Log level (info, warn, error, debug)
+- **message**: Description of the event
+- **context**: Additional contextual information
+- **requestId**: Identifier for API requests (when applicable)
+- **duration**: Time taken for operations (when applicable)
+
+Example log entry:
+```json
+{
+  "timestamp": "2025-03-07T14:32:18.567Z",
+  "level": "info",
+  "message": "API request completed",
+  "context": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-3.7-sonnet",
+    "promptTokens": 450,
+    "completionTokens": 320,
+    "totalTokens": 770
+  },
+  "requestId": "req_1a2b3c4d5e",
+  "duration": 1250
+}
+```
+
+## Viewing and Filtering Logs
+
+### Basic Log Viewing
+
+To view logs in real-time with automatic updates, use the `tail` command:
+
+```bash
+tail -f /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07
+```
+
+### Formatted Log Viewing with jq
+
+Since Forge logs are in JSON format, you can pipe them through `jq` for better readability:
+
+```bash
+tail -f /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07 | jq
+```
+
+This displays the logs in a nicely color-coded structure that's much easier to analyze.
+
+### Filtering Logs
+
+You can use `jq` to filter logs for specific information:
+
+```bash
+# Find all error logs
+cat /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07 | jq 'select(.level == "error")'
+
+# Find logs related to a specific request
+cat /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07 | jq 'select(.requestId == "req_1a2b3c4d5e")'
+
+# Find file operations
+cat /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07 | jq 'select(.message | contains("file"))'
+```
+
+## Log Levels
+
+Forge uses different log levels to categorize information:
+
+- **debug**: Detailed debugging information
+- **info**: General information about system operation
+- **warn**: Warning conditions that don't cause errors
+- **error**: Error conditions that affect operation
+
+You can configure the log level in your environment variables:
+
+```bash
+# In your .env file
+FORGE_LOG_LEVEL=debug
+```
+
+## Common Log Patterns
+
+### API Interactions
+
+Look for logs containing API request and response information to understand model interactions:
+
+```json
+{
+  "timestamp": "2025-03-07T14:32:10.123Z",
+  "level": "info",
+  "message": "API request started",
+  "context": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-3.7-sonnet"
+  },
+  "requestId": "req_1a2b3c4d5e"
+}
+```
+
+### File Operations
+
+File operations are logged with details about paths and actions:
+
+```json
+{
+  "timestamp": "2025-03-07T14:32:20.456Z",
+  "level": "info",
+  "message": "File created",
+  "context": {
+    "path": "/Users/username/project/src/component.js",
+    "bytes": 1024
+  }
+}
+```
+
+### Shell Commands
+
+Shell command execution is logged with command details and results:
+
+```json
+{
+  "timestamp": "2025-03-07T14:32:30.789Z",
+  "level": "info",
+  "message": "Shell command executed",
+  "context": {
+    "command": "git status",
+    "workingDirectory": "/Users/username/project",
+    "exitCode": 0
+  }
+}
+```
+
+## Troubleshooting with Logs
+
+### API Issues
+
+If you're experiencing problems with AI responses:
+
+1. Look for logs with level "error" and context related to API calls
+2. Check for rate limiting or token quota issues
+3. Verify API key validity in error messages
+
+Example search:
+```bash
+cat forge.log.2025-03-07 | jq 'select(.level == "error" and .message | contains("API"))'
+```
+
+### Performance Analysis
+
+To analyze performance:
+
+1. Look for logs with duration information
+2. Identify operations that take longer than expected
+3. Check for patterns in slow operations
+
+Example search:
+```bash
+cat forge.log.2025-03-07 | jq 'select(.duration > 2000) | {message, duration, timestamp}'
+```
+
+### File Operation Errors
+
+For file operation issues:
+
+1. Search for file-related error logs
+2. Check for permission issues or missing paths
+3. Verify file content details
+
+Example search:
+```bash
+cat forge.log.2025-03-07 | jq 'select(.level == "error" and .message | contains("file"))'
+```
+
+## Log Management
+
+### Log Rotation
+
+Forge automatically rotates logs daily, creating new files with the current date. Old logs are retained but not actively written to.
+
+### Storage Considerations
+
+Log files can grow large with heavy usage. Consider periodically archiving or removing old logs to conserve disk space:
+
+```bash
+# Compress old logs to save space
+gzip /Users/username/Library/Application Support/forge/logs/forge.log.2025-02-*
+
+# Or remove logs older than 30 days
+find /Users/username/Library/Application Support/forge/logs -name "forge.log.*" -mtime +30 -delete
+```
+
+### Log Archiving
+
+For important sessions, you might want to archive logs:
+
+```bash
+# Copy today's log to a project-specific archive
+cp /Users/username/Library/Application Support/forge/logs/forge.log.2025-03-07 ~/project-archives/refactoring-session.log
+```
+
+<!-- Note: This page focuses on logging features for troubleshooting. For information about environment configuration, see the Environment Configuration section. -->

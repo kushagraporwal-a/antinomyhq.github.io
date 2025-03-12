@@ -1,0 +1,133 @@
+---
+title: Security Features
+sidebar_position: 5
+description: "Learn about Forge's security features and how to use them effectively."
+sidebar_label: Security Features
+---
+
+# Security Features
+
+Forge implements a comprehensive security model that includes a restricted shell mode and several protective mechanisms designed to safeguard your system while providing full functionality. This documentation details the security architecture and implementation strategies for various operational contexts.
+
+## Restricted Shell Mode
+
+Forge offers a restricted shell mode (rbash) that limits potentially dangerous operations:
+
+### Enabling Restricted Mode
+
+To enable the restricted secure mode, use the `-r` flag when starting Forge:
+
+```bash
+# Standard mode (default)
+forge
+
+# Restricted secure mode
+forge -r
+```
+
+### Security Controls in Restricted Mode
+
+Restricted mode prevents several potentially risky operations:
+
+- **Directory Navigation**: Cannot change directories
+- **Environment Modification**: Cannot set or modify environment variables
+- **Absolute Path Execution**: Cannot execute commands with absolute paths
+- **Shell Option Modification**: Cannot modify shell options
+
+These restrictions help prevent inadvertent or malicious actions that could affect your system beyond the current directory.
+
+## Direct API Connections
+
+Forge connects directly to AI providers without intermediate servers:
+
+- **Local Processing**: All non-AI tasks are processed locally on your machine
+- **Direct API Calls**: API calls go directly from your machine to the AI provider
+- **No Intermediary Servers**: Your queries and responses don't pass through third-party servers
+- **Data Privacy**: Your code and commands remain between your system and the AI provider
+
+## Additional Security Measures
+
+### Local Terminal Operation
+
+Forge operates entirely within your local terminal:
+
+- **Local Execution**: All commands execute locally on your machine
+- **No Remote Code Execution**: No external servers can execute code on your system
+- **Full Visibility**: You can see every command before it executes
+- **Interrupt Capability**: You can interrupt any operation with Ctrl+C
+
+### Safe Defaults
+
+Forge is designed with safe defaults to prevent accidental damage:
+
+- **Standard Mode Constraints**: Even in standard mode, Forge has built-in safeguards
+- **Confirmation for Risky Operations**: Destructive operations require confirmation
+- **Error Handling**: Proper error handling prevents cascading failures
+
+## Security Best Practices
+
+### Environment-Specific Recommendations
+
+#### Development Environments
+
+In development environments, you might prefer convenience:
+
+```bash
+# Use standard mode for development
+forge
+```
+
+#### Production or Critical Environments
+
+For production or critical systems, prioritize security:
+
+```bash
+# Use restricted mode for production systems
+forge -r
+```
+
+### Task-Specific Security
+
+Adjust your security based on the task:
+
+- **Code Analysis**: Use restricted mode when only analyzing code
+- **System Exploration**: Use restricted mode when exploring unfamiliar systems
+- **Trusted Repositories**: Standard mode may be appropriate for trusted repositories
+
+### Additional Safeguards
+
+To further enhance security:
+
+1. **Version Control**: Always use version control and commit before significant changes
+2. **Isolated Environments**: Use containers or VMs for testing unknown code
+3. **Regular Backups**: Maintain backups of critical systems
+4. **Least Privilege**: Run Forge with the minimum permissions needed
+5. **Separate API Keys**: Use different API keys for different environments
+
+## Security FAQ
+
+### Is it safe to use Forge on my main development machine?
+
+Yes, Forge is designed for safety, especially when using restricted mode. It doesn't execute any commands without your input and control.
+
+### Can Forge execute commands without showing me?
+
+No, Forge always shows commands before execution, giving you visibility into all operations.
+
+### How does restricted mode differ from standard mode?
+
+Restricted mode adds additional constraints to prevent potentially dangerous operations like changing directories or using absolute paths.
+
+### Does Forge send my code to third-party servers?
+
+Forge only sends the content required for AI processing to your configured AI provider. No code is sent to any other third-party servers.
+
+### Can I use Forge in a corporate environment with strict security?
+
+Yes, but you should:
+1. Get approval from your security team
+2. Use restricted mode
+3. Consider using a self-hosted model or enterprise AI provider
+4. Follow your organization's data handling policies
+
+<!-- Note: This page focuses on security features. For general setup information, see the Quick Setup guide. -->
