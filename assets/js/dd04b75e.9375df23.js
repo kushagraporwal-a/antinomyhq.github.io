@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[672],{3024:e=>{e.exports=JSON.parse('{"authors":[{"name":"Antinomy Team","title":"The Antinomy Team","url":"https://antinomy.ai","imageURL":"/icons/companies/antinomy-logo.svg","key":"antinomy","page":null,"count":1}]}')}}]);

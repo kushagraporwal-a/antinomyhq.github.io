@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent Blog Posts","items":[{"title":"Welcome to the Antinomy Blog","permalink":"/blog/welcome-to-antinomy-blog","unlisted":false,"date":"2025-02-24T00:00:00.000Z"}]}')}}]);
