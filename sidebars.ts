@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Getting Started",
       collapsed: false,
-      items: ["introduction", "installation", "quick-setup"],
+      items: ["introduction", "installation", "quick-setup", "shell-integration"],
     },
     {
       type: "category",
@@ -31,12 +31,6 @@ const sidebars: SidebarsConfig = {
         "custom-workflows",
         "security-features"
       ],
-    },
-    {
-      type: "category",
-      label: "Usage & Best Practices",
-      collapsed: false,
-      items: ["shell-integration", "logging", "best-practices", "why-shell"],
     },
   ],
 }
