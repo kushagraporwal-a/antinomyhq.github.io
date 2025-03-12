@@ -92,7 +92,7 @@ export default {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "icons/companies/antinomy-logo.svg",
+    image: "tc-og-2.png",
     algolia: {
       appId: "748OFOGLOE",
       apiKey: "878290b0384a15f677fb6a4f94fe34cb",
@@ -106,8 +106,8 @@ export default {
     navbar: {
       hideOnScroll: true,
       logo: {
-        alt: "My Site Logo",
-        src: "icons/companies/antinomy-logo.svg",
+        alt: "Antinomy",
+        src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
       },
       items: [
         {to: "/", label: "Home", position: "left", activeBaseRegex: "^/$"},
