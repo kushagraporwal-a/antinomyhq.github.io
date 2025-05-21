@@ -13,7 +13,7 @@ export const algoliaConstants = {
   categoryFacet: "category",
   searchModalPlaceholder: "What do you want to now about code forge ?",
 }
-
+// FIXME: change the list of items and logos
 export const companies: PartnerImage[] = [
   {name: "Dream11", logo: require("@site/static/icons/companies/dream11.png").default},
   {name: "AfterShip", logo: require("@site/static/icons/companies/aftership.png").default},
@@ -292,31 +292,33 @@ export const tailcallFeatures: TailcallFeatures[] = [
 export const benefits: Benefits[] = [
   {
     id: 1,
-    title: "Secure",
+    title: "Developer-Controlled & Secure",
     description:
-      "Code forge runs on your local machine and does not send any data to the cloud. You can use it with your own API keys and maintain complete control.",
+      "Your code never leaves your machine – Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
     image: require("@site/static/images/home/secure-icon.png").default,
     redirection_url: "/docs/",
   },
   {
     id: 2,
-    title: "Contextual Code Generation",
-    description: "Craft production-ready code that perfectly aligns with your architecture and standards",
-    image: require("@site/static/images/home/performance.png").default,
-    redirection_url: "/docs",
-  },
-  {
-    id: 5,
-    title: "Customizable",
-    description: "Design your own workflows with configuration and use same tool for multiple use cases.",
+    title: "Seamless Terminal Integration",
+    description:
+      "No new IDE to learn. Forge lives in your terminal and plugs into your existing workflow with near zero setup. It understands your entire codebase and git history.",
     image: require("@site/static/images/home/customizable-icon.png").default,
     redirection_url: "/docs",
   },
   {
-    id: 7,
-    title: "Open Source",
+    id: 3,
+    title: "Model-Agnostic Flexibility",
     description:
-      "Full source code visibility with model flexibility. Use your own API keys and maintain complete control over your AI tools.",
+      "Leverage the best of AI now and in the future. Forge works with OpenAI, Anthropic Claude, and hundreds of other models (300+ supported) including open-source and on-premise models.",
+    image: require("@site/static/images/home/performance.png").default,
+    redirection_url: "/docs",
+  },
+  {
+    id: 4,
+    title: "Customizable & Extensible",
+    description:
+      "Adapt Forge to how you work. Define custom workflows or commands. Being open-source, Forge invites you to extend its capabilities – whether automating repetitive tasks or integrating with your team's internal tools.",
     image: require("@site/static/images/home/open-source-icon.png").default,
     redirection_url: "https://github.com/antinomyhq/forge",
   },

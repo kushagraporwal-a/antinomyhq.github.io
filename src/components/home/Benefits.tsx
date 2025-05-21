@@ -1,7 +1,6 @@
 import React from "react"
 import Heading from "@theme/Heading"
 import SectionTitle from "../shared/SectionTitle"
-import Partners from "./Partners"
 import BenefitsCard from "./BenefitsCard"
 import Section from "../shared/Section"
 
@@ -16,8 +15,7 @@ const Benefits = (): JSX.Element => {
               as="h3"
               className="text-title-large sm:text-display-tiny lg:text-display-small text-white md:w-[65%]"
             >
-              Transform into a 100x developer with Code-Forge—solve complex engineering challenges at lightning speed
-              directly from your terminal.
+              Key Benefits - AI Assistance Without Compromises
             </Heading>
           </div>
         </div>
