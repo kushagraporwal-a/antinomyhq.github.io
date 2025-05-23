@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent Blog Posts","items":[{"title":"Claude 4 First Impressions: A Developer\'s Perspective","permalink":"/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough","unlisted":false,"date":"2025-05-23T00:00:00.000Z"}]}')}}]);
