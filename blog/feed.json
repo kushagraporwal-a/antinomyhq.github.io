@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Forge Blog",
+    "title": "Forge Code Blog",
     "home_page_url": "https://antinomyhq.github.io/blog/",
-    "description": "Forge Blog",
+    "description": "Forge Code Blog",
     "items": [
         {
             "id": "https://antinomyhq.github.io/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough/",
