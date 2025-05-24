@@ -16,6 +16,20 @@ export default {
     {
       tagName: "script",
       attributes: {
+        defer: "defer",
+        "data-domain": "forgecode.dev",
+        src: "https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML:
+        "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
+    },
+    {
+      tagName: "script",
+      attributes: {
         id: "chatbotscript",
         "data-accountid": "CZPG9aVdtk59Tjz4SMTu8w==",
         "data-websiteid": "75VGI0NlBqessD4BQn2pFg==",
