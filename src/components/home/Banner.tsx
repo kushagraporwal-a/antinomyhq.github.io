@@ -23,18 +23,32 @@ const Banner = (): JSX.Element => {
           </p>
           <div className="hidden sm:flex justify-center mt-SPACE_06 sm:mt-SPACE_10 space-x-SPACE_04 sm:space-x-SPACE_06">
             <LinkButton
+              title="Sign Up"
+              href={pageLinks.signup}
+              theme={Theme.Dark}
+              width="small"
+              onClick={() => analyticsHandler("Home Page", "Click", "Sign Up")}
+            />
+            <LinkButton
               title="Get Started"
-              href={pageLinks.docs}
+              href={pageLinks.installation}
               theme={Theme.Light}
               width="small"
               onClick={() => analyticsHandler("Home Page", "Click", "Get Started")}
             />
           </div>
 
-          <div className="sm:hidden flex justify-between md:justify-center mt-SPACE_06 sm:mt-SPACE_10 space-x-SPACE_04 sm:space-x-SPACE_06">
+          <div className="sm:hidden flex flex-col gap-SPACE_04 mt-SPACE_06 sm:mt-SPACE_10">
+            <LinkButton
+              title="Sign Up"
+              href={pageLinks.signup}
+              theme={Theme.Dark}
+              onClick={() => analyticsHandler("Home Page", "Click", "Sign Up")}
+              width="full"
+            />
             <LinkButton
               title="Get Started"
-              href={pageLinks.docs}
+              href={pageLinks.installation}
               theme={Theme.Light}
               onClick={() => analyticsHandler("Home Page", "Click", "Get Started")}
               width="full"
