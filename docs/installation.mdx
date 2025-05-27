@@ -7,7 +7,24 @@ sidebar_label: Installation
 
 # Installing Forge
 
-Forge can be installed on Windows, macOS, and Linux operating systems. Follow the instructions for your preferred method below.
+Before installing Forge, you'll need to sign up for an account to get started.
+
+## Sign Up for Forge
+
+1. [**Sign up**](https://app.antinomy.ai/app/)
+2. **Create your account**: You can sign up using your Google or GitHub account for quick authentication
+3. **Create API Key**: Once logged in, generate your Forge API key from your account dashboard
+4. **Set up environment**: Create a `.env` file in your home directory and add your API key:
+   ```bash
+   # ~/.env or in your project directory
+   FORGE_KEY=your_forge_api_key_here
+   ```
+
+Once you have your account and API key set up, you can proceed with the installation.
+
+## Installation
+
+Forge can be installed on Windows, macOS, and Linux operating systems. The recommended method is using npm, which works consistently across all platforms.
 
 ## NPM Installation (Recommended)
 
@@ -25,9 +42,8 @@ This method provides a consistent installation experience across all operating s
 
 ## Alternative Installation Methods
 
-While npm is the recommended approach, you can also install Forge using these platform-specific methods:
-
-### macOS: Homebrew
+<details>
+<summary>macOS: Homebrew</summary>
 
 Using Homebrew (macOS package manager):
 
@@ -41,7 +57,10 @@ brew install code-forge
 
 If you don't have Homebrew installed, you can install it by following the instructions at [brew.sh](https://brew.sh/).
 
-### Linux
+</details>
+
+<details>
+<summary>Linux Installation</summary>
 
 Choose either of these methods to install Forge on Linux:
 
@@ -57,6 +76,8 @@ curl -L https://raw.githubusercontent.com/antinomyhq/forge/main/install.sh | bas
 wget -qO- https://raw.githubusercontent.com/antinomyhq/forge/main/install.sh | bash
 ```
 
+</details>
+
 ## Verifying Your Installation
 
 After installation, verify that Forge is installed correctly by checking the version:
@@ -69,14 +90,15 @@ You should see output displaying the version of Forge that you've installed.
 
 ## Updating Forge
 
-To update Forge to the latest version:
-
-### NPM (All Platforms)
+To update Forge to the latest version using npm:
 
 ```bash
 # Update globally installed package
 npm update -g @antinomyhq/forge
 ```
+
+<details>
+<summary>Alternative Update Methods</summary>
 
 ### macOS: Homebrew
 
@@ -92,8 +114,10 @@ Run the same installation command again to get the latest version:
 curl -L https://raw.githubusercontent.com/antinomyhq/forge/main/install.sh | bash
 ```
 
-## Next Steps
+</details>
 
-After installing Forge, follow the [Quick Setup](../quick-setup) guide to configure your environment and get started using Forge.
+## BYOK (Bring Your Own Key)
+
+After installing Forge, you can also configure other AI providers. Follow the [Provider Configuration](../quick-setup) guide to set up alternative providers like OpenAI, Anthropic, or OpenRouter.
 
 <!-- Note: This page focuses specifically on installation. Environment setup is covered in the Quick Setup guide. -->

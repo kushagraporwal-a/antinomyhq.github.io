@@ -1,17 +1,17 @@
 ---
-title: Quick Setup
+title: Using Different Providers
 sidebar_position: 3
-description: "Get Forge up and running with a basic configuration."
-sidebar_label: Quick Setup
+description: "Configure Forge to work with your preferred AI provider."
+sidebar_label: Different Providers
 ---
 
-# Quick Setup
+# Using Different Providers
 
-After [installing Forge](../installation) using npm or another method, you'll need to configure it to work with your AI provider of choice. This guide will walk you through the essential setup steps.
+With Forge installed, you can configure it to work with your AI provider of choice. This guide will walk you through configuring different providers and understanding their capabilities.
 
 ## Setting Up API Credentials
 
-Forge requires an API key to access AI models. Follow these steps to set up your credentials:
+Forge requires an API key to access AI models. Follow these steps to configure your preferred provider:
 
 1. Create a `.env` file in your home directory:
 
@@ -32,7 +32,7 @@ You can get an API key at [Open Router](https://openrouter.ai/).
 
 Forge automatically detects and uses your API keys from environment variables. It checks for keys in the following priority order:
 
-1. `FORGE_KEY` - Antinomy's provider (OpenAI-compatible)
+1. `FORGE_KEY` - Forge's provider (OpenAI-compatible)
 2. `OPENROUTER_API_KEY` - Open Router provider (aggregates multiple models)
 3. `OPENAI_API_KEY` - Official OpenAI provider
 4. `ANTHROPIC_API_KEY` - Official Anthropic provider
@@ -55,15 +55,15 @@ ANTHROPIC_API_KEY=your_anthropic_key_here
 FORGE_KEY=your_forge_key_here
 ```
 
-## Starting Forge
+## Using Forge with Your Provider
 
-Once you've set up your API credentials, you can start Forge by simply typing:
+Once you've configured your API credentials, you can start using Forge:
 
 ```bash
 forge
 ```
 
-This will launch Forge in its default configuration. You'll see a prompt where you can start entering your tasks.
+This will launch Forge using your configured provider. You'll see a prompt where you can start entering your tasks.
 
 ## Basic Commands
 
@@ -76,11 +76,11 @@ Here are a few basic commands to get you started:
 
 ## Next Steps
 
-Now that you have Forge installed and configured, check out these resources to learn more:
+Now that you have Forge configured with your preferred provider, check out these resources to learn more:
 
 - [Built-in Commands](../commands): Learn about Forge's special commands
 - [Custom Commands](../custom-commands): Discover how to create your own commands
 - [Operation Modes](../operation-modes): Understand the different modes Forge can operate in
 - [Environment Configuration](../environment-configuration): Explore advanced configuration options
 
-<!-- Note: This guide focuses on the essential setup needed to get started. Advanced configuration is covered in other sections. -->
+<!-- Note: This guide focuses on configuring providers. Advanced configuration is covered in other sections. -->
