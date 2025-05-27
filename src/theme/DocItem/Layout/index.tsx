@@ -47,7 +47,7 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme={"https://antinomy.ai/css/giscus-theme.css"}
+        theme={"https://forgecode.dev/css/giscus-theme.css"}
         lang="en"
         strict="0"
         loading="lazy"
