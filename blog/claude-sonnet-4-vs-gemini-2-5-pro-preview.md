@@ -10,7 +10,7 @@ tags:
     "Model Comparison",
     "Developer Tools",
   ]
-date: 2025-01-26
+date: 2025-05-26
 description: "After extensive testing with real-world coding challenges, I compared Claude Sonnet 4 and Gemini 2.5 Pro Preview. The results reveal stark differences in execution efficiency, cost-effectiveness, and adherence to instructions."
 hide_table_of_contents: false
 ---
