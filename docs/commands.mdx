@@ -7,170 +7,138 @@ sidebar_label: Built-in Commands
 
 # Built-in Commands
 
-Forge provides a suite of built-in commands prefixed with a forward slash (`/`) that enhance workflow efficiency and provide system control. These commands can be used directly in the Forge terminal interface.
+Forge offers several built-in commands to enhance your interaction. These commands can be entered directly in the Forge CLI by typing the command name preceded by a forward slash.
 
-## Available Slash Commands
+## Available Commands
 
-| Command   | Description               | When to Use                                                                              |
-| --------- | ------------------------- | ---------------------------------------------------------------------------------------- |
-| `/new`    | Start a new task          | When you've completed your current task and want to begin a fresh conversation           |
-| `/info`   | View environment summary  | When you need to check your environment configuration, logs location, or command history |
-| `/models` | List available AI models  | When you want to see which AI models are available and their capabilities                |
-| `/dump`   | Save conversation to JSON | When you need to debug issues or report problems to the development team                 |
-| `/act`    | Switch to ACT mode        | When you want Forge to execute commands and implement changes (this is the default mode) |
-| `/plan`   | Switch to PLAN mode       | When you want Forge to analyze and plan but not modify files                             |
-| `/help`   | Display help information  | When you need a reminder of available commands                                           |
-| `/exit`   | Exit the application      | When you want to cleanly exit the Forge CLI                                              |
-
-## Command Details
-
-### `/new`
+<details>
+<summary><code>/new</code> - Start a new task when you've completed your current one</summary>
 
 The `/new` command clears the current conversation context and starts a fresh task. This is useful when you've completed your current task and want to begin something entirely different.
 
-```bash
+**Usage:**
+
+```
 /new
 ```
 
-**When to use**: Use this when switching between unrelated tasks to ensure a clean context.
+**When to use:** Use this when switching between unrelated tasks to ensure a clean context.
 
-### `/info`
+</details>
+
+<details>
+<summary><code>/info</code> - View environment summary, logs folder location, and command history</summary>
 
 The `/info` command displays information about your environment, including system details, logs location, and command history.
 
-```bash
+**Usage:**
+
+```
 /info
 ```
 
-**Example output**:
+This will display information about your environment including:
+
+- Operating system details
+- Current working directory
+- Log file location
+- Application version
+- Available models
+
+**When to use:** Use this when you need to troubleshoot, find log files, or review your recent commands.
+
+</details>
+
+<details>
+<summary><code>/model</code> - Select and set a specific model in your forge.yaml configuration</summary>
+
+The `/model` command allows you to interactively select from available AI models and set your preferred model in the project's forge.yaml configuration file.
+
+**Usage:**
 
 ```
-System Information:
-- OS: macOS Monterey 12.6
-- Architecture: x86_64
-- Shell: /bin/zsh
-
-Environment:
-- Current Directory: /Users/username/projects
-- Forge Version: 0.8.2
-
-Log Files:
-- Location: /Users/username/.forge/logs
-- Debug Log: debug.log
-- Error Log: error.log
-
-Recent Commands:
-1. analyze this codebase
-2. fix the bug in auth.js
-3. /models
+/model
 ```
 
-**When to use**: Use this when you need to troubleshoot, find log files, or review your recent commands.
+This will:
 
-### `/models`
+1. Display an interactive selection menu with all available models
+2. Update the standard_model anchor in your forge.yaml file with your selection
+3. Confirm the change with a success message
 
-The `/models` command lists all available AI models with their capabilities and context limitations.
+The model choice will persist between sessions as it's stored in your configuration file.
 
-```bash
-/models
-```
+**When to use:** Use this when you want to change which AI model Forge uses for processing your requests.
 
-**Example output**:
+</details>
 
-```
-Available models:
-- anthropic/claude-3.7-sonnet (Context: 200K tokens)
-- anthropic/claude-3.5-haiku (Context: 200K tokens)
-```
-
-**When to use**: Use this when you want to check which models are available or understand their capabilities.
-
-### `/dump`
+<details>
+<summary><code>/dump</code> - Save the current conversation in JSON format to a file for reference</summary>
 
 The `/dump` command saves the current conversation in JSON format to a file for future reference.
 
-```bash
+**Usage:**
+
+```
 /dump
 ```
 
-**Example output**:
+**When to use:** Use this when you need to debug issues, inspect the conversation context, or report problems to the development team.
 
-```
-Conversation saved to: /Users/username/2023-03-15_14-22-37-dump.json
-```
+</details>
 
-**When to use**: Use this when you need to debug issues, inspect the conversation context, or report problems to the development team.
-
-### `/act`
+<details>
+<summary><code>/act</code> - Switch to ACT mode (default), allowing Forge to execute commands and implement changes</summary>
 
 The `/act` command switches Forge to ACT mode, where it can execute commands and implement changes.
 
-```bash
+**Usage:**
+
+```
 /act
 ```
 
-**Example output**:
+**When to use:** This is the default mode. Use this command to switch back to ACT mode if you were previously in PLAN mode.
 
-```
-Switched to ACT mode. Forge will now implement changes when instructed.
-```
+</details>
 
-**When to use**: This is the default mode. Use this command to switch back to ACT mode if you were previously in PLAN mode.
-
-### `/plan`
+<details>
+<summary><code>/plan</code> - Switch to PLAN mode, where Forge analyzes and plans but doesn't modify files</summary>
 
 The `/plan` command switches Forge to PLAN mode, where it analyzes and suggests changes without modifying files.
 
-```bash
+**Usage:**
+
+```
 /plan
 ```
 
-**Example output**:
+**When to use:** Use this when you want Forge to analyze your codebase and suggest changes without actually implementing them. This is useful for understanding what would happen before making changes.
+
+</details>
+
+## Native Shell Commands
+
+Forge allows you to execute native shell commands directly from the CLI by prefixing them with `!`:
 
 ```
-Switched to PLAN mode. Forge will analyze and plan but NOT implement changes.
+!ls -la
+!git status
+!npm install
 ```
 
-**When to use**: Use this when you want Forge to analyze your codebase and suggest changes without actually implementing them. This is useful for understanding what would happen before making changes.
+These commands will be executed in your current working directory, and their output will be displayed in the console.
 
-### `/help`
+## Usage Examples
 
-The `/help` command displays information about available commands and their usage.
+To use any of these commands, simply type them in the Forge CLI:
 
-```bash
-/help
+```
+/info
 ```
 
-**When to use**: Use this when you need a quick reminder of the available commands and their functions.
+For native shell commands, prefix with `!`:
 
-### `/exit`
-
-The `/exit` command cleanly exits the Forge CLI application.
-
-```bash
-/exit
 ```
-
-**When to use**: Use this when you want to close Forge. Alternatively, you can press `Ctrl+D`.
-
-## Custom Commands
-
-In addition to these built-in commands, Forge allows you to define your own custom commands in your `forge.yaml` configuration file. These custom commands can be used to trigger specific agents to perform specialized tasks.
-
-For information about creating custom commands, see the [Custom Commands](/docs/custom-commands) documentation.
-
-## Best Practices
-
-- **Start Fresh**: Use `/new` when switching between unrelated tasks to ensure the context is clean.
-- **Debug Context**: Use `/dump` for debugging purposes when you need to inspect the conversation context or report issues.
-- **Understand Before Acting**: Use `/plan` to see what actions Forge would take before allowing it to make changes.
-- **Check System Status**: Use `/info` when something isn't working as expected to diagnose potential issues.
-- **Select Appropriate Models**: Use `/models` to understand which model is best for your specific task.
-- **Create Custom Commands**: Define your own [custom commands](/docs/custom-commands) for project-specific operations and workflows.
-
-## Related Documentation
-
-- [Custom Commands](../custom-commands) - Learn how to define your own slash commands
-- [Operation Modes](../operation-modes) - Learn about ACT and PLAN modes in detail
-- [Tools Reference](../tools-reference) - Comprehensive documentation of all available tools
-- [Error Handling](../error-handling) - How Forge handles and recovers from errors
+!git status
+```
