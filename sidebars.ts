@@ -44,10 +44,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "environment-configuration", // Moved from Core Features
-        "agent-configuration",
         "context-compaction",
         "custom-commands", // Moved from Basic Features to Advanced Configuration
-        "custom-workflows", // Moved from Core Features as it's an advanced topic
         "security-features", // Moved from Core Features as it's a configuration concern
       ],
     },
