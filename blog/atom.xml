@@ -194,7 +194,7 @@
 <p>The choice ultimately depends on whether your development context prioritizes creative exploration or reliable execution within defined parameters.</p>]]></content>
         <author>
             <name>Forge</name>
-            <uri>https://forgecode.dev</uri>
+            <uri>https://github.com/antinomyhq/forge</uri>
         </author>
         <category label="Claude 4" term="Claude 4"/>
         <category label="Gemini 2.5" term="Gemini 2.5"/>
@@ -280,7 +280,7 @@
 <p>Claude 4 delivers on its ambitious promises with measurable impact on development productivity and code quality. For teams serious about AI-assisted development, this release warrants immediate evaluation.</p>]]></content>
         <author>
             <name>Forge</name>
-            <uri>https://forgecode.dev</uri>
+            <uri>https://github.com/antinomyhq/forge</uri>
         </author>
         <category label="Claude 4" term="Claude 4"/>
         <category label="Anthropic" term="Anthropic"/>
