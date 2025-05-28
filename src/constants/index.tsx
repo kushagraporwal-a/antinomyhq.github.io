@@ -330,24 +330,25 @@ export const useCases: UseCase[] = [
   {
     id: 1,
     title: "Code Understanding",
-    description: "Quickly grasp unfamiliar codebases, understand complex logic, and navigate large projects with intelligent explanations.",
+    description:
+      "Quickly grasp unfamiliar codebases, understand complex logic, and navigate large projects with intelligent explanations.",
     icon: require("@site/static/images/home/dev-experience.png").default,
     examples: [
       "Explain this function's purpose and how it works",
       "Show me the data flow through this module",
-      "What does this regex pattern match?"
-    ]
+      "What does this regex pattern match?",
+    ],
   },
   {
     id: 2,
-    title: "Feature Implementation", 
+    title: "Feature Implementation",
     description: "Transform ideas into working code with natural language descriptions and intelligent scaffolding.",
     icon: require("@site/static/images/home/orchestration.png").default,
     examples: [
       "Add user authentication to this endpoint",
       "Create a responsive navbar component",
-      "Implement pagination for this API"
-    ]
+      "Implement pagination for this API",
+    ],
   },
   {
     id: 3,
@@ -357,19 +358,20 @@ export const useCases: UseCase[] = [
     examples: [
       "Why is this test failing?",
       "Fix this memory leak in my React component",
-      "Diagnose this database connection issue"
-    ]
+      "Diagnose this database connection issue",
+    ],
   },
   {
     id: 4,
     title: "Code Reviews & Quality",
-    description: "Enhance code quality with intelligent suggestions, security checks, and best practice recommendations.",
+    description:
+      "Enhance code quality with intelligent suggestions, security checks, and best practice recommendations.",
     icon: require("@site/static/images/home/secure-icon.png").default,
     examples: [
       "Review this pull request for security issues",
       "Suggest performance improvements",
-      "Check this code against best practices"
-    ]
+      "Check this code against best practices",
+    ],
   },
   {
     id: 5,
@@ -379,19 +381,20 @@ export const useCases: UseCase[] = [
     examples: [
       "How does async/await work in this context?",
       "Explain this design pattern",
-      "Show me examples of dependency injection here"
-    ]
+      "Show me examples of dependency injection here",
+    ],
   },
   {
     id: 6,
     title: "Database Design & Queries",
-    description: "Design efficient schemas, optimize queries, and manage database migrations with intelligent assistance.",
+    description:
+      "Design efficient schemas, optimize queries, and manage database migrations with intelligent assistance.",
     icon: require("@site/static/images/home/performance.png").default,
     examples: [
       "Design a schema for this user management system",
       "Optimize this slow SQL query",
-      "Create a migration for these schema changes"
-    ]
+      "Create a migration for these schema changes",
+    ],
   },
   {
     id: 7,
@@ -401,8 +404,8 @@ export const useCases: UseCase[] = [
     examples: [
       "Refactor this class to use modern patterns",
       "Convert this to TypeScript",
-      "Split this monolithic function into modules"
-    ]
+      "Split this monolithic function into modules",
+    ],
   },
   {
     id: 8,
@@ -412,9 +415,9 @@ export const useCases: UseCase[] = [
     examples: [
       "What changed in the last 5 commits?",
       "Help me resolve this merge conflict",
-      "Find when this bug was introduced"
-    ]
-  }
+      "Find when this bug was introduced",
+    ],
+  },
 ]
 
 export const enterpriseFeatures: EnterpriseFeature[] = [

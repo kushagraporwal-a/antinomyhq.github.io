@@ -37,9 +37,7 @@ const WhyChooseForge = (): JSX.Element => {
                   : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
               }`}
             >
-              <span className="flex items-center gap-2">
-                {useCase.title}
-              </span>
+              <span className="flex items-center gap-2">{useCase.title}</span>
             </button>
           ))}
         </div>
@@ -54,45 +52,43 @@ const WhyChooseForge = (): JSX.Element => {
                   : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
               }`}
             >
-              <span className="flex items-center gap-2">
-                {useCase.title}
-              </span>
+              <span className="flex items-center gap-2">{useCase.title}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Selected Use Case Content */}
-      {useCases.map((useCase) => (
-        selectedUseCase === useCase.id && (
-          <div key={useCase.id} className="bg-gradient-to-br from-tailCall-dark-500 to-tailCall-dark-600 rounded-2xl p-8 max-w-5xl mx-auto shadow-2xl border border-tailCall-dark-400">
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-grow w-full lg:w-auto">
-                <h3 className="text-3xl font-bold text-white mb-6 text-center lg:text-left">{useCase.title}</h3>
-                <p className="text-lg text-tailCall-light-500 mb-8 leading-relaxed text-center lg:text-left">
-                  {useCase.description}
-                </p>
-                <div className="space-y-6">
-                  <h4 className="text-xl font-medium text-white font-space-grotesk">
-                    Common Tasks
-                  </h4>
-                  <div className="grid gap-4">
-                    {useCase.examples.map((example, index) => (
-                      <div key={index} className="group hover:scale-[1.01] transition-transform duration-200">
-                        <div className="bg-gradient-to-r from-tailCall-dark-700 via-tailCall-dark-600 to-tailCall-dark-700 rounded-xl p-5 border border-tailCall-dark-400 hover:border-tailCall-yellow/30 transition-all duration-300">
-                          <p className="text-white text-base leading-relaxed font-medium">
-                            "{example}"
-                          </p>
+      {useCases.map(
+        (useCase) =>
+          selectedUseCase === useCase.id && (
+            <div
+              key={useCase.id}
+              className="bg-gradient-to-br from-tailCall-dark-500 to-tailCall-dark-600 rounded-2xl p-8 max-w-5xl mx-auto shadow-2xl border border-tailCall-dark-400"
+            >
+              <div className="flex flex-col lg:flex-row items-start gap-8">
+                <div className="flex-grow w-full lg:w-auto">
+                  <h3 className="text-3xl font-bold text-white mb-6 text-center lg:text-left">{useCase.title}</h3>
+                  <p className="text-lg text-tailCall-light-500 mb-8 leading-relaxed text-center lg:text-left">
+                    {useCase.description}
+                  </p>
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-medium text-white font-space-grotesk">Common Tasks</h4>
+                    <div className="grid gap-4">
+                      {useCase.examples.map((example, index) => (
+                        <div key={index} className="group hover:scale-[1.01] transition-transform duration-200">
+                          <div className="bg-gradient-to-r from-tailCall-dark-700 via-tailCall-dark-600 to-tailCall-dark-700 rounded-xl p-5 border border-tailCall-dark-400 hover:border-tailCall-yellow/30 transition-all duration-300">
+                            <p className="text-white text-base leading-relaxed font-medium">"{example}"</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )
-      ))}
+          ),
+      )}
 
       <div className="mt-14 text-center">
         <p className="text-lg italic max-w-3xl mx-auto mb-14">
