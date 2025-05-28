@@ -1,12 +1,12 @@
 name: Feature request
-description: Suggest a feature to improve Tailcall
+description: Suggest a feature to improve Forge
 title: "[feature]: "
 labels: [Enhancement]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a feature for Tailcall
+        Thank you for taking the time to request a feature for Forge
   - type: checkboxes
     attributes:
       label: Is there an existing feature request for this?
@@ -31,10 +31,8 @@ body:
     attributes:
       label: Repository
       options:
-        - tailcall
-        - tailcallhq.github.io
-        - homebrew-tailcall
-        - tailcall-on-aws
+        - forge
+        - antinomyhq.github.io
     validations:
       required: true
   - type: markdown

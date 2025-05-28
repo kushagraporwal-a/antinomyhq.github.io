@@ -171,8 +171,8 @@ export default {
       {
         path: "blog",
         editLocalizedFiles: false,
-        blogTitle: "Feed of Tailcall blogs",
-        blogDescription: "List of blog posts on Tailcall blog",
+        blogTitle: "Feed of ForgeCode blogs",
+        blogDescription: "List of blog posts on ForgeCode blog",
         blogSidebarCount: 10,
         blogSidebarTitle: "Recent Blog Posts",
         routeBasePath: "blog",

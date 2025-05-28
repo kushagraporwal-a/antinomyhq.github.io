@@ -1,5 +1,5 @@
 name: Documentation Update📄
-description: Suggest an improvement/addition in the Tailcall Server Docs.
+description: Suggest an improvement/addition in the Forge Docs.
 title: "[docs]: "
 labels: [Documentation]
 
@@ -20,10 +20,8 @@ body:
     attributes:
       label: Repository
       options:
-        - tailcall
-        - tailcallhq.github.io
-        - homebrew-tailcall
-        - tailcall-on-aws
+        - forge
+        - antinomyhq.github.io
     validations:
       required: true
   - type: markdown
