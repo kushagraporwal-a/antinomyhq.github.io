@@ -16,9 +16,12 @@ export const algoliaConstants = {
 // FIXME: change the list of items and logos
 export const companies: PartnerImage[] = [
   {name: "Dream11", logo: require("@site/static/icons/companies/dream11.png").default},
-  {name: "AfterShip", logo: require("@site/static/icons/companies/aftership.png").default},
-  {name: "Optum", logo: require("@site/static/icons/companies/optum.png").default},
-  {name: "Sinch", logo: require("@site/static/icons/companies/sinch.png").default},
+  {name: "Agoda", logo: require("@site/static/icons/companies/agoda.png").default},
+  {name: "Amazon", logo: require("@site/static/icons/companies/amazon.png").default},
+  {name: "Branch", logo: require("@site/static/icons/companies/branch.png").default},
+  {name: "ClearTax", logo: require("@site/static/icons/companies/cleartax.png").default},
+  {name: "Commvault", logo: require("@site/static/icons/companies/commvault.png").default},
+  {name: "CoreEdge", logo: require("@site/static/icons/companies/coredge.png").default},
 ]
 
 export const partnerImages: PartnerImage[] = [
