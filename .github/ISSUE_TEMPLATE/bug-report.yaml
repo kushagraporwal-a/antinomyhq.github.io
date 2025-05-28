@@ -1,5 +1,5 @@
 name: Bug report
-description: Create a bug report to help us improve Tailcall
+description: Create a bug report to help us improve Forge
 title: "[bug]: "
 labels: [bug]
 body:
@@ -41,10 +41,8 @@ body:
     attributes:
       label: Repository
       options:
-        - tailcall
-        - tailcallhq.github.io
-        - homebrew-tailcall
-        - tailcall-on-aws
+        - forge
+        - antinomyhq.github.io
     validations:
       required: true
   - type: markdown
