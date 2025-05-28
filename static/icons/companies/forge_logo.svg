@@ -1,0 +1,162 @@
+<svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define gradients for professional appearance -->
+    <linearGradient id="botBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="botHeadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="eyeGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e0;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="antennaGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#4299e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2b6cb0;stop-opacity:0.7" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Bot body (main container) -->
+  <rect x="0" y="50" width="600" height="450" rx="60" ry="60" 
+        fill="url(#botBodyGradient)" stroke="#718096" stroke-width="2"/>
+  
+  <!-- Bot head -->
+  <rect x="200" y="0" width="200" height="100" rx="50" ry="50" 
+        fill="url(#botHeadGradient)" stroke="#718096" stroke-width="2"/>
+  
+  <!-- Antenna -->
+  <rect x="299" y="-15" width="2" height="20" fill="#718096"/>
+  
+  <!-- Antenna glow (with pulsing animation) -->
+  <circle cx="300" cy="-23" r="5" fill="url(#antennaGlow)">
+    <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Left Eye -->
+  <circle cx="250" cy="35" r="17.5" fill="url(#eyeGradient)" stroke="#cbd5e0" stroke-width="1"/>
+  
+  <!-- Right Eye -->
+  <circle cx="350" cy="35" r="17.5" fill="url(#eyeGradient)" stroke="#cbd5e0" stroke-width="1"/>
+  
+  <!-- Stars in left eye (with twinkling animation) -->
+  <text x="245" y="30" font-family="serif" font-size="6" fill="#4299e1">★
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </text>
+  <text x="254" y="32" font-family="serif" font-size="5" fill="#4299e1">✦
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </text>
+  <text x="248" y="40" font-family="serif" font-size="6" fill="#4299e1">★
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </text>
+  <text x="252" y="27" font-family="serif" font-size="4" fill="#4299e1">✧
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Stars in right eye (with twinkling animation) -->
+  <text x="345" y="30" font-family="serif" font-size="6" fill="#4299e1">★
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  </text>
+  <text x="354" y="32" font-family="serif" font-size="5" fill="#4299e1">✦
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+  </text>
+  <text x="348" y="40" font-family="serif" font-size="6" fill="#4299e1">★
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.3s" repeatCount="indefinite"/>
+  </text>
+  <text x="352" y="27" font-family="serif" font-size="4" fill="#4299e1">✧
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Blinking animation for both eyes -->
+  <ellipse cx="250" cy="35" rx="17.5" ry="0" fill="#2d3748">
+    <animate attributeName="ry" values="0;17.5;0" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="350" cy="35" rx="17.5" ry="0" fill="#2d3748">
+    <animate attributeName="ry" values="0;17.5;0" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Terminal screen -->
+  <rect x="40" y="130" width="520" height="330" rx="15" ry="15" 
+        fill="url(#screenGradient)" stroke="#4a5568" stroke-width="1"/>
+  
+  <!-- Terminal header -->
+  <rect x="40" y="130" width="520" height="30" rx="15" ry="15" 
+        fill="#4a5568" stroke="#718096" stroke-width="1"/>
+  <rect x="40" y="145" width="520" height="15" fill="#4a5568"/>
+  
+  <!-- Terminal buttons -->
+  <circle cx="60" cy="145" r="6" fill="#e53e3e"/>
+  <circle cx="80" cy="145" r="6" fill="#ecc94b"/>
+  <circle cx="100" cy="145" r="6" fill="#38a169"/>
+  
+  <!-- Terminal title -->
+  <text x="300" y="150" text-anchor="middle" font-family="'Fira Code', monospace" 
+        font-size="12" fill="#e2e8f0">Forge</text>
+  
+  <!-- Terminal content background -->
+  <rect x="50" y="170" width="500" height="280" fill="#1a202c"/>
+  
+  <!-- Git prompt line -->
+  <text x="60" y="195" font-family="'Courier New', monospace" font-size="12" fill="#68d391">&gt;</text>
+  <text x="75" y="195" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">forge-ui git:</text>
+  <text x="160" y="195" font-family="'Courier New', monospace" font-size="12" fill="#e53e3e">(main)</text>
+  <text x="210" y="195" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">x</text>
+  <text x="225" y="195" font-family="'Courier New', monospace" font-size="12" fill="#68d391">forge</text>
+  
+  <!-- ASCII Art using a single text element with proper spacing -->
+  <text x="60" y="220" font-family="'Courier New', monospace" font-size="11" fill="#a0aec0" xml:space="preserve">
+    <tspan x="60" dy="0"> _____                    </tspan>
+    <tspan x="60" dy="15">|  ___|__  _ __ __ _  ___ </tspan>
+    <tspan x="60" dy="15">| |_ / _ \| '__/ _` |/ _ \</tspan>
+    <tspan x="60" dy="15">|  _| (_) | | | (_| |  __/</tspan>
+    <tspan x="60" dy="15">|_|  \___/|_|  \__, |\___|</tspan>
+    <tspan x="60" dy="15">               |___/      </tspan>
+  </text>
+  
+  <!-- Menu options -->
+  <text x="60" y="310" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">  New conversation: </text>
+  <text x="215" y="310" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/new</text>
+  
+  <text x="60" y="325" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">       Get started: </text>
+  <text x="215" y="325" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/info</text>
+  <text x="250" y="325" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">, </text>
+  <text x="265" y="325" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/help</text>
+  
+  <text x="60" y="340" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">       Switch mode: </text>
+  <text x="215" y="340" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/plan</text>
+  <text x="255" y="340" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0"> or </text>
+  <text x="285" y="340" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/act</text>
+  
+  <text x="60" y="355" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">            Update: </text>
+  <text x="215" y="355" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/update</text>
+  
+  <text x="60" y="370" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">              Quit: </text>
+  <text x="215" y="370" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">/exit</text>
+  <text x="250" y="370" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0"> or </text>
+  <text x="280" y="370" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0">&lt;CTRL+D&gt;</text>
+  
+  <!-- Final prompt line -->
+  <text x="60" y="400" font-family="'Courier New', monospace" font-size="12" fill="#68d391">ACT</text>
+  <text x="95" y="400" font-family="'Courier New', monospace" font-size="12" fill="#4299e1">forge-ui</text>
+  <text x="165" y="400" font-family="'Courier New', monospace" font-size="12" fill="#68d391">main</text>
+  
+  <!-- Current prompt -->
+  <text x="60" y="420" font-family="'Courier New', monospace" font-size="12" fill="#68d391">&gt;</text>
+  
+  <!-- Blinking cursor -->
+  <rect x="75" y="410" width="8" height="15" fill="#4299e1">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
