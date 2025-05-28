@@ -1,10 +1,12 @@
-import React from "react"
+import React, {useState} from "react"
 import Heading from "@theme/Heading"
 import Section from "../shared/Section"
 import TrustedByMarquee from "./TrustedByMarquee"
-import {companies} from "@site/src/constants"
+import {companies, useCases} from "@site/src/constants"
 
 const WhyChooseForge = (): JSX.Element => {
+  const [selectedUseCase, setSelectedUseCase] = useState<number>(1)
+
   return (
     <Section className="customer-container !bg-tailCall-dark-600 h-full w-full text-tailCall-light-100 !bg-contain md:!bg-center md:!bg-top py-16 md:py-20 lg:pt-36 lg:pb-24">
       <div className="flex flex-row items-center justify-center">
@@ -12,56 +14,90 @@ const WhyChooseForge = (): JSX.Element => {
           as="h5"
           className="text-title-large sm:text-display-tiny lg:text-display-medium flex flex-col items-center md:flex-row lg:mb-12"
         >
-          <span>Why Choose</span>
-          <span className="bg-tailCall-yellow rounded-lg text-black px-SPACE_01 ml-SPACE_02">Forge?</span>
+          <span>How Developers Use</span>
+          <span className="bg-tailCall-yellow rounded-lg text-black px-SPACE_01 ml-SPACE_02">Forge</span>
         </Heading>
       </div>
 
       <p className="text-center text-content-medium lg:text-content-large max-w-3xl mx-auto mb-16">
-        Forge uniquely combines the power of an industry-leading AI coding agent with the transparency and hackability
-        of an open-source project. It's <strong>your coding partner, on your terms</strong>.
+        From understanding complex codebases to implementing new features, Forge adapts to your workflow.
+        <strong> See how developers across the industry use Forge in their daily work.</strong>
       </p>
 
-      <div className="flex flex-col space-y-SPACE_10 md:flex-row md:space-x-SPACE_06 md:space-y-0">
-        {/* Card 1 */}
-        <div className="customer-feedback-card md:w-[50%] flex flex-col items-center justify-between bg-tailCall-dark-500 text-white py-SPACE_08 px-SPACE_06 text-center text-content-small gap-y-SPACE_06 rounded-xl">
-          <span className="sm:text-content-medium lg:text-content-large !font-bold !text-title-large mb-4">
-            For Individual <span className="text-tailCall-yellow">Developers</span>
-          </span>
-          <p className="text-content-small sm:text-content-medium mb-4">
-            Forge removes the complexity from your workflow, letting you focus on creative problem-solving. With Forge,
-            you can:
-          </p>
-          <ul className="text-left list-disc pl-5 space-y-2 text-content-small sm:text-content-medium">
-            <li>Implement new features with natural language descriptions</li>
-            <li>Debug complex issues with contextual assistance</li>
-            <li>Explore and understand unfamiliar codebases quickly</li>
-            <li>Refactor and modernize legacy code intelligently</li>
-          </ul>
+      {/* Use Case Tabs */}
+      <div className="mb-16">
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
+          {useCases.slice(0, 4).map((useCase) => (
+            <button
+              key={useCase.id}
+              onClick={() => setSelectedUseCase(useCase.id)}
+              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 font-space-grotesk ${
+                selectedUseCase === useCase.id
+                  ? "bg-tailCall-yellow text-black shadow-lg shadow-yellow-500/25"
+                  : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                {useCase.title}
+              </span>
+            </button>
+          ))}
         </div>
-
-        {/* Card 2 */}
-        <div className="customer-feedback-card md:w-[50%] flex flex-col items-center justify-between bg-tailCall-dark-500 text-white py-SPACE_08 px-SPACE_06 text-center text-content-small gap-y-SPACE_06 rounded-xl">
-          <span className="sm:text-content-medium lg:text-content-large !font-bold !text-title-large mb-4">
-            For <span className="text-tailCall-yellow">Enterprise</span> Teams
-          </span>
-          <p className="text-content-small sm:text-content-medium mb-4">
-            Implement a secure AI coding solution that respects your enterprise security requirements. With Forge, your
-            team can:
-          </p>
-          <ul className="text-left list-disc pl-5 space-y-2 text-content-small sm:text-content-medium">
-            <li>Use on-premise AI models for complete data privacy</li>
-            <li>Customize workflows with your internal coding standards</li>
-            <li>Onboard new team members faster with codebase assistance</li>
-            <li>Integrate with existing CI/CD pipelines and tools</li>
-          </ul>
+        <div className="flex flex-wrap justify-center gap-3">
+          {useCases.slice(4, 8).map((useCase) => (
+            <button
+              key={useCase.id}
+              onClick={() => setSelectedUseCase(useCase.id)}
+              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 font-space-grotesk ${
+                selectedUseCase === useCase.id
+                  ? "bg-tailCall-yellow text-black shadow-lg shadow-yellow-500/25"
+                  : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                {useCase.title}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
+      {/* Selected Use Case Content */}
+      {useCases.map((useCase) => (
+        selectedUseCase === useCase.id && (
+          <div key={useCase.id} className="bg-gradient-to-br from-tailCall-dark-500 to-tailCall-dark-600 rounded-2xl p-8 max-w-5xl mx-auto shadow-2xl border border-tailCall-dark-400">
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              <div className="flex-grow w-full lg:w-auto">
+                <h3 className="text-3xl font-bold text-white mb-6 text-center lg:text-left">{useCase.title}</h3>
+                <p className="text-lg text-tailCall-light-500 mb-8 leading-relaxed text-center lg:text-left">
+                  {useCase.description}
+                </p>
+                <div className="space-y-6">
+                  <h4 className="text-xl font-medium text-white font-space-grotesk">
+                    Common Tasks
+                  </h4>
+                  <div className="grid gap-4">
+                    {useCase.examples.map((example, index) => (
+                      <div key={index} className="group hover:scale-[1.01] transition-transform duration-200">
+                        <div className="bg-gradient-to-r from-tailCall-dark-700 via-tailCall-dark-600 to-tailCall-dark-700 rounded-xl p-5 border border-tailCall-dark-400 hover:border-tailCall-yellow/30 transition-all duration-300">
+                          <p className="text-white text-base leading-relaxed font-medium">
+                            "{example}"
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      ))}
+
       <div className="mt-14 text-center">
         <p className="text-lg italic max-w-3xl mx-auto mb-14">
-          "Join developers worldwide in embracing a faster, smarter way to code – without surrendering control.
-          <span className="font-bold"> With Forge, you write the rules.</span>"
+          "From debugging complex issues to implementing new features, Forge understands your developer workflow.
+          <span className="font-bold"> Work smarter, not harder.</span>"
         </p>
       </div>
 

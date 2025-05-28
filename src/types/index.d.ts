@@ -46,6 +46,14 @@ type Benefits = {
   redirection_url: string
 }
 
+type UseCase = {
+  id: number
+  title: string
+  description: string
+  icon: string
+  examples: string[]
+}
+
 type EnterpriseFeature = {
   id: number
   logo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
