@@ -14,7 +14,7 @@ hide_table_of_contents: false
 - **DeepSeek-R1-0528**: Latest open source reasoning model with MIT license
 - **Major breakthrough**: Significantly improved performance over previous version (87.5% vs 70% on AIME 2025)
 - **Architecture**: 671B total parameters, ~37B active per token via Mixture-of-Experts
-- **Major limitation**: 10-15s latency via OpenRouter API vs ~1s for other models
+- **Major limitation**: 15-30s latency via OpenRouter API vs ~1s for other models
 - **Best for**: Complex reasoning, architectural planning, vendor independence
 - **Poor for**: Real-time coding, rapid iteration, interactive development
 - **Bottom line**: Impressive reasoning capabilities, but latency challenges practical use
