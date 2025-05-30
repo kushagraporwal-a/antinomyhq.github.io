@@ -159,4 +159,5 @@ Remember that 47-minute debugging session? It perfectly captures the R1-0528 exp
 DeepSeek's announcement wasn't wrong about capabilities - the benchmark improvements are real, reasoning quality is impressive, and the MIT license is genuinely game-changing.
 
 For architectural planning where you can afford to wait? **Absolutely worth it.**
+
 For rapid iteration? **Not quite there yet.**
