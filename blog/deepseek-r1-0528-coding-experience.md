@@ -1,6 +1,6 @@
 ---
 slug: deepseek-r1-0528-coding-experience-review
-title: "Coding Experience with DeepSeek-R1-0528: Brilliant Reasoning, Brutal Latency"
+title: "First Experience Coding with DeepSeek-R1-0528"
 authors: [forge]
 tags:
   ["DeepSeek", "Open Source AI", "Coding AI", "OpenRouter"]
