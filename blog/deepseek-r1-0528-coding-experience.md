@@ -101,7 +101,7 @@ The performance improvements are legitimate:
 | Model Type           | Response Time | Developer Experience |
 | -------------------- | ------------- | -------------------- |
 | **Claude/GPT-4**     | 0.8-1.0s      | Smooth iteration     |
-| **DeepSeek-R1-0528** | **10-15s**    | Productivity killer  |
+| **DeepSeek-R1-0528** | **15-30s**    | Productivity killer  |
 
 ## When R1-0528 Actually Shines
 
