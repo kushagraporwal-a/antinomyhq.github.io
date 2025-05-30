@@ -4,11 +4,124 @@
         <title>Forge Code Blog</title>
         <link>https://forgecode.dev/blog/</link>
         <description>Forge Code Blog</description>
-        <lastBuildDate>Mon, 26 May 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2025 Tailcall, Inc.</copyright>
+        <item>
+            <title><![CDATA[First Experience Coding with DeepSeek-R1-0528]]></title>
+            <link>https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/</link>
+            <guid>https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/</guid>
+            <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[I spent time testing DeepSeek-R1-0528's impressive capabilities and challenging latency via OpenRouter API. Here's my analysis of its coding performance, architectural innovations, and why I kept switching back to Sonnet 4.]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tldr">TL;DR<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#tldr" class="hash-link" aria-label="Direct link to TL;DR" title="Direct link to TL;DR">​</a></h2>
+<ul>
+<li><strong>DeepSeek-R1-0528</strong>: Latest open source reasoning model with MIT license</li>
+<li><strong>Major breakthrough</strong>: Significantly improved performance over previous version (87.5% vs 70% on AIME 2025)</li>
+<li><strong>Architecture</strong>: 671B total parameters, ~37B active per token via Mixture-of-Experts</li>
+<li><strong>Major limitation</strong>: 15-30s latency via OpenRouter API vs ~1s for other models</li>
+<li><strong>Best for</strong>: Complex reasoning, architectural planning, vendor independence</li>
+<li><strong>Poor for</strong>: Real-time coding, rapid iteration, interactive development</li>
+<li><strong>Bottom line</strong>: Impressive reasoning capabilities, but latency challenges practical use</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-promise-vs-my-8-hour-reality-check">The Promise vs. My 8-Hour Reality Check<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-promise-vs-my-8-hour-reality-check" class="hash-link" aria-label="Direct link to The Promise vs. My 8-Hour Reality Check" title="Direct link to The Promise vs. My 8-Hour Reality Check">​</a></h2>
+<blockquote>
+<p><strong>From @deepseek_ai</strong>:
+DeepSeek-R1-0528 is now available! This latest reasoning model shows substantial improvements across benchmarks while maintaining MIT licensing for complete open-source access.</p>
+<p><em>Source: <a href="https://x.com/deepseek_ai/status/1928061589107900779" target="_blank" rel="noopener noreferrer">https://x.com/deepseek_ai/status/1928061589107900779</a></em></p>
+</blockquote>
+<p><strong>My response</strong>: Hold my coffee while I test this "breakthrough"...</p>
+<p><strong>SPOILER</strong>: It's brilliant... if you can wait 30 seconds for every response. And it keeps increasing as your context grows</p>
+<p>I was 47 minutes into debugging a Rust async runtime when DeepSeek-R1-0528 (via my favorite coding agent) finally responded with the perfect solution. By then, I'd already fixed the bug myself, grabbed coffee, and started questioning my life choices.</p>
+<p>Here's what 8 hours of testing taught me about the latest "open source breakthrough."</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="reality-check-hype-vs-my-actual-experience">Reality Check: Hype vs. My Actual Experience<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#reality-check-hype-vs-my-actual-experience" class="hash-link" aria-label="Direct link to Reality Check: Hype vs. My Actual Experience" title="Direct link to Reality Check: Hype vs. My Actual Experience">​</a></h2>
+<p>DeepSeek's announcement promises groundbreaking performance with practical accessibility. After intensive testing, here's how those claims stack up:</p>
+<table><thead><tr><th>DeepSeek's Claim</th><th>My Reality</th><th>Verdict</th></tr></thead><tbody><tr><td>"Matches GPT/Claude performance"</td><td>Often exceeds it on reasoning</td><td><strong>TRUE</strong></td></tr><tr><td>"MIT licensed open source"</td><td>Completely open, no restrictions</td><td><strong>TRUE</strong></td></tr><tr><td>"Substantial improvements"</td><td>Major benchmark gains confirmed</td><td><strong>TRUE</strong></td></tr></tbody></table>
+<p><strong>The breakthrough is real. The daily usability is... challenging.</strong></p>
+<p>Before diving into why those response times matter so much, let's understand what makes this model technically impressive enough that I kept coming back despite the frustration.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-tech-behind-the-magic-and-why-its-so-slow">The Tech Behind the Magic (And Why It's So Slow)<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-tech-behind-the-magic-and-why-its-so-slow" class="hash-link" aria-label="Direct link to The Tech Behind the Magic (And Why It's So Slow)" title="Direct link to The Tech Behind the Magic (And Why It's So Slow)">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="key-architecture-stats">Key Architecture Stats<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#key-architecture-stats" class="hash-link" aria-label="Direct link to Key Architecture Stats" title="Direct link to Key Architecture Stats">​</a></h3>
+<ul>
+<li><strong>671B total parameters</strong> (685B with extras)</li>
+<li><strong>~37B active per token</strong> via Mixture-of-Experts routing</li>
+<li><strong>128K context window</strong></li>
+<li><strong>MIT license</strong> (completely open source)</li>
+<li><strong>Cost</strong>: $0.50 input / $2.18 output per 1M tokens</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-the-innovation-matters">Why the Innovation Matters<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#why-the-innovation-matters" class="hash-link" aria-label="Direct link to Why the Innovation Matters" title="Direct link to Why the Innovation Matters">​</a></h3>
+<p>R1-0528 achieves <strong>GPT-4 level reasoning at ~5.5% parameter activation cost</strong> through:</p>
+<ol>
+<li><strong>Reinforcement Learning Training</strong>: Pure RL without supervised fine-tuning initially</li>
+<li><strong>Chain-of-Thought Architecture</strong>: Multi-step reasoning for every response</li>
+<li><strong>Expert Routing</strong>: Different specialists activate for different coding patterns</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-its-painfully-slow">Why It's Painfully Slow<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#why-its-painfully-slow" class="hash-link" aria-label="Direct link to Why It's Painfully Slow" title="Direct link to Why It's Painfully Slow">​</a></h3>
+<p>Every response requires:</p>
+<ul>
+<li><strong>Thinking tokens</strong>: Internal reasoning in <code>&lt;think&gt;...&lt;/think&gt;</code> blocks (hundreds-thousands of tokens)</li>
+<li><strong>Expert selection</strong>: Dynamic routing across 671B parameters</li>
+<li><strong>Multi-step verification</strong>: Problem analysis → solution → verification</li>
+</ul>
+<p>When R1-0528 generates a 2000-token reasoning trace for a 100-token answer, you pay computational cost for all 2100 tokens.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-benchmarks-dont-lie-but-they-dont-code-either">The Benchmarks Don't Lie (But They Don't Code Either)<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-benchmarks-dont-lie-but-they-dont-code-either" class="hash-link" aria-label="Direct link to The Benchmarks Don't Lie (But They Don't Code Either)" title="Direct link to The Benchmarks Don't Lie (But They Don't Code Either)">​</a></h2>
+<p>The performance improvements are legitimate:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="key-wins">Key Wins<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#key-wins" class="hash-link" aria-label="Direct link to Key Wins" title="Direct link to Key Wins">​</a></h3>
+<table><thead><tr><th>Benchmark</th><th>Previous</th><th>R1-0528</th><th>Improvement</th></tr></thead><tbody><tr><td><strong>AIME 2025</strong></td><td>70.0%</td><td>87.5%</td><td>+17.5%</td></tr><tr><td><strong>Coding (LiveCodeBench)</strong></td><td>63.5%</td><td>73.3%</td><td>+9.8%</td></tr><tr><td><strong>Codeforces Rating</strong></td><td>1530</td><td>1930</td><td>+400 points</td></tr><tr><td><strong>SWE Verified (Resolved)</strong></td><td>49.2%</td><td>57.6%</td><td>Notable progress</td></tr><tr><td><strong>Aider-Polyglot</strong></td><td>53.3%</td><td>71.6%</td><td>Major improvement</td></tr></tbody></table>
+<p><img decoding="async" loading="lazy" src="https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/resolve/main/figures/benchmark.png" alt="DeepSeek-R1-0528 Official Benchmarks" class="img_ev3q"></p>
+<p><strong>But here's the thing</strong>: Benchmarks run with infinite patience. Real development doesn't.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-latency-reality">The Latency Reality<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-latency-reality" class="hash-link" aria-label="Direct link to The Latency Reality" title="Direct link to The Latency Reality">​</a></h3>
+<table><thead><tr><th>Model Type</th><th>Response Time</th><th>Developer Experience</th></tr></thead><tbody><tr><td><strong>Claude/GPT-4</strong></td><td>0.8-1.0s</td><td>Smooth iteration</td></tr><tr><td><strong>DeepSeek-R1-0528</strong></td><td><strong>15-30s</strong></td><td>Productivity killer</td></tr></tbody></table>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="when-r1-0528-actually-shines">When R1-0528 Actually Shines<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#when-r1-0528-actually-shines" class="hash-link" aria-label="Direct link to When R1-0528 Actually Shines" title="Direct link to When R1-0528 Actually Shines">​</a></h2>
+<p>Despite my latency complaints, there are genuine scenarios where waiting pays off:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="perfect-use-cases"><strong>Perfect Use Cases</strong><a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#perfect-use-cases" class="hash-link" aria-label="Direct link to perfect-use-cases" title="Direct link to perfect-use-cases">​</a></h3>
+<ul>
+<li><strong>Large codebase analysis</strong> (20,000+ lines) - leverages 128K context beautifully</li>
+<li><strong>Architectural planning</strong> - deep reasoning justifies wait time</li>
+<li><strong>Precise instruction following</strong> - delivers exactly what you ask for</li>
+<li><strong>Vendor independence</strong> - MIT license enables self-hosting</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="frustrating-use-cases"><strong>Frustrating Use Cases</strong><a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#frustrating-use-cases" class="hash-link" aria-label="Direct link to frustrating-use-cases" title="Direct link to frustrating-use-cases">​</a></h3>
+<ul>
+<li><strong>Real-time debugging</strong> - by the time it responds, you've fixed it</li>
+<li><strong>Rapid prototyping</strong> - kills the iterative flow</li>
+<li><strong>Learning/exploration</strong> - waiting breaks the learning momentum</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="reasoning-transparency"><strong>Reasoning Transparency</strong><a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#reasoning-transparency" class="hash-link" aria-label="Direct link to reasoning-transparency" title="Direct link to reasoning-transparency">​</a></h3>
+<p>The "thinking" process is genuinely impressive:</p>
+<ol>
+<li>Problem analysis and approach planning</li>
+<li>Edge case consideration</li>
+<li>Solution verification</li>
+<li>Output polishing</li>
+</ol>
+<p>Different experts activate for different patterns (API design vs systems programming vs unsafe code).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="my-honest-take-historic-achievement-practical-challenges">My Honest Take: Historic Achievement, Practical Challenges<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#my-honest-take-historic-achievement-practical-challenges" class="hash-link" aria-label="Direct link to My Honest Take: Historic Achievement, Practical Challenges" title="Direct link to My Honest Take: Historic Achievement, Practical Challenges">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-historic-achievement">The Historic Achievement<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-historic-achievement" class="hash-link" aria-label="Direct link to The Historic Achievement" title="Direct link to The Historic Achievement">​</a></h3>
+<ul>
+<li><strong>First truly competitive open reasoning model</strong></li>
+<li><strong>MIT license = complete vendor independence</strong></li>
+<li><strong>Proves open source can match closed systems</strong></li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-daily-reality">The Daily Reality<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-daily-reality" class="hash-link" aria-label="Direct link to The Daily Reality" title="Direct link to The Daily Reality">​</a></h3>
+<p>Remember that 47-minute debugging session? It perfectly captures the R1-0528 experience: <strong>technically brilliant, practically challenging.</strong></p>
+<p><strong>The question isn't whether R1-0528 is impressive</strong> - it absolutely is.</p>
+<p><strong>The question is whether you can build your workflow around waiting for genius to arrive.</strong></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-discussion">Community Discussion<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#community-discussion" class="hash-link" aria-label="Direct link to Community Discussion" title="Direct link to Community Discussion">​</a></h2>
+<p><strong>Drop your experiences below</strong>:</p>
+<ul>
+<li>Have you tested R1-0528 for coding? What's your patience threshold?</li>
+<li>Found ways to work around the latency?</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-bottom-line">The Bottom Line<a href="https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/#the-bottom-line" class="hash-link" aria-label="Direct link to The Bottom Line" title="Direct link to The Bottom Line">​</a></h2>
+<p>DeepSeek's announcement wasn't wrong about capabilities - the benchmark improvements are real, reasoning quality is impressive, and the MIT license is genuinely game-changing.</p>
+<p>For architectural planning where you can afford to wait? <strong>Absolutely worth it.</strong>
+For rapid iteration? <strong>Not quite there yet.</strong></p>]]></content:encoded>
+            <category>DeepSeek</category>
+            <category>Open Source AI</category>
+            <category>Coding AI</category>
+            <category>OpenRouter</category>
+        </item>
         <item>
             <title><![CDATA[Claude 4 vs Gemini 2.5 Pro: A Developer's Deep Dive Comparison]]></title>
             <link>https://forgecode.dev/blog/claude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison/</link>
