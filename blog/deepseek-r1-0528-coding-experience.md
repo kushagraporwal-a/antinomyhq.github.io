@@ -42,7 +42,7 @@ DeepSeek's announcement promises groundbreaking performance with practical acces
 
 | DeepSeek's Claim            | My Reality                       | Verdict  |
 | --------------------------- | -------------------------------- | -------- |
-| "Matches GPT-4 performance" | Often exceeds it on reasoning    | **TRUE** |
+| "Matches GPT/clude performance" | Often exceeds it on reasoning    | **TRUE** |
 | "MIT licensed open source"  | Completely open, no restrictions | **TRUE** |
 | "Substantial improvements"  | Major benchmark gains confirmed  | **TRUE** |
 
