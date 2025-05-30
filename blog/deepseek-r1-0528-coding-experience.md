@@ -40,11 +40,11 @@ Here's what 8 hours of testing taught me about the latest "open source breakthro
 
 DeepSeek's announcement promises groundbreaking performance with practical accessibility. After intensive testing, here's how those claims stack up:
 
-| DeepSeek's Claim                | My Reality                       | Verdict  |
-| ------------------------------- | -------------------------------- | -------- |
-| "Matches GPT/clude performance" | Often exceeds it on reasoning    | **TRUE** |
-| "MIT licensed open source"      | Completely open, no restrictions | **TRUE** |
-| "Substantial improvements"      | Major benchmark gains confirmed  | **TRUE** |
+| DeepSeek's Claim                 | My Reality                       | Verdict  |
+| -------------------------------- | -------------------------------- | -------- |
+| "Matches GPT/Claude performance" | Often exceeds it on reasoning    | **TRUE** |
+| "MIT licensed open source"       | Completely open, no restrictions | **TRUE** |
+| "Substantial improvements"       | Major benchmark gains confirmed  | **TRUE** |
 
 **The breakthrough is real. The daily usability is... challenging.**
 
