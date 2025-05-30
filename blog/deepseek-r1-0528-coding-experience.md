@@ -28,7 +28,7 @@ hide_table_of_contents: false
 
 **My response**: Hold my coffee while I test this "breakthrough"...
 
-**SPOILER**: It's brilliant... if you can wait 15 seconds for every response.
+**SPOILER**: It's brilliant... if you can wait 30 seconds for every response. And it keeps increasing as your context grows
 
 I was 47 minutes into debugging a Rust async runtime when DeepSeek-R1-0528 (via my favorite coding agent) finally responded with the perfect solution. By then, I'd already fixed the bug myself, grabbed coffee, and started questioning my life choices.
 
