@@ -508,35 +508,6 @@ export const pricingPlans: PricingPlans[] = [
     mostPopular: false,
     href: "/docs/getting-started-with-graphql",
   },
-  // {
-  //   id: 2,
-  //   name: "Advanced plan",
-  //   price: "$600/year",
-  //   for: "per core",
-  //   billing: "Billed Annually",
-  //   volumeDiscounts: "(Volume discounts available)",
-  //   features: [
-  //     {
-  //       id: 1,
-  //       name: "Access to all open source features",
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "Access to all enterprise features",
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "GraphQL onboarding copilot",
-  //     },
-  //     {
-  //       id: 4,
-  //       name: "Full managed edge deployment",
-  //     },
-  //   ],
-  //   buttonText: "Contact Sales",
-  //   mostPopular: true,
-  //   href: "/contact",
-  // },
   {
     id: 3,
     name: "Enterprise plan",
