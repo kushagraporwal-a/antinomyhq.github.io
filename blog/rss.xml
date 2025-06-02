@@ -73,7 +73,7 @@
 <p>Large projects break AI attention. Here's how to fix it:</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="use-gitingestcom-for-codebase-summaries">Use gitingest.com for Codebase Summaries<a href="https://forgecode.dev/blog/ai-agent-best-practices/#use-gitingestcom-for-codebase-summaries" class="hash-link" aria-label="Direct link to Use gitingest.com for Codebase Summaries" title="Direct link to Use gitingest.com for Codebase Summaries">​</a></h3>
 <ol>
-<li>Go to <a href="https://gitingest.com/" target="_blank" rel="noopener noreferrer">gitingest.com</a></li>
+<li>Go to gitingest.com</li>
 <li>Enter your repo URL (or replace "github.com" with "gitingest.com" in any GitHub URL)</li>
 <li>Download the generated text summary</li>
 <li>Reference this instead of copy-pasting files</li>
@@ -81,7 +81,7 @@
 <p><strong>Instead of:</strong> Pasting 10 files into your prompt<br>
 <strong>Do this:</strong> "See attached codebase_summary.txt for project structure"</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="for-documentation-use-context7-mcp-or-alternatives-for-live-docs">For Documentation: Use Context7 MCP or Alternatives for Live Docs<a href="https://forgecode.dev/blog/ai-agent-best-practices/#for-documentation-use-context7-mcp-or-alternatives-for-live-docs" class="hash-link" aria-label="Direct link to For Documentation: Use Context7 MCP or Alternatives for Live Docs" title="Direct link to For Documentation: Use Context7 MCP or Alternatives for Live Docs">​</a></h3>
-<p><a href="https://context7.com/" target="_blank" rel="noopener noreferrer">Context7 MCP</a> keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.</p>
+<p>Context7 MCP keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.</p>
 <p><strong>When to use:</strong> When your docs change frequently, reference the MCP connection rather than pasting outdated snippets each time.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-version-control-is-your-safety-net">5. Version Control Is Your Safety Net<a href="https://forgecode.dev/blog/ai-agent-best-practices/#5-version-control-is-your-safety-net" class="hash-link" aria-label="Direct link to 5. Version Control Is Your Safety Net" title="Direct link to 5. Version Control Is Your Safety Net">​</a></h2>
