@@ -95,6 +95,7 @@
 <p><strong>Bad:</strong> "Here's my entire codebase. Why doesn't authentication work?"</p>
 <p><strong>Good:</strong> "<code>@src/auth.rs</code> line 85 panics on <code>None</code> when JWT is malformed. Fix this and add proper error handling."</p>
 <p>Specific problems get specific solutions. Vague problems get hallucinations.</p>
+<p>Use your code’s terminology in prompts: reference the exact identifiers from your codebase, not generic business terms. For example, call <code>createOrder()</code> and <code>processRefund()</code> instead of 'place order' or 'issue refund', or use <code>UserEntity</code> rather than 'account'. This precision helps the AI apply the correct abstractions and avoids mismatches between your domain language and code.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="7-re-index-after-big-changes">7. Re-Index After Big Changes<a href="https://forgecode.dev/blog/ai-agent-best-practices/#7-re-index-after-big-changes" class="hash-link" aria-label="Direct link to 7. Re-Index After Big Changes" title="Direct link to 7. Re-Index After Big Changes">​</a></h2>
 <p>If you're using AI tools with project indexing, rebuild the index after major refactors. Out-of-date indexes are why AI "can't find" functions that definitely exist.</p>
