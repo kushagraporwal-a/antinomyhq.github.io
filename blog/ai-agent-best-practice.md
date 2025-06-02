@@ -31,6 +31,7 @@ After 6 months of daily AI pair programming across multiple codebases, here's wh
 - Ask for step-by-step reasoning before code
 - Use file references (@path/file.rs:42-88) not code dumps
 
+
 **Context Management:**
 
 - Re-index your project after major changes to avoid hallucinations
@@ -133,6 +134,8 @@ Large projects break AI attention. Here's how to fix it:
 **Good:** "`@src/auth.rs` line 85 panics on `None` when JWT is malformed. Fix this and add proper error handling."
 
 Specific problems get specific solutions. Vague problems get hallucinations.
+
+Use your code’s terminology in prompts: reference the exact identifiers from your codebase, not generic business terms. For example, call `createOrder()` and `processRefund()` instead of 'place order' or 'issue refund', or use `UserEntity` rather than 'account'. This precision helps the AI apply the correct abstractions and avoids mismatches between your domain language and code.
 
 ---
 
