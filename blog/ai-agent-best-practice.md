@@ -112,7 +112,7 @@ Large projects break AI attention. Here's how to fix it:
 
 ### For Documentation: Use Context7 MCP or Alternatives for Live Docs
 
-[Context7 MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/context7) keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.
+[Context7 MCP](https://context7.com/) keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.
 
 **When to use:** When your docs change frequently, reference the MCP connection rather than pasting outdated snippets each time.
 
