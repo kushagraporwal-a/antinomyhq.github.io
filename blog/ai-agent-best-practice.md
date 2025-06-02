@@ -102,7 +102,7 @@ Large projects break AI attention. Here's how to fix it:
 
 ### Use gitingest.com for Codebase Summaries
 
-1. Go to [gitingest.com](https://gitingest.com)
+1. Go to gitingest.com
 2. Enter your repo URL (or replace "github.com" with "gitingest.com" in any GitHub URL)
 3. Download the generated text summary
 4. Reference this instead of copy-pasting files
@@ -112,7 +112,7 @@ Large projects break AI attention. Here's how to fix it:
 
 ### For Documentation: Use Context7 MCP or Alternatives for Live Docs
 
-[Context7 MCP](https://context7.com/) keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.
+Context7 MCP keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.
 
 **When to use:** When your docs change frequently, reference the MCP connection rather than pasting outdated snippets each time.
 
