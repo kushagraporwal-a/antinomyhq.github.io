@@ -31,7 +31,6 @@ After 6 months of daily AI pair programming across multiple codebases, here's wh
 - Ask for step-by-step reasoning before code
 - Use file references (@path/file.rs:42-88) not code dumps
 
-
 **Context Management:**
 
 - Re-index your project after major changes to avoid hallucinations
