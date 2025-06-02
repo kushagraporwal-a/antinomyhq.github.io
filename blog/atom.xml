@@ -2,12 +2,178 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://forgecode.dev/blog/</id>
     <title>Forge Code Blog</title>
-    <updated>2025-05-30T00:00:00.000Z</updated>
+    <updated>2025-06-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://forgecode.dev/blog/"/>
     <subtitle>Forge Code Blog</subtitle>
     <icon>https://forgecode.dev/images/favicon.ico</icon>
     <rights>Copyright © 2025 Tailcall, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[What Actually Works: 12 Lessons from AI Pair Programming]]></title>
+        <id>https://forgecode.dev/blog/ai-agent-best-practices/</id>
+        <link href="https://forgecode.dev/blog/ai-agent-best-practices/"/>
+        <updated>2025-06-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Field-tested practices for productive AI-assisted development. Real lessons from 6 months of daily AI pair programming, including what works, what fails, and why most engineers are doing it wrong.]]></summary>
+        <content type="html"><![CDATA[<p>After 6 months of daily AI pair programming across multiple codebases, here's what actually moves the needle. Skip the hype this is what works in practice.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tldr">TL;DR<a href="https://forgecode.dev/blog/ai-agent-best-practices/#tldr" class="hash-link" aria-label="Direct link to TL;DR" title="Direct link to TL;DR">​</a></h2>
+<p><strong>Planning &amp; Process:</strong></p>
+<ul>
+<li>Write a plan first, let AI critique it before coding</li>
+<li>Use edit-test loops: write failing test → AI fixes → repeat</li>
+<li>Commit small, frequent changes for readable diffs</li>
+</ul>
+<p><strong>Prompt Engineering:</strong></p>
+<ul>
+<li>Keep prompts short and specific context bloat kills accuracy</li>
+<li>Ask for step-by-step reasoning before code</li>
+<li>Use file references (@path/file.rs:42-88) not code dumps</li>
+</ul>
+<p><strong>Context Management:</strong></p>
+<ul>
+<li>Re-index your project after major changes to avoid hallucinations</li>
+<li>Use tools like gitingest.com for codebase summaries</li>
+<li>Use Context7 MCP to stay synced with latest documentation</li>
+<li>Treat AI output like junior dev PRs review everything</li>
+</ul>
+<p><strong>What Doesn't Work:</strong></p>
+<ul>
+<li>Dumping entire codebases into prompts</li>
+<li>Expecting AI to understand implicit requirements</li>
+<li>Trusting AI with security-critical code without review</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-start-with-a-written-plan-seriously-do-this-first">1. Start With a Written Plan (Seriously, Do This First)<a href="https://forgecode.dev/blog/ai-agent-best-practices/#1-start-with-a-written-plan-seriously-do-this-first" class="hash-link" aria-label="Direct link to 1. Start With a Written Plan (Seriously, Do This First)" title="Direct link to 1. Start With a Written Plan (Seriously, Do This First)">​</a></h2>
+<p>Ask your AI to draft a <strong>Markdown plan</strong> of the feature you're building. Then make it better:</p>
+<ol>
+<li><strong>Ask clarifying questions</strong> about edge cases</li>
+<li><strong>Have it critique its own plan</strong> for gaps</li>
+<li><strong>Regenerate an improved version</strong></li>
+</ol>
+<p>Save the final plan as <code>instructions.md</code> and reference it in every prompt. This single step eliminates 80% of "the AI got confused halfway through" moments.</p>
+<p><strong>Real example:</strong></p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">Write a plan for adding rate limiting to our API. Include:</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Which endpoints need protection</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Storage mechanism for rate data</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Error responses and status codes</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Integration points with existing middleware</span><br></span><span class="token-line" style="color:#fff"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#fff"><span class="token plain">Now critique this plan. What did you miss?</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-master-the-edit-test-loop">2. Master the Edit-Test Loop<a href="https://forgecode.dev/blog/ai-agent-best-practices/#2-master-the-edit-test-loop" class="hash-link" aria-label="Direct link to 2. Master the Edit-Test Loop" title="Direct link to 2. Master the Edit-Test Loop">​</a></h2>
+<p>This is TDD but with an AI doing the implementation:</p>
+<ol>
+<li><strong>Ask AI to write a failing test</strong> that captures exactly what you want</li>
+<li><strong>Review the test yourself</strong> - make sure it tests the right behavior</li>
+<li><strong>Then tell the AI: "Make this test pass"</strong></li>
+<li><strong>Let the AI iterate</strong> - it can run tests and fix failures automatically</li>
+</ol>
+<p>The key is reviewing the test before implementation. A bad test will lead to code that passes the wrong requirements.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-demand-step-by-step-reasoning">3. Demand Step-by-Step Reasoning<a href="https://forgecode.dev/blog/ai-agent-best-practices/#3-demand-step-by-step-reasoning" class="hash-link" aria-label="Direct link to 3. Demand Step-by-Step Reasoning" title="Direct link to 3. Demand Step-by-Step Reasoning">​</a></h2>
+<p>Add this to your prompts:</p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">Explain your approach step-by-step before writing any code.</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<p>You'll catch wrong assumptions before they become wrong code. AI models that think out loud make fewer stupid mistakes.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-stop-dumping-context-start-curating-it">4. Stop Dumping Context, Start Curating It<a href="https://forgecode.dev/blog/ai-agent-best-practices/#4-stop-dumping-context-start-curating-it" class="hash-link" aria-label="Direct link to 4. Stop Dumping Context, Start Curating It" title="Direct link to 4. Stop Dumping Context, Start Curating It">​</a></h2>
+<p>Large projects break AI attention. Here's how to fix it:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="use-gitingestcom-for-codebase-summaries">Use gitingest.com for Codebase Summaries<a href="https://forgecode.dev/blog/ai-agent-best-practices/#use-gitingestcom-for-codebase-summaries" class="hash-link" aria-label="Direct link to Use gitingest.com for Codebase Summaries" title="Direct link to Use gitingest.com for Codebase Summaries">​</a></h3>
+<ol>
+<li>Go to <a href="https://gitingest.com/" target="_blank" rel="noopener noreferrer">gitingest.com</a></li>
+<li>Enter your repo URL (or replace "github.com" with "gitingest.com" in any GitHub URL)</li>
+<li>Download the generated text summary</li>
+<li>Reference this instead of copy-pasting files</li>
+</ol>
+<p><strong>Instead of:</strong> Pasting 10 files into your prompt<br>
+<strong>Do this:</strong> "See attached codebase_summary.txt for project structure"</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="for-documentation-use-context7-mcp-or-alternatives-for-live-docs">For Documentation: Use Context7 MCP or Alternatives for Live Docs<a href="https://forgecode.dev/blog/ai-agent-best-practices/#for-documentation-use-context7-mcp-or-alternatives-for-live-docs" class="hash-link" aria-label="Direct link to For Documentation: Use Context7 MCP or Alternatives for Live Docs" title="Direct link to For Documentation: Use Context7 MCP or Alternatives for Live Docs">​</a></h3>
+<p><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/context7" target="_blank" rel="noopener noreferrer">Context7 MCP</a> keeps AI synced with the latest documentation by presenting the "Most Current Page" of your docs.</p>
+<p><strong>When to use:</strong> When your docs change frequently, reference the MCP connection rather than pasting outdated snippets each time.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-version-control-is-your-safety-net">5. Version Control Is Your Safety Net<a href="https://forgecode.dev/blog/ai-agent-best-practices/#5-version-control-is-your-safety-net" class="hash-link" aria-label="Direct link to 5. Version Control Is Your Safety Net" title="Direct link to 5. Version Control Is Your Safety Net">​</a></h2>
+<ul>
+<li><strong>Commit granularly</strong> with <code>git add -p</code> so diffs stay readable</li>
+<li><strong>Never let uncommitted changes pile up</strong>: clean git state makes it easier to isolate AI-introduced bugs and rollback cleanly</li>
+<li><strong>Use meaningful commit messages</strong>: they help AI understand change context</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="6-keep-prompts-laser-focused">6. Keep Prompts Laser-Focused<a href="https://forgecode.dev/blog/ai-agent-best-practices/#6-keep-prompts-laser-focused" class="hash-link" aria-label="Direct link to 6. Keep Prompts Laser-Focused" title="Direct link to 6. Keep Prompts Laser-Focused">​</a></h2>
+<p><strong>Bad:</strong> "Here's my entire codebase. Why doesn't authentication work?"</p>
+<p><strong>Good:</strong> "<code>@src/auth.rs</code> line 85 panics on <code>None</code> when JWT is malformed. Fix this and add proper error handling."</p>
+<p>Specific problems get specific solutions. Vague problems get hallucinations.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="7-re-index-after-big-changes">7. Re-Index After Big Changes<a href="https://forgecode.dev/blog/ai-agent-best-practices/#7-re-index-after-big-changes" class="hash-link" aria-label="Direct link to 7. Re-Index After Big Changes" title="Direct link to 7. Re-Index After Big Changes">​</a></h2>
+<p>If you're using AI tools with project indexing, rebuild the index after major refactors. Out-of-date indexes are why AI "can't find" functions that definitely exist.</p>
+<p>Most tools auto-index, but force a refresh when things seem off.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="8-use-file-references-not-copy-paste">8. Use File References, Not Copy-Paste<a href="https://forgecode.dev/blog/ai-agent-best-practices/#8-use-file-references-not-copy-paste" class="hash-link" aria-label="Direct link to 8. Use File References, Not Copy-Paste" title="Direct link to 8. Use File References, Not Copy-Paste">​</a></h2>
+<p>Most AI editors support references like <code>@src/database.rs</code>. Use them instead of pasting code blocks.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>AI sees the current file state, not a stale snapshot</li>
+<li>Smaller token usage = better accuracy</li>
+<li>Less prompt clutter</li>
+</ul>
+<p><strong>Note:</strong> Syntax varies by tool (<a href="https://github.com/antinomyhq/forge" target="_blank" rel="noopener noreferrer">Forge</a> uses <code>@</code>, some use <code>#</code>, etc.)</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="9-let-ai-write-tests-but-you-write-the-specs">9. Let AI Write Tests, But You Write the Specs<a href="https://forgecode.dev/blog/ai-agent-best-practices/#9-let-ai-write-tests-but-you-write-the-specs" class="hash-link" aria-label="Direct link to 9. Let AI Write Tests, But You Write the Specs" title="Direct link to 9. Let AI Write Tests, But You Write the Specs">​</a></h2>
+<p>Tell the AI exactly what to test:</p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">For the new `validate_email` function, write tests for:</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Valid email formats (basic cases)</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Invalid formats (no @, multiple @, empty string)</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Edge cases (very long domains, unicode characters)</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Return value format (should be Result&lt;(), ValidationError&gt;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<p>AI is good at generating test boilerplate once you specify the cases.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="10-debug-with-diagnostic-reports">10. Debug with Diagnostic Reports<a href="https://forgecode.dev/blog/ai-agent-best-practices/#10-debug-with-diagnostic-reports" class="hash-link" aria-label="Direct link to 10. Debug with Diagnostic Reports" title="Direct link to 10. Debug with Diagnostic Reports">​</a></h2>
+<p>When stuck, ask for a systematic breakdown:</p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">Generate a diagnostic report:</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">1. List all files modified in our last session</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">2. Explain the role of each file in the current feature</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">3. Identify why the current error is occurring</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">4. Propose 3 different debugging approaches</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<p>This forces the AI to think systematically instead of guess-and-check.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="11-set-clear-style-guidelines">11. Set Clear Style Guidelines<a href="https://forgecode.dev/blog/ai-agent-best-practices/#11-set-clear-style-guidelines" class="hash-link" aria-label="Direct link to 11. Set Clear Style Guidelines" title="Direct link to 11. Set Clear Style Guidelines">​</a></h2>
+<p>Give your AI a brief system prompt:</p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">Code style rules:</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Use explicit error handling, no unwraps in production code</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Include docstrings for public functions</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Prefer composition over inheritance</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Keep functions under 50 lines</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Use `pretty_assertions` in test</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Be explicit about lifetimes in Rust</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Use `anyhow::Result` for error handling in services and repositories.</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Create domain errors using `thiserror`.</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">- Never implement `From` for converting domain errors, manually convert them</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<p>Consistent rules = consistent code quality.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="12-review-everything-like-a-senior-engineer">12. Review Everything Like a Senior Engineer<a href="https://forgecode.dev/blog/ai-agent-best-practices/#12-review-everything-like-a-senior-engineer" class="hash-link" aria-label="Direct link to 12. Review Everything Like a Senior Engineer" title="Direct link to 12. Review Everything Like a Senior Engineer">​</a></h2>
+<p>Treat every AI change like a junior developer's PR:</p>
+<p><strong>Security Review:</strong></p>
+<ul>
+<li>Check for injection vulnerabilities</li>
+<li>Verify input validation</li>
+<li>Look for hardcoded secrets</li>
+</ul>
+<p><strong>Performance Review:</strong></p>
+<ul>
+<li>Watch for N+1 queries</li>
+<li>Check algorithm complexity</li>
+<li>Look for unnecessary allocations</li>
+</ul>
+<p><strong>Correctness Review:</strong></p>
+<ul>
+<li>Test edge cases manually</li>
+<li>Verify error handling</li>
+<li>Check for off-by-one errors</li>
+</ul>
+<p>The AI is smart but not wise. Your experience matters.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-doesnt-work-learn-from-my-mistakes">What Doesn't Work (Learn From My Mistakes)<a href="https://forgecode.dev/blog/ai-agent-best-practices/#what-doesnt-work-learn-from-my-mistakes" class="hash-link" aria-label="Direct link to What Doesn't Work (Learn From My Mistakes)" title="Direct link to What Doesn't Work (Learn From My Mistakes)">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-magic-prompt-fallacy">The "Magic Prompt" Fallacy<a href="https://forgecode.dev/blog/ai-agent-best-practices/#the-magic-prompt-fallacy" class="hash-link" aria-label="Direct link to The &quot;Magic Prompt&quot; Fallacy" title="Direct link to The &quot;Magic Prompt&quot; Fallacy">​</a></h3>
+<p>There's no perfect prompt that makes AI never make mistakes. Better workflows beat better prompts.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="expecting-mind-reading">Expecting Mind-Reading<a href="https://forgecode.dev/blog/ai-agent-best-practices/#expecting-mind-reading" class="hash-link" aria-label="Direct link to Expecting Mind-Reading" title="Direct link to Expecting Mind-Reading">​</a></h3>
+<p>AI can't infer requirements you haven't stated. "Make it production-ready" means nothing without specifics.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="trusting-ai-with-architecture-decisions">Trusting AI with Architecture Decisions<a href="https://forgecode.dev/blog/ai-agent-best-practices/#trusting-ai-with-architecture-decisions" class="hash-link" aria-label="Direct link to Trusting AI with Architecture Decisions" title="Direct link to Trusting AI with Architecture Decisions">​</a></h3>
+<p>AI is great at implementing your design but terrible at high-level system design. You architect, AI implements.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ignoring-domain-specific-context">Ignoring Domain-Specific Context<a href="https://forgecode.dev/blog/ai-agent-best-practices/#ignoring-domain-specific-context" class="hash-link" aria-label="Direct link to Ignoring Domain-Specific Context" title="Direct link to Ignoring Domain-Specific Context">​</a></h3>
+<p>AI doesn't know your business logic, deployment constraints, or team conventions unless you tell it.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="controversial-take-ai-pair-programming-is-better-than-human-pair-programming">Controversial Take: AI Pair Programming Is Better Than Human Pair Programming<a href="https://forgecode.dev/blog/ai-agent-best-practices/#controversial-take-ai-pair-programming-is-better-than-human-pair-programming" class="hash-link" aria-label="Direct link to Controversial Take: AI Pair Programming Is Better Than Human Pair Programming" title="Direct link to Controversial Take: AI Pair Programming Is Better Than Human Pair Programming">​</a></h2>
+<p><strong>For most implementation tasks.</strong></p>
+<p>AI doesn't get tired, doesn't have ego, doesn't argue about code style, and doesn't judge your googling habits. It's like having a junior developer with infinite patience and perfect memory.</p>
+<p>But it also doesn't catch logic errors, doesn't understand business context, and doesn't push back on bad ideas. You still need humans for the hard stuff.</p>
+<hr>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="final-reality-check">Final Reality Check<a href="https://forgecode.dev/blog/ai-agent-best-practices/#final-reality-check" class="hash-link" aria-label="Direct link to Final Reality Check" title="Direct link to Final Reality Check">​</a></h2>
+<p>AI coding tools can significantly boost productivity, but only if you use them systematically. The engineers seeing massive gains aren't using magic prompts they're using disciplined workflows.</p>
+<p>Plan first, test everything, review like your production system depends on it (because it does), and remember: the AI is your intern, not your architect.</p>
+<p>The future of coding isn't human vs AI it's humans with AI vs humans without it. Choose your side wisely.</p>]]></content>
+        <author>
+            <name>Forge</name>
+            <uri>https://github.com/antinomyhq/forge</uri>
+        </author>
+        <category label="AI Coding" term="AI Coding"/>
+        <category label="Pair Programming" term="Pair Programming"/>
+        <category label="Productivity" term="Productivity"/>
+        <category label="Software Engineering" term="Software Engineering"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[First Experience Coding with DeepSeek-R1-0528]]></title>
         <id>https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/</id>
