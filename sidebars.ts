@@ -40,10 +40,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Advanced Configuration", 
+      label: "Advanced Configuration",
       collapsed: false,
       items: [
-        "environment-configuration", 
+        "environment-configuration",
         "mcp-integration",
         "context-compaction",
         "custom-commands",
