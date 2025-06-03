@@ -40,13 +40,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Advanced Configuration", // More descriptive than "Advanced Features"
+      label: "Advanced Configuration", 
       collapsed: false,
       items: [
-        "environment-configuration", // Moved from Core Features
+        "environment-configuration", 
+        "mcp-integration",
         "context-compaction",
-        "custom-commands", // Moved from Basic Features to Advanced Configuration
-        "security-features", // Moved from Core Features as it's a configuration concern
+        "custom-commands",
+        "security-features",
       ],
     },
     {

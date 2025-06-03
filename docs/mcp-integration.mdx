@@ -1,0 +1,307 @@
+---
+title: Model Context Protocol (MCP) Integration
+sidebar_position: 8
+description: "Learn how to configure and use MCP servers to extend Forge with external tools and services."
+sidebar_label: MCP Integration
+---
+
+# Model Context Protocol (MCP) Integration
+
+The Model Context Protocol (MCP) feature allows AI agents to communicate with external tools and services, significantly extending Forge's capabilities. This implementation follows Anthropic's Model Context Protocol design, enabling seamless integration with various external systems and services.
+
+## What is MCP?
+
+MCP provides a standardized way for AI agents to interact with external tools, APIs, and services. Through MCP, Forge can:
+
+- Access external APIs and web services
+- Integrate with specialized tools and applications
+- Perform web browser automation
+- Connect to databases and data sources
+- Interact with custom service endpoints
+
+## MCP Configuration
+
+### Using CLI Commands
+
+Forge provides several CLI commands to manage MCP server configurations:
+
+<details>
+<summary><code>forge mcp list</code> - List all configured MCP servers</summary>
+
+Displays all currently configured MCP servers with their basic information.
+
+**Usage:**
+
+```bash
+forge mcp list
+```
+
+This command shows:
+
+- Server names
+- Connection status
+- Basic configuration details
+
+</details>
+
+<details>
+<summary><code>forge mcp add</code> - Add a new MCP server interactively</summary>
+
+Launches an interactive setup process to add a new MCP server configuration.
+
+**Usage:**
+
+```bash
+forge mcp add <server_name> <command/url>
+```
+
+</details>
+
+<details>
+<summary><code>forge mcp add-json</code> - Add a server using JSON configuration</summary>
+
+Allows you to add an MCP server by providing a complete JSON configuration.
+
+**Usage:**
+
+```bash
+forge mcp add-json <your_json_config_for_mcp>
+```
+
+</details>
+
+<details>
+<summary><code>forge mcp get</code> - Get detailed server information</summary>
+
+Retrieves detailed information about a specific MCP server configuration.
+
+**Usage:**
+
+```bash
+forge mcp get <server_name>
+```
+
+This displays:
+
+- Command/URL used by the mcp server
+
+</details>
+
+<details>
+<summary><code>forge mcp remove</code> - Remove an MCP server</summary>
+
+Removes an MCP server configuration from your setup.
+
+**Usage:**
+
+```bash
+forge mcp remove <server_name>
+```
+
+This will permanently remove the server configuration.
+
+</details>
+
+### Manual Configuration
+
+You can also manually create MCP configurations by creating a `.mcp.json` file with the following structure:
+
+```json
+{
+  "mcp_servers": {
+    "browser_automation": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-browser"],
+      "env": {
+        "BROWSER_EXECUTABLE": "/usr/bin/chromium-browser"
+      }
+    },
+    "api_service": {
+      "command": "python",
+      "args": ["-m", "mcp_server", "--port", "3001"],
+      "env": {
+        "API_KEY": "your_api_key_here",
+        "DEBUG": "true"
+      }
+    },
+    "webhook_server": {
+      "url": "http://localhost:3000/events"
+    }
+  }
+}
+```
+
+### Configuration Structure
+
+Each MCP server configuration can use one of two formats:
+
+#### Command-based Server
+
+```json
+{
+  "server_name": {
+    "command": "command_to_execute",
+    "args": ["arg1", "arg2", "arg3"],
+    "env": {
+      "ENV_VAR": "value",
+      "ANOTHER_VAR": "another_value"
+    }
+  }
+}
+```
+
+#### URL-based Server
+
+```json
+{
+  "server_name": {
+    "url": "http://localhost:3000/events"
+  }
+}
+```
+
+### Configuration Precedence
+
+MCP configurations are read from two locations in the following order of precedence:
+
+1. **Local configuration** (project-specific): `.mcp.json` in your current project directory
+2. **User configuration** (user-specific): Global configuration in your user directory
+
+Local configurations take precedence over user configurations, allowing you to have project-specific MCP setups while maintaining global defaults.
+
+## Example Use Cases
+
+### Web Browser Automation
+
+Configure an MCP server for browser automation to enable Forge to interact with web pages:
+
+```json
+{
+  "mcp_servers": {
+    "browser": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-browser"],
+      "env": {
+        "HEADLESS": "false",
+        "VIEWPORT_WIDTH": "1920",
+        "VIEWPORT_HEIGHT": "1080"
+      }
+    }
+  }
+}
+```
+
+**Use cases:**
+
+- Automated testing of web applications
+- Data scraping and extraction
+- Form filling and submission
+- UI interaction testing
+
+### External API Interactions
+
+Set up MCP servers to interact with external APIs:
+
+```json
+{
+  "mcp_servers": {
+    "weather_api": {
+      "command": "python",
+      "args": ["-m", "weather_mcp_server"],
+      "env": {
+        "WEATHER_API_KEY": "your_api_key",
+        "DEFAULT_LOCATION": "San Francisco"
+      }
+    }
+  }
+}
+```
+
+**Use cases:**
+
+- Fetching real-time data
+- Integrating with third-party services
+- Accessing specialized APIs
+- Data synchronization
+
+### Tool Integration
+
+Connect specialized development tools through MCP:
+
+```json
+{
+  "mcp_servers": {
+    "database_tools": {
+      "command": "node",
+      "args": ["database-mcp-server.js"],
+      "env": {
+        "DB_CONNECTION_STRING": "postgresql://user:pass@localhost:5432/db",
+        "QUERY_TIMEOUT": "30000"
+      }
+    }
+  }
+}
+```
+
+**Use cases:**
+
+- Database query execution
+- Schema management
+- Data migration tools
+- Performance monitoring
+
+### Custom Service Connections
+
+Create connections to custom internal services:
+
+```json
+{
+  "mcp_servers": {
+    "internal_api": {
+      "url": "http://internal-service.company.com/mcp",
+      "env": {
+        "AUTH_TOKEN": "internal_service_token"
+      }
+    }
+  }
+}
+```
+
+**Use cases:**
+
+- Internal tool integration
+- Custom workflow automation
+- Proprietary system access
+- Enterprise service connections
+
+## Best Practices
+
+### Security Considerations
+
+- **Environment Variables**: Store sensitive information like API keys in environment variables rather than in configuration files
+- **Access Control**: Limit MCP server permissions to only what's necessary
+- **Network Security**: Use secure connections (HTTPS) for URL-based servers
+- **Credential Management**: Rotate API keys and tokens regularly
+
+## Troubleshooting
+
+### Common Issues
+
+**Server Connection Failures:**
+
+- Verify server URLs and ports are correct
+- Check network connectivity
+- Ensure required environment variables are set
+- Validate authentication credentials
+
+**Command Execution Errors:**
+
+- Verify command paths and arguments
+- Check file permissions
+- Ensure required dependencies are installed
+- Review environment variable configurations
+
+**Configuration Problems:**
+
+- Validate JSON syntax in `.mcp.json` files
+- Check configuration file locations
