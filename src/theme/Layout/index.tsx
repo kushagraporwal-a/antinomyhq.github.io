@@ -13,6 +13,7 @@ import type {Props} from "@theme/Layout"
 import styles from "./styles.module.css"
 import GlobalLayout from "@site/src/components/shared/GlobalLayout"
 import Announcement from "@site/src/components/shared/Announcement"
+import {FloatingCta} from "@site/src/components/cta"
 
 export default function Layout(props: Props): JSX.Element {
   const {
@@ -25,7 +26,7 @@ export default function Layout(props: Props): JSX.Element {
   } = props
 
   useKeyboardNavigation()
-  const targetDate = new Date("2024-11-25T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
+  const targetDate = new Date("2025-06-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
   const currentDate = new Date()
   return (
     <LayoutProvider>
@@ -38,11 +39,14 @@ export default function Layout(props: Props): JSX.Element {
       <AnnouncementBar />
 
       {currentDate < targetDate && (
-        <Announcement
-          text={"🚀 Scaling APIs: Rest, gRPC, or GraphQL? Let’s Break It Down!"}
-          refLink={"https://lu.ma/8sqfoc81"}
-          refText={"Register here"}
-        />
+        <div className="sticky top-0 z-50">
+          <Announcement
+            text="⚡ Stop paying $20/month for AI coding – Forge Code is 100% FREE"
+            refLink="https://app.antinomy.ai/app/"
+            refText="Get Started →"
+            variant="gradient"
+          />
+        </div>
       )}
 
       <Navbar />
@@ -55,6 +59,8 @@ export default function Layout(props: Props): JSX.Element {
       </div>
 
       {!noFooter && <Footer />}
+
+      <FloatingCta />
     </LayoutProvider>
   )
 }
