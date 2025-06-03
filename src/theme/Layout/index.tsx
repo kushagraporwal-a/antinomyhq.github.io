@@ -26,7 +26,7 @@ export default function Layout(props: Props): JSX.Element {
   } = props
 
   useKeyboardNavigation()
-  const targetDate = new Date("2025-06-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
+  const targetDate = new Date("2025-05-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
   const currentDate = new Date()
   return (
     <LayoutProvider>
@@ -60,7 +60,7 @@ export default function Layout(props: Props): JSX.Element {
 
       {!noFooter && <Footer />}
 
-      <FloatingCta />
+      {/* <FloatingCta /> */}
     </LayoutProvider>
   )
 }
