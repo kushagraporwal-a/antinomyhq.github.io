@@ -116,49 +116,49 @@ The Index Agent performed better on most challenges, but this speed advantage co
 
 - **Index Agent**: 37 ✓ (18.2s, 3 API calls)
 - **No-Index Agent**: 37 ✓ (55.46s, 13 API calls)
-- **Winner**: Index Agent (speed)
+- **Winner**: Index Agent 
 
 **Challenge 2: Keyboard Controls**
 
 - **Index Agent**: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (20.7s, 5 API calls)
 - **No-Index Agent**: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (25.29s, 8 API calls)
-- **Winner**: Index Agent (speed)
+- **Winner**: Index Agent 
 
 **Challenge 3: Memory Architecture**
 
 - **Index Agent**: 256 ✓ (22.1s, 5 API calls)
 - **No-Index Agent**: 256 ✓ (24.2s, 7 API calls)
-- **Winner**: Index Agent (speed)
+- **Winner**: Index Agent 
 
 **Challenge 4: Pitch, Roll, Yaw**
 
 - **Index Agent**: P(QR) ✓ (36.61s, 4 API calls)
 - **No-Index Agent**: P(QR) ✓ (71.30s, 4 API calls)
-- **Winner**: Index Agent (speed + cost)
+- **Winner**: Index Agent 
 
 **Challenge 5: Radar Limitations**
 
 - **Index Agent**: 400 ✓ (28.9s, 2 API calls)
 - **No-Index Agent**: 400 ✓ (82.63s, 14 API calls)
-- **Winner**: Index Agent (speed + cost)
+- **Winner**: Index Agent 
 
 **Challenge 6: Processor Timing**
 
 - **Index Agent**: 11.7 ✓ (30.87s, 7 API calls)
 - **No-Index Agent**: 11.7 ✓ (51.41s, 10 API calls)
-- **Winner**: Index Agent (speed + cost)
+- **Winner**: Index Agent 
 
 **Challenge 7: Engine Throttling**
 
 - **Index Agent**: 10 ✓ (23.68s, 3 API calls)
 - **No-Index Agent**: 10 ✓ (36.05s, 9 API calls)
-- **Winner**: Index Agent (speed)
+- **Winner**: Index Agent 
 
 **Challenge 8: Land the Lunar Module**
 
 - **Index Agent**: [28.7, -21.5, 0.2] ✓ **LANDED** (211.27s, 25 API calls)
 - **No-Index Agent**: [28.7, -21.5, 0.2] ✓ **LANDED** (156.77s, 18 API calls)
-- **Winner**: No-Index Agent (speed + cost)
+- **Winner**: No-Index Agent 
 
 _Note: The Index Agent encountered synchronization issues during this test where cached results from previous runs conflicted with the current state, leading to longer resolution time._
 
