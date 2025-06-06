@@ -73,49 +73,49 @@ I tested two AI agents on Apollo 11's actual flight code to see if pre-indexing 
 <ul>
 <li><strong>Index Agent</strong>: 37 ✓ (18.2s, 3 API calls)</li>
 <li><strong>No-Index Agent</strong>: 37 ✓ (55.46s, 13 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 2: Keyboard Controls</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (20.7s, 5 API calls)</li>
 <li><strong>No-Index Agent</strong>: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (25.29s, 8 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 3: Memory Architecture</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 256 ✓ (22.1s, 5 API calls)</li>
 <li><strong>No-Index Agent</strong>: 256 ✓ (24.2s, 7 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 4: Pitch, Roll, Yaw</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: P(QR) ✓ (36.61s, 4 API calls)</li>
 <li><strong>No-Index Agent</strong>: P(QR) ✓ (71.30s, 4 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 5: Radar Limitations</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 400 ✓ (28.9s, 2 API calls)</li>
 <li><strong>No-Index Agent</strong>: 400 ✓ (82.63s, 14 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 6: Processor Timing</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 11.7 ✓ (30.87s, 7 API calls)</li>
 <li><strong>No-Index Agent</strong>: 11.7 ✓ (51.41s, 10 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 7: Engine Throttling</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 10 ✓ (23.68s, 3 API calls)</li>
 <li><strong>No-Index Agent</strong>: 10 ✓ (36.05s, 9 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 8: Land the Lunar Module</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: [28.7, -21.5, 0.2] ✓ <strong>LANDED</strong> (211.27s, 25 API calls)</li>
 <li><strong>No-Index Agent</strong>: [28.7, -21.5, 0.2] ✓ <strong>LANDED</strong> (156.77s, 18 API calls)</li>
-<li><strong>Winner</strong>: No-Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: No-Index Agent</li>
 </ul>
 <p><em>Note: The Index Agent encountered synchronization issues during this test where cached results from previous runs conflicted with the current state, leading to longer resolution time.</em></p>
 <p>The successful P65 auto-landing simulation produced the following trajectory and telemetry data. These visuals confirm the agents' success in the final, most complex challenge.</p>

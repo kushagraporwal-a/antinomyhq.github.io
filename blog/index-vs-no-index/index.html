@@ -15,7 +15,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"ForgeCode","url":"https://forgecode.dev/"}</script>
 <script>!function(e,n,t,i,c,s){e.SnitchObject=t,e[t]||(e[t]=function(){(e[t].q=e[t].q||[]).push(arguments)}),e[t].l=+new Date,c=n.createElement(i),s=n.getElementsByTagName(i)[0],c.src="//snid.snitcher.com/8432087.js",s.parentNode.insertBefore(c,s)}(window,document,"snid","script"),snid("verify","8432087")</script>
 <script>!function(){var t=window.reb2b=window.reb2b||[];if(!t.invoked){t.invoked=!0,t.methods=["identify","collect"],t.factory=function(e){return function(){var r=Array.prototype.slice.call(arguments);return r.unshift(e),t.push(r),t}};for(var e=0;e<t.methods.length;e++){var r=t.methods[e];t[r]=t.factory(r)}t.load=function(t){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://s3-us-west-2.amazonaws.com/b2bjsstore/b/"+t+"/0OV0VHL3P56Z.js.gz";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(e,r)},t.SNIPPET_VERSION="1.0.1",t.load("0OV0VHL3P56Z")}}()</script><link rel="stylesheet" href="/assets/css/styles.81e9c148.css">
-<script src="/assets/js/runtime~main.a6df74f7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d3b8d4c5.js" defer="defer"></script>
 <script src="/assets/js/main.a4ec2382.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -78,49 +78,49 @@ I tested two AI agents on Apollo 11&#x27;s actual flight code to see if pre-inde
 <ul>
 <li><strong>Index Agent</strong>: 37 ✓ (18.2s, 3 API calls)</li>
 <li><strong>No-Index Agent</strong>: 37 ✓ (55.46s, 13 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 2: Keyboard Controls</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (20.7s, 5 API calls)</li>
 <li><strong>No-Index Agent</strong>: PINBALL_GAME_BUTTONS_AND_LIGHTS.agc ✓ (25.29s, 8 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 3: Memory Architecture</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 256 ✓ (22.1s, 5 API calls)</li>
 <li><strong>No-Index Agent</strong>: 256 ✓ (24.2s, 7 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 4: Pitch, Roll, Yaw</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: P(QR) ✓ (36.61s, 4 API calls)</li>
 <li><strong>No-Index Agent</strong>: P(QR) ✓ (71.30s, 4 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 5: Radar Limitations</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 400 ✓ (28.9s, 2 API calls)</li>
 <li><strong>No-Index Agent</strong>: 400 ✓ (82.63s, 14 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 6: Processor Timing</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 11.7 ✓ (30.87s, 7 API calls)</li>
 <li><strong>No-Index Agent</strong>: 11.7 ✓ (51.41s, 10 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 7: Engine Throttling</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: 10 ✓ (23.68s, 3 API calls)</li>
 <li><strong>No-Index Agent</strong>: 10 ✓ (36.05s, 9 API calls)</li>
-<li><strong>Winner</strong>: Index Agent (speed)</li>
+<li><strong>Winner</strong>: Index Agent</li>
 </ul>
 <p><strong>Challenge 8: Land the Lunar Module</strong></p>
 <ul>
 <li><strong>Index Agent</strong>: [28.7, -21.5, 0.2] ✓ <strong>LANDED</strong> (211.27s, 25 API calls)</li>
 <li><strong>No-Index Agent</strong>: [28.7, -21.5, 0.2] ✓ <strong>LANDED</strong> (156.77s, 18 API calls)</li>
-<li><strong>Winner</strong>: No-Index Agent (speed + cost)</li>
+<li><strong>Winner</strong>: No-Index Agent</li>
 </ul>
 <p><em>Note: The Index Agent encountered synchronization issues during this test where cached results from previous runs conflicted with the current state, leading to longer resolution time.</em></p>
 <p>The successful P65 auto-landing simulation produced the following trajectory and telemetry data. These visuals confirm the agents&#x27; success in the final, most complex challenge.</p>
