@@ -1,6 +1,6 @@
 ---
 slug: index-vs-no-index-ai-code-agents
-title: "To Index or Not to Index: How Code Embeddings Help or Hurt, AI Coding Agents"
+title: "To index or not to index: which coding agent to chose?"
 authors: [forge]
 tags: ["Coding", "Vector search", "AI Agents", "Apollo 11"]
 date: 2025-06-03
@@ -42,6 +42,10 @@ Here's how it worked:
 
 Each stitch they made created one line of computer code. In total, they wove together about 4,000 lines of this special "assembly" code, creating a permanent, unchangeable memory.
 
+![Apollo Guidance Computer rope memory](https://static.righto.com/images/agc-rope/Plate_19.jpg)
+
+_Close-up of Apollo Guidance Computer rope memory showing the intricate hand-woven wires through magnetic cores. Each wire path represented binary code - through the core for "1", around it for "0". Photo: Raytheon/MIT_
+
 This handmade memory contained crucial programs:
 
 - **Programs 63-67** were for the spacecraft's descent.
@@ -61,7 +65,7 @@ The AGC faced the same fundamental challenge we encounter today with legacy code
 
 Rather than spending months learning 1960s assembly to navigate the Apollo 11 codebase myself, I decided to conduct an experiment: let two modern AI agents tackle the challenge and compare their effectiveness. Both agents run on the exact same language model _Claude 4 Sonnet_ so the only variable is their approach to information retrieval.
 
-This isn't just an academic exercise. Understanding whether code indexing actually improves AI performance has real implications for how we build development tools, documentation systems, and code analysis platforms.
+This isn't just an academic exercise. Understanding whether code indexing actually improves AI performance has real implications for how we build development tools, documentation systems, and code analysis platforms. With hundreds of coding agents flooding the market, each claiming superior code understanding via proprietary "context engines" and vector search, developers face analysis paralysis. This experiment cuts through the marketing noise by testing the core assumption driving most of these tools: that indexing makes AI agents fundamentally better.
 
 I'm deliberately withholding the actual product names, this post is about the technique, not vendor bashing. So, for the rest of the article I'll refer to the tools generically:
 
@@ -185,23 +189,16 @@ This reveals the real choice isn't just about speed vs. cost, it's a **three-way
 
 ## Conclusion: Balancing Performance, Reliability, and Security
 
-The results reveal a more nuanced decision tree than initially expected. Both agents successfully completed every challenge, but each approach comes with distinct trade-offs that become critical as your codebase evolves and security requirements tighten.
+The Apollo 11 guidance computer never worked with stale data, every decision used real-time sensor readings. Modern AI coding agents face the same fundamental challenge, but with a twist: **index agents are undeniably cost effective**, delivering 22% faster responses and 35% fewer API calls. The catch? Remote code indexes can cause sync issues that turn productivity gains into debugging nightmares.
 
-While code indexing performed better in speed and cost-effectiveness, it introduces both synchronization risks that can derail productivity when indexes fall behind reality AND security considerations when using third-party services. The No-Index approach offers the most reliable accuracy guarantee and simplest security model, but at the cost of speed and efficiency.
+The results reveal a three-way trade-off between performance, reliability, and security. While indexed approaches excel in speed and cost-effectiveness, they introduce synchronization risks that can derail productivity when indexes fall behind reality. The "lunar landing effect" we observed, where stale embeddings led to phantom API calls, illustrates why out-of-sync indexes can be more dangerous than no index at all.
 
-For stable, well-documented codebases with relaxed security requirements, third-party indexing offers clear advantages. For rapidly evolving projects or security-conscious environments, the No-Index approach becomes essential to maintain both reliability and compliance.
-
-So the real question isn't whether to index, but when, and how you'll guard against drift. Until real-time, branch-aware indexing is solved, a hybrid that toggles to No-Index when confidence drops may be the safest orbit.
-
-**What this means for the future of AI-assisted development**: Organizations will likely need multiple approaches for different scenarios.
-
-Future tools will need to solve multiple problems simultaneously:
+**The path forward?** Choose an agent which can do indexing very fast, maybe locally, and make sure out of sync indexes are never possible. This means looking for solutions that offer:
 
 - **Real-time index updates** that track code changes instantly
-- **Branch-aware indexing** that maintains separate embeddings for each development branch
-- **Staleness detection** that warns when index data might be outdated
-- **Hybrid approaches** that fall back to No-Index when synchronization confidence is low
-- **Security-conscious architectures** that offer multiple deployment models
+- **Local processing** to avoid security risks of sending proprietary code to third parties
+- **Staleness detection** that warns when index confidence drops
+- **Hybrid fallbacks** that switch to direct code analysis when synchronization is uncertain
 
 The Apollo 11 guidance computer succeeded because it never worked with stale data AND never exposed mission-critical algorithms to external parties, every decision used current sensor readings and real-time calculations produced entirely in-house. Modern AI development tools need the same dual commitment to data freshness and security, or they risk leading us confidently toward outdated solutions or exposing our most valuable code.
 
