@@ -10,7 +10,7 @@ image: /images/blog/lunar_module.png
 ---
 
 **TL;DR:**
-Indexed agents were 22% faster—until stale embeddings crashed the lunar lander.
+Indexed agents were 22% faster, until stale embeddings crashed the lunar lander.
 
 I tested two AI agents on Apollo 11's actual flight code to see if code indexing makes a difference. Key findings:
 
@@ -29,11 +29,24 @@ That was all the time the tiny _Apollo Guidance Computer(AGC)_ could spare for i
 
 <!--truncate-->
 
-Yet inside the Lunar Module, a shoebox-sized computer with *2 kWords of RAM (out of 36 kWords total rope ROM)*¹, less memory than a single smartphone contact entry, rebooted itself, shed low-priority chores, and kept just enough brainpower alive to steer a new course to Tranquility Base.
+Yet inside the Lunar Module, a shoebox-sized computer with *~4 KB of RAM (out of 72 KB total rope ROM)*¹, less memory than a single smartphone contact entry. Rebooted itself, shed low-priority tasks, and re-established control over guidance and navigation to Tranquility Base.
 
 That rescue wasn't luck; it was software engineering.
 
-Months earlier, in a quiet Waltham, MA workshop, seamstresses threaded wires through magnetic cores to weave that very code into permanent memory: loop a wire through a core for binary 1, route it around for 0. Each stitch fixed a line of the ~4,000-line assembly codebase—Programs 63-67 for descent, 70-71 for lunar ascent, the real-time Executive that juggled every task in 20ms frames, and hard-won "restart protection" that let the AGC wake from a crash without losing its place.
+Months earlier, in a quiet workshop in Waltham, Massachusetts, seamstresses helped create the software for a very important mission. They did this by carefully threading wires through small, magnetic rings called "cores."
+
+Here's how it worked:
+
+- **To represent a "1"** (in binary code), they looped a wire _through_ a core.
+- **To represent a "0,"** they routed the wire _around_ the core.
+
+Each stitch they made created one line of computer code. In total, they wove together about 4,000 lines of this special "assembly" code, creating a permanent, unchangeable memory.
+
+This handmade memory contained crucial programs:
+
+- **Programs 63-67** were for the spacecraft's descent.
+- **Programs 70-71** were for taking off from the moon.
+  This system managed all the computer's tasks in tiny, 20ms time slots. A key feature was its "restart protection," a capability that allowed the computer to recover from a crash without forgetting what it was doing.
 
 ### A small step for code …
 
@@ -164,7 +177,7 @@ During Challenge 8, this manifested clearly: the Index Agent retrieved embedding
 
 **The No-Index Advantage**: While slower and more expensive in API calls, the No-Index approach sidesteps both synchronization and security concerns entirely. It always refers to the current state of your code, never gets confused by cached embeddings from last week's refactor, keeps all processing local, and fails fast when it encounters genuine problems rather than hallucinating solutions based on outdated context.
 
-This reveals the real choice isn't just about speed vs. cost—it's a **three-way trade-off between performance, reliability, and security**.
+This reveals the real choice isn't just about speed vs. cost, it's a **three-way trade-off between performance, reliability, and security**.
 
 **Practical Implications**: The Index Agent performed better on most challenges, averaging 22% faster responses and using 35% fewer API calls. Both agents achieved comparable accuracy in static scenarios, but the key difference emerged in dynamic situations where the code state had changed since the index was built.
 
@@ -196,7 +209,7 @@ The Apollo 11 guidance computer succeeded because it never worked with stale dat
 
 Want to test this yourself? The complete Apollo 11 challenge suite is available at: [https://github.com/forrestbrazeal/apollo-11-workshop](https://github.com/forrestbrazeal/apollo-11-workshop)
 
-If you'd like me to run this experiment on your repository, drop the link in the comments. I'm particularly interested in testing this on larger, more modern codebases to see if the patterns scale—and whether the "lunar landing" effect appears in other domains.
+If you'd like me to run this experiment on your repository, drop the link in the comments. I'm particularly interested in testing this on larger, more modern codebases to see if the patterns scale and whether the "lunar landing" effect appears in other domains.
 
 Have you run similar experiments comparing AI approaches? I'd love to hear about your findings.
 
