@@ -16,7 +16,7 @@
             <pubDate>Tue, 03 Jun 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Comparing indexed vs non-indexed AI agents using Apollo 11's guidance computer code as benchmark. Deep dive into synchronization issues and security trade-offs in AI-assisted development.]]></description>
             <content:encoded><![CDATA[<p><strong>TL;DR:</strong>
-Indexed agents were 22% faster—until stale embeddings crashed the lunar lander.</p>
+Indexed agents were 22% faster, until stale embeddings crashed the lunar lander.</p>
 <p>I tested two AI agents on Apollo 11's actual flight code to see if code indexing makes a difference. Key findings:</p>
 <ul>
 <li>Indexed search proved 22% faster with 35% fewer API calls</li>
@@ -28,9 +28,21 @@ Indexed agents were 22% faster—until stale embeddings crashed the lunar lander
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="back-story-about-the-apollo-11-mission">Back story about the Apollo 11 mission<a href="https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/#back-story-about-the-apollo-11-mission" class="hash-link" aria-label="Direct link to Back story about the Apollo 11 mission" title="Direct link to Back story about the Apollo 11 mission">​</a></h2>
 <p>Thirty-eight seconds.</p>
 <p>That was all the time the tiny <em>Apollo Guidance Computer(AGC)</em> could spare for its velocity-control job before handing the cockpit back to Neil Armstrong and Buzz Aldrin. In those thirty-eight seconds on 20 July 1969, the <em>Eagle</em> was dropping toward the Moon at two meters per second too fast, increasing its distance from Michael Collins in the Command Module, its rendezvous radar spamming the CPU with garbage, and a relentless "1202" alarm blinking on the DSKY.</p>
-<p>Yet inside the Lunar Module, a shoebox-sized computer with *2 kWords of RAM (out of 36 kWords total rope ROM)*¹, less memory than a single smartphone contact entry, rebooted itself, shed low-priority chores, and kept just enough brainpower alive to steer a new course to Tranquility Base.</p>
+<p>Yet inside the Lunar Module, a shoebox-sized computer with *~4 KB of RAM (out of 72 KB total rope ROM)*¹, less memory than a single smartphone contact entry. Rebooted itself, shed low-priority tasks, and re-established control over guidance and navigation to Tranquility Base.</p>
 <p>That rescue wasn't luck; it was software engineering.</p>
-<p>Months earlier, in a quiet Waltham, MA workshop, seamstresses threaded wires through magnetic cores to weave that very code into permanent memory: loop a wire through a core for binary 1, route it around for 0. Each stitch fixed a line of the ~4,000-line assembly codebase—Programs 63-67 for descent, 70-71 for lunar ascent, the real-time Executive that juggled every task in 20ms frames, and hard-won "restart protection" that let the AGC wake from a crash without losing its place.</p>
+<p>Months earlier, in a quiet workshop in Waltham, Massachusetts, seamstresses helped create the software for a very important mission. They did this by carefully threading wires through small, magnetic rings called "cores."</p>
+<p>Here's how it worked:</p>
+<ul>
+<li><strong>To represent a "1"</strong> (in binary code), they looped a wire <em>through</em> a core.</li>
+<li><strong>To represent a "0,"</strong> they routed the wire <em>around</em> the core.</li>
+</ul>
+<p>Each stitch they made created one line of computer code. In total, they wove together about 4,000 lines of this special "assembly" code, creating a permanent, unchangeable memory.</p>
+<p>This handmade memory contained crucial programs:</p>
+<ul>
+<li><strong>Programs 63-67</strong> were for the spacecraft's descent.</li>
+<li><strong>Programs 70-71</strong> were for taking off from the moon.
+This system managed all the computer's tasks in tiny, 20ms time slots. A key feature was its "restart protection," a capability that allowed the computer to recover from a crash without forgetting what it was doing.</li>
+</ul>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="a-small-step-for-code-">A small step for code …<a href="https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/#a-small-step-for-code-" class="hash-link" aria-label="Direct link to A small step for code …" title="Direct link to A small step for code …">​</a></h3>
 <p>When the dust settled and Armstrong radioed, <em>"Houston, Tranquility Base here. The Eagle has landed,"</em> he was also saluting an invisible crew: the programmers led by Margaret Hamilton who turned 36 kWords of rope ROM into the first fault-tolerant real-time operating system ever sent beyond Earth.</p>
 <p><img decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Margaret_Hamilton_-_restoration.jpg" alt="Margaret Hamilton with Apollo Guidance Computer printouts" class="img_ev3q">
@@ -104,7 +116,7 @@ Indexed agents were 22% faster—until stale embeddings crashed the lunar lander
 <p><strong>Self-hosted indexing</strong> can address security concerns but introduces operational complexity: maintaining vector databases, embedding models, and refresh mechanisms. It's the middle ground that preserves both speed and security but demands significant DevOps investment.</p>
 <p><strong>The Developer Experience</strong>: You're debugging for hours only to discover the AI was confidently wrong because it's working with yesterday's codebase. The faster response times become meaningless when they lead you down dead-end paths based on stale information. And if you're in a regulated environment, you may not even be able to use third-party indexing services regardless of their synchronization quality.</p>
 <p><strong>The No-Index Advantage</strong>: While slower and more expensive in API calls, the No-Index approach sidesteps both synchronization and security concerns entirely. It always refers to the current state of your code, never gets confused by cached embeddings from last week's refactor, keeps all processing local, and fails fast when it encounters genuine problems rather than hallucinating solutions based on outdated context.</p>
-<p>This reveals the real choice isn't just about speed vs. cost—it's a <strong>three-way trade-off between performance, reliability, and security</strong>.</p>
+<p>This reveals the real choice isn't just about speed vs. cost, it's a <strong>three-way trade-off between performance, reliability, and security</strong>.</p>
 <p><strong>Practical Implications</strong>: The Index Agent performed better on most challenges, averaging 22% faster responses and using 35% fewer API calls. Both agents achieved comparable accuracy in static scenarios, but the key difference emerged in dynamic situations where the code state had changed since the index was built.</p>
 <p><strong>Developers vs. Synchronization</strong>: The Index Agent's efficiency gains are real, but they come with a reliability cost that can be devastating in rapidly changing codebases. When synchronization fails, the extra debugging time often negates the initial speed advantage.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion-balancing-performance-reliability-and-security">Conclusion: Balancing Performance, Reliability, and Security<a href="https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/#conclusion-balancing-performance-reliability-and-security" class="hash-link" aria-label="Direct link to Conclusion: Balancing Performance, Reliability, and Security" title="Direct link to Conclusion: Balancing Performance, Reliability, and Security">​</a></h2>
@@ -124,7 +136,7 @@ Indexed agents were 22% faster—until stale embeddings crashed the lunar lander
 <p>The Apollo 11 guidance computer succeeded because it never worked with stale data AND never exposed mission-critical algorithms to external parties, every decision used current sensor readings and real-time calculations produced entirely in-house. Modern AI development tools need the same dual commitment to data freshness and security, or they risk leading us confidently toward outdated solutions or exposing our most valuable code.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-experiment">Community Experiment<a href="https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/#community-experiment" class="hash-link" aria-label="Direct link to Community Experiment" title="Direct link to Community Experiment">​</a></h2>
 <p>Want to test this yourself? The complete Apollo 11 challenge suite is available at: <a href="https://github.com/forrestbrazeal/apollo-11-workshop" target="_blank" rel="noopener noreferrer">https://github.com/forrestbrazeal/apollo-11-workshop</a></p>
-<p>If you'd like me to run this experiment on your repository, drop the link in the comments. I'm particularly interested in testing this on larger, more modern codebases to see if the patterns scale—and whether the "lunar landing" effect appears in other domains.</p>
+<p>If you'd like me to run this experiment on your repository, drop the link in the comments. I'm particularly interested in testing this on larger, more modern codebases to see if the patterns scale and whether the "lunar landing" effect appears in other domains.</p>
 <p>Have you run similar experiments comparing AI approaches? I'd love to hear about your findings.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="credits">Credits<a href="https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/#credits" class="hash-link" aria-label="Direct link to Credits" title="Direct link to Credits">​</a></h2>
 <p>This experiment was inspired by <a href="https://twitter.com/forrestbrazeal" target="_blank" rel="noopener noreferrer">@forrestbrazeal</a>'s excellent talk at AI Engineer World Fair 2025. The specific challenges explored here are taken from that talk.</p>
