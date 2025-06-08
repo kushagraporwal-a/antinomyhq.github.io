@@ -205,19 +205,18 @@ export const socials: Social[] = [
     image: require("@site/static/icons/companies/discord-gray.svg").default,
     href: "https://discord.gg/kRZBPpkgwq",
   },
-  // {
-  //   id: 3,
-  //   name: "linkedin",
-  //   image: require("@site/static/icons/companies/linkedin-gray.svg").default,
-  //   href: "https://www.linkedin.com/company/tailcall",
-  // },
-
-  // {
-  //   id: 4,
-  //   name: "twitter",
-  //   image: require("@site/static/icons/companies/x-gray.svg").default,
-  //   href: "https://twitter.com/tailcallhq",
-  // },
+  {
+    id: 3,
+    name: "linkedin",
+    image: require("@site/static/icons/companies/linkedin-gray.svg").default,
+    href: "https://www.linkedin.com/company/forgecodehq",
+  },
+  {
+    id: 4,
+    name: "twitter",
+    image: require("@site/static/icons/companies/x-gray.svg").default,
+    href: "https://x.com/forgecodehq",
+  },
 ]
 
 export const chooseTailcall: ChooseTailcall[] = [
