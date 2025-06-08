@@ -196,6 +196,7 @@ const NavbarContent = (): JSX.Element => {
         // Render right navbar items
         <>
           <NavbarItems items={rightItems} />
+          <GithubStarsButton className="hidden lg:flex" />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
         </>
       }

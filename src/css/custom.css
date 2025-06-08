@@ -399,12 +399,38 @@ input[type="radio"]:checked::before {
 }
 
 .header-button.header-button-github {
-  padding: 0 1.25rem;
-  margin-right: 0;
+  padding: 0 0.75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid var(--ifm-color-gray-400);
+  color: var(--ifm-color-gray-600);
+  font-size: 0.875rem;
+  height: 2.75rem;
+  background: transparent;
+  transition: all 0.2s ease;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .header-button.header-button-github svg {
   margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.header-button.header-button-github:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-gray-600);
+  color: var(--ifm-color-gray-800);
+  text-decoration: none;
+}
+
+.header-button.header-button-github:hover svg {
+  opacity: 1;
 }
 
 .header-button.header-button-discord {
@@ -610,6 +636,38 @@ nav.menu {
     width: auto;
     display: inline-flex;
     margin-left: 1rem;
+  }
+
+  /* Hide GitHub button from main navbar on mobile */
+  .navbar__items--right .header-button-github {
+    display: none !important;
+  }
+
+  /* Style GitHub button in mobile menu */
+  .menu__list-item .header-button-github {
+    display: flex;
+    width: auto;
+    max-width: 140px;
+    height: auto;
+    padding: 0.75rem 1rem;
+    margin: 0 auto 1rem auto;
+    border: 1px solid var(--ifm-color-gray-400);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ifm-color-gray-600);
+    font-weight: var(--ifm-font-weight-bold);
+    text-decoration: none;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu__list-item .header-button-github:hover {
+    border-color: var(--ifm-color-gray-600);
+    color: var(--ifm-color-gray-800);
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
   }
 
   .navbar__item.navbar__item {
