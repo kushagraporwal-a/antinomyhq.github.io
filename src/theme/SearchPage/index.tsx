@@ -368,12 +368,12 @@ function SearchPageContent(): JSX.Element {
               onClick={() => handleCategoryClick(category)}
             >
               <span
-                className={`text-tailCall-dark-500 font-space-grotesk text-title-tiny font-bold ${selectedCategory === category ? "" : "text-tailCall-light-600 sm:text-tailCall-dark-500"}`}
+                className={`text-tailCall-dark-500 text-title-tiny font-bold ${selectedCategory === category ? "" : "text-tailCall-light-600 sm:text-tailCall-dark-500"}`}
               >
                 {category}
               </span>
               <span
-                className={`flex justify-center items-center py-[2px] px-[6px] md:py-0 font-space-grotesk !font-medium text-content-tiny sm:text-content-small ${selectedCategory === category ? "text-tailCall-dark-700 bg-tailCall-yellow sm:bg-transparent rounded-md" : "text-tailCall-dark-100 rounded-[6px] bg-tailCall-light-200"}`}
+                className={`flex justify-center items-center py-[2px] px-[6px] md:py-0 !font-medium text-content-tiny sm:text-content-small ${selectedCategory === category ? "text-tailCall-dark-700 bg-tailCall-yellow sm:bg-transparent rounded-md" : "text-tailCall-dark-100 rounded-[6px] bg-tailCall-light-200"}`}
               >
                 {categoryCount[category as keyof typeof categoryCount] || 0}
               </span>
@@ -398,7 +398,7 @@ function SearchPageContent(): JSX.Element {
       <div className="container mt-4 flex flex-col sm:flex-row sm:mt-8">
         {getSidebar("hidden sm:flex")}
         <div className="flex flex-col w-full px-0 sm:px-24 md:px-24 lg:px-36 sm:pl-16 md:pl-16 lg:pl-24">
-          <span className="text-tailCall-dark-700 font-space-grotesk text-title-medium font-bold">{getTitle()}</span>
+          <span className="text-tailCall-dark-700 text-title-medium font-bold">{getTitle()}</span>
           <form className="row" onSubmit={(e) => e.preventDefault()}>
             <div
               className={clsx("col", styles.searchQueryColumn, {
@@ -409,7 +409,7 @@ function SearchPageContent(): JSX.Element {
               <input
                 type="search"
                 name="q"
-                className={`${styles.searchQueryInput} mt-4 mb-3 text-tailCall-dark-200 font-space-grotesk text-content-small font-normal`}
+                className={`${styles.searchQueryInput} mt-4 mb-3 text-tailCall-dark-200 text-content-small font-normal`}
                 placeholder={translate({
                   id: "theme.SearchPage.inputPlaceholder",
                   message: "Type your search here",
@@ -474,7 +474,7 @@ function SearchPageContent(): JSX.Element {
 
                   {summary && (
                     <span
-                      className="text-tailCall-dark-200 font-space-grotesk text-content-small font-normal line-clamp-2"
+                      className="text-tailCall-dark-200 text-content-small font-normal line-clamp-2"
                       // Developer provided the HTML, so assume it's safe.
                       // eslint-disable-next-line react/no-danger
                       dangerouslySetInnerHTML={{__html: summary}}

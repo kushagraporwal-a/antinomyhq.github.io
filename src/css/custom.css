@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&family=Rubik:ital,wght@0,400;0,500;0,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -34,7 +34,7 @@
 
 :root {
   /* Font and Dimension Tokens */
-  --ifm-font-family-base: "Space Mono", monospace;
+  --ifm-font-family-base: "Rubik";
   --header-height: 6.5rem;
   --ifm-navbar-height: 6.5rem;
   --ifm-navbar-height-sm: 4.5rem;
@@ -51,6 +51,7 @@
   --ifm-content-link-font-size: 0.875rem;
   --ifm-search-input-font-size: 0.9rem;
   --ifm-search-desc-font-size: 14px;
+  --ifm-font-weight-bold: 400;
 
   /* Color Tokens */
   --ifm-color-brand: #fdea2e;

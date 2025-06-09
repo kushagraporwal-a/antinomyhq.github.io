@@ -31,7 +31,7 @@ const WhyChooseForge = (): JSX.Element => {
             <button
               key={useCase.id}
               onClick={() => setSelectedUseCase(useCase.id)}
-              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 font-space-grotesk ${
+              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                 selectedUseCase === useCase.id
                   ? "bg-tailCall-yellow text-black shadow-lg shadow-yellow-500/25"
                   : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
@@ -46,7 +46,7 @@ const WhyChooseForge = (): JSX.Element => {
             <button
               key={useCase.id}
               onClick={() => setSelectedUseCase(useCase.id)}
-              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 font-space-grotesk ${
+              className={`group px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                 selectedUseCase === useCase.id
                   ? "bg-tailCall-yellow text-black shadow-lg shadow-yellow-500/25"
                   : "bg-tailCall-dark-500 text-white hover:bg-tailCall-dark-400 border border-tailCall-dark-300 hover:border-tailCall-yellow/50"
@@ -73,7 +73,7 @@ const WhyChooseForge = (): JSX.Element => {
                     {useCase.description}
                   </p>
                   <div className="space-y-6">
-                    <h4 className="text-xl font-medium text-white font-space-grotesk">Common Tasks</h4>
+                    <h4 className="text-xl font-medium text-white">Common Tasks</h4>
                     <div className="grid gap-4">
                       {useCase.examples.map((example, index) => (
                         <div key={index} className="group hover:scale-[1.01] transition-transform duration-200">

@@ -16,7 +16,7 @@ const Banner = (): JSX.Element => {
             as="h1"
             className="hero-banner-title text-title-large max-w-xs sm:text-display-small lg:text-display-large sm:max-w-5xl"
           >
-            ❯ The AI shell
+            The AI shell
           </Heading>
           <p className="hero-banner-sub-title sm:max-w-2xl sm:m-auto text-content-small sm:text-content-medium lg:text-content-large font-normal max-w-md sm:mt-SPACE_04 mb-0">
             Forge is a non-intrusive light-weight AI assistant for the terminal.

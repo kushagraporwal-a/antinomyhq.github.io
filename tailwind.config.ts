@@ -70,10 +70,7 @@ module.exports = {
         "3xl": "2200px",
       },
     },
-    fontFamily: {
-      "space-grotesk": ["Space Grotesk", "sans-serif"],
-      "space-mono": ["Space Mono", "monospace"],
-    },
+    fontFamily: {},
     fontSize: {
       "display-large": [
         "96px",
