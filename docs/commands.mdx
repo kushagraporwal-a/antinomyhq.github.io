@@ -73,6 +73,29 @@ The model choice will persist between sessions as it's stored in your configurat
 </details>
 
 <details>
+<summary><code>/agent</code> - Select and switch between available agents</summary>
+
+The `/agent` command provides an interactive interface to select and switch between different specialized agents in Forge.
+
+**Usage:**
+
+```
+/agent
+```
+
+This will:
+
+1. Display an interactive selection menu with available agents:
+   - **Acting Agent**: Full execution capabilities with read-write access
+   - **Planning Agent**: Read-only analysis and planning mode
+
+2. Switch to the selected agent for the current session
+
+**When to use:** Use this when you want to switch between agents or when you're unsure which agent is currently active. This is an alternative to using the specific `/act` or `/plan` commands.
+
+</details>
+
+<details>
 <summary><code>/dump</code> - Save the current conversation in JSON format to a file for reference</summary>
 
 The `/dump` command saves the current conversation in JSON format to a file for future reference.
@@ -88,9 +111,9 @@ The `/dump` command saves the current conversation in JSON format to a file for 
 </details>
 
 <details>
-<summary><code>/act</code> - Switch to ACT mode (default), allowing Forge to execute commands and implement changes</summary>
+<summary><code>/act</code> - Switch to Acting Agent (default), allowing Forge to execute commands and implement changes</summary>
 
-The `/act` command switches Forge to ACT mode, where it can execute commands and implement changes.
+The `/act` command switches Forge to use the Acting Agent, where it can execute commands and implement changes.
 
 **Usage:**
 
@@ -98,14 +121,14 @@ The `/act` command switches Forge to ACT mode, where it can execute commands and
 /act
 ```
 
-**When to use:** This is the default mode. Use this command to switch back to ACT mode if you were previously in PLAN mode.
+**When to use:** This is the default agent. Use this command to switch back to the Acting Agent if you were previously using the Planning Agent.
 
 </details>
 
 <details>
-<summary><code>/plan</code> - Switch to PLAN mode, where Forge analyzes and plans but doesn't modify files</summary>
+<summary><code>/plan</code> - Switch to Planning Agent, where Forge analyzes and plans but doesn't modify files</summary>
 
-The `/plan` command switches Forge to PLAN mode, where it analyzes and suggests changes without modifying files.
+The `/plan` command switches Forge to use the Planning Agent, where it analyzes and suggests changes without modifying files.
 
 **Usage:**
 
