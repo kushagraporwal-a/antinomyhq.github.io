@@ -63,6 +63,8 @@ Cloudflare’s **Workers KV** stores billions of key‑value entries and replica
 
 ![Cloudflare status excerpt highlighting Access, KV and WARP as degraded](/images/blog/cloudflare-creative.png)
 
+> _Figure 2: Cloudflare status excerpt highlighting Access, KV and WARP as degraded_
+
 ### 3.1 Domino Effects
 
 - **Cloudflare Access** uses KV to store session state -> login loops
@@ -97,7 +99,7 @@ Anthropic throttled traffic to keep the service partially usable, then restored 
 
 ![GIF of refreshing Cloudflare status page ](/images/blog/refresh-meme.png)
 
-> _Figure 2: What every SRE did for two hours straight_
+> _Figure 3: What every SRE did for two hours straight_
 
 ## 7. Wrap Up
 
