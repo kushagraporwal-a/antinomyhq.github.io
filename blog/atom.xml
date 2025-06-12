@@ -2,12 +2,86 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://forgecode.dev/blog/</id>
     <title>Forge Code Blog</title>
-    <updated>2025-06-03T00:00:00.000Z</updated>
+    <updated>2025-06-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://forgecode.dev/blog/"/>
     <subtitle>Forge Code Blog</subtitle>
     <icon>https://forgecode.dev/images/favicon.ico</icon>
     <rights>Copyright © 2025 Tailcall, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[When Google Sneezes, the Whole World Catches a Cold]]></title>
+        <id>https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/</id>
+        <link href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/"/>
+        <updated>2025-06-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Deep dive into the IAM failure that took down Google Cloud, cascaded into Cloudflare and Anthropic, and rippled across dozens of internet services.]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p><strong>TL;DR</strong> Google Cloud's global IAM service glitched at 10:50 AM PT, causing authentication failures across dozens of GCP products. Cloudflare's Workers KV which depends on a Google hosted backing store followed suit, knocking out Access, WARP and other Zero Trust features. Anthropic, which runs on GCP, lost file uploads and saw elevated error rates. Two stressful hours later, mitigations rolled out and services recovered. Let’s unpack the chain reaction.</p>
+</blockquote>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-timeline-at-a-glance">1. Timeline at a Glance<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#1-timeline-at-a-glance" class="hash-link" aria-label="Direct link to 1. Timeline at a Glance" title="Direct link to 1. Timeline at a Glance">​</a></h2>
+<table><thead><tr><th>Time (PT)</th><th>Signal</th><th>What We Saw</th></tr></thead><tbody><tr><td><strong>10:50</strong></td><td>Internal alerts</td><td>GCP SRE receives spikes in 5xx from IAM endpoints</td></tr><tr><td><strong>11:05</strong></td><td>DownDetector</td><td>User reports for Gmail, Drive, Meet skyrocket</td></tr><tr><td><strong>11:19</strong></td><td>Cloudflare status</td><td>“Investigating widespread Access failures”</td></tr><tr><td><strong>11:25</strong></td><td>Anthropic status</td><td>Image and file uploads disabled to cut error volume</td></tr><tr><td><strong>12:12</strong></td><td>Cloudflare update</td><td>Root cause isolated to third‑party KV dependency</td></tr><tr><td><strong>12:41</strong></td><td>Google update</td><td>Mitigation rolled out to IAM fleet, most regions healthy</td></tr><tr><td><strong>13:30</strong></td><td>Cloudflare green</td><td>Access, KV and WARP back online worldwide</td></tr><tr><td><strong>14:05</strong></td><td>Anthropic green</td><td>Full recovery, Claude stable</td></tr></tbody></table>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Click to expand raw status snippets</summary><div><div class="collapsibleContent_i85q"><div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">11:19 PT  Cloudflare: "We are investigating an issue causing Access authentication to fail. Cloudflare Workers KV is experiencing elevated errors."</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">11:47 PT  Google Cloud: "Multiple products are experiencing impact due to an IAM service issue. Our engineers have identified the root cause and mitigation is in progress."</span><br></span><span class="token-line" style="color:#fff"><span class="token plain">12:12 PT  Cloudflare: "Workers KV dependency outage confirmed. All hands working with third‑party vendor to restore service."</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div></div></details>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-what-broke-inside-google-cloud">2. What Broke Inside Google Cloud<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#2-what-broke-inside-google-cloud" class="hash-link" aria-label="Direct link to 2. What Broke Inside Google Cloud" title="Direct link to 2. What Broke Inside Google Cloud">​</a></h2>
+<p>GCP’s <strong>Identity and Access Management (IAM)</strong> is the front door every API call must pass. When the fleet that issues and validates OAuth and service account tokens misbehaves, the blast radius reaches storage, compute, control planes essentially everything.</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" alt="Screenshot of GCP status dashboard at 11:30 AM PT showing red for IAM, Cloud Storage, Bigtable" src="https://forgecode.dev/assets/images/google-creative-4501089f1fbbea98790ae88114bcd06b.png" width="1200" height="1229" class="img_ev3q"></p>
+<p><em>Figure 1: GCP status page during the first hour</em></p>
+</blockquote>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="21-suspected-trigger">2.1 Suspected Trigger<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#21-suspected-trigger" class="hash-link" aria-label="Direct link to 2.1 Suspected Trigger" title="Direct link to 2.1 Suspected Trigger">​</a></h3>
+<ul>
+<li>Google’s incident ticket calls it an <strong>“IAM back‑end rollout issue”</strong> language SREs often use for a buggy config or binary push that propagated globally before automated canaries stopped it.</li>
+<li>Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="22-customer-impact-checklist">2.2 Customer Impact Checklist<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#22-customer-impact-checklist" class="hash-link" aria-label="Direct link to 2.2 Customer Impact Checklist" title="Direct link to 2.2 Customer Impact Checklist">​</a></h3>
+<ul>
+<li>Cloud Storage: 403 and 500 errors on signed URL fetches</li>
+<li>Cloud SQL and Bigtable: auth failures on connection open</li>
+<li>Workspace: Gmail, Calendar, Meet intermittently 503</li>
+<li>Vertex AI, Dialogflow, Apigee: elevated latency then traffic drops</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-cloudflares-dependency-chain-reaction">3. Cloudflare’s Dependency Chain Reaction<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#3-cloudflares-dependency-chain-reaction" class="hash-link" aria-label="Direct link to 3. Cloudflare’s Dependency Chain Reaction" title="Direct link to 3. Cloudflare’s Dependency Chain Reaction">​</a></h2>
+<p>Cloudflare’s <strong>Workers KV</strong> stores billions of key‑value entries and replicates them across 270+ edge locations. The hot path is in Cloudflare’s own data centers, but the <strong>persistent back‑end</strong> is a multi‑region database hosted on Google Cloud. When IAM refused new tokens, Writes and eventually Reads to the backing store timed out.</p>
+<p><img decoding="async" loading="lazy" alt="Cloudflare status excerpt highlighting Access, KV and WARP as degraded" src="https://forgecode.dev/assets/images/cloudflare-creative-3cf427703ebd28a53fc95aaeb5cf6d25.png" width="1200" height="550" class="img_ev3q"></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="31-domino-effects">3.1 Domino Effects<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#31-domino-effects" class="hash-link" aria-label="Direct link to 3.1 Domino Effects" title="Direct link to 3.1 Domino Effects">​</a></h3>
+<ul>
+<li><strong>Cloudflare Access</strong> uses KV to store session state -&gt; login loops</li>
+<li><strong>WARP</strong> stores Zero Trust device posture in KV -&gt; client could not handshake</li>
+<li><strong>Durable Objects (SQLite)</strong> relied on KV for metadata -&gt; subset of DOs failed</li>
+<li><strong>AI Gateway and Workers AI</strong> experienced cold‑start errors due to missing model manifests in KV</li>
+</ul>
+<p>Cloudflare’s incident commander declared a <em>Code Orange</em> their highest severity and spun up a cross‑vendor bridge with Google engineers. Once IAM mitigation took hold, KV reconnected and the edge quickly self‑healed.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-anthropic-caught-in-the-crossfire">4. Anthropic Caught in the Crossfire<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#4-anthropic-caught-in-the-crossfire" class="hash-link" aria-label="Direct link to 4. Anthropic Caught in the Crossfire" title="Direct link to 4. Anthropic Caught in the Crossfire">​</a></h2>
+<p>Anthropic hosts Claude on GCP. The immediate failure mode was <strong>file upload</strong> (hits Cloud Storage) and <strong>image vision</strong> features, while raw text prompts sometimes succeeded due to cached tokens.</p>
+<div class="rounded-3xl overflow-hidden"><div class="bg-[#35353A] p-4 flex justify-between items-center"><span class="text-white text-xs font-space-mono"></span><div class="relative"><button aria-label="Copy code" class="flex flex-row items-center bg-transparent appearance-none border-none"><img src="https://forgecode.dev/icons/basic/copy-icon.svg" alt="Copy Icon" class="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"></button></div></div><div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#fff;--prism-background-color:#303037"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#fff;background-color:#303037"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#fff"><span class="token plain">[12:07 PT] status.anthropic.com: "We have disabled uploads to reduce error volume while the upstream GCP incident is in progress. Text queries remain available though elevated error rates persist."</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div>
+<p>Anthropic throttled traffic to keep the service partially usable, then restored uploads after Google’s IAM fleet was stable.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-lessons-for-engineers">5. Lessons for Engineers<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#5-lessons-for-engineers" class="hash-link" aria-label="Direct link to 5. Lessons for Engineers" title="Direct link to 5. Lessons for Engineers">​</a></h2>
+<ol>
+<li><strong>Control plane failures hurt more than data plane faults.</strong> Data replication across zones cannot save you if auth is down.</li>
+<li><strong>Check hidden dependencies.</strong> Cloudflare is multi‑cloud at the edge, yet a single‑vendor choice deep in the stack still cascaded.</li>
+<li><strong>Status pages must be fast and honest.</strong> Google took nearly an hour to flip the incident flag. Customers were debugging ghosts meanwhile.</li>
+<li><strong>Design an emergency bypass.</strong> If your auth proxy (Cloudflare Access) fails, can you temporarily route around it?</li>
+<li><strong>Chaos drills still matter.</strong> Rare multi‑provider events happen and the playbooks must be rehearsed.</li>
+</ol>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="6-still-waiting-for-the-full-rcas">6. Still Waiting for the Full RCAs<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#6-still-waiting-for-the-full-rcas" class="hash-link" aria-label="Direct link to 6. Still Waiting for the Full RCAs" title="Direct link to 6. Still Waiting for the Full RCAs">​</a></h2>
+<ul>
+<li>Google will publish a postmortem once internal review wraps expect details on the faulty rollout, scope of blast radius and planned guardrails.</li>
+<li>Cloudflare traditionally ships a forensic blog within a week. Watch for specifics on Workers KV architecture and new redundancy layers.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="GIF of refreshing Cloudflare status page " src="https://forgecode.dev/assets/images/refresh-meme-e5576db1977ebe41b6ed457dfec2d4f0.png" width="1024" height="1536" class="img_ev3q"></p>
+<blockquote>
+<p><em>Figure 2: What every SRE did for two hours straight</em></p>
+</blockquote>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="7-wrap-up">7. Wrap Up<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#7-wrap-up" class="hash-link" aria-label="Direct link to 7. Wrap Up" title="Direct link to 7. Wrap Up">​</a></h2>
+<p>At 10:50 AM a bug in a single Google Cloud service took down authentication worldwide. Within half an hour that failure reached Cloudflare and Anthropic. By 1:30 PM everything was green again, but not before reminding the internet just how tangled our dependencies are.</p>
+<p>Keep an eye out for the official RCAs. Meanwhile, update your incident playbooks, test your failovers and remember that sometimes the cloud’s biggest danger is a bad config on a Tuesday.</p>]]></content>
+        <author>
+            <name>Forge</name>
+            <uri>https://github.com/antinomyhq/forge</uri>
+        </author>
+        <category label="Cloud" term="Cloud"/>
+        <category label="SRE" term="SRE"/>
+        <category label="Incident Analysis" term="Incident Analysis"/>
+        <category label="DevOps" term="DevOps"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[To index or not to index: which coding agent to chose?]]></title>
         <id>https://forgecode.dev/blog/index-vs-no-index-ai-code-agents/</id>
