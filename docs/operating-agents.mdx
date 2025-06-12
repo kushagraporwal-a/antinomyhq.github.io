@@ -9,18 +9,18 @@ sidebar_label: Operating Agents
 
 Forge uses different specialized agents to provide flexible assistance based on your needs. These agents implement different capabilities and interaction models, allowing you to choose the right type of assistance for your specific task and security requirements.
 
-## Acting Agent (Default)
+## Forge Agent (Default)
 
-The Acting Agent is the default when you start Forge and is empowered to directly implement changes to your codebase and execute commands. This agent provides full read-write capabilities within your environment.
+The Forge Agent is the default when you start Forge and is empowered to directly implement changes to your codebase and execute commands. This agent provides full read-write capabilities within your environment.
 
-### Capabilities of the Acting Agent
+### Capabilities of the Forge Agent
 
 - **Full Execution**: Forge can modify files, create new ones, and execute shell commands
 - **Implementation**: Directly implements the solutions it proposes
 - **Verification**: Performs verification steps to ensure changes work as intended
 - **Feedback Loop**: Provides real-time feedback on changes as they're implemented
 
-### When to Use the Acting Agent
+### When to Use the Forge Agent
 
 - When you want hands-off implementation of solutions
 - For routine tasks that you're confident about
@@ -35,30 +35,30 @@ The Acting Agent is the default when you start Forge and is empowered to directl
 3. **Refactoring**: "Refactor this function to use async/await instead of promises"
 4. **Test Creation**: "Generate unit tests for the payment processor module"
 
-### Activating the Acting Agent
+### Activating the Forge Agent
 
-The Acting Agent is active by default, but if you've switched to another agent, you can return to the Acting Agent with:
+The Forge Agent is active by default, but if you've switched to another agent, you can return to the Forge Agent with:
 
 ```bash
-# Switch to Acting Agent within a Forge session
+# Switch to Forge Agent within a Forge session
 /act
 
-# Or use the general agent command and then from drop down select `act` agent
+# Or use the general agent command and then from drop down select `forge` agent
 /agent
 ```
 
-## Planning Agent
+## Muse Agent
 
-The Planning Agent analyzes and plans but doesn't modify your codebase. This agent operates in read-only mode, making it perfect for when you want to understand the potential impact of changes before they're made.
+The Muse Agent analyzes and plans but doesn't modify your codebase. This agent operates in read-only mode, making it perfect for when you want to understand the potential impact of changes before they're made.
 
-### Capabilities of the Planning Agent
+### Capabilities of the Muse Agent
 
 - **Read-Only Operations**: Can only read files and run non-destructive commands
 - **Detailed Analysis**: Thoroughly examines code, identifies issues, and proposes solutions
 - **Structured Planning**: Provides step-by-step action plans for implementing changes
 - **Safe Exploration**: Allows exploration of potential solutions without making changes
 
-### When to Use the Planning Agent
+### When to Use the Muse Agent
 
 - When you want to understand what changes are needed before implementing them yourself
 - When working with critical systems where changes need careful review
@@ -74,30 +74,30 @@ The Planning Agent analyzes and plans but doesn't modify your codebase. This age
 3. **Performance Analysis**: "Identify potential performance bottlenecks in this application"
 4. **Learning**: "Explain how you would implement pagination for this API"
 
-### Activating the Planning Agent
+### Activating the Muse Agent
 
-To switch to the Planning Agent, use:
+To switch to the Muse Agent, use:
 
 ```bash
-# Switch to Planning Agent within a Forge session
+# Switch to Muse Agent within a Forge session
 /plan
 
-# Or use the general agent command and then from drop down select `plan` agent
+# Or use the general agent command and then from drop down select `muse` agent
 /agent 
 ```
 
 ## Agent Switching Strategy
 
-You can easily switch between agents during a session using the `/act`, `/plan`, or `/agent` commands. The Planning Agent is especially useful for reviewing potential changes before they're implemented, while the Acting Agent streamlines the development process by handling implementation details for you.
+You can easily switch between agents during a session using the `/fuse`, `/forge`, or `/agent` commands. The Muse Agent is especially useful for reviewing potential changes before they're implemented, while the Forge Agent streamlines the development process by handling implementation details for you.
 
-### When to Switch from Acting Agent to Planning Agent
+### When to Switch from Forge Agent to Muse Agent
 
 - When you're about to make significant architectural changes
 - Before modifying critical or production code
 - When you want to understand the scope of changes first
 - If you're working in an unfamiliar codebase
 
-### When to Switch from Planning Agent to Acting Agent
+### When to Switch from Muse Agent to Forge Agent
 
 - After reviewing and approving the proposed changes
 - When moving from analysis to implementation
@@ -106,10 +106,10 @@ You can easily switch between agents during a session using the `/act`, `/plan`,
 
 ## Best Practices
 
-- **Start Conservative**: Begin with the Planning Agent for critical systems to understand potential changes
-- **Review Before Acting**: Use the Planning Agent to generate a plan, review it, then switch to the Acting Agent for implementation
+- **Start Conservative**: Begin with the Muse Agent for critical systems to understand potential changes
+- **Review Before Acting**: Use the Muse Agent to generate a plan, review it, then switch to the Forge Agent for implementation
 - **Iterative Approach**: For complex tasks, alternate between agents - plan first, implement a portion, plan again
-- **Version Control**: Always ensure you have commits or backups before using the Acting Agent for significant changes
-- **Task Specificity**: Be more specific with your requests to the Acting Agent to ensure accurate implementation
+- **Version Control**: Always ensure you have commits or backups before using the Forge Agent for significant changes
+- **Task Specificity**: Be more specific with your requests to the Forge Agent to ensure accurate implementation
 
 <!-- Note: This page focuses on the specialized agents in Forge. For information about built-in commands, see the Commands section. -->
