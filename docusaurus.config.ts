@@ -127,7 +127,7 @@ export default {
       hideOnScroll: true,
       logo: {
         alt: "ForgeCode",
-        src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        src: "/images/home/logo.svg",
       },
       items: [
         {to: "/", label: "Home", position: "left", activeBaseRegex: "^/$"},

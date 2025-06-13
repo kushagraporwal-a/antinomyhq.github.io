@@ -15,16 +15,10 @@ export default function NavbarLogo({className, imageClassName}: Props): JSX.Elem
   // Force text logo instead of image
   return (
     <Link to="/" className={`navbar__brand ${className ?? ""}`} aria-label={siteConfig.title || "Forge"}>
-      <div className="navbar__logo">
+      <div className="navbar__logo" style={{ height:'30px'}}>
         {/* This div maintains spacing and layout similar to having a logo */}
-        <div style={{height: "24px", width: "1px"}} />
+        <img src="/images/home/logo-dark.svg" alt="logo"/>
       </div>
-      <b
-        className="navbar__title text--truncate"
-        style={{fontSize: "1.5rem", fontWeight: "700", letterSpacing: "-0.02em"}}
-      >
-        {siteConfig.title}
-      </b>
     </Link>
   )
 }
