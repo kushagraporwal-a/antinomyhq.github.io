@@ -9,7 +9,7 @@ hide_table_of_contents: false
 image: /images/blog/outage-cover.jpeg
 ---
 
-> **TL;DR** Google Cloud's global IAM service glitched at 10:50 AM PT, causing authentication failures across dozens of GCP products. Cloudflare's Workers KV which depends on a Google hosted backing store followed suit, knocking out Access, WARP and other Zero Trust features. Anthropic, which runs on GCP, lost file uploads and saw elevated error rates. Two stressful hours later, mitigations rolled out and services recovered. Let’s unpack the chain reaction.
+> **TL;DR** Google Cloud's global IAM service glitched at 10:50 AM PT, causing authentication failures across dozens of GCP products. Cloudflare's Workers KV which depends on a Google hosted backing store followed suit, knocking out Access, WARP and other Zero Trust features. Anthropic, which runs on GCP, lost file uploads and saw elevated error rates. Seven and a half hours later, full mitigations were complete and all services recovered. Let’s unpack the chain reaction.
 
 <!-- truncate -->
 
@@ -17,7 +17,7 @@ image: /images/blog/outage-cover.jpeg
 
 | Time (PT) | Signal            | What We Saw                                              |
 | --------- | ----------------- | -------------------------------------------------------- |
-| **10:50** | Internal alerts   | GCP SRE receives spikes in 5xx from IAM endpoints        |
+| **10:51** | Internal alerts   | GCP SRE receives spikes in 5xx from IAM endpoints        |
 | **11:05** | DownDetector      | User reports for Gmail, Drive, Meet skyrocket            |
 | **11:19** | Cloudflare status | “Investigating widespread Access failures”               |
 | **11:25** | Anthropic status  | Image and file uploads disabled to cut error volume      |
@@ -25,6 +25,12 @@ image: /images/blog/outage-cover.jpeg
 | **12:41** | Google update     | Mitigation rolled out to IAM fleet, most regions healthy |
 | **13:30** | Cloudflare green  | Access, KV and WARP back online worldwide                |
 | **14:05** | Anthropic green   | Full recovery, Claude stable                             |
+| **15:16** | Google update     | Most GCP products fully recovered as of 13:45 PDT        |
+| **16:13** | Google update     | Residual impact on Dataflow, Vertex AI, PSH only         |
+| **17:10** | Google update     | Dataflow fully resolved except us-central1               |
+| **17:33** | Google update     | Personalized Service Health impact resolved              |
+| **18:18** | Google final      | Vertex AI Online Prediction fully recovered, all clear   |
+| **18:27** | Google postmortem | Internal investigation underway, analysis to follow      |
 
 <details>
 <summary>Click to expand raw status snippets</summary>
@@ -102,7 +108,35 @@ Anthropic throttled traffic to keep the service partially usable, then restored 
 
 > _Figure 3: What every SRE did for two hours straight_
 
-## 7. Wrap Up
+## 7. Updated Analysis: What Google's Official Timeline Tells Us
+
+Google's detailed incident timeline reveals several important details not visible from external monitoring:
+
+### 8.1 Root Cause Identification
+
+- **12:41 PDT**: Google engineers identified root cause and applied mitigations
+- **13:16 PDT**: Infrastructure recovered in all regions **except us-central1**
+- **14:00 PDT**: Mitigation implemented for us-central1 and multi-region/us
+
+The fact that us-central1 lagged significantly behind suggests this region hosts critical infrastructure components that require special handling during recovery operations.
+
+### 8.2 Phased Recovery Pattern
+
+1. **Infrastructure Layer** (12:41-13:16): Underlying dependency fixed globally except one region
+2. **Product Layer** (13:45): Most GCP products recovered, some residual impact
+3. **Specialized Services** (17:10-18:18): Complex services like Dataflow and Vertex AI required additional time
+
+### 8.3 The Long Tail Effect
+
+Even after the root cause was fixed, some services took **5+ additional hours** to fully recover:
+
+- **Dataflow**: Backlog clearing in us-central1 until 17:10 PDT
+- **Vertex AI**: Model Garden 5xx errors persisted until 18:18 PDT
+- **Personalized Service Health**: Delayed updates until 17:33 PDT
+
+This demonstrates how cascading failures create **recovery debt** that extends far beyond the initial fix.
+
+## 8. Wrap Up
 
 At 10:50 AM a bug in a single Google Cloud service took down authentication worldwide. Within half an hour that failure reached Cloudflare and Anthropic. By 1:30 PM everything was green again, but not before reminding the internet just how tangled our dependencies are.
 
