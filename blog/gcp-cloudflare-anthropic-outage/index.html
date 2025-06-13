@@ -15,7 +15,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"ForgeCode","url":"https://forgecode.dev/"}</script>
 <script>!function(e,n,t,i,c,s){e.SnitchObject=t,e[t]||(e[t]=function(){(e[t].q=e[t].q||[]).push(arguments)}),e[t].l=+new Date,c=n.createElement(i),s=n.getElementsByTagName(i)[0],c.src="//snid.snitcher.com/8432087.js",s.parentNode.insertBefore(c,s)}(window,document,"snid","script"),snid("verify","8432087")</script>
 <script>!function(){var t=window.reb2b=window.reb2b||[];if(!t.invoked){t.invoked=!0,t.methods=["identify","collect"],t.factory=function(e){return function(){var r=Array.prototype.slice.call(arguments);return r.unshift(e),t.push(r),t}};for(var e=0;e<t.methods.length;e++){var r=t.methods[e];t[r]=t.factory(r)}t.load=function(t){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://s3-us-west-2.amazonaws.com/b2bjsstore/b/"+t+"/0OV0VHL3P56Z.js.gz";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(e,r)},t.SNIPPET_VERSION="1.0.1",t.load("0OV0VHL3P56Z")}}()</script><link rel="stylesheet" href="/assets/css/styles.8d277bd2.css">
-<script src="/assets/js/runtime~main.bf4b6e41.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1d181edb.js" defer="defer"></script>
 <script src="/assets/js/main.505fe7e2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,8 +33,12 @@
 </blockquote>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="21-suspected-trigger">2.1 Suspected Trigger<a href="#21-suspected-trigger" class="hash-link" aria-label="Direct link to 2.1 Suspected Trigger" title="Direct link to 2.1 Suspected Trigger">​</a></h3>
 <ul>
-<li>Google’s incident ticket calls it an <strong>“IAM back‑end rollout issue”</strong> language SREs often use for a buggy config or binary push that propagated globally before automated canaries stopped it.</li>
-<li>Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.</li>
+<li>
+<p>Google’s initial incident summary refers to an <strong>IAM back‑end rollout issue</strong> indicating that a routine update to the IAM service introduced an error that spread before standard canary checks could catch it.</p>
+</li>
+<li>
+<p>Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.</p>
+</li>
 </ul>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="22-customer-impact-checklist">2.2 Customer Impact Checklist<a href="#22-customer-impact-checklist" class="hash-link" aria-label="Direct link to 2.2 Customer Impact Checklist" title="Direct link to 2.2 Customer Impact Checklist">​</a></h3>
 <ul>
@@ -46,6 +50,9 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-cloudflares-dependency-chain-reaction">3. Cloudflare’s Dependency Chain Reaction<a href="#3-cloudflares-dependency-chain-reaction" class="hash-link" aria-label="Direct link to 3. Cloudflare’s Dependency Chain Reaction" title="Direct link to 3. Cloudflare’s Dependency Chain Reaction">​</a></h2>
 <p>Cloudflare’s <strong>Workers KV</strong> stores billions of key‑value entries and replicates them across 270+ edge locations. The hot path is in Cloudflare’s own data centers, but the <strong>persistent back‑end</strong> is a multi‑region database hosted on Google Cloud. When IAM refused new tokens, Writes and eventually Reads to the backing store timed out.</p>
 <p><img decoding="async" loading="lazy" alt="Cloudflare status excerpt highlighting Access, KV and WARP as degraded" src="/assets/images/cloudflare-creative-3cf427703ebd28a53fc95aaeb5cf6d25.png" width="1200" height="550" class="img_ev3q"></p>
+<blockquote>
+<p><em>Figure 2: Cloudflare status excerpt highlighting Access, KV and WARP as degraded</em></p>
+</blockquote>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="31-domino-effects">3.1 Domino Effects<a href="#31-domino-effects" class="hash-link" aria-label="Direct link to 3.1 Domino Effects" title="Direct link to 3.1 Domino Effects">​</a></h3>
 <ul>
 <li><strong>Cloudflare Access</strong> uses KV to store session state -&gt; login loops</li>
@@ -73,7 +80,7 @@
 </ul>
 <p><img decoding="async" loading="lazy" alt="GIF of refreshing Cloudflare status page " src="/assets/images/refresh-meme-e5576db1977ebe41b6ed457dfec2d4f0.png" width="1024" height="1536" class="img_ev3q"></p>
 <blockquote>
-<p><em>Figure 2: What every SRE did for two hours straight</em></p>
+<p><em>Figure 3: What every SRE did for two hours straight</em></p>
 </blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="7-wrap-up">7. Wrap Up<a href="#7-wrap-up" class="hash-link" aria-label="Direct link to 7. Wrap Up" title="Direct link to 7. Wrap Up">​</a></h2>
 <p>At 10:50 AM a bug in a single Google Cloud service took down authentication worldwide. Within half an hour that failure reached Cloudflare and Anthropic. By 1:30 PM everything was green again, but not before reminding the internet just how tangled our dependencies are.</p>

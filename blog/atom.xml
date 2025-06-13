@@ -28,8 +28,12 @@
 </blockquote>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="21-suspected-trigger">2.1 Suspected Trigger<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#21-suspected-trigger" class="hash-link" aria-label="Direct link to 2.1 Suspected Trigger" title="Direct link to 2.1 Suspected Trigger">​</a></h3>
 <ul>
-<li>Google’s incident ticket calls it an <strong>“IAM back‑end rollout issue”</strong> language SREs often use for a buggy config or binary push that propagated globally before automated canaries stopped it.</li>
-<li>Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.</li>
+<li>
+<p>Google’s initial incident summary refers to an <strong>IAM back‑end rollout issue</strong> indicating that a routine update to the IAM service introduced an error that spread before standard canary checks could catch it.</p>
+</li>
+<li>
+<p>Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.</p>
+</li>
 </ul>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="22-customer-impact-checklist">2.2 Customer Impact Checklist<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#22-customer-impact-checklist" class="hash-link" aria-label="Direct link to 2.2 Customer Impact Checklist" title="Direct link to 2.2 Customer Impact Checklist">​</a></h3>
 <ul>
@@ -41,6 +45,9 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-cloudflares-dependency-chain-reaction">3. Cloudflare’s Dependency Chain Reaction<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#3-cloudflares-dependency-chain-reaction" class="hash-link" aria-label="Direct link to 3. Cloudflare’s Dependency Chain Reaction" title="Direct link to 3. Cloudflare’s Dependency Chain Reaction">​</a></h2>
 <p>Cloudflare’s <strong>Workers KV</strong> stores billions of key‑value entries and replicates them across 270+ edge locations. The hot path is in Cloudflare’s own data centers, but the <strong>persistent back‑end</strong> is a multi‑region database hosted on Google Cloud. When IAM refused new tokens, Writes and eventually Reads to the backing store timed out.</p>
 <p><img decoding="async" loading="lazy" alt="Cloudflare status excerpt highlighting Access, KV and WARP as degraded" src="https://forgecode.dev/assets/images/cloudflare-creative-3cf427703ebd28a53fc95aaeb5cf6d25.png" width="1200" height="550" class="img_ev3q"></p>
+<blockquote>
+<p><em>Figure 2: Cloudflare status excerpt highlighting Access, KV and WARP as degraded</em></p>
+</blockquote>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="31-domino-effects">3.1 Domino Effects<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#31-domino-effects" class="hash-link" aria-label="Direct link to 3.1 Domino Effects" title="Direct link to 3.1 Domino Effects">​</a></h3>
 <ul>
 <li><strong>Cloudflare Access</strong> uses KV to store session state -&gt; login loops</li>
@@ -68,7 +75,7 @@
 </ul>
 <p><img decoding="async" loading="lazy" alt="GIF of refreshing Cloudflare status page " src="https://forgecode.dev/assets/images/refresh-meme-e5576db1977ebe41b6ed457dfec2d4f0.png" width="1024" height="1536" class="img_ev3q"></p>
 <blockquote>
-<p><em>Figure 2: What every SRE did for two hours straight</em></p>
+<p><em>Figure 3: What every SRE did for two hours straight</em></p>
 </blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="7-wrap-up">7. Wrap Up<a href="https://forgecode.dev/blog/gcp-cloudflare-anthropic-outage/#7-wrap-up" class="hash-link" aria-label="Direct link to 7. Wrap Up" title="Direct link to 7. Wrap Up">​</a></h2>
 <p>At 10:50 AM a bug in a single Google Cloud service took down authentication worldwide. Within half an hour that failure reached Cloudflare and Anthropic. By 1:30 PM everything was green again, but not before reminding the internet just how tangled our dependencies are.</p>
