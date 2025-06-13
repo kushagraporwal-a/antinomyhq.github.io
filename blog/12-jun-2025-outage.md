@@ -47,7 +47,8 @@ GCP’s **Identity and Access Management (IAM)** is the front door every API cal
 
 ### 2.1 Suspected Trigger
 
-- Google’s incident ticket calls it an **“IAM back‑end rollout issue”** language SREs often use for a buggy config or binary push that propagated globally before automated canaries stopped it.
+- Google’s initial incident summary refers to an **IAM back‑end rollout issue** indicating that a routine update to the IAM service introduced an error that spread before standard canary checks could catch it.
+
 - Engineers inside Google reportedly rolled back the binary and purged bad configs, then forced token cache refresh across regions. us‑central1 lagged behind because it hosts quorum shards for IAM metadata.
 
 ### 2.2 Customer Impact Checklist
