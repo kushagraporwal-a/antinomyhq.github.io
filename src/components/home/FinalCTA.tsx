@@ -18,7 +18,7 @@ const FinalCTA = (): JSX.Element => {
       <div className="flex flex-col sm:flex-row justify-center">
         <LinkButton
           title="Sign Up"
-          href="https://app.antinomy.ai/app/"
+          href="https://app.forgecode.dev/app/"
           theme={Theme.Gray}
           width="small"
           onClick={() => analyticsHandler("Home Page", "Click", "Signup - Bottom")}

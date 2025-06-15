@@ -42,7 +42,7 @@ export default function Layout(props: Props): JSX.Element {
         <div className="sticky top-0 z-50">
           <Announcement
             text="⚡ Stop paying $20/month for AI coding – Forge Code is 100% FREE"
-            refLink="https://app.antinomy.ai/app/"
+            refLink="https://app.forgecode.dev/app/"
             refText="Get Started →"
             variant="gradient"
           />
