@@ -14,7 +14,7 @@ export const FloatingCta = () => {
 
   return (
     <a
-      href="https://app.antinomy.ai/app/"
+      href="https://app.forgecode.dev/app/"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 left-6 rounded-lg bg-black px-6 py-3 text-sm font-bold text-white shadow-xl transition-all duration-250 hover:text-tailCall-yellow z-50 border border-tailCall-border-dark-100"
