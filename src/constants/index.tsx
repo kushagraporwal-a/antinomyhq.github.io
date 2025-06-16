@@ -617,6 +617,14 @@ export const footerItems: FooterItem[] = [
         name: "Docs",
         link: pageLinks.docs,
       },
+      {
+        name: "Blogs",
+        link: pageLinks.blog,
+      },
+      {
+        name: "Releases",
+        link: pageLinks.releases,
+      },
     ],
   },
   {
@@ -625,6 +633,10 @@ export const footerItems: FooterItem[] = [
       {
         name: "Privacy Policy",
         link: pageLinks.privacyPolicy,
+      },
+      {
+        name: "We're Hiring",
+        link: "https://forms.gle/F8dQkLqtCsFwctLa6",
       },
     ],
   },
