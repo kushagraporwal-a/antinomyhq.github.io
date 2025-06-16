@@ -1,7 +1,6 @@
 import React from "react"
 import {useThemeConfig} from "@docusaurus/theme-common"
 import {useNavbarMobileSidebar} from "@docusaurus/theme-common/internal"
-import GithubStarsButton from "@site/src/components/shared/GithubStarsButton"
 import NavbarItem, {type Props as NavbarItemConfig} from "@theme/NavbarItem"
 
 const useNavbarItems = () => {
@@ -22,9 +21,6 @@ const NavbarMobilePrimaryMenu = (): JSX.Element => {
       {items.map((item, i) => (
         <NavbarItem mobile {...item} onClick={() => mobileSidebar.toggle()} key={i} />
       ))}
-      <li className="menu__list-item">
-        <GithubStarsButton className="menu__link" />
-      </li>
     </ul>
   )
 }

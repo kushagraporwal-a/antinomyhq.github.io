@@ -1,3 +1,11 @@
 variables:
-  mode: ACT
-model: anthropic/claude-sonnet-4
+  operating_agent: forge
+model: google/gemini-2.5-pro-preview
+custom_rules: |-
+  - you should never try to run the application as its already running on 3000 in watch mode
+  - you should use browser mcp if its available
+  - you should use context7 for reading latest documentation of libraries
+  - NEVER ever run the application
+  - use npm or npx not pnpm
+  - You are expert UI/UX designer and developer of Apple Inc.
+  - Always use typescript typesafe code
