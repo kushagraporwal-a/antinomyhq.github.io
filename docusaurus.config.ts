@@ -18,26 +18,20 @@ export default {
       tagName: "link",
       attributes: {
         rel: "icon",
-        href: "/images/favicon-light.ico",
-        media: "(prefers-color-scheme: light)",
+        href: "/images/favicon-light.svg",
+        type: "image/svg+xml",
       },
     },
     {
       tagName: "link",
       attributes: {
         rel: "icon",
-        href: "/images/favicon-dark.ico",
+        href: "/images/favicon-dark.svg",
+        type: "image/svg+xml",
         media: "(prefers-color-scheme: dark)",
       },
     },
-    // Fallback favicon for browsers that don't support prefers-color-scheme in link tags
-    {
-      tagName: "link",
-      attributes: {
-        rel: "icon",
-        href: "/images/favicon-light.ico",
-      },
-    },
+
     {
       tagName: "script",
       attributes: {
@@ -85,7 +79,6 @@ export default {
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   onBrokenAnchors: "warn",
-  favicon: "images/favicon-light.ico", // Fallback favicon for older browsers
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
