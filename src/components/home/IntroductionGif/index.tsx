@@ -14,9 +14,7 @@ const IntroductionGif: React.FC = () => {
         <img
           src={require("@site/static/images/home/introduction-animation.gif").default}
           alt="Code Forge Demonstration"
-          className="w-full h-full object-fill"
           loading="lazy"
-          style={{objectPosition: "center"}}
         />
       </div>
     </div>
