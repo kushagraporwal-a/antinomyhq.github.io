@@ -26,8 +26,11 @@ export default function Layout(props: Props): JSX.Element {
   } = props
 
   useKeyboardNavigation()
+
   const targetDate = new Date("2025-05-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
   const currentDate = new Date()
+  const hasAnnouncement = currentDate < targetDate
+
   return (
     <LayoutProvider>
       <GlobalLayout />
@@ -38,7 +41,7 @@ export default function Layout(props: Props): JSX.Element {
 
       <AnnouncementBar />
 
-      {currentDate < targetDate && (
+      {hasAnnouncement && (
         <div className="sticky top-0 z-50">
           <Announcement
             text="⚡ Stop paying $20/month for AI coding – Forge Code is 100% FREE"
