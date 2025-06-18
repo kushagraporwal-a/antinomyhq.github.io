@@ -1,8 +1,15 @@
 ---
 slug: prevent-attacks-on-mcp-part2
 title: "Preventing Digital Meltdown: Building Bulletproof MCP Security"
-authors: [forge]
-tags: ["Security", "MCP", "AI Safety", "Best Practices", "Defense"]
+authors: [tushar]
+tags:
+  [
+    "Security",
+    "MCP",
+    "AI Safety",
+    "Best Practices",
+    "Defense",
+  ]
 date: 2025-06-17
 description: "Learn from nuclear safety failures to build comprehensive MCP security. Part 2: Practical defense strategies, monitoring systems, and prevention frameworks."
 hide_table_of_contents: false
@@ -10,7 +17,7 @@ hide_table_of_contents: false
 
 > **TL;DR**: Thirty-eight years after Chernobyl, we learned that the disaster was preventable. Today's MCP security crisis is different - we have the opportunity to build proper safeguards before disaster strikes. This is your complete guide to building bulletproof MCP security systems.
 
-*This is Part 2 of a two-part series. [← Read Part 1: The Digital Chernobyl We're Racing Toward](/blog/prevent-attacks-on-mcp)*
+_This is Part 2 of a two-part series. [← Read Part 1: The Digital Chernobyl We're Racing Toward](/blog/prevent-attacks-on-mcp)_
 
 <!-- truncate -->
 
@@ -202,7 +209,7 @@ Start with credential isolation and tool verification - those provide significan
 The MCP security community is just getting started. Whether you're a security researcher, developer, or enterprise user, there's a role for you in building safer AI systems.
 
 - **Contribute to open source security tools**
-- **Report vulnerabilities responsibly** 
+- **Report vulnerabilities responsibly**
 - **Share your deployment experiences**
 - **Help build community standards**
 
@@ -249,6 +256,6 @@ Thirty-eight years after Chernobyl, the abandoned city of Pripyat serves as a ha
 
 ---
 
-*← [Read Part 1: The Digital Chernobyl We're Racing Toward](/blog/prevent-attacks-on-mcp)*
+_← [Read Part 1: The Digital Chernobyl We're Racing Toward](/blog/prevent-attacks-on-mcp)_
 
-*Are you building MCP security tools or have war stories from the trenches? The community needs to hear about it. The best way to prevent our digital Chernobyl is to learn from each other's experiences - both the successes and the near-misses.*
+_Are you building MCP security tools or have war stories from the trenches? The community needs to hear about it. The best way to prevent our digital Chernobyl is to learn from each other's experiences - both the successes and the near-misses._

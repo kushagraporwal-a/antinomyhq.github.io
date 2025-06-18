@@ -1,7 +1,7 @@
 import React from "react"
 import clsx from "clsx"
 import {useBlogPost} from "@docusaurus/plugin-content-blog/client"
-import BlogAuthor from "@theme/Blog/Components/Author"
+import {BlogAuthor} from "@theme/BlogAuthor"
 import type {Props} from "@theme/BlogPostItem/Header/Authors"
 import styles from "./styles.module.css"
 

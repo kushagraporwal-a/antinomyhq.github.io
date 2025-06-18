@@ -1,5 +1,25 @@
 forge:
-  name: Forge
-  title: The Forge Team
+  name: The Forge Team
   url: https://github.com/antinomyhq/forge
-  image_url: /icons/companies/github.svg
+  image_url: /images/favicon-light.svg
+  social:
+    - platform: github
+      url: https://github.com/antinomyhq/forge
+    - platform: website
+      url: https://forgecode.dev
+    - platform: twitter
+      url: https://x.com/forgecodehq
+    - platform: linkedin
+      url: https://www.linkedin.com/company/forgecodehq/
+
+tushar:
+  name: Tushar
+  url: https://github.com/tusharmath
+  image_url: https://avatars.githubusercontent.com/u/194482?v=4
+  social:
+    - platform: github
+      url: https://github.com/tusharmath
+    - platform: twitter
+      url: https://twitter.com/tusharmath
+    - platform: linkedin
+      url: https://linkedin.com/in/tusharmath

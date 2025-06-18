@@ -1,7 +1,7 @@
 ---
 slug: prevent-attacks-on-mcp
 title: "MCP Security Crisis: The Digital Chernobyl We're Racing Toward"
-authors: [forge]
+authors: [tushar]
 tags: ["Security", "MCP", "AI Safety", "Vulnerabilities"]
 date: 2025-06-17
 description: "Critical security vulnerabilities in Model Context Protocol systems mirror the systemic failures that led to Chernobyl. Part 1: Understanding the crisis before it's too late."
@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 > **TL;DR**: Model Context Protocol (MCP) systems are being deployed with critical security gaps that mirror the systemic failures that led to Chernobyl. We're seeing prompt injection attacks, supply chain vulnerabilities, and authentication bypasses that could cascade into enterprise-wide breaches. The time to secure these systems is now, before we have our own "digital meltdown."
 
-*This is Part 1 of a two-part series. [Read Part 2: Preventing Digital Meltdown →](/blog/prevent-attacks-on-mcp-part2)*
+_This is Part 1 of a two-part series. [Read Part 2: Preventing Digital Meltdown →](/blog/prevent-attacks-on-mcp-part2)_
 
 <!-- truncate -->
 
@@ -228,6 +228,6 @@ The reactor is already running. The question is whether we'll build proper contr
 
 ---
 
-*Continue reading: [Part 2 - Preventing Digital Meltdown: Building Bulletproof MCP Security →](/blog/prevent-attacks-on-mcp-part2)*
+_Continue reading: [Part 2 - Preventing Digital Meltdown: Building Bulletproof MCP Security →](/blog/prevent-attacks-on-mcp-part2)_
 
-*Are you building MCP security tools or have war stories from the trenches? The community needs to hear about it. The best way to prevent our digital Chernobyl is to learn from each other's experiences - both the successes and the near-misses.*
+_Are you building MCP security tools or have war stories from the trenches? The community needs to hear about it. The best way to prevent our digital Chernobyl is to learn from each other's experiences - both the successes and the near-misses._
