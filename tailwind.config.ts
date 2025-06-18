@@ -70,7 +70,11 @@ module.exports = {
         "3xl": "2200px",
       },
     },
-    fontFamily: {},
+    fontFamily: {
+      bebas: ['"Bebas Neue"', "sans-serif"],
+      kanit: ['"Kanit"', "sans-serif"],
+      space_mono: ['"Space Mono"', "sans-serif"],
+    },
     fontSize: {
       "display-large": [
         "96px",
