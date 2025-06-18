@@ -207,7 +207,7 @@ MCP systems have a fundamental visibility issue that traditional security monito
 Consider these common attack patterns:
 
 - **Healthcare Systems**: MCP processing thousands of legitimate patient queries while simultaneously leaking PHI through malicious tool descriptions
-- **Financial Services**: Trading systems executing normal transactions while covert unauthorized operations run in parallel
+- **Financial Services**: Trading systems executing normal transactions while convert unauthorized operations run in parallel
 - **E-commerce Platforms**: Customer service systems handling support requests while harvesting payment information through compromised integrations
 
 **Why Traditional Monitoring Fails:**
