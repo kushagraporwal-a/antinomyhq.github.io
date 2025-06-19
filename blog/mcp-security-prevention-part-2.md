@@ -15,6 +15,13 @@ description: "Learn from nuclear safety failures to build comprehensive MCP secu
 hide_table_of_contents: false
 ---
 
+import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
+
+<ElevenLabsAudioPlayer 
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
+  projectId="FL20t82047nA1Q6o6V15" 
+/>
+
 > **TL;DR**: Thirty-eight years after Chernobyl, we learned that the disaster was preventable. Today's MCP security crisis is different - we have the opportunity to build proper safeguards before disaster strikes. This is your complete guide to building bulletproof MCP security systems.
 
 _This is Part 2 of a two-part series. [← Read Part 1: The Digital Chernobyl We're Racing Toward](/blog/prevent-attacks-on-mcp)_
