@@ -1,6 +1,6 @@
 ---
 slug: prevent-attacks-on-mcp
-title: "MCP Security Crisis: The Digital Chernobyl We're Racing Toward"
+title: "MCP Security Crisis: The Chernobyl We're Racing Toward"
 authors: [tushar]
 tags: ["Security", "MCP", "AI Safety", "Vulnerabilities"]
 date: 2025-06-17
