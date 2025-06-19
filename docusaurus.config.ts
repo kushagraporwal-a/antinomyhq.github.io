@@ -76,9 +76,9 @@ export default {
   ],
   url: "https://forgecode.dev",
   baseUrl: "/",
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
-  onBrokenAnchors: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+  onBrokenAnchors: "throw",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
