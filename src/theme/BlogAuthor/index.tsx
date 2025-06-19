@@ -16,6 +16,7 @@ interface AuthorDisplayProps {
   }
   containerClassName?: string
   textClassName?: string
+  disableLinks?: boolean // New prop to disable links when inside clickable containers
 }
 
 // Social media icons as SVG components
@@ -105,7 +106,12 @@ const renderTitleWithLinks = (title: string) => {
   return parts.length > 1 ? parts : title
 }
 
-export const BlogAuthor: React.FC<AuthorDisplayProps> = ({author, containerClassName, textClassName}) => (
+export const BlogAuthor: React.FC<AuthorDisplayProps> = ({
+  author,
+  containerClassName,
+  textClassName,
+  disableLinks = false,
+}) => (
   <div className={clsx("flex items-center gap-3", containerClassName)}>
     {/* Author Avatar - Centered vertically to content height */}
     <div className="flex-shrink-0">
@@ -120,7 +126,7 @@ export const BlogAuthor: React.FC<AuthorDisplayProps> = ({author, containerClass
     <div className="flex-1 min-w-0">
       {/* Author Name */}
       <div className="mb-1">
-        {author.url ? (
+        {author.url && !disableLinks ? (
           <a
             href={author.url}
             target="_blank"
@@ -143,7 +149,7 @@ export const BlogAuthor: React.FC<AuthorDisplayProps> = ({author, containerClass
       )}
 
       {/* Social Links */}
-      {author.social && author.social.length > 0 && (
+      {author.social && author.social.length > 0 && !disableLinks && (
         <div className="flex items-center gap-1.5">
           {author.social.map((social, index) => (
             <a

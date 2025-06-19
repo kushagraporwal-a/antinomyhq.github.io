@@ -1,0 +1,23 @@
+/* ElevenLabs Audio Player Styles */
+.elevenlabs-audio-player {
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.elevenlabs-audio-player #elevenlabs-audionative-widget {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+[data-theme="dark"] .elevenlabs-audio-player #elevenlabs-audionative-widget {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .elevenlabs-audio-player {
+    margin: 0.75rem 0;
+  }
+}
