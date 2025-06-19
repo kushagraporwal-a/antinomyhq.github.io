@@ -65,7 +65,7 @@ We're already seeing early warning signs that mirror the complacency that led to
 
 ### The MCP Vulnerability That Changes Everything
 
-Here's a vulnerability that should make every developer's blood run cold: **line jumping**. This attack allows a malicious MCP server to inject instructions that the AI follows without user permission - essentially hijacking the conversation.⁵
+Here's a vulnerability that should make every developer's blood run cold: **line jumping**. This attack allows a malicious MCP server to inject instructions that the AI follows without user permission, essentially hijacking the conversation.⁵
 
 Here's exactly how it works:
 
