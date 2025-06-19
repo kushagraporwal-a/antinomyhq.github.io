@@ -134,7 +134,7 @@ export default {
     algolia: {
       appId: "748OFOGLOE",
       apiKey: "878290b0384a15f677fb6a4f94fe34cb",
-      indexName: "antinomy",
+      indexName: "forgecode",
       contextualSearch: false,
       searchParameters: {
         facetFilters: [],
