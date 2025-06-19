@@ -132,37 +132,37 @@ Based on nuclear safety principles and hard-learned lessons from recent incident
 
 Never give MCP tools your production credentials. Use dedicated service accounts with minimal permissions.
 
-_Why this works_: Even if a tool is compromised, the blast radius stays contained. The GitHub Gist shows how to set up proper OAuth scoping for MCP servers, each tool gets only the permissions it absolutely needs.
+_Why this works_: Even if a tool is compromised, the blast radius stays contained.
 
 ### 2. **Tool Verification** (Defense Layer 2)
 
 Implement cryptographic verification for all MCP tools before execution.
 
-_Why this works_: Supply chain attacks become much harder when you can verify tool integrity. The verification code in our repository demonstrates HMAC-based tool signing that prevents tampering.
+_Why this works_: Supply chain attacks become much harder when you can verify tool integrity.
 
 ### 3. **Execution Sandboxing** (Defense Layer 3)
 
 Run MCP tools in isolated containers with strict resource limits.
 
-_Why this works_: Contains both security breaches and economic attacks. Our Docker configuration examples show how to limit CPU, memory, and network access per tool.
+_Why this works_: Contains both security breaches and economic attacks.
 
 ### 4. **Prompt Filtering** (Defense Layer 4)
 
 Deploy semantic analysis to detect injection attempts before they reach the AI.
 
-_Why this works_: Catches "line jumping" and other prompt injection attacks. The filtering implementation uses entropy analysis and pattern matching to identify malicious instructions.
+_Why this works_: Catches "line jumping" and other prompt injection attacks.
 
 ### 5. **Continuous Monitoring** (Defense Layer 5)
 
 Log everything, analyze patterns, alert on anomalies.
 
-_Why this works_: Provides visibility into attacks that bypass other layers. Our monitoring setup tracks tool usage patterns and flags suspicious behavior.
+_Why this works_: Provides visibility into attacks that bypass other layers.
 
 **Implementation Reality Check:**
 
 I know what you're thinking: "This sounds like a lot of work." You're right. But consider the alternative: explaining to your board why your AI system just transferred significant funds to a Bitcoin wallet or leaked your entire customer database.
 
-The code examples provided here demonstrate practical approaches to address some of these security challenges. However, the MCP security landscape needs a comprehensive open-source solution that the community can build together.
+The code examples provided above demonstrate practical approaches to address some of these security challenges. However, the MCP security landscape needs a comprehensive open-source solution that the community can build together.
 
 ### Building a Security-First MCP Culture
 
