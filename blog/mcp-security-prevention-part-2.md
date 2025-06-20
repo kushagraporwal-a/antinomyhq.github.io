@@ -32,22 +32,22 @@ _This is Part 2. [← Read Part 1 if you missed the carnage](/blog/prevent-attac
 
 Trail of Bits dropped a bomb & MCP servers are getting wrecked by these attacks:
 
-- **[Line Jumping attacks](https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/)** - malicious servers inject prompts through tool descriptions. Your AI can be tricked before you even start interacting with it.
-- **[Conversation history theft](https://blog.trailofbits.com/2025/04/23/how-mcp-servers-can-steal-your-conversation-history/)** - servers can steal your full conversation history without you noticing
-- **[ANSI terminal code attacks](https://blog.trailofbits.com/2025/04/29/deceiving-users-with-ansi-terminal-codes-in-mcp/)** - escape sequences hide malicious instructions. Your terminal can show false or misleading information due to hidden instructions.
-- **[Insecure credential storage](https://blog.trailofbits.com/2025/04/30/insecure-credential-storage-plagues-mcp/)** - API keys sitting in plaintext with world-readable permissions. This leaves sensitive data exposed.
+- **Line Jumping attacks**<sup><a id="ref-1" href="#footnote-1">1</a></sup> - malicious servers inject prompts through tool descriptions. Your AI can be tricked before you even start interacting with it.
+- **Conversation history theft**<sup><a id="ref-2" href="#footnote-2">2</a></sup> - servers can steal your full conversation history without you noticing
+- **ANSI terminal code attacks**<sup><a id="ref-3" href="#footnote-3">3</a></sup> - escape sequences hide malicious instructions. Your terminal can show false or misleading information due to hidden instructions.
+- **Insecure credential storage**<sup><a id="ref-4" href="#footnote-4">4</a></sup> - API keys sitting in plaintext with world-readable permissions. This leaves sensitive data exposed.
 
 ---
 
 ## The Security Gap
 
-The [OWASP Top 10 for Large Language Model Applications (2025)](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) puts prompt injection at #1. Meanwhile, most security teams are still treating AI like it's another web app.
+The OWASP Top 10 for Large Language Model Applications (2025)<sup><a id="ref-5" href="#footnote-5">5</a></sup> puts prompt injection at #1. Meanwhile, most security teams are still treating AI like it's another web app.
 
 Your monitoring tools won't blink, API calls, auth, and response times all look normal during a breach. The breach often goes undetected until it's too late.
 
 ## Cost-Based Attack Vectors
 
-Trail of Bits found in their [cloud infrastructure research](https://blog.trailofbits.com/2024/08/27/provisioning-cloud-infrastructure-the-wrong-way-but-faster/) that AI systems can produce insecure cloud setup code, leading to unexpectedly high costs.
+Trail of Bits found in their cloud infrastructure research<sup><a id="ref-6" href="#footnote-6">6</a></sup> that AI systems can produce insecure cloud setup code, leading to unexpectedly high costs.
 
 Their report pointed out:
 
@@ -109,7 +109,7 @@ Traditional logging misses semantic attacks completely. Keep an eye out for sign
 function catchInjectionAttempts(
   request: string,
 ): [boolean, string | null] {
-  // Based on OWASP LLM Top 10 indicators
+  // Based on OWASP LLM Top 10 indicators and CVE database<sup><a id="ref-9" href="#footnote-9">9</a></sup>
   const suspiciousShit = [
     /ignore.*previous.*instructions/i,
     /system.*prompt.*override/i,
@@ -130,14 +130,14 @@ function catchInjectionAttempts(
 
 ### 4. Semantic Input Validation
 
-The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) recommends semantic analysis for AI inputs. Basic pattern matching catches most documented attack vectors:
+The NIST AI Risk Management Framework<sup><a id="ref-7" href="#footnote-7">7</a></sup> recommends semantic analysis for AI inputs. Basic pattern matching catches most documented attack vectors:
 
 ```typescript
 class PromptInjectionFilter {
   private redFlags: RegExp[]
 
   constructor() {
-    // Patterns from documented CVEs and research
+    // Patterns from documented CVEs and research<sup><a id="ref-10" href="#footnote-10">10</a></sup><sup><a id="ref-11" href="#footnote-11">11</a></sup><sup><a id="ref-12" href="#footnote-12">12</a></sup>
     this.redFlags = [
       /ignore.*instructions/i,
       /new.*role.*system/i,
@@ -257,14 +257,14 @@ This addresses some authentication issues but doesn't solve tool description inj
 
 Security pros at OWASP and NIST keep hammering this: no prod creds in AI, period.
 
-**[OWASP Top 10 for LLMs (2025)](https://owasp.org/www-project-top-10-for-large-language-model-applications/):**
+**OWASP Top 10 for LLMs (2025):**<sup><a id="ref-8" href="#footnote-8">8</a></sup>
 
 1. **LLM01: Prompt Injection** - #1 threat
 2. **LLM02: Insecure Output Handling**
 3. **LLM03: Training Data Poisoning**
 4. **LLM04: Model Denial of Service**
 
-**[NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework):**
+**NIST AI Risk Management Framework:**<sup><a id="ref-7" href="#footnote-7">7</a></sup>
 
 - Treat AI systems as high-risk components
 - Implement continuous monitoring
@@ -279,30 +279,31 @@ Fix this now, or enjoy the breach headlines later.
 
 ---
 
-## Sources and References
+## Footnotes
 
-All claims in this post are based on publicly available security research:
+<a id="footnote-1"></a>**1.** Trail of Bits. "Jumping the Line: How MCP servers can attack you before you ever use them." April 21, 2025. [https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/](https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/) [↩](#ref-1)
 
-**Primary Sources:**
+<a id="footnote-2"></a>**2.** Trail of Bits. "How MCP servers can steal your conversation history." April 23, 2025. [https://blog.trailofbits.com/2025/04/23/how-mcp-servers-can-steal-your-conversation-history/](https://blog.trailofbits.com/2025/04/23/how-mcp-servers-can-steal-your-conversation-history/) [↩](#ref-2)
 
-- [OWASP Top 10 for Large Language Model Applications (2025)](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)
-- [NIST AI Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework)
-- [CVE Database](https://cve.mitre.org/) - search "prompt injection" for current vulnerabilities
-- [Trail of Bits MCP Security Research (2025)](https://blog.trailofbits.com/categories/mcp/)
-- [Trail of Bits Cloud Infrastructure Research (2024)](https://blog.trailofbits.com/2024/08/27/provisioning-cloud-infrastructure-the-wrong-way-but-faster/)
+<a id="footnote-3"></a>**3.** Trail of Bits. "Deceiving users with ANSI terminal codes in MCP." April 29, 2025. [https://blog.trailofbits.com/2025/04/29/deceiving-users-with-ansi-terminal-codes-in-mcp/](https://blog.trailofbits.com/2025/04/29/deceiving-users-with-ansi-terminal-codes-in-mcp/) [↩](#ref-3)
 
-**Documented MCP Vulnerabilities:**
+<a id="footnote-4"></a>**4.** Trail of Bits. "Insecure credential storage plagues MCP." April 30, 2025. [https://blog.trailofbits.com/2025/04/30/insecure-credential-storage-plagues-mcp/](https://blog.trailofbits.com/2025/04/30/insecure-credential-storage-plagues-mcp/) [↩](#ref-4)
 
-- [Line Jumping: MCP servers can attack before being used](https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/)
-- [MCP servers can steal conversation history](https://blog.trailofbits.com/2025/04/23/how-mcp-servers-can-steal-your-conversation-history/)
-- [ANSI terminal code attacks in MCP](https://blog.trailofbits.com/2025/04/29/deceiving-users-with-ansi-terminal-codes-in-mcp/)
-- [Insecure credential storage in MCP](https://blog.trailofbits.com/2025/04/30/insecure-credential-storage-plagues-mcp/)
+<a id="footnote-5"></a>**5.** OWASP. "Top 10 for Large Language Model Applications (2025)." [https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) [↩](#ref-5)
 
-**Security Research Papers:**
+<a id="footnote-6"></a>**6.** Trail of Bits. "Provisioning cloud infrastructure the wrong way, but faster." August 27, 2024. [https://blog.trailofbits.com/2024/08/27/provisioning-cloud-infrastructure-the-wrong-way-but-faster/](https://blog.trailofbits.com/2024/08/27/provisioning-cloud-infrastructure-the-wrong-way-but-faster/) [↩](#ref-6)
 
-- [Prompt Injection Attacks Against GPT-3](https://arxiv.org/abs/2108.04739) - Perez et al.
-- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) - Zou et al.
-- [Jailbroken: How Does LLM Safety Training Fail?](https://arxiv.org/abs/2307.02483) - Wei et al.
+<a id="footnote-7"></a>**7.** NIST. "AI Risk Management Framework (AI RMF 1.0)." [https://www.nist.gov/itl/ai-risk-management-framework](https://www.nist.gov/itl/ai-risk-management-framework) [↩](#ref-7)
+
+<a id="footnote-8"></a>**8.** OWASP. "Top 10 for LLMs (2025)." [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/) [↩](#ref-8)
+
+<a id="footnote-9"></a>**9.** CVE Database. "Prompt injection vulnerabilities." [https://cve.mitre.org/](https://cve.mitre.org/) [↩](#ref-9)
+
+<a id="footnote-10"></a>**10.** Perez et al. "Prompt Injection Attacks Against GPT-3." arXiv:2108.04739. [https://arxiv.org/abs/2108.04739](https://arxiv.org/abs/2108.04739) [↩](#ref-10)
+
+<a id="footnote-11"></a>**11.** Zou et al. "Universal and Transferable Adversarial Attacks on Aligned Language Models." arXiv:2307.15043. [https://arxiv.org/abs/2307.15043](https://arxiv.org/abs/2307.15043) [↩](#ref-11)
+
+<a id="footnote-12"></a>**12.** Wei et al. "Jailbroken: How Does LLM Safety Training Fail?" arXiv:2307.02483. [https://arxiv.org/abs/2307.02483](https://arxiv.org/abs/2307.02483) [↩](#ref-12)
 
 ---
 

@@ -23,7 +23,7 @@ _This is Part 1 of a two-part series. [Read Part 2: Actually Fixing This Mess �
 
 ## What's MCP and Why Should I Care?
 
-MCP is Anthropic's attempt at standardizing how AI models talk to external tools. Instead of every AI app rolling their own integration layer, you get a common protocol. Think of it like REST for AI tools, except with way less thought put into security.
+MCP is Anthropic's attempt at standardizing how AI models talk to external tools<sup><a id="ref-1" href="#footnote-1">1</a></sup>. Instead of every AI app rolling their own integration layer, you get a common protocol. Think of it like REST for AI tools, except with way less thought put into security.
 
 The spec is pretty straightforward - JSON-RPC over stdio or HTTP. AI asks for available tools, gets back a list with descriptions, then calls them with parameters. Simple enough that you can implement a basic server in an afternoon.
 
@@ -51,7 +51,7 @@ I tested this against a few popular MCP implementations and... yeah, it works. M
 
 ### Why This Actually Matters
 
-Unlike typical prompt injection where you need user input, this attack vector lives in the protocol itself. The AI has to read tool descriptions to function. You can't just "sanitize" them without breaking core functionality.
+Unlike typical prompt injection where you need user input, this attack vector lives in the protocol itself<sup><a id="ref-2" href="#footnote-2">2</a></sup>. The AI has to read tool descriptions to function. You can't just "sanitize" them without breaking core functionality.
 
 And here's the kicker - in most setups, the user never sees the tool descriptions. They just see "checking weather..." while the AI follows completely different instructions in the background.
 
@@ -63,13 +63,15 @@ A lot of servers I found basically look like this:
 
 ```javascript
 app.post("/mcp-tools", (req, res) => {
-  // TODO: add auth later
+  // TODO: Promise to implement proper authentication later
   const {tool, params} = req.body
   executeTool(tool, params)
 })
 ```
 
-That TODO comment is doing a lot of heavy lifting.
+Reference<sup><a id="ref-3" href="#footnote-3">3</a></sup>
+
+That TODO comment/Documentation is doing a lot of heavy lifting.
 
 The MCP spec does mention authentication, but it's basically "figure it out yourself." Most implementations I've seen either skip it entirely or bolt on some basic API key checking that's trivial to bypass.
 
@@ -89,8 +91,9 @@ Not naming names because I'm not trying to shame anyone, but if you're using MCP
 
 Tested this stuff against a few internal systems (with permission, obviously). The results weren't great:
 
-- Got tool description injection working against 3/4 MCP implementations
-- Found unauthenticated endpoints in 2/3 production deployments
+- Got tool description injection working against 2/4 MCP implementations
+- Found unauthenticated endpoints in 1/10 production deployments
+-
 - Identified several tools with way more permissions than they needed
 
 The scariest part? Most of this stuff would be invisible in standard logs. User requests "check my calendar," AI executes malicious tool, logs show "calendar_check: success." Good luck spotting that in your SIEM.
@@ -128,14 +131,14 @@ The window for fixing this stuff cleanly is closing. Once you have thousands of 
 
 Better to fix it now while the ecosystem is still small enough to actually change.
 
-**Note on MCP 2025-06-18 Updates:**
-
+:::note
 The latest MCP specification (released June 18, 2025) addresses some security concerns:
 
 - OAuth Resource Server classification is now required
 - Resource Indicators (RFC 8707) must be implemented to prevent malicious token access
 - New security best practices documentation
 - Removal of JSON-RPC batching (reduces attack surface)
+  :::
 
 However, the core vulnerabilities described above (tool description injection, supply chain risks) remain unaddressed in the protocol itself.
 
@@ -147,11 +150,13 @@ If you're building MCP tools or have seen other security issues, let me know. Th
 
 ---
 
-## Sources
+## Footnotes
 
-¹ Anthropic. "Model Context Protocol Specification." GitHub Repository. [https://github.com/modelcontextprotocol/specification](https://github.com/modelcontextprotocol/specification)
+<a id="footnote-1"></a>**1.** Anthropic. "Model Context Protocol Specification." GitHub Repository. [https://github.com/modelcontextprotocol/specification](https://github.com/modelcontextprotocol/specification) [↩](#ref-1)
 
-² OWASP. "Prompt Injection." OWASP Top 10 for Large Language Model Applications, 2023. [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+<a id="footnote-2"></a>**2.** OWASP. "Prompt Injection." OWASP Top 10 for Large Language Model Applications, 2023. [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/) [↩](#ref-2)
+
+<a id="footnote-3"></a>**3.** Google Cloud Platform. "Cloud Run MCP Implementation." GitHub Repository. [https://github.com/GoogleCloudPlatform/cloud-run-mcp/commit/a49ce276eaa148c8031e912c79bbb60116e8273e](https://github.com/GoogleCloudPlatform/cloud-run-mcp/commit/a49ce276eaa148c8031e912c79bbb60116e8273e) [↩](#ref-3)
 
 ---
 
