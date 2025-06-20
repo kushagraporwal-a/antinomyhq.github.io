@@ -12,7 +12,7 @@ import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPl
 
 <ElevenLabsAudioPlayer 
   publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
-  projectId="4zmU8agQy5xyvkpPeKqC" 
+  projectId="Lzvjtcc4UL5Wq07oM88p" 
 />
 
 Been digging into Model Context Protocol implementations lately and found some stuff that's keeping me up at night. Not because it's earth-shattering, but because it's the kind of boring security debt that bites you when you least expect it.

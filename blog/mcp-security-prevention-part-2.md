@@ -19,7 +19,7 @@ import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPl
 
 <ElevenLabsAudioPlayer 
   publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9d6bd190c04d78"
-  projectId="FL20t82047nA1Q6o6V15" 
+  projectId="u4gLefolNeaAxfZN8jKw" 
 />
 
 > **TL;DR**: Attackers are stealing convo history via MCP servers—let's stop that. OWASP ranks prompt injection as the top threat. This post shares practical steps to protect your systems.
