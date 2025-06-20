@@ -1,6 +1,6 @@
 ---
 slug: prevent-attacks-on-mcp
-title: "MCP Security Issues Nobody's Talking About"
+title: "MCP Security Vulnerabilities and Attack Vectors"
 authors: [tushar]
 tags: ["Security", "MCP", "AI Safety", "Vulnerabilities"]
 date: 2025-06-17
@@ -107,8 +107,9 @@ This isn't about rewriting everything. Most of this is fixable with some basic h
 
 **For authentication:**
 
-- Actually implement it (revolutionary, I know)
-- Use proper OAuth flows, not just API keys in headers
+- Actually implement it (OAuth flows are now required in MCP 2025-06-18)
+- Use proper OAuth Resource Server patterns as specified in the latest MCP spec
+- Implement Resource Indicators (RFC 8707) to prevent token theft
 - Validate tokens on every request
 
 **For supply chain:**
@@ -126,6 +127,17 @@ MCP adoption is picking up fast. I'm seeing it deployed in financial services, h
 The window for fixing this stuff cleanly is closing. Once you have thousands of MCP servers in production, coordinating security updates becomes a nightmare.
 
 Better to fix it now while the ecosystem is still small enough to actually change.
+
+**Note on MCP 2025-06-18 Updates:**
+
+The latest MCP specification (released June 18, 2025) addresses some security concerns:
+
+- OAuth Resource Server classification is now required
+- Resource Indicators (RFC 8707) must be implemented to prevent malicious token access
+- New security best practices documentation
+- Removal of JSON-RPC batching (reduces attack surface)
+
+However, the core vulnerabilities described above (tool description injection, supply chain risks) remain unaddressed in the protocol itself.
 
 ## What's Next
 

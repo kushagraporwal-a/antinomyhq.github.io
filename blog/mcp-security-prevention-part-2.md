@@ -220,6 +220,39 @@ if (($(echo "$current_hour_cost > ($average_daily_cost * 0.3)" | bc -l))); then
 fi
 ```
 
+## Updated Authentication Requirements (MCP 2025-06-18)
+
+The latest MCP specification now mandates proper OAuth implementation:
+
+```typescript
+// Required: OAuth Resource Server pattern
+class MCPServer {
+  private authConfig: OAuth2ResourceServer
+
+  constructor() {
+    this.authConfig = {
+      // Now required by spec
+      resourceServer: "https://your-auth-server.com",
+      requiredScopes: [
+        "mcp:tools:read",
+        "mcp:tools:execute",
+      ],
+      tokenValidation: "RFC8707", // Resource Indicators required
+    }
+  }
+
+  async validateRequest(
+    request: MCPRequest,
+  ): Promise<boolean> {
+    // Resource Indicators prevent token theft attacks
+    const token = this.extractToken(request)
+    return await this.validateWithResourceIndicators(token)
+  }
+}
+```
+
+This addresses some authentication issues but doesn't solve tool description injection.
+
 ## Industry Security Recommendations
 
 Security pros at OWASP and NIST keep hammering this: no prod creds in AI, period.
