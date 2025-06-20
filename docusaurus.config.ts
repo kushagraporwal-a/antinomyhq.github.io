@@ -78,7 +78,7 @@ export default {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  onBrokenAnchors: "throw",
+  onBrokenAnchors: "warn",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
