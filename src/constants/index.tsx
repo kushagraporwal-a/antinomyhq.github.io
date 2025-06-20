@@ -659,6 +659,19 @@ export const TechDetails = [
 
 export const TECHS = ["Backend", "Devops", "Security & infra", "Solo Dev"]
 
+export const BENEFITS = [
+  {
+    title: "Developer-Controlled & Secure",
+    description:
+      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
+  },
+  {
+    title: "Developer-Controlled & Secure",
+    description:
+      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
+  },
+]
+
 export const footerItems: FooterItem[] = [
   {
     title: "Developers",
