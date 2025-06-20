@@ -611,6 +611,54 @@ export enum CookiePreferenceCategory {
 
 export const NavbarItems = ["Docs", "Releases", "Plans", "Blog", "Testimonials", "Contact"]
 
+export const StatsForDevelopers = [
+  {
+    title: "Active Developers",
+    stat: "50,000+",
+  },
+  {
+    title: "Accuracy Rate",
+    stat: "99.7%",
+  },
+
+  {
+    title: "Github Star",
+    stat: "3554",
+  },
+]
+
+export const TechDetails = [
+  {
+    title: "Backend - Code Understanding",
+    descriptions: [
+      "# Set up a GET and POST route in FastAPI",
+      "# Create a Flask API that returns a list of users",
+      "#  Build a JWT-based authentication system using Node.js",
+    ],
+    avatars: ["1", "2", "3"],
+  },
+  {
+    title: "Backend - Code Understanding",
+    descriptions: [
+      "# Set up a GET and POST route in FastAPI",
+      "# Create a Flask API that returns a list of users",
+      "#  Build a JWT-based authentication system using Node.js",
+    ],
+    avatars: ["1", "2", "3"],
+  },
+  {
+    title: "Backend - Code Understanding",
+    descriptions: [
+      "# Set up a GET and POST route in FastAPI",
+      "# Create a Flask API that returns a list of users",
+      "#  Build a JWT-based authentication system using Node.js",
+    ],
+    avatars: ["1", "2", "3"],
+  },
+]
+
+export const TECHS = ["Backend", "Devops", "Security & infra", "Solo Dev"]
+
 export const footerItems: FooterItem[] = [
   {
     title: "Developers",

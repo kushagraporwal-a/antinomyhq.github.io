@@ -40,10 +40,13 @@ module.exports = {
             500: "#121315",
             600: "#121212",
             700: "#000000",
+            800: "#18171A",
           },
           yellow: "#FDEA2E",
           gray: "#343335",
           lightGray: "#3B3B3B",
+          darkGray: "#858585",
+          cyan: "#30EDE6",
         },
       },
       spacing: {
