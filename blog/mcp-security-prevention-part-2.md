@@ -18,7 +18,7 @@ hide_table_of_contents: false
 import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
 
 <ElevenLabsAudioPlayer 
-  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9d6bd190c04d78"
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
   projectId="u4gLefolNeaAxfZN8jKw" 
 />
 
