@@ -20,6 +20,7 @@ module.exports = {
               300: "#2c2c2c",
               400: "#545556",
               700: "#000000",
+              800: "#5d5d5d4d",
             },
           },
           light: {
@@ -41,6 +42,8 @@ module.exports = {
             700: "#000000",
           },
           yellow: "#FDEA2E",
+          gray: "#343335",
+          lightGray: "#3B3B3B",
         },
       },
       spacing: {
@@ -73,7 +76,7 @@ module.exports = {
     fontFamily: {
       bebas: ['"Bebas Neue"', "sans-serif"],
       kanit: ['"Kanit"', "sans-serif"],
-      space_mono: ['"Space Mono"', "sans-serif"],
+      space: ['"Space Mono"', "sans-serif"],
     },
     fontSize: {
       "display-large": [

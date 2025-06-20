@@ -609,6 +609,8 @@ export enum CookiePreferenceCategory {
   MARKETING = "Marketing",
 }
 
+export const NavbarItems = ["Docs", "Releases", "Plans", "Blog", "Testimonials", "Contact"]
+
 export const footerItems: FooterItem[] = [
   {
     title: "Developers",
