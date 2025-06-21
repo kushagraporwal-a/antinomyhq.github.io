@@ -1,6 +1,7 @@
 .authorCol {
   max-width: inherit !important;
   flex-grow: 1 !important;
+  margin-bottom: 1rem;
 }
 
 .imageOnlyAuthorRow {
@@ -11,4 +12,12 @@
 .imageOnlyAuthorCol {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
+}
+
+/* Ensure proper spacing for enhanced author display */
+.authorCol .author-enhanced {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(229, 231, 235, 0.5);
 }

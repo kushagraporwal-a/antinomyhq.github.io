@@ -71,6 +71,7 @@ export default function BlogPostItemHeaderInfo({className}: Props): JSX.Element 
           {tags.map((tag) => {
             return (
               <Link
+                key={tag.permalink}
                 to={tag.permalink}
                 className="bg-tailCall-light-200 !no-underline text-tailCall-dark-100 px-3 py-2 rounded-full cursor-pointer"
               >

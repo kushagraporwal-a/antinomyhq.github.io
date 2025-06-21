@@ -76,8 +76,8 @@ export default {
   ],
   url: "https://forgecode.dev",
   baseUrl: "/",
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
   onBrokenAnchors: "warn",
 
   // GitHub pages deployment config.
@@ -134,7 +134,7 @@ export default {
     algolia: {
       appId: "748OFOGLOE",
       apiKey: "878290b0384a15f677fb6a4f94fe34cb",
-      indexName: "antinomy",
+      indexName: "forgecode",
       contextualSearch: false,
       searchParameters: {
         facetFilters: [],
@@ -143,10 +143,10 @@ export default {
 
     navbar: {
       hideOnScroll: true,
-      // logo: {
-      //   alt: "ForgeCode",
-      //   src: "/images/home/logo.svg",
-      // },
+      logo: {
+        alt: "ForgeCode",
+        src: "/images/home/logo-dark.svg",
+      },
       items: [
         // {to: "/", label: "Home", position: "left", activeBaseRegex: "^/$"},
         // {to: "/about", label: "About", position: "left"},

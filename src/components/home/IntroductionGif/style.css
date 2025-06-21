@@ -6,38 +6,91 @@
   background-image: linear-gradient(90deg, #ddd 1px, transparent 1px), linear-gradient(#ddd 1px, transparent 1px);
   background-size: 100px 50px;
   background-position: -1px -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 }
 
 .gif-container {
   position: relative;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  padding-bottom: 37%; /* Adjusted to match GIF's aspect ratio (470/1268 ≈ 0.37) */
   z-index: 10;
+  aspect-ratio: 16/9;
 }
 
 .gif-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .gif-wrapper {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .gif-container {
+    width: 95%;
+    aspect-ratio: 4/3;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .gif-wrapper {
+    padding: 2rem;
+    min-height: 350px;
+  }
+
+  .gif-container {
+    width: 90%;
+    max-width: 550px;
+  }
+}
+
+/* Desktop optimization */
 @media (min-width: 768px) {
   .gif-wrapper {
-    padding: 7rem /* 112px */;
+    padding: 3rem;
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gif-wrapper {
+    padding: 4rem;
+    min-height: 600px;
+  }
+
+  .gif-container {
+    width: 85%;
+    max-width: 700px;
   }
 }
 
 @media (min-width: 1536px) {
-  .gif-container {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    aspect-ratio: 1268/470;
-    padding-bottom: 0;
+  .gif-wrapper {
+    padding: 7rem;
   }
+
+  .gif-container {
+    max-width: 800px;
+    aspect-ratio: 1268/470;
+  }
+
   .gif-wrapper::after {
     content: "";
     position: absolute;
@@ -46,5 +99,6 @@
     right: 0;
     bottom: 0;
     background: radial-gradient(ellipse at center, transparent 50%, white 85%);
+    pointer-events: none;
   }
 }
