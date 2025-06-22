@@ -631,6 +631,10 @@ export const footerItems: FooterItem[] = [
     title: "Company",
     items: [
       {
+        name: "Pricing",
+        link: pageLinks.pricing,
+      },
+      {
         name: "Privacy Policy",
         link: pageLinks.privacyPolicy,
       },
