@@ -6,7 +6,7 @@ import LinkButton from "../components/shared/LinkButton"
 import {Theme} from "@site/src/constants"
 import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
-import {Check, Star, Zap, Crown} from "lucide-react"
+import {Check, Star, Crown} from "lucide-react"
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
@@ -46,7 +46,6 @@ const PricingPage = (): JSX.Element => {
       cta: "Start Pro Plan",
       href: pageLinks.signup,
       popular: true,
-      icon: <Star size={20} className="text-blue-500" />,
       note: "Most popular for individual developers",
     },
     {
@@ -69,7 +68,6 @@ const PricingPage = (): JSX.Element => {
       cta: "Get Unlimited Access",
       href: pageLinks.signup,
       popular: false,
-      icon: <Crown size={20} className="text-yellow-500" />,
       note: "🔥 Early access special - FREE unlimited now, normally $200/month",
       special: true,
     },
