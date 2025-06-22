@@ -266,7 +266,7 @@ const PricingPage = (): JSX.Element => {
 
           {/* CTA Section */}
           <div className="mt-24 text-center">
-            <div className="bg-gradient-to-r from-tailCall-dark-600 to-tailCall-dark-500 rounded-2xl p-12 text-white">
+            <div className="bg-gradient-to-r from-tailCall-dark-400 to-tailCall-dark-300 grid-background rounded-2xl p-12 text-white">
               <Heading as="h2" className="text-display-tiny mb-4">
                 Ready to Get Started?
               </Heading>
