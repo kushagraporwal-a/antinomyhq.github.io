@@ -10,18 +10,29 @@ const FinalCTA = (): JSX.Element => {
   return (
     <Section className="bg-tailCall-dark-600 text-white text-center py-16">
       <Heading as="h2" className="text-title-large sm:text-display-tiny lg:text-display-small mb-8">
-        Ready to Transform Your Development Workflow?
+        Need a CLI Coding Co-pilot?
       </Heading>
-      <p className="text-content-medium max-w-2xl mx-auto mb-10">
-        Start coding smarter with Forge – the AI assistant that respects your workflow and your privacy.
+      <p className="text-content-medium max-w-2xl mx-auto mb-4">
+        Get ForgeCode free while it lasts. Early-access invite – join free today and keep your plan forever.
       </p>
-      <div className="flex flex-col sm:flex-row justify-center">
+      <p className="text-sm text-gray-300 max-w-xl mx-auto mb-10">
+        Transform your development workflow with AI assistance that respects your privacy and integrates seamlessly with
+        your terminal.
+      </p>
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <LinkButton
           title="Sign Up"
-          href="https://app.forgecode.dev/app/"
+          href={pageLinks.signup}
           theme={Theme.Gray}
           width="small"
-          onClick={() => analyticsHandler("Home Page", "Click", "Signup - Bottom")}
+          onClick={() => analyticsHandler("Home Page", "Click", "Final CTA - Get Early Access")}
+        />
+        <LinkButton
+          title="View Pricing"
+          href={pageLinks.pricing}
+          theme={Theme.Gray}
+          width="small"
+          onClick={() => analyticsHandler("Home Page", "Click", "Final CTA - View Pricing")}
         />
       </div>
     </Section>
