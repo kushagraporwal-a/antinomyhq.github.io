@@ -19,7 +19,7 @@ const FinalCTA = (): JSX.Element => {
         Transform your development workflow with AI assistance that respects your privacy and integrates seamlessly with
         your terminal.
       </p>
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <LinkButton
           title="Sign Up"
           href={pageLinks.signup}

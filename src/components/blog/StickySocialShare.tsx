@@ -81,7 +81,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
 
   return (
     <div
-      className={`fixed left-4 lg:left-8 xl:left-16 z-40 transition-all duration-300 ease-in-out hidden md:flex ${
+      className={`fixed left-2 sm:left-4 lg:left-8 xl:left-16 z-40 transition-all duration-300 ease-in-out flex ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       } ${className || ""}`}
       style={{
@@ -91,9 +91,9 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
       role="complementary"
       aria-label="Social sharing buttons"
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 sm:gap-3">
         {/* Share label */}
-        <div className="text-xs font-medium text-gray-600 mb-1 transform -rotate-90 origin-center whitespace-nowrap">
+        <div className="text-xs font-medium text-gray-600 mb-1 transform -rotate-90 origin-center whitespace-nowrap hidden sm:block">
           Share
         </div>
 
@@ -101,7 +101,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {twitterIcon && (
           <button
             onClick={shareOnTwitter}
-            className="group relative w-12 h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"
@@ -113,9 +113,9 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
             aria-label={`Share "${shareData.title}" on X (Twitter)`}
             title="Share on X"
           >
-            <twitterIcon.image className="w-5 h-5 group-hover:opacity-80 transition-opacity duration-200" />
+            <twitterIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on X
             </div>
           </button>
@@ -125,7 +125,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {linkedinIcon && (
           <button
             onClick={shareOnLinkedIn}
-            className="group relative w-12 h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"
@@ -137,9 +137,9 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
             aria-label={`Share "${shareData.title}" on LinkedIn`}
             title="Share on LinkedIn"
           >
-            <linkedinIcon.image className="w-5 h-5 group-hover:opacity-80 transition-opacity duration-200" />
+            <linkedinIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on LinkedIn
             </div>
           </button>

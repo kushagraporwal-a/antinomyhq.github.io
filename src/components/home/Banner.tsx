@@ -38,7 +38,7 @@ const Banner = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="hidden sm:flex justify-center mt-SPACE_06 sm:mt-SPACE_10 space-x-SPACE_04 sm:space-x-SPACE_06">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-SPACE_06 sm:mt-SPACE_10 space-y-SPACE_04 sm:space-y-0 sm:space-x-SPACE_06">
             <LinkButton
               title="Get Early Access"
               href={pageLinks.signup}
