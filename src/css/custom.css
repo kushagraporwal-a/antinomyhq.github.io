@@ -935,3 +935,12 @@ span.token.tag.script.language-javascript {
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+pre.main-install-command {
+  background-color: rgb(48, 48, 55);
+  color: #eee;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-family: var(--ifm-font-family-monospace);
+}

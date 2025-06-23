@@ -11,11 +11,11 @@ const HomePage = (): JSX.Element => {
   return (
     <div className="">
       <Banner />
-      <IntroductionGif />
+      {/* <IntroductionGif /> */}
       <Configuration />
-      <WhyChooseForge />
-      <Benefits />
-      <FinalCTA />
+      {/* <WhyChooseForge /> */}
+      <Benefits />      
+      {/* <FinalCTA /> */}
     </div>
   )
 }
