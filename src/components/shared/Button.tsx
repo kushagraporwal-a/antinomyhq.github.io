@@ -12,7 +12,7 @@ const Button = ({children, onClick, variant}: ButtonProps): JSX.Element => {
   const buttonVariants = {
     transparent: "bg-transparent",
     keyboard: "px-9 py-9 bg-tailCall-gray border-r border-r-tailCall-lightGray w-full",
-    navlink: "font-kanit bg-transparent text-[#30EDE6] font-normal text-title-tiny cursor-pointer"
+    navlink: "font-kanit bg-transparent text-[#30EDE6] font-normal text-title-tiny cursor-pointer",
   }
   return (
     <button
