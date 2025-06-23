@@ -7,6 +7,7 @@ import {Theme} from "@site/src/constants"
 import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {Check, Star, Crown} from "lucide-react"
+import FinalCTA from "../components/home/FinalCTA"
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
@@ -265,27 +266,8 @@ const PricingPage = (): JSX.Element => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-24 text-center">
-            <div className="bg-gradient-to-r from-tailCall-dark-400 to-tailCall-dark-300 grid-background rounded-2xl p-12 text-white">
-              <Heading as="h2" className="text-display-tiny mb-4">
-                Ready to Get Started?
-              </Heading>
-              <p className="text-content-large mb-8 max-w-2xl mx-auto">
-                Join thousands of developers already using ForgeCode. Start free or get unlimited usage.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center">
-                <LinkButton
-                  title="Get Unlimited Access"
-                  href={pageLinks.signup}
-                  theme={Theme.Gray}
-                  width="medium"
-                  onClick={() => analyticsHandler("Pricing Page", "Click", "Max Plan CTA")}
-                />
-              </div>
-              <p className="text-sm text-gray-300 mt-4">Max Plan: FREE unlimited usage (normally $200/month)</p>
-            </div>
-          </div>
         </Section>
+        <FinalCTA showPricingButton={false} />
       </main>
     </Layout>
   )
