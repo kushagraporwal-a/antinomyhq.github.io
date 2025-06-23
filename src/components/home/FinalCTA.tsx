@@ -13,7 +13,7 @@ const FinalCTA = (): JSX.Element => {
         Need a CLI Coding Co-pilot?
       </Heading>
       <p className="text-content-medium max-w-2xl mx-auto mb-4">
-        Get ForgeCode free while it lasts. Early-access invite – join free today and keep your plan forever.
+        Get ForgeCode free while it lasts. Early-access invite.
       </p>
       <p className="text-sm text-gray-300 max-w-xl mx-auto mb-10">
         Transform your development workflow with AI assistance that respects your privacy and integrates seamlessly with
