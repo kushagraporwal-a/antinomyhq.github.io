@@ -2,13 +2,13 @@ import React from "react"
 import clsx from "clsx"
 import Layout from "@theme/Layout"
 import BlogRecentPosts from "../BlogRecentPosts"
-import {isBlogPost} from "@site/src/utils"
 import type {Props} from "@theme/BlogLayout"
 
 export default function BlogLayout(props: Props): JSX.Element {
   const {sidebar, toc, children, ...layoutProps} = props
-  // Determine page type synchronously to prevent layout shift
-  const isBlogPostPage = isBlogPost()
+  // Use toc presence to determine if this is a blog post page (SSR-safe)
+  // Blog posts have TOC, blog list pages don't
+  const isBlogPostPage = !!toc
 
   return (
     <Layout {...layoutProps}>
