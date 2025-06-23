@@ -21,6 +21,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, au
             month: "long",
             day: "numeric",
             year: "numeric",
+            timeZone: "UTC",
           })}
         </span>
         <div className="flex flex-col flex-1 gap-1 md:gap-2">
