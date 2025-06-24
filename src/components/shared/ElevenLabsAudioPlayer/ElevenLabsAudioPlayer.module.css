@@ -7,12 +7,12 @@
 .elevenlabs-audio-player #elevenlabs-audionative-widget {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px #f5f3eb;
 }
 
 /* Dark mode support */
 [data-theme="dark"] .elevenlabs-audio-player #elevenlabs-audionative-widget {
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px #f5f3eb;
 }
 
 /* Responsive adjustments */
