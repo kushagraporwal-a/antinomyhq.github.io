@@ -68,7 +68,9 @@ const WhyChooseForge = (): JSX.Element => {
             >
               <div className="flex flex-col lg:flex-row items-start gap-8">
                 <div className="flex-grow w-full lg:w-auto">
-                  <h3 className="text-3xl font-bold text-tailCall-white mb-6 text-center lg:text-left">{useCase.title}</h3>
+                  <h3 className="text-3xl font-bold text-tailCall-white mb-6 text-center lg:text-left">
+                    {useCase.title}
+                  </h3>
                   <p className="text-lg text-tailCall-light-500 mb-8 leading-relaxed text-center lg:text-left">
                     {useCase.description}
                   </p>

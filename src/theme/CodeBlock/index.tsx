@@ -46,7 +46,10 @@ export default function CodeBlockWrapper(props: Props): JSX.Element {
             className="flex flex-row items-center bg-transparent appearance-none border-none"
           >
             {copied && (
-              <span className="text-xs text-tailCall-white mr-2 opacity-70 font-space-mono p-0" style={{lineHeight: "0"}}>
+              <span
+                className="text-xs text-tailCall-white mr-2 opacity-70 font-space-mono p-0"
+                style={{lineHeight: "0"}}
+              >
                 Copied!
               </span>
             )}
