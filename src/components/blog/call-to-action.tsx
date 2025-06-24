@@ -16,7 +16,7 @@ const CallToAction: React.FC<CallToActionProps> = ({title, subtitle, buttonText,
     <section className="flex flex-col justify-center px-4 py-4 max-w-3xl mx-auto">
       <div className="relative flex flex-col max-md:space-y-6 md:flex-row md:items-center p-8 bg-neutral-900 rounded-2xl overflow-hidden max-md:p-6">
         <div className="relative z-10 flex flex-col flex-1 space-y-2.5 text-center max-md:text-left md:text-left">
-          <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl">{title}</h2>
+          <h2 className="text-3xl font-bold leading-tight text-tailCall-white sm:text-4xl">{title}</h2>
           <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">{subtitle}</p>
         </div>
         <div className="relative z-10 mt-6 max-md:w-full max-md:flex max-md:justify-center md:mt-0 md:ml-6 md:flex-shrink-0">

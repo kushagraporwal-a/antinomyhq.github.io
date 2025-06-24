@@ -38,7 +38,7 @@ export default function CodeBlockWrapper(props: Props): JSX.Element {
   return (
     <div className="rounded-3xl overflow-hidden">
       <div className="bg-[#35353A] p-4 flex justify-between items-center">
-        <span className="text-white text-xs font-space-mono">{metastringData.title}</span>
+        <span className="text-tailCall-white text-xs font-space-mono">{metastringData.title}</span>
         <div className="relative">
           <button
             onClick={handleCopy}
@@ -46,7 +46,7 @@ export default function CodeBlockWrapper(props: Props): JSX.Element {
             className="flex flex-row items-center bg-transparent appearance-none border-none"
           >
             {copied && (
-              <span className="text-xs text-white mr-2 opacity-70 font-space-mono p-0" style={{lineHeight: "0"}}>
+              <span className="text-xs text-tailCall-white mr-2 opacity-70 font-space-mono p-0" style={{lineHeight: "0"}}>
                 Copied!
               </span>
             )}

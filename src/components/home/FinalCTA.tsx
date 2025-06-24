@@ -12,7 +12,7 @@ interface FinalCTAProps {
 
 const FinalCTA = ({showPricingButton = true}: FinalCTAProps): JSX.Element => {
   return (
-    <Section className="bg-gradient-to-r from-tailCall-dark-600 to-tailCall-dark-500 grid-background text-center py-16 text-white">
+    <Section className="bg-gradient-to-r from-tailCall-dark-600 to-tailCall-dark-500 grid-background text-center py-16 text-tailCall-white">
       <Heading as="h2" className="text-title-large sm:text-display-tiny lg:text-display-small mb-8">
         Ready to Get Started?
       </Heading>

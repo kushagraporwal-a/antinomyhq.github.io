@@ -23,7 +23,7 @@ const BenefitsCard = (): JSX.Element => {
               <item.image className="w-16 h-16 text-gray-400 group-hover:text-tailCall-yellow object-contain" />
             </div>
             <div className="flex-grow">
-              <p className="text-title-small sm:text-title-large text-white mb-2 flex items-center justify-between">
+              <p className="text-title-small sm:text-title-large text-tailCall-white mb-2 flex items-center justify-between">
                 {item.title}
                 <span className="text-gray-400 group-hover:text-white"></span>
               </p>

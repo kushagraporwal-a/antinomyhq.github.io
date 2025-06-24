@@ -23,7 +23,7 @@ const Announcement: React.FC<AnnouncementProps> = ({text, refLink, refText, vari
             <a
               className={`font-bold ml-2 ${
                 isGradient
-                  ? "text-white bg-white/10 backdrop-blur px-4 py-2 rounded-lg transition hover:bg-white/20 hover:text-tailCall-yellow no-underline inline-block"
+                  ? "text-tailCall-white bg-white/10 backdrop-blur px-4 py-2 rounded-lg transition hover:bg-white/20 hover:text-tailCall-yellow no-underline inline-block"
                   : "text-tailCall-yellow"
               }`}
               href={refLink}

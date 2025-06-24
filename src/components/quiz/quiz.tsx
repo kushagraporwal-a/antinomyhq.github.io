@@ -90,14 +90,14 @@ const Quiz: React.FC<QuizProps> = ({questions, title}) => {
           <div className="mt-6 space-y-3">
             <button
               onClick={() => shareScore("twitter", score, questions.length, title)}
-              className="w-full bg-black text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors duration-300 shadow-md flex items-center justify-center"
+              className="w-full bg-black text-tailCall-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors duration-300 shadow-md flex items-center justify-center"
             >
               <TwitterLogo /> Share on X (Twitter)
             </button>
           </div>
           <button
             onClick={resetQuiz}
-            className="mt-6 bg-green-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-md w-full"
+            className="mt-6 bg-green-500 text-tailCall-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-md w-full"
           >
             Retry Quiz
           </button>

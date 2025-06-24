@@ -109,7 +109,7 @@ const LinkButton = ({
       {renderBackgroundElements(theme)}
 
       {/* Render Icon if provided */}
-      {Icon && <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:h-8 lg:w-8 text-white z-[1]" />}
+      {Icon && <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:h-8 lg:w-8 text-tailCall-white z-[1]" />}
 
       {/* Render title if provided */}
       {title && <span className={clsx("z-20", titleClassName)}> {title}</span>}

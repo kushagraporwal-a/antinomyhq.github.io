@@ -41,6 +41,7 @@ module.exports = {
             700: "#000000",
           },
           yellow: "#FDEA2E",
+          white: "#f5f3eb",
         },
       },
       spacing: {

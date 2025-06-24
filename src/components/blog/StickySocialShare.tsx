@@ -128,7 +128,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
           >
             <twitterIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-tailCall-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on X
             </div>
           </button>
@@ -152,7 +152,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
           >
             <linkedinIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-tailCall-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on LinkedIn
             </div>
           </button>

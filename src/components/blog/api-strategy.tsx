@@ -116,7 +116,7 @@ const APIStrategyQuiz: React.FC = () => {
 
   return (
     <div
-      className={`max-w-2xl mx-auto p-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg shadow-lg text-white ${animation} min-h-[500px] flex flex-col justify-center`}
+      className={`max-w-2xl mx-auto p-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg shadow-lg text-tailCall-white ${animation} min-h-[500px] flex flex-col justify-center`}
     >
       {showResult ? (
         <div className="text-center">
@@ -125,7 +125,7 @@ const APIStrategyQuiz: React.FC = () => {
           <p className="text-xl mt-2">Your score: {score} out of 10</p>
           <p className="text-lg mt-4">{resultData.message}</p>
           {score < 8 && (
-            <p className="mt-4 text-white opacity-80">
+            <p className="mt-4 text-tailCall-white opacity-80">
               Consider revisiting the key components and best practices of API strategy outlined in this blog.
             </p>
           )}
