@@ -8,41 +8,47 @@ import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {Check, Star, Crown} from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
+import OpenAILogo from "@site/src/assets/logos/openai.svg"
+import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
+import GoogleLogo from "@site/src/assets/logos/google.svg"
+import XAILogo from "@site/src/assets/logos/xai.svg"
+import MetaLogo from "@site/src/assets/logos/meta.svg"
+import MistralLogo from "@site/src/assets/logos/mistral.svg"
+import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
+
+// AI Providers array for iteration
+const aiProviders = [
+  {name: "OpenAI", logo: OpenAILogo},
+  {name: "Anthropic", logo: AnthropicLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "xAI", logo: XAILogo},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Mistral", logo: MistralLogo},
+  {name: "Deepseek", logo: DeepSeekLogo},
+]
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
     {
       name: "Free",
       price: "$0",
-      period: "Always Free",
-      description: "Perfect for getting started with AI development",
-      features: [
-        "Basic AI model access",
-        "Community support",
-        "Local processing",
-        "Git integration",
-        "Terminal-first workflow",
-        "Limited daily usage",
-      ],
+      period: "forever",
+      description: "Perfect for getting started",
+      features: ["Basic AI model access", "Community support", "Local processing"],
       cta: "Get Started Free",
       href: pageLinks.signup,
       popular: false,
-      icon: null,
-      note: "No credit card required",
     },
     {
       name: "Pro",
       price: "$20",
       period: "/month",
-      description: "Enhanced features for professional developers",
+      description: "For professional developers",
       features: [
         "Everything in Free",
-        "Access to OpenAI, Claude, Gemini models",
+        "Premium AI models (GPT-4, Claude-4, Grok-3)",
         "500 requests per month",
-        "Priority queue access",
-        "Advanced workflows",
-        "Enhanced debugging tools",
-        "Email support",
+        "Priority support",
       ],
       cta: "Start Pro Plan",
       href: pageLinks.signup,
@@ -57,14 +63,11 @@ const PricingPage = (): JSX.Element => {
       description: "🎉 Limited-time early access - FREE unlimited usage!",
       features: [
         "Everything in Pro",
-        "Access to top tier models",
-        "No rate limits during early access",
-        "Exclusive early features",
-        "Direct founder access",
-        "Highest priority queue",
+        "Unlimited requests",
+        "Latest AI models",
+        "24/7 priority support",
         "Advanced analytics",
-        "Custom model integration",
-        "Priority support",
+        "Custom integrations",
       ],
       cta: "Get Unlimited Access",
       href: pageLinks.signup,
@@ -75,15 +78,15 @@ const PricingPage = (): JSX.Element => {
   ]
 
   return (
-    <Layout title="Pricing" description="Transparent pricing for ForgeCode - Start free and scale as you grow">
+    <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
       <main>
         <Section className="py-16 lg:py-24">
           <div className="text-center mb-16">
             <Heading as="h1" className="text-display-medium lg:text-display-large mb-6">
-              Simple, Transparent Pricing
+              Simple Pricing
             </Heading>
-            <p className="text-content-large max-w-3xl mx-auto text-gray-600">
-              Choose the perfect plan for your AI development needs. Start free and upgrade as you scale.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Start free, upgrade when you're ready. No hidden fees.
             </p>
           </div>
 
@@ -148,7 +151,6 @@ const PricingPage = (): JSX.Element => {
                       </div>
                     )}
                   </div>
-                  <p className="text-gray-600 text-sm">{tier.description}</p>
                 </div>
 
                 <ul className="space-y-3 mb-6">
@@ -172,6 +174,28 @@ const PricingPage = (): JSX.Element => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-32 text-center mb-24">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Works with every model offered by leading AI providers.
+            </h2>
+            <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+              Seamlessly integrate with OpenAI, Anthropic, Google, xAI, Meta, Mistral, and Deepseek models.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 max-w-5xl mx-auto">
+              {aiProviders.map((provider) => (
+                <div
+                  key={provider.name}
+                  className="flex flex-col items-center p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-gray-300 transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 mb-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+                    <provider.logo className="w-full h-full" />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{provider.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* FAQ Section */}
