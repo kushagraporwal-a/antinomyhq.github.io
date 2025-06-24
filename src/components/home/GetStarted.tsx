@@ -15,13 +15,13 @@ const GetStarted = (): JSX.Element => {
           with
         </span>
         <span
-          className="absolute top-14 left-32 md:top-20 xl:top-32 xl:left-72 font-bebas text-[48px] md:text-[96px] xl:text-[140px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
+          className="absolute top-14 left-20 sm:left-32 md:top-20 xl:top-32 xl:left-72 font-bebas text-[48px] md:text-[96px] xl:text-[140px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-normal"
         >
           FORGE-CODE
         </span>
         <span
-          className="absolute top-28 left-40 md:top-40 xl:top-64 xl:left-[450px] font-bebas text-[48px] md:text-[96px] xl:text-[132px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
+          className="absolute top-28 left-28 sm:left-40 md:top-40 xl:top-64 xl:left-[450px] font-bebas text-[48px] md:text-[96px] xl:text-[132px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-normal"
         >
           OPEN-SOURCE
@@ -41,11 +41,11 @@ const GetStarted = (): JSX.Element => {
             <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-10"></div>
           </div>
           <div className="pt-8 px-8 pb-4">
-            <span className="text-[#30EDE6] font-space text-title-medium font-normal -tracking-wide">
+            <span className="text-[#30EDE6] font-space text-content-tiny sm:text-title-medium font-normal -tracking-wide">
               # Install Forge globally using npm
             </span>
             <br />
-            <span className="text-[#30EDE6] font-space text-title-medium font-normal -tracking-wide">
+            <span className="text-[#30EDE6] font-space text-content-tiny sm:text-title-medium font-normal -tracking-wide">
               npm install -g @antinomyhq/forge
             </span>
           </div>

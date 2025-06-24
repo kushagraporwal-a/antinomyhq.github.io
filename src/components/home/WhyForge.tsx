@@ -18,25 +18,26 @@ const WhyForge = (): JSX.Element => {
           FORGE-CODE
         </span>
       </div>
-      <div
-        className="flex absolute gap-6 top-40 md:top-72 xl:top-[360px] overflow-auto w-full"
-        style={{width: "calc(100% - 300px)"}}
-      >
+      <div className="flex absolute gap-6 top-40 md:top-72 xl:top-[360px] overflow-auto max-w-fill">
         {Array.from({length: 6}).map((_, idx) => {
           return (
             <Card key={idx}>
-              <div className="flex flex-col gap-3">
-                <img src="/images/home/why-logos.png" alt="" height={80} width={80} />
-                <span className="text-white font-kanit text-title-small">
-                  Forge feels like pair programming with someone who actually understands my stack.
-                </span>
-                <span className="text-white opacity-50 text-title-tiny font-normal">-Raj, Full-Stack Developer</span>
+              <div
+                className={`px-8 py-9 rounded-[56px] min-w-[340px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-black shadow-[0px_0px_4px_0px_#30EDE6] hover:bg-custom-radial transition-colors duration-500`}
+              >
+                <div className="flex flex-col gap-3">
+                  <img src="/images/home/why-logos.png" alt="" height={80} width={80} />
+                  <span className="text-white font-kanit text-title-small">
+                    Forge feels like pair programming with someone who actually understands my stack.
+                  </span>
+                  <span className="text-white opacity-50 text-title-tiny font-normal">-Raj, Full-Stack Developer</span>
+                </div>
               </div>
             </Card>
           )
         })}
       </div>
-      <img src="/images/home/bg-ellipse.svg" alt="ellipse" className="hidden xl:block absolute -bottom-10" />
+      {/* <img src="/images/home/bg-ellipse.svg" alt="ellipse" className="hidden xl:block absolute -bottom-10" /> */}
     </div>
   )
 }

@@ -77,7 +77,10 @@ module.exports = {
         "3xl": "2200px",
       },
       maxWidth: {
-        'fill': '-webkit-fill-available',
+        fill: "-webkit-fill-available",
+      },
+      backgroundImage: {
+        "custom-radial": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.40) 100%)",
       },
     },
     fontFamily: {

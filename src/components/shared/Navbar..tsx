@@ -2,13 +2,22 @@ import React from "react"
 import Button from "./Button"
 import {NavbarItems} from "@site/src/constants"
 import {Menu} from "lucide-react"
+import Link from "@docusaurus/Link"
 
 const Navbar = (): JSX.Element => {
   return (
     <nav className="sticky top-0 z-10 flex md:pt-10 md:px-5 md:pb-5 md:justify-end flex-wrap items-center bg-black lg:justify-between ">
       <ul className="hidden lg:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
-        {NavbarItems.map((nav) => {
-          return <li key={nav}>{nav}</li>
+        {NavbarItems.map((item) => {
+          return (
+            <Link
+              className="text-white no-underline hover:no-underline hover:text-white"
+              href={item.link}
+              key={item.name}
+            >
+              {item.name}
+            </Link>
+          )
         })}
       </ul>
       <div className="flex justify-between w-full md:w-auto p-5 md:p-0 items-center md:self-end gap-3">

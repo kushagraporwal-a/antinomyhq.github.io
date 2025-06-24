@@ -26,7 +26,7 @@ const TheBenefits = (): JSX.Element => {
       >
         BENEFITS
       </span>
-      <div className="absolute md:right-40 top-96">
+      <div className="absolute left-10 md:left-auto right-10 lg:right-40 top-96">
         <Card variant="thin">
           {BENEFITS.map(({title, description}) => {
             return <BenefitsCard key={title} title={title} description={description} />

@@ -77,7 +77,7 @@ const TerminalWithTabs = (): JSX.Element => {
           <span className="animate-pulse">|</span> {/* blinking cursor */}
         </div>
       </div>
-      <div className="bg-[#171619] py-4 px-5 w-full rounded-b-2xl flex items-center gap-3">
+      <div className="bg-[#171619] py-4 px-5 w-full rounded-b-2xl flex items-center gap-3 overflow-scroll">
         <Button
           variant="transparent"
           onClick={() => {
@@ -85,12 +85,12 @@ const TerminalWithTabs = (): JSX.Element => {
             setStartTyping(!startTyping)
           }}
         >
-          <div className="cursor-pointer py-3 px-6 bg-[#FFFFFF1C] border-0 rounded-full font-space text-white text-content-small">
+          <div className="cursor-pointer py-3 px-6 bg-[#FFFFFF1C] border-0 rounded-full font-space text-white text-content-mini sm:text-content-small">
             /test
           </div>
         </Button>
         <Button onClick={() => {}} variant="transparent">
-          <div className="cursor-pointer py-3 px-6 bg-[#FFFFFF1C] border-0 rounded-full font-space text-white text-content-small">
+          <div className="cursor-pointer py-3 px-6 bg-[#FFFFFF1C] border-0 rounded-full font-space text-white text-content-mini sm:text-content-small">
             /checkthelogic
           </div>
         </Button>

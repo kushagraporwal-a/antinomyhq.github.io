@@ -618,7 +618,32 @@ export enum CookiePreferenceCategory {
   MARKETING = "Marketing",
 }
 
-export const NavbarItems = ["Docs", "Releases", "Plans", "Blog", "Testimonials", "Contact"]
+export const NavbarItems = [
+  {
+    name: "Docs",
+    link: "/docs",
+  },
+  {
+    name: "Releases",
+    link: "/releases",
+  },
+  {
+    name: "Plans",
+    link: "/pricing",
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
+  {
+    name: "Testimonials",
+    link: "/#",
+  },
+  {
+    name: "Contact",
+    link: "/#",
+  },
+]
 
 export const StatsForDevelopers = [
   {
@@ -647,7 +672,7 @@ export const TechDetails = [
     avatars: ["1", "2", "3"],
   },
   {
-    title: "Backend - Code Understanding",
+    title: "Devops - Code Understanding",
     descriptions: [
       "# Set up a GET and POST route in FastAPI",
       "# Create a Flask API that returns a list of users",
@@ -656,7 +681,16 @@ export const TechDetails = [
     avatars: ["1", "2", "3"],
   },
   {
-    title: "Backend - Code Understanding",
+    title: "Security & infra - Code Understanding",
+    descriptions: [
+      "# Set up a GET and POST route in FastAPI",
+      "# Create a Flask API that returns a list of users",
+      "#  Build a JWT-based authentication system using Node.js",
+    ],
+    avatars: ["1", "2", "3"],
+  },
+  {
+    title: "Solo dev - Code Understanding",
     descriptions: [
       "# Set up a GET and POST route in FastAPI",
       "# Create a Flask API that returns a list of users",
@@ -675,7 +709,7 @@ export const BENEFITS = [
       "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
   },
   {
-    title: "Developer-Controlled & Secure",
+    title: "Developer-Secure",
     description:
       "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
   },

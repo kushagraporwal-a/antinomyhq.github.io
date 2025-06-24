@@ -17,10 +17,10 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="flex flex-col gap-4 max-w-[340px]">
-          <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-white text-end">
+          <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-white md:text-end">
             Get started with personal AI Assistant now.
           </span>
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-5 items-start flex-col md:items-end">
             <Button variant="transparent" onClick={() => {}}>
               <span className="font-kanit text-white font-semibold text-title-tiny">Book a demo</span>
             </Button>
