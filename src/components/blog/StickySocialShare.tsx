@@ -159,7 +159,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         )}
 
         {/* Call-to-action message */}
-        <div className="mt-2 text-xs text-gray-500 max-w-[120px] leading-tight hidden xl:block">
+        <div className="mt-2 text-[12px] text-gray-500 max-w-[120px] leading-tight hidden xl:block">
           Found this helpful? Share it with your network!
         </div>
       </div>
