@@ -46,8 +46,9 @@ const PricingPage = (): JSX.Element => {
       description: "For professional developers",
       features: [
         "Everything in Free",
-        "Premium AI models (GPT-4, Claude-4, Grok-3)",
-        "500 requests per month",
+        "Premium AI models (GPT-4, Claude-4, Grok-3, Gemini-2.5)",
+        "500 prompts per month",
+        "Additional prompts: 250 for $10 USD",
         "Priority support",
       ],
       cta: "Start Pro Plan",
@@ -64,6 +65,7 @@ const PricingPage = (): JSX.Element => {
       features: [
         "Everything in Pro",
         "Unlimited requests",
+        "Additional prompts: 1000 for $25 USD (after early access)",
         "Latest AI models",
         "24/7 priority support",
         "Advanced analytics",
@@ -206,6 +208,17 @@ const PricingPage = (): JSX.Element => {
 
             <div className="space-y-8">
               <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-title-medium font-semibold mb-3">How do I purchase additional prompts?</h3>
+                <p className="text-gray-700">
+                  Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your
+                  monthly limit.
+                  <strong>Pro users</strong> can buy 250 additional prompts for $10 USD, while{" "}
+                  <strong>Max users</strong> (after early access) can purchase 1000 additional prompts for $25 USD.
+                  These additional prompts are added to your current month's allowance.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">
                   What's the difference between Free, Pro, and Max plans?
                 </h3>
@@ -216,7 +229,7 @@ const PricingPage = (): JSX.Element => {
                   <strong>Pro ($20/month):</strong> Access to premium models (OpenAI, Claude, Gemini) with 500 requests
                   per month and priority support.
                   <br />
-                  <strong>Max (FREE - normally $200/month):</strong> Normally 10,000 requests per month, but unlimited
+                  <strong>Max (FREE - normally $200/month):</strong> Normally 10,000 prompts per month, but unlimited
                   access during this limited-time early access offer.
                 </p>
               </div>
@@ -234,8 +247,8 @@ const PricingPage = (): JSX.Element => {
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">What are "top tier" models?</h3>
                 <p className="text-gray-700">
-                  Top tier models include the most advanced AI models like GPT-4, Claude-3 Opus, and Gemini Ultra - the
-                  premium models from each provider that offer the best performance for complex coding tasks.
+                  Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
+                  models from each provider that offer the best performance for complex coding tasks.
                 </p>
               </div>
 
@@ -243,7 +256,7 @@ const PricingPage = (): JSX.Element => {
                 <h3 className="text-title-medium font-semibold mb-3">How does the Max plan unlimited usage work?</h3>
                 <p className="text-gray-700">
                   Max plan users get truly unlimited access to all AI models during this limited-time early access
-                  offer. Normally, Max provides 10,000 requests per month, but early access users enjoy unlimited
+                  offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
                   requests with no rate limits, daily caps, or usage restrictions at the special $0/month price
                   (normally $200/month).
                 </p>
@@ -251,13 +264,16 @@ const PricingPage = (): JSX.Element => {
 
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">
-                  What happens when I exceed limits on Free or Pro?
+                  What happens when I exceed my monthly prompt limit?
                 </h3>
                 <p className="text-gray-700">
                   <strong>Free users:</strong> Hit daily usage limits and need to wait for reset or upgrade.
                   <br />
-                  <strong>Pro users:</strong> Get 500 requests per month. Once exceeded, you'll need to wait for the
-                  next billing cycle or upgrade to Max.
+                  <strong>Pro users:</strong> After using your 500 included prompts, you can purchase additional
+                  prompts: 250 prompts for $10 USD.
+                  <br />
+                  <strong>Max users:</strong> Currently unlimited during early access. After early access ends, you can
+                  purchase additional prompts: 1000 prompts for $25 USD.
                 </p>
               </div>
 
@@ -274,7 +290,7 @@ const PricingPage = (): JSX.Element => {
                 <p className="text-gray-700">
                   Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
                   your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
-                  Max provides 10,000 requests per month.
+                  Max provides 10,000 prompts per month.
                 </p>
               </div>
 
