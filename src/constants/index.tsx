@@ -311,9 +311,9 @@ export const benefits: Benefits[] = [
   },
   {
     id: 3,
-    title: "Use your company's LLMs",
+    title: "Work with your existing AI providers",
     description:
-      "Forge allows you to use your company's LLMs or any custom LLMs that you have access to. You can also use Forge with any LLM provider that supports the OpenAI compatible APIs.",
+      "Already have API keys and credits? Forge gives enterprise teams complete control over where your codebase goes - use self-hosted LLMs, cloud providers, while maintaining full visibility and governance.",
     image: Key,
     redirection_url: "/docs/custom-providers/",
   },
