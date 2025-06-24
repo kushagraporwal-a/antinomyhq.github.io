@@ -9,7 +9,7 @@ import FinalCTA from "./FinalCTA"
 
 const HomePage = (): JSX.Element => {
   return (
-    <div className="">
+    <div>
       <Banner />
       {/* <IntroductionGif /> */}
       <Configuration />
