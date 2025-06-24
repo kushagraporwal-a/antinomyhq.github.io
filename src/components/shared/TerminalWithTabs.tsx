@@ -51,7 +51,7 @@ const TerminalWithTabs = (): JSX.Element => {
   }, [displayedText])
 
   return (
-    <div className="relative bg-[#1E1C21] p-[2px] bg-[linear-gradient(130deg,#30EDE6,#000000,#30EDE6B2)] rounded-2xl w-[550px] min-w-min h-[600px] flex flex-col">
+    <div className="relative bg-[#1E1C21] p-[2px] bg-[linear-gradient(130deg,#30EDE6,#000000,#30EDE6B2)] rounded-2xl md:w-[550px] h-[600px] flex flex-col">
       <div className="flex items-center px-4 gap-1 bg-[#19181B] h-10 rounded-t-2xl">
         <div className="h-4 w-4 rounded-full bg-[#D9D9D9] opacity-50"></div>
         <div className="h-4 w-4 rounded-full bg-[#D9D9D9] opacity-20"></div>
@@ -62,7 +62,7 @@ const TerminalWithTabs = (): JSX.Element => {
           return (
             <Button variant="transparent" onClick={() => setCurrentTab(tab)} key={tab}>
               <div
-                className={`px-3 py-2 flex justify-between min-w-52  ${index === 0 ? "rounded-tr-3xl" : "rounded-t-2xl"} border border-solid ${tab === currentTab ? "border-t-[#30EDE6] bg-[#2C2931]" : "bg-[#1E1C21]"} border-transparent`}
+                className={`px-3 py-2 flex justify-between items-center gap-3 min-w-max md:min-w-52  ${index === 0 ? "rounded-tr-3xl" : "rounded-t-2xl"} border border-solid ${tab === currentTab ? "border-t-[#30EDE6] bg-[#2C2931]" : "bg-[#1E1C21]"} border-transparent`}
               >
                 <span className="text-[#30EDE6] text-content-small font-space">{tab}</span>
                 <div className="text-white">x</div>

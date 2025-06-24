@@ -3,7 +3,7 @@ import Button from "../shared/Button"
 
 const Aside = (): JSX.Element => {
   return (
-    <aside className="relative flex flex-col border-r border-solid border-r-tailCall-border-dark-800 h-screen">
+    <aside className="relative hidden md:flex md:flex-col border-r border-solid border-r-tailCall-border-dark-800 h-screen">
       <div className="pt-10 px-8">
         <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="cursor-pointer" />
       </div>

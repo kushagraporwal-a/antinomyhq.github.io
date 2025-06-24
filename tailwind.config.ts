@@ -76,6 +76,9 @@ module.exports = {
       screens: {
         "3xl": "2200px",
       },
+      maxWidth: {
+        'fill': '-webkit-fill-available',
+      },
     },
     fontFamily: {
       bebas: ['"Bebas Neue"', "sans-serif"],
