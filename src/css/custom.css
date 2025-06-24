@@ -32,6 +32,11 @@
   }
 }
 
+html,
+body {
+  background-color: #faf9f8;
+}
+
 :root {
   /* Font and Dimension Tokens */
   --ifm-font-family-base: "Rubik";

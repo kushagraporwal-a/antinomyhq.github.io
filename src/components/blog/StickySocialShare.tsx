@@ -114,7 +114,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {twitterIcon && (
           <button
             onClick={shareOnTwitter}
-            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border-4 border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"
@@ -138,7 +138,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {linkedinIcon && (
           <button
             onClick={shareOnLinkedIn}
-            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border-4 border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"

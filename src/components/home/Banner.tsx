@@ -43,7 +43,7 @@ const Banner = (): JSX.Element => {
                 href="https://github.com/antinomyhq/forge"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium text-gray-700 transition-colors duration-200 hover:no-underline"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium text-gray-700 transition-all duration-200 hover:no-underline shadow-lg"
                 onClick={() => analyticsHandler("Home Page", "Click", "GitHub Badge")}
               >
                 <Github size={28} />
