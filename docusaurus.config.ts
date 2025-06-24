@@ -5,7 +5,7 @@ import type {Config} from "@docusaurus/types"
 import {getNavDropdownItemHtml} from "./src/utils"
 
 const title = "Forge Code"
-const organization = "antinomyhq"
+const organization = "Forge Code"
 const project = "antinomyhq.github.io"
 
 export default {

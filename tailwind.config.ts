@@ -47,6 +47,7 @@ module.exports = {
           lightGray: "#3B3B3B",
           darkGray: "#858585",
           cyan: "#30EDE6",
+          white: "#f5f3eb",
         },
       },
       spacing: {

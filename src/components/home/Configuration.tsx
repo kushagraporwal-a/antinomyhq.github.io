@@ -26,10 +26,8 @@ const Configuration = (): JSX.Element => {
       </div>
       <div>
         <h4 className="text-lg font-semibold mb-2">Install Forge</h4>
-        <CodeBlock language="bash" showLineNumbers={false} className="overflow-y-auto md:min-w-[45rem] min-w-[100%]">
-          {NPM_INSTALLATION}
-        </CodeBlock>
-        <p className="text-content-tiny mt-4 text-gray-500">
+        <pre className="md:min-w-[45rem] min-w-[100%] main-install-command">npx forgecode@latest</pre>
+        <p className="text-content-tiny mt-4 text-gray-600">
           After installing, create a <code>.env</code> file in your home directory with your API key, then type{" "}
           <code>forge</code> in your terminal.
         </p>
@@ -40,8 +38,4 @@ const Configuration = (): JSX.Element => {
 
 export default Configuration
 
-const NPM_INSTALLATION = `# Install Forge globally using npm
-npm install -g @antinomyhq/forge
-
-# Then run Forge in your terminal
-forge`
+const NPM_INSTALLATION = `npx forgecode@latest`

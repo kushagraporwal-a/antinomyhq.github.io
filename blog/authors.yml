@@ -1,7 +1,7 @@
 forge:
-  name: The Forge Team
+  name: Forge Team
   url: https://github.com/antinomyhq/forge
-  image_url: /images/favicon-light.svg
+  image_url: /images/logo-round-black-1x.jpg
   social:
     - platform: github
       url: https://github.com/antinomyhq/forge

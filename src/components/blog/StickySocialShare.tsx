@@ -1,7 +1,20 @@
 import React, {useEffect, useState, useCallback} from "react"
 import {useBlogPost} from "@docusaurus/plugin-content-blog/client"
-import {socials} from "@site/src/constants"
 
+const socials: Social[] = [
+  {
+    id: 1,
+    name: "linkedin",
+    image: require("@site/static/icons/companies/linkedin-filled.svg").default,
+    href: "https://www.linkedin.com/company/forgecodehq",
+  },
+  {
+    id: 2,
+    name: "twitter",
+    image: require("@site/static/icons/companies/x-filled.svg").default,
+    href: "https://x.com/forgecodehq",
+  },
+]
 interface StickySocialShareProps {
   className?: string
 }
@@ -101,7 +114,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {twitterIcon && (
           <button
             onClick={shareOnTwitter}
-            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border-4 border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"
@@ -115,7 +128,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
           >
             <twitterIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-tailCall-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on X
             </div>
           </button>
@@ -125,7 +138,7 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
         {linkedinIcon && (
           <button
             onClick={shareOnLinkedIn}
-            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
+            className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 ease-in-out border-4 border-gray-200 hover:border-yellow-400 flex items-center justify-center hover:scale-105 hover:bg-yellow-50"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#fdea2e20"
               e.currentTarget.style.borderColor = "#fdea2e"
@@ -139,14 +152,14 @@ const StickySocialShare: React.FC<StickySocialShareProps> = ({className}) => {
           >
             <linkedinIcon.image className="w-4 h-4 sm:w-5 sm:h-5 group-hover:opacity-80 transition-opacity duration-200" />
             {/* Hover tooltip */}
-            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
+            <div className="absolute left-full ml-3 px-2 py-1 bg-gray-900 text-tailCall-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap hidden sm:block">
               Share on LinkedIn
             </div>
           </button>
         )}
 
         {/* Call-to-action message */}
-        <div className="mt-2 text-xs text-gray-500 max-w-[120px] leading-tight hidden xl:block">
+        <div className="mt-2 text-[12px] text-gray-500 max-w-[120px] leading-tight hidden xl:block">
           Found this helpful? Share it with your network!
         </div>
       </div>

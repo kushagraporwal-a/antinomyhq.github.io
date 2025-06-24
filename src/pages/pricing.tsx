@@ -7,6 +7,7 @@ import {Theme} from "@site/src/constants"
 import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {Check, Star, Crown} from "lucide-react"
+import FinalCTA from "../components/home/FinalCTA"
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
@@ -90,17 +91,17 @@ const PricingPage = (): JSX.Element => {
             {tiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`relative rounded-2xl border-2 p-6 ${
+                className={`relative border-dashed border-1 p-6 ${
                   tier.popular
                     ? "border-blue-500 bg-gradient-to-b from-blue-50 to-white transform scale-105"
                     : tier.special
                       ? "border-yellow-500 bg-gradient-to-b from-yellow-50 to-white"
-                      : "border-gray-200 bg-white"
+                      : "border-gray-400 bg-white"
                 } hover:shadow-xl transition-all duration-300`}
               >
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                    <div className="bg-blue-500 text-tailCall-white px-4 py-2 border-dashed border-1 border-gray-800 text-sm font-semibold flex items-center gap-2">
                       <Star size={16} />
                       Most Popular
                     </div>
@@ -109,7 +110,7 @@ const PricingPage = (): JSX.Element => {
 
                 {tier.special && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                    <div className="bg-yellow-500 text-black px-4 py-2 border-dashed border-1 border-gray-800 text-sm font-semibold flex items-center gap-2">
                       <Crown size={16} />
                       Early Access
                     </div>
@@ -265,27 +266,8 @@ const PricingPage = (): JSX.Element => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-24 text-center">
-            <div className="bg-gradient-to-r from-tailCall-dark-400 to-tailCall-dark-300 grid-background rounded-2xl p-12 text-white">
-              <Heading as="h2" className="text-display-tiny mb-4">
-                Ready to Get Started?
-              </Heading>
-              <p className="text-content-large mb-8 max-w-2xl mx-auto">
-                Join thousands of developers already using ForgeCode. Start free or get unlimited usage.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center">
-                <LinkButton
-                  title="Get Unlimited Access"
-                  href={pageLinks.signup}
-                  theme={Theme.Gray}
-                  width="medium"
-                  onClick={() => analyticsHandler("Pricing Page", "Click", "Max Plan CTA")}
-                />
-              </div>
-              <p className="text-sm text-gray-300 mt-4">Max Plan: FREE unlimited usage (normally $200/month)</p>
-            </div>
-          </div>
         </Section>
+        <FinalCTA showPricingButton={false} />
       </main>
     </Layout>
   )

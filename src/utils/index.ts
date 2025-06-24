@@ -44,6 +44,11 @@ export const isValidURL = (url: string) => {
 }
 
 export const isBlogPost = () => {
+  // Check if we're in a browser environment
+  if (typeof window === "undefined" || typeof location === "undefined") {
+    return false
+  }
+
   const url = new URL(location.pathname, window.location.origin)
   const pathSegments = url.pathname.split("/").filter(Boolean)
 

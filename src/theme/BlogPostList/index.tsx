@@ -30,7 +30,10 @@ function EmptyState(): JSX.Element {
         We're working on creating valuable content for you. Check back soon for our latest articles, insights, and
         updates.
       </p>
-      <a href="/docs" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+      <a
+        href="/docs"
+        className="px-4 py-2 bg-blue-600 text-tailCall-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
         Explore our documentation
       </a>
     </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import {pageLinks} from "./routes"
+import {Terminal, Shuffle, Key, Bot, ReplaceAll, BrainCircuit} from "lucide-react"
 
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
@@ -11,7 +12,7 @@ export enum cookieConstants {
 
 export const algoliaConstants = {
   categoryFacet: "category",
-  searchModalPlaceholder: "What do you want to now about code forge ?",
+  searchModalPlaceholder: "What do you want to know about Forge ?",
 }
 // FIXME: change the list of items and logos
 export const companies: PartnerImage[] = [
@@ -208,13 +209,13 @@ export const socials: Social[] = [
   {
     id: 3,
     name: "linkedin",
-    image: require("@site/static/icons/companies/linkedin-filled.svg").default,
+    image: require("@site/static/icons/companies/linkedin-gray.svg").default,
     href: "https://www.linkedin.com/company/forgecodehq",
   },
   {
     id: 4,
     name: "twitter",
-    image: require("@site/static/icons/companies/x-filled.svg").default,
+    image: require("@site/static/icons/companies/x-gray.svg").default,
     href: "https://x.com/forgecodehq",
   },
 ]
@@ -230,7 +231,7 @@ export const chooseTailcall: ChooseTailcall[] = [
     id: 2,
     title: "Performance",
     description: "Get performance that's higher than your hand optimized implementation",
-    image: require("@site/static/images/home/performance.png").default,
+    image: Shuffle,
   },
   {
     id: 3,
@@ -294,35 +295,43 @@ export const tailcallFeatures: TailcallFeatures[] = [
 export const benefits: Benefits[] = [
   {
     id: 1,
-    title: "Developer-Controlled & Secure",
+    title: "Use your favorite IDE",
     description:
-      "Your code never leaves your machine – Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
-    image: require("@site/static/images/home/secure-icon.png").default,
-    redirection_url: "/docs/",
+      "Forge works natively with your CLI, so you don't need to switch IDEs. Whether you use VS Code, Xcode, Neovim, IntelliJ, Android Studio, or any other IDE, Forge integrates seamlessly with your shell and can access all the CLI tools you already have. It shows you the exact same logs and output that you'd see if you ran the tools directly, maintaining your familiar development workflow.",
+    image: Terminal,
+    redirection_url: "/docs",
   },
   {
     id: 2,
-    title: "Seamless Terminal Integration",
+    title: "Control speed vs accuracy",
     description:
-      "No new IDE to learn. Forge lives in your terminal and plugs into your existing workflow with near zero setup. It understands your entire codebase and git history.",
-    image: require("@site/static/images/home/customizable-icon.png").default,
-    redirection_url: "/docs",
+      "Pick the right model for each task. Need to plan something complex? Use a thinking model. Want quick code changes? Use a fast model. Working with large files? Choose a big context model. You can even mix models - plan with one, then code with another. It's all about using the best tool for the job.",
+    image: BrainCircuit,
+    redirection_url: "/docs/",
   },
   {
     id: 3,
-    title: "Model-Agnostic Flexibility",
+    title: "Work with your existing AI providers",
     description:
-      "Leverage the best of AI now and in the future. Forge works with OpenAI, Anthropic Claude, and hundreds of other models (300+ supported) including open-source and on-premise models.",
-    image: require("@site/static/images/home/performance.png").default,
-    redirection_url: "/docs",
+      "Already have API keys and credits? Forge gives enterprise teams complete control over where your codebase goes - use self-hosted LLMs, cloud providers, while maintaining full visibility and governance.",
+    image: Key,
+    redirection_url: "/docs/custom-providers/",
   },
   {
     id: 4,
-    title: "Customizable & Extensible",
+    title: "Create and share specialized agents",
     description:
-      "Adapt Forge to how you work. Define custom workflows or commands. Being open-source, Forge invites you to extend its capabilities – whether automating repetitive tasks or integrating with your team's internal tools.",
-    image: require("@site/static/images/home/open-source-icon.png").default,
-    redirection_url: "https://github.com/antinomyhq/forge",
+      "You can build and share agents specific for your usecase, for example you can build a Frontend agent, Backend agent, DevOps agent, etc. You can also share these agents with your team members.",
+    image: Bot,
+    redirection_url: "/docs/",
+  },
+  {
+    id: 5,
+    title: "Handle massive refactors",
+    description:
+      "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management without worrying about going out of context.",
+    image: ReplaceAll,
+    redirection_url: "/docs/",
   },
 ]
 export const useCases: UseCase[] = [

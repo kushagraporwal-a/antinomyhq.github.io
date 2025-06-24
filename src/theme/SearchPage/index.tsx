@@ -364,7 +364,7 @@ function SearchPageContent(): JSX.Element {
         {Object.values(resultsCategory).map((category) => {
           return (
             <div
-              className={`flex justify-between items-center rounded-md p-1 pl-3 gap-2 sm:gap-0 sm:px-3 sm:py-2 sm:w-[180px] ${selectedCategory === category ? "border border-solid border-tailCall-border-light-400 sm:bg-tailCall-yellow sm:border-none" : ""}`}
+              className={`flex justify-between items-center rounded-md p-1 pl-3 gap-2 sm:gap-0 sm:px-3 sm:py-2 sm:w-[180px] ${selectedCategory === category ? "border border-solid border-tailCall-border-dark-500 sm:bg-tailCall-yellow sm:border-none" : ""}`}
               onClick={() => handleCategoryClick(category)}
             >
               <span
