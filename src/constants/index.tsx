@@ -14,15 +14,23 @@ export const algoliaConstants = {
   categoryFacet: "category",
   searchModalPlaceholder: "What do you want to know about Forge ?",
 }
-// FIXME: change the list of items and logos
+// Import SVG logos as React components
+import Dream11Logo from "@site/static/icons/companies/dream11.svg"
+import AgodaLogo from "@site/static/icons/companies/agoda.svg"
+import AmazonLogo from "@site/static/icons/companies/amazon.svg"
+import BranchLogo from "@site/static/icons/companies/branch.svg"
+import ClearTaxLogo from "@site/static/icons/companies/cleartax.svg"
+import CommvaultLogo from "@site/static/icons/companies/commvault.svg"
+import CoreEdgeLogo from "@site/static/icons/companies/coreedge.svg"
+
 export const companies: PartnerImage[] = [
-  {name: "Dream11", logo: require("@site/static/icons/companies/dream11.png").default},
-  {name: "Agoda", logo: require("@site/static/icons/companies/agoda.png").default},
-  {name: "Amazon", logo: require("@site/static/icons/companies/amazon.png").default},
-  {name: "Branch", logo: require("@site/static/icons/companies/branch.png").default},
-  {name: "ClearTax", logo: require("@site/static/icons/companies/cleartax.png").default},
-  {name: "Commvault", logo: require("@site/static/icons/companies/commvault.png").default},
-  {name: "CoreEdge", logo: require("@site/static/icons/companies/coredge.png").default},
+  {name: "Dream11", logo: Dream11Logo},
+  {name: "Agoda", logo: AgodaLogo},
+  {name: "Amazon", logo: AmazonLogo},
+  {name: "Branch", logo: BranchLogo},
+  {name: "ClearTax", logo: ClearTaxLogo},
+  {name: "Commvault", logo: CommvaultLogo},
+  {name: "CoreEdge", logo: CoreEdgeLogo},
 ]
 
 export const partnerImages: PartnerImage[] = [

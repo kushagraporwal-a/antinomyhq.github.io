@@ -1,7 +1,7 @@
 type PartnerImage = {
   // id: number
   name: string
-  logo: string
+  logo: React.ComponentType<React.SVGProps<SVGSVGElement>> | string
 }
 
 type Feature = {
