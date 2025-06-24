@@ -1,6 +1,6 @@
 import React from "react"
 import {pageLinks} from "./routes"
-import {Terminal, Shuffle, Key, Bot, FileCode} from "lucide-react"
+import {Terminal, Shuffle, Key, Bot, ReplaceAll, BrainCircuit} from "lucide-react"
 
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
@@ -295,42 +295,42 @@ export const tailcallFeatures: TailcallFeatures[] = [
 export const benefits: Benefits[] = [
   {
     id: 1,
-    title: "Seamless Terminal Integration",
+    title: "Use your favorite IDE",
     description:
-      "Works in your terminal with zero IDE switching. Minimal setup, understands your entire codebase and git history out of the box.",
+      "Forge works natively with your CLI, so you don't need to switch IDEs. Whether you use VS Code, Xcode, Neovim, IntelliJ, Android Studio, or any other IDE, Forge integrates seamlessly with your shell and can access all the CLI tools you already have. It shows you the exact same logs and output that you'd see if you ran the tools directly, maintaining your familiar development workflow.",
     image: Terminal,
     redirection_url: "/docs",
   },
   {
     id: 2,
-    title: "Model-Agnostic Flexibility",
+    title: "Control speed vs accuracy",
     description:
-      "300+ AI models supported including OpenAI, Claude, Gemini and local models. Switch providers without changing your workflow.",
-    image: Shuffle,
+      "Pick the right model for each task. Need to plan something complex? Use a thinking model. Want quick code changes? Use a fast model. Working with large files? Choose a big context model. You can even mix models - plan with one, then code with another. It's all about using the best tool for the job.",
+    image: BrainCircuit,
     redirection_url: "/docs/",
   },
   {
     id: 3,
-    title: "Choose Your Own Provider",
+    title: "Use your company's LLMs",
     description:
-      "BYOK or Forge keys supported. Your data stays private and secure while getting AI-powered code assistance.",
+      "Forge allows you to use your company's LLMs or any custom LLMs that you have access to. You can also use Forge with any LLM provider that supports the OpenAI compatible APIs.",
     image: Key,
     redirection_url: "/docs/custom-providers/",
   },
   {
     id: 4,
-    title: "Build Task-Specific AI Agents",
+    title: "Create and share specialized agents",
     description:
-      "Create custom agents for specific tasks, workflows, or coding styles. Tailored to your needs, enhancing productivity and code quality.",
+      "You can build and share agents specific for your usecase, for example you can build a Frontend agent, Backend agent, DevOps agent, etc. You can also share these agents with your team members.",
     image: Bot,
     redirection_url: "/docs/",
   },
   {
     id: 5,
-    title: "Handle Large Refactors Without Losing Context",
+    title: "Handle massive refactors",
     description:
-      "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management.",
-    image: FileCode,
+      "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management without worrying about going out of context.",
+    image: ReplaceAll,
     redirection_url: "/docs/",
   },
 ]
