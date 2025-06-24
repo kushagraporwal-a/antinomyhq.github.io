@@ -42,7 +42,7 @@ type Benefits = {
   id: number
   title: string
   description: string
-  image: string
+  image: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
   redirection_url: string
 }
 

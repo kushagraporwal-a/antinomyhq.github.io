@@ -1,5 +1,6 @@
 import React from "react"
 import {pageLinks} from "./routes"
+import {Terminal, Shuffle, Key, Bot, FileCode} from "lucide-react"
 
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
@@ -11,7 +12,7 @@ export enum cookieConstants {
 
 export const algoliaConstants = {
   categoryFacet: "category",
-  searchModalPlaceholder: "What do you want to now about code forge ?",
+  searchModalPlaceholder: "What do you want to know about Forge ?",
 }
 // FIXME: change the list of items and logos
 export const companies: PartnerImage[] = [
@@ -230,7 +231,7 @@ export const chooseTailcall: ChooseTailcall[] = [
     id: 2,
     title: "Performance",
     description: "Get performance that's higher than your hand optimized implementation",
-    image: require("@site/static/images/home/performance.png").default,
+    image: Shuffle,
   },
   {
     id: 3,
@@ -294,35 +295,43 @@ export const tailcallFeatures: TailcallFeatures[] = [
 export const benefits: Benefits[] = [
   {
     id: 1,
-    title: "Developer-Controlled & Secure",
+    title: "Seamless Terminal Integration",
     description:
-      "Your code never leaves your machine – Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
-    image: require("@site/static/images/home/secure-icon.png").default,
-    redirection_url: "/docs/",
+      "Works in your terminal with zero IDE switching. Minimal setup, understands your entire codebase and git history out of the box.",
+    image: Terminal,
+    redirection_url: "/docs",
   },
   {
     id: 2,
-    title: "Seamless Terminal Integration",
+    title: "Model-Agnostic Flexibility",
     description:
-      "No new IDE to learn. Forge lives in your terminal and plugs into your existing workflow with near zero setup. It understands your entire codebase and git history.",
-    image: require("@site/static/images/home/customizable-icon.png").default,
-    redirection_url: "/docs",
+      "300+ AI models supported including OpenAI, Claude, Gemini and local models. Switch providers without changing your workflow.",
+    image: Shuffle,
+    redirection_url: "/docs/",
   },
   {
     id: 3,
-    title: "Model-Agnostic Flexibility",
+    title: "Choose Your Own Provider",
     description:
-      "Leverage the best of AI now and in the future. Forge works with OpenAI, Anthropic Claude, and hundreds of other models (300+ supported) including open-source and on-premise models.",
-    image: require("@site/static/images/home/performance.png").default,
-    redirection_url: "/docs",
+      "BYOK or Forge keys supported. Your data stays private and secure while getting AI-powered code assistance.",
+    image: Key,
+    redirection_url: "/docs/custom-providers/",
   },
   {
     id: 4,
-    title: "Customizable & Extensible",
+    title: "Build Task-Specific AI Agents",
     description:
-      "Adapt Forge to how you work. Define custom workflows or commands. Being open-source, Forge invites you to extend its capabilities – whether automating repetitive tasks or integrating with your team's internal tools.",
-    image: require("@site/static/images/home/open-source-icon.png").default,
-    redirection_url: "https://github.com/antinomyhq/forge",
+      "Create custom agents for specific tasks, workflows, or coding styles. Tailored to your needs, enhancing productivity and code quality.",
+    image: Bot,
+    redirection_url: "/docs/",
+  },
+  {
+    id: 5,
+    title: "Handle Large Refactors Without Losing Context",
+    description:
+      "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management.",
+    image: FileCode,
+    redirection_url: "/docs/",
   },
 ]
 export const useCases: UseCase[] = [
