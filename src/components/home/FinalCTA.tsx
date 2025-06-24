@@ -13,7 +13,7 @@ interface FinalCTAProps {
 const FinalCTA = ({showPricingButton = true}: FinalCTAProps): JSX.Element => {
   return (
     <section className="w-full">
-      <div className="bg-tailCall-yellow relative flex items-center justify-center h-[208px] sm:h-[452px] w-full">
+      <div className="bg-tailCall-yellow relative flex items-center justify-center h-[280px] sm:h-[452px] w-full">
         <BgForgeCode />
         <div className="flex flex-col items-center absolute max-w-3xl space-y-SPACE_04 sm:space-y-SPACE_06 px-4 sm:px-6">
           <Heading as="h5" className="text-title-semi-large sm:text-display-medium text-center mb-0">
