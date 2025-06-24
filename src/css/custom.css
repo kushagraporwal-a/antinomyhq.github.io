@@ -57,6 +57,7 @@ body {
   --ifm-search-input-font-size: 0.9rem;
   --ifm-search-desc-font-size: 14px;
   --ifm-font-weight-bold: 400;
+  --ifm-navbar-background-color: #faf9f8;
 
   /* Color Tokens */
   --ifm-color-brand: #fdea2e;
