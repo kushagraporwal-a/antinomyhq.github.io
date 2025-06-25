@@ -23,6 +23,14 @@ import ClearTaxLogo from "@site/static/icons/companies/cleartax.svg"
 import CommvaultLogo from "@site/static/icons/companies/commvault.svg"
 import CoreEdgeLogo from "@site/static/icons/companies/coreedge.svg"
 
+import Dream11ClientLogo from "@site/static/icons/client/dream11.svg"
+import AgodaClientLogo from "@site/static/icons/client/agoda.svg"
+import AmazonClientLogo from "@site/static/icons/client/amazon.svg"
+import BranchClientLogo from "@site/static/icons/client/branch.svg"
+import ClearTaxClientLogo from "@site/static/icons/client/cleartax.svg"
+import CommvaultClientLogo from "@site/static/icons/client/commvault.svg"
+import CoreEdgeClientLogo from "@site/static/icons/client/coreedge.svg"
+
 export const companies: PartnerImage[] = [
   {name: "Dream11", logo: Dream11Logo},
   {name: "Agoda", logo: AgodaLogo},
@@ -31,6 +39,16 @@ export const companies: PartnerImage[] = [
   {name: "ClearTax", logo: ClearTaxLogo},
   {name: "Commvault", logo: CommvaultLogo},
   {name: "CoreEdge", logo: CoreEdgeLogo},
+]
+
+export const clientLogos: PartnerImage[] = [
+  {name: "Dream11", logo: Dream11ClientLogo},
+  {name: "Agoda", logo: AgodaClientLogo},
+  {name: "Amazon", logo: AmazonClientLogo},
+  {name: "Branch", logo: BranchClientLogo},
+  {name: "ClearTax", logo: ClearTaxClientLogo},
+  {name: "Commvault", logo: CommvaultClientLogo},
+  {name: "CoreEdge", logo: CoreEdgeClientLogo},
 ]
 
 export const partnerImages: PartnerImage[] = [

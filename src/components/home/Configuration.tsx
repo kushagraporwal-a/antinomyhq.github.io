@@ -4,11 +4,14 @@ import CodeBlock from "@theme/CodeBlock"
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 import Link from "@docusaurus/Link"
+import { clientLogos } from "@site/src/constants"
 import Section from "../shared/Section"
+import TrustedByMarquee from "./TrustedByMarquee"
 
 const Configuration = (): JSX.Element => {
   return (
-    <Section className="flex flex-col lg:flex-row justify-center gap-10" innerClassName="xl:flex md:gap-10">
+    <Section className="flex flex-col" innerClassName="xl:flex flex-col md:gap-10">
+      <div className="flex flex-col justify-center gap-10 lg:flex-row">
       <div className="max-w-2xl">
         <Heading as="h2" className="text-title-large sm:text-display-tiny lg:text-display-small mb-SPACE_04">
           Get <span className="rounded-lg px-SPACE_02 bg-tailCall-yellow">Started</span>
@@ -31,6 +34,10 @@ const Configuration = (): JSX.Element => {
           After installing, create a <code>.env</code> file in your home directory with your API key, then type{" "}
           <code>forge</code> in your terminal.
         </p>
+      </div>
+      </div>
+      <div className="mt-5">
+        <TrustedByMarquee title="Trusted by developers at" logos={clientLogos}/>
       </div>
     </Section>
   )
