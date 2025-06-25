@@ -18,7 +18,7 @@ const BuiltFor = (): JSX.Element => {
       </div>
       <div className="w-full justify-center">
         <span
-          className="font-bebas text-display-medium xl:text-display-large xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
+          className="font-bebas text-display-medium xl:text-[120px] xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-normal"
         >
           BUILT FOR BUILDERS,
@@ -26,7 +26,7 @@ const BuiltFor = (): JSX.Element => {
         <br />
         <span
           style={{display: "ruby-text"}}
-          className="mt-5 font-bebas text-display-medium xl:text-display-large xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
+          className="mt-5 font-bebas text-display-medium xl:text-[120px] xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-normal"
         >
           BACKED BY DATA

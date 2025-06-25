@@ -8,9 +8,9 @@ type FooterItemProps = {
 
 const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
   return (
-    <div className="flex flex-col gap-9">
+    <div className="flex flex-col gap-5 md:gap-8">
       <span className="font-kanit text-title-tiny text-white opacity-40 font-medium">{title}</span>
-      <ul className="m-0 p-0 flex flex-col items-start gap-9 list-none font-kanit text-white text-title-tiny font-[275]">
+      <ul className="m-0 p-0 flex flex-col items-start gap-5 md:gap-8 list-none font-kanit text-white text-title-tiny font-[275]">
         {items.map((item) => {
           return (
             <Link

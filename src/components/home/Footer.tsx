@@ -29,7 +29,7 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
       <hr />
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-5 flex-wrap">
         {footerItems.map(({items, title}) => {
           return <FooterItem key={title} items={items} title={title} />
         })}

@@ -18,16 +18,16 @@ const WhyForge = (): JSX.Element => {
           FORGE-CODE
         </span>
       </div>
-      <div className="flex absolute gap-6 top-40 md:top-72 xl:top-[360px] overflow-auto max-w-fill">
+      <div className="flex absolute gap-6 top-40 md:top-72 p-3 xl:top-[360px] overflow-auto max-w-fill">
         {Array.from({length: 6}).map((_, idx) => {
           return (
             <Card key={idx}>
               <div
-                className={`px-8 py-9 rounded-[56px] min-w-[340px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-black shadow-[0px_0px_4px_0px_#30EDE6] hover:bg-custom-radial transition-colors duration-500`}
+                className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-black shadow-[0px_0px_4px_0px_#30EDE6] hover:bg-custom-radial transition-colors duration-500`}
               >
                 <div className="flex flex-col gap-3">
                   <img src="/images/home/why-logos.png" alt="" height={80} width={80} />
-                  <span className="text-white font-kanit text-title-small">
+                  <span className="text-white font-kanit text-title-small font-normal">
                     Forge feels like pair programming with someone who actually understands my stack.
                   </span>
                   <span className="text-white opacity-50 text-title-tiny font-normal">-Raj, Full-Stack Developer</span>

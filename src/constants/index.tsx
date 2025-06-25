@@ -724,12 +724,29 @@ export const footerItems: FooterItem[] = [
         link: pageLinks.docs,
       },
       {
-        name: "Blogs",
-        link: pageLinks.blog,
-      },
-      {
         name: "Releases",
         link: pageLinks.releases,
+      },
+      {
+        name: "Report a Bug",
+        link: "",
+      },
+      {
+        name: "Contributors",
+        link: "",
+      },
+    ],
+  },
+  {
+    title: "Legal",
+    items: [
+      {
+        name: "Privacy Policy",
+        link: pageLinks.privacyPolicy,
+      },
+      {
+        name: "Terms",
+        link: "",
       },
     ],
   },
@@ -737,16 +754,34 @@ export const footerItems: FooterItem[] = [
     title: "Company",
     items: [
       {
+        name: "Contact",
+        link: "",
+      },
+      {
+        name: "Testimonials",
+        link: "",
+      },
+      {
+        name: "Hiring",
+        link: "https://forms.gle/F8dQkLqtCsFwctLa6",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      {
+        name: "Blogs",
+        link: pageLinks.blog,
+      },
+    ],
+  },
+  {
+    title: "Plans",
+    items: [
+      {
         name: "Pricing",
         link: pageLinks.pricing,
-      },
-      {
-        name: "Privacy Policy",
-        link: pageLinks.privacyPolicy,
-      },
-      {
-        name: "We're Hiring",
-        link: "https://forms.gle/F8dQkLqtCsFwctLa6",
       },
     ],
   },
