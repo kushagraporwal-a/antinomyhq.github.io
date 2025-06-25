@@ -53,7 +53,7 @@ export const ElevenLabsAudioPlayer = ({
         data-playerurl="https://elevenlabs.io/player/index.html"
         data-small={size === "small" ? "True" : "False"}
         data-textcolor={textColorRgba ?? "rgba(0, 0, 0, 1.0)"}
-        data-backgroundcolor={backgroundColorRgba ?? "rgba(255, 255, 255, 1.0)"}
+        data-backgroundcolor={backgroundColorRgba ?? "#f5f3eb"}
         {...(projectId && {"data-projectid": projectId})} // Add projectId if provided
       >
         {children ? children : "Elevenlabs AudioNative Player"}

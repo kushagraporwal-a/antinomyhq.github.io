@@ -8,41 +8,48 @@ import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {Check, Star, Crown} from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
+import OpenAILogo from "@site/src/assets/logos/openai.svg"
+import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
+import GoogleLogo from "@site/src/assets/logos/google.svg"
+import XAILogo from "@site/src/assets/logos/xai.svg"
+import MetaLogo from "@site/src/assets/logos/meta.svg"
+import MistralLogo from "@site/src/assets/logos/mistral.svg"
+import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
+
+// AI Providers array for iteration
+const aiProviders = [
+  {name: "OpenAI", logo: OpenAILogo},
+  {name: "Anthropic", logo: AnthropicLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "xAI", logo: XAILogo},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Mistral", logo: MistralLogo},
+  {name: "Deepseek", logo: DeepSeekLogo},
+]
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
     {
       name: "Free",
       price: "$0",
-      period: "Always Free",
-      description: "Perfect for getting started with AI development",
-      features: [
-        "Basic AI model access",
-        "Community support",
-        "Local processing",
-        "Git integration",
-        "Terminal-first workflow",
-        "Limited daily usage",
-      ],
+      period: "forever",
+      description: "Perfect for getting started",
+      features: ["Basic AI model access", "Community support", "Local processing"],
       cta: "Get Started Free",
       href: pageLinks.signup,
       popular: false,
-      icon: null,
-      note: "No credit card required",
     },
     {
       name: "Pro",
       price: "$20",
       period: "/month",
-      description: "Enhanced features for professional developers",
+      description: "For professional developers",
       features: [
         "Everything in Free",
-        "Access to OpenAI, Claude, Gemini models",
-        "500 requests per month",
-        "Priority queue access",
-        "Advanced workflows",
-        "Enhanced debugging tools",
-        "Email support",
+        "Premium AI models (GPT-4, Claude-4, Grok-3, Gemini-2.5)",
+        "500 prompts per month",
+        "Additional prompts: 250 for $10 USD",
+        "Priority support",
       ],
       cta: "Start Pro Plan",
       href: pageLinks.signup,
@@ -57,14 +64,12 @@ const PricingPage = (): JSX.Element => {
       description: "🎉 Limited-time early access - FREE unlimited usage!",
       features: [
         "Everything in Pro",
-        "Access to top tier models",
-        "No rate limits during early access",
-        "Exclusive early features",
-        "Direct founder access",
-        "Highest priority queue",
+        "Unlimited requests",
+        "Additional prompts: 1000 for $25 USD (after early access)",
+        "Latest AI models",
+        "24/7 priority support",
         "Advanced analytics",
-        "Custom model integration",
-        "Priority support",
+        "Custom integrations",
       ],
       cta: "Get Unlimited Access",
       href: pageLinks.signup,
@@ -75,15 +80,15 @@ const PricingPage = (): JSX.Element => {
   ]
 
   return (
-    <Layout title="Pricing" description="Transparent pricing for ForgeCode - Start free and scale as you grow">
+    <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
       <main>
         <Section className="py-16 lg:py-24">
           <div className="text-center mb-16">
             <Heading as="h1" className="text-display-medium lg:text-display-large mb-6">
-              Simple, Transparent Pricing
+              Simple Pricing
             </Heading>
-            <p className="text-content-large max-w-3xl mx-auto text-gray-600">
-              Choose the perfect plan for your AI development needs. Start free and upgrade as you scale.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Start free, upgrade when you're ready. No hidden fees.
             </p>
           </div>
 
@@ -148,7 +153,6 @@ const PricingPage = (): JSX.Element => {
                       </div>
                     )}
                   </div>
-                  <p className="text-gray-600 text-sm">{tier.description}</p>
                 </div>
 
                 <ul className="space-y-3 mb-6">
@@ -173,6 +177,28 @@ const PricingPage = (): JSX.Element => {
               </div>
             ))}
           </div>
+          <div className="mt-32 text-center mb-24">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Works with every model offered by leading AI providers.
+            </h2>
+            <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+              Seamlessly integrate with OpenAI, Anthropic, Google, xAI, Meta, Mistral, and Deepseek models.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 max-w-5xl mx-auto">
+              {aiProviders.map((provider) => (
+                <div
+                  key={provider.name}
+                  className="flex flex-col items-center p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-gray-300 transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 mb-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+                    <provider.logo className="w-full h-full" />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{provider.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* FAQ Section */}
           <div className="mt-24 max-w-4xl mx-auto">
@@ -181,6 +207,17 @@ const PricingPage = (): JSX.Element => {
             </Heading>
 
             <div className="space-y-8">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-title-medium font-semibold mb-3">How do I purchase additional prompts?</h3>
+                <p className="text-gray-700">
+                  Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your
+                  monthly limit.
+                  <strong>Pro users</strong> can buy 250 additional prompts for $10 USD, while{" "}
+                  <strong>Max users</strong> (after early access) can purchase 1000 additional prompts for $25 USD.
+                  These additional prompts are added to your current month's allowance.
+                </p>
+              </div>
+
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">
                   What's the difference between Free, Pro, and Max plans?
@@ -192,7 +229,7 @@ const PricingPage = (): JSX.Element => {
                   <strong>Pro ($20/month):</strong> Access to premium models (OpenAI, Claude, Gemini) with 500 requests
                   per month and priority support.
                   <br />
-                  <strong>Max (FREE - normally $200/month):</strong> Normally 10,000 requests per month, but unlimited
+                  <strong>Max (FREE - normally $200/month):</strong> Normally 10,000 prompts per month, but unlimited
                   access during this limited-time early access offer.
                 </p>
               </div>
@@ -210,8 +247,8 @@ const PricingPage = (): JSX.Element => {
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">What are "top tier" models?</h3>
                 <p className="text-gray-700">
-                  Top tier models include the most advanced AI models like GPT-4, Claude-3 Opus, and Gemini Ultra - the
-                  premium models from each provider that offer the best performance for complex coding tasks.
+                  Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
+                  models from each provider that offer the best performance for complex coding tasks.
                 </p>
               </div>
 
@@ -219,7 +256,7 @@ const PricingPage = (): JSX.Element => {
                 <h3 className="text-title-medium font-semibold mb-3">How does the Max plan unlimited usage work?</h3>
                 <p className="text-gray-700">
                   Max plan users get truly unlimited access to all AI models during this limited-time early access
-                  offer. Normally, Max provides 10,000 requests per month, but early access users enjoy unlimited
+                  offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
                   requests with no rate limits, daily caps, or usage restrictions at the special $0/month price
                   (normally $200/month).
                 </p>
@@ -227,13 +264,16 @@ const PricingPage = (): JSX.Element => {
 
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-title-medium font-semibold mb-3">
-                  What happens when I exceed limits on Free or Pro?
+                  What happens when I exceed my monthly prompt limit?
                 </h3>
                 <p className="text-gray-700">
                   <strong>Free users:</strong> Hit daily usage limits and need to wait for reset or upgrade.
                   <br />
-                  <strong>Pro users:</strong> Get 500 requests per month. Once exceeded, you'll need to wait for the
-                  next billing cycle or upgrade to Max.
+                  <strong>Pro users:</strong> After using your 500 included prompts, you can purchase additional
+                  prompts: 250 prompts for $10 USD.
+                  <br />
+                  <strong>Max users:</strong> Currently unlimited during early access. After early access ends, you can
+                  purchase additional prompts: 1000 prompts for $25 USD.
                 </p>
               </div>
 
@@ -250,7 +290,7 @@ const PricingPage = (): JSX.Element => {
                 <p className="text-gray-700">
                   Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
                   your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
-                  Max provides 10,000 requests per month.
+                  Max provides 10,000 prompts per month.
                 </p>
               </div>
 
