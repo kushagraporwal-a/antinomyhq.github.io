@@ -19,9 +19,6 @@ const Benefits = (): JSX.Element => {
           </div>
         </div>
         <BenefitsCard />
-        <div className="mt-SPACE_16">
-          <TrustedByMarquee title="Trusted by engineers at" logos={companies} />
-        </div>
       </Section>
     </div>
   )
