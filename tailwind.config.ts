@@ -71,7 +71,9 @@ module.exports = {
         "3xl": "2200px",
       },
     },
-    fontFamily: {},
+    fontFamily: {
+      kanit: ['"Kanit"', "sans-serif"],
+    },
     fontSize: {
       "display-large": [
         "96px",
