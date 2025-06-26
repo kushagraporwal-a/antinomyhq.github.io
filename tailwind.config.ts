@@ -22,6 +22,7 @@ module.exports = {
               700: "#000000",
               800: "#BDBDBD",
               900: "#343335",
+              1000: "#23222D",
             },
           },
           light: {
@@ -32,6 +33,7 @@ module.exports = {
             500: "#B6B6B7",
             600: "#858586",
             700: "#B4B4B4",
+            800: "#A1A1A1",
           },
           dark: {
             100: "#545556",
@@ -41,9 +43,11 @@ module.exports = {
             500: "#121315",
             600: "#121212",
             700: "#000000",
+            800: "#0F0F13",
           },
           yellow: "#FDEA2E",
           white: "#f5f3eb",
+          cyan: "#3CE7E1",
         },
       },
       spacing: {
@@ -71,6 +75,10 @@ module.exports = {
       },
       screens: {
         "3xl": "2200px",
+      },
+      backgroundImage: {
+        "card-border-gradient":
+          "linear-gradient(180deg, rgba(60, 227, 221, 1) 0%, rgba(77, 77, 77, 1) 86%, rgba(26, 82, 81, 1) 100%)",
       },
     },
     fontFamily: {
