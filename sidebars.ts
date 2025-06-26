@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "introduction",
         "installation",
+        "quickstart",
         "custom-providers", // New combined document replacing quick-setup and shell-integration
       ],
     },
@@ -28,7 +29,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Basic Features", // Renamed from "Core Features" for better hierarchy
       collapsed: false,
-      items: ["commands", "operating-agents", "custom-rules"],
+      items: ["commands", "shell-integration", "operating-agents", "custom-rules"],
     },
     {
       type: "category",
@@ -55,6 +56,7 @@ const sidebars: SidebarsConfig = {
       label: "Troubleshooting & Maintenance", // New category for operational concerns
       collapsed: true,
       items: [
+        "npm-troubleshooting", // Node.js and npm installation issues
         "error-handling", // Moved from Advanced Features
         "logging", // Moved from Reference
       ],
