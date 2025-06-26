@@ -9,7 +9,6 @@ import styles from "./styles.module.css"
 
 export default function DocRootLayout({children}: Props): JSX.Element {
   const sidebar = useDocsSidebar()
-  console.log("sidebar: ", sidebar)
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false)
   return (
     <div className={styles.docsWrapper}>
