@@ -1,6 +1,6 @@
 ---
 slug: simple-is-not-easy
-title: "How our team Solved the AI 90/10 Problem with Architectural Constraints"
+title: "Simple Over Easy: Architectural Constraints That Make AI Generated Code Maintainable"
 authors: [tushar]
 tags:
   [
