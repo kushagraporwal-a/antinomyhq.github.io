@@ -212,12 +212,12 @@ input[type="radio"]:checked::before {
   display: flex;
   align-items: center;
   height: var(--ifm-edit-this-page-height);
-  color: white;
+  color: var(--ifm-color-brand-light);
   font-weight: var(--ifm-font-weight-bold);
 }
 
 .theme-edit-this-page:hover {
-  color: var(--ifm-color-gray-900);
+  color: var(--ifm-color-brand-light);
   text-decoration: none;
 }
 
