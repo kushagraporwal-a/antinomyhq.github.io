@@ -136,7 +136,7 @@ Coordination between services happens only through event queues. When services c
 
 ## How Constraints Teach AI Better Patterns
 
-What's interesting is that our architectural constraints don't just make code review faster, they actively teach our Agent to generate better code. Every time [Forge](https://github.com/antinomyhq/forge) sees our patterns, it learns and add them in [custom rules](/docs/custom-rules/).
+What's interesting is that our architectural constraints don't just make code review faster, they actively teach our Agent to generate better code. Every time agent sees our patterns, it learns and add them in memory. In [Forge](https://github.com/antinomyhq/forge) we call it [custom rules](/docs/custom-rules/). Other agents call them memory, rules etc.
 
 - **Separation of concerns** prevents feature entanglement
 - **Explicit dependencies** make testing trivial
@@ -144,7 +144,7 @@ What's interesting is that our architectural constraints don't just make code re
 - **Pure functions** compose predictably
 - **Data as data** enables generic operations
 
-The AI has internalized our constraints with custom rules.
+The AI has internalized our constraints with custom rules/memory.
 
 If you're experiencing the AI 90/10 problem, here's what we learned:
 
