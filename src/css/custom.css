@@ -212,7 +212,7 @@ input[type="radio"]:checked::before {
   display: flex;
   align-items: center;
   height: var(--ifm-edit-this-page-height);
-  color: var(--ifm-color-brand-dark-200);
+  color: white;
   font-weight: var(--ifm-font-weight-bold);
 }
 
@@ -1015,4 +1015,8 @@ details code {
 details .admonition-heading code,
 details .admonition-content code {
   color: #333 !important;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

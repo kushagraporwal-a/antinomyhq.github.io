@@ -23,6 +23,7 @@ module.exports = {
               800: "#BDBDBD",
               900: "#343335",
               1000: "#23222D",
+              1100: "#999999",
             },
           },
           light: {
@@ -44,6 +45,7 @@ module.exports = {
             600: "#121212",
             700: "#000000",
             800: "#0F0F13",
+            900: "#4D4D4D",
           },
           yellow: "#FDEA2E",
           white: "#f5f3eb",
@@ -79,6 +81,7 @@ module.exports = {
       backgroundImage: {
         "card-border-gradient":
           "linear-gradient(180deg, rgba(60, 227, 221, 1) 0%, rgba(77, 77, 77, 1) 86%, rgba(26, 82, 81, 1) 100%)",
+        "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
       },
     },
     fontFamily: {
