@@ -39,7 +39,7 @@ export default function TOCItems({
   useTOCHighlight(tocHighlightConfig)
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 bg-tailCall-dark-1100 p-2">
       <span className="inline-block px-5 font-kanit text-white uppercase text-title-tiny">On this page</span>
       <TOCItemTree toc={tocTree} className={className} linkClassName={linkClassName} {...props} />
       <div className="flex items-center justify-center px-5">

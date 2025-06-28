@@ -966,12 +966,11 @@ details {
 }
 
 details summary {
-  background-color: #ede9d8;
+  background-color: #23222D;
   padding: 1rem;
   cursor: pointer;
   border-radius: 0;
   font-weight: var(--ifm-font-weight-semibold);
-  border-bottom: 1px dotted #ccc;
 }
 
 details[open] summary {
@@ -979,28 +978,33 @@ details[open] summary {
 }
 
 details > div {
-  background-color: #ede9d8;
+  background-color: #23222D;
   padding: 1rem;
   border-radius: 0;
 }
 
 details summary:hover {
-  background-color: #e5ddc5;
+  background-color: #23222D;
 }
 /* Override details sections blue coloring */
 details {
   --ifm-alert-foreground-color: #666 !important;
-  border: 1px dotted #ccc !important;
+  border: 1px dotted transparent !important;
   border-radius: 0 !important;
 }
 
 details summary {
-  color: #333 !important;
+  color: #FFF !important;
   border-radius: 0 !important;
 }
 
 details[open] summary {
   border-radius: 0 !important;
+}
+
+details summary::before {
+  top: 20px !important;
+  left: 5px !important;
 }
 
 details > div {
@@ -1009,7 +1013,7 @@ details > div {
 
 /* Override any blue text in details content */
 details code {
-  color: #333 !important;
+  color: #FFF !important;
 }
 
 details .admonition-heading code,

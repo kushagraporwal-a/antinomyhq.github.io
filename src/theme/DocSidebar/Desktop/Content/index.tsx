@@ -25,7 +25,6 @@ function useShowAnnouncementBar() {
 
 export default function DocSidebarDesktopContent({path, sidebar, className}: Props): JSX.Element {
   const showAnnouncementBar = useShowAnnouncementBar()
-
   return (
     <nav
       aria-label={translate({
@@ -33,12 +32,7 @@ export default function DocSidebarDesktopContent({path, sidebar, className}: Pro
         message: "Docs sidebar",
         description: "The ARIA label for the sidebar navigation",
       })}
-      className={clsx(
-        "menu thin-scrollbar",
-        styles.menu,
-        showAnnouncementBar && styles.menuWithAnnouncementBar,
-        className,
-      )}
+      className={clsx("menu", styles.menu, showAnnouncementBar && styles.menuWithAnnouncementBar, className)}
     >
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, "menu__list")}>
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
