@@ -19,31 +19,8 @@
   left: 0;
   top: 0.25rem;
   z-index: 2;
+  transition: background-color 0.3s ease;
 }
-
-.active {
-  background-color: white;
-}
-
-.inactive {
-  background-color: gray;
-}
-
-/* .line {
-  position: absolute;
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    gray,
-    gray 4px,
-    transparent 4px,
-    transparent 8px
-  );
-  left: 4px;
-  top: 12px;
-  bottom: -2rem;
-  z-index: 1;
-} */
 
 .link {
   color: white;

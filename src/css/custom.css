@@ -63,7 +63,7 @@ body {
   --ifm-navbar-background-color: #f5f3eb;
 
   /* Color Tokens */
-  --ifm-color-brand: #fdea2e;
+  --ifm-color-brand: #30EDE6;
   --ifm-color-brand-linkedin: #0a66c2;
   --ifm-color-brand-discord: #5865f2;
   --ifm-color-brand-dark: #000;
@@ -90,6 +90,13 @@ body {
   --ifm-code-padding-vertical: 0em;
   --ifm-pre-background: var(--ifm-code-background);
   --docusaurus-highlighted-code-line-bg: #282828;
+
+  /* Custom colors */
+  --ifm-link-color-100: #FFFFFF;
+}
+
+[data-theme='dark'] {
+  --ifm-link-color-100: #000000;
 }
 
 code {
@@ -454,7 +461,7 @@ input[type="radio"]:checked::before {
 
 .table-of-contents__link--active {
   font-weight: var(--ifm-font-weight-bold);
-  color: var(--ifm-color-gray-900);
+  color: var(--ifm-link-color-100);
 }
 
 .theme-doc-toc-desktop > .table-of-contents {
@@ -475,7 +482,7 @@ input[type="radio"]:checked::before {
 }
 
 .table-of-contents__link:hover {
-  color: var(--ifm-color-gray-900);
+  color: var(--ifm-link-color-100);
 }
 
 .breadcrumbs__link:hover {

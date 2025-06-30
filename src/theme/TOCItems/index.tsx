@@ -9,7 +9,7 @@ export default function TOCItems({
   toc,
   className = "table-of-contents table-of-contents__left-border",
   linkClassName = "table-of-contents__link",
-  linkActiveClassName = undefined,
+  linkActiveClassName = "table-of-contents__link--active",
   minHeadingLevel: minHeadingLevelOption,
   maxHeadingLevel: maxHeadingLevelOption,
   ...props

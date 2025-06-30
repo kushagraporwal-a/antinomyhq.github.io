@@ -1,47 +1,49 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import type { Props } from '@theme/TOCItems/Tree';
-import { useLocation } from '@docusaurus/router';
-import clsx from 'clsx';
+import React, {useEffect, useState} from "react"
+import Link from "@docusaurus/Link"
+import type {Props} from "@theme/TOCItems/Tree"
+import clsx from "clsx"
 
-import styles from './tocTree.module.css'; // ⬅️ add a CSS file like this
+import styles from "./tocTree.module.css" // ⬅️ add a CSS file like this
 
-function TOCItemTree({
-  toc,
-  className,
-  linkClassName,
-  isChild,
-}: Props): JSX.Element | null {
-  const location = useLocation();
+function TOCItemTree({toc, className, linkClassName, isChild}: Props): JSX.Element | null {
+  const [activeId, setActiveId] = useState<string | null>(null)
 
-  if (!toc.length) return null;
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const el = document.querySelector(".table-of-contents__link--active") as HTMLAnchorElement
+      if (el?.hash) {
+        setActiveId(el.hash.replace("#", ""))
+      }
+    })
+
+    observer.observe(document.body, {subtree: true, attributes: true})
+
+    return () => observer.disconnect()
+  }, [])
+
+  if (!toc.length) return null
 
   return (
     <ul className={clsx(styles.timeline, !isChild && className)}>
       {toc.map((heading, index) => {
-        const isActive = location.hash === `#${heading.id}`;
-        const isLast = index === toc.length - 1;
+        const isLast = index === toc.length - 1
+        const isActive = activeId === heading.id
 
         return (
           <li className={clsx(styles.item)} key={heading.id}>
-            <div className={clsx(styles.dot, isActive ? styles.active : styles.inactive)} />
+            <div className={clsx(styles.dot, isActive ? "bg-tailCall-cyan" : "bg-gray-600")} />
             {!isLast && <div className={styles.line} />}
             <Link
               to={`#${heading.id}`}
-              className={clsx(styles.link, isActive && styles.activeText)}
-              dangerouslySetInnerHTML={{ __html: heading.value }}
+              className={clsx(linkClassName)}
+              dangerouslySetInnerHTML={{__html: heading.value}}
             />
-            <TOCItemTree
-              isChild
-              toc={heading.children}
-              className={className}
-              linkClassName={linkClassName}
-            />
+            <TOCItemTree isChild toc={heading.children} className={className} linkClassName={linkClassName} />
           </li>
-        );
+        )
       })}
     </ul>
-  );
+  )
 }
 
-export default React.memo(TOCItemTree);
+export default React.memo(TOCItemTree)
