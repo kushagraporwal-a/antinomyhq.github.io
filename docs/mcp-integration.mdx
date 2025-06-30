@@ -108,7 +108,7 @@ You can also manually create MCP configurations by creating a `.mcp.json` file w
 
 ```json
 {
-  "mcp_servers": {
+  "mcpServers": {
     "browser_automation": {
       "command": "npx",
       "args": ["@modelcontextprotocol/server-browser"],
@@ -177,7 +177,7 @@ Configure an MCP server for browser automation to enable Forge to interact with 
 
 ```json
 {
-  "mcp_servers": {
+  "mcpServers": {
     "browser": {
       "command": "npx",
       "args": ["@modelcontextprotocol/server-browser"],
@@ -204,7 +204,7 @@ Set up MCP servers to interact with external APIs:
 
 ```json
 {
-  "mcp_servers": {
+  "mcpServers": {
     "weather_api": {
       "command": "python",
       "args": ["-m", "weather_mcp_server"],
@@ -230,7 +230,7 @@ Connect specialized development tools through MCP:
 
 ```json
 {
-  "mcp_servers": {
+  "mcpServers": {
     "database_tools": {
       "command": "node",
       "args": ["database-mcp-server.js"],
@@ -256,7 +256,7 @@ Create connections to custom internal services:
 
 ```json
 {
-  "mcp_servers": {
+  "mcpServers": {
     "internal_api": {
       "url": "http://internal-service.company.com/mcp",
       "env": {
