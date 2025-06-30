@@ -24,6 +24,7 @@ module.exports = {
               900: "#343335",
               1000: "#23222D",
               1100: "#999999",
+              1200: "#5d5d5d4d",
             },
           },
           light: {
@@ -47,11 +48,15 @@ module.exports = {
             800: "#0F0F13",
             900: "#4D4D4D",
             1000: "#D9D9D9",
-            1100: "#161616"
+            1100: "#161616",
+            1200: "#18171A",
           },
           yellow: "#FDEA2E",
+          gray: "#343335",
+          lightGray: "#3B3B3B",
+          darkGray: "#858585",
+          cyan: "#30EDE6",
           white: "#f5f3eb",
-          cyan: "#3CE7E1",
         },
       },
       spacing: {
@@ -80,14 +85,20 @@ module.exports = {
       screens: {
         "3xl": "2200px",
       },
+      maxWidth: {
+        fill: "-webkit-fill-available",
+      },
       backgroundImage: {
+        "custom-radial": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.40) 100%)",
         "card-border-gradient":
           "linear-gradient(180deg, rgba(60, 227, 221, 1) 0%, rgba(77, 77, 77, 1) 86%, rgba(26, 82, 81, 1) 100%)",
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
       },
     },
     fontFamily: {
+      bebas: ['"Bebas Neue"', "sans-serif"],
       kanit: ['"Kanit"', "sans-serif"],
+      space: ['"Space Mono"', "sans-serif"],
     },
     fontSize: {
       "display-large": [
