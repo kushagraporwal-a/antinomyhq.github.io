@@ -31,7 +31,9 @@ export default function DocItemContent({children}: Props): JSX.Element {
     <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
       {syntheticTitle && (
         <header>
-          <Heading as="h1">{syntheticTitle}</Heading>
+          <Heading as="h1" className="text-tailCall-white  dark:bg-tailCall-border-dark-700">
+            {syntheticTitle}
+          </Heading>
         </header>
       )}
       <MDXContent>{children}</MDXContent>
