@@ -2,6 +2,7 @@ import React from "react"
 import TrustedByMarquee from "./TrustedByMarquee"
 import {companies} from "@site/src/constants"
 import TerminalWithTabs from "../shared/TerminalWithTabs"
+import SpotlightSpan from "./SpotlightCursor"
 
 const Banner = (): JSX.Element => {
   return (
@@ -13,12 +14,16 @@ const Banner = (): JSX.Element => {
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">
-              <span className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
-                AI PAIR
-              </span>
-              <span className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-custom-radial-gradient font-bebas">
-                PROGRAMMER
-              </span>
+              <SpotlightSpan>
+                <span className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
+                  AI PAIR
+                </span>
+              </SpotlightSpan>
+              <SpotlightSpan>
+                <span className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-custom-radial-gradient font-bebas">
+                  PROGRAMMER
+                </span>
+              </SpotlightSpan>
             </div>
           </div>
           <div className="relative hidden md:flex lg:hidden flex-col">

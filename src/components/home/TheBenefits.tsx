@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
@@ -11,8 +11,11 @@ const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
 const HEADING_HEIGHT = 120
 
 const TheBenefits = (): JSX.Element => {
+  const [focusedIdx, setFocusedIdx] = useState(0)
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const cardsRef = useRef<HTMLDivElement | null>(null)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  console.log(focusedIdx)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -21,11 +24,14 @@ const TheBenefits = (): JSX.Element => {
     if (!section || !cards) return
 
     // Calculate the scroll distance: total height of cards minus the visible area
-    const visibleHeight = window.innerHeight * 0.6 // or set to your desired visible area
+    const visibleHeight = window.innerHeight * 0.6
     const totalScroll = cards.scrollHeight - visibleHeight + cards.children[0].clientHeight
 
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`
+
+    const cardHeight = cards.children[0]?.clientHeight || 1;
+    const gap = 32;
 
     const ctx = gsap.context(() => {
       gsap.to(cards, {
@@ -38,7 +44,13 @@ const TheBenefits = (): JSX.Element => {
           scrub: true,
           pin: true,
           anticipatePin: 1,
-          // markers: true, // Uncomment for debugging
+          onUpdate: self => {
+            // Calculate the current y offset (negative)
+            const y = gsap.getProperty(cards, "y") as number;
+            // Calculate the index of the card closest to the center
+            const idx = Math.round(Math.abs(y) / (cardHeight + gap *2));
+            setFocusedIdx(Math.min(Math.max(idx, 0), BENEFITS.length - 1));
+          },
         },
       })
     }, section)
@@ -90,9 +102,20 @@ const TheBenefits = (): JSX.Element => {
             style={{height: "60vh", overflow: "visible"}} // set visible area
           >
             <div ref={cardsRef} className="flex flex-col gap-8">
-              {BENEFITS.map(({title, description, imageUrl}) => {
-                return <BenefitsCard key={title} title={title} description={description} imageUrl={imageUrl} />
-              })}
+              {BENEFITS.map(({title, description, imageUrl = ""}, idx) => (
+                <div
+                  key={title}
+                  ref={(el) => (cardRefs.current[idx] = el)}
+                  className="transition-all duration-300"
+                  style={{
+                    filter: idx === focusedIdx ? "none" : "blur(6px)",
+                    opacity: idx === focusedIdx ? 1 : 0.6,
+                    zIndex: idx === focusedIdx ? 10 : 1,
+                  }}
+                >
+                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

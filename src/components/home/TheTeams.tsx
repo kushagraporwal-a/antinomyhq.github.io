@@ -9,6 +9,9 @@ const TheTeams = (): JSX.Element => {
   const [activeIdx, setActiveIdx] = useState(0)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const cardsContainerRef = useRef<HTMLDivElement | null>(null)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  console.log(activeIdx)
 
   // Auto-advance the highlight and scroll
   useEffect(() => {
@@ -20,6 +23,12 @@ const TheTeams = (): JSX.Element => {
 
   // Scroll the active card into view within the cards container (without scrolling the page)
   useEffect(() => {
+
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  intervalRef.current = setInterval(() => {
+    setActiveIdx((prev) => (prev + 1) % TECHS.length);
+  }, 2000);
+
     const card = cardRefs.current[activeIdx]
     const container = cardsContainerRef.current
     if (card && container) {
@@ -29,10 +38,19 @@ const TheTeams = (): JSX.Element => {
       const scrollTo = cardTop - containerHeight / 2 + cardHeight / 2
       container.scrollTo({top: scrollTo, behavior: "smooth"})
     }
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [activeIdx])
 
+  const handleTechClick = (idx: number) => {
+    setActiveIdx(idx);
+    // The interval will reset due to the dependency on activeIdx
+  };
+
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center z-[99]">
       <div className="max-w-[1440px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
         <div className="flex flex-col gap-24">
           <div className=" flex flex-col">
@@ -54,6 +72,7 @@ const TheTeams = (): JSX.Element => {
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}
+                onClick={() => handleTechClick(idx)}
                 className={`opacity-30 hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
                   idx === activeIdx ? "!opacity-100 font-bold scale-105" : ""
                 }`}

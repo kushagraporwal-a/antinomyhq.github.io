@@ -2,6 +2,7 @@ import React from "react"
 import CopyCodeButton from "../shared/CopyCodeButton"
 import {StatsForDevelopers} from "@site/src/constants"
 import StatCard from "../shared/StatCard"
+import SpotlightSpan from "./SpotlightCursor"
 
 const BuiltFor = (): JSX.Element => {
   return (
@@ -13,13 +14,19 @@ const BuiltFor = (): JSX.Element => {
           })}
         </div>
         <div className="w-full justify-center">
+
+        <SpotlightSpan>
           <span
             className="font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-normal"
           >
             BUILT FOR BUILDERS,
           </span>
+
+          </SpotlightSpan>
           <br />
+
+          <SpotlightSpan>
           <span
             style={{display: "ruby-text"}}
             className="mt-5 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
@@ -27,6 +34,8 @@ const BuiltFor = (): JSX.Element => {
           >
             BACKED BY DATA
           </span>
+
+          </SpotlightSpan>
           <div>
             <CopyCodeButton />
           </div>

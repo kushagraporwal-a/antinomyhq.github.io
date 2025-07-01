@@ -3,6 +3,7 @@ import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 import Card from "../shared/Card"
+import SpotlightSpan from "./SpotlightCursor"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -59,7 +60,7 @@ const WhyForge = (): JSX.Element => {
 
     const ctx = gsap.context(() => {
       gsap.to(cards, {
-        x: `-${totalScroll}px`,
+        x: `-${totalScroll + visibleScroll}px`,
         ease: "none",
         scrollTrigger: {
           trigger: section,
@@ -80,9 +81,10 @@ const WhyForge = (): JSX.Element => {
         ref={sectionRef}
         className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 xl:pt-28 h-screen w-full overflow-hidden"
       >
-        <div className="relative">
-          <span
-            className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#484848_100%)]
+        <SpotlightSpan className="w-[100%]">
+          <div className="relative">
+            <span
+              className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#484848_100%)]
  tracking-normal xl:leading-[130px]"
           >
             WHY THEY LOVE
@@ -94,6 +96,7 @@ const WhyForge = (): JSX.Element => {
             FORGE-CODE
           </span>
         </div>
+        </SpotlightSpan>
         <div ref={cardsRef} className="flex absolute gap-6 top-40 md:top-72 p-3 xl:top-[320px]">
           {cardsData.map((card, idx) => {
             return (
