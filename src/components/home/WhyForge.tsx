@@ -6,6 +6,33 @@ import Card from "../shared/Card"
 
 gsap.registerPlugin(ScrollTrigger)
 
+const cardsData = [
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+]
+
 const WhyForge = (): JSX.Element => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const cardsRef = useRef<HTMLDivElement | null>(null)
@@ -16,7 +43,13 @@ const WhyForge = (): JSX.Element => {
 
     if (!section || !cards) return
 
-    const totalScroll = cards.scrollWidth - window.innerWidth
+    const card = cards.querySelector('div');
+    const cardStyle = card ? window.getComputedStyle(card) : null;
+    const cardWidth = card ? card.offsetWidth : 0;
+    const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0;
+    const visibleScroll = cardWidth + cardMarginRight;
+
+    const totalScroll = cards.scrollWidth - window.innerWidth + visibleScroll;
 
     const ctx = gsap.context(() => {
       gsap.to(cards, {
@@ -40,19 +73,19 @@ const WhyForge = (): JSX.Element => {
       <div className="relative">
         <span
           className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#484848_100%)]
- tracking-normal"
+ tracking-normal xl:leading-[130px]"
         >
           WHY THEY LOVE
         </span>
         <span
           className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[132px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-tight"
+ -tracking-tight xl:leading-[130px]"
         >
           FORGE-CODE
         </span>
       </div>
       <div ref={cardsRef} className="flex absolute gap-6 top-40 md:top-72 p-3 xl:top-[360px]">
-        {Array.from({length: 6}).map((_, idx) => {
+        {cardsData.map((card, idx) => {
           return (
             <Card key={idx}>
               <div
@@ -61,9 +94,9 @@ const WhyForge = (): JSX.Element => {
                 <div className="flex flex-col gap-3">
                   <img src="/images/home/why-logos.png" alt="" height={80} width={80} />
                   <span className="text-white font-kanit text-title-small font-normal">
-                    Forge feels like pair programming with someone who actually understands my stack.
+                    {card.title}
                   </span>
-                  <span className="text-white opacity-50 text-title-tiny font-normal">-Raj, Full-Stack Developer</span>
+                  <span className="text-white opacity-50 text-title-tiny font-normal">- {card.author}</span>
                 </div>
               </div>
             </Card>
