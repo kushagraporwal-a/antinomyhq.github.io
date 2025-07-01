@@ -76,7 +76,7 @@ const TheTeams = (): JSX.Element => {
           <div
             key={title}
             ref={el => (cardRefs.current[idx] = el)}
-            className={`transition-all duration-300${idx === activeIdx ? " z-10" : " opacity-60"}`}
+            className={`odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300${idx === activeIdx ? " z-10" : " opacity-60"}`}
             style={{
               borderRadius: 16,
               background: idx === activeIdx ? "rgba(255,255,255,0.05)" : undefined,

@@ -47,7 +47,7 @@ const TheBenefits = (): JSX.Element => {
   }, [])
 
   return (
-    <div ref={sectionRef} className="relative h-screen mt-[500px] flex flex-col p-8 xl:pt-20 overflow-hidden">
+    <div ref={sectionRef} className="relative h-screen mt-[500px] flex flex-col pt-10 xl:pt-20 overflow-hidden">
       <div
       className="sticky top-0 flex flex-col items-center"
       style={{
