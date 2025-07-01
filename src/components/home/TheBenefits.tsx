@@ -15,7 +15,6 @@ const TheBenefits = (): JSX.Element => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const cardsRef = useRef<HTMLDivElement | null>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
-  console.log(focusedIdx)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -30,8 +29,8 @@ const TheBenefits = (): JSX.Element => {
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`
 
-    const cardHeight = cards.children[0]?.clientHeight || 1;
-    const gap = 32;
+    const cardHeight = cards.children[0]?.clientHeight || 1
+    const gap = 32
 
     const ctx = gsap.context(() => {
       gsap.to(cards, {
@@ -44,12 +43,12 @@ const TheBenefits = (): JSX.Element => {
           scrub: true,
           pin: true,
           anticipatePin: 1,
-          onUpdate: self => {
+          onUpdate: (self) => {
             // Calculate the current y offset (negative)
-            const y = gsap.getProperty(cards, "y") as number;
+            const y = gsap.getProperty(cards, "y") as number
             // Calculate the index of the card closest to the center
-            const idx = Math.round(Math.abs(y) / (cardHeight + gap *2));
-            setFocusedIdx(Math.min(Math.max(idx, 0), BENEFITS.length - 1));
+            const idx = Math.round(Math.abs(y) / (cardHeight + gap * 2))
+            setFocusedIdx(Math.min(Math.max(idx, 0), BENEFITS.length - 1))
           },
         },
       })
@@ -62,7 +61,7 @@ const TheBenefits = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="xl:max-w-[1440px] relative w-full h-screen mt-[500px] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden"
+        className="xl:max-w-[1440px] relative w-full h-[200vh] mt-[500px] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden"
       >
         <div
           className="sticky top-0 flex flex-col items-center"

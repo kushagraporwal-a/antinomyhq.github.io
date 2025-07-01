@@ -759,21 +759,6 @@ export const BENEFITS = [
     description:
       "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management without worrying about going out of context.",
   },
-  {
-    title: "Developer-Secure",
-    description:
-      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
-  },
-  {
-    title: "Developer-Secure",
-    description:
-      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
-  },
-  {
-    title: "Developer-Secure",
-    description:
-      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
-  },
 ]
 
 export const footerItems: FooterItem[] = [
