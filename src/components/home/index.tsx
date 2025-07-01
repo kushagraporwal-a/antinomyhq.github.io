@@ -9,10 +9,12 @@ import TheBenefits from "./TheBenefits"
 import BuiltFor from "./BuiltFor"
 import TheTeams from "./TheTeams"
 import Footer from "./Footer"
+import SpotlightCursor from "./SpotlightCursor"
 
 const HomePage = (): JSX.Element => {
   return (
     <div className="relative flex flex-col bg-black">
+      <SpotlightCursor />
       <Navbar />
       <Banner />
       <GetStarted />
