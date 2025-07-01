@@ -5,7 +5,7 @@ import {TechDetails, TECHS} from "@site/src/constants"
 
 const TheTeams = (): JSX.Element => {
   return (
-    <div className="relative flex flex-col xl:flex-row justify-between p-5 xl:px-24 xl:py-28">
+    <div className="relative flex flex-col h-screen xl:flex-row justify-between p-5 xl:px-24 xl:py-28">
       <div className="flex flex-col gap-24">
         <div className=" flex flex-col">
           <span
@@ -21,9 +21,6 @@ const TheTeams = (): JSX.Element => {
           >
             AT WORK
           </span>
-          <div className="absolute top-52 xl:top-[180px] xl:left-[460px]">
-            <CopyCodeButton />
-          </div>
         </div>
         <ul className="flex flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
           {TECHS.map((tech) => {

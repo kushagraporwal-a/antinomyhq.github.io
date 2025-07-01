@@ -12,18 +12,15 @@ import Footer from "./Footer"
 
 const HomePage = (): JSX.Element => {
   return (
-    <div className="flex h-screen bg-black">
-      <Aside />
-      <div className="overflow-auto w-full">
-        <Navbar />
-        <Banner />
-        <GetStarted />
-        <WhyForge />
-        <TheBenefits />
-        <BuiltFor />
-        <TheTeams />
-        <Footer />
-      </div>
+    <div className="relative flex flex-col bg-black">
+      <Navbar />
+      <Banner />
+      <GetStarted />
+      <WhyForge />
+      <TheBenefits />
+      <BuiltFor />
+      <TheTeams />
+      <Footer />
     </div>
   )
 }

@@ -5,9 +5,13 @@ import {BENEFITS} from "@site/src/constants"
 
 const TheBenefits = (): JSX.Element => {
   return (
-    <div className="relative h-screen flex flex-col p-8 xl:pt-20 overflow-hidden">
+    <div className="relative h-screen mt-[500px] flex flex-col p-8 xl:pt-20 overflow-hidden">
       <div className="relative">
-        <img src="/images/home/circle-group.svg" alt="ellipse" className="w-full h-screen" />
+        <img
+          src="/images/home/circle-group.svg"
+          alt="ellipse"
+          className="w-full h-screen animate-spin [animation-duration:10s]"
+        />
         <img
           src="/images/home/code-logo.svg"
           alt="code"
