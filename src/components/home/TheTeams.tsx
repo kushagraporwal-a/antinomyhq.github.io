@@ -33,7 +33,7 @@ const TheTeams = (): JSX.Element => {
 
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1280px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
+      <div className="max-w-[1440px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
         <div className="flex flex-col gap-24">
           <div className=" flex flex-col">
             <span
@@ -50,7 +50,7 @@ const TheTeams = (): JSX.Element => {
               AT WORK
             </span>
           </div>
-          <ul className="flex flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
+          <ul className="flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}
@@ -72,7 +72,7 @@ const TheTeams = (): JSX.Element => {
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit xl:w-auto odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${idx === activeIdx ? "bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)] z-10" : "bg-tailCall-dark-800 opacity-60"}`}
+              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${idx === activeIdx ? "bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)] z-10" : "bg-tailCall-dark-800 opacity-60"}`}
               style={{
                 borderRadius: 16,
               }}

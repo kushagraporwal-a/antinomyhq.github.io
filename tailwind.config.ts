@@ -93,6 +93,8 @@ module.exports = {
         "card-border-gradient":
           "linear-gradient(180deg, rgba(60, 227, 221, 1) 0%, rgba(77, 77, 77, 1) 86%, rgba(26, 82, 81, 1) 100%)",
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
+        "custom-radial-gradient": "radial-gradient(97.79% 94.15% at 15.05% 0%, #FFF 0%, #2A2A2A 100%)",
+        "gradient-315": "linear-gradient(315deg,rgba(0, 0, 0, 1) 80%, rgba(48, 237, 230, 1) 100%);",
       },
     },
     fontFamily: {

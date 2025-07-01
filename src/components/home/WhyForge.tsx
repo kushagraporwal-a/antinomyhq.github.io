@@ -78,7 +78,7 @@ const WhyForge = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="max-w-[1280px] z-0 relative p-4 md:px-20 xl:pl-28 xl:pt-28 h-screen w-full overflow-hidden"
+        className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 xl:pt-28 h-screen w-full overflow-hidden"
       >
         <div className="relative">
           <span
@@ -88,22 +88,22 @@ const WhyForge = (): JSX.Element => {
             WHY THEY LOVE
           </span>
           <span
-            className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[132px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
+            className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
  -tracking-tight xl:leading-[130px]"
           >
             FORGE-CODE
           </span>
         </div>
-        <div ref={cardsRef} className="flex absolute gap-6 top-40 md:top-72 p-3 xl:top-[360px]">
+        <div ref={cardsRef} className="flex absolute gap-6 top-40 md:top-72 p-3 xl:top-[320px]">
           {cardsData.map((card, idx) => {
             return (
               <Card key={idx}>
                 <div
-                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-black shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial hover:transition-colors hover:duration-500`}
+                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial hover:transition-colors hover:duration-500`}
                 >
                   <div className="flex flex-col gap-3">
-                    <img src={card.imageUrl} alt="Feedback" height={80} width={80} />
-                    <span className="text-white font-kanit text-title-small font-normal">{card.title}</span>
+                    <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
+                    <span className="text-[#A1A1A1] font-kanit text-title-small font-light">{card.title}</span>
                     <span className="text-white opacity-50 text-title-tiny font-normal">- {card.author}</span>
                   </div>
                 </div>

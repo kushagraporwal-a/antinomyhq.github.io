@@ -1,9 +1,27 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 
 const GetStarted = (): JSX.Element => {
+  const [isCopied, setIsCopied] = useState(false)
+
+  useEffect(() => {
+    let interval: string | number | NodeJS.Timeout | undefined
+    if (isCopied) {
+      interval = setInterval(() => setIsCopied(false), 1000)
+    }
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [isCopied])
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText("npm install -g @antinomyhq/forge")
+    setIsCopied(true)
+  }
+
   return (
     <div className="flex justify-center">
-      <div className="relative max-w-[1280px] w-full p-4 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
+      <div className="relative max-w-[1440px] w-full p-4 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
           <span
             className="absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
@@ -27,13 +45,20 @@ const GetStarted = (): JSX.Element => {
             ON YOUR TERMINAL
           </span>
         </div>
-        <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] w-full md:w-fit xl:max-w-[600px] pr-8">
+        <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] w-full md:w-fit xl:min-w-[700px] bg-gradient-315 rounded-2xl p-[1px]">
           <div className="bg-[#1E1C21] flex flex-col rounded-2xl relative">
             <div className="flex items-center gap-1 px-4 py-3 bg-[#18171A] rounded-t-2xl">
               <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-50"></div>
               <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-20"></div>
               <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-10"></div>
             </div>
+            <button onClick={handleCopy} className="absolute right-2 top-2 border-none bg-transparent cursor-pointer">
+              {isCopied ? (
+                <img src="/icons/basic/copy-done.svg" className="text-tailCall-cyan h-5 w-5" alt="Copy" />
+              ) : (
+                <img src="/icons/basic/copy.svg" alt="Copy" className="h-5 w-5" />
+              )}
+            </button>
             <div className="pt-8 px-8 pb-4">
               <span className="text-[#30EDE6] font-space text-content-tiny md:text-title-medium font-normal md:font-normal -tracking-wide">
                 # Install Forge globally using npm

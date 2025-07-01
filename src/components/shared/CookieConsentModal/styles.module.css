@@ -13,7 +13,7 @@
 
 .consentOption:hover {
   color: #e7e7e7;
-  box-shadow: 6px 6px 0px 0px rgba(253, 234, 46, 1);
+  box-shadow: 6px 6px 0px 0px #30EDE6;
 }
 
 .consentOption::first-letter {

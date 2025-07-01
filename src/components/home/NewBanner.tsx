@@ -6,7 +6,7 @@ import TerminalWithTabs from "../shared/TerminalWithTabs"
 const Banner = (): JSX.Element => {
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1280px] relative p-10 xl:p-0 flex flex-col w-full h-screen overflow-auto">
+      <div className="max-w-[1440px] relative p-10 xl:p-0 flex flex-col w-full h-screen overflow-auto">
         <div className="flex justify-around flex-col lg:flex-row gap-60">
           <div className="flex md:hidden lg:flex flex-col">
             <p className="text-white font-thin md:font-thin lg:font-thin text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
@@ -16,7 +16,7 @@ const Banner = (): JSX.Element => {
               <span className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
                 AI PAIR
               </span>
-              <span className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(90deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
+              <span className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-custom-radial-gradient font-bebas">
                 PROGRAMMER
               </span>
             </div>

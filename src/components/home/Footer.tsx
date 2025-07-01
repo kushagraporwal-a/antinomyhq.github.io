@@ -28,11 +28,16 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="bg-[#262626]" />
       <div className="flex justify-between gap-5 flex-wrap">
         {footerItems.map(({items, title}) => {
           return <FooterItem key={title} items={items} title={title} />
         })}
+      </div>
+      <div className="flex items-center justify-center pt-5">
+        <span className="text-white font-kanit text-title-tiny font-[275]">
+          Copyright © {new Date().getFullYear()} Tailcall, Inc.
+        </span>
       </div>
     </footer>
   )

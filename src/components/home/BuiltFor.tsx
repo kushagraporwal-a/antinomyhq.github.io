@@ -6,7 +6,7 @@ import StatCard from "../shared/StatCard"
 const BuiltFor = (): JSX.Element => {
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1280px] z-30 mt-96 relative flex flex-col h-screen items-start lg:justify-center lg:items-center gap-10 md:gap-20 md:flex-row w-full p-5 md:px-20 lg:px-24 lg:py-28 overflow-hidden">
+      <div className="max-w-[1440px] z-30 mt-96 relative flex flex-col h-screen items-start lg:justify-center lg:items-center gap-10 md:gap-20 md:flex-row w-full p-5 md:px-20 lg:px-24 lg:py-28 overflow-hidden">
         <div className="flex flex-col md:gap-14 gap-5 items-start">
           {StatsForDevelopers.map(({title, stat}) => {
             return <StatCard title={title} stat={stat} key={title} />

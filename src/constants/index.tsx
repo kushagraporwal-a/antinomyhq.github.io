@@ -730,14 +730,34 @@ export const TECHS = ["Backend", "Devops", "Security & infra", "Solo Dev"]
 
 export const BENEFITS = [
   {
-    title: "Developer-Controlled & Secure",
+    imageUrl: "/icons/basic/gear.svg",
+    title: "Use your favorite IDE",
     description:
-      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
+      "Forge works natively with your CLI, so you don't need to switch IDEs. Whether you use VS Code, Xcode, Neovim, IntelliJ, Android Studio, or any other IDE, Forge integrates seamlessly with your shell and can access all the CLI tools you already have.",
   },
   {
-    title: "Developer-Secure",
+    imageUrl: "/icons/basic/target.svg",
+    title: "Control speed vs accuracy",
     description:
-      "Your code never leaves your machine - Forge runs locally with your own API keys. No cloud processing, no data collection, just private and secure AI assistance that keeps you in complete control.",
+      "Pick the right model for each task. Need to plan something complex? Use a thinking model. Want quick code changes? Use a fast model. Working with large files? Choose a big context model. You can even mix models - plan with one, then code with",
+  },
+  {
+    imageUrl: "/icons/basic/puzzlePiece.svg",
+    title: "Work with your existing AI providers",
+    description:
+      "Already have API keys and credits? Forge gives enterprise teams complete control over where your codebase goes - use self-hosted LLMs, cloud providers, while maintaining full visibility and governance.",
+  },
+  {
+    imageUrl: "/icons/basic/robot.svg",
+    title: "Create and share specialized agents",
+    description:
+      "You can build and share agents specific for your usecase, for example you can build a Frontend agent, Backend agent, DevOps agent, etc. You can also share these agents with your team members.",
+  },
+  {
+    imageUrl: "/icons/basic/swap.svg",
+    title: "Handle massive refactors",
+    description:
+      "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management without worrying about going out of context.",
   },
 ]
 
@@ -772,6 +792,10 @@ export const footerItems: FooterItem[] = [
       },
       {
         name: "Terms",
+        link: "",
+      },
+      {
+        name: "Cookie Settings",
         link: "",
       },
     ],

@@ -21,7 +21,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
           })}
         </ul>
       </div>
-      <ul className="px-8 py-4 flex flex-col list-none text-title-tiny font-normal gap-3 text-white opacity-80">
+      <ul className="px-8 py-4 flex flex-col list-none text-title-tiny font-normal gap-3 text-[#a1a1a1] opacity-80">
         {description.map((desc) => {
           return <li key={desc}>{desc}</li>
         })}
