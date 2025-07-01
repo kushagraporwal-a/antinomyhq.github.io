@@ -1,11 +1,62 @@
-import React from "react"
+import React, {useEffect, useRef} from "react"
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+
 import Card from "../shared/Card"
 import BenefitsCard from "../shared/BenefitsCard"
 import {BENEFITS} from "@site/src/constants"
 
+gsap.registerPlugin(ScrollTrigger)
+const VISIBLE_HEIGHT = 0.8; // 60% of viewport height
+const HEADING_HEIGHT = 120;
+
 const TheBenefits = (): JSX.Element => {
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+  const cardsRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    const cards = cardsRef.current
+
+    if (!section || !cards) return
+
+    // Calculate the scroll distance: total height of cards minus the visible area
+    const visibleHeight = window.innerHeight * 0.6 // or set to your desired visible area
+    const totalScroll = cards.scrollHeight - visibleHeight + cards.children[0].clientHeight
+
+    // Set the height of the section to allow for the scroll hijack
+    section.style.height = `${visibleHeight + totalScroll}px`
+
+    const ctx = gsap.context(() => {
+      gsap.to(cards, {
+        y: `-${totalScroll}px`,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${totalScroll}`,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          // markers: true, // Uncomment for debugging
+        },
+      })
+    }, section)
+
+    return () => ctx.revert() // cleanup
+  }, [])
+
   return (
-    <div className="relative h-screen mt-[500px] flex flex-col p-8 xl:pt-20 overflow-hidden">
+    <div ref={sectionRef} className="relative h-screen mt-[500px] flex flex-col pt-10 xl:pt-20 overflow-hidden">
+      <div
+      className="sticky top-0 flex flex-col items-center"
+      style={{
+        height: `calc(${VISIBLE_HEIGHT * 100}vh + ${HEADING_HEIGHT}px)`,
+        overflow: "hidden",
+        zIndex: 2,
+        background: "black", // or your background
+      }}
+    >
       <div className="relative">
         <img
           src="/images/home/circle-group.svg"
@@ -30,12 +81,16 @@ const TheBenefits = (): JSX.Element => {
       >
         BENEFITS
       </span>
-      <div className="absolute left-10 md:left-auto right-10 lg:right-40 top-96">
-        <Card variant="thin">
+      <div
+        className="absolute left-10 md:left-auto right-10 lg:right-40 top-96 flex flex-col items-center"
+        style={{ height: "60vh", overflow: "hidden" }} // set visible area
+      >
+        <div ref={cardsRef} className="flex flex-col gap-8">
           {BENEFITS.map(({title, description}) => {
             return <BenefitsCard key={title} title={title} description={description} />
           })}
-        </Card>
+        </div>
+      </div>
       </div>
     </div>
   )
