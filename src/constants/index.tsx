@@ -695,7 +695,7 @@ export const TechDetails = [
       "# Create a Flask API that returns a list of users",
       "#  Build a JWT-based authentication system using Node.js",
     ],
-    avatars: ["1", "2", "3"],
+    avatars: ["/images/home/avatar1.svg", "/images/home/avatar2.svg", "/images/home/avatar3.svg"],
   },
   {
     title: "Devops - Code Understanding",
@@ -704,7 +704,7 @@ export const TechDetails = [
       "# Create a Flask API that returns a list of users",
       "#  Build a JWT-based authentication system using Node.js",
     ],
-    avatars: ["1", "2", "3"],
+    avatars: ["/images/home/avatar1.svg", "/images/home/avatar2.svg", "/images/home/avatar3.svg"],
   },
   {
     title: "Security & infra - Code Understanding",
@@ -713,7 +713,7 @@ export const TechDetails = [
       "# Create a Flask API that returns a list of users",
       "#  Build a JWT-based authentication system using Node.js",
     ],
-    avatars: ["1", "2", "3"],
+    avatars: ["/images/home/avatar1.svg", "/images/home/avatar2.svg", "/images/home/avatar3.svg"],
   },
   {
     title: "Solo dev - Code Understanding",
@@ -722,7 +722,7 @@ export const TechDetails = [
       "# Create a Flask API that returns a list of users",
       "#  Build a JWT-based authentication system using Node.js",
     ],
-    avatars: ["1", "2", "3"],
+    avatars: ["/images/home/avatar1.svg", "/images/home/avatar2.svg", "/images/home/avatar3.svg"],
   },
 ]
 

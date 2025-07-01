@@ -51,7 +51,7 @@ const TerminalWithTabs = (): JSX.Element => {
   }, [displayedText])
 
   return (
-    <div className="relative bg-[#1E1C21] p-[2px] bg-[linear-gradient(130deg,#30EDE6,#000000,#30EDE6B2)] rounded-2xl lg:w-[450px] h-[600px] flex flex-col">
+    <div className="relative bg-[#1E1C21] p-[2px] bg-[linear-gradient(130deg,#30EDE6,#000000,#30EDE6B2)] rounded-2xl w-full md:w-fit lg:w-[450px] h-[600px] flex flex-col">
       <div className="flex items-center px-4 gap-1 bg-[#19181B] h-10 rounded-t-2xl">
         <div className="h-4 w-4 rounded-full bg-[#D9D9D9] opacity-50"></div>
         <div className="h-4 w-4 rounded-full bg-[#D9D9D9] opacity-20"></div>

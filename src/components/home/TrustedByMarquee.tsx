@@ -15,6 +15,7 @@ interface TrustedByMarqueeProps {
   titleClassName?: string
   desktopClassName?: string
   mobileClassName?: string
+  isHorizontal?: boolean
 }
 
 const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
@@ -24,6 +25,7 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
   titleClassName = "text-content-small font-bold sm:text-title-tiny lg:text-title-small text-tailCall-light-600 text-center space-x-1",
   desktopClassName = "hidden sm:flex items-center px-8 mt-SPACE_10 overflow-hidden",
   mobileClassName = "sm:hidden flex items-center justify-around flex-wrap mt-SPACE_06 space-y-SPACE_02",
+  isHorizontal,
 }) => {
   const handleClick = () => {
     if (onClick) {
@@ -66,7 +68,18 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
     )
   }
 
-  return (
+  return isHorizontal ? (
+    <div className="flex items-center gap-5">
+      <span className="hidden lg:block min-w-[200px] font-kanit text-white text-title-small font-normal mt-8">
+        {title}
+      </span>
+      <Marquee autoFill>
+        <div className="flex items-center px-8 mt-SPACE_10 overflow-hidden space-x-5 sm:space-x-20">
+          {logos.map(renderLogo)}
+        </div>
+      </Marquee>
+    </div>
+  ) : (
     <section className={`px-10 md:px-0 ${onClick ? "cursor-pointer" : ""}`} onClick={handleClick}>
       {title ? (
         <div className={titleClassName}>
