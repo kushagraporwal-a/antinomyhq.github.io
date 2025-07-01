@@ -13,7 +13,7 @@ const Navbar = (): JSX.Element => {
           {NavbarItems.map((item) => {
             return (
               <Link
-                className="text-white no-underline hover:no-underline hover:text-white"
+                className="text-white opacity-50 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-white"
                 href={item.link}
                 key={item.name}
               >
