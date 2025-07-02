@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import OriginalNavbar from "@theme-original/Navbar"
 import {useLocation} from "@docusaurus/router"
+import NewNavbar from "@site/src/components/shared/Navbar."
 
 export default function Navbar(props: any): JSX.Element {
   const location = useLocation()
@@ -55,5 +56,5 @@ export default function Navbar(props: any): JSX.Element {
     }
   }, [isBlogPage, location.pathname])
 
-  return <div className={navbarClasses}>{location.pathname !== "/" && <OriginalNavbar {...props} />}</div>
+  return <div className={navbarClasses}>{location.pathname !== "/" ? <NewNavbar /> : null}</div>
 }

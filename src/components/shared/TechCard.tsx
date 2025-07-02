@@ -19,7 +19,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
       }`}
     >
       <div className="relative px-8 py-5 flex items-center justify-between bg-tailCall-dark-800 rounded-t-2xl">
-        <span className="text-white font-kanit text-title-small xl:text-[26px] -tracking-normal font-normal opacity-70">
+        <span className="text-white max-w-48 md:max-w-none font-kanit text-title-small xl:text-[26px] -tracking-normal font-normal opacity-70">
           {title}
         </span>
         <ul className="absolute right-5 -space-x-4 flex items-center list-none m-0">
