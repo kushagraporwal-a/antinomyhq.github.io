@@ -16,7 +16,7 @@ const Banner = (): JSX.Element => {
             <div className="relative flex flex-col">
               <SpotlightSpan
                 text="AI PAIR"
-                className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+                className="-tracking-normal font-normal absolute -top-5 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
               <SpotlightSpan
                 text="PROGRAMMER"

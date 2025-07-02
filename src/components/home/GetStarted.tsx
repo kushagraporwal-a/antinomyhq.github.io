@@ -22,7 +22,7 @@ const GetStarted = (): JSX.Element => {
 
   return (
     <div className="flex justify-center">
-      <div className="relative max-w-[1440px] w-full p-4 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
+      <div className="relative max-w-[1440px] w-full p-5 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
           <SpotlightSpan
             text="GET STARTED"
@@ -41,32 +41,34 @@ const GetStarted = (): JSX.Element => {
             className="absolute top-28 left-0 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
           />
         </div>
-        <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] w-full md:w-fit xl:min-w-[700px] bg-gradient-315 rounded-2xl p-[1px]">
-          <div className="bg-[#1E1C21] flex flex-col rounded-2xl relative">
-            <div className="flex items-center gap-1 px-4 py-3 bg-[#18171A] rounded-t-2xl">
-              <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-50"></div>
-              <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-20"></div>
-              <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-10"></div>
-            </div>
-            <button onClick={handleCopy} className="absolute right-2 top-2 border-none bg-transparent cursor-pointer">
-              {isCopied ? (
-                <img src="/icons/basic/copy-done.svg" className="text-tailCall-cyan h-5 w-5" alt="Copy" />
-              ) : (
-                <img src="/icons/basic/copy.svg" alt="Copy" className="h-5 w-5" />
-              )}
-            </button>
-            <div className="pt-8 px-8 pb-4">
-              <span className="text-[#30EDE6] font-space text-content-tiny md:text-title-medium font-normal md:font-normal -tracking-wide">
-                # Install Forge globally using npm
+        <div className="flex justify-center">
+          <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] min-w-fill md:w-fit xl:min-w-[700px] bg-gradient-315 rounded-2xl p-[1px]">
+            <div className="bg-[#1E1C21] flex flex-col rounded-2xl relative">
+              <div className="flex items-center gap-1 px-4 py-3 bg-[#18171A] rounded-t-2xl">
+                <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-50"></div>
+                <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-20"></div>
+                <div className="h-4 w-4 bg-[#D9D9D9] rounded-full opacity-10"></div>
+              </div>
+              <button onClick={handleCopy} className="absolute right-2 top-2 border-none bg-transparent cursor-pointer">
+                {isCopied ? (
+                  <img src="/icons/basic/copy-done.svg" className="text-tailCall-cyan h-5 w-5" alt="Copy" />
+                ) : (
+                  <img src="/icons/basic/copy.svg" alt="Copy" className="h-5 w-5" />
+                )}
+              </button>
+              <div className="pt-8 px-8 pb-4">
+                <span className="text-[#30EDE6] font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                  # Install Forge globally using npm
+                </span>
+                <br />
+                <span className="text-[#30EDE6] mt-5 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                  npm install -g @antinomyhq/forge
+                </span>
+              </div>
+              <span className="text-white xl:text-[30px] inline-block w-auto xl:font-normal font-normal font-kanit absolute right-0 -top-10 xl:-top-14 xl:right-0">
+                Install Now
               </span>
-              <br />
-              <span className="text-[#30EDE6] font-space text-content-tiny md:text-title-medium font-normal md:font-normal -tracking-wide">
-                npm install -g @antinomyhq/forge
-              </span>
             </div>
-            <span className="text-white xl:text-[30px] inline-block w-auto xl:font-normal font-normal font-kanit absolute right-0 -top-10 xl:-top-14 xl:right-0">
-              Install Now
-            </span>
           </div>
         </div>
       </div>

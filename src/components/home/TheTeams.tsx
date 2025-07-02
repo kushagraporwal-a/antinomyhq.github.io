@@ -60,7 +60,7 @@ const TheTeams = (): JSX.Element => {
             <br />
             <SpotlightSpan
               text="AT WORK"
-              className="absolute top-32 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="absolute top-20 lg:top-32 xl:top-40 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
           <ul className="flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">

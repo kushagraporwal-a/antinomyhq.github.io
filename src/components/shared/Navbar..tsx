@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link"
 
 const Navbar = (): JSX.Element => {
   return (
-    <nav className="sticky top-0 z-50 flex md:pt-10 md:px-5 md:pb-5 bg-black justify-between w-full">
+    <nav className="sticky top-0 z-50 flex p-5 bg-black justify-between w-full">
       <div className="flex gap-5">
         <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="ml-5 md:ml-auto" />
         <ul className="hidden xl:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">

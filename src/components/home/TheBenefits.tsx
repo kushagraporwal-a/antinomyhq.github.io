@@ -109,7 +109,7 @@ const TheBenefits = (): JSX.Element => {
             className="absolute top-40 xl:top-52 left-24 xl:left-60 xl:leading-[133px] font-bebas text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
           />
           <div
-            className="absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-max right-10 lg:right-20 top-[500px] flex flex-col items-center"
+            className="absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-auto right-10 lg:right-20 top-[500px] flex flex-col items-center"
             style={{height: "60vh", overflow: "visible"}} // set visible area
           >
             <div ref={cardsRef} className="flex flex-col gap-8">

@@ -23,7 +23,7 @@ const BuiltFor = (): JSX.Element => {
           <SpotlightSpan
             text="BACKED BY DATA"
             style={{display: "ruby-text"}}
-            className="mt-5 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
+            className="mt-2 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
           />
 
           <div>
