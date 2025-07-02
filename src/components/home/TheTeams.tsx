@@ -9,7 +9,7 @@ const TheTeams = (): JSX.Element => {
   const [activeIdx, setActiveIdx] = useState(0)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const cardsContainerRef = useRef<HTMLDivElement | null>(null)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   console.log(activeIdx)
 
@@ -23,11 +23,10 @@ const TheTeams = (): JSX.Element => {
 
   // Scroll the active card into view within the cards container (without scrolling the page)
   useEffect(() => {
-
-    if (intervalRef.current) clearInterval(intervalRef.current);
-  intervalRef.current = setInterval(() => {
-    setActiveIdx((prev) => (prev + 1) % TECHS.length);
-  }, 2000);
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % TECHS.length)
+    }, 2000)
 
     const card = cardRefs.current[activeIdx]
     const container = cardsContainerRef.current
@@ -40,14 +39,14 @@ const TheTeams = (): JSX.Element => {
     }
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
   }, [activeIdx])
 
   const handleTechClick = (idx: number) => {
-    setActiveIdx(idx);
+    setActiveIdx(idx)
     // The interval will reset due to the dependency on activeIdx
-  };
+  }
 
   return (
     <div className="flex justify-center z-[99]">
@@ -91,12 +90,12 @@ const TheTeams = (): JSX.Element => {
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${idx === activeIdx ? "bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)] z-10" : "bg-tailCall-dark-800 opacity-60"}`}
+              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${idx === activeIdx ? "z-10" : "opacity-60"}`}
               style={{
                 borderRadius: 16,
               }}
             >
-              <TechCard title={title} description={descriptions} avatars={avatars} />
+              <TechCard title={title} description={descriptions} avatars={avatars} selected={idx === activeIdx} />
             </div>
           ))}
         </div>

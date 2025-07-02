@@ -16,7 +16,7 @@ const Banner = (): JSX.Element => {
             <div className="relative flex flex-col">
               <SpotlightSpan>
                 <span className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
-                  AI PAIR PRO
+                  AI PAIR
                 </span>
               </SpotlightSpan>
               <SpotlightSpan>
