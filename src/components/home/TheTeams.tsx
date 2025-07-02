@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react"
-import CopyCodeButton from "../shared/CopyCodeButton"
 import TechCard from "../shared/TechCard"
 import {TechDetails, TECHS} from "@site/src/constants"
+import SpotlightSpan from "./SpotlightCursor"
 
 const AUTO_SCROLL_INTERVAL = 2000 // 2 seconds
 
@@ -53,19 +53,15 @@ const TheTeams = (): JSX.Element => {
       <div className="max-w-[1440px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
         <div className="flex flex-col gap-24">
           <div className=" flex flex-col">
-            <span
-              className="absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-normal xl:leading-[130px]"
-            >
-              THE TEAMS
-            </span>
+            <SpotlightSpan
+              text="THE TEAMS"
+              className="absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+            />
             <br />
-            <span
-              className="absolute top-32 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-normal xl:leading-[130px]"
-            >
-              AT WORK
-            </span>
+            <SpotlightSpan
+              text="AT WORK"
+              className="absolute top-32 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+            />
           </div>
           <ul className="flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
             {TECHS.map((tech, idx) => (

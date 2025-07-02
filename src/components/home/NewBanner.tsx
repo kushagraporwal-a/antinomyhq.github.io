@@ -14,26 +14,26 @@ const Banner = (): JSX.Element => {
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">
-              <SpotlightSpan>
-                <span className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
-                  AI PAIR
-                </span>
-              </SpotlightSpan>
-              <SpotlightSpan>
-                <span className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 text-transparent bg-clip-text bg-custom-radial-gradient font-bebas">
-                  PROGRAMMER
-                </span>
-              </SpotlightSpan>
+              <SpotlightSpan
+                text="AI PAIR"
+                className="-tracking-normal font-normal absolute -top-12 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+              />
+              <SpotlightSpan
+                text="PROGRAMMER"
+                className="-tracking-normal absolute top-10 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+              />
             </div>
           </div>
           <div className="relative hidden md:flex lg:hidden flex-col">
             <div className="relative flex flex-col">
-              <span className="absolute -tracking-normal font-normal text-[118px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(280deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
-                AI PAIR
-              </span>
-              <span className="absolute top-24 left-16 -tracking-normal text-[118px] opacity-90 text-transparent bg-clip-text bg-[linear-gradient(90deg,_#fff_57.22%,_#373737_96.04%)] font-bebas">
-                PROGRAMMING
-              </span>
+              <SpotlightSpan
+                text="AI PAIR"
+                className="absolute -tracking-normal font-normal text-[118px] opacity-90 font-bebas"
+              />
+              <SpotlightSpan
+                text="PROGRAMMING"
+                className="absolute top-24 left-16 -tracking-normal text-[118px] opacity-90 font-bebas"
+              />
             </div>
             <p className="absolute left-80 -top-20 text-white font-thin text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.

@@ -1,67 +1,46 @@
-import React, { useRef, useState } from "react";
+import React, {CSSProperties, useEffect, useRef} from "react"
 
-const SPOTLIGHT_SIZE = 250; // Increased size
+interface SpotlightSpanProps {
+  text: string
+  className?: string
+  style?: CSSProperties
+}
 
-type SpotlightSpanProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", style}) => {
+  const spanRef = useRef<HTMLSpanElement | null>(null)
+  const spotlightSize = 400
 
-const SpotlightSpan: React.FC<SpotlightSpanProps> = ({ children, className }) => {
-  const spanRef = useRef<HTMLSpanElement>(null);
-  const spotlightRef = useRef<HTMLDivElement>(null);
-  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const el = spanRef.current
+      if (!el) return
 
-  const animationFrame = useRef<number>();
+      const rect = el.getBoundingClientRect()
+      const x = event.clientX - spotlightSize / 2 - rect.left
+      const y = event.clientY - spotlightSize / 2 - rect.top
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-    if (!spanRef.current || !spotlightRef.current) return;
-    const rect = spanRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - SPOTLIGHT_SIZE / 2;
-    const y = e.clientY - rect.top - SPOTLIGHT_SIZE / 2;
-
-    if (animationFrame.current) {
-      cancelAnimationFrame(animationFrame.current);
+      el.style.backgroundPosition = `${x}px ${y}px`
     }
-    animationFrame.current = requestAnimationFrame(() => {
-      if (spotlightRef.current) {
-        spotlightRef.current.style.left = `${x}px`;
-        spotlightRef.current.style.top = `${y}px`;
-      }
-    });
-  };
+
+    document.addEventListener("mousemove", handleMouseMove)
+    return () => document.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
   return (
     <span
       ref={spanRef}
-      className={`relative inline-block ${className || ""}`}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-      onMouseMove={handleMouseMove}
-      style={{ position: "relative" }}
+      className={`text-transparent bg-clip-text transition-all duration-500 ${className}`}
+      style={{
+        color: "hsla(0, 0%, 100%, 0.2)",
+        backgroundImage: "radial-gradient(closest-side, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "400px 400px",
+        ...style,
+      }}
     >
-      {show && (
-        <div
-          ref={spotlightRef}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: SPOTLIGHT_SIZE,
-            height: SPOTLIGHT_SIZE,
-            pointerEvents: "none",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.15) 60%, rgba(0,0,0,0.0) 85%)",
-            mixBlendMode: "lighten",
-            zIndex: 2,
-            transition: "left 0.08s linear, top 0.08s linear",
-            willChange: "left, top",
-          }}
-        />
-      )}
-      {children}
+      {text}
     </span>
-  );
-};
+  )
+}
 
-export default SpotlightSpan;
+export default SpotlightSpan

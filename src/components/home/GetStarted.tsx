@@ -24,35 +24,22 @@ const GetStarted = (): JSX.Element => {
     <div className="flex justify-center">
       <div className="relative max-w-[1440px] w-full p-4 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
-          <SpotlightSpan>
-            <span
-              className="absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-normal"
-            >
-              GET STARTED
-            </span>
-          </SpotlightSpan>
-          <SpotlightSpan>
-            <span className="text-white text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]">
-              with
-            </span>
-          </SpotlightSpan>
-          <SpotlightSpan>
-            <span
-              className="absolute top-14 left-20 sm:left-32 md:top-20 xl:top-32 xl:left-60 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-normal"
-            >
-              FORGE-CODE
-            </span>
-          </SpotlightSpan>
-          <SpotlightSpan>
-            <span
-              className="absolute top-28 left-0 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#747474_100%)]
- -tracking-normal"
-            >
-              ON YOUR TERMINAL
-            </span>
-          </SpotlightSpan>
+          <SpotlightSpan
+            text="GET STARTED"
+            className="absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+          />
+          <SpotlightSpan
+            text="with"
+            className="text-white text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]"
+          />
+          <SpotlightSpan
+            text="FORGE-CODE"
+            className="absolute top-14 left-20 sm:left-32 md:top-20 xl:top-32 xl:left-60 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+          />
+          <SpotlightSpan
+            text="ON YOUR TERMINAL"
+            className="absolute top-28 left-0 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
+          />
         </div>
         <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] w-full md:w-fit xl:min-w-[700px] bg-gradient-315 rounded-2xl p-[1px]">
           <div className="bg-[#1E1C21] flex flex-col rounded-2xl relative">

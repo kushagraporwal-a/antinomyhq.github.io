@@ -2,9 +2,9 @@ import React, {useState, useEffect, useRef} from "react"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
-import Card from "../shared/Card"
 import BenefitsCard from "../shared/BenefitsCard"
 import {BENEFITS} from "@site/src/constants"
+import SpotlightSpan from "./SpotlightCursor"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
@@ -28,7 +28,7 @@ const TheBenefits = (): JSX.Element => {
     const gap = 32
     // Offset so last card's center reaches the focus point (30% from top)
     const focusPoint = window.innerHeight * 0.3
-    const lastCardOffset = focusPoint - (visibleHeight / 2) + (cardHeight / 2)
+    const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
     const totalScroll = cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset
 
     // Set the height of the section to allow for the scroll hijack
@@ -100,18 +100,14 @@ const TheBenefits = (): JSX.Element => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             />
           </div>
-          <span
-            className="absolute top-20 left-8 xl:left-28 font-bebas xl:leading-[133px] text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#484848_100%)]
- -tracking-normal"
-          >
-            THE
-          </span>
-          <span
-            className="absolute top-40 xl:top-52 left-24 xl:left-60 xl:leading-[133px] font-bebas text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal text-transparent bg-clip-text bg-[radial-gradient(3039.26%_162.31%_at_88.96%_175.81%,_#FFF_0%,_#484848_100%)]
- -tracking-normal"
-          >
-            BENEFITS
-          </span>
+          <SpotlightSpan
+            text="THE"
+            className="absolute top-20 left-8 xl:left-28 font-bebas xl:leading-[133px] text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
+          />
+          <SpotlightSpan
+            text="BENEFITS"
+            className="absolute top-40 xl:top-52 left-24 xl:left-60 xl:leading-[133px] font-bebas text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
+          />
           <div
             className="absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-max right-10 lg:right-20 top-[500px] flex flex-col items-center"
             style={{height: "60vh", overflow: "visible"}} // set visible area
