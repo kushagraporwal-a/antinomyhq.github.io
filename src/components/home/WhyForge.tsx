@@ -88,7 +88,7 @@ const WhyForge = (): JSX.Element => {
           />
 
           <SpotlightSpan
-            text="FORGE-CODE"
+            text="FORGE CODE"
             className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
           />
         </div>

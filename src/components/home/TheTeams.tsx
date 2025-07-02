@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react"
 import TechCard from "../shared/TechCard"
 import {TechDetails, TECHS} from "@site/src/constants"
 import SpotlightSpan from "./SpotlightCursor"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import {ChevronDown, ChevronUp} from "lucide-react"
 
 const AUTO_SCROLL_INTERVAL = 2000 // 2 seconds
 
@@ -64,7 +64,7 @@ const TheTeams = (): JSX.Element => {
               className="absolute top-20 md:top-32 xl:top-40 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
-          <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
+          <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-20">
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}
@@ -106,8 +106,10 @@ const TheTeams = (): JSX.Element => {
                   onClick={() => handleTechClick(idx)}
                   className="border-none w-full text-left px-4 py-3 bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
-                  <span className={`font-kanit text-title-tiny ${ isOpen ? 'text-white' : 'text-[#5D5D5D]'}`}>{TECHS[idx]}</span>
-                  <span>{isOpen ? <ChevronUp/> : <ChevronDown className="text-[#5D5D5D]"/>}</span>
+                  <span className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-[#5D5D5D]"}`}>
+                    {TECHS[idx]}
+                  </span>
+                  <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-[#5D5D5D]" />}</span>
                 </button>
                 {isOpen && (
                   <div className="bg-[#121212] px-4 py-4">

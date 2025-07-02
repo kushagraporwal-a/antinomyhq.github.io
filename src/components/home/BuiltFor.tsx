@@ -13,7 +13,7 @@ const BuiltFor = (): JSX.Element => {
             return <StatCard title={title} stat={stat} key={title} />
           })}
         </div>
-        <div className="w-full justify-center">
+        <div className="w-full flex flex-col items-baseline justify-center xl:pb-28">
           <SpotlightSpan
             text="BUILT FOR BUILDERS,"
             className="font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
@@ -26,7 +26,7 @@ const BuiltFor = (): JSX.Element => {
             className="mt-2 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
           />
 
-          <div>
+          <div className="xl:mt-5">
             <CopyCodeButton />
           </div>
         </div>

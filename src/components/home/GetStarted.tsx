@@ -33,7 +33,7 @@ const GetStarted = (): JSX.Element => {
             className="text-white text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]"
           />
           <SpotlightSpan
-            text="FORGE-CODE"
+            text="FORGE CODE"
             className="absolute top-14 left-20 sm:left-32 md:top-20 xl:top-32 xl:left-60 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
           />
           <SpotlightSpan
@@ -61,7 +61,7 @@ const GetStarted = (): JSX.Element => {
                   # Install Forge globally using npm
                 </span>
                 <br />
-                <span className="text-[#30EDE6] mt-5 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                <span className="text-[#30EDE6] mt-3 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   npm install -g @antinomyhq/forge
                 </span>
               </div>

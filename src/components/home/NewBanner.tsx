@@ -43,7 +43,7 @@ const Banner = (): JSX.Element => {
             <TerminalWithTabs />
           </div>
         </div>
-        <div className="w-full px-10">
+        <div className="w-full px-10 mt-10">
           <TrustedByMarquee title="Trusted by Engineers" logos={companies} isHorizontal />
         </div>
       </div>
