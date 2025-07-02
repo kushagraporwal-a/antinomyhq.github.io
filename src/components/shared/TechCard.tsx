@@ -14,8 +14,8 @@ const TechCard = (props: TechCardProps): JSX.Element => {
     <div
       className={`hover:rotate-0 transition-transform duration-500 rounded-2xl ${
         selected
-          ? "bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)]"
-          : "bg-tailCall-dark-800"
+          ? "radial-gradient(41.85% 42.23% at 53.3% 102.3%, rgba(48, 237, 230, 0.50) 0%, var(--Neutral-200, #E5E5E5) 100%) dark:bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(255,255,255,0.6)_0%,_rgba(255,255,255,0.15)_60%,_rgba(0,0,0,0.0)_85%)]"
+          : "bg-[#E5E5E5] dark:bg-tailCall-dark-800"
       }`}
     >
       <div className="relative px-8 py-5 flex items-center justify-between bg-tailCall-dark-800 rounded-t-2xl">
@@ -28,7 +28,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
           })}
         </ul>
       </div>
-      <ul className="px-8 py-4 flex flex-col list-none text-title-tiny font-normal gap-3 text-[#a1a1a1] opacity-80">
+      <ul className="px-8 py-4 flex flex-col list-none text-title-tiny font-normal gap-3 text-tailCall-text-gray-200 dark:text-[#a1a1a1] opacity-80">
         {description.map((desc) => {
           return <li key={desc}>{desc}</li>
         })}

@@ -10,7 +10,7 @@ const Banner = (): JSX.Element => {
       <div className="max-w-[1440px] relative p-10 xl:p-0 flex flex-col w-full h-screen overflow-auto">
         <div className="flex justify-around flex-col lg:flex-row gap-60">
           <div className="flex md:hidden lg:flex flex-col">
-            <p className="text-white font-thin md:font-thin lg:font-thin text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
+            <p className="text-gray-700 dark:text-white font-thin md:font-thin lg:font-thin text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">
@@ -35,7 +35,7 @@ const Banner = (): JSX.Element => {
                 PROGRAMMING
               </span>
             </div>
-            <p className="absolute left-80 -top-20 text-white font-thin text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
+            <p className="absolute left-80 -top-20 text-gray-700 dark:text-white font-thin text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
           </div>

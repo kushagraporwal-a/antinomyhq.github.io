@@ -8,10 +8,10 @@ type StatCardProps = {
 const StatCard = ({title, stat}: StatCardProps): JSX.Element => {
   return (
     <div className="flex flex-col">
-      <span className="font-space font-bold text-title-tiny md:font-normal md:text-title-medium text-tailCall-darkGray">
+      <span className="font-space font-bold text-title-tiny md:font-normal md:text-title-medium text-[#858585] dark:text-tailCall-darkGray">
         {title}
       </span>
-      <h1 className="font-space text-title-large md:text-display-tiny lg:text-display-medium md:font-normal font-normal text-tailCall-cyan leading-tight">
+      <h1 className="font-space text-title-large md:text-display-tiny lg:text-display-medium md:font-normal font-normal text-[#00A6A6] dark:text-tailCall-cyan leading-tight">
         {stat}
       </h1>
     </div>

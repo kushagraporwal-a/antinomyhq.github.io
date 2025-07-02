@@ -36,6 +36,7 @@ module.exports = {
             600: "#858586",
             700: "#B4B4B4",
             800: "#A1A1A1",
+            900: "#F1F1F1",
           },
           dark: {
             100: "#545556",
@@ -57,6 +58,14 @@ module.exports = {
           darkGray: "#858585",
           cyan: "#30EDE6",
           white: "#f5f3eb",
+          text: {
+            gray: {
+              100: "#737373",
+              200: "#454545",
+            },
+            cyan: "#00A6A6",
+            green: "#1B8783"
+          }
         },
       },
       spacing: {
@@ -95,6 +104,7 @@ module.exports = {
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
         "custom-radial-gradient": "radial-gradient(97.79% 94.15% at 15.05% 0%, #FFF 0%, #2A2A2A 100%)",
         "gradient-315": "linear-gradient(315deg,rgba(0, 0, 0, 1) 80%, rgba(48, 237, 230, 1) 100%);",
+        "header-radial-gradient": "radial-gradient(400.27% 43.55% at 150% 100%, rgba(48, 237, 230, 0.5) 0%, rgba(0,0,0,0) 100%),"
       },
     },
     fontFamily: {
@@ -218,7 +228,7 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: ["class", '[data-theme="dark"]'],
+  darkMode: 'class',
   corePlugins: {
     preflight: false,
   },

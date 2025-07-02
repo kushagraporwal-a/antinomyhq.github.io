@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, { useEffect, useRef, useState } from "react"
 import CopyCodeButton from "../shared/CopyCodeButton"
 import TechCard from "../shared/TechCard"
-import {TechDetails, TECHS} from "@site/src/constants"
+import { TechDetails, TECHS } from "@site/src/constants"
 
 const AUTO_SCROLL_INTERVAL = 2000 // 2 seconds
 
@@ -35,7 +35,7 @@ const TheTeams = (): JSX.Element => {
       const cardHeight = card.offsetHeight
       const containerHeight = container.offsetHeight
       const scrollTo = cardTop - containerHeight / 2 + cardHeight / 2
-      container.scrollTo({top: scrollTo, behavior: "smooth"})
+      container.scrollTo({ top: scrollTo, behavior: "smooth" })
     }
 
     return () => {
@@ -67,18 +67,14 @@ const TheTeams = (): JSX.Element => {
               AT WORK
             </span>
           </div>
-          <ul className="flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-40">
+          <ul className="flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal dark:text-white mt-40">
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}
                 onClick={() => handleTechClick(idx)}
-                className={`opacity-30 hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
-                  idx === activeIdx ? "!opacity-100 font-bold scale-105" : ""
-                }`}
-                style={{
-                  fontWeight: idx === activeIdx ? 700 : undefined,
-                  color: "#fff",
-                }}
+                className={`opacity-30 hover:opacity-100 cursor-pointer transition-opacity duration-500 ${idx === activeIdx ? "!opacity-100 font-bold scale-105" : ""
+                  } ${idx === activeIdx ? 'font-bold' : 'font-normal'}
+  text-tailCall-text-gray-200 dark:text-tailCall-white`}
               >
                 {tech}
               </li>
@@ -86,7 +82,7 @@ const TheTeams = (): JSX.Element => {
           </ul>
         </div>
         <div ref={cardsContainerRef} className="flex flex-col gap-10 overflow-y-auto h-[60vh] scroll-smooth">
-          {TechDetails.map(({title, descriptions, avatars}, idx) => (
+          {TechDetails.map(({ title, descriptions, avatars }, idx) => (
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
