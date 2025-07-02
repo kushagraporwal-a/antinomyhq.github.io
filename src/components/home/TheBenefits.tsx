@@ -24,13 +24,15 @@ const TheBenefits = (): JSX.Element => {
 
     // Calculate the scroll distance: total height of cards minus the visible area
     const visibleHeight = window.innerHeight * 0.6
-    const totalScroll = cards.scrollHeight - visibleHeight + cards.children[0].clientHeight
+    const cardHeight = cards.children[0]?.clientHeight || 1
+    const gap = 32
+    // Offset so last card's center reaches the focus point (30% from top)
+    const focusPoint = window.innerHeight * 0.3
+    const lastCardOffset = focusPoint - (visibleHeight / 2) + (cardHeight / 2)
+    const totalScroll = cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset
 
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`
-
-    const cardHeight = cards.children[0]?.clientHeight || 1
-    const gap = 32
 
     const ctx = gsap.context(() => {
       gsap.to(cards, {
@@ -46,9 +48,23 @@ const TheBenefits = (): JSX.Element => {
           onUpdate: (self) => {
             // Calculate the current y offset (negative)
             const y = gsap.getProperty(cards, "y") as number
-            // Calculate the index of the card closest to the center
-            const idx = Math.round(Math.abs(y) / (cardHeight + gap * 2))
-            setFocusedIdx(Math.min(Math.max(idx, 0), BENEFITS.length - 1))
+            // Calculate the focus point: 30% from the top of the viewport
+            const focusPoint = window.innerHeight * 0.3
+            // Find the card whose center is closest to the focus point
+            let minDist = Infinity
+            let focusIdx = 0
+            cardRefs.current.forEach((el, idx) => {
+              if (!el) return
+              // Get the card's center position relative to the viewport
+              const rect = el.getBoundingClientRect()
+              const cardCenter = rect.top + rect.height / 2
+              const dist = Math.abs(cardCenter - focusPoint)
+              if (dist < minDist) {
+                minDist = dist
+                focusIdx = idx
+              }
+            })
+            setFocusedIdx(focusIdx)
           },
         },
       })
