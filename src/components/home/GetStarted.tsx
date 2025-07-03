@@ -88,7 +88,7 @@ const GetStarted = (): JSX.Element => {
           />
           <SpotlightSpan
             text="ON YOUR TERMINAL"
-            className="absolute top-28 left-0 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
+            className="absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
           />
         </div>
         <div className="flex justify-center">
