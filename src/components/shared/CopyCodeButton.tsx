@@ -27,7 +27,7 @@ const CopyCodeButton = (): JSX.Element => {
             npm install -g @antinomyhq/forge
           </span>
           {!isCopied ? <Copy className="hidden group-hover:block" /> : <CopyCheck />}
-          <img src="/images/home/curly-close.svg" alt="curly close"/>
+          <img src="/images/home/curly-close.svg" alt="curly close" className="-mr-1" />
         </div>
       </div>
     </Button>

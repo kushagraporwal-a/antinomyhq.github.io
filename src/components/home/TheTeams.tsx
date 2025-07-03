@@ -13,11 +13,11 @@ const TheTeams = (): JSX.Element => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (window.innerWidth < 768) return
     const interval = setInterval(() => {
       setActiveIdx((prev) => {
-        if (prev === null) return 0;
-        return (prev + 1) % TECHS.length;
+        if (prev === null) return 0
+        return (prev + 1) % TECHS.length
       })
     }, AUTO_SCROLL_INTERVAL)
     return () => clearInterval(interval)
@@ -25,16 +25,16 @@ const TheTeams = (): JSX.Element => {
 
   // Scroll the active card into view within the cards container (without scrolling the page)
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (window.innerWidth < 768) return
     if (intervalRef.current) clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
       setActiveIdx((prev) => {
-        if (prev === null) return 0;
-        return (prev + 1) % TECHS.length;
+        if (prev === null) return 0
+        return (prev + 1) % TECHS.length
       })
     }, 2000)
 
-    if (activeIdx === null) return;
+    if (activeIdx === null) return
     const card = cardRefs.current[activeIdx]
     const container = cardsContainerRef.current
     if (card && container) {
@@ -73,7 +73,7 @@ const TheTeams = (): JSX.Element => {
               className="absolute top-20 md:top-32 xl:top-36 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
-          <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-20">
+          <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}

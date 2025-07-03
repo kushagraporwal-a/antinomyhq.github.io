@@ -16,7 +16,7 @@ const Footer = (): JSX.Element => {
             <img src="/icons/basic/linkedin.svg" alt="linkedin" />
           </div>
         </div>
-        <div className="flex flex-col gap-4 max-w-[340px]">
+        <div className="flex flex-col gap-4 max-w-[340px] xl:max-w-max">
           <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-white md:text-end">
             Get started with personal AI Assistant now.
           </span>
