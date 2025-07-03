@@ -50,30 +50,50 @@ const WhyForge = (): JSX.Element => {
 
     if (!section || !cards) return
 
-    const card = cards.querySelector("div")
-    const cardStyle = card ? window.getComputedStyle(card) : null
-    const cardWidth = card ? card.offsetWidth : 0
-    const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0
-    const visibleScroll = cardWidth + cardMarginRight
+    let ctx: gsap.Context | null = null
+    let scrollTriggerInstance: ScrollTrigger | null = null
 
-    const totalScroll = cards.scrollWidth - window.innerWidth + visibleScroll
+    function setupScrollTrigger() {
+      if (!section || !cards) return;
+      const card = cards.querySelector("div")
+      const cardStyle = card ? window.getComputedStyle(card) : null
+      const cardWidth = card ? card.offsetWidth : 0
+      const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0
+      const visibleScroll = cardWidth + cardMarginRight
+      // Use the actual viewport width for mobile/tablet
+      const viewportWidth = window.innerWidth
+      const totalScroll = cards.scrollWidth - viewportWidth + visibleScroll
+      // Set the height of the section to allow for the scroll hijack
+      section.style.height = `${Math.max(window.innerHeight, totalScroll)}px`
+      if (section && cards) {
+        ctx = gsap.context(() => {
+          gsap.killTweensOf(cards)
+          gsap.set(cards, { x: 0 })
+          gsap.to(cards, {
+            x: `-${totalScroll + visibleScroll}px`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: () => `+=${totalScroll}`,
+              scrub: true,
+              pin: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {},
+            },
+          })
+        }, section)
+      }
+    }
 
-    const ctx = gsap.context(() => {
-      gsap.to(cards, {
-        x: `-${totalScroll + visibleScroll}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-        },
-      })
-    }, section)
+    setupScrollTrigger()
+    window.addEventListener("resize", setupScrollTrigger)
 
-    return () => ctx.revert() // cleanup
+    return () => {
+      window.removeEventListener("resize", setupScrollTrigger)
+      if (ctx) ctx.revert()
+    }
   }, [])
   return (
     <div className="flex justify-center">
