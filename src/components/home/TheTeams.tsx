@@ -52,7 +52,7 @@ const TheTeams = (): JSX.Element => {
   return (
     <div className="flex justify-center z-[99]">
       <div className="max-w-[1440px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-32">
           <div className=" flex flex-col">
             <SpotlightSpan
               text="THE TEAMS"
@@ -61,7 +61,7 @@ const TheTeams = (): JSX.Element => {
             <br />
             <SpotlightSpan
               text="AT WORK"
-              className="absolute top-20 md:top-32 xl:top-40 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="absolute top-20 md:top-32 xl:top-36 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
           <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-20">

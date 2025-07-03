@@ -13,7 +13,7 @@ const BuiltFor = (): JSX.Element => {
             return <StatCard title={title} stat={stat} key={title} />
           })}
         </div>
-        <div className="w-full flex flex-col items-baseline justify-center xl:pb-28">
+        <div className="w-full flex flex-col items-baseline justify-center xl:pb-36">
           <SpotlightSpan
             text="BUILT FOR BUILDERS,"
             className="font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
@@ -23,7 +23,7 @@ const BuiltFor = (): JSX.Element => {
           <SpotlightSpan
             text="BACKED BY DATA"
             style={{display: "ruby-text"}}
-            className="mt-2 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
+            className="-mt-5 font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
           />
 
           <div className="xl:mt-5">

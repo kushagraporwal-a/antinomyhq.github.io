@@ -661,14 +661,6 @@ export const NavbarItems = [
     name: "Blog",
     link: "/blog",
   },
-  {
-    name: "Testimonials",
-    link: "/#",
-  },
-  {
-    name: "Contact",
-    link: "/#",
-  },
 ]
 
 export const StatsForDevelopers = [

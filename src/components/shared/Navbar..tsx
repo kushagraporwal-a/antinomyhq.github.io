@@ -71,7 +71,7 @@ const NewNavbar = (): JSX.Element => {
             <Link href="/" className="flex items-center justify-center">
               <img src="/images/home/logo-light.svg" alt="Logo" width={141} />
             </Link>
-            <ul className="hidden xl:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
+            <ul className="ml-8 hidden xl:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
               {NavbarItems.map((item) => {
                 return (
                   <Link
