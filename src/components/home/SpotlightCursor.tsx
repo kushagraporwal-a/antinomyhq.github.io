@@ -29,7 +29,7 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
   return (
     <span
       ref={spanRef}
-      className={`text-transparent bg-clip-text transition-all duration-500 ${className}`}
+      className={`text-transparent bg-clip-text transition-all duration-0 ${className}`}
       style={{
         color: "hsla(0, 0%, 100%, 0.2)",
         backgroundImage: "radial-gradient(closest-side, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)",

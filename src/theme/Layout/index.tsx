@@ -14,6 +14,7 @@ import styles from "./styles.module.css"
 import GlobalLayout from "@site/src/components/shared/GlobalLayout"
 import Announcement from "@site/src/components/shared/Announcement"
 import {FloatingCta} from "@site/src/components/cta"
+import { useLocation } from "@docusaurus/router"
 
 export default function Layout(props: Props): JSX.Element {
   const {
@@ -25,6 +26,7 @@ export default function Layout(props: Props): JSX.Element {
     description,
   } = props
 
+  const location = useLocation();
   useKeyboardNavigation()
 
   const targetDate = new Date("2025-05-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
@@ -56,7 +58,7 @@ export default function Layout(props: Props): JSX.Element {
 
       <div
         id={SkipToContentFallbackId}
-        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
+        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName, `${location.pathname !== "/" ? 'mt-20 md:mt-[64px] xl:mt-[66px]': 'mt-auto'}`)}
       >
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
       </div>

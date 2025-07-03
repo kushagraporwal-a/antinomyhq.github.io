@@ -18,7 +18,7 @@ const NewNavbar = (): JSX.Element => {
   }, [windowSize])
 
   return (
-    <nav className="sticky top-0 left-0 z-[999] p-5 bg-black w-full">
+    <nav className="fixed top-0 left-0 z-[999] p-5 bg-black w-full">
       {showNavbar ? (
         <div className="h-screen bg-black z-[998] flex flex-col">
           {/* Header */}

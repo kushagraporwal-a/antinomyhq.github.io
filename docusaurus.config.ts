@@ -143,18 +143,14 @@ export default {
 
     navbar: {
       hideOnScroll: true,
-      logo: {
-        alt: "ForgeCode",
-        src: "/images/home/logo-dark.svg",
-      },
       items: [
         // {to: "/", label: "Home", position: "left", activeBaseRegex: "^/$"},
         // {to: "/about", label: "About", position: "left"},
         // {to: "/enterprise", label: "Enterprise", position: "left"},
-        {to: "/pricing", label: "Pricing", position: "left"},
-        {to: "/docs", label: "Docs", position: "left"},
-        {to: "/blog", label: "Blogs", position: "left"},
-        {to: "/releases", label: "Releases", position: "left"},
+        // {to: "/pricing", label: "Pricing", position: "left"},
+        // {to: "/docs", label: "Docs", position: "left"},
+        // {to: "/blog", label: "Blogs", position: "left"},
+        // {to: "/releases", label: "Releases", position: "left"},
         // {
         //   label: "Developers",
         //   position: "left",
