@@ -12,7 +12,7 @@ const BenefitsCard = ({title, description, imageUrl}: BenefitsCardProps) => {
       <div className="flex flex-col gap-4 bg-[linear-gradient(180deg,_#1E1C21_0%,_#000_100%)] text-white font-kanit w-full xl:max-w-[550px] rounded-3xl p-8 lg:px-14 lg:py-16">
         <div className="flex gap-3">
           <img src={imageUrl} alt="" />
-          <span className="text-title-medium md:text-title-semi-large md:font-normal font-normal max-w-52">
+          <span className="text-title-medium md:text-title-semi-large md:font-normal font-normal max-w-60">
             {title}
           </span>
         </div>

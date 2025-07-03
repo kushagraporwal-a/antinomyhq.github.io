@@ -1,9 +1,14 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import SpotlightSpan from "./SpotlightCursor"
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+import clsx from "clsx"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const GetStarted = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
-
+  const sectionRef = useRef(null)
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
     if (isCopied) {
@@ -15,22 +20,67 @@ const GetStarted = (): JSX.Element => {
     }
   }, [isCopied])
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".get-started-text",
+        {x: -1000, opacity: 0},
+        {
+          x: 10,
+          opacity: 1,
+          ease: "power3.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".get-started-text",
+            start: "top 70%",
+            end: "bottom",
+            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
+          },
+        },
+      )
+      gsap.fromTo(
+        ".get-with-text",
+        {x: -1000, opacity: 0},
+        {
+          x: 10,
+          opacity: 1,
+          ease: "power3.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".get-with-text",
+            start: "top 70%",
+            end: "bottom",
+            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
+          },
+        },
+      )
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   const handleCopy = async () => {
     await navigator.clipboard.writeText("npm install -g @antinomyhq/forge")
     setIsCopied(true)
   }
 
   return (
-    <div className="flex justify-center">
+    <div ref={sectionRef} className={clsx("flex justify-center", "get-started-section")}>
       <div className="relative max-w-[1440px] w-full p-5 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
           <SpotlightSpan
             text="GET STARTED"
-            className="absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+            className={clsx(
+              "absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
+              "get-started-text",
+            )}
           />
           <SpotlightSpan
             text="with"
-            className="text-white text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]"
+            className={clsx(
+              "text-white text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]",
+              "get-with-text",
+            )}
           />
           <SpotlightSpan
             text="FORGE CODE"

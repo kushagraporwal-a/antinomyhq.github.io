@@ -7,10 +7,10 @@ import SpotlightSpan from "./SpotlightCursor"
 const Banner = (): JSX.Element => {
   return (
     <div className="flex justify-center mt-[66px]">
-      <div className="max-w-[1440px] relative p-10 xl:p-0 flex justify-center flex-col w-full h-screen overflow-auto">
+      <div className="max-w-[1440px] relative px-10 pt-72 md:pt-48 xl:p-0 flex justify-center flex-col w-full h-screen overflow-auto">
         <div className="flex justify-around flex-col lg:flex-row gap-60">
           <div className="flex md:hidden lg:flex flex-col">
-            <p className="text-white font-thin md:font-thin lg:font-thin text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
+            <p className="text-white font-thin md:font-thin lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">

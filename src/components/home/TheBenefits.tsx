@@ -5,6 +5,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 import BenefitsCard from "../shared/BenefitsCard"
 import {BENEFITS} from "@site/src/constants"
 import SpotlightSpan from "./SpotlightCursor"
+import clsx from "clsx"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
@@ -68,6 +69,17 @@ const TheBenefits = (): JSX.Element => {
           },
         },
       })
+
+      gsap.to(".circle-logo", {
+        rotation: 360,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${totalScroll}`,
+          scrub: true,
+        },
+      })
     }, section)
 
     return () => ctx.revert() // cleanup
@@ -89,11 +101,7 @@ const TheBenefits = (): JSX.Element => {
           }}
         >
           <div className="relative">
-            <img
-              src="/images/home/circle-group.svg"
-              alt="ellipse"
-              className="w-full h-screen animate-spin [animation-duration:10s]"
-            />
+            <img src="/images/home/circle-group.svg" alt="ellipse" className={clsx("circle-logo", "w-full h-screen")} />
             <img
               src="/images/home/code-logo.svg"
               alt="code"

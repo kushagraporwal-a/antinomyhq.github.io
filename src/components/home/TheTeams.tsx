@@ -79,11 +79,10 @@ const TheTeams = (): JSX.Element => {
                 key={tech}
                 onClick={() => handleTechClick(idx)}
                 className={`opacity-30 hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
-                  idx === activeIdx ? "!opacity-100 font-bold scale-105" : ""
+                  idx === activeIdx ? "text-white !opacity-100 font-bold scale-105" : "text-[#a1a1a1]"
                 }`}
                 style={{
                   fontWeight: idx === activeIdx ? 700 : undefined,
-                  color: "#fff",
                 }}
               >
                 {tech}

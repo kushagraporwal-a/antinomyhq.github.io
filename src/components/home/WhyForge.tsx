@@ -74,7 +74,7 @@ const WhyForge = (): JSX.Element => {
             ease: "none",
             scrollTrigger: {
               trigger: section,
-              start: "top top",
+              start: "top 20%",
               end: () => `+=${totalScroll}`,
               scrub: true,
               pin: true,
