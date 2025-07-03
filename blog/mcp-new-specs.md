@@ -15,6 +15,13 @@ description: "Real talk about MCP Spec update (v2025-06-18), including important
 hide_table_of_contents: false
 ---
 
+import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
+
+<ElevenLabsAudioPlayer 
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
+  projectId="oMLCQFUnhC7GqCsM0Rvv" 
+/>
+
 The Model Context Protocol has faced significant criticism in the past due to its security vulnerabilities. Anthropic recently released a new specification update (MCP v2025-06-18)<sup><a id="ref-1" href="#footnote-1">1</a></sup> and I have been reviewing it, especially around security. Here are the important changes you should know.
 
 ---
