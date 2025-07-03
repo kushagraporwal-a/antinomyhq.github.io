@@ -666,16 +666,19 @@ export const NavbarItems = [
 export const StatsForDevelopers = [
   {
     title: "Active Developers",
-    stat: "50,000+",
+    stat: 50000,
+    suffix: "+",
   },
   {
     title: "Accuracy Rate",
-    stat: "99.7%",
+    stat: 99.7,
+    suffix: "%",
+    decimals: 1
   },
 
   {
     title: "Github Star",
-    stat: "3554",
+    stat: 3554,
   },
 ]
 
