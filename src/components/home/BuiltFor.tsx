@@ -15,6 +15,7 @@ const BuiltFor = (): JSX.Element => {
         </div>
         <div className="w-full flex flex-col items-baseline justify-center xl:pb-36">
           <SpotlightSpan
+            showHighlighted
             text="BUILT FOR BUILDERS,"
             className="font-bebas text-display-medium md:text-display-large md:font-normal xl:text-[120px] xl:font-normal font-normal -tracking-normal"
           />

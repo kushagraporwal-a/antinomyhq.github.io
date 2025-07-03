@@ -54,7 +54,7 @@ const WhyForge = (): JSX.Element => {
     let scrollTriggerInstance: ScrollTrigger | null = null
 
     function setupScrollTrigger() {
-      if (!section || !cards) return;
+      if (!section || !cards) return
       const card = cards.querySelector("div")
       const cardStyle = card ? window.getComputedStyle(card) : null
       const cardWidth = card ? card.offsetWidth : 0
@@ -68,7 +68,7 @@ const WhyForge = (): JSX.Element => {
       if (section && cards) {
         ctx = gsap.context(() => {
           gsap.killTweensOf(cards)
-          gsap.set(cards, { x: 0 })
+          gsap.set(cards, {x: 0})
           gsap.to(cards, {
             x: `-${totalScroll + visibleScroll}px`,
             ease: "none",
@@ -103,6 +103,7 @@ const WhyForge = (): JSX.Element => {
       >
         <div className="relative">
           <SpotlightSpan
+            showHighlighted
             text="WHY THEY LOVE"
             className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
           />

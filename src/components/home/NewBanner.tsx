@@ -15,6 +15,7 @@ const Banner = (): JSX.Element => {
             </p>
             <div className="relative flex flex-col">
               <SpotlightSpan
+                showHighlighted
                 text="AI PAIR"
                 className="-tracking-normal font-normal absolute -top-5 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />

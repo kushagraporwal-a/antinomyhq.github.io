@@ -673,7 +673,7 @@ export const StatsForDevelopers = [
     title: "Accuracy Rate",
     stat: 99.7,
     suffix: "%",
-    decimals: 1
+    decimals: 1,
   },
 
   {

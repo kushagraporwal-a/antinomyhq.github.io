@@ -54,6 +54,22 @@ const GetStarted = (): JSX.Element => {
           },
         },
       )
+      gsap.fromTo(
+        ".get-terminal-text",
+        {x: -1000, opacity: 0},
+        {
+          x: 30,
+          opacity: 1,
+          ease: "power3.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".get-terminal-text",
+            start: "top 70%",
+            end: "bottom",
+            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
+          },
+        },
+      )
     }, sectionRef)
 
     return () => ctx.revert()
@@ -69,6 +85,7 @@ const GetStarted = (): JSX.Element => {
       <div className="relative max-w-[1440px] w-full p-5 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
           <SpotlightSpan
+            showHighlighted
             text="GET STARTED"
             className={clsx(
               "absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
@@ -88,7 +105,7 @@ const GetStarted = (): JSX.Element => {
           />
           <SpotlightSpan
             text="ON YOUR TERMINAL"
-            className="absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
+            className={clsx("get-terminal-text","absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal")}
           />
         </div>
         <div className="flex justify-center">

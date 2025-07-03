@@ -12,11 +12,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
   const {title, description, avatars, selected} = props
   return (
     <div
-      className={`hover:rotate-0 transition-transform duration-500 rounded-2xl ${
-        selected
-          ? "bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)]"
-          : "bg-tailCall-dark-800"
-      }`}
+      className={`hover:cursor-pointer hover:rotate-0 transition-transform duration-500 rounded-2xl hover:bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,_rgba(48,237,230,0.5)_0%,_rgba(21,20,23,0.5)_100%)]`}
     >
       <div className="relative px-8 py-5 flex items-center justify-between bg-tailCall-dark-800 rounded-t-2xl">
         <span className="text-white max-w-48 md:max-w-none font-kanit text-title-small xl:text-[26px] -tracking-normal font-normal opacity-70">

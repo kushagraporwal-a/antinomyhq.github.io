@@ -4,6 +4,10 @@ import {TechDetails, TECHS} from "@site/src/constants"
 import SpotlightSpan from "./SpotlightCursor"
 import {ChevronDown, ChevronUp} from "lucide-react"
 
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 const AUTO_SCROLL_INTERVAL = 2000 // 2 seconds
 
 const TheTeams = (): JSX.Element => {
@@ -11,44 +15,39 @@ const TheTeams = (): JSX.Element => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const cardsContainerRef = useRef<HTMLDivElement | null>(null)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
-
-  useEffect(() => {
-    if (window.innerWidth < 768) return
-    const interval = setInterval(() => {
-      setActiveIdx((prev) => {
-        if (prev === null) return 0
-        return (prev + 1) % TECHS.length
-      })
-    }, AUTO_SCROLL_INTERVAL)
-    return () => clearInterval(interval)
-  }, [])
+  const sectionRef = useRef<HTMLDivElement | null>(null)
 
   // Scroll the active card into view within the cards container (without scrolling the page)
   useEffect(() => {
-    if (window.innerWidth < 768) return
-    if (intervalRef.current) clearInterval(intervalRef.current)
-    intervalRef.current = setInterval(() => {
-      setActiveIdx((prev) => {
-        if (prev === null) return 0
-        return (prev + 1) % TECHS.length
+    if (window.innerWidth < 1024) return
+
+    const cards = cardsContainerRef.current
+    const section = sectionRef.current
+    if (!cards || !section) return
+
+    // 1. Calculate how much scroll is needed
+    const totalScroll = cards.scrollHeight - window.innerHeight * 0.6
+
+    // 2. Set the section height = scroll distance + visible area
+    section.style.height = `${window.innerHeight + totalScroll}px`
+
+    const ctx = gsap.context(() => {
+      gsap.to(cards, {
+        y: -totalScroll,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 20%",
+          end: () => `+=${totalScroll}`,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        },
       })
-    }, 2000)
+    }, section)
 
-    if (activeIdx === null) return
-    const card = cardRefs.current[activeIdx]
-    const container = cardsContainerRef.current
-    if (card && container) {
-      const cardTop = card.offsetTop
-      const cardHeight = card.offsetHeight
-      const containerHeight = container.offsetHeight
-      const scrollTo = cardTop - containerHeight / 2 + cardHeight / 2
-      container.scrollTo({top: scrollTo, behavior: "smooth"})
-    }
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current)
-    }
-  }, [activeIdx])
+    return () => ctx.revert()
+  }, [])
 
   const handleTechClick = (idx: number) => {
     if (window.innerWidth < 768) {
@@ -59,11 +58,12 @@ const TheTeams = (): JSX.Element => {
   }
 
   return (
-    <div className="flex justify-center z-[99]">
-      <div className="max-w-[1440px] relative flex flex-col h-screen w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
+    <div ref={sectionRef} className="flex justify-center z-[99] h-screen overflow-visible">
+      <div className="max-w-[1440px] relative flex flex-col w-full xl:flex-row justify-between px-5 md:px-20 xl:px-24 xl:py-28">
         <div className="flex flex-col gap-32">
           <div className=" flex flex-col">
             <SpotlightSpan
+            showHighlighted
               text="THE TEAMS"
               className="absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
@@ -78,8 +78,8 @@ const TheTeams = (): JSX.Element => {
               <li
                 key={tech}
                 onClick={() => handleTechClick(idx)}
-                className={`opacity-30 hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
-                  idx === activeIdx ? "text-white !opacity-100 font-bold scale-105" : "text-[#a1a1a1]"
+                className={`hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
+                  idx === activeIdx ? "text-white !opacity-100 font-bold scale-105" : "text-[#737373]"
                 }`}
                 style={{
                   fontWeight: idx === activeIdx ? 700 : undefined,
@@ -90,12 +90,12 @@ const TheTeams = (): JSX.Element => {
             ))}
           </ul>
         </div>
-        <div ref={cardsContainerRef} className="hidden md:flex flex-col gap-10 overflow-y-auto h-[60vh] scroll-smooth">
+        <div ref={cardsContainerRef} className="hidden md:flex flex-col gap-10 overflow-hidden">
           {TechDetails.map(({title, descriptions, avatars}, idx) => (
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${idx === activeIdx ? "z-10" : "opacity-60"}`}
+              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 opacity-60 hover:opacity-100 transition-all duration-300`}
               style={{
                 borderRadius: 16,
               }}

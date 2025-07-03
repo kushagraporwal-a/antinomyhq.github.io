@@ -109,6 +109,7 @@ const TheBenefits = (): JSX.Element => {
             />
           </div>
           <SpotlightSpan
+            showHighlighted
             text="THE"
             className="absolute top-20 left-8 xl:left-28 font-bebas xl:leading-[133px] text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
           />
