@@ -34,7 +34,7 @@ const GetStarted = (): JSX.Element => {
           />
           <SpotlightSpan
             text="FORGE CODE"
-            className="absolute top-14 left-20 sm:left-32 md:top-20 xl:top-32 xl:left-60 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+            className="absolute top-14 left-[15%] md:top-20 xl:top-32 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
           />
           <SpotlightSpan
             text="ON YOUR TERMINAL"

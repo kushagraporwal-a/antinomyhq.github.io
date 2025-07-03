@@ -7,28 +7,34 @@ import {ChevronDown, ChevronUp} from "lucide-react"
 const AUTO_SCROLL_INTERVAL = 2000 // 2 seconds
 
 const TheTeams = (): JSX.Element => {
-  const [activeIdx, setActiveIdx] = useState(0)
+  const [activeIdx, setActiveIdx] = useState<number | null>(0)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const cardsContainerRef = useRef<HTMLDivElement | null>(null)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  console.log(activeIdx)
-
-  // Auto-advance the highlight and scroll
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     const interval = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % TECHS.length)
+      setActiveIdx((prev) => {
+        if (prev === null) return 0;
+        return (prev + 1) % TECHS.length;
+      })
     }, AUTO_SCROLL_INTERVAL)
     return () => clearInterval(interval)
   }, [])
 
   // Scroll the active card into view within the cards container (without scrolling the page)
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     if (intervalRef.current) clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % TECHS.length)
+      setActiveIdx((prev) => {
+        if (prev === null) return 0;
+        return (prev + 1) % TECHS.length;
+      })
     }, 2000)
 
+    if (activeIdx === null) return;
     const card = cardRefs.current[activeIdx]
     const container = cardsContainerRef.current
     if (card && container) {
@@ -45,8 +51,11 @@ const TheTeams = (): JSX.Element => {
   }, [activeIdx])
 
   const handleTechClick = (idx: number) => {
-    setActiveIdx(idx)
-    // The interval will reset due to the dependency on activeIdx
+    if (window.innerWidth < 768) {
+      setActiveIdx(activeIdx === idx ? null : idx)
+    } else {
+      setActiveIdx(idx)
+    }
   }
 
   return (
