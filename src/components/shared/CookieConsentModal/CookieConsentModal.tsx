@@ -29,8 +29,8 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
 
   const consentOptions: Array<ConsentOption> = [
     {
-      text: "Accept All",
-      onClick: onAccept,
+      text: "Deny",
+      onClick: onDeny,
     },
     ...[
       showPreferences
@@ -46,8 +46,8 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
           },
     ],
     {
-      text: "Deny",
-      onClick: onDeny,
+      text: "Accept All",
+      onClick: onAccept,
     },
   ]
 
@@ -133,18 +133,43 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                   styles.consentOptionsContainer,
                 )}
               >
-                {consentOptions.map((btn: ConsentOption, index: number) => {
+                {consentOptions.map(({text, onClick}) => {
+                  // Special styling for "Accept All" (with background image)
+                  if (text === "Accept All") {
+                    return (
+                      <button
+                        key={text}
+                        onClick={onClick}
+                        className="cursor-pointer relative flex items-center justify-center border-none bg-transparent"
+                      >
+                        <img src="/images/home/curly-background.svg" alt="curly-background" height={60} />
+                        <span className="text-black font-kanit text-title-small font-light absolute">{text}</span>
+                      </button>
+                    )
+                  }
+
+                  // Buttons with curly brackets around text
+                  const isCurly = text === "Accept Selected" || text === "Manage Settings"
+
                   return (
-                    <span
-                      key={index}
+                    <button
+                      key={text}
+                      onClick={onClick}
                       className={clsx(
-                        "sm:whitespace-nowrap py-1 px-3 text-title-tiny bg-tailCall-dark-400 border border-solid border-tailCall-dark-300 cursor-pointer text-center",
-                        styles.consentOption,
+                        "cursor-pointer border-none bg-transparent font-kanit text-title-small font-light",
+                        isCurly ? "flex items-center justify-center" : "text-tailCall-cyan",
                       )}
-                      onClick={btn.onClick}
                     >
-                      {btn.text}
-                    </span>
+                      {isCurly ? (
+                        <div className="flex items-center px-3 py-4">
+                          <img src="/images/home/curly-open.svg" alt="curly open" height={60} />
+                          <span className="text-tailCall-cyan">{text}</span>
+                          <img src="/images/home/curly-close.svg" alt="curly close" height={60} />
+                        </div>
+                      ) : (
+                        text
+                      )}
+                    </button>
                   )
                 })}
               </div>

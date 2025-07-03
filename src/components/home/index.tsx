@@ -1,6 +1,5 @@
 import React from "react"
 
-import Aside from "./Aside"
 import Navbar from "../shared/Navbar."
 import Banner from "./NewBanner"
 import GetStarted from "./GetStarted"

@@ -95,6 +95,8 @@ module.exports = {
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
         "custom-radial-gradient": "radial-gradient(97.79% 94.15% at 15.05% 0%, #FFF 0%, #2A2A2A 100%)",
         "gradient-315": "linear-gradient(315deg,rgba(0, 0, 0, 1) 80%, rgba(48, 237, 230, 1) 100%);",
+        "custom-diagonal":
+          "linear-gradient(135deg, rgba(62, 62, 62, 1) 0%, rgba(50, 208, 202, 1) 51%, rgba(102, 102, 102, 1) 100%)",
       },
     },
     fontFamily: {

@@ -63,7 +63,7 @@ const TheTeams = (): JSX.Element => {
         <div className="flex flex-col gap-32">
           <div className=" flex flex-col">
             <SpotlightSpan
-            showHighlighted
+              showHighlighted
               text="THE TEAMS"
               className="absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
@@ -73,7 +73,7 @@ const TheTeams = (): JSX.Element => {
               className="absolute top-20 md:top-32 xl:top-36 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
-          <ul className="hidden md:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">
+          <ul className="hidden lg:flex pl-0 flex-row xl:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">
             {TECHS.map((tech, idx) => (
               <li
                 key={tech}
@@ -90,7 +90,10 @@ const TheTeams = (): JSX.Element => {
             ))}
           </ul>
         </div>
-        <div ref={cardsContainerRef} className="hidden md:flex flex-col gap-10 overflow-hidden">
+        <div
+          ref={cardsContainerRef}
+          className="hidden lg:h-[60vh] xl:h-auto lg:overflow-scroll lg:flex flex-col gap-10 xl:overflow-hidden"
+        >
           {TechDetails.map(({title, descriptions, avatars}, idx) => (
             <div
               key={title}
@@ -105,7 +108,7 @@ const TheTeams = (): JSX.Element => {
           ))}
         </div>
         {/* Accordion for mobile only */}
-        <div className="block md:hidden">
+        <div className="block lg:hidden">
           {TechDetails.map(({title, descriptions, avatars}, idx) => {
             const isOpen = activeIdx === idx
             return (

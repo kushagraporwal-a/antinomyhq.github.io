@@ -839,3 +839,34 @@ export const gtagScriptContent = `
 
   gtag('config', 'G-FLJBT3GYVJ');
 `
+
+export const COMMANDS = [
+  {
+    command: "> what are the main components and how do they interact?",
+    output: [
+      "[21:39:48] Read .",
+      "Read package.json",
+      "Read docusaurus.config.ts",
+      "Search for 'README*'at.",
+      "README.md",
+      "synthesising 20s ctrl+c to interrupt",
+      "enter command to see forgecode in action",
+    ],
+  },
+  {
+    command: "> how do I update?",
+    output: [
+      "[21:40:02] Checking for updates...",
+      "[21:40:03] Update available: v1.0.1",
+      "[21:40:04] Run `forge update` to install",
+    ],
+  },
+  {
+    command: "> /muse",
+    output: ["[21:40:20] Switching agent to muse...", "Muse activated."],
+  },
+  {
+    command: "> exit",
+    output: ["[21:40:40] Exiting session...", "Goodbye."],
+  },
+]
