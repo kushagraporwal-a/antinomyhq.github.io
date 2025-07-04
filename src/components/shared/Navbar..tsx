@@ -76,7 +76,7 @@ const NewNavbar = (): JSX.Element => {
               <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="dark:block hidden" />
               <img src="/images/home/logo-dark.svg" alt="Logo" width={141} className="flex dark:hidden" />
             </Link>
-            <ul className="ml-8 hidden xl:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
+            <ul className="ml-8 hidden md:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
               {NavbarItems.map((item) => {
                 return (
                   <Link

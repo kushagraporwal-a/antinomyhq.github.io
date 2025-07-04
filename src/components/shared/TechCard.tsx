@@ -35,7 +35,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
         </ul>
       </div>
       <ul className={
-        `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 ` +
+        `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-2xl` +
         `${selected ? 'bg-tailCall-dark-400' : ''} text-tailCall-light-1000 dark:text-[#a1a1a1]`
       }>
         {description.map((desc) => {
