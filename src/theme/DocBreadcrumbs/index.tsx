@@ -22,14 +22,14 @@ function BreadcrumbsItemLink({
   const className = "breadcrumbs__link"
   if (isLast) {
     return (
-      <span className={className} itemProp="name">
+      <span className={className + "!text-tailCall-lightMode---neutral-300 !dark:text-tailCall-darkMode---neutral-300 font-bold"} itemProp="name">
         {children}
       </span>
     )
   }
   return href ? (
     <Link className={className} href={href} itemProp="item">
-      <span itemProp="name">{children}</span>
+      <span itemProp="name" className="!text-tailCall-lightMode---neutral-500 !dark:text-tailCall-darkMode---neutral-500">{children}</span>
     </Link>
   ) : (
     // TODO Google search console doesn't like breadcrumb items without href.
@@ -37,7 +37,7 @@ function BreadcrumbsItemLink({
     // insist to infer one, even if it's invalid. Removing `itemProp="item
     // name"` for now, since I don't know how to properly fix it.
     // See https://github.com/facebook/docusaurus/issues/7241
-    <span className={className}>{children}</span>
+    <span className={className + "!text-tailCall-lightMode---neutral-500 !dark:text-tailCall-darkMode---neutral-500"}>{children}</span>
   )
 }
 
@@ -61,7 +61,7 @@ function BreadcrumbsItem({
         itemType: "https://schema.org/ListItem",
       })}
       className={clsx("breadcrumbs__item", {
-        "breadcrumbs__item--active": active,
+        "breadcrumbs__item--active !text-tailCall-lightMode---neutral-300 !dark:text-tailCall-darkMode---neutral-300": active,
       })}
     >
       {children}

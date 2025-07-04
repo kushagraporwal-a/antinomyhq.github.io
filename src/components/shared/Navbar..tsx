@@ -19,7 +19,7 @@ const NewNavbar = (): JSX.Element => {
   }, [windowSize])
 
   return (
-    <nav className="fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md border-[#171717] p-5 bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] w-full">
+    <nav className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md border-[#171717] p-5 w-full ${location.pathname!== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}>
       {showNavbar ? (
         <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-black z-[998] flex flex-col">
           {/* Header */}
