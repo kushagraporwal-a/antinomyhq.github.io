@@ -3,7 +3,7 @@ import TrustedByMarquee from "./TrustedByMarquee"
 import {companies, companiesLight} from "@site/src/constants"
 import TerminalWithTabs from "../shared/TerminalWithTabs"
 import SpotlightSpan from "./SpotlightCursor"
-import {useThemeContext} from "./ThemeProvider"
+import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 
 const Banner = (): JSX.Element => {
   const {theme} = useThemeContext()
@@ -26,7 +26,6 @@ const Banner = (): JSX.Element => {
                 className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
             </div>
-
           </div>
           <div className="relative hidden md:flex lg:hidden flex-col">
             <div className="relative flex flex-col">
@@ -60,4 +59,3 @@ const Banner = (): JSX.Element => {
 }
 
 export default Banner
-

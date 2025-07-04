@@ -4,7 +4,6 @@ import {Sun, Moon} from "lucide-react"
 
 const ThemeToggle: React.FC = () => {
   const {theme, toggleTheme} = useThemeContext()
-  console.log('theme: ', theme);
 
   return (
     <button
