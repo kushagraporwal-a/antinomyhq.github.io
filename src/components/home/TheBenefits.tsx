@@ -24,13 +24,17 @@ const TheBenefits = (): JSX.Element => {
     if (!section || !cards) return
 
     // Calculate the scroll distance: total height of cards minus the visible area
+    const isMobile = window.innerWidth < 768
     const visibleHeight = window.innerHeight * 0.6
     const cardHeight = cards.children[0]?.clientHeight || 1
     const gap = 32
-    // Offset so last card's center reaches the focus point (30% from top)
-    const focusPoint = window.innerHeight * 0.3
+    // Offset so last card's center reaches the focus point
+    const focusPoint = isMobile ? window.innerHeight / 2 : window.innerHeight * 0.3
     const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
-    const totalScroll = cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset
+    // On mobile, add extra scroll so last card can reach center
+    const totalScroll = isMobile
+      ? cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset + (window.innerHeight * 0.2)
+      : cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset
 
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`

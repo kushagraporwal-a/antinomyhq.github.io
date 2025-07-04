@@ -6,8 +6,8 @@ import SpotlightSpan from "./SpotlightCursor"
 
 const Banner = (): JSX.Element => {
   return (
-    <div className="flex justify-center mt-[66px]">
-      <div className="max-w-[1440px] relative px-10 pt-72 md:pt-48 xl:p-0 flex justify-center flex-col w-full h-screen overflow-auto">
+    <div className="flex justify-center sm:mt-[66px] mt-[90px]">
+      <div className="max-w-[1440px] relative px-10 lg:pt-72 md:pt-23 pt:5 xl:p-0 flex lg:justify-center flex-col w-full h-screen overflow-auto">
         <div className="flex justify-around flex-col lg:flex-row gap-60">
           <div className="flex md:hidden lg:flex flex-col">
             <p className="text-white font-thin md:font-thin lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
@@ -24,6 +24,7 @@ const Banner = (): JSX.Element => {
                 className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-28 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
             </div>
+
           </div>
           <div className="relative hidden md:flex lg:hidden flex-col">
             <div className="relative flex flex-col">
@@ -53,3 +54,4 @@ const Banner = (): JSX.Element => {
 }
 
 export default Banner
+
