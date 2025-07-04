@@ -26,6 +26,8 @@ The Model Context Protocol has faced significant criticism in the past due to it
 
 ---
 
+<!-- truncate -->
+
 ## TL;DR
 
 Here's a quick summary of everything new in MCP Spec v2025-06-18:
