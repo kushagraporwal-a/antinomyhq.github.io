@@ -1,3 +1,4 @@
+import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 import React, {CSSProperties, useRef} from "react"
 
 interface SpotlightSpanProps {
@@ -8,6 +9,7 @@ interface SpotlightSpanProps {
 }
 
 const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", style, showHighlighted = false}) => {
+  const {theme} = useThemeContext()
   const spanRef = useRef<HTMLSpanElement | null>(null)
   const spotlightSize = 400
 
@@ -22,21 +24,20 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
     el.style.backgroundPosition = `${x}px ${y}px`
   }
 
+  const baseColor = theme === "dark" ? "hsla(0, 0%, 100%, 0.2)" : "rgba(0,0,0,0.2)"
+  const spotlightColor = theme === "dark" ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.9)"
+
   return (
     <span
       ref={spanRef}
       onMouseMove={handleMouseMove}
-      className={`
-        transition-all duration-200
-        bg-clip-text text-transparent 
-        dark:bg-[radial-gradient(closest-side,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_100%)]
-        bg-[radial-gradient(closest-side,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)]
-        ${className}
-      `}
+      className={`text-transparent bg-clip-text transition-all duration-0 ${className}`}
       style={{
-        backgroundSize: `${spotlightSize}px ${spotlightSize}px`,
+        color: baseColor,
+        backgroundImage: `radial-gradient(closest-side, ${spotlightColor} 0%, rgba(0,0,0,0) 100%)`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: showHighlighted ? "left center" : "",
+        backgroundSize: `${spotlightSize}px ${spotlightSize}px`,
+        backgroundPosition: showHighlighted ? "left" : "",
         ...style,
       }}
     >
