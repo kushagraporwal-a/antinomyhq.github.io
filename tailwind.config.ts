@@ -147,6 +147,7 @@ module.exports = {
         "custom-diagonal":
           "linear-gradient(135deg, rgba(62, 62, 62, 1) 0%, rgba(50, 208, 202, 1) 51%, rgba(102, 102, 102, 1) 100%)",
         "benefit-light-background": "linear-gradient(180deg, #FFF 0%, #E5E5E5 100%)",
+        "gradient-custom-diagonal": "linear-gradient(135deg, rgba(0, 206, 201, 1) 0%, rgba(38, 38, 38, 1) 100%)",
       },
     },
     fontFamily: {
