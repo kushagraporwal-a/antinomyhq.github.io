@@ -6,7 +6,7 @@ import FooterItem from "../shared/FooterItem"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] mt-20 sm:mt-0 bg-tailCall-lightMode---neutral-100 dark:bg-tailCall-darkMode---neutral-900">
+    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] bg-tailCall-lightMode---neutral-100 dark:bg-tailCall-darkMode---neutral-900">
       <div className="flex flex-col md:flex-row gap-16 md:gap-0 justify-between items-start">
         <div className="flex flex-col gap-10">
           <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="hidden dark:block cursor-pointer" />

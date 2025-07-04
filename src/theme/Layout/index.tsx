@@ -6,7 +6,6 @@ import {useKeyboardNavigation} from "@docusaurus/theme-common/internal"
 import SkipToContent from "@theme/SkipToContent"
 import AnnouncementBar from "@theme/AnnouncementBar"
 import Navbar from "@theme/Navbar"
-import Footer from "@theme/Footer"
 import LayoutProvider from "@theme/Layout/Provider"
 import ErrorPageContent from "@theme/ErrorPageContent"
 import type {Props} from "@theme/Layout"
@@ -16,6 +15,7 @@ import Announcement from "@site/src/components/shared/Announcement"
 import {FloatingCta} from "@site/src/components/cta"
 import {useLocation} from "@docusaurus/router"
 import {ThemeProvider} from "../ThemeProvider/ThemeProvider"
+import Footer from "@site/src/components/home/Footer"
 
 export default function Layout(props: Props): JSX.Element {
   const {

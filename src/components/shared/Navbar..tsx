@@ -19,9 +19,9 @@ const NewNavbar = (): JSX.Element => {
   }, [windowSize])
 
   return (
-    <nav className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md border-[#171717] p-5 w-full ${location.pathname!== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}>
+    <nav className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 border-[#171717] p-5 w-full ${location.pathname!== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}>
       {showNavbar ? (
-        <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-black z-[998] flex flex-col">
+        <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 z-[998] flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center justify-center">
@@ -56,8 +56,8 @@ const NewNavbar = (): JSX.Element => {
                   href={item.link}
                   className={`no-underline ${
                     `${item.link}/` === location.pathname
-                      ? "text-tailCall-cyan font-bold"
-                      : "text-tailCall-darkMode---neutral-500 dark:text-white opacity-50 hover:opacity-100"
+                      ? "text-tailCall-cyan font-bold dark:text-tailCall-cyan"
+                      : "text-tailCall-darkMode---neutral-500 opacity-50 hover:opacity-100"
                   }`}
                 >
                   {item.name}
@@ -80,7 +80,11 @@ const NewNavbar = (): JSX.Element => {
               {NavbarItems.map((item) => {
                 return (
                   <Link
-                    className="text-tailCall-lightMode---neutral-500 dark:text-white opacity-50 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-1000 hover:dark:text-white"
+                    className={` opacity-50 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
+                    `${item.link}/` === location.pathname
+                      ? "font-bold text-tailCall-cyan dark:text-tailCall-cyan"
+                      : "text-tailCall-darkMode---neutral-500 hover:opacity-100"
+                  }`}
                     href={item.link}
                     key={item.name}
                   >

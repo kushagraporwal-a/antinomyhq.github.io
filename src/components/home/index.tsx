@@ -7,7 +7,6 @@ import WhyForge from "./WhyForge"
 import TheBenefits from "./TheBenefits"
 import BuiltFor from "./BuiltFor"
 import TheTeams from "./TheTeams"
-import Footer from "./Footer"
 import {ThemeProvider} from "@site/src/theme/ThemeProvider/ThemeProvider"
 
 const HomePage = (): JSX.Element => {
@@ -21,7 +20,6 @@ const HomePage = (): JSX.Element => {
         <TheBenefits />
         <BuiltFor />
         <TheTeams />
-        <Footer />
       </div>
     </ThemeProvider>
   )

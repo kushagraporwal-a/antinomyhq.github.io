@@ -307,7 +307,7 @@ const PricingPage = (): JSX.Element => {
 
           {/* CTA Section */}
         </Section>
-        <FinalCTA showPricingButton={false} />
+        {/* <FinalCTA showPricingButton={false} /> */}
       </main>
     </Layout>
   )

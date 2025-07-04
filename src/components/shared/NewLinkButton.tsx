@@ -100,7 +100,7 @@ const NewLinkButton = ({
       to={href}
       onClick={onClick}
       className={`
-      group relative disabled:opacity-25 border-none disabled:cursor-not-allowed bg-tailCall-lightMode---neutral-900 dark:bg-white dark:hover:bg-tailCall-cyan hover:bg-tailCall-cyan flex items-center justify-center gap-x-SPACE_03 hover:no-underline rounded-lg sm:rounded-xl h-12 sm:h-16 text-content-small font-bold sm:text-title-small cursor-pointer px-SPACE_06 py-SPACE_03 sm:px-SPACE_08 lg:px-SPACE_10 sm:py-SPACE_04 lg:py-SPACE_05
+      group relative disabled:opacity-25 border-none disabled:cursor-not-allowed bg-tailCall-darkMode---neutral-900 dark:bg-white dark:hover:bg-tailCall-cyan hover:bg-tailCall-cyan flex items-center justify-center gap-x-SPACE_03 hover:no-underline rounded-lg sm:rounded-xl h-12 sm:h-16 text-content-small font-bold sm:text-title-small cursor-pointer px-SPACE_06 py-SPACE_03 sm:px-SPACE_08 lg:px-SPACE_10 sm:py-SPACE_04 lg:py-SPACE_05
       ${setButtonWidth()} 
       ${generateThemeClasses().classes ?? ""} 
       ${disabled ? "cursor-not-allowed opacity-20" : ""} `}
