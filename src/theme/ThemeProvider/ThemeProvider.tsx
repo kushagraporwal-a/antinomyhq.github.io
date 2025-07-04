@@ -37,7 +37,11 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
 
   return (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-      {theme ? children : <div className="h-screen w-full text-black flex items-center justify-center">Loading</div>}
+      {theme ? (
+        children
+      ) : (
+        <div className="h-screen w-full bg-black text-black flex items-center justify-center">Loading</div>
+      )}
     </ThemeContext.Provider>
   )
 }

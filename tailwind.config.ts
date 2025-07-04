@@ -53,6 +53,11 @@ module.exports = {
             1000: "#D9D9D9",
             1100: "#161616",
             1200: "#18171A",
+            1300: "#1EB6CB",
+            1400: "#1ECB83",
+            1500: "#010101",
+            1600: "#181919",
+            1700: "#87DB1C",
           },
           lightMode: {
             "--primary-50": "#E6FAFA",
@@ -138,6 +143,9 @@ module.exports = {
       },
       maxWidth: {
         fill: "-webkit-fill-available",
+      },
+      height: {
+        "fill-available": "-webkit-fill-available",
       },
       backgroundImage: {
         "custom-radial": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.40) 100%)",

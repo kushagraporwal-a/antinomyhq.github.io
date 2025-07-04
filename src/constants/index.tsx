@@ -887,3 +887,30 @@ export const COMMANDS = [
     output: ["[21:40:40] Exiting session...", "Goodbye."],
   },
 ]
+
+export const GUIDES = [
+  {
+    title: "Version",
+    details: "v0.97",
+  },
+  {
+    title: "New Conversation",
+    details: "/new",
+  },
+  {
+    title: "Get started",
+    details: "/info, /help",
+  },
+  {
+    title: "Switch agent",
+    details: "/forge or /muse",
+  },
+  {
+    title: "update",
+    details: "/update",
+  },
+  {
+    title: "quit",
+    details: "/exit or <CTRL+D>",
+  },
+]

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react"
-import {COMMANDS} from "@site/src/constants"
+import {COMMANDS, GUIDES} from "@site/src/constants"
 
 const TerminalWithTabs = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -52,8 +52,9 @@ const TerminalWithTabs = (): JSX.Element => {
 
   // Auto-scroll
   useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight
+    const el = containerRef.current
+    if (el) {
+      el.scrollTo({top: el.scrollHeight, behavior: "smooth"})
     }
   }, [typedText, lines])
 
@@ -74,25 +75,37 @@ const TerminalWithTabs = (): JSX.Element => {
   return (
     <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-[650px] flex flex-col font-mono">
       {/* Terminal Header */}
-      <div className="bg-[#18171A] rounded-2xl text-[#30EDE6] text-sm h-full overflow-scroll relative">
-        <div className="bg-tailCall-lightMode---neutral-1000 dark:bg-[#18171A] sticky top-0 rounded-t-2xl flex gap-2 items-center p-3">
-          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-50 rounded-full"></div>
-          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-20 rounded-full"></div>
-          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-10 rounded-full"></div>
+      <div ref={containerRef} className="bg-tailCall-dark-1500 rounded-2xl text-sm h-full overflow-y-scroll relative">
+        <div className="bg-tailCall-lightMode---neutral-1000 dark:bg-tailCall-darkMode---neutral-900 sticky top-0 rounded-t-2xl flex gap-2 items-center p-3">
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300 rounded-full"></div>
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1400 rounded-full"></div>
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-darkMode---primary-400 rounded-full"></div>
         </div>
-        <div className="text-white mt-10">
-          <img src="/images/terminal.png" alt="Terminal" />
-        </div>
-        <div
-          ref={containerRef}
-          className="flex-1 bg-[#18171A] text-white p-4 overflow-y-auto text-sm whitespace-pre-wrap"
-        >
-          <div className="text-[#30EDE6]">
-            <span className="mr-1">&gt;</span>
-            {typedText}
-            {startTyping && <span className="animate-pulse">|</span>}
-          </div>
+        <img src="/images/home/forgecode.gif" alt="Terminal" className="-ml-10" />
+        {GUIDES.map(({title, details}) => {
+          return (
+            <div className="flex list-none ml-5 w-full">
+              <span className="text-white font-space text-title-tiny font-normal w-2/5 inline-block">{title}</span>
+              <span className="text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px]">
+                {details}
+              </span>
+            </div>
+          )
+        })}
 
+        <div className="flex-1 text-white p-4 overflow-y-auto text-sm whitespace-pre-wrap">
+          <div
+            className="bg-gradient-to-r p-[1px] rounded-lg mt-5 relative"
+            style={{
+              backgroundImage: "linear-gradient(90deg, rgba(37, 37, 37, 1) 0%, rgba(139, 139, 139, 1) 100%)",
+            }}
+          >
+            <div className="bg-tailCall-dark-1600 rounded-lg px-6 max-h-max">
+              <img src="/images/home/terminal-text-icon.svg" alt="text" className="absolute left-0 h-fill-available" />
+              <span className="text-tailCall-dark-1700 font-space text-title-tiny">{typedText}</span>
+              {startTyping && <span className="animate-pulse">|</span>}{" "}
+            </div>
+          </div>
           <div className="mt-3 space-y-1">
             {lines.map((line, idx) => (
               <div key={idx} className="text-[#B0BEC5]">
