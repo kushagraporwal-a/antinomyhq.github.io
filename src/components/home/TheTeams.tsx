@@ -107,7 +107,7 @@ const TheTeams = (): JSX.Element => {
           ))}
         </div>
         {/* Accordion for mobile only */}
-        <div className="block lg:hidden">
+        <div className="block lg:hidden mt-32 sm:mt-0">
           {TechDetails.map(({title, descriptions, avatars}, idx) => {
             const isOpen = activeIdx === idx
             return (
