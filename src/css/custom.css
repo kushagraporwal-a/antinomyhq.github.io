@@ -1034,3 +1034,11 @@ details .admonition-content code {
 ::-webkit-scrollbar {
     display: none;
 }
+
+/* Blog details code color override */
+code, code[class*="language-"] {
+  color: var(--tailCall-lightMode---neutral-700) !important;
+}
+[data-theme='dark'] code, [data-theme='dark'] code[class*="language-"] {
+  color: var(--tailCall-darkMode---neutral-300) !important;
+}
