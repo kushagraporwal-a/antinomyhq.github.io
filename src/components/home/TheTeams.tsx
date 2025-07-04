@@ -25,8 +25,21 @@ const TheTeams = (): JSX.Element => {
     const section = sectionRef.current
     if (!cards || !section) return
 
-    // 1. Calculate how much scroll is needed
-    const totalScroll = cards.scrollHeight - window.innerHeight * 0.6
+    // 1. Calculate how much scroll is needed so the last card can reach the center
+    const cardElements = cardRefs.current.filter(Boolean)
+    const lastCard = cardElements[cardElements.length - 1]
+    let totalScroll = 0
+    const visibleHeight = window.innerHeight * 0.6 // match Benefits section logic
+    if (lastCard) {
+      // Distance from top of cards to center of last card
+      const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2
+      // Focus point is center of visible area (sticky container)
+      const focusPoint = visibleHeight / 2
+      // The scroll needed to bring last card's center to focus point
+      totalScroll = lastCardCenter - focusPoint
+    } else {
+      totalScroll = cards.scrollHeight - visibleHeight
+    }
 
     // 2. Set the section height = scroll distance + visible area
     section.style.height = `${window.innerHeight + totalScroll}px`
@@ -42,6 +55,23 @@ const TheTeams = (): JSX.Element => {
           scrub: true,
           pin: true,
           anticipatePin: 1,
+          onUpdate: () => {
+            // Highlight the card closest to the center of the visible area
+            const focusPoint = window.innerHeight / 2
+            let minDist = Infinity
+            let focusIdx = 0
+            cardRefs.current.forEach((el, idx) => {
+              if (!el) return
+              const rect = el.getBoundingClientRect()
+              const cardCenter = rect.top + rect.height / 2
+              const dist = Math.abs(cardCenter - focusPoint)
+              if (dist < minDist) {
+                minDist = dist
+                focusIdx = idx
+              }
+            })
+            setActiveIdx(focusIdx)
+          },
         },
       })
     }, section)
@@ -97,7 +127,7 @@ const TheTeams = (): JSX.Element => {
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 opacity-60 hover:opacity-100 transition-all duration-300`}
+              className={`w-fit xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${activeIdx === idx ? 'opacity-100' : 'opacity-60'} hover:opacity-100`}
               style={{
                 borderRadius: 16,
               }}

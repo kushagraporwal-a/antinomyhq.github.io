@@ -9,68 +9,63 @@ gsap.registerPlugin(ScrollTrigger)
 const GetStarted = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
   const sectionRef = useRef(null)
+  const getStartedRef = useRef(null)
+  const withRef = useRef(null)
+  const onTerminalRef = useRef(null)
+  const installNowRef = useRef(null)
+
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
     if (isCopied) {
       interval = setInterval(() => setIsCopied(false), 1000)
     }
-
     return () => {
       clearInterval(interval)
     }
   }, [isCopied])
 
   useEffect(() => {
+    const section = sectionRef.current
+    const getStarted = getStartedRef.current
+    const withEl = withRef.current
+    const onTerminal = onTerminalRef.current
+    const installNow = installNowRef.current
+    if (!section || !getStarted || !withEl || !onTerminal || !installNow) return
+
+    const leftStart = -window.innerWidth
+    const leftEnd = window.innerWidth
+    const rightStart = window.innerWidth
+    const rightEnd = -window.innerWidth
+
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".get-started-text",
-        {x: -1000, opacity: 0},
-        {
-          x: 10,
-          opacity: 1,
-          ease: "power3.out",
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".get-started-text",
-            start: "top 70%",
-            end: "bottom",
-            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
-          },
+      // Set initial positions
+      gsap.set([getStarted, withEl], {x: leftStart})
+      gsap.set([onTerminal, installNow], {x: rightStart})
+
+      // Animate left group: from left edge, through center, to right edge
+      gsap.to([getStarted, withEl], {
+        x: leftEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
         },
-      )
-      gsap.fromTo(
-        ".get-with-text",
-        {x: -1000, opacity: 0},
-        {
-          x: 10,
-          opacity: 1,
-          ease: "power3.out",
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".get-with-text",
-            start: "top 70%",
-            end: "bottom",
-            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
-          },
+      })
+
+      // Animate right group: from right edge, through center, to left edge
+      gsap.to([onTerminal, installNow], {
+        x: rightEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
         },
-      )
-      gsap.fromTo(
-        ".get-terminal-text",
-        {x: -1000, opacity: 0},
-        {
-          x: 30,
-          opacity: 1,
-          ease: "power3.out",
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".get-terminal-text",
-            start: "top 70%",
-            end: "bottom",
-            toggleActions: "restart pause reverse pause", // play on enter, reverse on leave (optional)
-          },
-        },
-      )
-    }, sectionRef)
+      })
+    }, section)
 
     return () => ctx.revert()
   }, [])
@@ -81,35 +76,38 @@ const GetStarted = (): JSX.Element => {
   }
 
   return (
-    <div ref={sectionRef} className={clsx("flex justify-center", "get-started-section")}>
+    <div ref={sectionRef} className={clsx("flex justify-center overflow-x-hidden", "get-started-section")}>
       <div className="relative max-w-[1440px] w-full p-5 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
-          <SpotlightSpan
-            showHighlighted
-            text="GET STARTED"
-            className={clsx(
-              "absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
-              "get-started-text",
-            )}
-          />
-          <SpotlightSpan
-            text="with"
-            className={clsx(
-              " text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]",
-              "get-with-text",
-            )}
-          />
+          <div ref={getStartedRef}>
+            <SpotlightSpan
+              showHighlighted
+              text="GET STARTED"
+              className={clsx(
+                "absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+              )}
+            />
+          </div>
+          <div ref={withRef}>
+            <SpotlightSpan
+              text="with"
+              className={clsx(
+                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]"
+              )}
+            />
+          </div>
           <SpotlightSpan
             text="FORGE CODE"
             className="absolute top-14 left-[15%] md:top-20 xl:top-32 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
           />
-          <SpotlightSpan
-            text="ON YOUR TERMINAL"
-            className={clsx(
-              "get-terminal-text",
-              "absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
-            )}
-          />
+          <div ref={onTerminalRef}>
+            <SpotlightSpan
+              text="ON YOUR TERMINAL"
+              className={clsx(
+                "absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
+              )}
+            />
+          </div>
         </div>
         <div className="flex justify-center">
           <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] min-w-fill md:w-fit xl:min-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
@@ -143,7 +141,10 @@ const GetStarted = (): JSX.Element => {
                   npm install -g @antinomyhq/forge
                 </span>
               </div>
-              <span className="text-white xl:text-[30px] inline-block w-auto xl:font-normal font-normal font-kanit absolute right-0 -top-10 xl:-top-14 xl:right-0">
+              <span
+                ref={installNowRef}
+                className="text-white xl:text-[30px] inline-block w-auto xl:font-normal font-normal font-kanit absolute right-0 -top-10 xl:-top-14 xl:right-0"
+              >
                 Install Now
               </span>
             </div>

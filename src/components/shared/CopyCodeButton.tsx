@@ -22,11 +22,11 @@ const CopyCodeButton = (): JSX.Element => {
       <div className="group">
         <div className="relative flex w-fit items-center group group-hover:bg-[#30EDE6] transition-colors duration-500 rounded-2xl cursor-pointer">
           <img src="/images/home/curly-open.svg" alt="curly open" className="group-hover:absolute -left-1" />
-          <span className="text-[#30EDE6] group-hover:text-black group-hover:hidden">Try Now</span>
+          <span className="text-[#30EDE6] group-hover:text-black group-hover:hidden text-[20px]">Try Now</span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
             npm install -g @antinomyhq/forge
           </span>
-          {!isCopied ? <Copy className="hidden group-hover:block" /> : <CopyCheck />}
+          {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck />}
           <img src="/images/home/curly-close.svg" alt="curly close" className="-mr-1" />
         </div>
       </div>

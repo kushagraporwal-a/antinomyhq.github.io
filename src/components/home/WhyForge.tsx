@@ -43,18 +43,22 @@ const cardsData = [
 const WhyForge = (): JSX.Element => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const cardsRef = useRef<HTMLDivElement | null>(null)
+  const whyRef = useRef<HTMLDivElement | null>(null)
+  const forgeRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const section = sectionRef.current
     const cards = cardsRef.current
+    const why = whyRef.current
+    const forge = forgeRef.current
 
-    if (!section || !cards) return
+    if (!section || !cards || !why || !forge) return
 
     let ctx: gsap.Context | null = null
     let scrollTriggerInstance: ScrollTrigger | null = null
 
     function setupScrollTrigger() {
-      if (!section || !cards) return
+      if (!section || !cards || !why || !forge) return
       const card = cards.querySelector("div")
       const cardStyle = card ? window.getComputedStyle(card) : null
       const cardWidth = card ? card.offsetWidth : 0
@@ -65,16 +69,50 @@ const WhyForge = (): JSX.Element => {
       const totalScroll = cards.scrollWidth - viewportWidth + visibleScroll
       // Set the height of the section to allow for the scroll hijack
       section.style.height = `${Math.max(window.innerHeight, totalScroll)}px`
-      if (section && cards) {
+      // Calculate the initial pin offset (where the hijack starts)
+      const initialPinX = 0 // The hijack starts from x: 0
+      if (section && cards && why && forge) {
         ctx = gsap.context(() => {
           gsap.killTweensOf(cards)
-          gsap.set(cards, {x: 0})
+          gsap.killTweensOf([why, forge])
+
+          // 1. Headings: fly in from left
+          const leftStart = -window.innerWidth
+          gsap.set([why, forge], { x: leftStart })
+          gsap.to([why, forge], {
+            x: 0,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "top center",
+              scrub: true,
+            },
+          })
+
+          // 2. Cards: slide in from right to initialPinX, then hijack
+          gsap.set(cards, { x: window.innerWidth })
+          gsap.to(cards, {
+            x: initialPinX,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "center center",
+              scrub: true,
+            },
+            onComplete: () => {
+              gsap.set(cards, { clearProps: "x" })
+            },
+          })
+
+          // 3. Horizontal scroll hijack (starts after center)
           gsap.to(cards, {
             x: `-${totalScroll + visibleScroll}px`,
             ease: "none",
             scrollTrigger: {
               trigger: section,
-              start: "top 20%",
+              start: "center center",
               end: () => `+=${totalScroll}`,
               scrub: true,
               pin: true,
@@ -102,16 +140,19 @@ const WhyForge = (): JSX.Element => {
         className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 xl:pt-28 h-screen w-full overflow-hidden"
       >
         <div className="relative">
-          <SpotlightSpan
-            showHighlighted
-            text="WHY THEY LOVE"
-            className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
-          />
-
-          <SpotlightSpan
-            text="FORGE CODE"
-            className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
-          />
+          <div ref={whyRef}>
+            <SpotlightSpan
+              showHighlighted
+              text="WHY THEY LOVE"
+              className="absolute font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
+            />
+          </div>
+          <div ref={forgeRef}>
+            <SpotlightSpan
+              text="FORGE CODE"
+              className="absolute top-16 left-20 md:top-24 md:left-60 xl:top-32 xl:left-36 font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
+            />
+          </div>
         </div>
         <div ref={cardsRef} className="flex absolute gap-6 top-40 p-3 xl:top-[320px]">
           {cardsData.map((card, idx) => {

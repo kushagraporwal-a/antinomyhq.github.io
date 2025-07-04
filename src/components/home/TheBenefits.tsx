@@ -28,13 +28,11 @@ const TheBenefits = (): JSX.Element => {
     const visibleHeight = window.innerHeight * 0.6
     const cardHeight = cards.children[0]?.clientHeight || 1
     const gap = 32
-    // Offset so last card's center reaches the focus point
-    const focusPoint = isMobile ? window.innerHeight / 2 : window.innerHeight * 0.3
+    // Focus point: just before the center of the visible sticky area
+    const focusPoint = (window.innerHeight - visibleHeight) / 2 + visibleHeight * 0.48
     const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
-    // On mobile, add extra scroll so last card can reach center
-    const totalScroll = isMobile
-      ? cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset + (window.innerHeight * 0.2)
-      : cards.scrollHeight - visibleHeight + cardHeight + lastCardOffset
+    // Pin duration: scroll until the last card's center reaches the focus point (no extra scroll)
+    const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset
 
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`
@@ -53,8 +51,6 @@ const TheBenefits = (): JSX.Element => {
           onUpdate: (self) => {
             // Calculate the current y offset (negative)
             const y = gsap.getProperty(cards, "y") as number
-            // Calculate the focus point: 30% from the top of the viewport
-            const focusPoint = window.innerHeight * 0.3
             // Find the card whose center is closest to the focus point
             let minDist = Infinity
             let focusIdx = 0
@@ -129,7 +125,7 @@ const TheBenefits = (): JSX.Element => {
                 <div
                   key={title}
                   ref={(el) => (cardRefs.current[idx] = el)}
-                  className="transition-all duration-300"
+                  className="transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
                   style={{
                     filter: idx === focusedIdx ? "none" : "blur(6px)",
                     opacity: idx === focusedIdx ? 1 : 0.6,

@@ -6,7 +6,7 @@ import FooterItem from "../shared/FooterItem"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] mt-20 sm:mt-0">
+    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] mt-20 sm:mt-0 bg-tailCall-lightMode---neutral-100 dark:bg-tailCall-darkMode---neutral-900">
       <div className="flex flex-col md:flex-row gap-16 md:gap-0 justify-between items-start">
         <div className="flex flex-col gap-10">
           <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="hidden dark:block cursor-pointer" />
@@ -42,7 +42,7 @@ const Footer = (): JSX.Element => {
       </div>
       <div className="flex items-center justify-center pt-5">
         <span className="text-tailCall-light-1000 dark:text-white font-kanit text-title-tiny font-[275]">
-          Copyright © {new Date().getFullYear()} Tailcall, Inc.
+          Copyright © {new Date().getFullYear()} Tailcall, Inc.
         </span>
       </div>
       <div className="bg-tailCall-cyan h-2 w-full absolute left-0 bottom-0 z-50"></div>
