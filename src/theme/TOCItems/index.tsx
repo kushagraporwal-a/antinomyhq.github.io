@@ -8,8 +8,8 @@ import {Star} from "lucide-react"
 export default function TOCItems({
   toc,
   className = "table-of-contents table-of-contents__left-border",
-  linkClassName = "table-of-contents__link",
-  linkActiveClassName = "table-of-contents__link--active",
+  linkClassName = "table-of-contents__link text-tailCall-lightMode---neutral-700 dark:text-tailCall-darkMode---neutral-300",
+  linkActiveClassName = "table-of-contents__link--active text-tailCall-lightMode---primary-400 dark:text-white",
   minHeadingLevel: minHeadingLevelOption,
   maxHeadingLevel: maxHeadingLevelOption,
   ...props
@@ -39,8 +39,8 @@ export default function TOCItems({
   useTOCHighlight(tocHighlightConfig)
 
   return (
-    <div className="flex flex-col gap-3 bg-tailCall-dark-1100 p-2">
-      <span className="inline-block px-5 font-kanit text-white uppercase text-title-tiny">On this page</span>
+    <div className="flex flex-col gap-3 bg-white dark:bg-black p-2">
+      <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400">On this page</span>
       <TOCItemTree toc={tocTree} className={className} linkClassName={linkClassName} {...props} />
       <div className="flex items-center justify-center px-5">
         <div className="bg-radial-gradient rounded-xl p-[1px]">

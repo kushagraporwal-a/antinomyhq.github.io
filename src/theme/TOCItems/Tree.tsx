@@ -1,11 +1,18 @@
 import React, {useEffect, useState} from "react"
 import Link from "@docusaurus/Link"
-import type {Props} from "@theme/TOCItems/Tree"
 import clsx from "clsx"
 
 import styles from "./tocTree.module.css" // ⬅️ add a CSS file like this
 
-function TOCItemTree({toc, className, linkClassName, isChild}: Props): JSX.Element | null {
+type Props = {
+  toc: any[];
+  className?: string;
+  linkClassName?: string;
+  linkActiveClassName?: string;
+  isChild?: boolean;
+};
+
+function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChild}: Props): JSX.Element | null {
   const [activeId, setActiveId] = useState<string | null>(null)
 
   useEffect(() => {
@@ -35,10 +42,10 @@ function TOCItemTree({toc, className, linkClassName, isChild}: Props): JSX.Eleme
             {!isLast && <div className={styles.line} />}
             <Link
               to={`#${heading.id}`}
-              className={clsx(linkClassName)}
+              className={clsx(linkClassName, isActive && linkActiveClassName)}
               dangerouslySetInnerHTML={{__html: heading.value}}
             />
-            <TOCItemTree isChild toc={heading.children} className={className} linkClassName={linkClassName} />
+            <TOCItemTree isChild toc={heading.children} className={className} linkClassName={linkClassName} linkActiveClassName={linkActiveClassName} />
           </li>
         )
       })}

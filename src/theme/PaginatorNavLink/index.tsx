@@ -21,7 +21,7 @@ export default function PaginatorNavLink(props: Props): JSX.Element {
             {subLabel}
           </div>
         )}
-        <div className="pagination-nav__label text-tailCall-cyan font-kanit text-content-medium font-medium">
+        <div className="pagination-nav__label text-tailCall-lightMode---neutral-700 dark:text-tailCall-darkMode---neutral-300 font-kanit text-content-medium font-medium">
           {title}
         </div>
       </div>

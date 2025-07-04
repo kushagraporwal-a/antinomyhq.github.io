@@ -5,5 +5,5 @@ import type {Props} from "@theme/MDXComponents/Li"
 export default function MDXLi(props: Props): ReactNode | undefined {
   // MDX Footnotes have ids such as <li id="user-content-fn-1-953011">
   useBrokenLinks().collectAnchor(props.id)
-  return <li className="text-tailCall-light-100 font-kanit" {...props} />
+  return <li className="text-tailCall-lightMode---neutral-700 dark:text-tailCall-darkMode---neutral-300 font-kanit" {...props} />
 }
