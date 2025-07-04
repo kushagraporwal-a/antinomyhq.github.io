@@ -26,13 +26,17 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
     <span
       ref={spanRef}
       onMouseMove={handleMouseMove}
-      className={`text-transparent bg-clip-text transition-all duration-0 ${className}`}
+      className={`
+        transition-all duration-200
+        bg-clip-text text-transparent 
+        dark:bg-[radial-gradient(closest-side,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0)_100%)]
+        bg-[radial-gradient(closest-side,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)]
+        ${className}
+      `}
       style={{
-        color: "hsla(0, 0%, 100%, 0.2)",
-        backgroundImage: "radial-gradient(closest-side, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)",
-        backgroundRepeat: "no-repeat",
         backgroundSize: `${spotlightSize}px ${spotlightSize}px`,
-        backgroundPosition: showHighlighted ? "left" : "",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: showHighlighted ? "left center" : "",
         ...style,
       }}
     >

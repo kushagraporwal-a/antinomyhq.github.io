@@ -60,7 +60,7 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
             {typeof LogoComponent === "string" ? (
               <img src={LogoComponent} alt={partner.name} className="max-h-7 max-w-[110px] object-contain opacity-70" />
             ) : (
-              <LogoComponent className="max-h-7 max-w-[110px] object-contain opacity-70" />
+              <LogoComponent className="max-h-7 max-w-[110px] object-contain opacity-70 dark:opacity-100" />
             )}
           </>
         )}
@@ -70,7 +70,7 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
 
   return isHorizontal ? (
     <div className="flex items-center gap-5">
-      <span className="hidden lg:block min-w-[200px] font-kanit text-white text-title-small font-normal mt-8">
+      <span className="hidden lg:block min-w-[200px] font-kanit text-tailCall-lightMode---neutral-500 dark:text-white text-title-small font-normal mt-8">
         {title}
       </span>
       <Marquee autoFill>

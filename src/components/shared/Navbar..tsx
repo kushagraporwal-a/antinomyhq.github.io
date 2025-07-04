@@ -5,6 +5,7 @@ import {Flame, Menu, X} from "lucide-react"
 import Link from "@docusaurus/Link"
 import {useLocation} from "@docusaurus/router"
 import {useWindowSize} from "@docusaurus/theme-common"
+import ThemeToggle from "../home/ThemeToggle"
 
 const NewNavbar = (): JSX.Element => {
   const [showNavbar, setShowNavbar] = useState(false)
@@ -20,11 +21,12 @@ const NewNavbar = (): JSX.Element => {
   return (
     <nav className="fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md border-[#171717] p-5 bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] w-full">
       {showNavbar ? (
-        <div className="h-screen bg-black z-[998] flex flex-col">
+        <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-black z-[998] flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center justify-center">
-              <img src="/images/home/logo-light.svg" alt="Logo" width={141} />
+              <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="dark:block hidden" />
+              <img src="/images/home/logo-dark.svg" alt="Logo" width={141} className="flex dark:hidden" />
             </Link>
             <button
               onClick={() => setShowNavbar(false)}
@@ -40,7 +42,9 @@ const NewNavbar = (): JSX.Element => {
               <Link
                 href="/"
                 className={`no-underline ${
-                  location.pathname === "/" ? "text-tailCall-cyan font-bold" : "text-white opacity-50 hover:opacity-100"
+                  location.pathname === "/"
+                    ? "text-tailCall-cyan font-bold"
+                    : "text-tailCall-darkMode---neutral-500 dark:text-white opacity-50 hover:opacity-100"
                 }`}
               >
                 Home
@@ -53,7 +57,7 @@ const NewNavbar = (): JSX.Element => {
                   className={`no-underline ${
                     `${item.link}/` === location.pathname
                       ? "text-tailCall-cyan font-bold"
-                      : "text-white opacity-50 hover:opacity-100"
+                      : "text-tailCall-darkMode---neutral-500 dark:text-white opacity-50 hover:opacity-100"
                   }`}
                 >
                   {item.name}
@@ -69,13 +73,14 @@ const NewNavbar = (): JSX.Element => {
         <div className="flex justify-between">
           <div className="flex gap-5">
             <Link href="/" className="flex items-center justify-center">
-              <img src="/images/home/logo-light.svg" alt="Logo" width={141} />
+              <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="dark:block hidden" />
+              <img src="/images/home/logo-dark.svg" alt="Logo" width={141} className="flex dark:hidden" />
             </Link>
             <ul className="ml-8 hidden xl:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
               {NavbarItems.map((item) => {
                 return (
                   <Link
-                    className="text-white opacity-50 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-white"
+                    className="text-tailCall-lightMode---neutral-500 dark:text-white opacity-50 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-1000 hover:dark:text-white"
                     href={item.link}
                     key={item.name}
                   >
@@ -93,6 +98,7 @@ const NewNavbar = (): JSX.Element => {
               <Button variant="navlink" onClick={() => {}}>
                 <span>Book a Demo</span>
               </Button>
+              <ThemeToggle />
             </div>
             <button
               onClick={() => setShowNavbar(!showNavbar)}
@@ -100,6 +106,9 @@ const NewNavbar = (): JSX.Element => {
             >
               {showNavbar ? <X /> : <Menu />}
             </button>
+            <div className="flex md:hidden">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       )}

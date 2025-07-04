@@ -78,12 +78,11 @@ const TheTeams = (): JSX.Element => {
               <li
                 key={tech}
                 onClick={() => handleTechClick(idx)}
-                className={`hover:opacity-100 cursor-pointer transition-opacity duration-500 ${
-                  idx === activeIdx ? "text-white !opacity-100 font-bold scale-105" : "text-[#737373]"
+                className={`hover:opacity-100 cursor-pointer hover:text-tailCall-light-800 hover:dark:text-white transition-opacity duration-500 font-normal ${
+                  idx === activeIdx
+                    ? "text-tailCall-light-800 dark:text-white dark:!opacity-100"
+                    : "text-tailCall-light-800 opacity-30 dark:text-[#737373]"
                 }`}
-                style={{
-                  fontWeight: idx === activeIdx ? 700 : undefined,
-                }}
               >
                 {tech}
               </li>
@@ -115,7 +114,7 @@ const TheTeams = (): JSX.Element => {
               <div key={title} className="mb-4 border border-gray-700 rounded overflow-hidden">
                 <button
                   onClick={() => handleTechClick(idx)}
-                  className="border-none w-full text-left px-4 py-3 bg-[#18171A] text-white font-semibold flex justify-between items-center"
+                  className="border-none w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
                   <span className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-[#5D5D5D]"}`}>
                     {TECHS[idx]}
@@ -123,7 +122,7 @@ const TheTeams = (): JSX.Element => {
                   <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-[#5D5D5D]" />}</span>
                 </button>
                 {isOpen && (
-                  <div className="bg-[#121212] px-4 py-4">
+                  <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] px-4 py-4">
                     <TechCard title={title} description={descriptions} avatars={avatars} selected={true} />
                   </div>
                 )}

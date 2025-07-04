@@ -8,19 +8,22 @@ import TheBenefits from "./TheBenefits"
 import BuiltFor from "./BuiltFor"
 import TheTeams from "./TheTeams"
 import Footer from "./Footer"
+import {ThemeProvider} from "@site/src/theme/ThemeProvider/ThemeProvider"
 
 const HomePage = (): JSX.Element => {
   return (
-    <div className="relative flex flex-col bg-black">
-      <Navbar />
-      <Banner />
-      <GetStarted />
-      <WhyForge />
-      <TheBenefits />
-      <BuiltFor />
-      <TheTeams />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="relative flex flex-col dark:bg-tailCall-darkMode---neutral-1000 bg-tailCall-lightMode---neutral-50">
+        <Navbar />
+        <Banner />
+        <GetStarted />
+        <WhyForge />
+        <TheBenefits />
+        <BuiltFor />
+        <TheTeams />
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

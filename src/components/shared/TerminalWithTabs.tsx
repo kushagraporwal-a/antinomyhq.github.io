@@ -72,13 +72,13 @@ const TerminalWithTabs = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="relative bg-[#1E1C21] p-[1px] bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-[650px] flex flex-col font-mono">
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-[650px] flex flex-col font-mono">
       {/* Terminal Header */}
       <div className="bg-[#18171A] rounded-2xl text-[#30EDE6] text-sm h-full overflow-scroll relative">
-        <div className="bg-[#18171A] sticky top-0 rounded-t-2xl flex gap-2 items-center p-3">
-          <div className="h-4 w-4 bg-[#D9D9D9] opacity-50 rounded-full"></div>
-          <div className="h-4 w-4 bg-[#D9D9D9] opacity-20 rounded-full"></div>
-          <div className="h-4 w-4 bg-[#D9D9D9] opacity-10 rounded-full"></div>
+        <div className="bg-tailCall-lightMode---neutral-1000 dark:bg-[#18171A] sticky top-0 rounded-t-2xl flex gap-2 items-center p-3">
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-50 rounded-full"></div>
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-20 rounded-full"></div>
+          <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-[#D9D9D9] opacity-10 rounded-full"></div>
         </div>
         <div className="text-white mt-10">
           <img src="/images/terminal.png" alt="Terminal" />

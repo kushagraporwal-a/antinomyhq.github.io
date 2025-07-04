@@ -118,12 +118,16 @@ const WhyForge = (): JSX.Element => {
             return (
               <Card key={idx}>
                 <div
-                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial hover:transition-colors hover:duration-500`}
+                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial hover:transition-colors hover:duration-500`}
                 >
                   <div className="flex flex-col gap-3">
                     <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                    <span className="text-[#A1A1A1] font-kanit text-title-small font-light">{card.title}</span>
-                    <span className="text-white opacity-50 text-title-tiny font-normal">- {card.author}</span>
+                    <span className="text-tailCall-lightMode---neutral-700 dark:text-[#A1A1A1] font-kanit text-title-small font-light">
+                      {card.title}
+                    </span>
+                    <span className="text-tailCall-light-800 dark:text-white opacity-50 text-title-tiny font-normal">
+                      - {card.author}
+                    </span>
                   </div>
                 </div>
               </Card>

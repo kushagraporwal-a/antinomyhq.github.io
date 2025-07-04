@@ -92,12 +92,11 @@ const TheBenefits = (): JSX.Element => {
         className="xl:max-w-[1440px] relative w-full h-[200vh] mt-[500px] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden mb-40"
       >
         <div
-          className="sticky top-0 flex flex-col items-center"
+          className="sticky top-0 flex flex-col items-center bg-white dark:bg-black"
           style={{
             height: `calc(${VISIBLE_HEIGHT * 100}vh + ${HEADING_HEIGHT}px)`,
             overflow: "visible",
             zIndex: 2,
-            background: "black", // or your background
           }}
         >
           <div className="relative">

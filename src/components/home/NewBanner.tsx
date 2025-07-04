@@ -1,16 +1,18 @@
 import React from "react"
 import TrustedByMarquee from "./TrustedByMarquee"
-import {companies} from "@site/src/constants"
+import {companies, companiesLight} from "@site/src/constants"
 import TerminalWithTabs from "../shared/TerminalWithTabs"
 import SpotlightSpan from "./SpotlightCursor"
+import {useThemeContext} from "./ThemeProvider"
 
 const Banner = (): JSX.Element => {
+  const {theme} = useThemeContext()
   return (
     <div className="flex justify-center mt-[66px]">
       <div className="max-w-[1440px] relative px-10 pt-72 md:pt-48 xl:p-0 flex justify-center flex-col w-full h-screen overflow-auto">
         <div className="flex justify-around flex-col lg:flex-row gap-60">
           <div className="flex md:hidden lg:flex flex-col">
-            <p className="text-white font-thin md:font-thin lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
+            <p className="text-tailCall-lightMode---neutral-800 dark:text-white font-thin md:font-thin lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">
@@ -36,7 +38,7 @@ const Banner = (): JSX.Element => {
                 className="absolute top-24 left-16 -tracking-normal text-[118px] opacity-90 font-bebas"
               />
             </div>
-            <p className="absolute left-80 -top-20 text-white font-thin text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
+            <p className="absolute left-80 -top-20 text-tailCall-lightMode---neutral-800 dark:text-white font-thin text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
           </div>
@@ -45,7 +47,11 @@ const Banner = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full px-10 mt-10">
-          <TrustedByMarquee title="Trusted by Engineers" logos={companies} isHorizontal />
+          <TrustedByMarquee
+            title="Trusted by Engineers"
+            logos={theme === "dark" ? companies : companiesLight}
+            isHorizontal
+          />
         </div>
       </div>
     </div>
