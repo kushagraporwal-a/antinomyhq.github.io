@@ -45,7 +45,7 @@ const NewNavbar = (): JSX.Element => {
                 href="/"
                 className={`no-underline ${
                   location.pathname === "/"
-                    ? "text-tailCall-cyan font-bold"
+                    ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
                     : "text-tailCall-darkMode---neutral-400 dark:text-white opacity-80 hover:opacity-100"
                 }`}
               >
@@ -58,7 +58,7 @@ const NewNavbar = (): JSX.Element => {
                   href={item.link}
                   className={`no-underline ${
                     `${item.link}/` === location.pathname
-                      ? "text-tailCall-cyan font-bold dark:text-tailCall-cyan"
+                      ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
                       : "text-tailCall-darkMode---neutral-400 opacity-80 hover:opacity-100"
                   }`}
                 >
@@ -82,10 +82,10 @@ const NewNavbar = (): JSX.Element => {
               {NavbarItems.map((item) => {
                 return (
                   <Link
-                    className={` opacity-80 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
+                    className={` hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
                       `${item.link}/` === location.pathname
-                        ? "font-bold text-tailCall-cyan dark:text-tailCall-cyan"
-                        : "text-tailCall-darkMode---neutral-400 hover:opacity-100"
+                        ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
+                        : "text-tailCall-darkMode---neutral-400 hover:opacity-100 opacity-80"
                     }`}
                     href={item.link}
                     key={item.name}
