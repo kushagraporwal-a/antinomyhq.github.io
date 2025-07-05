@@ -89,7 +89,7 @@ const TheBenefits = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="xl:max-w-[1440px] relative w-full h-[200vh] mt-[500px] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden mb-40"
+        className="xl:max-w-[1440px] relative w-full h-[200vh] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden mb-40"
       >
         <div
           className="sticky top-0 flex flex-col items-center bg-white dark:bg-black"

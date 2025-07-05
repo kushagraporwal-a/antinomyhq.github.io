@@ -12,7 +12,6 @@ const GetStarted = (): JSX.Element => {
   const getStartedRef = useRef(null)
   const withRef = useRef(null)
   const onTerminalRef = useRef(null)
-  const installNowRef = useRef(null)
 
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
@@ -29,8 +28,7 @@ const GetStarted = (): JSX.Element => {
     const getStarted = getStartedRef.current
     const withEl = withRef.current
     const onTerminal = onTerminalRef.current
-    const installNow = installNowRef.current
-    if (!section || !getStarted || !withEl || !onTerminal || !installNow) return
+    if (!section || !getStarted || !withEl || !onTerminal) return
 
     const leftStart = -window.innerWidth
     const leftEnd = window.innerWidth
@@ -40,7 +38,7 @@ const GetStarted = (): JSX.Element => {
     const ctx = gsap.context(() => {
       // Set initial positions
       gsap.set([getStarted, withEl], {x: leftStart})
-      gsap.set([onTerminal, installNow], {x: rightStart})
+      gsap.set([onTerminal], {x: rightStart})
 
       // Animate left group: from left edge, through center, to right edge
       gsap.to([getStarted, withEl], {
@@ -55,7 +53,7 @@ const GetStarted = (): JSX.Element => {
       })
 
       // Animate right group: from right edge, through center, to left edge
-      gsap.to([onTerminal, installNow], {
+      gsap.to([onTerminal], {
         x: rightEnd,
         ease: "none",
         scrollTrigger: {
@@ -141,12 +139,6 @@ const GetStarted = (): JSX.Element => {
                   npm install -g @antinomyhq/forge
                 </span>
               </div>
-              <span
-                ref={installNowRef}
-                className="text-white xl:text-[30px] inline-block w-auto xl:font-normal font-normal font-kanit absolute right-0 -top-10 xl:-top-14 xl:right-0"
-              >
-                Install Now
-              </span>
             </div>
           </div>
         </div>
