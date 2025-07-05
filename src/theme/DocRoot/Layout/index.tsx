@@ -6,6 +6,7 @@ import DocRootLayoutMain from "@theme/DocRoot/Layout/Main"
 import type {Props} from "@theme/DocRoot/Layout"
 
 import styles from "./styles.module.css"
+import clsx from "clsx"
 
 export default function DocRootLayout({children}: Props): JSX.Element {
   const sidebar = useDocsSidebar()
@@ -13,7 +14,7 @@ export default function DocRootLayout({children}: Props): JSX.Element {
   return (
     <div className={styles.docsWrapper}>
       {/* <BackToTopButton /> */}
-      <div className={styles.docRoot}>
+      <div className={clsx(styles.docRoot, "bg-white dark:bg-black")}>
         {sidebar && (
           <DocRootLayoutSidebar
             sidebar={sidebar.items}

@@ -155,7 +155,7 @@ export default function DocSidebarItemCategory({
         })}
       >
         <Link
-          className={"text-tailCall-border-light-100"}
+          className={"text-tailCall-lightMode---neutral-950 dark:text-tailCall-border-light-100"}
           onClick={
             collapsible
               ? (e) => {

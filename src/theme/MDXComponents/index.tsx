@@ -42,7 +42,7 @@ const MDXComponents: MDXComponentsObject = {
   h6: (props: ComponentProps<"h6">) => <MDXHeading as="h6" {...props} />,
   admonition: Admonition,
   mermaid: Mermaid,
-  p: (props: ComponentProps<"p">) => <p className="text-tailCall-lightMode---neutral-700 dark:text-tailCall-darkMode---neutral-300 font-kanit" {...props} />,
+  p: (props: ComponentProps<"p">) => <p className="dark:text-tailCall-darkMode---neutral-300 font-kanit" {...props} />,
   th: CustomTh,
   td: CustomTd,
 }

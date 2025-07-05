@@ -15,7 +15,7 @@ function shouldBeInline(props: Props) {
 
 export default function MDXCode(props: Props): JSX.Element {
   return shouldBeInline(props) ? (
-    <CodeInline {...props} />
+    <CodeInline className="text-white" {...props} />
   ) : (
     <CodeBlock {...(props as ComponentProps<typeof CodeBlock>)} />
   )

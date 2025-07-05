@@ -18,16 +18,22 @@ const NextSteps: React.FC<NextStepsProps> = ({items, className}) => {
   return (
     <div className={clsx("grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-4 my-8", className)}>
       {items.map((item, idx) => (
-        <Link key={idx} to={item.link} className="flex flex-col overflow-hidden !text-white !no-underline h-full">
+        <Link key={idx} to={item.link} className="flex flex-col overflow-visible !no-underline h-full">
           <div className="relative mt-5 bg-card-border-gradient rounded-3xl min-w-auto 2xl:min-w-72 min-h-72 p-[1px]">
-            <div className="flex flex-col flex-1 p-6 gap-2 min-h-44 bg-tailCall-dark-800 rounded-3xl h-full hover:border-tailCall-border-dark-100 transition-colors">
-              <div className="absolute -top-10 mb-2 flex items-center justify-center text-tailCall-light-700 bg-black rounded-full p-5">
-                {item.logo}
+            <div className="flex flex-col flex-1 p-6 gap-2 min-h-44 bg-white dark:bg-tailCall-dark-800 rounded-3xl h-full hover:border-tailCall-border-dark-100 transition-colors">
+              <div className="absolute -top-10 mb-2 rounded-full bg-card-border-gradient p-[1px] flex items-center justify-center">
+                <div className=" flex items-center justify-center text-tailCall-light-700 bg-[#f1f1f1] dark:bg-black rounded-full p-5">
+                  {item.logo}
+                </div>
               </div>
               <div className="flex flex-col flex-1 gap-2 mt-10">
-                <span className="text-title-small font-bold line-clamp-2">{item.title}</span>
+                <span className="text-title-small font-bold line-clamp-2 text-tailCall-lightMode---neutral-600">
+                  {item.title}
+                </span>
                 <ul>
-                  <li className="text-content-small text-tailCall-light-800">{item.subtitle}</li>
+                  <li className="text-content-small text-tailCall-lightMode---neutral-700 dark:text-tailCall-light-800">
+                    {item.subtitle}
+                  </li>
                 </ul>
               </div>
             </div>

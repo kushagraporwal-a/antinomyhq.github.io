@@ -3,9 +3,12 @@ import Link from "@docusaurus/Link"
 import type {Props} from "@theme/PaginatorNavLink"
 import ArrowLeft from "@site/static/icons/basic/circle-arrow-left.svg"
 import ArrowRight from "@site/static/icons/basic/circle-arrow-right.svg"
+import ArrowLeftLight from "@site/static/icons/basic/circle-arrow-left-light.svg"
+import {useThemeContext} from "../ThemeProvider/ThemeProvider"
 
 function NavigatorIcon({isNext}: {isNext: boolean}): JSX.Element {
-  return isNext ? <ArrowRight /> : <ArrowLeft />
+  const {theme} = useThemeContext()
+  return isNext ? <ArrowRight /> : theme === "dark" ? <ArrowLeft /> : <ArrowLeftLight />
 }
 
 export default function PaginatorNavLink(props: Props): JSX.Element {

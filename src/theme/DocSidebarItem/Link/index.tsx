@@ -32,7 +32,7 @@ export default function DocSidebarItemLink({
     >
       <Link
         className={clsx(
-          "text-tailCall-border-light-100 hover:text-white transition-colors duration-200",
+          "hover:dark:text-white transition-colors duration-200",
           "menu__link",
           !isInternalLink && styles.menuExternalLink,
           {
