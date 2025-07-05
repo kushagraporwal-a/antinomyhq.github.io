@@ -30,9 +30,7 @@ class ThemeStorage {
 
     try {
       const cookies = document.cookie.split(";")
-      const themeCookie = cookies.find(cookie => 
-        cookie.trim().startsWith(`${this.COOKIE_NAME}=`)
-      )
+      const themeCookie = cookies.find((cookie) => cookie.trim().startsWith(`${this.COOKIE_NAME}=`))
       if (themeCookie) {
         const theme = themeCookie.split("=")[1] as Theme
         if (theme === "dark" || theme === "light") {
@@ -61,13 +59,16 @@ class ThemeStorage {
 // Apply theme to DOM immediately
 function applyThemeToDOM(theme: Theme): void {
   if (typeof window === "undefined") return
-  
+
   // Add smooth transition class
   document.documentElement.classList.add("theme-transition")
-  
+
   // Apply theme class
   document.documentElement.classList.toggle("dark", theme === "dark")
-  
+  if (theme) {
+    document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light")
+  }
+
   // Remove transition class after animation
   setTimeout(() => {
     document.documentElement.classList.remove("theme-transition")
