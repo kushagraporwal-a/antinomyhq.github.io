@@ -56,6 +56,10 @@ const WhyForge = (): JSX.Element => {
 
     let ctx: gsap.Context | null = null
 
+    function getViewportHeight() {
+      return window.visualViewport?.height || window.innerHeight
+    }
+
     function setupScrollTrigger() {
       if (!section || !cards || !why || !forge) return
 
@@ -73,33 +77,18 @@ const WhyForge = (): JSX.Element => {
       const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0
       const gap = 24 // gap-6 = 24px
       const viewportWidth = window.innerWidth
-      // Calculate total scroll distance to show all cards including the last one fully
+      const viewportHeight = getViewportHeight()
+      // Calculate total scroll distance to center the last card
       const totalCardsWidth = cards.scrollWidth
-      const cardsContainerPadding = 12 // p-3 = 12px
-      // Calculate distance to center the last card on screen
-      // We need to scroll until the last card is centered in the viewport
       const lastCardIndex = cardsData.length - 1
       const lastCardPosition = lastCardIndex * (cardWidth + gap)
       const centerOfViewport = viewportWidth / 2
       const cardCenter = cardWidth / 2
       const totalScroll = lastCardPosition + cardCenter - centerOfViewport
 
-      // Debug logging
-      console.log("Scroll calculation:", {
-        totalCardsWidth,
-        viewportWidth,
-        cardWidth,
-        gap,
-        lastCardIndex,
-        lastCardPosition,
-        centerOfViewport,
-        cardCenter,
-        totalScroll,
-      })
-
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
-        gsap.set([why, forge], {x: -window.innerWidth})
+        gsap.set([why, forge], {x: -viewportWidth})
         gsap.to([why, forge], {
           x: 0,
           ease: "power2.out",
@@ -112,7 +101,7 @@ const WhyForge = (): JSX.Element => {
         })
 
         // Phase 2: Cards slide in from right
-        gsap.set(cards, {x: window.innerWidth})
+        gsap.set(cards, {x: viewportWidth})
         gsap.to(cards, {
           x: 0,
           ease: "power2.out",
@@ -144,9 +133,15 @@ const WhyForge = (): JSX.Element => {
 
     setupScrollTrigger()
     window.addEventListener("resize", setupScrollTrigger)
+    window.addEventListener("orientationchange", setupScrollTrigger)
+    window.addEventListener("resize", () => ScrollTrigger.refresh())
+    window.addEventListener("orientationchange", () => ScrollTrigger.refresh())
 
     return () => {
       window.removeEventListener("resize", setupScrollTrigger)
+      window.removeEventListener("orientationchange", setupScrollTrigger)
+      window.removeEventListener("resize", () => ScrollTrigger.refresh())
+      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh())
       if (ctx) ctx.revert()
     }
   }, [])

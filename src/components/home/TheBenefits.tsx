@@ -23,68 +23,88 @@ const TheBenefits = (): JSX.Element => {
 
     if (!section || !cards) return
 
-    // Use a responsive visibleHeight for mobile and desktop
-    const isMobile = window.innerWidth < 768
-    const visibleHeight = isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.6
-    const cardHeight = cards.children[0]?.clientHeight || 1
-    const gap = 32
-    // Focus point: just before the center of the visible sticky area
-    const focusPoint = (window.innerHeight - visibleHeight) / 2 + visibleHeight * 0.48
-    const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
-    // Add extra scroll on mobile so the last card can move out of focus
-    const extraScroll = isMobile ? visibleHeight * 0.8 : 0
-    // Pin duration: scroll until the last card's center reaches the focus point (no extra scroll)
-    const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
+    function getViewportHeight() {
+      return window.visualViewport?.height || window.innerHeight
+    }
 
-    // Set the height of the section to allow for the scroll hijack
-    section.style.height = `${visibleHeight + totalScroll}px`
+    function setupScrollTrigger() {
+      if (!section || !cards) return
 
-    const ctx = gsap.context(() => {
-      gsap.to(cards, {
-        y: `-${totalScroll}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          onUpdate: (self) => {
-            // Calculate the current y offset (negative)
-            const y = gsap.getProperty(cards, "y") as number
-            // Find the card whose center is closest to the focus point
-            let minDist = Infinity
-            let focusIdx = 0
-            cardRefs.current.forEach((el, idx) => {
-              if (!el) return
-              // Get the card's center position relative to the viewport
-              const rect = el.getBoundingClientRect()
-              const cardCenter = rect.top + rect.height / 2
-              const dist = Math.abs(cardCenter - focusPoint)
-              if (dist < minDist) {
-                minDist = dist
-                focusIdx = idx
-              }
-            })
-            setFocusedIdx(focusIdx)
+      // Use a responsive visibleHeight for mobile and desktop
+      const isMobile = window.innerWidth < 768
+      const viewportHeight = getViewportHeight()
+      const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
+      const cardHeight = cards.children[0]?.clientHeight || 1
+      const gap = 32
+      // Focus point: just before the center of the visible sticky area
+      const focusPoint = (viewportHeight - visibleHeight) / 2 + visibleHeight * 0.48
+      const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
+      // Add extra scroll on mobile so the last card can move out of focus
+      const extraScroll = isMobile ? visibleHeight * 0.8 : 0
+      // Pin duration: scroll until the last card's center reaches the focus point (no extra scroll)
+      const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
+
+      // Set the height of the section to allow for the scroll hijack
+      section.style.height = `${visibleHeight + totalScroll}px`
+
+      const ctx = gsap.context(() => {
+        gsap.to(cards, {
+          y: `-${totalScroll}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${totalScroll}`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            onUpdate: (self) => {
+              // Calculate the current y offset (negative)
+              const y = gsap.getProperty(cards, "y") as number
+              // Find the card whose center is closest to the focus point
+              let minDist = Infinity
+              let focusIdx = 0
+              cardRefs.current.forEach((el, idx) => {
+                if (!el) return
+                // Get the card's center position relative to the viewport
+                const rect = el.getBoundingClientRect()
+                const cardCenter = rect.top + rect.height / 2
+                const dist = Math.abs(cardCenter - focusPoint)
+                if (dist < minDist) {
+                  minDist = dist
+                  focusIdx = idx
+                }
+              })
+              setFocusedIdx(focusIdx)
+            },
           },
-        },
-      })
+        })
 
-      gsap.to(".circle-logo", {
-        rotation: 360,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: true,
-        },
-      })
-    }, section)
+        gsap.to(".circle-logo", {
+          rotation: 360,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${totalScroll}`,
+            scrub: true,
+          },
+        })
+      }, section)
+    }
 
-    return () => ctx.revert() // cleanup
+    setupScrollTrigger()
+    window.addEventListener("resize", setupScrollTrigger)
+    window.addEventListener("orientationchange", setupScrollTrigger)
+    window.addEventListener("resize", () => ScrollTrigger.refresh())
+    window.addEventListener("orientationchange", () => ScrollTrigger.refresh())
+
+    return () => {
+      window.removeEventListener("resize", setupScrollTrigger)
+      window.removeEventListener("orientationchange", setupScrollTrigger)
+      window.removeEventListener("resize", () => ScrollTrigger.refresh())
+      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh())
+    }
   }, [])
 
   return (
