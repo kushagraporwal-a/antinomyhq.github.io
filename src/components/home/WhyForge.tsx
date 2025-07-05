@@ -58,10 +58,10 @@ const WhyForge = (): JSX.Element => {
 
     function setupScrollTrigger() {
       if (!section || !cards || !why || !forge) return
-      
+
       // Kill any existing animations
       gsap.killTweensOf([cards, why, forge])
-      ScrollTrigger.getAll().forEach(trigger => {
+      ScrollTrigger.getAll().forEach((trigger) => {
         if (trigger.vars.trigger === section) {
           trigger.kill()
         }
@@ -83,9 +83,9 @@ const WhyForge = (): JSX.Element => {
       const centerOfViewport = viewportWidth / 2
       const cardCenter = cardWidth / 2
       const totalScroll = lastCardPosition + cardCenter - centerOfViewport
-      
+
       // Debug logging
-      console.log('Scroll calculation:', {
+      console.log("Scroll calculation:", {
         totalCardsWidth,
         viewportWidth,
         cardWidth,
@@ -94,12 +94,12 @@ const WhyForge = (): JSX.Element => {
         lastCardPosition,
         centerOfViewport,
         cardCenter,
-        totalScroll
+        totalScroll,
       })
 
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
-        gsap.set([why, forge], { x: -window.innerWidth })
+        gsap.set([why, forge], {x: -window.innerWidth})
         gsap.to([why, forge], {
           x: 0,
           ease: "power2.out",
@@ -112,7 +112,7 @@ const WhyForge = (): JSX.Element => {
         })
 
         // Phase 2: Cards slide in from right
-        gsap.set(cards, { x: window.innerWidth })
+        gsap.set(cards, {x: window.innerWidth})
         gsap.to(cards, {
           x: 0,
           ease: "power2.out",
@@ -136,8 +136,8 @@ const WhyForge = (): JSX.Element => {
             // Move cards horizontally based on scroll progress
             const progress = self.progress
             const xOffset = -progress * totalScroll
-            gsap.set(cards, { x: xOffset })
-          }
+            gsap.set(cards, {x: xOffset})
+          },
         })
       }, section)
     }
@@ -162,22 +162,22 @@ const WhyForge = (): JSX.Element => {
             <SpotlightSpan
               showHighlighted
               text="WHY THEY LOVE"
-              className="absolute top-[-70px] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
+              className="absolute -top-[70px] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
             />
           </div>
           <div ref={forgeRef}>
             <SpotlightSpan
               text="FORGE CODE"
-              className="absolute top-[0px] sm:top-[23px] md:top-[35px]  left-[15%] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
+              className="absolute -top-2 lg:top-4 xl:top-14 sm:top-[23px] md:top-4 left-[15%] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
             />
           </div>
         </div>
-        <div ref={cardsRef} className="flex gap-6 p-3 mt-20 xl:mt-32">
+        <div ref={cardsRef} className="flex gap-6 p-3 mt-5 md:mt-16 lg:mt-[4.4rem] xl:mt-[8.5rem]">
           {cardsData.map((card, idx) => {
             return (
               <Card key={idx}>
                 <div
-                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial hover:transition-colors hover:duration-500`}
+                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500`}
                 >
                   <div className="flex flex-col gap-3">
                     <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
