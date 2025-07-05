@@ -110,8 +110,12 @@ const TerminalWithTabs = (): JSX.Element => {
               backgroundImage: "linear-gradient(90deg, rgba(37, 37, 37, 1) 0%, rgba(139, 139, 139, 1) 100%)",
             }}
           >
-            <div className="bg-[#E2ECD5] dark:bg-tailCall-dark-1600 rounded-lg px-6 max-h-max">
-              <img src="/images/home/terminal-text-icon.svg" alt="text" className="absolute left-0 h-fill-available" />
+            <div className="bg-[#E2ECD5] dark:bg-tailCall-dark-1600 rounded-lg px-6 max-h-max relative">
+              <img
+                src="/images/home/terminal-text-icon.svg"
+                alt="text"
+                className="absolute left-0 h-fill-available top-0"
+              />
               <span className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-dark-1700 font-space text-title-tiny font-normal">
                 {typedText}
               </span>
