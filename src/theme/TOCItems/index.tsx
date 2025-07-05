@@ -39,7 +39,7 @@ export default function TOCItems({
   useTOCHighlight(tocHighlightConfig)
 
   return (
-    <div className="flex flex-col gap-3 bg-white dark:bg-black p-2">
+    <div className="flex flex-col gap-3 pt-0 bg-white dark:bg-black p-2">
       <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400">
         On this page
       </span>

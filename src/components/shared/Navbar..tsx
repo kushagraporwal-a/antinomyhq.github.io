@@ -19,7 +19,9 @@ const NewNavbar = (): JSX.Element => {
   }, [windowSize])
 
   return (
-    <nav className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 border-[#171717] p-5 w-full ${location.pathname!== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}>
+    <nav
+      className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 border-[#171717] p-5 w-full ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}
+    >
       {showNavbar ? (
         <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 z-[998] flex flex-col">
           {/* Header */}
@@ -76,15 +78,15 @@ const NewNavbar = (): JSX.Element => {
               <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="dark:block hidden" />
               <img src="/images/home/logo-dark.svg" alt="Logo" width={141} className="flex dark:hidden" />
             </Link>
-            <ul className="ml-8 hidden md:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
+            <ul className="xl:ml-8 hidden md:flex font-kanit list-none items-center p-0 m-0 gap-SPACE_07 text-white font-normal text-title-small cursor-pointer">
               {NavbarItems.map((item) => {
                 return (
                   <Link
                     className={` opacity-80 hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
-                    `${item.link}/` === location.pathname
-                      ? "font-bold text-tailCall-cyan dark:text-tailCall-cyan"
-                      : "text-tailCall-darkMode---neutral-400 hover:opacity-100"
-                  }`}
+                      `${item.link}/` === location.pathname
+                        ? "font-bold text-tailCall-cyan dark:text-tailCall-cyan"
+                        : "text-tailCall-darkMode---neutral-400 hover:opacity-100"
+                    }`}
                     href={item.link}
                     key={item.name}
                   >

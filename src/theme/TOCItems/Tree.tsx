@@ -5,12 +5,12 @@ import clsx from "clsx"
 import styles from "./tocTree.module.css" // ⬅️ add a CSS file like this
 
 type Props = {
-  toc: any[];
-  className?: string;
-  linkClassName?: string;
-  linkActiveClassName?: string;
-  isChild?: boolean;
-};
+  toc: any[]
+  className?: string
+  linkClassName?: string
+  linkActiveClassName?: string
+  isChild?: boolean
+}
 
 function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChild}: Props): JSX.Element | null {
   const [activeId, setActiveId] = useState<string | null>(null)
@@ -38,14 +38,20 @@ function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChil
 
         return (
           <li className={clsx(styles.item)} key={heading.id}>
-            <div className={clsx(styles.dot, isActive ? "bg-tailCall-cyan" : "bg-gray-600")} />
+            <div className={clsx("lg:hidden xl:block", styles.dot, isActive ? "bg-tailCall-cyan" : "bg-gray-600")} />
             {!isLast && <div className={styles.line} />}
             <Link
               to={`#${heading.id}`}
               className={clsx(linkClassName, isActive && linkActiveClassName)}
               dangerouslySetInnerHTML={{__html: heading.value}}
             />
-            <TOCItemTree isChild toc={heading.children} className={className} linkClassName={linkClassName} linkActiveClassName={linkActiveClassName} />
+            <TOCItemTree
+              isChild
+              toc={heading.children}
+              className={className}
+              linkClassName={linkClassName}
+              linkActiveClassName={linkActiveClassName}
+            />
           </li>
         )
       })}
