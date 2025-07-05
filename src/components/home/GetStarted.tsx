@@ -75,7 +75,7 @@ const GetStarted = (): JSX.Element => {
 
   return (
     <div ref={sectionRef} className={clsx("flex justify-center overflow-x-hidden", "get-started-section")}>
-      <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
+      <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-[600px] md:h-screen">
         <div className="flex flex-col gap-3 relative">
           <div ref={getStartedRef}>
             <SpotlightSpan

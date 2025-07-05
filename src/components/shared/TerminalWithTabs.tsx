@@ -79,19 +79,16 @@ const TerminalWithTabs = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-[650px] flex flex-col font-mono">
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-[auto] min-h-[650px] flex flex-col font-mono">
       {/* Terminal Header */}
       <div className="bg-[#E8E8E8] dark:bg-tailCall-darkMode---neutral-900 w-full rounded-t-2xl flex gap-2 items-center p-3">
         <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300 rounded-full"></div>
         <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1400 rounded-full"></div>
         <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-darkMode---primary-400 rounded-full"></div>
       </div>
-      <div
-        ref={containerRef}
-        className="bg-white dark:bg-tailCall-dark-1500 rounded-b-2xl text-sm h-full overflow-y-scroll relative"
-      >
-        <img src="/images/home/forgecode.gif" alt="Terminal" className="-ml-10 hidden dark:block" />
-        <img src="/images/home/forgecode-light.gif" alt="Terminal" className="-ml-10 block dark:hidden" />
+      <div ref={containerRef} className="bg-white dark:bg-tailCall-dark-1500 rounded-b-2xl text-sm h-full relative">
+        <img src="/images/home/forgecode.gif" alt="Terminal" className="ml-0 hidden dark:block" />
+        <img src="/images/home/forgecode-light.gif" alt="Terminal" className="ml-0 block dark:hidden" />
         {GUIDES.map(({title, details}) => {
           return (
             <div className="flex list-none ml-5 w-full">
