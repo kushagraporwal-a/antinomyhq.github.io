@@ -90,14 +90,15 @@ const TerminalWithTabs = (): JSX.Element => {
         ref={containerRef}
         className="bg-white dark:bg-tailCall-dark-1500 rounded-b-2xl text-sm h-full overflow-y-scroll relative"
       >
-        <img src="/images/home/forgecode.gif" alt="Terminal" className="-ml-10" />
+        <img src="/images/home/forgecode.gif" alt="Terminal" className="-ml-10 hidden dark:block" />
+        <img src="/images/home/forgecode-light.gif" alt="Terminal" className="-ml-10 block dark:hidden" />
         {GUIDES.map(({title, details}) => {
           return (
             <div className="flex list-none ml-5 w-full">
-              <span className="text-black dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block">
+              <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block">
                 {title}
               </span>
-              <span className="text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px]">
+              <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px]">
                 {details}
               </span>
             </div>
@@ -112,15 +113,17 @@ const TerminalWithTabs = (): JSX.Element => {
               backgroundImage: "linear-gradient(90deg, rgba(37, 37, 37, 1) 0%, rgba(139, 139, 139, 1) 100%)",
             }}
           >
-            <div className="bg-tailCall-dark-1600 rounded-lg px-6 max-h-max">
+            <div className="bg-[#E2ECD5] dark:bg-tailCall-dark-1600 rounded-lg px-6 max-h-max">
               <img src="/images/home/terminal-text-icon.svg" alt="text" className="absolute left-0 h-fill-available" />
-              <span className="text-tailCall-dark-1700 font-space text-title-tiny">{typedText}</span>
+              <span className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-dark-1700 font-space text-title-tiny font-normal">
+                {typedText}
+              </span>
               {startTyping && <span className="animate-pulse">|</span>}{" "}
             </div>
           </div>
           <div className="mt-3 space-y-1">
             {lines.map((line, idx) => (
-              <div key={idx} className="text-tailCall-lightMode---neutral-600 dark:text-[#B0BEC5]">
+              <div key={idx} className="text-[#525252] dark:text-[#B0BEC5]">
                 {line?.includes("README") ? (
                   <span className="text-blue-400 underline cursor-pointer">{line}</span>
                 ) : (
