@@ -34,7 +34,7 @@ const TheTeams = (): JSX.Element => {
       // Distance from top of cards to center of last card
       const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2
       // Focus point is center of visible area (sticky container)
-      const focusPoint = visibleHeight / 1.48
+      const focusPoint = visibleHeight / 4
       // The scroll needed to bring last card's center to focus point
       totalScroll = lastCardCenter - focusPoint
     } else {
@@ -88,7 +88,7 @@ const TheTeams = (): JSX.Element => {
   }
 
   return (
-    <div ref={sectionRef} className="flex justify-center z-[99] h-[100%] h-md-screen overflow-visible">
+    <div ref={sectionRef} className="flex justify-center z-[99] h-screen overflow-visible">
       <div className="max-w-[1440px] relative flex flex-col w-full lg:flex-row justify-between px-5 mt-32 md:px-20 xl:px-24 xl:py-28">
         <div className="flex lg:flex-col gap-32">
           <div className=" flex flex-col">
