@@ -34,7 +34,7 @@ const TheTeams = (): JSX.Element => {
       // Distance from top of cards to center of last card
       const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2
       // Focus point is center of visible area (sticky container)
-      const focusPoint = visibleHeight / 4
+      const focusPoint = visibleHeight / 1.48
       // The scroll needed to bring last card's center to focus point
       totalScroll = lastCardCenter - focusPoint
     } else {
