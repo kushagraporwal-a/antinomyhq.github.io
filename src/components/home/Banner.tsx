@@ -36,8 +36,6 @@ const Banner = (): JSX.Element => {
               onClick={() => analyticsHandler("Home Page", "Click", "Get Started")}
             />
           </div> */}
-
-          
         </div>
       </Section>
     </main>
