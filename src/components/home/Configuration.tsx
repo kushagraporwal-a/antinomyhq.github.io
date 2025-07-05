@@ -14,7 +14,7 @@ const Configuration = (): JSX.Element => {
       <div className="flex flex-col justify-center gap-10 lg:flex-row">
         <div className="max-w-2xl">
           <Heading as="h2" className="text-title-large sm:text-display-tiny lg:text-display-small mb-SPACE_04">
-            Get <span className="rounded-lg px-SPACE_02 bg-tailCall-yellow">Started</span>
+            Get started
           </Heading>
           <p className="text-content-small sm:text-content-medium mb-SPACE_06">
             Install Forge globally and get started in seconds.
