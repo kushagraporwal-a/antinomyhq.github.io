@@ -86,14 +86,16 @@ body {
   --ifm-code-padding-horizontal: 0.1em;
   --ifm-code-padding-vertical: 0em;
   --ifm-pre-background: var(--ifm-code-background);
-  --docusaurus-highlighted-code-line-bg: #282828;
+  --docusaurus-highlighted-code-line-bg: #282828;  
 }
 
 code {
-  border: 1px solid #555;
+  border: 1px dashed #555;
   letter-spacing: 0.00001px;
-  vertical-align: baseline;
-  color: #e6e6e6;
+  vertical-align: baseline;  
+  background-color: #EEE;
+  border-radius: 0;
+  padding: 2px 6px;  
 }
 
 input[type="radio"] {
@@ -948,12 +950,11 @@ span.token.tag.script.language-javascript {
 }
 
 pre.main-install-command {
-  background-color: rgb(48, 48, 55);
-  color: #eee;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
-  border-radius: 1rem;
   font-family: var(--ifm-font-family-monospace);
+  border-radius: 0;
+  color: #f5f3eb;
 }
 /* Fix details element background to match theme */
 details {
