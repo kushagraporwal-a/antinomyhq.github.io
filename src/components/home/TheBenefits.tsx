@@ -92,7 +92,7 @@ const TheBenefits = (): JSX.Element => {
         className="xl:max-w-[1440px] relative w-full h-[200vh] flex flex-col pt-10 z-10 xl:pt-60 overflow-hidden mb-40"
       >
         <div
-          className="sticky top-0 flex flex-col items-center bg-white dark:bg-black"
+          className="sticky top-0 flex flex-col items-center bg-[#F1F1F1] dark:bg-black"
           style={{
             height: `calc(${VISIBLE_HEIGHT * 100}vh + ${HEADING_HEIGHT}px)`,
             overflow: "visible",
@@ -114,7 +114,7 @@ const TheBenefits = (): JSX.Element => {
           />
           <SpotlightSpan
             text="BENEFITS"
-            className="absolute top-40 xl:top-52 left-24 xl:left-60 xl:leading-[133px] font-bebas text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
+            className="absolute top-36 md:top-[10.5rem] md:left-28 xl:top-52 left-24 xl:left-60 xl:leading-[133px] font-bebas text-display-medium md:text-display-large xl:text-[142px] font-normal md:font-normal -tracking-normal"
           />
           <div
             className="absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-auto right-10 lg:right-20 top-[500px] flex flex-col items-center"

@@ -75,14 +75,14 @@ const GetStarted = (): JSX.Element => {
 
   return (
     <div ref={sectionRef} className={clsx("flex justify-center overflow-x-hidden", "get-started-section")}>
-      <div className="relative max-w-[1440px] w-full p-5 md:px-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
+      <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-screen">
         <div className="flex flex-col gap-3 relative">
           <div ref={getStartedRef}>
             <SpotlightSpan
               showHighlighted
               text="GET STARTED"
               className={clsx(
-                "absolute top-0 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+                "absolute top-2 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
               )}
             />
           </div>
@@ -90,7 +90,7 @@ const GetStarted = (): JSX.Element => {
             <SpotlightSpan
               text="with"
               className={clsx(
-                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]"
+                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]",
               )}
             />
           </div>
@@ -102,13 +102,13 @@ const GetStarted = (): JSX.Element => {
             <SpotlightSpan
               text="ON YOUR TERMINAL"
               className={clsx(
-                "absolute top-28 left-24 sm:left-40 md:top-40 xl:top-64 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal"
+                "absolute top-20 left-10 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
               )}
             />
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="flex flex-col gap-5 absolute top-60 md:top-80 xl:top-[600px] xl:left-[550px] min-w-fill md:w-fit xl:min-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
+          <div className="flex flex-col gap-5 absolute top-80 md:top-96 lg:top-96 xl:top-[600px] xl:left-[550px] min-w-fill md:w-fit xl:min-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
             <div className="bg-tailCall-lightMode---neutral-200 dark:bg-[#1E1C21] flex flex-col rounded-2xl relative">
               <div className="flex items-center gap-1 px-4 py-3 bg-tailCall-lightMode---neutral-300 dark:bg-[#18171A] rounded-t-2xl">
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-50"></div>
