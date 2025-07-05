@@ -184,7 +184,7 @@ const WhyForge = (): JSX.Element => {
                     <span className="text-tailCall-lightMode---neutral-700 dark:text-[#A1A1A1] font-kanit text-title-small font-light">
                       {card.title}
                     </span>
-                    <span className="text-tailCall-light-800 dark:text-white opacity-50 text-title-tiny font-normal">
+                    <span className="text-tailCall-light-500 dark:text-white opacity-50 text-title-tiny font-normal">
                       - {card.author}
                     </span>
                   </div>

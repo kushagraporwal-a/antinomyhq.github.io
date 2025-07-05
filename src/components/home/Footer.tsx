@@ -45,7 +45,7 @@ const Footer = (): JSX.Element => {
           Copyright © {new Date().getFullYear()} Tailcall, Inc.
         </span>
       </div>
-      <div className="bg-tailCall-cyan h-2 w-full absolute left-0 bottom-0 z-50"></div>
+      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-2 w-full absolute left-0 bottom-0 z-50"></div>
     </footer>
   )
 }

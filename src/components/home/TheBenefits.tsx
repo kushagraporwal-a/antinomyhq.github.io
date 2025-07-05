@@ -23,16 +23,18 @@ const TheBenefits = (): JSX.Element => {
 
     if (!section || !cards) return
 
-    // Calculate the scroll distance: total height of cards minus the visible area
+    // Use a responsive visibleHeight for mobile and desktop
     const isMobile = window.innerWidth < 768
-    const visibleHeight = window.innerHeight * 0.6
+    const visibleHeight = isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.6
     const cardHeight = cards.children[0]?.clientHeight || 1
     const gap = 32
     // Focus point: just before the center of the visible sticky area
     const focusPoint = (window.innerHeight - visibleHeight) / 2 + visibleHeight * 0.48
     const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
+    // Add extra scroll on mobile so the last card can move out of focus
+    const extraScroll = isMobile ? visibleHeight * 0.8 : 0
     // Pin duration: scroll until the last card's center reaches the focus point (no extra scroll)
-    const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset
+    const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
 
     // Set the height of the section to allow for the scroll hijack
     section.style.height = `${visibleHeight + totalScroll}px`

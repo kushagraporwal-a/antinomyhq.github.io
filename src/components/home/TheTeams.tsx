@@ -34,7 +34,7 @@ const TheTeams = (): JSX.Element => {
       // Distance from top of cards to center of last card
       const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2
       // Focus point is center of visible area (sticky container)
-      const focusPoint = visibleHeight / 2
+      const focusPoint = visibleHeight / 4
       // The scroll needed to bring last card's center to focus point
       totalScroll = lastCardCenter - focusPoint
     } else {
@@ -50,7 +50,7 @@ const TheTeams = (): JSX.Element => {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top 20%",
+          start: "top 10%",
           end: () => `+=${totalScroll}`,
           scrub: true,
           pin: true,
@@ -121,7 +121,7 @@ const TheTeams = (): JSX.Element => {
         </div>
         <div
           ref={cardsContainerRef}
-          className="hidden xl:h-auto lg:overflow-scroll lg:flex flex-col gap-10 xl:overflow-hidden"
+          className="hidden xl:h-auto lg:overflow-scroll lg:flex flex-col gap-10 xl:overflow-hidden pt-[15px]"
         >
           {TechDetails.map(({title, descriptions, avatars}, idx) => (
             <div
