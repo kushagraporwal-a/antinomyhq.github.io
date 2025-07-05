@@ -130,7 +130,7 @@ const TheBenefits = (): JSX.Element => {
             style={{height: "60vh", overflow: "visible"}} // set visible area
           >
             <div ref={cardsRef} className="flex flex-col gap-8">
-              {BENEFITS.map(({title, description, imageUrl = ""}, idx) => (
+              {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
                 <div
                   key={title}
                   ref={(el) => (cardRefs.current[idx] = el)}
@@ -141,7 +141,7 @@ const TheBenefits = (): JSX.Element => {
                     zIndex: idx === focusedIdx ? 10 : 1,
                   }}
                 >
-                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} />
+                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
                 </div>
               ))}
             </div>

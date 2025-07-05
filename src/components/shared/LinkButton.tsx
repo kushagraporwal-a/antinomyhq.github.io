@@ -62,7 +62,8 @@ const LinkButton = ({
         gridClasses: "hidden",
       },
       [Theme.Tailcall]: {
-        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
+        classes:
+          "bg-tailCall-lightMode---primary-400 border border-solid text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
         gridClasses: "",
       },
     }

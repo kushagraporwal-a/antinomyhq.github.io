@@ -99,12 +99,14 @@ body {
   --ifm-link-color-100: #FFFFFF;
   --ifm-menu-link-100: #A1A1A1;
   --ifm-menu-link-active: #000000; 
+  --ifm-hr: #666666;
 }
 
 [data-theme='dark'] {
   --ifm-link-color-100: #000000;
   --ifm-menu-link-100: #FFFFFF;
   --ifm-menu-link-active: #FFFFFF; 
+  --ifm-hr: #4B4B4B;
 }
 
 code {
@@ -169,6 +171,10 @@ input[type="radio"]:checked::before {
 
 .benefits-drop-shadow:hover {
   box-shadow: 0px 14px 24px 0px rgba(250, 234, 90, 0.1);
+}
+
+hr {
+  background-color: var(--ifm-hr);
 }
 
 .menu__list-item-collapsible:hover {

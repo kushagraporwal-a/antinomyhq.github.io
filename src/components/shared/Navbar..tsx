@@ -84,7 +84,7 @@ const NewNavbar = (): JSX.Element => {
                   <Link
                     className={` hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
                       `${item.link}/` === location.pathname
-                        ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
+                        ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
                         : "text-tailCall-darkMode---neutral-400 hover:opacity-100 opacity-80"
                     }`}
                     href={item.link}
@@ -99,10 +99,14 @@ const NewNavbar = (): JSX.Element => {
           <div className="flex justify-between w-auto md:p-0 items-center md:self-end gap-3">
             <div className="hidden md:flex items-center gap-3">
               <Button variant="navlink" onClick={() => {}}>
-                <span>Signup</span>
+                <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
+                  Signup
+                </span>
               </Button>
               <Button variant="navlink" onClick={() => {}}>
-                <span>Book a Demo</span>
+                <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
+                  Book a Demo
+                </span>
               </Button>
               <ThemeToggle />
             </div>

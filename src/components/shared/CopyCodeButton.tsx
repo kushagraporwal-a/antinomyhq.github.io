@@ -20,14 +20,26 @@ const CopyCodeButton = (): JSX.Element => {
   return (
     <Button variant="transparent" onClick={handleCopy}>
       <div className="group">
-        <div className="relative flex w-fit items-center group group-hover:bg-[#30EDE6] transition-colors duration-500 rounded-2xl cursor-pointer">
-          <img src="/images/home/curly-open.svg" alt="curly open" className="group-hover:absolute -left-1" />
-          <span className="text-[#30EDE6] group-hover:text-black group-hover:hidden text-[20px]">Try Now</span>
+        <div className="relative flex w-fit items-center group group-hover:bg-tailCall-dark-1800 group-hover:dark:bg-[#30EDE6] transition-colors duration-500 rounded-2xl cursor-pointer">
+          <img
+            src="/images/home/curly-open.svg"
+            alt="curly open"
+            className="dark:block hidden group-hover:absolute -left-1"
+          />
+          <img
+            src="/images/home/curly-open-light.svg"
+            alt="curly open"
+            className="dark:hidden block group-hover:absolute -left-1"
+          />
+          <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
+            Try Now
+          </span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
             npm install -g @antinomyhq/forge
           </span>
           {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck />}
-          <img src="/images/home/curly-close.svg" alt="curly close" className="-mr-1" />
+          <img src="/images/home/curly-close.svg" alt="curly close" className="dark:block hidden -mr-1" />
+          <img src="/images/home/curly-close-light.svg" alt="curly close" className="dark:hidden block -mr-1" />
         </div>
       </div>
     </Button>
