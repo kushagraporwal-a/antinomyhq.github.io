@@ -149,7 +149,7 @@ const TheBenefits = (): JSX.Element => {
           />
           <div
             className="absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-auto right-10 lg:right-20 top-[500px] flex flex-col items-center"
-            style={{height: "60vh", overflow: "visible"}} // set visible area
+            style={{height: "100%", overflow: "visible"}} // set visible area
           >
             <div ref={cardsRef} className="flex flex-col gap-8">
               {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
