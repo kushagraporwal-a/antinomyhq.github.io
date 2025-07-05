@@ -148,7 +148,7 @@ module.exports = {
         "fill-available": "-webkit-fill-available",
       },
       backgroundImage: {
-        "custom-radial": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.40) 100%)",
+        "custom-radial": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0) 100%)",
         "card-border-gradient":
           "linear-gradient(180deg, rgba(60, 227, 221, 1) 0%, rgba(77, 77, 77, 1) 86%, rgba(26, 82, 81, 1) 100%)",
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
@@ -158,7 +158,10 @@ module.exports = {
           "linear-gradient(135deg, rgba(62, 62, 62, 1) 0%, rgba(50, 208, 202, 1) 51%, rgba(102, 102, 102, 1) 100%)",
         "benefit-light-background": "linear-gradient(180deg, #FFF 0%, #E5E5E5 100%)",
         "gradient-custom-diagonal": "linear-gradient(135deg, rgba(0, 206, 201, 1) 0%, rgba(38, 38, 38, 1) 100%)",
-        "custom-radial-light": "radial-gradient(58.31% 58.31% at 50% 100%, #30EDE6 0%, rgba(255, 255, 255, 0.4) 100%)",
+        "custom-radial-light": "radial-gradient(58.31% 50.31% at 50% 100%, #30EDE6 0%, rgba(255, 255, 255, 0.4) 100%)",
+        "custom-dark-gradient-blog-border":
+          "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
+        "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
       },
     },
     fontFamily: {
