@@ -2,6 +2,7 @@ import React from "react"
 import {useThemeConfig} from "@docusaurus/theme-common"
 import {useNavbarMobileSidebar} from "@docusaurus/theme-common/internal"
 import NavbarItem, {type Props as NavbarItemConfig} from "@theme/NavbarItem"
+import LoginButton from "@site/src/components/shared/LoginButton"
 
 const useNavbarItems = () => {
   // TODO temporary casting until ThemeConfig type is improved (added by docusaurus)
@@ -21,6 +22,9 @@ const NavbarMobilePrimaryMenu = (): JSX.Element => {
       {items.map((item, i) => (
         <NavbarItem mobile {...item} onClick={() => mobileSidebar.toggle()} key={i} />
       ))}
+      <li className="menu__list-item">
+        <LoginButton mobile />
+      </li>
     </ul>
   )
 }

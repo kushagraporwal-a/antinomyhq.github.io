@@ -443,6 +443,31 @@ input[type="radio"]:checked::before {
   opacity: 1;
 }
 
+.header-button.header-button-login {
+  padding: 0 1rem;
+  margin-left: 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  font-size: 0.875rem;
+  height: 2.75rem;
+  background: transparent;
+  transition: all 0.2s ease;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.header-button.header-button-login:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  background: var(--ifm-color-primary-lightest);
+}
+
 .header-button.header-button-discord {
   padding: 0 1rem;
 }
@@ -653,6 +678,11 @@ nav.menu {
     display: none !important;
   }
 
+  /* Hide Login button from main navbar on mobile */
+  .navbar__items--right .header-button-login {
+    display: none !important;
+  }
+
   /* Style GitHub button in mobile menu */
   .menu__list-item .header-button-github {
     display: flex;
@@ -678,6 +708,34 @@ nav.menu {
     text-decoration: none;
     transform: none;
     box-shadow: none;
+  }
+
+  /* Style Login button in mobile menu */
+  .menu__list-item .header-button-login {
+    display: flex;
+    width: auto;
+    max-width: 140px;
+    height: auto;
+    padding: 0.75rem 1rem;
+    margin: 0 auto 1rem auto;
+    border: 1px solid var(--ifm-color-primary);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ifm-color-primary);
+    font-weight: var(--ifm-font-weight-bold);
+    text-decoration: none;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu__list-item .header-button-login:hover {
+    border-color: var(--ifm-color-primary-dark);
+    color: var(--ifm-color-primary-dark);
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    background: var(--ifm-color-primary-lightest);
   }
 
   .navbar__item.navbar__item {
