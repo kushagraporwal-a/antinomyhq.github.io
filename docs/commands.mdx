@@ -11,31 +11,19 @@ Forge offers several built-in commands to enhance your interaction. These comman
 
 ## Available Commands
 
-<details>
-<summary><code>/new</code> - Start a new task when you've completed your current one</summary>
+### /new
+
+Start a new task when you've completed your current one.
 
 The `/new` command clears the current conversation context and starts a fresh task. This is useful when you've completed your current task and want to begin something entirely different.
 
-**Usage:**
-
-```
-/new
-```
-
 **When to use:** Use this when switching between unrelated tasks to ensure a clean context.
 
-</details>
+### /info
 
-<details>
-<summary><code>/info</code> - View environment summary, logs folder location, and command history</summary>
+View environment summary, logs folder location, and command history.
 
 The `/info` command displays information about your environment, including system details, logs location, and command history.
-
-**Usage:**
-
-```
-/info
-```
 
 This will display information about your environment including:
 
@@ -47,18 +35,11 @@ This will display information about your environment including:
 
 **When to use:** Use this when you need to troubleshoot, find log files, or review your recent commands.
 
-</details>
+### /model
 
-<details>
-<summary><code>/model</code> - Select and set a specific model in your forge.yaml configuration</summary>
+Select and set a specific model in your forge.yaml configuration.
 
 The `/model` command allows you to interactively select from available AI models and set your preferred model in the project's forge.yaml configuration file.
-
-**Usage:**
-
-```
-/model
-```
 
 This will:
 
@@ -70,18 +51,11 @@ The model choice will persist between sessions as it's stored in your configurat
 
 **When to use:** Use this when you want to change which AI model Forge uses for processing your requests.
 
-</details>
+### /agent
 
-<details>
-<summary><code>/agent</code> - Select and switch between available agents</summary>
+Select and switch between available agents.
 
 The `/agent` command provides an interactive interface to select and switch between different specialized agents in Forge.
-
-**Usage:**
-
-```
-/agent
-```
 
 This will:
 
@@ -94,52 +68,29 @@ This will:
 
 **When to use:** Use this when you want to switch between agents or when you're unsure which agent is currently active. This is an alternative to using the specific `/forge` or `/muse` commands.
 
-</details>
+### /dump
 
-<details>
-<summary><code>/dump</code> - Save the current conversation in JSON format to a file for reference</summary>
+Save the current conversation in JSON format to a file for reference.
 
 The `/dump` command saves the current conversation in JSON format to a file for future reference.
 
-**Usage:**
-
-```
-/dump
-```
-
 **When to use:** Use this when you need to debug issues, inspect the conversation context, or report problems to the development team.
 
-</details>
+### /forge
 
-<details>
-<summary><code>/forge</code> - Switch to Forge Agent (default), where it can execute commands and implement changes.</summary>
+Switch to Forge Agent (default), where it can execute commands and implement changes.
 
 The `/forge` command switches to Forge Agent, where it can execute commands and implement changes.
 
-**Usage:**
-
-```
-/forge
-```
-
 **When to use:** This is the default agent. Use this command to switch back to the Forge Agent if you were previously using the Muse Agent.
 
-</details>
+### /muse
 
-<details>
-<summary><code>/muse</code> - Switch to Muse Agent, where it analyzes and plans but doesn't modify files</summary>
+Switch to Muse Agent, where it analyzes and plans but doesn't modify files.
 
 The `/muse` command switches to the Muse Agent, where it analyzes and suggests changes without modifying files.
 
-**Usage:**
-
-```
-/muse
-```
-
 **When to use:** Use this when you want to analyze your codebase and suggest changes without actually implementing them. This is useful for understanding what would happen before making changes.
-
-</details>
 
 ## Native Shell Commands
 
