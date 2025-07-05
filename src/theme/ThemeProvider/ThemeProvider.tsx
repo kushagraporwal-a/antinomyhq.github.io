@@ -1,4 +1,5 @@
-import React, {createContext, useContext, useEffect, useState} from "react"
+import React, {createContext, useContext, useEffect, useState, useRef} from "react"
+import { useLocation } from "@docusaurus/router"
 
 type Theme = "light" | "dark" | undefined
 
@@ -56,23 +57,24 @@ class ThemeStorage {
   }
 }
 
-// Apply theme to DOM immediately
-function applyThemeToDOM(theme: Theme): void {
+// Bulletproof theme application
+function applyThemeBulletproof(theme: Theme): void {
   if (typeof window === "undefined") return
 
-  // Add smooth transition class
-  document.documentElement.classList.add("theme-transition")
-
-  // Apply theme class
-  document.documentElement.classList.toggle("dark", theme === "dark")
-  if (theme) {
-    document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light")
+  // Force remove any existing theme classes first
+  document.documentElement.classList.remove("dark", "light", "theme-transition")
+  
+  // Apply the correct theme
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark")
+    document.documentElement.setAttribute("data-theme", "dark")
+  } else {
+    document.documentElement.classList.add("light")
+    document.documentElement.setAttribute("data-theme", "light")
   }
 
-  // Remove transition class after animation
-  setTimeout(() => {
-    document.documentElement.classList.remove("theme-transition")
-  }, 300)
+  // Also set CSS custom properties for extra safety
+  document.documentElement.style.setProperty("--theme-mode", theme || "dark")
 }
 
 // Get initial theme with immediate DOM application
@@ -82,27 +84,150 @@ function getInitialTheme(): Theme {
   // Try to get stored theme from cookie
   const storedTheme = ThemeStorage.getTheme()
   if (storedTheme) {
-    applyThemeToDOM(storedTheme)
+    applyThemeBulletproof(storedTheme)
     return storedTheme
   }
 
   // Default to dark theme
   const defaultTheme: Theme = "dark"
-  applyThemeToDOM(defaultTheme)
+  applyThemeBulletproof(defaultTheme)
   ThemeStorage.setTheme(defaultTheme)
   return defaultTheme
+}
+
+// Theme Guardian - constantly monitors and fixes theme
+class ThemeGuardian {
+  private static instance: ThemeGuardian
+  private currentTheme: Theme = "dark"
+  private isActive = false
+  private checkInterval: NodeJS.Timeout | null = null
+  private mutationObserver: MutationObserver | null = null
+
+  static getInstance(): ThemeGuardian {
+    if (!ThemeGuardian.instance) {
+      ThemeGuardian.instance = new ThemeGuardian()
+    }
+    return ThemeGuardian.instance
+  }
+
+  setTheme(theme: Theme): void {
+    this.currentTheme = theme
+    this.applyTheme()
+  }
+
+  private applyTheme(): void {
+    applyThemeBulletproof(this.currentTheme)
+  }
+
+  startMonitoring(): void {
+    if (this.isActive) return
+    this.isActive = true
+
+    // Check every 100ms for theme interference
+    this.checkInterval = setInterval(() => {
+      this.checkAndFixTheme()
+    }, 100)
+
+    // Monitor DOM changes that might affect theme
+    this.mutationObserver = new MutationObserver((mutations) => {
+      let shouldCheck = false
+      mutations.forEach((mutation) => {
+        if (mutation.type === "attributes" && 
+            (mutation.attributeName === "class" || mutation.attributeName === "data-theme")) {
+          shouldCheck = true
+        }
+      })
+      
+      if (shouldCheck) {
+        this.checkAndFixTheme()
+      }
+    })
+
+    this.mutationObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "data-theme"]
+    })
+
+    // Also monitor for any script that might change theme
+    const originalSetAttribute = document.documentElement.setAttribute
+    document.documentElement.setAttribute = (name: string, value: string) => {
+      if (name === "class" || name === "data-theme") {
+        // Allow the change but then immediately fix it
+        originalSetAttribute.call(document.documentElement, name, value)
+        setTimeout(() => this.checkAndFixTheme(), 0)
+      } else {
+        originalSetAttribute.call(document.documentElement, name, value)
+      }
+    }
+
+    console.log("🔒 Theme Guardian activated - monitoring for interference")
+  }
+
+  stopMonitoring(): void {
+    if (!this.isActive) return
+    this.isActive = false
+
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval)
+      this.checkInterval = null
+    }
+
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect()
+      this.mutationObserver = null
+    }
+
+    console.log("🔒 Theme Guardian deactivated")
+  }
+
+  private checkAndFixTheme(): void {
+    const hasDarkClass = document.documentElement.classList.contains("dark")
+    const hasLightClass = document.documentElement.classList.contains("light")
+    const dataTheme = document.documentElement.getAttribute("data-theme")
+
+    let needsFix = false
+
+    if (this.currentTheme === "dark") {
+      if (!hasDarkClass || dataTheme !== "dark") {
+        needsFix = true
+      }
+    } else if (this.currentTheme === "light") {
+      if (!hasLightClass || dataTheme !== "light") {
+        needsFix = true
+      }
+    }
+
+    if (needsFix) {
+      console.log(`🔧 Theme Guardian: Fixing theme interference (expected: ${this.currentTheme})`)
+      this.applyTheme()
+    }
+  }
 }
 
 export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
   const [theme, setTheme] = useState<Theme | null>(null)
   const [isClient, setIsClient] = useState(false)
+  const location = useLocation()
+  const guardianRef = useRef<ThemeGuardian>()
 
   // Initialize theme on client side
   useEffect(() => {
     setIsClient(true)
     const initialTheme = getInitialTheme()
     setTheme(initialTheme)
+    
+    // Initialize and start the theme guardian
+    guardianRef.current = ThemeGuardian.getInstance()
+    guardianRef.current.setTheme(initialTheme)
+    guardianRef.current.startMonitoring()
   }, [])
+
+  // Monitor navigation and ensure theme persists
+  useEffect(() => {
+    if (theme && guardianRef.current) {
+      guardianRef.current.setTheme(theme)
+    }
+  }, [location.pathname, theme])
 
   // Add smooth transition styles
   useEffect(() => {
@@ -126,11 +251,20 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
 
   // Handle theme changes
   useEffect(() => {
-    if (theme && isClient) {
-      applyThemeToDOM(theme)
+    if (theme && isClient && guardianRef.current) {
+      guardianRef.current.setTheme(theme)
       ThemeStorage.setTheme(theme)
     }
   }, [theme, isClient])
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (guardianRef.current) {
+        guardianRef.current.stopMonitoring()
+      }
+    }
+  }, [])
 
   const toggleTheme = () => {
     setTheme((prev) => {
@@ -145,7 +279,17 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
         children
       ) : (
         <div className="h-screen w-full bg-white dark:bg-black text-black dark:text-white flex items-center justify-center transition-colors duration-300">
-          Loading...
+          <div className="flex flex-col items-center space-y-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 text-sm font-medium">
+              Loading...
+            </div>
+            <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 border-t-cyan-500 rounded-full animate-spin"></div>
+          </div>
         </div>
       )}
     </ThemeContext.Provider>
