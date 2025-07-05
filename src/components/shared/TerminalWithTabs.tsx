@@ -102,7 +102,7 @@ const TerminalWithTabs = (): JSX.Element => {
           )
         })}
 
-        <div className="flex-1 text-white p-4 overflow-y-auto text-sm whitespace-pre-wrap">
+        <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
           <div
             onClick={handleClick}
             className="bg-gradient-to-r p-[1px] rounded-lg mt-5 relative"
