@@ -33,6 +33,10 @@
     border-top-style: solid;
     border-bottom-style: solid;
   }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 5px #30EDE6, 0 0 10px #30EDE6;
+  }
 }
 
 html,
@@ -176,6 +180,11 @@ input[type="radio"]:checked::before {
   padding: 0.5rem;
   font-size: var(--ifm-list-item-link);
   font-weight: var(--ifm-font-weight-semibold);
+  color: #737373;
+}
+[data-theme='dark'] .menu__list-item-collapsible a,
+.theme-doc-sidebar-item-link-level-1 a {
+  color: #737373;
 }
 
 .theme-doc-sidebar-item-link-level-1 {
@@ -192,7 +201,7 @@ input[type="radio"]:checked::before {
   height: 2.125rem;
   display: flex;
   align-items: center;
-  color: var(--ifm-menu-link-100);
+  color: #737373;
   border-radius: 0;
   font-size: 0.875rem;
   font-weight: var(--ifm-font-weight-normal);
@@ -200,7 +209,7 @@ input[type="radio"]:checked::before {
 
 .menu__link.menu__link--active {
   background-color: transparent;
-  color: var(--ifm-menu-link-active);
+  color: #30EDE6;
   font-weight: var(--ifm-font-weight-semibold);
   box-shadow: inset 2px 0 0 0 var(--ifm-color-brand);
 }
@@ -214,7 +223,11 @@ input[type="radio"]:checked::before {
 }
 
 .menu__link:hover {
-  color: var(--ifm-menu-link-active);
+  color: #30EDE6;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  color: #30EDE6;
 }
 
 .theme-doc-sidebar-item-category:not(:first-child) {
@@ -457,11 +470,20 @@ input[type="radio"]:checked::before {
 
 .table-of-contents__link {
   font-size: var(--ifm-content-link-font-size);
+  color: #737373;
+}
+
+[data-theme='dark'] .table-of-contents__link {
+  color: #A1A1A1;
 }
 
 .table-of-contents__link--active {
   font-weight: var(--ifm-font-weight-bold);
-  /* color: var(--ifm-link-color-100); */
+  color: #30EDE6;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: #30EDE6;
 }
 
 .theme-doc-toc-desktop > .table-of-contents {
@@ -482,7 +504,11 @@ input[type="radio"]:checked::before {
 }
 
 .table-of-contents__link:hover {
-  /* color: var(--ifm-link-color-100); */
+  color: #30EDE6;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover {
+  color: #30EDE6;
 }
 
 .breadcrumbs__link:hover {
