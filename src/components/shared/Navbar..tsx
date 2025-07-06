@@ -98,16 +98,16 @@ const NewNavbar = (): JSX.Element => {
           </div>
           <div className="flex justify-between w-auto md:p-0 items-center md:self-end gap-3">
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="navlink" onClick={() => {}}>
+              <Button variant="navlink" onClick={() => window.open('https://app.forgecode.dev/app/', '_blank')}>
                 <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
                   Signup
                 </span>
               </Button>
-              <Button variant="navlink" onClick={() => {}}>
+              {/* <Button variant="navlink" onClick={() => {}}>
                 <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
                   Book a Demo
                 </span>
-              </Button>
+              </Button> */}
               <ThemeToggle />
             </div>
             <button
