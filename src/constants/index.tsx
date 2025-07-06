@@ -663,20 +663,20 @@ export enum CookiePreferenceCategory {
 
 export const NavbarItems = [
   {
-    name: "Docs",
-    link: "/docs",
-  },
-  {
-    name: "Releases",
-    link: "/releases",
-  },
-  {
     name: "Pricing",
     link: "/pricing",
   },
   {
+    name: "Docs",
+    link: "/docs",
+  },
+  {
     name: "Blog",
     link: "/blog",
+  },
+  {
+    name: "Releases",
+    link: "/releases",
   },
 ]
 
@@ -790,14 +790,14 @@ export const footerItems: FooterItem[] = [
         name: "Releases",
         link: pageLinks.releases,
       },
-      {
-        name: "Report a Bug",
-        link: "",
-      },
-      {
-        name: "Contributors",
-        link: "",
-      },
+      // {
+      //   name: "Report a Bug",
+      //   link: "",
+      // },
+      // {
+      //   name: "Contributors",
+      //   link: "",
+      // },
     ],
   },
   {
@@ -807,33 +807,33 @@ export const footerItems: FooterItem[] = [
         name: "Privacy Policy",
         link: pageLinks.privacyPolicy,
       },
-      {
-        name: "Terms",
-        link: "",
-      },
+      // {
+      //   name: "Terms",
+      //   link: "",
+      // },
       {
         name: "Cookie Settings",
         link: "",
       },
     ],
   },
-  {
-    title: "Company",
-    items: [
-      {
-        name: "Contact",
-        link: "",
-      },
-      {
-        name: "Testimonials",
-        link: "",
-      },
-      {
-        name: "Hiring",
-        link: "https://forms.gle/F8dQkLqtCsFwctLa6",
-      },
-    ],
-  },
+  // {
+  //   title: "Company",
+  //   items: [
+  //     {
+  //       name: "Contact",
+  //       link: "",
+  //     },
+  //     {
+  //       name: "Testimonials",
+  //       link: "",
+  //     },
+  //     {
+  //       name: "Hiring",
+  //       link: "https://forms.gle/F8dQkLqtCsFwctLa6",
+  //     },
+  //   ],
+  // },
   {
     title: "Resources",
     items: [
