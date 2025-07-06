@@ -1009,11 +1009,17 @@ span.token.tag.script.language-javascript {
 }
 
 pre.main-install-command {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   font-family: var(--ifm-font-family-monospace);
   border-radius: 0;
   color: #f5f3eb;
+}
+
+@media (min-width: 768px) {
+  pre.main-install-command {
+    font-size: 2rem;
+  }
 }
 /* Fix details element background to match theme */
 details {

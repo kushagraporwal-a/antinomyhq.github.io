@@ -30,10 +30,6 @@ const Configuration = (): JSX.Element => {
         <div>
           <h4 className="text-lg font-semibold mb-2">Install Forge</h4>
           <pre className="md:min-w-[45rem] min-w-[100%] main-install-command">npx forgecode@latest</pre>
-          <p className="text-content-tiny mt-4 text-gray-600">
-            After installing, create a <code>.env</code> file in your home directory with your API key, then type{" "}
-            <code>forge</code> in your terminal.
-          </p>
         </div>
       </div>
       <div className="mt-5">
@@ -44,5 +40,3 @@ const Configuration = (): JSX.Element => {
 }
 
 export default Configuration
-
-const NPM_INSTALLATION = `npx forgecode@latest`
