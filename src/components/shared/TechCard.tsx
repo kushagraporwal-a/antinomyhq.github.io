@@ -20,8 +20,8 @@ const TechCard = (props: TechCardProps): JSX.Element => {
     >
       <div
         className={
-          `relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-xl transition-all duration-300 ` +
-          `${selected ? "bg-[#262626] text-white opacity-100" : "bg-tailCall-lightMode---neutral-500 dark:bg-tailCall-dark-800"}`
+          `relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-2xl transition-all duration-300 ` +
+          `${selected ? "bg-tailCall-lightMode---neutral-500 dark:bg-[#262626] text-white opacity-100" : "bg-tailCall-lightMode---neutral-300 dark:bg-tailCall-dark-800"}`
         }
       >
         <span
@@ -40,8 +40,8 @@ const TechCard = (props: TechCardProps): JSX.Element => {
       </div>
       <ul
         className={
-          `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-xl` +
-          `${selected ? "bg-tailCall-dark-400" : ""} text-tailCall-light-1000 dark:text-[#a1a1a1]`
+          `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-2xl` +
+          `${selected ? "bg-tailCall-lightMode---neutral-200 dark:bg-tailCall-dark-400" : "bg-tailCall-lightMode---neutral-200"} text-tailCall-light-1000 dark:text-[#a1a1a1]`
         }
       >
         {description.map((desc) => {

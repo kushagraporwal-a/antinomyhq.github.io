@@ -98,10 +98,10 @@ const PricingPage = (): JSX.Element => {
                 key={tier.name}
                 className={`relative border-dashed border-1 p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${
                   tier.popular
-                    ? "border-blue-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
+                    ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
                     : tier.special
-                      ? "border-yellow-500 bg-white my-5 dark:bg-tailCall-darkMode---neutral-900"
-                      : "border-gray-400 bg-white my-5"
+                      ? "border-tailCall-darkMode---neutral-500 bg-white my-5 dark:bg-tailCall-darkMode---neutral-900"
+                      : "border-tailCall-darkMode---neutral-500 bg-white my-5"
                 } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
                 {tier.popular && (

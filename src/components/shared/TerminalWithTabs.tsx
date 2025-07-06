@@ -91,10 +91,10 @@ const TerminalWithTabs = (): JSX.Element => {
           {GUIDES.map(({title, details}) => {
             return (
               <div key={title} className="flex list-none w-full">
-                <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block">
+                <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block max-[480px]:text-[14px]">
                   {title}
                 </span>
-                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px]">
+                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[14px]">
                   {details}
                 </span>
               </div>
@@ -110,7 +110,7 @@ const TerminalWithTabs = (): JSX.Element => {
           >
             <div className="bg-[#E2ECD5] dark:bg-tailCall-dark-1600 rounded-lg px-2 max-h-max relative">
               <img src="/images/home/terminal-text-icon.svg" alt="text" className="absolute left-0 h-[100%] top-0" />
-              <span className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-dark-1700 font-space text-title-tiny font-normal">
+              <span className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-dark-1700 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
                 {typedText}
               </span>
               {startTyping && <span className="animate-pulse">|</span>}{" "}
@@ -122,10 +122,10 @@ const TerminalWithTabs = (): JSX.Element => {
               const rest = isDotLine ? line?.slice(2) : line
 
               return (
-                <div key={idx} className="text-[#525252] dark:text-[#B0BEC5]">
+                <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
-                      <div className="bg-[#018284] dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
+                      <div className="bg-tailCall-lightMode---primary-400 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
                       <span>{rest}</span>
                     </div>
                   ) : (

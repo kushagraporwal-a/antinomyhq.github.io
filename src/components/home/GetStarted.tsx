@@ -151,23 +151,23 @@ const GetStarted = (): JSX.Element => {
                 {isCopied ? (
                   <img
                     src="/icons/basic/copy-done.svg"
-                    className="text-tailCall-lightMode---primary-700 dark:text-tailCall-cyan h-5 w-5"
+                    className="text-tailCall-lightMode---primary-600 dark:text-tailCall-cyan h-5 w-5"
                     alt="Copy"
                   />
                 ) : (
                   <img
                     src="/icons/basic/copy.svg"
                     alt="Copy"
-                    className="h-5 w-5 text-tailCall-lightMode---primary-700 dark:text-tailCall-cyan"
+                    className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-cyan"
                   />
                 )}
               </button>
               <div className="pt-8 px-8 pb-4">
-                <span className="text-tailCall-lightMode---primary-700 dark:text-[#30EDE6] font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   # Install Forge globally using npm
                 </span>
                 <br />
-                <span className="text-tailCall-lightMode---primary-700 dark:text-[#30EDE6] mt-3 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] mt-3 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   npm install -g @antinomyhq/forge
                 </span>
               </div>

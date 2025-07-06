@@ -40,13 +40,13 @@ export default function TOCItems({
 
   return (
     <div className="flex flex-col gap-3 pt-0 bg-white dark:bg-black p-2">
-      <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400">
+      <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
         On this page
       </span>
       <TOCItemTree toc={tocTree} className={className} linkClassName={linkClassName} {...props} />
       <div className="flex items-center justify-center px-5">
         <div className="bg-radial-gradient rounded-xl p-[1px]">
-          <div className="bg-[#D8D8D9] dark:bg-black rounded-xl px-4 py-5 flex flex-col">
+          <div className="bg-white dark:bg-black rounded-xl px-4 py-5 flex flex-col">
             <span className="text-tailCall-lightMode---neutral-600 dark:text-white font-kanit text-title-tiny font-normal">
               Was this helpful?
             </span>

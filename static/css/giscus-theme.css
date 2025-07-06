@@ -113,6 +113,10 @@ main .gsc-comments .btn-primary {
   line-height: 20.42px;
   padding: 12px 24px;
   border-radius: 0.5rem !important;
+  color: #088C8C;
+}
+
+[data-theme='dark'] main .gsc-comments .btn-primary {
   color: #30EDE6;
 }
 
@@ -123,9 +127,14 @@ main .gsc-comment-box-tabs button {
   font-weight: 700;
   font-size: 18px;
   line-height: 22.97px;
+  border-bottom: 2px solid #088C8C !important;
+  color: #088C8C;
+
+}
+
+[data-theme='dark'] main .gsc-comment-box-tabs button {
   border-bottom: 2px solid #30EDE6 !important;
   color: #30EDE6;
-
 }
 
 main .gsc-comment-box-tabs .color-text-secondary {

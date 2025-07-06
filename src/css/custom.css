@@ -87,7 +87,7 @@ body {
 
   /* Code Settings */
   --ifm-font-family-monospace: "Space Mono";
-  --ifm-code-background: #181818;
+  --ifm-code-background: var(--tailCall-lightMode---neutral-500);
   --ifm-code-border-radius: var(--ifm-global-radius);
   --ifm-code-font-size: 0.9eem;
   --ifm-code-padding-horizontal: 0.1em;
@@ -107,6 +107,7 @@ body {
   --ifm-menu-link-100: #FFFFFF;
   --ifm-menu-link-active: #FFFFFF; 
   --ifm-hr: #4B4B4B;
+  --ifm-code-background: var(--tailCall-darkMode---neutral-500);
 }
 
 code {
@@ -215,9 +216,13 @@ hr {
 
 .menu__link.menu__link--active {
   background-color: transparent;
-  color: #30EDE6;
+  color: #088C8C;
   font-weight: var(--ifm-font-weight-semibold);
   box-shadow: inset 2px 0 0 0 var(--ifm-color-brand);
+}
+
+[data-theme='dark'] .menu__link.menu__link--active {
+  color: #30EDE6;
 }
 
 .menu__list-item-collapsible a {
@@ -229,7 +234,7 @@ hr {
 }
 
 .menu__link:hover {
-  color: #30EDE6;
+  color: #088C8C;
 }
 
 [data-theme='dark'] .menu__link:hover {
@@ -485,7 +490,7 @@ hr {
 
 .table-of-contents__link--active {
   font-weight: var(--ifm-font-weight-bold);
-  color: #30EDE6;
+  color: #088C8C;
 }
 
 [data-theme='dark'] .table-of-contents__link--active {
@@ -510,7 +515,7 @@ hr {
 }
 
 .table-of-contents__link:hover {
-  color: #30EDE6;
+  color: #088C8C;
 }
 
 [data-theme='dark'] .table-of-contents__link:hover {
@@ -960,11 +965,15 @@ span.token.tag.script.language-javascript {
 }
 
 .version-update-card {
-  background-color: #121212;
+  background-color: #EDEDED;
   background-image: linear-gradient(90deg, #545556 0.5px, transparent 0.5px),
     linear-gradient(#545556 0.5px, transparent 0.5px);
   background-size: 60px 60px;
   background-position: 3px 23px;
+}
+
+[data-theme='dark'] .version-update-card {
+  color: #121212;
 }
 
 ::-webkit-scrollbar {
@@ -1073,7 +1082,7 @@ details .admonition-content code {
 
 /* Blog details code color override */
 code, code[class*="language-"] {
-  color: white !important;
+  color: var(--tailCall-lightMode---neutral-500) !important;
 }
 [data-theme='dark'] code, [data-theme='dark'] code[class*="language-"] {
   color: var(--tailCall-darkMode---neutral-300) !important;

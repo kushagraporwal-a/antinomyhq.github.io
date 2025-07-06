@@ -65,6 +65,7 @@ export default function Layout(props: Props): JSX.Element {
             styles.mainWrapper,
             wrapperClassName,
             `${location.pathname !== "/" ? "mt-20 md:mt-[64px] xl:mt-[90px]" : "mt-auto"}`,
+            `${location.pathname !== "/" ? "mb-[100px]" : ""}`,
           )}
         >
           <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>

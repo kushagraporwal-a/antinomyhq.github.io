@@ -45,7 +45,7 @@ const NewNavbar = (): JSX.Element => {
                 href="/"
                 className={`no-underline ${
                   location.pathname === "/"
-                    ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
+                    ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
                     : "text-tailCall-darkMode---neutral-400 dark:text-white opacity-80 hover:opacity-100"
                 }`}
               >
@@ -58,7 +58,7 @@ const NewNavbar = (): JSX.Element => {
                   href={item.link}
                   className={`no-underline ${
                     `${item.link}/` === location.pathname
-                      ? "font-medium text-tailCall-lightMode---primary-400 dark:text-tailCall-darkMode---primary-400 opacity-100"
+                      ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
                       : "text-tailCall-darkMode---neutral-400 opacity-80 hover:opacity-100"
                   }`}
                 >
@@ -114,7 +114,7 @@ const NewNavbar = (): JSX.Element => {
               onClick={() => setShowNavbar(!showNavbar)}
               className="border-none flex md:hidden bg-tailCall-cyan rounded p-2 items-center justify-center cursor-pointer"
             >
-              {showNavbar ? <X /> : <Menu />}
+              {showNavbar ? <X /> : <Menu color="#000000"/>}
             </button>
             <div className="flex md:hidden">
               <ThemeToggle />

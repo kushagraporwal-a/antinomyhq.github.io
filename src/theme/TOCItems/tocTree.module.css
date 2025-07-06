@@ -46,11 +46,11 @@
 
 /* Highlight active TOC item and its children */
 .table-of-contents__link--active {
-  color: var(--tailCall-lightMode---primary-400) !important;
+  color: var(--tailCall-lightMode---primary-600) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   .table-of-contents__link--active {
-    color: #fff !important;
+    color: var(--tailCall-lightMode---primary-400) !important;
   }
 }

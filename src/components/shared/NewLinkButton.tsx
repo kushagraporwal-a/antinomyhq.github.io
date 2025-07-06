@@ -48,21 +48,21 @@ const NewLinkButton = ({
     const themes = {
       [Theme.Light]: {
         classes:
-          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
+          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
       [Theme.Dark]: {
         classes:
-          "border-2 border-solid border-tailCall-border-dark-100 text-tailCall-light-100 bg-white hover:text-tailCall-light-100",
+          "border-2 border-solid border-tailCall-border-dark-100 text-tailCall-light-100 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-light-100",
         gridClasses: "",
       },
       [Theme.Gray]: {
         classes:
-          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 bg-transparent hover:text-tailCall-light-100",
+          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-light-100",
         gridClasses: "hidden",
       },
       [Theme.Tailcall]: {
-        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
+        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
     }
@@ -100,7 +100,7 @@ const NewLinkButton = ({
       to={href}
       onClick={onClick}
       className={`
-      group relative disabled:opacity-25 border-none disabled:cursor-not-allowed bg-tailCall-darkMode---neutral-900 dark:bg-white dark:hover:bg-tailCall-cyan hover:bg-tailCall-cyan flex items-center justify-center gap-x-SPACE_03 hover:no-underline rounded-lg sm:rounded-xl h-12 sm:h-16 text-content-small font-bold sm:text-title-small cursor-pointer px-SPACE_06 py-SPACE_03 sm:px-SPACE_08 lg:px-SPACE_10 sm:py-SPACE_04 lg:py-SPACE_05
+      group relative disabled:opacity-25 border-none disabled:cursor-not-allowed bg-tailCall-darkMode---neutral-900 dark:bg-white dark:hover:bg-tailCall-cyan hover:bg-tailCall-lightMode---primary-600 flex items-center justify-center gap-x-SPACE_03 hover:no-underline rounded-lg sm:rounded-xl h-12 sm:h-16 text-content-small font-bold sm:text-title-small cursor-pointer px-SPACE_06 py-SPACE_03 sm:px-SPACE_08 lg:px-SPACE_10 sm:py-SPACE_04 lg:py-SPACE_05
       ${setButtonWidth()} 
       ${generateThemeClasses().classes ?? ""} 
       ${disabled ? "cursor-not-allowed opacity-20" : ""} `}
