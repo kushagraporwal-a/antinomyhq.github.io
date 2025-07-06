@@ -175,7 +175,7 @@ export default {
     prism: {
       theme: prismTheme,
       darkTheme: prismTheme,
-      additionalLanguages: ["protobuf", "json", "diff"],
+      additionalLanguages: ["protobuf", "json", "diff", "bash"],
     },
     colorMode: {
       disableSwitch: true,
