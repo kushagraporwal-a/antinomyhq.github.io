@@ -95,7 +95,8 @@ code {
   vertical-align: baseline;
   background-color: #eee;
   border-radius: 0;
-  padding: 2px 6px;
+  padding: 0px 4px;
+  font-size: 0.8em;
 }
 
 input[type="radio"] {
