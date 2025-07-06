@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/antinomyhq/forge/refs/heads/main/forge.schema.json
 agents:
-- id: Editor
-  title: ThePrimeagen Blog Reviewer
+- id: prime
+  title: The Primeagen Blog Reviewer
   description: |
     Expert blog reviewer and editor.
   system_prompt: |
@@ -77,7 +77,7 @@ agents:
   - forge_tool_fs_create
   - forge_tool_fs_patch
 variables:
-  operating_agent: forge
+  operating_agent: prime
 model: anthropic/claude-sonnet-4
 custom_rules: |-
   - you should never try to run the application as its already running on 3000 in watch mode

@@ -27,9 +27,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Basic Features", // Renamed from "Core Features" for better hierarchy
+      label: "Features", // Renamed from "Core Features" for better hierarchy
       collapsed: false,
-      items: ["commands", "shell-integration", "operating-agents", "custom-rules"],
+      items: ["commands", "shell-commands", "auto-complete", "operating-agents", "custom-rules"],
     },
     {
       type: "category",
