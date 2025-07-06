@@ -146,10 +146,10 @@ const TheTeams = (): JSX.Element => {
                   onClick={() => handleTechClick(idx)}
                   className="border-none w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
-                  <span className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-[#5D5D5D]"}`}>
+                  <span className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-white"}`}>
                     {TECHS[idx]}
                   </span>
-                  <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-[#5D5D5D]" />}</span>
+                  <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-white" />}</span>
                 </button>
                 {isOpen && (
                   <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] px-4 py-4">
