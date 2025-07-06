@@ -42,7 +42,7 @@ const Banner = (): JSX.Element => {
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
           </div>
-          <div className="flex justify-center md:mt-5 lg:mt-10">
+          <div className="flex justify-center md:mt-8 md:ml-8">
             <TerminalWithTabs />
           </div>
         </div>

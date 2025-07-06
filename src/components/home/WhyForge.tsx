@@ -150,7 +150,7 @@ const WhyForge = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 h-[500px] md:h-screen w-full overflow-hidden flex flex-col justify-center"
+        className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 h-screen w-full overflow-hidden flex flex-col justify-center"
       >
         <div className="relative h-[1px]">
           <div ref={whyRef}>
@@ -167,7 +167,7 @@ const WhyForge = (): JSX.Element => {
             />
           </div>
         </div>
-        <div ref={cardsRef} className="flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9.5rem]">
+        <div ref={cardsRef} className="flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem]">
           {cardsData.map((card, idx) => {
             return (
               <Card key={idx}>
