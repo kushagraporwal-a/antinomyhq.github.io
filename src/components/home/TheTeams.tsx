@@ -88,19 +88,19 @@ const TheTeams = (): JSX.Element => {
   }
 
   return (
-    <div ref={sectionRef} className="flex justify-center z-[99] h-screen overflow-visible">
+    <div ref={sectionRef} className="flex justify-center z-[99] h-screen overflow-visible items-start md:items-center">
       <div className="max-w-[1440px] relative flex flex-col w-full lg:flex-row justify-between px-5 mt-24 md:px-20 xl:px-24 xl:py-28">
         <div className="flex lg:flex-col gap-32">
           <div className=" flex flex-col">
             <SpotlightSpan
               showHighlighted
               text="THE TEAMS"
-              className="absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="md:absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
-            <br />
+            <br className="hidden md:block" />
             <SpotlightSpan
               text="AT WORK"
-              className="absolute top-20 md:top-[6.5rem] xl:top-[8.5rem] font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="md:absolute top-20 md:top-[6.5rem] xl:top-[8.5rem] font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
           <ul className="hidden lg:flex pl-0 flex-row lg:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">

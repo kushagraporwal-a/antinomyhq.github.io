@@ -20,7 +20,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
     >
       <div
         className={
-          `relative px-8 py-5 flex items-center justify-between rounded-t-2xl transition-all duration-300 ` +
+          `relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-2xl transition-all duration-300 ` +
           `${selected ? "bg-[#262626] text-white opacity-100" : "bg-tailCall-lightMode---neutral-500 dark:bg-tailCall-dark-800"}`
         }
       >

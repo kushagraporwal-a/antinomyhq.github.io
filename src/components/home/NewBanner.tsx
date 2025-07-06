@@ -9,7 +9,7 @@ const Banner = (): JSX.Element => {
   const {theme} = useThemeContext()
   return (
     <div className="flex justify-center sm:mt-[66px] mt-[90px]">
-      <div className="max-w-[1440px] relative px-10 lg:pt-20 md:pt-10 pt:5 xl:p-0 flex lg:justify-center flex-col w-full h-screen overflow-auto">
+      <div className="max-w-[1440px] relative px-10 lg:pt-20 md:pt-10 pt:5 xl:p-0 flex lg:justify-center flex-col w-full">
         <div className="flex justify-around flex-col lg:flex-row gap-40 md:gap-60 lg:gap-40 xl:gap-60 pt-20">
           <div className="flex md:hidden lg:flex flex-col">
             <p className="text-tailCall-lightMode---neutral-800 dark:text-white font-thin md:font-thin lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
