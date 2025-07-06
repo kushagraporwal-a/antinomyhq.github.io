@@ -75,6 +75,7 @@ Save conversation as JSON or HTML.
 The `/dump` command saves the current conversation to a file for future reference. By default, it saves in JSON format, but you can specify HTML format using `/dump html`.
 
 **Usage:**
+
 - `/dump` - Saves as JSON format
 - `/dump html` - Saves as HTML format
 
@@ -151,29 +152,3 @@ Exit the application.
 The `/exit` command terminates the Forge application.
 
 **When to use:** Use this when you want to quit Forge completely.
-
-## Native Shell Commands
-
-Forge allows you to execute native shell commands directly from the CLI by prefixing them with `!`:
-
-```
-!ls -la
-!git status
-!npm install
-```
-
-These commands will be executed in your current working directory, and their output will be displayed in the console.
-
-## Usage Examples
-
-To use any of these commands, simply type them in the Forge CLI:
-
-```
-/info
-```
-
-For native shell commands, prefix with `!`:
-
-```
-!git status
-```
