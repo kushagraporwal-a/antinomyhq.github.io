@@ -20,7 +20,7 @@ const CopyCodeButton = (): JSX.Element => {
   return (
     <Button variant="transparent" onClick={handleCopy}>
       <div className="group">
-        <div className="relative flex w-fit items-center group group-hover:bg-tailCall-dark-1800 group-hover:dark:bg-[#30EDE6] transition-colors duration-500 rounded-2xl cursor-pointer">
+        <div className="relative flex w-fit items-center group group-hover:bg-tailCall-dark-1800 group-hover:dark:bg-[#30EDE6] transition-colors duration-500 rounded-xl cursor-pointer">
           <img
             src="/images/home/curly-open.svg"
             alt="curly open"
