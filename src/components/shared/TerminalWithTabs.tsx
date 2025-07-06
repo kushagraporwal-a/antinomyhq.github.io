@@ -125,7 +125,7 @@ const TerminalWithTabs = (): JSX.Element => {
                 <div key={idx} className="text-[#525252] dark:text-[#B0BEC5]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
-                      <div className="bg-[#30EDE6] h-3 w-3 rounded-lg"></div>
+                      <div className="bg-[#018284] dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
                       <span>{rest}</span>
                     </div>
                   ) : (

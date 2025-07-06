@@ -671,7 +671,7 @@ export const NavbarItems = [
     link: "/releases",
   },
   {
-    name: "Plans",
+    name: "Pricing",
     link: "/pricing",
   },
   {
@@ -894,7 +894,7 @@ export const COMMANDS = [
     output: ["[21:40:20] - Switched to agent MUSE"],
   },
   {
-    command: "> exit",
+    command: "> /exit",
     output: ["[21:40:40] - Exiting session...", "Goodbye."],
   },
 ]

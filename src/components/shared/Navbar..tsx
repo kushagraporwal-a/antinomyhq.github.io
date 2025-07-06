@@ -85,7 +85,7 @@ const NewNavbar = (): JSX.Element => {
                     className={` hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
                       `${item.link}/` === location.pathname
                         ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
-                        : "text-tailCall-darkMode---neutral-400 hover:opacity-100 opacity-80"
+                        : "text-tailCall-darkMode---neutral-500 hover:opacity-100 opacity-80"
                     }`}
                     href={item.link}
                     key={item.name}
