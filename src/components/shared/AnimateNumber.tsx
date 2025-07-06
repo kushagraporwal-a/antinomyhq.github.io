@@ -35,11 +35,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       val: end,
       duration,
       ease: "power3.out",
-      scrollTrigger: {
-        trigger: numberRef.current,
-        start: "top 90%",
-        once: true,
-      },
       onUpdate: () => {
         if (numberRef.current) {
           numberRef.current.textContent = `${prefix}${formatter.format(obj.val)}${suffix}`

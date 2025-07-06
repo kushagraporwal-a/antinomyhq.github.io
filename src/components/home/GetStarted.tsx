@@ -8,10 +8,28 @@ gsap.registerPlugin(ScrollTrigger)
 
 const GetStarted = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const sectionRef = useRef(null)
   const getStartedRef = useRef(null)
   const withRef = useRef(null)
   const onTerminalRef = useRef(null)
+
+  // Check if screen is mobile (below tablet breakpoint)
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768) // 768px is typical tablet breakpoint
+    }
+
+    // Check on mount
+    checkScreenSize()
+
+    // Add resize listener
+    window.addEventListener('resize', checkScreenSize)
+    
+    return () => {
+      window.removeEventListener('resize', checkScreenSize)
+    }
+  }, [])
 
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
@@ -24,6 +42,9 @@ const GetStarted = (): JSX.Element => {
   }, [isCopied])
 
   useEffect(() => {
+    // Only run animations on tablet and desktop (not mobile)
+    if (isMobile) return
+
     const section = sectionRef.current
     const getStarted = getStartedRef.current
     const withEl = withRef.current
@@ -66,7 +87,7 @@ const GetStarted = (): JSX.Element => {
     }, section)
 
     return () => ctx.revert()
-  }, [])
+  }, [isMobile]) // Re-run when isMobile changes
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText("npm install -g @antinomyhq/forge")
@@ -83,6 +104,7 @@ const GetStarted = (): JSX.Element => {
               text="GET STARTED"
               className={clsx(
                 "absolute top-2 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
+                "max-[390px]:text-[52px]"
               )}
             />
           </div>
@@ -90,19 +112,29 @@ const GetStarted = (): JSX.Element => {
             <SpotlightSpan
               text="with"
               className={clsx(
-                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:left-72 md:top-20 xl:top-28 xl:left-[560px]",
+                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
+                "max-[390px]:left-[60%]"
               )}
             />
           </div>
           <SpotlightSpan
             text="FORGE CODE"
-            className="absolute top-14 left-[15%] md:top-20 xl:top-32 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal"
+            className={clsx(
+              "absolute top-14 left-[15%] md:top-20 xl:top-32 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
+              "max-[390px]:text-[52px]"
+            )}
           />
           <div ref={onTerminalRef}>
             <SpotlightSpan
               text="ON YOUR TERMINAL"
               className={clsx(
                 "absolute top-20 left-10 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
+                // Mobile-specific positioning (below 768px)
+                "max-md:top-[100px] max-md:left-[5%]",
+                // Extra spacing for very small screens when text wraps
+                "max-[300px]:top-[120px]",
+                // Font size for very small screens
+                "max-[390px]:text-[52px]"
               )}
             />
           </div>
