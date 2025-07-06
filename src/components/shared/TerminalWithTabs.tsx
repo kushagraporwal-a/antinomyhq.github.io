@@ -7,7 +7,10 @@ const TerminalWithTabs = (): JSX.Element => {
   const [typedText, setTypedText] = useState("")
   const [lines, setLines] = useState<string[]>([])
   const [startTyping, setStartTyping] = useState(false)
-  const [hasCompleted, setHasCompleted] = useState(false)
+
+  useEffect(() => {
+    resetAndStart()
+  }, [])
 
   // Typing animation for user command
   useEffect(() => {
@@ -42,22 +45,17 @@ const TerminalWithTabs = (): JSX.Element => {
         const isLastCommand = commandIndex + 1 === COMMANDS.length
 
         if (!isLastCommand) {
-          // Go to next command
           setTimeout(() => {
             setTypedText("")
             setLines((prev) => [...prev, ""])
             setCommandIndex((prev) => prev + 1)
             setStartTyping(true)
           }, 1000)
-        } else if (isLastCommand) {
-          // All commands done — reset after delay
+        } else {
+          // ✅ Restart the whole thing
           setTimeout(() => {
-            setStartTyping(false)
-            setTypedText("")
-            setLines([])
-            setCommandIndex(0)
-            setHasCompleted(true) // mark complete, now wait for user to restart
-          }, 1000)
+            resetAndStart() // restart from beginning
+          }, 2000) // optional pause before restart
         }
       }
     }, 300)
@@ -71,29 +69,12 @@ const TerminalWithTabs = (): JSX.Element => {
     }
   }, [typedText, lines])
 
-  const resetTerminal = () => {
+  const resetAndStart = () => {
     setTypedText("")
     setLines([])
     setCommandIndex(0)
-    setHasCompleted(false)
     setStartTyping(true)
   }
-
-  const handleClick = () => {
-    if (startTyping) return // prevent double triggers
-    resetTerminal()
-  }
-
-  useEffect(() => {
-    const handleEnterClick = (e: KeyboardEvent) => {
-      if (e.key === "Enter" && !startTyping) {
-        resetTerminal()
-      }
-    }
-
-    document.addEventListener("keydown", handleEnterClick)
-    return () => document.removeEventListener("keydown", handleEnterClick)
-  }, [startTyping, hasCompleted])
 
   return (
     <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-2xl w-full md:w-4/5 lg:w-[500px] h-auto min-h-[650px] flex flex-col font-mono">
@@ -109,7 +90,7 @@ const TerminalWithTabs = (): JSX.Element => {
         <div className="flex w-full flex-col px-4">
           {GUIDES.map(({title, details}) => {
             return (
-              <div className="flex list-none w-full">
+              <div key={title} className="flex list-none w-full">
                 <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block">
                   {title}
                 </span>
@@ -122,7 +103,6 @@ const TerminalWithTabs = (): JSX.Element => {
         </div>
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
           <div
-            onClick={handleClick}
             className="bg-gradient-to-r p-[1px] rounded-lg relative"
             style={{
               backgroundImage: "linear-gradient(90deg, rgba(37, 37, 37, 1) 0%, rgba(139, 139, 139, 1) 100%)",
@@ -137,11 +117,23 @@ const TerminalWithTabs = (): JSX.Element => {
             </div>
           </div>
           <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[30vh]">
-            {lines.map((line, idx) => (
-              <div key={idx} className="text-[#525252] dark:text-[#B0BEC5]">
-                <span>{line}</span>
-              </div>
-            ))}
+            {lines.map((line, idx) => {
+              const isDotLine = line?.startsWith("⏺")
+              const rest = isDotLine ? line?.slice(2) : line
+
+              return (
+                <div key={idx} className="text-[#525252] dark:text-[#B0BEC5]">
+                  {isDotLine ? (
+                    <div className="flex items-center gap-2">
+                      <div className="bg-[#30EDE6] h-3 w-3 rounded-lg"></div>
+                      <span>{rest}</span>
+                    </div>
+                  ) : (
+                    <span>{line}</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
