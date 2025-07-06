@@ -50,14 +50,14 @@ const TheTeams = (): JSX.Element => {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top 10%",
+          start: "top 5%",
           end: () => `+=${totalScroll}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
           onUpdate: () => {
             // Highlight the card closest to the center of the visible area
-            const focusPoint = window.innerHeight / 2
+            const focusPoint = window.innerHeight / 1.5
             let minDist = Infinity
             let focusIdx = 0
             cardRefs.current.forEach((el, idx) => {
