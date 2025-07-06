@@ -48,7 +48,7 @@ const LinkButton = ({
     const themes = {
       [Theme.Light]: {
         classes:
-          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
+          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
       [Theme.Dark]: {
@@ -58,12 +58,12 @@ const LinkButton = ({
       },
       [Theme.Gray]: {
         classes:
-          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 bg-transparent hover:text-tailCall-light-100",
+          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 hover:text-tailCall-light-100",
         gridClasses: "hidden",
       },
       [Theme.Tailcall]: {
         classes:
-          "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 border border-solid text-tailCall-dark-500 bg-transparent hover:text-tailCall-dark-500",
+          "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 text-tailCall-dark-500 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
     }

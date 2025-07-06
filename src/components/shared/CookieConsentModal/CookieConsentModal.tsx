@@ -89,18 +89,18 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
           {/* Modal Container */}
           <div
             className={clsx(
-              "flex flex-col xl:flex-row xl:justify-between relative py-6 px-8 gap-4 sm:gap-12 xl:gap-0 font-space-mono bg-black rounded-xl",
+              "flex flex-col xl:flex-row xl:justify-between relative py-6 px-8 gap-4 sm:gap-12 xl:gap-0 font-space-mono bg-tailCall-lightMode---neutral-100 dark:bg-tailCall-darkMode---neutral-900 rounded-xl",
               styles.cookieConsentModal,
             )}
           >
-            <div className="flex flex-col gap-4 text-tailCall-light-300">
+            <div className="flex flex-col gap-4 text-black dark:text-tailCall-light-300">
               <div className="flex flex-col gap-2">
                 <span className="text-content-small font-bold xl:text-title-small">We Value Your Privacy</span>
                 <span className="text-content-tiny xl:text-content-small">
                   This website uses cookies to ensure you receive the best possible experience.{" "}
                   <Link
                     href={pageLinks.privacyPolicy}
-                    className="text-tailCall-light-300 hover:text-tailCall-light-300 underline"
+                    className="text-black dark:text-tailCall-light-300 dark:hover:text-tailCall-light-300 underline"
                   >
                     Learn More
                   </Link>
@@ -114,7 +114,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         key={index}
                         className={clsx(
                           "flex cursor-pointer text-content-tiny xl:text-content-small gap-2",
-                          preference.selected ? "text-tailCall-light-600" : "",
+                          preference.selected ? "text-black dark:text-tailCall-light-600" : "",
                         )}
                         onClick={() => handlePreferenceToggle(index)}
                       >

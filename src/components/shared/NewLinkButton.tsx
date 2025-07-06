@@ -48,21 +48,21 @@ const NewLinkButton = ({
     const themes = {
       [Theme.Light]: {
         classes:
-          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-dark-500",
+          "border border-solid border-tailCall-border-dark-100 text-tailCall-dark-500 bg-tailCall-lightMode---primary-600 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
       [Theme.Dark]: {
         classes:
-          "border-2 border-solid border-tailCall-border-dark-100 text-tailCall-light-100 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-light-100",
+          "border-2 border-solid border-tailCall-border-dark-100 text-tailCall-light-100 bg-tailCall-lightMode---primary-600 hover:text-tailCall-light-100",
         gridClasses: "",
       },
       [Theme.Gray]: {
         classes:
-          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-light-100",
+          "border-2 border-solid border-tailCall-light-100 text-tailCall-light-100 bg-tailCall-lightMode---primary-600 hover:text-tailCall-light-100",
         gridClasses: "hidden",
       },
       [Theme.Tailcall]: {
-        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-tailCall-lightMode---neutral-300 hover:text-tailCall-dark-500",
+        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-tailCall-lightMode---primary-600 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
     }
