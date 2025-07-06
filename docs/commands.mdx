@@ -9,9 +9,7 @@ sidebar_label: Built-in Commands
 
 Forge offers several built-in commands to enhance your interaction. These commands can be entered directly in the Forge CLI by typing the command name preceded by a forward slash.
 
-## Available Commands
-
-### /new
+## /new
 
 Start a new conversation while preserving history.
 
@@ -19,7 +17,7 @@ The `/new` command clears the current conversation context and starts a fresh ta
 
 **When to use:** Use this when switching between unrelated tasks to ensure a clean context.
 
-### /info
+## /info
 
 Display system environment information.
 
@@ -35,7 +33,7 @@ This will display information about your environment including:
 
 **When to use:** Use this when you need to troubleshoot, find log files, or review your recent commands.
 
-### /model
+## /model
 
 Switch to a different model.
 
@@ -51,7 +49,7 @@ The model choice will persist between sessions as it's stored in your configurat
 
 **When to use:** Use this when you want to change which AI model Forge uses for processing your requests.
 
-### /agent
+## /agent
 
 Switch between different AI agents.
 
@@ -68,7 +66,7 @@ This will:
 
 **When to use:** Use this when you want to switch between agents or when you're unsure which agent is currently active. This is an alternative to using the specific `/forge` or `/muse` commands.
 
-### /dump
+## /dump
 
 Save conversation as JSON or HTML.
 
@@ -81,7 +79,7 @@ The `/dump` command saves the current conversation to a file for future referenc
 
 **When to use:** Use this when you need to debug issues, inspect the conversation context, or report problems to the development team.
 
-### /forge
+## /forge
 
 Enable implementation mode with code changes.
 
@@ -89,7 +87,7 @@ The `/forge` command (also available as `/act`) switches to Forge Agent, where i
 
 **When to use:** This is the default agent. Use this command to switch back to the Forge Agent if you were previously using the Muse Agent.
 
-### /muse
+## /muse
 
 Enable planning mode without code changes.
 
@@ -97,7 +95,7 @@ The `/muse` command (also available as `/plan`) switches to the Muse Agent, wher
 
 **When to use:** Use this when you want to analyze your codebase and suggest changes without actually implementing them. This is useful for understanding what would happen before making changes.
 
-### /compact
+## /compact
 
 Compact the conversation context.
 
@@ -105,15 +103,15 @@ The `/compact` command reduces the conversation context by summarizing or removi
 
 **When to use:** Use this when you have a long conversation and want to reduce context size while preserving important information.
 
-### /help
+## /help
 
-Enable help mode for tool questions.
+Display all available commands.
 
-The `/help` command switches to help mode, providing assistance and guidance on using Forge tools and features.
+The `/help` command prints a list of all available Forge commands with their descriptions, providing a quick reference for command usage.
 
-**When to use:** Use this when you need help understanding how to use Forge or its various features.
+**When to use:** Use this when you need to see what commands are available or want a quick reference of Forge's built-in functionality.
 
-### /tools
+## /tools
 
 List all available tools with their descriptions and schema.
 
@@ -121,7 +119,7 @@ The `/tools` command displays a comprehensive list of all available tools, inclu
 
 **When to use:** Use this when you want to see what tools are available or need to understand tool capabilities and parameters.
 
-### /update
+## /update
 
 Updates to the latest compatible version of forge.
 
@@ -129,7 +127,7 @@ The `/update` command updates Forge to the latest compatible version available.
 
 **When to use:** Use this when you want to update to the newest version of Forge with the latest features and bug fixes.
 
-### /login
+## /login
 
 Log into the Forge provider.
 
@@ -137,7 +135,7 @@ The `/login` command authenticates you with the default Forge provider.
 
 **When to use:** Use this when you need to authenticate with the Forge service or when your session has expired.
 
-### /logout
+## /logout
 
 Logout of the current session.
 
@@ -145,7 +143,7 @@ The `/logout` command ends your current authenticated session with the Forge pro
 
 **When to use:** Use this when you want to end your current session or switch to a different account.
 
-### /exit
+## /exit
 
 Exit the application.
 
