@@ -95,7 +95,7 @@ const GetStarted = (): JSX.Element => {
   }
 
   return (
-    <div ref={sectionRef} className={clsx("flex justify-center overflow-x-hidden", "get-started-section")}>
+    <div ref={sectionRef} className={clsx("flex justify-center items-center overflow-x-hidden", "get-started-section")}>
       <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-[600px] md:h-screen">
         <div className="flex flex-col gap-3 relative">
           <div ref={getStartedRef}>
@@ -168,7 +168,7 @@ const GetStarted = (): JSX.Element => {
                 </span>
                 <br />
                 <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] mt-3 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
-                  npm install -g @antinomyhq/forge
+                  npx forgecode@latest
                 </span>
               </div>
             </div>

@@ -35,7 +35,7 @@ const CopyCodeButton = (): JSX.Element => {
             Try Now
           </span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
-            npm install -g @antinomyhq/forge
+            npx forgecode@latest
           </span>
           {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck />}
           <img src="/images/home/curly-close.svg" alt="curly close" className="dark:block hidden -mr-1" />

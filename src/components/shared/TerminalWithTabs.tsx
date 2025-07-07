@@ -116,7 +116,7 @@ const TerminalWithTabs = (): JSX.Element => {
               {startTyping && <span className="animate-pulse">|</span>}{" "}
             </div>
           </div>
-          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[30vh]">
+          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[35vh]">
             {lines.map((line, idx) => {
               const isDotLine = line?.startsWith("⏺")
               const rest = isDotLine ? line?.slice(2) : line
@@ -126,10 +126,10 @@ const TerminalWithTabs = (): JSX.Element => {
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
                       <div className="bg-tailCall-lightMode---primary-400 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
-                      <span>{rest}</span>
+                      <span className="font-space text-title-tiny font-normal">{rest}</span>
                     </div>
                   ) : (
-                    <span>{line}</span>
+                    <span className="font-space text-title-tiny font-normal">{line}</span>
                   )}
                 </div>
               )

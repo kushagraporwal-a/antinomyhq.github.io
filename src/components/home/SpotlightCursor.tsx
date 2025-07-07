@@ -31,7 +31,7 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
     <span
       ref={spanRef}
       onMouseMove={handleMouseMove}
-      className={`text-transparent bg-clip-text transition-all duration-0 ${className}`}
+      className={`text-transparent bg-clip-text transition-all duration-0 cursor-default ${className}`}
       style={{
         color: baseColor,
         backgroundImage: `radial-gradient(closest-side, ${spotlightColor} 0%, rgba(0,0,0,0) 100%)`,

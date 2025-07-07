@@ -29,7 +29,7 @@ const TheTeams = (): JSX.Element => {
     const cardElements = cardRefs.current.filter(Boolean)
     const lastCard = cardElements[cardElements.length - 1]
     let totalScroll = 0
-    const visibleHeight = window.innerHeight * 0.6 // match Benefits section logic
+    const visibleHeight = window.innerHeight * 0.7 // match Benefits section logic
     if (lastCard) {
       // Distance from top of cards to center of last card
       const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2
@@ -50,14 +50,15 @@ const TheTeams = (): JSX.Element => {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top 5%",
+          start: "top top",
+          markers: true,
           end: () => `+=${totalScroll}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
           onUpdate: () => {
             // Highlight the card closest to the center of the visible area
-            const focusPoint = window.innerHeight / 1.5
+            const focusPoint = window.innerHeight / 1.8
             let minDist = Infinity
             let focusIdx = 0
             cardRefs.current.forEach((el, idx) => {

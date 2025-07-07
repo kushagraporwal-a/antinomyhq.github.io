@@ -84,7 +84,10 @@ const PricingPage = (): JSX.Element => {
       <main>
         <Section className="py-16 lg:py-24 dark:bg-black bg-white">
           <div className="text-center mb-16">
-            <Heading as="h1" className="text-display-medium lg:text-display-large mb-6 text-tailCall-lightMode---neutral-900 dark:text-white">
+            <Heading
+              as="h1"
+              className="text-display-medium lg:text-display-large mb-6 text-tailCall-lightMode---neutral-900 dark:text-white"
+            >
               Simple Pricing
             </Heading>
             <p className="text-xl text-gray-600 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto">
@@ -104,14 +107,14 @@ const PricingPage = (): JSX.Element => {
                       : "border-tailCall-darkMode---neutral-500 bg-white my-5"
                 } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
-                {tier.popular && (
+                {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-blue-500 text-tailCall-white px-4 py-2 border-dashed border-1 border-gray-800 text-sm font-semibold flex items-center gap-2">
                       <Star size={16} />
                       Most Popular
                     </div>
                   </div>
-                )}
+                )} */}
 
                 {tier.special && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -125,7 +128,9 @@ const PricingPage = (): JSX.Element => {
                 <div className="text-center mb-6 pt-8 sm:pt-6">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     {/* {tier.icon} */}
-                    <h3 className="text-title-large font-bold text-tailCall-lightMode---neutral-900 dark:text-tailCall-white">{tier.name}</h3>
+                    <h3 className="text-title-large font-bold text-tailCall-lightMode---neutral-900 dark:text-tailCall-white">
+                      {tier.name}
+                    </h3>
                   </div>
                   <div className="mb-4">
                     {tier.originalPrice ? (
@@ -202,13 +207,18 @@ const PricingPage = (): JSX.Element => {
 
           {/* FAQ Section */}
           <div className="mt-24 max-w-4xl mx-auto">
-            <Heading as="h2" className="text-display-tiny text-center mb-12 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white">
+            <Heading
+              as="h2"
+              className="text-display-tiny text-center mb-12 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
+            >
               Frequently Asked Questions
             </Heading>
 
             <div className="space-y-8">
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">How do I purchase additional prompts?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  How do I purchase additional prompts?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your
                   monthly limit.
@@ -235,7 +245,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">What does "20X the Pro plan" mean for Max?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  What does "20X the Pro plan" mean for Max?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   The Max plan offers 20 times the value of Pro at 10 times the price. While Pro gives you 500 requests
                   per month, Max normally provides 10,000 requests monthly. During this limited-time early access, Max
@@ -245,7 +257,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">What are "top tier" models?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  What are "top tier" models?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
                   models from each provider that offer the best performance for complex coding tasks.
@@ -253,7 +267,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">How does the Max plan unlimited usage work?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  How does the Max plan unlimited usage work?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   Max plan users get truly unlimited access to all AI models during this limited-time early access
                   offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
@@ -278,7 +294,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">Is my code secure and private?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  Is my code secure and private?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   Absolutely. ForgeCode runs entirely on your local machine using your own API keys. Your code never
                   leaves your computer - no cloud processing, no data collection, complete privacy and security.
@@ -286,7 +304,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">Can I upgrade or downgrade my plan anytime?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  Can I upgrade or downgrade my plan anytime?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
                   your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
@@ -295,7 +315,9 @@ const PricingPage = (): JSX.Element => {
               </div>
 
               <div className="border-solid border border-tailCall-darkMode---primary-500 rounded-xl p-6">
-                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">Do I need my own API keys?</h3>
+                <h3 className="text-title-medium font-semibold mb-3 dark:text-white text-tailCall-lightMode---neutral-900">
+                  Do I need my own API keys?
+                </h3>
                 <p className="text-gray-700 dark:text-tailCall-darkMode---neutral-400">
                   For Free users, you'll need your own API keys for AI models. Pro and Max users get included access to
                   premium models without needing separate API keys, plus the option to use your own keys for additional
