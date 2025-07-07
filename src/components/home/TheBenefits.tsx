@@ -178,7 +178,7 @@ const TheBenefits = (): JSX.Element => {
           />
           <div
             className={clsx(
-              "absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-auto right-10 lg:right-20 top-[500px] flex flex-col items-center",
+              "absolute md:left-auto md:right-10 xl:left-[850px] w-full md:w-auto lg:right-20 top-[500px] flex flex-col items-center",
               "max-md:top-[52%]",
             )}
             style={{height: "100%", overflow: "visible"}} // set visible area
@@ -198,7 +198,7 @@ const TheBenefits = (): JSX.Element => {
                   ref={(el) => (cardRefs.current[idx] = el)}
                   className={clsx(
                     isMobile
-                      ? "w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
+                      ? "first:ml-2 w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
                       : "transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]",
                   )}
                   style={

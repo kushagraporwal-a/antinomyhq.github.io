@@ -185,9 +185,9 @@ const WhyForge = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="max-w-[1440px] z-0 relative p-4 md:px-20 xl:pl-28 h-screen w-full overflow-hidden flex flex-col justify-center"
+        className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 h-screen w-full overflow-hidden flex flex-col justify-center"
       >
-        <div className="relative h-[1px]">
+        <div className="relative h-[1px] p-3 sm:p-auto">
           <div ref={whyRef}>
             <SpotlightSpan
               showHighlighted
@@ -219,10 +219,10 @@ const WhyForge = (): JSX.Element => {
                   >
                     <div className="flex flex-col gap-3">
                       <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                      <span className="text-tailCall-lightMode---neutral-700 dark:text-[#A1A1A1] font-kanit text-title-small font-light whitespace-normal break-words">
+                      <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
                         {card.title}
                       </span>
-                      <span className="text-tailCall-lightMode---primary-500 dark:text-white opacity-50 text-title-tiny font-normal">
+                      <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
                         - {card.author}
                       </span>
                     </div>

@@ -13,21 +13,21 @@ const TechCard = (props: TechCardProps): JSX.Element => {
   return (
     <div
       className={
-        `hover:cursor-pointer transition-transform duration-500 rounded-xl ` +
-        `${selected ? "rotate-0" : "odd:rotate-2 even:-rotate-2"} ` +
+        `hover:cursor-pointer transition-transform duration-500 rounded-xl bg-[#E5E5E5] dark:bg-transparent ` +
+        `${selected ? "rotate-0 bg-[#E5E5E5] dark:bg-transparent" : "odd:rotate-2 even:-rotate-2 dark:bg-[#1e1c21]"} ` +
         `hover:rotate-0 hover:bg-custom-radial-light hover:dark:bg-[radial-gradient(37.73%_37.61%_at_50.74%_103.75%,rgba(48,237,230,0.8)_0%,#18171A_100%)]`
       }
     >
       <div
         className={
-          `relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-2xl transition-all duration-300 ` +
-          `${selected ? "bg-tailCall-lightMode---neutral-500 dark:bg-[#262626] text-white opacity-100" : "bg-tailCall-lightMode---neutral-300 dark:bg-tailCall-dark-800"}`
+          `bg-tailCall-darkMode---neutral-300 relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-2xl transition-all duration-300 ` +
+          `${selected ? "bg-tailCall-darkMode---neutral-500 dark:bg-[#262626] text-white opacity-100" : "bg-tailCall-darkMode---neutral-300 dark:bg-tailCall-dark-1200"}`
         }
       >
         <span
           className={
             `max-w-48 md:max-w-none font-kanit text-white text-title-small xl:text-[26px] -tracking-normal font-normal transition-all duration-300 ` +
-            `${selected ? "text-white opacity-100 font-bold drop-shadow" : "text-white dark:text-white opacity-70"}`
+            `${selected ? "text-white opacity-100 font-bold drop-shadow" : "text-[#262626] dark:text-white opacity-70"}`
           }
         >
           {title}
@@ -40,8 +40,8 @@ const TechCard = (props: TechCardProps): JSX.Element => {
       </div>
       <ul
         className={
-          `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-2xl` +
-          `${selected ? "bg-tailCall-lightMode---neutral-200 dark:bg-tailCall-dark-400" : "bg-tailCall-lightMode---neutral-200"} text-tailCall-light-1000 dark:text-[#a1a1a1]`
+          `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-xl ` +
+          `${selected ? "bg-tailCall-lightMode---neutral-200 dark:bg-tailCall-dark-400" : "bg-tailCall-lightMode---neutral-200 dark:bg-[#1e1c21]"} text-tailCall-light-1000 dark:text-[#a1a1a1]`
         }
       >
         {description.map((desc) => {

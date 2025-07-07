@@ -24,10 +24,10 @@ const GetStarted = (): JSX.Element => {
     checkScreenSize()
 
     // Add resize listener
-    window.addEventListener('resize', checkScreenSize)
-    
+    window.addEventListener("resize", checkScreenSize)
+
     return () => {
-      window.removeEventListener('resize', checkScreenSize)
+      window.removeEventListener("resize", checkScreenSize)
     }
   }, [])
 
@@ -103,8 +103,8 @@ const GetStarted = (): JSX.Element => {
               showHighlighted
               text="GET STARTED"
               className={clsx(
-                "absolute top-2 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
-                "max-[390px]:text-[52px]"
+                "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
+                "max-[390px]:text-[64px]",
               )}
             />
           </div>
@@ -112,29 +112,31 @@ const GetStarted = (): JSX.Element => {
             <SpotlightSpan
               text="with"
               className={clsx(
-                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-10 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
-                "max-[390px]:left-[60%]"
+                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
+                "max-[390px]:left-[72%]",
+                "max-[425px]:left-[68%]",
               )}
             />
           </div>
           <SpotlightSpan
             text="FORGE CODE"
             className={clsx(
-              "absolute top-14 left-[15%] md:top-20 xl:top-32 font-bebas text-[48px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
-              "max-[390px]:text-[52px]"
+              "absolute top-16 left-[15%] md:top-20 xl:top-32 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
+              "max-[390px]:text-[64px]",
             )}
           />
           <div ref={onTerminalRef}>
             <SpotlightSpan
               text="ON YOUR TERMINAL"
               className={clsx(
-                "absolute top-20 left-10 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[48px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
+                "absolute top-20 left-0 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[60px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
                 // Mobile-specific positioning (below 768px)
-                "max-md:top-[100px] max-md:left-[5%]",
+                "max-md:top-[125px] max-md:left-[0%]",
                 // Extra spacing for very small screens when text wraps
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
-                "max-[390px]:text-[52px]"
+                "max-[390px]:text-[60px]",
+                "max-[425px]:text-[64px]",
               )}
             />
           </div>
@@ -162,12 +164,12 @@ const GetStarted = (): JSX.Element => {
                   />
                 )}
               </button>
-              <div className="pt-8 px-8 pb-4">
+              <div className="pt-4 px-3 pb-2 md:pt-6 md:px-8 md:pb-4 lg:pt-8 lg:px-12 lg:pb-6 xl:pt-12 xl:px-16 xl:pb-8">
                 <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   # Install Forge globally using npm
                 </span>
                 <br />
-                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] mt-3 block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
+                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   npx forgecode@latest
                 </span>
               </div>

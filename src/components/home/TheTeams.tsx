@@ -127,7 +127,7 @@ const TheTeams = (): JSX.Element => {
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit lg:w-[500px] xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${activeIdx === idx ? "opacity-100" : "opacity-60"} hover:opacity-100`}
+              className={`w-fit lg:w-[500px] xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 hover:dark:rotate-0 transition-all duration-300 ${activeIdx === idx ? "opacity-100" : "opacity-60"} hover:opacity-100`}
               style={{
                 borderRadius: 16,
               }}
@@ -144,15 +144,17 @@ const TheTeams = (): JSX.Element => {
               <div key={title} className="mb-4 border border-gray-700 rounded overflow-hidden">
                 <button
                   onClick={() => handleTechClick(idx)}
-                  className="border-none w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
+                  className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
-                  <span className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-white"}`}>
+                  <span
+                    className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-tailCall-darkMode---neutral-500"}`}
+                  >
                     {TECHS[idx]}
                   </span>
                   <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-white" />}</span>
                 </button>
                 {isOpen && (
-                  <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] px-4 py-4">
+                  <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] mt-1 rounded-xl">
                     <TechCard title={title} description={descriptions} avatars={avatars} selected={true} />
                   </div>
                 )}
