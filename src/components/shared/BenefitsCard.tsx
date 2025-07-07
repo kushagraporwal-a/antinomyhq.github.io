@@ -19,7 +19,7 @@ const BenefitsCard = ({title, description, imageUrl, small}: BenefitsCardProps) 
             {title}
           </span>
         </div>
-        <p className="!mb-0 font-kanit text-content-tiny md:text-title-medium md:font-extralight font-light text-white opacity-50 dark:text-tailCall-light-800 xl:tracking-[.5px] whitespace-normal break-words">
+        <p className="!mb-0 font-kanit text-content-tiny md:text-title-medium md:font-extralight font-light text-tailCall-lightMode---neutral-700 dark:text-tailCall-light-800 xl:tracking-[.5px] whitespace-normal break-words">
           {description}
         </p>
       </div>
