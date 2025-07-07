@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from "react"
 import {COMMANDS, GUIDES} from "@site/src/constants"
+import {ChevronRight} from "lucide-react"
 
 const TerminalWithTabs = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -102,20 +103,6 @@ const TerminalWithTabs = (): JSX.Element => {
           })}
         </div>
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div
-            className="bg-gradient-to-r p-[1px] rounded-lg relative"
-            style={{
-              backgroundImage: "linear-gradient(90deg, rgba(37, 37, 37, 1) 0%, rgba(139, 139, 139, 1) 100%)",
-            }}
-          >
-            <div className="bg-[#E2ECD5] dark:bg-tailCall-dark-1600 rounded-lg px-2 max-h-max relative">
-              <img src="/images/home/terminal-text-icon.svg" alt="text" className="absolute left-0 h-[100%] top-0" />
-              <span className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-dark-1700 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
-                {typedText}
-              </span>
-              {startTyping && <span className="animate-pulse">|</span>}{" "}
-            </div>
-          </div>
           <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[35vh]">
             {lines.map((line, idx) => {
               const isDotLine = line?.startsWith("⏺")
@@ -125,15 +112,26 @@ const TerminalWithTabs = (): JSX.Element => {
                 <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
-                      <div className="bg-tailCall-lightMode---primary-400 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
-                      <span className="font-space text-title-tiny font-normal">{rest}</span>
+                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
+                      <span className="font-space text-content-tiny font-normal text-tailCall-darkMode---neutral-500 italic">
+                        {rest}
+                      </span>
                     </div>
                   ) : (
-                    <span className="font-space text-title-tiny font-normal">{line}</span>
+                    <span className="font-space text-content-tiny font-normal">{line}</span>
                   )}
                 </div>
               )
             })}
+          </div>
+          <div className="bg-[#E5E5E5] dark:bg-[#1E1C21] rounded-[4px] relative border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
+            <div className="bg-[#E5E5E5] flex items-center dark:bg-tailCall-dark-1600 rounded-lg px-2 max-h-max relative">
+              <ChevronRight className="h-[100%] text-[#018284] dark:text-tailCall-lightMode---primary-400" />
+              <span className=" ml-2 text-[#018284] dark:text-tailCall-lightMode---primary-400 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
+                {typedText}
+              </span>
+              {startTyping && <span className="animate-pulse">|</span>}{" "}
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from "react"
+import React, {useMemo, useState} from "react"
 import styles from "./styles.module.css"
 import clsx from "clsx"
 import {CookiePreferenceCategory} from "@site/src/constants"
@@ -142,7 +142,18 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         onClick={onClick}
                         className="cursor-pointer relative flex items-center justify-center border-none bg-transparent"
                       >
-                        <img src="/images/home/curly-background.svg" alt="curly-background" height={60} />
+                        <img
+                          src="/images/home/curly-background.svg"
+                          alt="curly-background"
+                          height={60}
+                          className="hidden dark:block"
+                        />
+                        <img
+                          src="/images/home/curly-background-light.svg"
+                          alt="curly-background"
+                          height={60}
+                          className="block dark:hidden"
+                        />
                         <span className="text-black font-kanit text-title-small font-light absolute">{text}</span>
                       </button>
                     )
@@ -157,14 +168,40 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                       onClick={onClick}
                       className={clsx(
                         "cursor-pointer border-none bg-transparent font-kanit text-title-small font-light",
-                        isCurly ? "flex items-center justify-center" : "text-tailCall-cyan",
+                        isCurly
+                          ? "flex items-center justify-center"
+                          : "text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400",
                       )}
                     >
                       {isCurly ? (
                         <div className="flex items-center px-3 py-4">
-                          <img src="/images/home/curly-open.svg" alt="curly open" height={60} />
-                          <span className="text-tailCall-cyan">{text}</span>
-                          <img src="/images/home/curly-close.svg" alt="curly close" height={60} />
+                          <img
+                            src="/images/home/curly-open.svg"
+                            alt="curly open"
+                            height={60}
+                            className="hidden dark:block"
+                          />
+                          <img
+                            src="/images/home/curly-open-light.svg"
+                            alt="curly open"
+                            height={60}
+                            className="block dark:hidden"
+                          />
+                          <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400">
+                            {text}
+                          </span>
+                          <img
+                            src="/images/home/curly-close.svg"
+                            alt="curly close"
+                            height={60}
+                            className="hidden dark:block"
+                          />
+                          <img
+                            src="/images/home/curly-close-light.svg"
+                            alt="curly close"
+                            height={60}
+                            className="block dark:hidden"
+                          />
                         </div>
                       ) : (
                         text
@@ -174,13 +211,12 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                 })}
               </div>
             </div>
-            <img
-              className={clsx("absolute cursor-pointer", styles.closeBtn)}
-              src={require("@site/static/images/cookie-consent/close-btn.png").default}
-              height={16}
-              width={25}
+            <span
               onClick={handleClose}
-            />
+              className="absolute top-0 right-0 h-4 w-8 cursor-pointer text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400"
+            >
+              [ X ]
+            </span>
           </div>
         </>
       ) : null}

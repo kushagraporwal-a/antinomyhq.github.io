@@ -12,53 +12,53 @@ const Footer = (): JSX.Element => {
           <img src="/images/home/logo-light.svg" alt="Logo" width={141} className="hidden dark:block cursor-pointer" />
           <img src="/images/home/logo-dark.svg" alt="Logo" width={141} className="block dark:hidden cursor-pointer" />
           <div className="flex gap-5">
-            <img 
-              src="/icons/basic/xlogo.svg" 
-              alt="xlogo" 
-              className="hidden dark:block cursor-pointer" 
-              onClick={() => window.open('https://x.com/forgecodehq', '_blank')}
+            <img
+              src="/icons/basic/xlogo.svg"
+              alt="xlogo"
+              className="hidden dark:block cursor-pointer"
+              onClick={() => window.open("https://x.com/forgecodehq", "_blank")}
             />
-            <img 
-              src="/icons/basic/DiscordLogo.svg" 
-              alt="discord" 
-              className="hidden dark:block cursor-pointer" 
-              onClick={() => window.open('https://discord.com/invite/kRZBPpkgwq', '_blank')}
+            <img
+              src="/icons/basic/DiscordLogo.svg"
+              alt="discord"
+              className="hidden dark:block cursor-pointer"
+              onClick={() => window.open("https://discord.com/invite/kRZBPpkgwq", "_blank")}
             />
-            <img 
-              src="/icons/basic/linkedin.svg" 
-              alt="linkedin" 
-              className="hidden dark:block cursor-pointer" 
-              onClick={() => window.open('https://www.linkedin.com/company/forgecodehq', '_blank')}
+            <img
+              src="/icons/basic/linkedin.svg"
+              alt="linkedin"
+              className="hidden dark:block cursor-pointer"
+              onClick={() => window.open("https://www.linkedin.com/company/forgecodehq", "_blank")}
             />
-            <img 
-              src="/icons/basic/GithubLogo.svg" 
-              alt="github" 
-              className="hidden dark:block cursor-pointer" 
-              onClick={() => window.open('https://github.com/antinomyhq/forge', '_blank')}
+            <img
+              src="/icons/basic/GithubLogo.svg"
+              alt="github"
+              className="hidden dark:block cursor-pointer"
+              onClick={() => window.open("https://github.com/antinomyhq/forge", "_blank")}
             />
-            <img 
-              src="/icons/basic/xlogo-light.svg" 
-              alt="xlogo" 
-              className="dark:hidden block cursor-pointer" 
-              onClick={() => window.open('https://x.com/forgecodehq', '_blank')}
+            <img
+              src="/icons/basic/xlogo-light.svg"
+              alt="xlogo"
+              className="dark:hidden block cursor-pointer"
+              onClick={() => window.open("https://x.com/forgecodehq", "_blank")}
             />
-            <img 
-              src="/icons/basic/DiscordLogo-light.svg" 
-              alt="discord" 
-              className="dark:hidden block cursor-pointer" 
-              onClick={() => window.open('https://discord.com/invite/kRZBPpkgwq', '_blank')}
+            <img
+              src="/icons/basic/DiscordLogo-light.svg"
+              alt="discord"
+              className="dark:hidden block cursor-pointer"
+              onClick={() => window.open("https://discord.com/invite/kRZBPpkgwq", "_blank")}
             />
-            <img 
-              src="/icons/basic/linkedin-light.svg" 
-              alt="linkedin" 
-              className="dark:hidden block cursor-pointer" 
-              onClick={() => window.open('https://www.linkedin.com/company/forgecodehq', '_blank')}
+            <img
+              src="/icons/basic/linkedin-light.svg"
+              alt="linkedin"
+              className="dark:hidden block cursor-pointer"
+              onClick={() => window.open("https://www.linkedin.com/company/forgecodehq", "_blank")}
             />
-            <img 
-              src="/icons/basic/GithubLogo-light.svg" 
-              alt="github" 
-              className="dark:hidden block cursor-pointer" 
-              onClick={() => window.open('https://github.com/antinomyhq/forge', '_blank')}
+            <img
+              src="/icons/basic/GithubLogo-light.svg"
+              alt="github"
+              className="dark:hidden block cursor-pointer"
+              onClick={() => window.open("https://github.com/antinomyhq/forge", "_blank")}
             />
           </div>
         </div>
@@ -67,11 +67,6 @@ const Footer = (): JSX.Element => {
             Get started with personal AI Assistant now.
           </span>
           <div className="flex justify-between gap-5 items-start flex-col md:items-end">
-            <Button variant="transparent" onClick={() => {}}>
-              <span className="font-kanit text-tailCall-light-1000 dark:text-white font-semibold text-title-tiny">
-                Book a demo
-              </span>
-            </Button>
             <CopyCodeButton />
           </div>
         </div>

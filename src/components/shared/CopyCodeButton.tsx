@@ -31,13 +31,13 @@ const CopyCodeButton = (): JSX.Element => {
             alt="curly open"
             className="dark:hidden block group-hover:absolute -left-1"
           />
-          <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
+          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
             Try Now
           </span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
             npx forgecode@latest
           </span>
-          {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck />}
+          {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck color="#000000" />}
           <img src="/images/home/curly-close.svg" alt="curly close" className="dark:block hidden -mr-1" />
           <img src="/images/home/curly-close-light.svg" alt="curly close" className="dark:hidden block -mr-1" />
         </div>

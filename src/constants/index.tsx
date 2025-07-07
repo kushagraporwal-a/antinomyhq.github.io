@@ -772,7 +772,7 @@ export const BENEFITS = [
   {
     imageUrl: "/icons/basic/swap.svg",
     title: "Handle massive refactors",
-    smallText: false,
+    smallText: true,
     description:
       "Handle codebase migrations and large-scale refactors with built-in task management, progress tracking, and intelligent context management without worrying about going out of context.",
   },
@@ -883,10 +883,10 @@ export const COMMANDS = [
     output: [
       "- I need clarification on what you'd like to update. Here are the common update scenarios for this Docusaurus website:",
       "1. Update Website Content",
-      "2. Update Dependencies",
-      "3. Update Docusaurus Framework",
-      "4. Deploy Updates",
-      "5. Update Configuration",
+      "1. Update Dependencies",
+      "2. Update Docusaurus Framework",
+      "3. Deploy Updates",
+      "4. Update Configuration",
     ],
   },
   {
