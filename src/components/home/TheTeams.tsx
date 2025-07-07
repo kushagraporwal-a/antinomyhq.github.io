@@ -51,7 +51,6 @@ const TheTeams = (): JSX.Element => {
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          markers: true,
           end: () => `+=${totalScroll}`,
           scrub: true,
           pin: true,
