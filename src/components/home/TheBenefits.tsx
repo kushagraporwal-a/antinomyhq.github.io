@@ -17,48 +17,49 @@ const TheBenefits = (): JSX.Element => {
   const cardsRef = useRef<HTMLDivElement | null>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const [isMobile, setIsMobile] = useState(false)
+  const [activeDot, setActiveDot] = useState(0)
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
     }
     checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-    return () => window.removeEventListener('resize', checkScreenSize)
+    window.addEventListener("resize", checkScreenSize)
+    return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
   useEffect(() => {
     // Only run animation if not mobile and isMobile is known
-    if (isMobile === undefined) return;
+    if (isMobile === undefined) return
     if (isMobile) {
       // Clean up all ScrollTriggers and transforms on mobile
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       if (cardsRef.current) {
-        gsap.set(cardsRef.current, { clearProps: "all" });
+        gsap.set(cardsRef.current, {clearProps: "all"})
       }
       if (sectionRef.current) {
-        sectionRef.current.style.height = '';
+        sectionRef.current.style.height = ""
       }
-      return;
+      return
     }
-    const section = sectionRef.current;
-    const cards = cardsRef.current;
-    if (!section || !cards) return;
+    const section = sectionRef.current
+    const cards = cardsRef.current
+    if (!section || !cards) return
     function getViewportHeight() {
-      return window.visualViewport?.height || window.innerHeight;
+      return window.visualViewport?.height || window.innerHeight
     }
     function setupScrollTrigger() {
-      if (!section || !cards) return;
-      const isMobile = window.innerWidth < 768;
-      const viewportHeight = getViewportHeight();
-      const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6;
-      const cardHeight = cards.children[0]?.clientHeight || 1;
-      const gap = 32;
-      const focusPoint = (viewportHeight - visibleHeight) / 2 + visibleHeight * 0.48;
-      const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2;
-      const extraScroll = isMobile ? visibleHeight * 0.8 : 0;
-      const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll;
-      section.style.height = `${visibleHeight + totalScroll}px`;
+      if (!section || !cards) return
+      const isMobile = window.innerWidth < 768
+      const viewportHeight = getViewportHeight()
+      const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
+      const cardHeight = cards.children[0]?.clientHeight || 1
+      const gap = 32
+      const focusPoint = (viewportHeight - visibleHeight) / 2 + visibleHeight * 0.48
+      const lastCardOffset = focusPoint - visibleHeight / 2 + cardHeight / 2
+      const extraScroll = isMobile ? visibleHeight * 0.8 : 0
+      const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
+      section.style.height = `${visibleHeight + totalScroll}px`
       const ctx = gsap.context(() => {
         gsap.to(cards, {
           y: `-${totalScroll}px`,
@@ -71,23 +72,23 @@ const TheBenefits = (): JSX.Element => {
             pin: true,
             anticipatePin: 1,
             onUpdate: (self) => {
-              const y = gsap.getProperty(cards, "y") as number;
-              let minDist = Infinity;
-              let focusIdx = 0;
+              const y = gsap.getProperty(cards, "y") as number
+              let minDist = Infinity
+              let focusIdx = 0
               cardRefs.current.forEach((el, idx) => {
-                if (!el) return;
-                const rect = el.getBoundingClientRect();
-                const cardCenter = rect.top + rect.height / 2;
-                const dist = Math.abs(cardCenter - focusPoint);
+                if (!el) return
+                const rect = el.getBoundingClientRect()
+                const cardCenter = rect.top + rect.height / 2
+                const dist = Math.abs(cardCenter - focusPoint)
                 if (dist < minDist) {
-                  minDist = dist;
-                  focusIdx = idx;
+                  minDist = dist
+                  focusIdx = idx
                 }
-              });
-              setFocusedIdx(focusIdx);
+              })
+              setFocusedIdx(focusIdx)
             },
           },
-        });
+        })
         gsap.to(".circle-logo", {
           rotation: 360,
           ease: "none",
@@ -97,21 +98,43 @@ const TheBenefits = (): JSX.Element => {
             end: () => `+=${totalScroll}`,
             scrub: true,
           },
-        });
-      }, section);
+        })
+      }, section)
     }
-    setupScrollTrigger();
-    window.addEventListener("resize", setupScrollTrigger);
-    window.addEventListener("orientationchange", setupScrollTrigger);
-    window.addEventListener("resize", () => ScrollTrigger.refresh());
-    window.addEventListener("orientationchange", () => ScrollTrigger.refresh());
+    setupScrollTrigger()
+    window.addEventListener("resize", setupScrollTrigger)
+    window.addEventListener("orientationchange", setupScrollTrigger)
+    window.addEventListener("resize", () => ScrollTrigger.refresh())
+    window.addEventListener("orientationchange", () => ScrollTrigger.refresh())
     return () => {
-      window.removeEventListener("resize", setupScrollTrigger);
-      window.removeEventListener("orientationchange", setupScrollTrigger);
-      window.removeEventListener("resize", () => ScrollTrigger.refresh());
-      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh());
-    };
-  }, [isMobile]);
+      window.removeEventListener("resize", setupScrollTrigger)
+      window.removeEventListener("orientationchange", setupScrollTrigger)
+      window.removeEventListener("resize", () => ScrollTrigger.refresh())
+      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh())
+    }
+  }, [isMobile])
+
+  // Mobile: Track scroll position to update active dot
+  useEffect(() => {
+    if (!isMobile) return
+    const cards = cardsRef.current
+    if (!cards) return
+
+    const handleScroll = () => {
+      const cardNodes = Array.from(cards.querySelectorAll(":scope > div"))
+      if (cardNodes.length === 0) return
+      const scrollLeft = cards.scrollLeft
+      const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
+      const gap = 24 // gap-6 = 24px
+      // Calculate which card is most in view
+      const idx = Math.round(scrollLeft / (cardWidth + gap))
+      setActiveDot(Math.min(idx, cardNodes.length - 1))
+    }
+    cards.addEventListener("scroll", handleScroll)
+    // Initial update
+    handleScroll()
+    return () => cards.removeEventListener("scroll", handleScroll)
+  }, [isMobile])
 
   return (
     <div className="flex justify-center">
@@ -156,7 +179,7 @@ const TheBenefits = (): JSX.Element => {
           <div
             className={clsx(
               "absolute left-10 md:left-auto md:right-10 xl:left-[850px] w-auto right-10 lg:right-20 top-[500px] flex flex-col items-center",
-              "max-md:top-[52%]"
+              "max-md:top-[52%]",
             )}
             style={{height: "100%", overflow: "visible"}} // set visible area
           >
@@ -165,9 +188,9 @@ const TheBenefits = (): JSX.Element => {
               className={clsx(
                 isMobile
                   ? "flex flex-row w-full gap-6 overflow-x-auto items-stretch scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-thumb-rounded-full pr-2"
-                  : "flex flex-col gap-8"
+                  : "flex flex-col gap-8",
               )}
-              style={isMobile ? {scrollbarWidth: 'thin', scrollbarColor: '#8888 #0000'} : {}}
+              style={isMobile ? {scrollbarWidth: "thin", scrollbarColor: "#8888 #0000"} : {}}
             >
               {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
                 <div
@@ -175,8 +198,8 @@ const TheBenefits = (): JSX.Element => {
                   ref={(el) => (cardRefs.current[idx] = el)}
                   className={clsx(
                     isMobile
-                      ? "min-w-[320px] max-w-[320px] min-h-[320px] h-full flex-shrink-0 overflow-hidden flex flex-col"
-                      : "transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
+                      ? "w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
+                      : "transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]",
                   )}
                   style={
                     isMobile
@@ -189,16 +212,26 @@ const TheBenefits = (): JSX.Element => {
                   }
                 >
                   <div className="flex flex-col h-full">
-                    <BenefitsCard
-                      title={title}
-                      description={description}
-                      imageUrl={imageUrl}
-                      small={smallText}
-                    />
+                    <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
                   </div>
                 </div>
               ))}
             </div>
+            {/* Dots for mobile */}
+            {isMobile && (
+              <div className="flex justify-center mt-4 gap-2">
+                {BENEFITS.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`inline-block w-2 h-2 rounded-full transition-colors duration-300 ${
+                      idx === activeDot
+                        ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
+                        : "bg-gray-400 dark:bg-gray-600"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

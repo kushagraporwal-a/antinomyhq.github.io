@@ -137,7 +137,7 @@ const TheTeams = (): JSX.Element => {
           ))}
         </div>
         {/* Accordion for mobile only */}
-        <div className="block lg:hidden md:mt-60 overflow-scroll max-h-[60vh]">
+        <div className="block lg:hidden md:mt-60 overflow-scroll max-h-[70vh]">
           {TechDetails.map(({title, descriptions, avatars}, idx) => {
             const isOpen = activeIdx === idx
             return (

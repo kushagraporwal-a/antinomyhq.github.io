@@ -46,14 +46,15 @@ const WhyForge = (): JSX.Element => {
   const whyRef = useRef<HTMLDivElement | null>(null)
   const forgeRef = useRef<HTMLDivElement | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [activeDot, setActiveDot] = useState(0)
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
     }
     checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-    return () => window.removeEventListener('resize', checkScreenSize)
+    window.addEventListener("resize", checkScreenSize)
+    return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
   useEffect(() => {
@@ -158,6 +159,28 @@ const WhyForge = (): JSX.Element => {
     }
   }, [isMobile])
 
+  // Mobile: Track scroll position to update active dot
+  useEffect(() => {
+    if (!isMobile) return
+    const cards = cardsRef.current
+    if (!cards) return
+
+    const handleScroll = () => {
+      const cardNodes = Array.from(cards.querySelectorAll("div > div"))
+      if (cardNodes.length === 0) return
+      const scrollLeft = cards.scrollLeft
+      const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
+      const gap = 24 // gap-6 = 24px
+      // Calculate which card is most in view
+      const idx = Math.round(scrollLeft / (cardWidth + gap))
+      setActiveDot(Math.min(idx, cardsData.length - 1))
+    }
+    cards.addEventListener("scroll", handleScroll)
+    // Initial update
+    handleScroll()
+    return () => cards.removeEventListener("scroll", handleScroll)
+  }, [isMobile])
+
   return (
     <div className="flex justify-center">
       <div
@@ -179,38 +202,50 @@ const WhyForge = (): JSX.Element => {
             />
           </div>
         </div>
-        <div
-          ref={cardsRef}
-          className={
-            `flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] ` +
-            // On mobile, allow horizontal scroll and hide scrollbar by default
-            `max-md:overflow-x-auto max-md:whitespace-nowrap max-md:scrollbar-thin max-md:scrollbar-thumb-gray-400 max-md:scrollbar-track-transparent max-md:scrollbar-thumb-rounded-full max-md:pr-2`
-          }
-          style={{
-            // Extra fallback for thin scrollbar on mobile
-            scrollbarWidth: 'thin',
-            scrollbarColor: '#8888 #0000',
-          }}
-        >
-          {cardsData.map((card, idx) => {
-            return (
-              <Card key={idx}>
-                <div
-                  className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
-                >
-                  <div className="flex flex-col gap-3">
-                    <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                    <span className="text-tailCall-lightMode---neutral-700 dark:text-[#A1A1A1] font-kanit text-title-small font-light whitespace-normal break-words">
-                      {card.title}
-                    </span>
-                    <span className="text-tailCall-lightMode---primary-500 dark:text-white opacity-50 text-title-tiny font-normal">
-                      - {card.author}
-                    </span>
+        <div className="flex flex-col gap-4">
+          <div
+            ref={cardsRef}
+            className={
+              `flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] ` +
+              // On mobile, allow horizontal scroll and hide scrollbar by default
+              `max-md:overflow-x-auto max-md:whitespace-nowrap max-md:scrollbar-thin max-md:scrollbar-thumb-gray-400 max-md:scrollbar-track-transparent max-md:scrollbar-thumb-rounded-full max-md:pr-2`
+            }
+          >
+            {cardsData.map((card, idx) => {
+              return (
+                <Card key={idx}>
+                  <div
+                    className={`px-8 py-8 rounded-xl min-w-[380px] max-w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
+                  >
+                    <div className="flex flex-col gap-3">
+                      <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
+                      <span className="text-tailCall-lightMode---neutral-700 dark:text-[#A1A1A1] font-kanit text-title-small font-light whitespace-normal break-words">
+                        {card.title}
+                      </span>
+                      <span className="text-tailCall-lightMode---primary-500 dark:text-white opacity-50 text-title-tiny font-normal">
+                        - {card.author}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            )
-          })}
+                </Card>
+              )
+            })}
+          </div>
+          {/* Dots for mobile */}
+          {isMobile && (
+            <div className="flex justify-center mt-4 gap-2">
+              {cardsData.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`inline-block w-2 h-2 rounded-full transition-colors duration-300 ${
+                    idx === activeDot
+                      ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
+                      : "bg-gray-400 dark:bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
