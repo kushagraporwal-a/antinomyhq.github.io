@@ -14,7 +14,7 @@ const BenefitsCard = ({title, description, imageUrl, small}: BenefitsCardProps) 
         <div className="flex gap-3">
           <img src={imageUrl} alt="" className="w-10 h-10 md:w-auto md:h-auto" />
           <span
-            className={`font-kanit text-tailCall-lightMode---neutral-800 dark:text-tailCall-lightMode---neutral-50 text-content-medium md:text-title-semi-large md:font-normal font-normal ${small ? "w-28 md:w-52" : "w-auto"} whitespace-normal break-words`}
+            className={`font-kanit text-tailCall-lightMode---neutral-800 dark:text-tailCall-lightMode---neutral-50 text-content-medium md:text-title-semi-large md:font-normal font-normal ${small ? "w-36 md:w-52" : "w-auto"} whitespace-normal break-words`}
           >
             {title}
           </span>

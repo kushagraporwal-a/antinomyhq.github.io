@@ -105,6 +105,7 @@ const GetStarted = (): JSX.Element => {
               className={clsx(
                 "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
                 "max-[390px]:text-[64px]",
+                "max-[320px]:text-[45px]",
               )}
             />
           </div>
@@ -114,6 +115,7 @@ const GetStarted = (): JSX.Element => {
               className={clsx(
                 "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
                 "max-[390px]:left-[72%]",
+                "max-[320px]:left-[63%]",
                 "max-[425px]:left-[68%]",
               )}
             />
@@ -123,6 +125,7 @@ const GetStarted = (): JSX.Element => {
             className={clsx(
               "absolute top-16 left-[15%] md:top-20 xl:top-32 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
               "max-[390px]:text-[64px]",
+              "max-[320px]:text-[45px]",
             )}
           />
           <div ref={onTerminalRef}>
@@ -136,6 +139,7 @@ const GetStarted = (): JSX.Element => {
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
                 "max-[390px]:text-[60px]",
+                "max-[320px]:text-[45px]",
                 "max-[425px]:text-[64px]",
               )}
             />

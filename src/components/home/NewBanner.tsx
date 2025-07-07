@@ -19,11 +19,11 @@ const Banner = (): JSX.Element => {
               <SpotlightSpan
                 showHighlighted
                 text="AI PAIR"
-                className="-tracking-normal font-normal absolute -top-5 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+                className="-tracking-normal font-normal absolute -top-5 text-[64px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
               <SpotlightSpan
                 text="PROGRAMMER"
-                className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-20 left-5 lg:left-0 text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+                className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-20 left-5 lg:left-0 text-[64px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
             </div>
           </div>
