@@ -114,7 +114,7 @@ const GetStarted = (): JSX.Element => {
               text="with"
               className={clsx(
                 "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
-                "max-[390px]:left-[72%]",
+                "max-[390px]:left-[75%]",
                 "max-[320px]:left-[63%]",
                 "max-[425px]:left-[68%]",
               )}
@@ -138,7 +138,7 @@ const GetStarted = (): JSX.Element => {
                 // Extra spacing for very small screens when text wraps
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
-                "max-[390px]:text-[60px]",
+                "max-[390px]:text-[58px]",
                 "max-[320px]:text-[45px]",
                 "max-[425px]:text-[64px]",
               )}
