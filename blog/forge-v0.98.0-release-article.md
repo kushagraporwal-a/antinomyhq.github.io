@@ -24,14 +24,15 @@ v0.98.0 replaces manual API key configuration with browser-based authentication 
 4. Authorize the app
 5. Return to terminal - authentication is complete
 
-<img src="/images/blog/login_newuser.gif" alt="Browser Authentication Flow" style={{width: "100%", maxWidth: "800px"}} />
+<img src="/images/blog/login-newuser.gif" alt="Browser Authentication Flow" style={{width: "100%", maxWidth: "800px"}} />
 
 _Complete authentication setup in under 30 seconds_
 
 The system waits for the authentication server until login completes.
 
-<img src="/images/blog/login*progress.png" alt="Terminal Authentication Progress" style={{width: "100%", maxWidth: "800px"}} />
-\_Terminal shows authentication progress with clear status updates*
+<img src="/images/blog/login-progress.png" alt="Terminal Authentication Progress" style={{width: "100%", maxWidth: "800px"}} />
+
+_Terminal shows authentication progress with clear status updates_
 
 #### Migration from API Keys
 
@@ -58,8 +59,9 @@ to prevent infinite retry loops.
 
 **Key point:** This counter resets when any tool succeeds. It only cares about failures happening back-to-back.
 
-<img src="/images/blog/tool*call_limit.gif" alt="Tool Failure Limit Dialog" style={{width: "100%", maxWidth: "800px"}} />
-\_Hard stop when consecutive failures hit the limit*
+<img src="/images/blog/tool-call-limit.gif" alt="Tool Failure Limit Dialog" style={{width: "100%", maxWidth: "800px"}} />
+
+_Hard stop when consecutive failures hit the limit_
 
 #### System 2: Overall Turn Limits (User Intervention)
 
@@ -91,8 +93,9 @@ The file patching system now supports `replace_all` operations for comprehensive
 **Previous behavior**: `replace` operation only modified the first occurrence
 **New behavior**: `replace_all` operation modifies all occurrences in the target file
 
-<img src="/images/blog/replace*all.gif" alt="Replace All Operation Demo" style={{width: "100%", maxWidth: "800px"}} />
-\_Replace-all operation updating multiple function names across a file*
+<img src="/images/blog/replace-all.gif" alt="Replace All Operation Demo" style={{width: "100%", maxWidth: "800px"}} />
+
+Replace-all operation updating multiple function names across a file
 
 This is particularly useful for:
 
