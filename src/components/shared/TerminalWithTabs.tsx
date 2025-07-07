@@ -103,7 +103,7 @@ const TerminalWithTabs = (): JSX.Element => {
           })}
         </div>
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[35vh]">
+          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[40vh]">
             {lines.map((line, idx) => {
               const isDotLine = line?.startsWith("⏺")
               const rest = isDotLine ? line?.slice(2) : line
