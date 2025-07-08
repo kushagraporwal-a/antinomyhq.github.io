@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react"
 import {COMMANDS, GUIDES} from "@site/src/constants"
 import {ChevronRight} from "lucide-react"
+import clsx from "clsx"
 
 const TerminalWithTabs = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -116,17 +117,29 @@ const TerminalWithTabs = (): JSX.Element => {
               const isDotLine = line?.startsWith("⏺")
               const rest = isDotLine ? line?.slice(2) : line
 
+              // Check for 'synthesizing'
+              const containsSynth = line?.toLowerCase().includes("synthesizing")
+
+              // Check if line starts with a letter
+              const startsWithLetter = /^[a-zA-Z]/.test(line?.trim())
+
+              // Styling
+              const lineClass = clsx(
+                "font-space text-content-tiny font-normal",
+                containsSynth && "text-cyan-400",
+                startsWithLetter &&
+                  "font-bold text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400",
+              )
+
               return (
                 <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
                       <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
-                      <span className="font-space text-content-tiny font-normal text-tailCall-darkMode---neutral-500 italic">
-                        {rest}
-                      </span>
+                      <span className={lineClass}>{rest}</span>
                     </div>
                   ) : (
-                    <span className="font-space text-content-tiny font-normal">{line}</span>
+                    <span className={lineClass}>{line}</span>
                   )}
                 </div>
               )
