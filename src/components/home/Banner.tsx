@@ -20,7 +20,7 @@ const Banner = (): JSX.Element => {
             AI Pair Programmer <br></br> in Your Terminal
           </Heading>
 
-          {/* <div className="flex flex-col sm:flex-row justify-center items-center mt-SPACE_06 sm:mt-SPACE_10 space-y-SPACE_04 sm:space-y-0 sm:space-x-SPACE_06">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-SPACE_06 sm:mt-SPACE_10 space-y-SPACE_04 sm:space-y-0 sm:space-x-SPACE_06">
             <LinkButton
               title="Sign up"
               href={pageLinks.signup}
@@ -35,7 +35,7 @@ const Banner = (): JSX.Element => {
               width="medium"
               onClick={() => analyticsHandler("Home Page", "Click", "Get Started")}
             />
-          </div> */}
+          </div>
         </div>
       </Section>
     </main>
