@@ -11,7 +11,7 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
   const {openCookieConsentModal} = useCookieConsentManager()
 
   return (
-    <div className="flex flex-col gap-5 md:gap-8">
+    <div className="flex flex-col mt-5 md:mt-0 gap-5 md:gap-8">
       <span className="font-kanit text-title-tiny text-tailCall-light-1000 dark:text-white opacity-40 font-normal">
         {title}
       </span>

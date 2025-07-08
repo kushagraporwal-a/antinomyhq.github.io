@@ -4,6 +4,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 import Card from "../shared/Card"
 import SpotlightSpan from "./SpotlightCursor"
+import Carousel from "../shared/Carousel"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -307,13 +308,9 @@ const WhyForge = (): JSX.Element => {
         <div className="flex flex-col gap-4">
           <div
             ref={cardsRef}
-            className={
-              `flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] ` +
-              `max-md:overflow-visible max-md:whitespace-nowrap max-md:scrollbar-none max-md:pr-2 max-md:pl-[12%] max-md:pr-[20%] max-md:touch-pan-x`
-            }
+            className={`md:flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] hidden`}
             style={{transform: "translateX(0)", willChange: "transform"}}
           >
-            {/* Render extended cards array with clones */}
             {extendedCards.map((card, idx) => {
               return (
                 <Card
@@ -336,23 +333,23 @@ const WhyForge = (): JSX.Element => {
               )
             })}
           </div>
-          {/* Dots for mobile - show only for real cards */}
-          {isMobile && (
-            <div className="flex justify-center mt-4 gap-1">
-              {cardsData.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => scrollToCard(idx)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
-                    idx === activeDot
-                      ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
-                      : "bg-gray-400 dark:bg-gray-600"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-          )}
+          <Carousel>
+            {cardsData.map((card, idx) => (
+              <Card key={idx}>
+                <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
+                  <div className="flex flex-col gap-3">
+                    <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
+                    <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
+                      {card.title}
+                    </span>
+                    <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
+                      - {card.author}
+                    </span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </Carousel>
         </div>
       </div>
     </div>

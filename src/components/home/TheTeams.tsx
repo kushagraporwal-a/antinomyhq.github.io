@@ -110,8 +110,8 @@ const TheTeams = (): JSX.Element => {
                 onClick={() => handleTechClick(idx)}
                 className={`hover:opacity-100 cursor-pointer hover:text-tailCall-light-800 hover:dark:text-white transition-opacity duration-500 font-normal ${
                   idx === activeIdx
-                    ? "text-tailCall-light-800 dark:text-white dark:!opacity-100"
-                    : "text-tailCall-light-800 opacity-30 dark:text-[#737373]"
+                    ? "text-tailCall-darkMode---neutral-900 dark:text-tailCall-lightMode---primary-400 dark:!opacity-100"
+                    : "text-tailCall-light-800 opacity-30 dark:text-tailCall-darkMode---neutral-500"
                 }`}
               >
                 {tech}

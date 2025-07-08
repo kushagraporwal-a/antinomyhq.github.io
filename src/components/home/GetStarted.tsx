@@ -104,9 +104,12 @@ const GetStarted = (): JSX.Element => {
               showHighlighted
               text="GET STARTED"
               className={clsx(
-                "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
-                "max-[390px]:text-[64px]",
+                "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
+                "max-[390px]:text-[55px]",
+                "max-[360px]:text-[48px]",
                 "max-[320px]:text-[45px]",
+                "max-[410px]:text-[55px]",
+                "max-[425px]:text-[64px]",
               )}
             />
           </div>
@@ -114,33 +117,39 @@ const GetStarted = (): JSX.Element => {
             <SpotlightSpan
               text="with"
               className={clsx(
-                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-48 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
-                "max-[390px]:left-[75%]",
+                "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-64 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
+                "max-[390px]:left-[70%]",
+                "max-[360px]:left-[66%]",
                 "max-[320px]:left-[63%]",
-                "max-[425px]:left-[68%]",
+                "max-[425px]:left-[65%]",
               )}
             />
           </div>
           <SpotlightSpan
             text="FORGE CODE"
             className={clsx(
-              "absolute top-16 left-[15%] md:top-20 xl:top-32 font-bebas text-[64px] md:text-[76px] xl:text-[140px] font-normal -tracking-normal",
-              "max-[390px]:text-[64px]",
+              "absolute top-16 left-[15%] md:top-20 xl:top-32 font-bebas text-[64px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
+              "max-[390px]:text-[55px]",
+              "max-[360px]:text-[48px]",
               "max-[320px]:text-[45px]",
+              "max-[410px]:text-[55px]",
+              "max-[425px]:text-[64px]",
             )}
           />
           <div ref={onTerminalRef}>
             <SpotlightSpan
               text="ON YOUR TERMINAL"
               className={clsx(
-                "absolute top-20 left-0 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[60px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
+                "absolute top-8 left-0 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[64px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
                 // Mobile-specific positioning (below 768px)
-                "max-md:top-[125px] max-md:left-[0%]",
+                "max-md:top-[120px] max-md:left-[0%]",
                 // Extra spacing for very small screens when text wraps
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
-                "max-[390px]:text-[58px]",
+                "max-[390px]:text-[55px]",
+                "max-[360px]:text-[48px]",
                 "max-[320px]:text-[45px]",
+                "max-[410px]:text-[55px]",
                 "max-[425px]:text-[64px]",
               )}
             />
@@ -161,11 +170,7 @@ const GetStarted = (): JSX.Element => {
                   <Copy className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400" />
                 )}
               </button>
-              <div className="pt-4 px-3 pb-2 md:pt-6 md:px-8 md:pb-4 lg:pt-8 lg:px-12 lg:pb-6 xl:pt-12 xl:px-16 xl:pb-8">
-                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
-                  # Install Forge globally using npm
-                </span>
-                <br />
+              <div className="pt-4 px-12 pb-2 md:pt-4 md:px-8 md:pb-4 lg:pt-4 lg:px-5 lg:pb-3 xl:pt-4 xl:px-7 xl:pb-4">
                 <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] block font-space text-content-tiny md:text-content-small xl:text-title-small xl:font-normal font-normal md:font-normal -tracking-wide">
                   npx forgecode@latest
                 </span>
