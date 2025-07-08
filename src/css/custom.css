@@ -804,6 +804,59 @@ nav.menu {
   }
 }
 
+/* Fix for navbar overlap at medium screen resolutions (1024px - 1206px) */
+@media (min-width: 1024px) and (max-width: 1206px) {
+  .navbar__items--right {
+    right: 2%;
+  }
+
+  .navbar__item.navbar__link {
+    margin-right: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .navbar__item.dropdown {
+    margin-right: 1.5rem;
+  }
+
+  .header-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for search icon visibility in 997px - 1023px range */
+@media (min-width: 997px) and (max-width: 1023px) {
+  .navbar__items--right {
+    right: 5%;
+  }
+
+  .navbar__item.navbar__link {
+    margin-right: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .navbar__item.dropdown {
+    margin-right: 1.25rem;
+  }
+
+  .DocSearch-Button {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .search-icon-navbar {
+    display: block !important;
+    visibility: visible !important;
+    padding: 0rem 0.5rem !important;
+  }
+
+  .header-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 600px) {
   .algolia-autocomplete span[role="listbox"] {
     display: block;

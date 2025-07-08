@@ -10,6 +10,8 @@ hide_table_of_contents: false
 
 _July 6, 2025_ - Forge v0.98.0 introduces browser-based authentication, tool failure limits, and enhanced file operations to improve reliability and user experience.
 
+<!-- truncate -->
+
 ## What's New
 
 ### Browser-Based Authentication

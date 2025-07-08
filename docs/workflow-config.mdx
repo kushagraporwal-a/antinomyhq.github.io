@@ -27,6 +27,7 @@ max_walker_depth: 1
 ### Request and Turn Management
 
 #### `max_requests_per_turn`
+
 - **Type**: `number`
 - **Default**: `50`
 - **Description**: Sets the maximum number of requests that can be made in a single conversation turn. This prevents runaway operations and controls resource usage.
@@ -36,6 +37,7 @@ max_requests_per_turn: 50
 ```
 
 #### `tool_max_failure_limit`
+
 - **Type**: `number`
 - **Default**: `3`
 - **Description**: Defines the maximum number of consecutive tool failures allowed before the agent stops attempting to use tools. This prevents infinite retry loops when tools are consistently failing.
@@ -47,6 +49,7 @@ tool_max_failure_limit: 3
 ### Model Parameters
 
 #### `top_p`
+
 - **Type**: `number`
 - **Range**: `0.0` to `1.0`
 - **Default**: `0.8`
@@ -57,6 +60,7 @@ top_p: 0.8
 ```
 
 #### `top_k`
+
 - **Type**: `number`
 - **Default**: `30`
 - **Description**: Limits the model to consider only the top K most likely tokens at each step. Lower values make responses more predictable, while higher values allow for more diverse outputs.
@@ -66,6 +70,7 @@ top_k: 30
 ```
 
 #### `max_tokens`
+
 - **Type**: `number`
 - **Default**: `20480`
 - **Description**: Sets the maximum number of tokens the model can generate in a single response. This controls the length of responses and helps manage costs.
@@ -77,6 +82,7 @@ max_tokens: 20480
 ### System Behavior
 
 #### `max_walker_depth`
+
 - **Type**: `number`
 - **Default**: `1`
 - **Description**: Sets the maximum depth for file system traversal operations. Controls how deep Forge will recursively explore directory structures to prevent excessive resource usage.
@@ -88,6 +94,7 @@ max_walker_depth: 1
 ### Variables
 
 #### `variables`
+
 - **Type**: `object`
 - **Description**: Defines global variables that can be referenced throughout your configuration using Handlebars syntax.
 
@@ -99,13 +106,14 @@ variables:
 ### Updates
 
 #### `updates`
+
 - **Type**: `object`
 - **Description**: Configures automatic update behavior for Forge.
 
 ```yaml
 updates:
-  frequency: "daily"  # daily, weekly, always
-  auto_update: false  # true to enable automatic updates
+  frequency: "daily" # daily, weekly, always
+  auto_update: false # true to enable automatic updates
 ```
 
 ## Example Configuration
