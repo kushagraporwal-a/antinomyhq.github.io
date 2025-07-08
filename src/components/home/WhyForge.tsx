@@ -164,7 +164,7 @@ const WhyForge = (): JSX.Element => {
   }, [isMobile])
 
   // Function to handle card transitions
-  const moveToCard = (index: number, smooth = true) => {
+  const moveToCard = (index: number, smooth = true, isDotClick = false) => {
     const cards = cardsRef.current
     if (!cards || isAnimating) return
 
@@ -181,12 +181,8 @@ const WhyForge = (): JSX.Element => {
 
     setIsAnimating(true)
 
-    if (smooth) {
-      cards.style.transition = "transform 0.3s ease-out"
-    } else {
-      cards.style.transition = "none"
-    }
-
+    // Don't animate if it's a dot click
+    cards.style.transition = isDotClick ? "none" : "transform 0.3s ease-out"
     cards.style.transform = `translateX(-${targetScroll}px)`
 
     // Handle the loop transition
@@ -209,7 +205,7 @@ const WhyForge = (): JSX.Element => {
           setActiveDot(index)
         }
       },
-      smooth ? 300 : 0,
+      isDotClick ? 0 : 300,
     )
   }
 
@@ -278,7 +274,8 @@ const WhyForge = (): JSX.Element => {
 
   // Function to scroll to a specific card
   const scrollToCard = (index: number) => {
-    moveToCard(index)
+    // moveToCard(index)
+    moveToCard(index, true, true)
   }
 
   return (
