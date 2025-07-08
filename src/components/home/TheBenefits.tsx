@@ -18,6 +18,10 @@ const TheBenefits = (): JSX.Element => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const [isMobile, setIsMobile] = useState(false)
   const [activeDot, setActiveDot] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  // Create array with cloned items for infinite loop
+  const extendedBenefits = [...BENEFITS.slice(-1), ...BENEFITS, ...BENEFITS.slice(0, 1)]
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -27,6 +31,124 @@ const TheBenefits = (): JSX.Element => {
     window.addEventListener("resize", checkScreenSize)
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
+
+  // Function to handle card transitions
+  const moveToCard = (index: number, smooth = true) => {
+    const cards = cardsRef.current
+    if (!cards || isAnimating) return
+
+    const cardNodes = Array.from(cards.querySelectorAll(":scope > div"))
+    if (cardNodes.length === 0) return
+
+    const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
+    const gap = 24 // gap-6 = 24px
+    const itemWidth = cardWidth + gap
+
+    // Adjust index for cloned items (add 1 because we have one clone at the start)
+    const adjustedIndex = index + 1
+    const targetScroll = adjustedIndex * itemWidth
+
+    setIsAnimating(true)
+
+    if (smooth) {
+      cards.style.transition = "transform 0.3s ease-out"
+    } else {
+      cards.style.transition = "none"
+    }
+
+    cards.style.transform = `translateX(-${targetScroll}px)`
+
+    // Handle the loop transition
+    setTimeout(
+      () => {
+        setIsAnimating(false)
+
+        // If we're at the cloned last card, jump to the real last card
+        if (index >= BENEFITS.length) {
+          cards.style.transition = "none"
+          cards.style.transform = `translateX(-${itemWidth}px)` // Jump to first real card
+          setActiveDot(0)
+        }
+        // If we're at the cloned first card, jump to the real first card
+        else if (index < 0) {
+          cards.style.transition = "none"
+          cards.style.transform = `translateX(-${BENEFITS.length * itemWidth}px)` // Jump to last real card
+          setActiveDot(BENEFITS.length - 1)
+        } else {
+          setActiveDot(index)
+        }
+      },
+      smooth ? 300 : 0,
+    )
+  }
+
+  // Initialize carousel position
+  useEffect(() => {
+    if (!cardsRef.current || !isMobile) return
+    const cardWidth = cardsRef.current.querySelector(":scope > div")?.clientWidth || 0
+    const gap = 24
+    // Position at first real card (after the clone)
+    cardsRef.current.style.transform = `translateX(-${cardWidth + gap}px)`
+  }, [isMobile])
+
+  // Handle manual scroll
+  useEffect(() => {
+    if (!isMobile) return
+    const cards = cardsRef.current
+    if (!cards) return
+
+    let startX: number
+    let currentTranslate = 0
+    let isDragging = false
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (isAnimating) return
+      isDragging = true
+      startX = e.touches[0].clientX
+      currentTranslate = getCurrentTranslate(cards)
+      cards.style.transition = "none"
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return
+      const currentX = e.touches[0].clientX
+      const diff = startX - currentX
+      cards.style.transform = `translateX(${-currentTranslate - diff}px)`
+    }
+
+    const handleTouchEnd = () => {
+      if (!isDragging) return
+      isDragging = false
+      const currentX = getCurrentTranslate(cards)
+      const cardWidth = cards.querySelector(":scope > div")?.clientWidth || 0
+      const gap = 24
+      const itemWidth = cardWidth + gap
+      // Subtract 1 to account for the cloned item at start
+      const index = Math.round(currentX / itemWidth) - 1
+      moveToCard(index)
+    }
+
+    const getCurrentTranslate = (element: HTMLElement) => {
+      const transform = window.getComputedStyle(element).transform
+      const matrix = new DOMMatrix(transform)
+      return -matrix.m41
+    }
+
+    cards.addEventListener("touchstart", handleTouchStart)
+    cards.addEventListener("touchmove", handleTouchMove)
+    cards.addEventListener("touchend", handleTouchEnd)
+
+    return () => {
+      cards.removeEventListener("touchstart", handleTouchStart)
+      cards.removeEventListener("touchmove", handleTouchMove)
+      cards.removeEventListener("touchend", handleTouchEnd)
+    }
+  }, [isMobile, isAnimating])
+
+  // Function to scroll to a specific card
+  const scrollToCard = (index: number) => {
+    moveToCard(index)
+  }
 
   useEffect(() => {
     // Only run animation if not mobile and isMobile is known
@@ -187,18 +309,27 @@ const TheBenefits = (): JSX.Element => {
               ref={cardsRef}
               className={clsx(
                 isMobile
-                  ? "flex flex-row w-full gap-6 overflow-x-auto items-stretch scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-thumb-rounded-full pr-2"
+                  ? "flex flex-row w-full gap-6 overflow-visible whitespace-nowrap scrollbar-none pl-[12%] pr-[20%] touch-pan-x"
                   : "flex flex-col gap-8",
               )}
-              style={isMobile ? {scrollbarWidth: "thin", scrollbarColor: "#8888 #0000"} : {}}
+              style={isMobile ? {transform: "translateX(0)", willChange: "transform"} : {}}
             >
-              {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+              {/* Render extended benefits array with clones */}
+              {(isMobile ? extendedBenefits : BENEFITS).map(({title, description, imageUrl = "", smallText}, idx) => (
                 <div
-                  key={title}
+                  key={`${idx}-${
+                    isMobile
+                      ? idx === 0
+                        ? "clone-start"
+                        : idx === extendedBenefits.length - 1
+                          ? "clone-end"
+                          : "original"
+                      : "desktop"
+                  }`}
                   ref={(el) => (cardRefs.current[idx] = el)}
                   className={clsx(
                     isMobile
-                      ? "first:ml-2 w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
+                      ? "w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
                       : "transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]",
                   )}
                   style={
@@ -217,17 +348,19 @@ const TheBenefits = (): JSX.Element => {
                 </div>
               ))}
             </div>
-            {/* Dots for mobile */}
+            {/* Dots for mobile - show only for real cards */}
             {isMobile && (
-              <div className="flex justify-center mt-4 gap-2">
+              <div className="flex justify-center mt-4 gap-1">
                 {BENEFITS.map((_, idx) => (
-                  <span
+                  <button
                     key={idx}
-                    className={`inline-block w-2 h-2 rounded-full transition-colors duration-300 ${
+                    onClick={() => scrollToCard(idx)}
+                    className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
                       idx === activeDot
                         ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
                         : "bg-gray-400 dark:bg-gray-600"
                     }`}
+                    aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}
               </div>

@@ -47,6 +47,10 @@ const WhyForge = (): JSX.Element => {
   const forgeRef = useRef<HTMLDivElement | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [activeDot, setActiveDot] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  // Create array with cloned items for infinite loop
+  const extendedCards = [...cardsData.slice(-1), ...cardsData, ...cardsData.slice(0, 1)]
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -159,27 +163,123 @@ const WhyForge = (): JSX.Element => {
     }
   }, [isMobile])
 
-  // Mobile: Track scroll position to update active dot
+  // Function to handle card transitions
+  const moveToCard = (index: number, smooth = true) => {
+    const cards = cardsRef.current
+    if (!cards || isAnimating) return
+
+    const cardNodes = Array.from(cards.querySelectorAll("div > div"))
+    if (cardNodes.length === 0) return
+
+    const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
+    const gap = 24 // gap-6 = 24px
+    const itemWidth = cardWidth + gap
+
+    // Adjust index for cloned items (add 1 because we have one clone at the start)
+    const adjustedIndex = index + 1
+    const targetScroll = adjustedIndex * itemWidth
+
+    setIsAnimating(true)
+
+    if (smooth) {
+      cards.style.transition = "transform 0.3s ease-out"
+    } else {
+      cards.style.transition = "none"
+    }
+
+    cards.style.transform = `translateX(-${targetScroll}px)`
+
+    // Handle the loop transition
+    setTimeout(
+      () => {
+        setIsAnimating(false)
+
+        // If we're at the cloned last card, jump to the real last card
+        if (index >= cardsData.length) {
+          cards.style.transition = "none"
+          cards.style.transform = `translateX(-${itemWidth}px)` // Jump to first real card
+          setActiveDot(0)
+        }
+        // If we're at the cloned first card, jump to the real first card
+        else if (index < 0) {
+          cards.style.transition = "none"
+          cards.style.transform = `translateX(-${cardsData.length * itemWidth}px)` // Jump to last real card
+          setActiveDot(cardsData.length - 1)
+        } else {
+          setActiveDot(index)
+        }
+      },
+      smooth ? 300 : 0,
+    )
+  }
+
+  // Initialize carousel position
+  useEffect(() => {
+    if (!cardsRef.current) return
+    const cardWidth = cardsRef.current.querySelector("div > div")?.clientWidth || 0
+    const gap = 24
+    // Position at first real card (after the clone)
+    cardsRef.current.style.transform = `translateX(-${cardWidth + gap}px)`
+  }, [isMobile])
+
+  // Handle manual scroll
   useEffect(() => {
     if (!isMobile) return
     const cards = cardsRef.current
     if (!cards) return
 
-    const handleScroll = () => {
-      const cardNodes = Array.from(cards.querySelectorAll("div > div"))
-      if (cardNodes.length === 0) return
-      const scrollLeft = cards.scrollLeft
-      const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
-      const gap = 24 // gap-6 = 24px
-      // Calculate which card is most in view
-      const idx = Math.round(scrollLeft / (cardWidth + gap))
-      setActiveDot(Math.min(idx, cardsData.length - 1))
+    let startX: number
+    let currentTranslate = 0
+    let isDragging = false
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (isAnimating) return
+      isDragging = true
+      startX = e.touches[0].clientX
+      currentTranslate = getCurrentTranslate(cards)
+      cards.style.transition = "none"
     }
-    cards.addEventListener("scroll", handleScroll)
-    // Initial update
-    handleScroll()
-    return () => cards.removeEventListener("scroll", handleScroll)
-  }, [isMobile])
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return
+      const currentX = e.touches[0].clientX
+      const diff = startX - currentX
+      cards.style.transform = `translateX(${-currentTranslate - diff}px)`
+    }
+
+    const handleTouchEnd = () => {
+      if (!isDragging) return
+      isDragging = false
+      const currentX = getCurrentTranslate(cards)
+      const cardWidth = cards.querySelector("div > div")?.clientWidth || 0
+      const gap = 24
+      const itemWidth = cardWidth + gap
+      // Subtract 1 to account for the cloned item at start
+      const index = Math.round(currentX / itemWidth) - 1
+      moveToCard(index)
+    }
+
+    const getCurrentTranslate = (element: HTMLElement) => {
+      const transform = window.getComputedStyle(element).transform
+      const matrix = new DOMMatrix(transform)
+      return -matrix.m41
+    }
+
+    cards.addEventListener("touchstart", handleTouchStart)
+    cards.addEventListener("touchmove", handleTouchMove)
+    cards.addEventListener("touchend", handleTouchEnd)
+
+    return () => {
+      cards.removeEventListener("touchstart", handleTouchStart)
+      cards.removeEventListener("touchmove", handleTouchMove)
+      cards.removeEventListener("touchend", handleTouchEnd)
+    }
+  }, [isMobile, isAnimating])
+
+  // Function to scroll to a specific card
+  const scrollToCard = (index: number) => {
+    moveToCard(index)
+  }
 
   return (
     <div className="flex justify-center">
@@ -207,13 +307,16 @@ const WhyForge = (): JSX.Element => {
             ref={cardsRef}
             className={
               `flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] ` +
-              // On mobile, allow horizontal scroll and hide scrollbar by default
-              `max-md:overflow-x-auto max-md:whitespace-nowrap max-md:scrollbar-thin max-md:scrollbar-thumb-gray-400 max-md:scrollbar-track-transparent max-md:scrollbar-thumb-rounded-full max-md:pr-2`
+              `max-md:overflow-visible max-md:whitespace-nowrap max-md:scrollbar-none max-md:pr-2 max-md:pl-[12%] max-md:pr-[20%] max-md:touch-pan-x`
             }
+            style={{transform: "translateX(0)", willChange: "transform"}}
           >
-            {cardsData.map((card, idx) => {
+            {/* Render extended cards array with clones */}
+            {extendedCards.map((card, idx) => {
               return (
-                <Card key={idx}>
+                <Card
+                  key={`${idx}-${idx === 0 ? "clone-start" : idx === extendedCards.length - 1 ? "clone-end" : "original"}`}
+                >
                   <div
                     className={`px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
                   >
@@ -231,17 +334,19 @@ const WhyForge = (): JSX.Element => {
               )
             })}
           </div>
-          {/* Dots for mobile */}
+          {/* Dots for mobile - show only for real cards */}
           {isMobile && (
-            <div className="flex justify-center mt-4 gap-2">
+            <div className="flex justify-center mt-4 gap-1">
               {cardsData.map((_, idx) => (
-                <span
+                <button
                   key={idx}
-                  className={`inline-block w-2 h-2 rounded-full transition-colors duration-300 ${
+                  onClick={() => scrollToCard(idx)}
+                  className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
                     idx === activeDot
                       ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
                       : "bg-gray-400 dark:bg-gray-600"
                   }`}
+                  aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
             </div>
