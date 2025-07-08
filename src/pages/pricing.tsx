@@ -65,7 +65,6 @@ const PricingPage = (): JSX.Element => {
       features: [
         "Everything in Pro",
         "Unlimited requests",
-        "Additional prompts: 1000 for $25 USD (after early access)",
         "Latest AI models",
         "24/7 priority support",
         "Advanced analytics",
@@ -104,14 +103,14 @@ const PricingPage = (): JSX.Element => {
                       : "border-gray-400 bg-white"
                 } hover:shadow-xl transition-all duration-300`}
               >
-                {tier.popular && (
+                {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-blue-500 text-tailCall-white px-4 py-2 border-dashed border-1 border-gray-800 text-sm font-semibold flex items-center gap-2">
                       <Star size={16} />
                       Most Popular
                     </div>
                   </div>
-                )}
+                )} */}
 
                 {tier.special && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
