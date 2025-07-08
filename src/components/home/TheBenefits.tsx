@@ -6,6 +6,7 @@ import BenefitsCard from "../shared/BenefitsCard"
 import {BENEFITS} from "@site/src/constants"
 import SpotlightSpan from "./SpotlightCursor"
 import clsx from "clsx"
+import Carousel from "../shared/Carousel"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
@@ -301,68 +302,34 @@ const TheBenefits = (): JSX.Element => {
           />
           <div
             className={clsx(
-              "absolute md:left-auto md:right-10 xl:left-[850px] w-full md:w-auto lg:right-20 top-[500px] flex flex-col items-center",
+              "absolute md:left-auto md:right-10 xl:left-[850px] w-full md:w-auto lg:right-20 top-[500px] flex flex-col md:items-center",
               "max-md:top-[52%]",
             )}
             style={{height: "100%", overflow: "visible"}} // set visible area
           >
-            <div
-              ref={cardsRef}
-              className={clsx(
-                isMobile
-                  ? "flex flex-row w-full gap-6 overflow-visible whitespace-nowrap scrollbar-none pl-[12%] pr-[20%] touch-pan-x"
-                  : "flex flex-col gap-8",
-              )}
-              style={isMobile ? {transform: "translateX(0)", willChange: "transform"} : {}}
-            >
-              {/* Render extended benefits array with clones */}
-              {(isMobile ? extendedBenefits : BENEFITS).map(({title, description, imageUrl = "", smallText}, idx) => (
-                <div
-                  key={`${idx}-${
-                    isMobile
-                      ? idx === 0
-                        ? "clone-start"
-                        : idx === extendedBenefits.length - 1
-                          ? "clone-end"
-                          : "original"
-                      : "desktop"
-                  }`}
-                  ref={(el) => (cardRefs.current[idx] = el)}
-                  className={clsx(
-                    isMobile
-                      ? "w-full h-full flex-shrink-0 overflow-hidden flex flex-col"
-                      : "transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]",
-                  )}
-                  style={
-                    isMobile
-                      ? {}
-                      : {
-                          filter: idx === focusedIdx ? "none" : "blur(6px)",
-                          opacity: idx === focusedIdx ? 1 : 0.6,
-                          zIndex: idx === focusedIdx ? 10 : 1,
-                        }
-                  }
-                >
-                  <div className="flex flex-col h-full">
-                    <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+            {isMobile ? (
+              <Carousel>
+                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                ))}
+              </Carousel>
+            ) : (
+              <div ref={cardsRef} className="hidden md:flex flex-col gap-8">
+                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+                  <div
+                    key={title}
+                    ref={(el) => (cardRefs.current[idx] = el)}
+                    className="transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
+                    style={{
+                      filter: idx === focusedIdx ? "none" : "blur(6px)",
+                      opacity: idx === focusedIdx ? 1 : 0.6,
+                      zIndex: idx === focusedIdx ? 10 : 1,
+                    }}
+                  >
+                    <div className="flex flex-col h-full">
+                      <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            {/* Dots for mobile - show only for real cards */}
-            {isMobile && (
-              <div className="flex justify-center mt-4 gap-1">
-                {BENEFITS.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => scrollToCard(idx)}
-                    className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
-                      idx === activeDot
-                        ? "bg-tailCall-lightMode---primary-500 dark:bg-white"
-                        : "bg-gray-400 dark:bg-gray-600"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
                 ))}
               </div>
             )}

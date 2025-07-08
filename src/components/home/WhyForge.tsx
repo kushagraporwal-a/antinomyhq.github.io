@@ -308,16 +308,14 @@ const WhyForge = (): JSX.Element => {
         <div className="flex flex-col gap-4">
           <div
             ref={cardsRef}
-            className={`md:flex gap-6 p-3 mt-10 md:mt-16 lg:mt-[4.4rem] xl:mt-[9rem] hidden`}
+            className={`md:flex gap-6 p-3 mt-10 md:mt-14 xl:mt-[7.5rem] hidden`}
             style={{transform: "translateX(0)", willChange: "transform"}}
           >
             {extendedCards.map((card, idx) => {
               return (
-                <Card
-                  key={`${idx}-${idx === 0 ? "clone-start" : idx === extendedCards.length - 1 ? "clone-end" : "original"}`}
-                >
+                <Card key={card.title}>
                   <div
-                    className={`px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
+                    className={`px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
                   >
                     <div className="flex flex-col gap-3">
                       <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
@@ -336,7 +334,7 @@ const WhyForge = (): JSX.Element => {
           <Carousel>
             {cardsData.map((card, idx) => (
               <Card key={idx}>
-                <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-tailCall-lightMode---neutral-200 dark:bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
+                <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
                   <div className="flex flex-col gap-3">
                     <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
                     <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
