@@ -100,10 +100,10 @@ const TerminalWithTabs = (): JSX.Element => {
           {GUIDES.map(({title, details}) => {
             return (
               <div key={title} className="flex list-none w-full">
-                <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block max-[480px]:text-[14px]">
+                <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block max-[480px]:text-[12px]">
                   {title}
                 </span>
-                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[14px]">
+                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
                   {details}
                 </span>
               </div>

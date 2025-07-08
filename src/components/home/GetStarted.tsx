@@ -52,37 +52,36 @@ const GetStarted = (): JSX.Element => {
     const onTerminal = onTerminalRef.current
     if (!section || !getStarted || !withEl || !onTerminal) return
 
-    const leftStart = -window.innerWidth
-    const leftEnd = window.innerWidth
-    const rightStart = window.innerWidth
-    const rightEnd = -window.innerWidth
+    const leftStart = -window.innerWidth * 0.5
+    const centerPosition = 0
+    const rightStart = window.innerWidth * 0.5
 
     const ctx = gsap.context(() => {
       // Set initial positions
       gsap.set([getStarted, withEl], {x: leftStart})
       gsap.set([onTerminal], {x: rightStart})
 
-      // Animate left group: from left edge, through center, to right edge
+      // Animate left group to center
       gsap.to([getStarted, withEl], {
-        x: leftEnd,
-        ease: "none",
+        x: centerPosition,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
+          start: "top center",
+          end: "center center",
+          scrub: 1,
         },
       })
 
-      // Animate right group: from right edge, through center, to left edge
+      // Animate right group to center
       gsap.to([onTerminal], {
-        x: rightEnd,
-        ease: "none",
+        x: centerPosition,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
+          start: "top center",
+          end: "center center",
+          scrub: 1,
         },
       })
     }, section)
@@ -97,7 +96,7 @@ const GetStarted = (): JSX.Element => {
 
   return (
     <div ref={sectionRef} className={clsx("flex justify-center items-center overflow-x-hidden", "get-started-section")}>
-      <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 h-[600px] md:h-screen">
+      <div className="relative max-w-[1440px] w-full px-5 pt-20 md:px-20 lg:pt-20 xl:pt-28 xl:pl-28 xl:pr-24 xl:pb-20 min-h-[500px] h-auto md:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px]">
         <div className="flex flex-col gap-3 relative">
           <div ref={getStartedRef}>
             <SpotlightSpan
@@ -155,8 +154,8 @@ const GetStarted = (): JSX.Element => {
             />
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="flex flex-col gap-5 absolute top-80 md:top-96 lg:top-96 xl:top-[600px] xl:left-[550px] min-w-fill md:w-fit xl:min-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
+        <div className="flex flex-col items-center mt-[200px] sm:mt-[220px] md:mt-[250px] lg:mt-[280px] xl:mt-[450px]">
+          <div className="w-full max-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
             <div className="bg-tailCall-lightMode---neutral-200 dark:bg-[#1E1C21] flex flex-col rounded-2xl relative">
               <div className="flex items-center gap-1 px-4 py-3 bg-tailCall-lightMode---neutral-300 dark:bg-[#18171A] rounded-t-2xl">
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-50"></div>

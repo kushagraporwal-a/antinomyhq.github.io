@@ -47,8 +47,6 @@ const WhyForge = (): JSX.Element => {
   const whyRef = useRef<HTMLDivElement | null>(null)
   const forgeRef = useRef<HTMLDivElement | null>(null)
   const [isMobile, setIsMobile] = useState(false)
-  const [activeDot, setActiveDot] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
 
   // Create array with cloned items for infinite loop
   const extendedCards = [...cardsData.slice(-1), ...cardsData, ...cardsData.slice(0, 1)]
@@ -163,126 +161,6 @@ const WhyForge = (): JSX.Element => {
       if (ctx) ctx.revert()
     }
   }, [isMobile])
-
-  // Function to handle card transitions
-  const moveToCard = (index: number, smooth = true, isDotClick = false) => {
-    const cards = cardsRef.current
-    if (!cards || isAnimating) return
-
-    const cardNodes = Array.from(cards.querySelectorAll("div > div"))
-    if (cardNodes.length === 0) return
-
-    const cardWidth = (cardNodes[0] as HTMLElement).offsetWidth
-    const gap = 24 // gap-6 = 24px
-    const itemWidth = cardWidth + gap
-
-    // Adjust index for cloned items (add 1 because we have one clone at the start)
-    const adjustedIndex = index + 1
-    const targetScroll = adjustedIndex * itemWidth
-
-    setIsAnimating(true)
-
-    if (smooth) {
-      cards.style.transition = "transform 0.3s ease-out"
-    } else {
-      cards.style.transition = "none"
-    }
-
-    // Don't animate if it's a dot click
-    cards.style.transform = `translateX(-${targetScroll}px)`
-
-    // Handle the loop transition
-    setTimeout(
-      () => {
-        setIsAnimating(false)
-
-        // If we're at the cloned last card, jump to the real last card
-        if (index >= cardsData.length) {
-          cards.style.transition = "none"
-          cards.style.transform = `translateX(-${itemWidth}px)` // Jump to first real card
-          setActiveDot(0)
-        }
-        // If we're at the cloned first card, jump to the real first card
-        else if (index < 0) {
-          cards.style.transition = "none"
-          cards.style.transform = `translateX(-${cardsData.length * itemWidth}px)` // Jump to last real card
-          setActiveDot(cardsData.length - 1)
-        } else {
-          setActiveDot(index)
-        }
-      },
-      smooth ? 300 : 0,
-    )
-  }
-
-  // Initialize carousel position
-  useEffect(() => {
-    if (!cardsRef.current) return
-    const cardWidth = cardsRef.current.querySelector("div > div")?.clientWidth || 0
-    const gap = 24
-    // Position at first real card (after the clone)
-    cardsRef.current.style.transform = `translateX(-${cardWidth + gap}px)`
-  }, [isMobile])
-
-  // Handle manual scroll
-  useEffect(() => {
-    if (!isMobile) return
-    const cards = cardsRef.current
-    if (!cards) return
-
-    let startX: number
-    let currentTranslate = 0
-    let isDragging = false
-
-    const handleTouchStart = (e: TouchEvent) => {
-      if (isAnimating) return
-      isDragging = true
-      startX = e.touches[0].clientX
-      currentTranslate = getCurrentTranslate(cards)
-      cards.style.transition = "none"
-    }
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging) return
-      const currentX = e.touches[0].clientX
-      const diff = startX - currentX
-      cards.style.transform = `translateX(${-currentTranslate - diff}px)`
-    }
-
-    const handleTouchEnd = () => {
-      if (!isDragging) return
-      isDragging = false
-      const currentX = getCurrentTranslate(cards)
-      const cardWidth = cards.querySelector("div > div")?.clientWidth || 0
-      const gap = 24
-      const itemWidth = cardWidth + gap
-      // Subtract 1 to account for the cloned item at start
-      const index = Math.round(currentX / itemWidth) - 1
-      moveToCard(index)
-    }
-
-    const getCurrentTranslate = (element: HTMLElement) => {
-      const transform = window.getComputedStyle(element).transform
-      const matrix = new DOMMatrix(transform)
-      return -matrix.m41
-    }
-
-    cards.addEventListener("touchstart", handleTouchStart)
-    cards.addEventListener("touchmove", handleTouchMove)
-    cards.addEventListener("touchend", handleTouchEnd)
-
-    return () => {
-      cards.removeEventListener("touchstart", handleTouchStart)
-      cards.removeEventListener("touchmove", handleTouchMove)
-      cards.removeEventListener("touchend", handleTouchEnd)
-    }
-  }, [isMobile, isAnimating])
-
-  // Function to scroll to a specific card
-  const scrollToCard = (index: number) => {
-    // moveToCard(index)
-    moveToCard(index, true, true)
-  }
 
   return (
     <div className="flex justify-center">
