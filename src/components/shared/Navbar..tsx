@@ -20,7 +20,7 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] border-b border-b-solid backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 border-[#171717] p-5 w-full ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}
+      className={`fixed top-0 left-0 z-[999] backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-border-dark-700 p-5 w-full after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:dark:h-0 after:dark:bg-transparent after:bg-[linear-gradient(90deg,rgba(255,255,255,1)_25%,rgba(0,206,201,1)_50%,rgba(212,212,212,1)_100%)] ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}
     >
       {showNavbar ? (
         <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 z-[998] flex flex-col">
@@ -98,7 +98,7 @@ const NewNavbar = (): JSX.Element => {
           </div>
           <div className="flex justify-between w-auto md:p-0 items-center md:self-end gap-3">
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="navlink" onClick={() => window.open('https://app.forgecode.dev/app/', '_blank')}>
+              <Button variant="navlink" onClick={() => window.open("https://app.forgecode.dev/app/", "_blank")}>
                 <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
                   Signup
                 </span>
@@ -114,7 +114,7 @@ const NewNavbar = (): JSX.Element => {
               onClick={() => setShowNavbar(!showNavbar)}
               className="border-none flex md:hidden bg-tailCall-cyan rounded p-2 items-center justify-center cursor-pointer"
             >
-              {showNavbar ? <X /> : <Menu color="#000000"/>}
+              {showNavbar ? <X /> : <Menu color="#000000" />}
             </button>
             <div className="flex md:hidden">
               <ThemeToggle />
