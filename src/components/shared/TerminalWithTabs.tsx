@@ -86,8 +86,8 @@ const TerminalWithTabs = (): JSX.Element => {
         <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-darkMode---primary-400 rounded-full"></div>
       </div>
       <div className="bg-white dark:bg-tailCall-dark-1500 rounded-b-xl text-sm h-full relative">
-        <img src="/images/home/forgecode.gif" alt="Terminal" className="ml-4 mt-4 hidden dark:block" />
-        <img src="/images/home/forgecode-light.gif" alt="Terminal" className="ml-4 mt-4 block dark:hidden" />
+        <img src="/images/home/fc-dark.webp" alt="Terminal" className="ml-2 mt-4 hidden dark:block" width={300} />
+        <img src="/images/home/fc-light.webp" alt="Terminal" className="ml-2 mt-4 block dark:hidden" width={300} />
         <div className="flex w-full flex-col px-4">
           {GUIDES.map(({title, details}) => {
             return (

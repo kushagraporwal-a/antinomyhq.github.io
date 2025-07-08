@@ -3,6 +3,7 @@ import SpotlightSpan from "./SpotlightCursor"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import clsx from "clsx"
+import {Copy, CopyCheck} from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -155,17 +156,9 @@ const GetStarted = (): JSX.Element => {
               </div>
               <button onClick={handleCopy} className="absolute right-2 top-2 border-none bg-transparent cursor-pointer">
                 {isCopied ? (
-                  <img
-                    src="/icons/basic/copy-done.svg"
-                    className="text-tailCall-lightMode---primary-600 dark:text-tailCall-cyan h-5 w-5"
-                    alt="Copy"
-                  />
+                  <CopyCheck className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400" />
                 ) : (
-                  <img
-                    src="/icons/basic/copy.svg"
-                    alt="Copy"
-                    className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-cyan"
-                  />
+                  <Copy className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400" />
                 )}
               </button>
               <div className="pt-4 px-3 pb-2 md:pt-6 md:px-8 md:pb-4 lg:pt-8 lg:px-12 lg:pb-6 xl:pt-12 xl:px-16 xl:pb-8">

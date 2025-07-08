@@ -26,7 +26,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
       >
         <span
           className={
-            `max-w-48 md:max-w-none font-kanit text-white text-title-small xl:text-[26px] -tracking-normal font-normal transition-all duration-300 ` +
+            `max-w-48 md:max-w-none font-kanit text-white text-content-small xl:text-[26px] -tracking-normal font-normal transition-all duration-300 ` +
             `${selected ? "text-white opacity-100 font-bold drop-shadow" : "text-[#262626] dark:text-white opacity-70"}`
           }
         >
@@ -40,7 +40,7 @@ const TechCard = (props: TechCardProps): JSX.Element => {
       </div>
       <ul
         className={
-          `px-8 py-4 flex flex-col font-space list-none text-title-tiny font-normal gap-3 opacity-80 rounded-b-xl ` +
+          `px-8 py-4 flex flex-col font-space list-none text-content-tiny md:text-title-tiny font-normal gap-3 opacity-80 rounded-b-xl ` +
           `${selected ? "bg-tailCall-lightMode---neutral-200 dark:bg-tailCall-dark-400" : "bg-tailCall-lightMode---neutral-200 dark:bg-[#1e1c21]"} text-tailCall-light-1000 dark:text-[#a1a1a1]`
         }
       >
