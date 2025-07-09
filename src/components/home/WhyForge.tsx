@@ -128,7 +128,7 @@ const WhyForge = (): JSX.Element => {
         // Phase 3: Pin section and horizontal scroll with adjusted end point
         ScrollTrigger.create({
           trigger: section,
-          start: "top top",
+          start: "center center",
           end: `+=${totalScroll}`,
           pin: true,
           pinSpacing: true,
