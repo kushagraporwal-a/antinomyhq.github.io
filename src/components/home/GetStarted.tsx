@@ -145,7 +145,7 @@ const GetStarted = (): JSX.Element => {
                 // Extra spacing for very small screens when text wraps
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
-                "max-[390px]:text-[60px]",
+                "max-[390px]:text-[58px]",
                 "max-[360px]:text-[48px]",
                 "max-[320px]:text-[45px]",
                 "max-[410px]:text-[55px]",

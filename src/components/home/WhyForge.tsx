@@ -170,13 +170,13 @@ const WhyForge = (): JSX.Element => {
               <SpotlightSpan
                 showHighlighted
                 text="WHY THEY LOVE"
-                className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[120px]"
+                className="font-bebas md:font-normal max-[320px]:text-[50px] text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[120px]"
               />
             </div>
-            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-12 md:-mt-16 xl:-mt-12">
+            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-16 md:-mt-16 xl:-mt-12">
               <SpotlightSpan
                 text="FORGE CODE"
-                className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[120px]"
+                className="font-bebas md:font-normal max-[320px]:text-[50px] text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[120px]"
               />
             </div>
           </div>
