@@ -20,10 +20,10 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-border-dark-700 p-5 w-full after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:dark:h-0 after:dark:bg-transparent after:bg-[linear-gradient(90deg,rgba(255,255,255,1)_25%,rgba(0,206,201,1)_50%,rgba(212,212,212,1)_100%)] ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)]" : ""}`}
+      className={`fixed top-0 left-0 z-[999] backdrop-blur-md bg-transparent p-5 w-full ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)]" : "backdrop-blur-md"}`}
     >
       {showNavbar ? (
-        <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 z-[998] flex flex-col">
+        <div className="h-screen bg-[#F1F1F1] dark:bg-black z-[998] flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center justify-center">
@@ -46,7 +46,7 @@ const NewNavbar = (): JSX.Element => {
                 className={`no-underline ${
                   location.pathname === "/"
                     ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
-                    : "text-tailCall-darkMode---neutral-400 dark:text-white opacity-80 hover:opacity-100"
+                    : "text-tailCall-darkMode---neutral-400 dark:text-tailCall-darkMode---neutral-500 hover:opacity-100"
                 }`}
               >
                 Home
@@ -59,7 +59,7 @@ const NewNavbar = (): JSX.Element => {
                   className={`no-underline ${
                     `${item.link}/` === location.pathname
                       ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
-                      : "text-tailCall-darkMode---neutral-400 opacity-80 hover:opacity-100"
+                      : "text-tailCall-darkMode---neutral-400 dark:text-tailCall-darkMode---neutral-500 hover:opacity-100"
                   }`}
                 >
                   {item.name}
@@ -85,7 +85,7 @@ const NewNavbar = (): JSX.Element => {
                     className={` hover:opacity-100 transition-opacity duration-500 no-underline hover:no-underline hover:text-tailCall-darkMode---neutral-950 hover:dark:text-white ${
                       `${item.link}/` === location.pathname
                         ? "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
-                        : "text-tailCall-darkMode---neutral-500 hover:opacity-100 opacity-80"
+                        : "text-tailCall-darkMode---neutral-500 dark:text-tailCall-darkMode---neutral-400 hover:opacity-100"
                     }`}
                     href={item.link}
                     key={item.name}

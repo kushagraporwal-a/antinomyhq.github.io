@@ -88,19 +88,15 @@ const WhyForge = (): JSX.Element => {
       })
 
       const card = cards.querySelector("div")
-      const cardStyle = card ? window.getComputedStyle(card) : null
       const cardWidth = card ? card.offsetWidth : 0
-      const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0
       const gap = 24 // gap-6 = 24px
       const viewportWidth = window.innerWidth
-      const viewportHeight = getViewportHeight()
-      // Calculate total scroll distance to center the last card
+      // Calculate total scroll distance including all extended cards
       const totalCardsWidth = cards.scrollWidth
-      const lastCardIndex = cardsData.length - 1
-      const lastCardPosition = lastCardIndex * (cardWidth + gap)
-      const centerOfViewport = viewportWidth / 2
-      const cardCenter = cardWidth / 2
-      const totalScroll = lastCardPosition + cardCenter - centerOfViewport
+      // Add extra padding for larger screens
+      const extraPadding = viewportWidth >= 1440 ? cardWidth : cardWidth / 2
+      // Calculate exact space needed for all cards to be visible
+      const totalScroll = totalCardsWidth - viewportWidth + (cardWidth + gap) + extraPadding
 
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
@@ -129,19 +125,19 @@ const WhyForge = (): JSX.Element => {
           },
         })
 
-        // Phase 3: Pin section and horizontal scroll
+        // Phase 3: Pin section and horizontal scroll with adjusted end point
         ScrollTrigger.create({
           trigger: section,
-          start: "top top",
+          start: "center center",
           end: `+=${totalScroll}`,
           pin: true,
           pinSpacing: true,
-          scrub: true,
+          scrub: 1,
           onUpdate: (self) => {
-            // Move cards horizontally based on scroll progress
+            // Smooth out the scrolling motion
             const progress = self.progress
             const xOffset = -progress * totalScroll
-            gsap.set(cards, {x: xOffset})
+            gsap.set(cards, {x: Math.min(0, xOffset)})
           },
         })
       }, section)
@@ -166,35 +162,54 @@ const WhyForge = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 h-screen w-full overflow-hidden flex flex-col justify-center"
+        className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 min-h-fit md:min-h-[600px] w-full overflow-hidden flex flex-col justify-center md:pt-20 xl:pt-24"
       >
-        <div className="relative h-[1px] p-3 sm:p-auto">
-          <div ref={whyRef}>
-            <SpotlightSpan
-              showHighlighted
-              text="WHY THEY LOVE"
-              className="absolute -top-[70px] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[130px]"
-            />
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-12 px-4 md:px-0">
+            <div ref={whyRef} className="flex justify-start">
+              <SpotlightSpan
+                showHighlighted
+                text="WHY THEY LOVE"
+                className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[120px]"
+              />
+            </div>
+            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-12 md:-mt-16 xl:-mt-12">
+              <SpotlightSpan
+                text="FORGE CODE"
+                className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[120px]"
+              />
+            </div>
           </div>
-          <div ref={forgeRef}>
-            <SpotlightSpan
-              text="FORGE CODE"
-              className="absolute -top-2 lg:top-4 xl:top-14 sm:top-[23px] md:top-4 left-[15%] font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[130px]"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-4">
-          <div
-            ref={cardsRef}
-            className={`md:flex gap-6 p-3 mt-10 md:mt-14 xl:mt-[7.5rem] hidden`}
-            style={{transform: "translateX(0)", willChange: "transform"}}
-          >
-            {extendedCards.map((card, idx) => {
-              return (
-                <Card key={card.title}>
-                  <div
-                    className={`px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
-                  >
+          <div className="flex flex-col gap-4">
+            <div
+              ref={cardsRef}
+              className={`md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-8 hidden`}
+              style={{transform: "translateX(0)", willChange: "transform"}}
+            >
+              {extendedCards.map((card, idx) => {
+                return (
+                  <Card key={card.title}>
+                    <div
+                      className={`px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden`}
+                    >
+                      <div className="flex flex-col gap-3">
+                        <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
+                        <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
+                          {card.title}
+                        </span>
+                        <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
+                          - {card.author}
+                        </span>
+                      </div>
+                    </div>
+                  </Card>
+                )
+              })}
+            </div>
+            <Carousel>
+              {cardsData.map((card, idx) => (
+                <Card key={idx}>
+                  <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
                     <div className="flex flex-col gap-3">
                       <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
                       <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
@@ -206,26 +221,9 @@ const WhyForge = (): JSX.Element => {
                     </div>
                   </div>
                 </Card>
-              )
-            })}
+              ))}
+            </Carousel>
           </div>
-          <Carousel>
-            {cardsData.map((card, idx) => (
-              <Card key={idx}>
-                <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
-                  <div className="flex flex-col gap-3">
-                    <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                    <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words">
-                      {card.title}
-                    </span>
-                    <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
-                      - {card.author}
-                    </span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </Carousel>
         </div>
       </div>
     </div>

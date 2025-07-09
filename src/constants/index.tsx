@@ -663,20 +663,20 @@ export enum CookiePreferenceCategory {
 
 export const NavbarItems = [
   {
-    name: "Docs",
-    link: "/docs",
-  },
-  {
-    name: "Releases",
-    link: "/releases",
-  },
-  {
     name: "Pricing",
     link: "/pricing",
   },
   {
+    name: "Docs",
+    link: "/docs",
+  },
+  {
     name: "Blog",
     link: "/blog",
+  },
+  {
+    name: "Releases",
+    link: "/releases",
   },
 ]
 
@@ -743,6 +743,7 @@ export const TECHS = ["Backend", "Devops", "Security & infra", "Solo Dev"]
 export const BENEFITS = [
   {
     imageUrl: "/icons/basic/gear.svg",
+    imageLightUrl: "/icons/basic/gear-light.svg",
     title: "Use your favorite IDE",
     smallText: true,
     description:
@@ -750,6 +751,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/target.svg",
+    imageLightUrl: "/icons/basic/target-light.svg",
     title: "Control speed vs accuracy",
     smallText: true,
     description:
@@ -757,6 +759,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/puzzlePiece.svg",
+    imageLightUrl: "/icons/basic/puzzlePiece-light.svg",
     title: "Work with your existing AI providers",
     smallText: false,
     description:
@@ -764,6 +767,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/robot.svg",
+    imageLightUrl: "/icons/basic/robot-light.svg",
     title: "Create and share specialized agents",
     smallText: false,
     description:
@@ -771,6 +775,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/swap.svg",
+    imageLightUrl: "/icons/basic/swap-light.svg",
     title: "Handle massive refactors",
     smallText: true,
     description:
@@ -873,8 +878,9 @@ export const COMMANDS = [
       "⏺ [21:39:59] Read docusaurus.config.ts",
       "⏺ [21:40:00] Read src/pages/index.tsx",
       "⏺ [21:40:01] Read src/components/home/index.tsx",
+      "synthesizing 20s ctrl+C to interrupt",
       "- Based on my analysis of the codebase, here are the main components and how they interact:",
-      "- Main Components Overview",
+      "Main Components Overview",
       "- This is a Docusaurus 2 based website for Forge Code - an AI coding platform. The architecture follows a modern React/TypeScript pattern with custom theming and components.",
     ],
   },

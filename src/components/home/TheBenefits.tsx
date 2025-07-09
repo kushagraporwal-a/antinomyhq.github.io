@@ -211,6 +211,12 @@ const TheBenefits = (): JSX.Element => {
               })
               setFocusedIdx(focusIdx)
             },
+            onLeave: () => {
+              if (section) section.style.height = "115vh"
+            },
+            onLeaveBack: () => {
+              if (section) section.style.height = "115vh"
+            },
           },
         })
         gsap.to(".circle-logo", {
@@ -264,7 +270,7 @@ const TheBenefits = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="xl:max-w-[1440px] relative w-full h-[120vh] flex flex-col pt-10 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-40"
+        className="xl:max-w-[1440px] relative w-full h-[110vh] md:h-[120vh] flex flex-col pt-10 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-40"
       >
         <div
           className="sticky top-0 flex flex-col items-center bg-[#F1F1F1] dark:bg-black"
@@ -309,13 +315,19 @@ const TheBenefits = (): JSX.Element => {
           >
             {isMobile ? (
               <Carousel>
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
-                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}, idx) => (
+                  <BenefitsCard
+                    title={title}
+                    description={description}
+                    imageUrl={imageUrl}
+                    small={smallText}
+                    imageLightUrl={imageLightUrl}
+                  />
                 ))}
               </Carousel>
             ) : (
               <div ref={cardsRef} className="hidden md:flex flex-col gap-8">
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}, idx) => (
                   <div
                     key={title}
                     ref={(el) => (cardRefs.current[idx] = el)}
@@ -327,7 +339,13 @@ const TheBenefits = (): JSX.Element => {
                     }}
                   >
                     <div className="flex flex-col h-full">
-                      <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                      <BenefitsCard
+                        title={title}
+                        description={description}
+                        imageUrl={imageUrl}
+                        small={smallText}
+                        imageLightUrl={imageLightUrl}
+                      />
                     </div>
                   </div>
                 ))}

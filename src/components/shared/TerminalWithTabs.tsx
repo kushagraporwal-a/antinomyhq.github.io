@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react"
 import {COMMANDS, GUIDES} from "@site/src/constants"
 import {ChevronRight} from "lucide-react"
+import clsx from "clsx"
 
 const TerminalWithTabs = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -100,10 +101,10 @@ const TerminalWithTabs = (): JSX.Element => {
           {GUIDES.map(({title, details}) => {
             return (
               <div key={title} className="flex list-none w-full">
-                <span className="text-[#525252] dark:text-white font-space text-title-tiny font-normal w-2/5 inline-block max-[480px]:text-[12px]">
+                <span className="text-[#525252] dark:text-white font-space text-content-tiny font-normal w-2/5 inline-block max-[480px]:text-[12px]">
                   {title}
                 </span>
-                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-title-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
+                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-content-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
                   {details}
                 </span>
               </div>
@@ -115,18 +116,17 @@ const TerminalWithTabs = (): JSX.Element => {
             {lines.map((line, idx) => {
               const isDotLine = line?.startsWith("⏺")
               const rest = isDotLine ? line?.slice(2) : line
-
               return (
                 <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
-                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
-                      <span className="font-space text-content-tiny font-normal text-tailCall-darkMode---neutral-500 italic">
-                        {rest}
-                      </span>
+                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-2 w-2 rounded-lg"></div>
+                      <span className={clsx("font-space text-content-tiny font-normal")}>{rest}</span>
                     </div>
                   ) : (
-                    <span className="font-space text-content-tiny font-normal">{line}</span>
+                    <span className={clsx("!font-normal font-space")}>
+                      {line?.includes("synthesizing") ? <span className="text-[#1ECB83]">{line}</span> : line}
+                    </span>
                   )}
                 </div>
               )

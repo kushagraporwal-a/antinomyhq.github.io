@@ -57,7 +57,7 @@ const TheTeams = (): JSX.Element => {
           anticipatePin: 1,
           onUpdate: () => {
             // Highlight the card closest to the center of the visible area
-            const focusPoint = window.innerHeight / 1.8
+            const focusPoint = window.innerHeight / 2
             let minDist = Infinity
             let focusIdx = 0
             cardRefs.current.forEach((el, idx) => {
@@ -71,6 +71,9 @@ const TheTeams = (): JSX.Element => {
               }
             })
             setActiveIdx(focusIdx)
+          },
+          onLeave: () => {
+            if (section) section.style.height = "100vh"
           },
         },
       })
@@ -88,19 +91,19 @@ const TheTeams = (): JSX.Element => {
   }
 
   return (
-    <div ref={sectionRef} className="flex justify-center z-[99] h-screen overflow-visible items-start md:items-center">
-      <div className="max-w-[1440px] relative flex flex-col w-full lg:flex-row justify-between px-5 mt-24 md:px-20 xl:px-24 xl:py-28">
-        <div className="flex lg:flex-col gap-32">
-          <div className=" flex flex-col">
+    <div ref={sectionRef} className="relative min-h-screen w-full flex justify-center z-[99] lg:overflow-hidden">
+      <div className="max-w-[1440px] w-full flex flex-col lg:flex-row justify-between px-5 py-24 md:px-20 xl:px-24">
+        <div className="flex lg:flex-col gap-32 lg:gap-0 lg:sticky lg:top-24">
+          <div className="flex flex-col">
             <SpotlightSpan
               showHighlighted
               text="THE TEAMS"
-              className="md:absolute top-3 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="md:relative font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
             <br className="hidden md:block" />
             <SpotlightSpan
               text="AT WORK"
-              className="md:absolute top-20 md:top-[6.5rem] xl:top-[8.5rem] font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="md:relative md:-mt-12 xl:-mt-8 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
           <ul className="hidden lg:flex pl-0 flex-row lg:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">
@@ -111,7 +114,7 @@ const TheTeams = (): JSX.Element => {
                 className={`hover:opacity-100 cursor-pointer hover:text-tailCall-light-800 hover:dark:text-white transition-opacity duration-500 font-normal ${
                   idx === activeIdx
                     ? "text-tailCall-darkMode---neutral-900 dark:text-tailCall-lightMode---primary-400 dark:!opacity-100"
-                    : "text-tailCall-light-800 opacity-30 dark:text-tailCall-darkMode---neutral-500"
+                    : "text-tailCall-darkMode---neutral-800 opacity-70 dark:opacity-100 dark:text-tailCall-darkMode---neutral-500"
                 }`}
               >
                 {tech}
@@ -121,13 +124,15 @@ const TheTeams = (): JSX.Element => {
         </div>
         <div
           ref={cardsContainerRef}
-          className="hidden xl:h-auto lg:overflow-scroll lg:flex flex-col gap-10 xl:overflow-hidden pt-[15px]"
+          className="hidden lg:flex flex-col gap-10 lg:w-[500px] xl:w-[650px] lg:overflow-visible"
         >
           {TechDetails.map(({title, descriptions, avatars}, idx) => (
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-fit lg:w-[500px] xl:w-[650px] odd:rotate-2 even:-rotate-2 hover:rotate-0 hover:dark:rotate-0 transition-all duration-300 ${activeIdx === idx ? "opacity-100" : "opacity-60"} hover:opacity-100`}
+              className={`w-full odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${
+                activeIdx === idx ? "opacity-100" : "opacity-60"
+              } hover:opacity-100 ${idx === 0 ? "mt-32" : ""}`}
               style={{
                 borderRadius: 16,
               }}
@@ -137,24 +142,24 @@ const TheTeams = (): JSX.Element => {
           ))}
         </div>
         {/* Accordion for mobile only */}
-        <div className="block lg:hidden md:mt-60 overflow-scroll max-h-[70vh]">
+        <div className="block lg:hidden mt-12 md:mt-32 overflow-y-auto max-h-[calc(100vh-16rem)]">
           {TechDetails.map(({title, descriptions, avatars}, idx) => {
             const isOpen = activeIdx === idx
             return (
               <div key={title} className="mb-4 border border-gray-700 rounded overflow-hidden">
                 <button
                   onClick={() => handleTechClick(idx)}
-                  className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
+                  className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-darkMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
                   <span
-                    className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-tailCall-darkMode---neutral-500"}`}
+                    className={`font-kanit text-title-tiny text-white`}
                   >
                     {TECHS[idx]}
                   </span>
                   <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-white" />}</span>
                 </button>
                 {isOpen && (
-                  <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] mt-1 rounded-xl">
+                  <div className="bg-tailCall-darkMode---neutral-500 dark:bg-[#121212] mt-1 rounded-xl">
                     <TechCard title={title} description={descriptions} avatars={avatars} selected={true} />
                   </div>
                 )}
