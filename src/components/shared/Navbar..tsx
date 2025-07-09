@@ -20,10 +20,10 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] backdrop-blur-md bg-tailCall-lightMode---neutral-50 dark:bg-tailCall-border-dark-700 p-5 w-full ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[linear-gradient(90deg,rgba(23,23,23,1)_0%,rgba(0,206,201,1)_62%,rgba(43,43,43,1)_100%)]" : ""}`}
+      className={`fixed top-0 left-0 z-[999] backdrop-blur-md bg-transparent p-5 w-full ${location.pathname !== "/" ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-[linear-gradient(90deg,rgba(23,23,23,1)_0%,rgba(0,206,201,1)_62%,rgba(43,43,43,1)_100%)]" : "backdrop-blur-md"}`}
     >
       {showNavbar ? (
-        <div className="h-screen bg-tailCall-lightMode---neutral-50 dark:bg-black z-[998] flex flex-col">
+        <div className="h-screen bg-[#F1F1F1] dark:bg-black z-[998] flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
             <Link href="/" className="flex items-center justify-center">

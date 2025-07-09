@@ -103,7 +103,7 @@ const TheTeams = (): JSX.Element => {
             <br className="hidden md:block" />
             <SpotlightSpan
               text="AT WORK"
-              className="md:relative mt-4 md:-mt-12 xl:-mt-8 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
+              className="md:relative md:-mt-12 xl:-mt-8 font-bebas text-display-medium md:text-display-large xl:text-[140px] md:font-normal font-normal -tracking-normal xl:leading-[130px]"
             />
           </div>
           <ul className="hidden lg:flex pl-0 flex-row lg:flex-col list-none gap-6 font-kanit md:text-title-medium md:font-normal xl:font-normal xl:text-title-large font-normal text-white mt-28 xl:mt-10">
@@ -149,17 +149,17 @@ const TheTeams = (): JSX.Element => {
               <div key={title} className="mb-4 border border-gray-700 rounded overflow-hidden">
                 <button
                   onClick={() => handleTechClick(idx)}
-                  className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
+                  className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-darkMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
                   <span
-                    className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-tailCall-darkMode---neutral-800 opacity-70 dark:opacity-100 dark:text-tailCall-darkMode---neutral-500"}`}
+                    className={`font-kanit text-title-tiny text-white`}
                   >
                     {TECHS[idx]}
                   </span>
                   <span>{isOpen ? <ChevronUp /> : <ChevronDown className="text-white" />}</span>
                 </button>
                 {isOpen && (
-                  <div className="bg-tailCall-lightMode---neutral-300 dark:bg-[#121212] mt-1 rounded-xl">
+                  <div className="bg-tailCall-darkMode---neutral-500 dark:bg-[#121212] mt-1 rounded-xl">
                     <TechCard title={title} description={descriptions} avatars={avatars} selected={true} />
                   </div>
                 )}

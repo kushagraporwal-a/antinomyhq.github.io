@@ -111,7 +111,7 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
               isTransitioningRef.current = true
             }}
             className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
-              idx + 1 === currentIndex ? "bg-tailCall-lightMode---primary-400" : "bg-tailCall-darkMode---neutral-600"
+              idx + 1 === currentIndex ? "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400" : "bg-tailCall-darkMode---neutral-600"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

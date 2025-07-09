@@ -16,7 +16,7 @@ const BenefitsCard = ({title, description, imageUrl, small, imageLightUrl}: Bene
           <img src={imageUrl} alt="" className="hidden dark:block w-10 h-10 md:w-auto md:h-auto" />
           <img src={imageLightUrl} alt="" className="block dark:hidden w-10 h-10 md:w-auto md:h-auto" />
           <span
-            className={`font-kanit text-tailCall-lightMode---neutral-800 dark:text-tailCall-lightMode---neutral-50 text-content-medium md:text-title-semi-large md:font-normal font-normal ${small ? "w-36 md:w-52" : "w-auto"} whitespace-normal break-words`}
+            className={`font-kanit leading-7 text-tailCall-lightMode---neutral-800 dark:text-tailCall-lightMode---neutral-50 text-content-medium md:text-title-semi-large md:font-normal font-normal ${small ? "w-36 md:w-52" : "w-auto"} whitespace-normal break-words`}
           >
             {title}
           </span>

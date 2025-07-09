@@ -20,14 +20,14 @@ const TechCard = (props: TechCardProps): JSX.Element => {
     >
       <div
         className={
-          `bg-tailCall-darkMode---neutral-300 relative px-2 md:px-8 py-5 flex items-center justify-between rounded-t-md lg:rounded-t-2xl transition-all duration-300 ` +
+          `bg-tailCall-darkMode---neutral-300 relative px-4 md:px-8 py-5 flex items-center justify-between rounded-t-md lg:rounded-t-2xl transition-all duration-300 ` +
           `${selected ? "bg-tailCall-darkMode---neutral-500 dark:bg-[#262626] text-white opacity-100" : "bg-tailCall-darkMode---neutral-300 dark:bg-tailCall-dark-1200"}`
         }
       >
         <span
           className={
             `max-w-48 md:max-w-none font-kanit text-content-small xl:text-[26px] -tracking-normal font-normal transition-all duration-300 ` +
-            `${selected ? "text-tailCall-darkMode---neutral-100 opacity-70 dark:text-white font-bold drop-shadow" : "text-[#262626] dark:text-white opacity-70"}`
+            `${selected ? "text-white font-bold drop-shadow" : "text-[#262626] dark:text-white opacity-70"}`
           }
         >
           {title}
