@@ -663,20 +663,20 @@ export enum CookiePreferenceCategory {
 
 export const NavbarItems = [
   {
-    name: "Docs",
-    link: "/docs",
-  },
-  {
-    name: "Releases",
-    link: "/releases",
-  },
-  {
     name: "Pricing",
     link: "/pricing",
   },
   {
+    name: "Docs",
+    link: "/docs",
+  },
+  {
     name: "Blog",
     link: "/blog",
+  },
+  {
+    name: "Releases",
+    link: "/releases",
   },
 ]
 
