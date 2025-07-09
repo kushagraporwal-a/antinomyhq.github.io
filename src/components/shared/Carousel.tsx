@@ -91,7 +91,7 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
   }, [currentIndex])
 
   return (
-    <div className="overflow-hidden px-[10vw] md:hidden mt-2">
+    <div className="overflow-hidden px-[10vw] md:hidden mt-2 pt-1">
       <div ref={carouselRef} className="flex gap-4 transition-transform ease-out duration-300 will-change-transform">
         {clonedChildren.map((child, idx) => (
           <div key={idx} className="flex-shrink-0 w-[80vw] rounded-xl flex items-center justify-center text-2xl">
@@ -111,7 +111,9 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
               isTransitioningRef.current = true
             }}
             className={`w-3 h-3 rounded-full transition-colors duration-300 border-none ${
-              idx + 1 === currentIndex ? "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400" : "bg-tailCall-darkMode---neutral-600"
+              idx + 1 === currentIndex
+                ? "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400"
+                : "bg-tailCall-darkMode---neutral-600"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
