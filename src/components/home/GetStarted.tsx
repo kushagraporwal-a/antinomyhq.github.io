@@ -169,8 +169,8 @@ const GetStarted = (): JSX.Element => {
                   <Copy className="h-5 w-5 text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400" />
                 )}
               </button>
-              <div className="pt-4 px-12 pb-2 md:pt-4 md:px-8 md:pb-4 lg:pt-4 lg:px-5 lg:pb-3 xl:pt-4 xl:px-7 xl:pb-4">
-                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] block font-space text-title-small md:text-content-large xl:text-title-semi-large xl:font-normal font-normal md:font-normal -tracking-wide">
+              <div className="pt-4 px-8 pb-2 md:pt-4 md:px-8 md:pb-4 lg:pt-4 lg:px-5 lg:pb-3 xl:pt-4 xl:px-7 xl:pb-4">
+                <span className="text-tailCall-lightMode---primary-600 dark:text-[#30EDE6] block font-space text-content-small md:text-content-large xl:text-title-semi-large xl:font-normal font-normal md:font-normal -tracking-wide">
                   npx forgecode@latest
                 </span>
               </div>
