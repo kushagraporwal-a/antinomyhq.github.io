@@ -4,7 +4,7 @@ import {Copy, CopyCheck} from "lucide-react"
 
 const CopyCodeButton = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
-
+  console.log(isCopied)
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
     if (isCopied) {
