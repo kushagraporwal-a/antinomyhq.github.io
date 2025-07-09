@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
-import {Theme} from "@site/src/constants"
-import {pageLinks} from "@site/src/constants/routes"
-import {analyticsHandler} from "@site/src/utils"
-import {Check, Star, Crown} from "lucide-react"
+import { Theme } from "@site/src/constants"
+import { pageLinks } from "@site/src/constants/routes"
+import { analyticsHandler } from "@site/src/utils"
+import { Check, Star, Crown } from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
 import OpenAILogo from "@site/src/assets/logos/openai.svg"
 import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
@@ -15,24 +15,28 @@ import MetaLogo from "@site/src/assets/logos/meta.svg"
 import MistralLogo from "@site/src/assets/logos/mistral.svg"
 import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
 import NewLinkButton from "../components/shared/NewLinkButton"
+import SpotlightSpan from "../components/home/SpotlightCursor"
+import clsx from "clsx"
+import Button from "../components/shared/Button"
 
 // AI Providers array for iteration
 const aiProviders = [
-  {name: "OpenAI", logo: OpenAILogo},
-  {name: "Anthropic", logo: AnthropicLogo},
-  {name: "Google", logo: GoogleLogo},
-  {name: "xAI", logo: XAILogo},
-  {name: "Meta", logo: MetaLogo},
-  {name: "Mistral", logo: MistralLogo},
-  {name: "Deepseek", logo: DeepSeekLogo},
+  { name: "OpenAI", logo: OpenAILogo },
+  { name: "Anthropic", logo: AnthropicLogo },
+  { name: "Google", logo: GoogleLogo },
+  { name: "xAI", logo: XAILogo },
+  { name: "Meta", logo: MetaLogo },
+  { name: "Mistral", logo: MistralLogo },
+  { name: "Deepseek", logo: DeepSeekLogo },
 ]
 
 const PricingPage = (): JSX.Element => {
   const tiers = [
     {
       name: "Free",
+      title: "Basic",
       price: "$0",
-      period: "forever",
+      period: "Forever",
       description: "Perfect for getting started",
       features: ["Basic AI model access", "Community support", "Local processing"],
       cta: "Get Started Free",
@@ -41,8 +45,9 @@ const PricingPage = (): JSX.Element => {
     },
     {
       name: "Pro",
+      title: "Most Popular",
       price: "$20",
-      period: "/month",
+      period: "/per month",
       description: "For professional developers",
       features: [
         "Everything in Free",
@@ -58,6 +63,7 @@ const PricingPage = (): JSX.Element => {
     },
     {
       name: "Max",
+      title: "Early Access",
       price: "$0",
       originalPrice: "$200",
       period: "/month",
@@ -81,16 +87,53 @@ const PricingPage = (): JSX.Element => {
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
+      <div className="flex gap-[600px] h-[278px]">
+        <div>
+          <SpotlightSpan
+            showHighlighted
+            text="START FOR FREE."
+            className={clsx(
+              "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[60px] font-normal -tracking-normal",
+              "max-[390px]:text-[55px]",
+              "max-[360px]:text-[48px]",
+              "max-[320px]:text-[45px]",
+              "max-[410px]:text-[55px]",
+              "max-[425px]:text-[64px]",
+              "top-40",
+              "left-10",
+            )}
+          />
+        </div>
+        <div>
+          <SpotlightSpan
+            showHighlighted
+            text="SCALE WHEN YOU'RE READY"
+            className={clsx(
+              "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[60px] font-normal -tracking-normal",
+              "max-[390px]:text-[55px]",
+              "max-[360px]:text-[48px]",
+              "max-[320px]:text-[45px]",
+              "max-[410px]:text-[55px]",
+              "max-[425px]:text-[64px]",
+              "top-60",
+              "left-10",
+            )}
+          />
+        </div>
+        <div className="mt-[150px] text-[24px] text-[#747474]">No credit card required. No lock-in.
+          <div>Just productivity from day one</div>
+        </div>
+      </div>
       <main>
         <Section className="py-16 lg:py-24 dark:bg-black bg-white">
           <div className="text-center mb-16">
             <Heading
               as="h1"
-              className="text-display-medium lg:text-display-large mb-6 text-tailCall-lightMode---neutral-900 dark:text-white"
+              className="text-content-regular text-4xl mb-6 text-tailCall-lightMode---neutral-900 dark:text-white"
             >
               Simple Pricing
             </Heading>
-            <p className="text-xl text-gray-600 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto">
+            <p className="text-title-text-mini text-tailCall-border-light-300 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto">
               Start free, upgrade when you're ready. No hidden fees.
             </p>
           </div>
@@ -99,13 +142,12 @@ const PricingPage = (): JSX.Element => {
             {tiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`relative border-dashed border-1 p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${
-                  tier.popular
+                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${tier.popular
+                  ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
+                  : tier.special
                     ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                    : tier.special
-                      ? "border-tailCall-darkMode---neutral-500 bg-white my-5 dark:bg-tailCall-darkMode---neutral-900"
-                      : "border-tailCall-darkMode---neutral-500 bg-white my-5"
-                } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
+                    : "border-tailCall-darkMode---neutral-500 bg-white"
+                  } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
                 {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -116,41 +158,40 @@ const PricingPage = (): JSX.Element => {
                   </div>
                 )} */}
 
-                {tier.special && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-yellow-500 text-black px-4 py-2 border-dashed border-1 border-gray-800 text-sm font-semibold flex items-center gap-2">
-                      <Crown size={16} />
-                      Early Access
-                    </div>
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-black text-white px-4 py-2 border-solid border-1 rounded-[5px] border-gray-800 text-sm font-semibold flex items-center gap-2">
+                    {tier.title}
                   </div>
-                )}
+                </div>
 
-                <div className="text-center mb-6 pt-8 sm:pt-6">
-                  <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="text-start mb-6 pt-8 sm:pt-6">
+                  <div className="flex items-start justify-start gap-2">
                     {/* {tier.icon} */}
-                    <h3 className="text-title-large font-bold text-tailCall-lightMode---neutral-900 dark:text-tailCall-white">
+                    <h3 className="text-[29px] font-[400] text-tailCall-lightMode---neutral-900 dark:text-tailCall-white">
                       {tier.name}
                     </h3>
                   </div>
                   <div className="mb-4">
                     {tier.originalPrice ? (
-                      <div className="flex flex-col items-center">
-                        <span className="text-lg text-gray-400 line-through decoration-2 mb-1">
-                          {tier.originalPrice}
-                          {tier.period}
-                        </span>
-                        <div className="flex items-baseline">
-                          <span className="text-4xl lg:text-5xl font-bold text-green-600">{tier.price}</span>
-                          <span className="text-gray-500 ml-2 text-sm">{tier.period}</span>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <span className="text-lg text-gray-400 line-through decoration-2 mb-1">
+                            {tier.originalPrice}
+                            {tier.period}
+                          </span>
+                          <div className="flex items-baseline">
+                            <span className="text-4xl lg:text-5xl text-white">{tier.price}</span>
+                            <span className="text-gray-500 ml-2 text-sm">{tier.period}</span>
+                          </div>
                         </div>
-                        <span className="text-xs text-green-600 font-semibold mt-1 bg-green-100 px-2 py-1 rounded-full">
-                          LIMITED TIME ONLY
-                        </span>
+                        <div className="text-[12px] text-white font-[400] mt-1 bg-[#4FDB1C] opacity-22 px-2 py-1 rounded-full">
+                          Limited Time only
+                        </div>
                       </div>
                     ) : (
                       <div>
                         <span
-                          className={`text-3xl lg:text-4xl font-bold text-tailCall-lightMode---neutral-600 dark:text-tailCall-white ${tier.name === "Early Access Special" ? "line-through decoration-2 text-gray-400" : ""}`}
+                          className={`text-title-text-large text-3xl lg:text-4xl font-bold text-tailCall-lightMode---neutral-600 dark:text-tailCall-white ${tier.name === "Early Access Special" ? "line-through decoration-2 text-gray-400" : ""}`}
                         >
                           {tier.price}
                         </span>
@@ -159,8 +200,9 @@ const PricingPage = (): JSX.Element => {
                     )}
                   </div>
                 </div>
-
-                <ul className="space-y-3 mb-6">
+                <hr className="border-gray-300" />
+                <ul className="space-y-3 mb-6 min-h-[280px]">
+                  <p>Features</p>
                   {tier.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       <Check size={16} className="text-green-500 flex-shrink-0 mt-1" />
@@ -177,32 +219,9 @@ const PricingPage = (): JSX.Element => {
                     width="full"
                     onClick={() => analyticsHandler("Pricing Page", "Click", tier.cta)}
                   />
-                  <p className="text-xs text-gray-500  text-center italic">{tier.note}</p>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="mt-32 text-center mb-24">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 dark:text-tailCall-white">
-              Works with every model offered by leading AI providers.
-            </h2>
-            <p className="text-gray-600 dark:text-tailCall-darkMode---neutral-400 mb-12 max-w-2xl mx-auto">
-              Seamlessly integrate with OpenAI, Anthropic, Google, xAI, Meta, Mistral, and Deepseek models.
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 max-w-5xl mx-auto">
-              {aiProviders.map((provider) => (
-                <div
-                  key={provider.name}
-                  className="flex flex-col items-center p-6 bg-tailCall-lightMode---primary-50 dark:bg-tailCall-darkMode---primary-50 border border-gray-200 rounded-xl hover:shadow-lg hover:shadow-tailCall-cyan hover:border-gray-300 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 mb-3 text-gray-700 group-hover:text-gray-900 transition-colors">
-                    <provider.logo className="w-full h-full" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{provider.name}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* FAQ Section */}
