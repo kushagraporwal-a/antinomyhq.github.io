@@ -88,19 +88,15 @@ const WhyForge = (): JSX.Element => {
       })
 
       const card = cards.querySelector("div")
-      const cardStyle = card ? window.getComputedStyle(card) : null
       const cardWidth = card ? card.offsetWidth : 0
-      const cardMarginRight = cardStyle ? parseInt(cardStyle.marginRight) : 0
       const gap = 24 // gap-6 = 24px
       const viewportWidth = window.innerWidth
-      const viewportHeight = getViewportHeight()
-      // Calculate total scroll distance to center the last card
+      // Calculate total scroll distance including all extended cards
       const totalCardsWidth = cards.scrollWidth
-      const lastCardIndex = cardsData.length - 1
-      const lastCardPosition = lastCardIndex * (cardWidth + gap)
-      const centerOfViewport = viewportWidth / 2
-      const cardCenter = cardWidth / 2
-      const totalScroll = lastCardPosition + cardCenter - centerOfViewport
+      // Add extra padding for larger screens
+      const extraPadding = viewportWidth >= 1440 ? cardWidth : cardWidth / 2
+      // Calculate exact space needed for all cards to be visible
+      const totalScroll = totalCardsWidth - viewportWidth + (cardWidth + gap) + extraPadding
 
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
@@ -129,19 +125,19 @@ const WhyForge = (): JSX.Element => {
           },
         })
 
-        // Phase 3: Pin section and horizontal scroll
+        // Phase 3: Pin section and horizontal scroll with adjusted end point
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
           end: `+=${totalScroll}`,
           pin: true,
           pinSpacing: true,
-          scrub: true,
+          scrub: 1,
           onUpdate: (self) => {
-            // Move cards horizontally based on scroll progress
+            // Smooth out the scrolling motion
             const progress = self.progress
             const xOffset = -progress * totalScroll
-            gsap.set(cards, {x: xOffset})
+            gsap.set(cards, {x: Math.min(0, xOffset)})
           },
         })
       }, section)
@@ -177,7 +173,7 @@ const WhyForge = (): JSX.Element => {
                 className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[120px]"
               />
             </div>
-            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-4 md:-mt-16 xl:-mt-12">
+            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-12 md:-mt-16 xl:-mt-12">
               <SpotlightSpan
                 text="FORGE CODE"
                 className="font-bebas md:font-normal text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[120px]"

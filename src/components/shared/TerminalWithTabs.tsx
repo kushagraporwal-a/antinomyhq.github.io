@@ -116,29 +116,17 @@ const TerminalWithTabs = (): JSX.Element => {
             {lines.map((line, idx) => {
               const isDotLine = line?.startsWith("⏺")
               const rest = isDotLine ? line?.slice(2) : line
-
-              // Check for 'synthesizing'
-              const containsSynth = line?.toLowerCase().includes("synthesizing")
-
-              // Check if line starts with a letter
-              const startsWithLetter = /^[a-zA-Z]/.test(line?.trim())
-
-              // Styling
-              const lineClass = clsx(
-                "font-space text-content-tiny font-normal",
-                containsSynth && "text-[#1ECB83]",
-                startsWithLetter && "font-bold",
-              )
-
               return (
                 <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
                   {isDotLine ? (
                     <div className="flex items-center gap-2">
-                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-3 w-3 rounded-lg"></div>
-                      <span className={lineClass}>{rest}</span>
+                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-2 w-2 rounded-lg"></div>
+                      <span className={clsx("font-space text-content-tiny font-normal")}>{rest}</span>
                     </div>
                   ) : (
-                    <span className={lineClass}>{line}</span>
+                    <span className={clsx("!font-normal")}>
+                      {line?.includes("synthesizing") ? <span className="text-[#1ECB83]">{line}</span> : line}
+                    </span>
                   )}
                 </div>
               )

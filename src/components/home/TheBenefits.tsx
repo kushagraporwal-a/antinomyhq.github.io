@@ -211,6 +211,12 @@ const TheBenefits = (): JSX.Element => {
               })
               setFocusedIdx(focusIdx)
             },
+            onLeave: () => {
+              if (section) section.style.height = "100vh"
+            },
+            onLeaveBack: () => {
+              if (section) section.style.height = "100vh"
+            },
           },
         })
         gsap.to(".circle-logo", {

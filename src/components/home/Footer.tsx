@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
           <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-tailCall-light-1000 dark:text-white">
             Get started with personal AI Assistant now.
           </span>
-          <div className="flex justify-between gap-5 items-start min-[425px]:items-center flex-col min-[425px]:flex-row">
+          <div className="flex justify-start gap-5 items-start min-[425px]:items-center flex-col min-[425px]:flex-row">
             <Button variant="transparent" onClick={() => {}}>
               <span className="font-kanit text-tailCall-light-1000 dark:text-white font-semibold text-title-tiny">
                 Book a demo
@@ -31,7 +31,7 @@ const Footer = (): JSX.Element => {
           <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-tailCall-light-1000 dark:text-white md:text-end">
             Get started with personal AI Assistant now.
           </span>
-          <div className="flex justify-between gap-5 items-center">
+          <div className="flex justify-start gap-5 items-center">
             <Button variant="transparent" onClick={() => {}}>
               <span className="font-kanit text-tailCall-light-1000 dark:text-white font-semibold text-title-tiny">
                 Book a demo
