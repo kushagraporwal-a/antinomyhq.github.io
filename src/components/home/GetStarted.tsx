@@ -142,7 +142,6 @@ const GetStarted = (): JSX.Element => {
                 "absolute top-8 left-0 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas text-[64px] md:text-[76px] xl:text-[132px] font-normal -tracking-normal",
                 // Mobile-specific positioning (below 768px)
                 "max-md:top-[120px] max-md:left-[0%]",
-                // Extra spacing for very small screens when text wraps
                 "max-[300px]:top-[120px]",
                 // Font size for very small screens
                 "max-[390px]:text-[58px]",
