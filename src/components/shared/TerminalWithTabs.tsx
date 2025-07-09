@@ -124,7 +124,7 @@ const TerminalWithTabs = (): JSX.Element => {
                       <span className={clsx("font-space text-content-tiny font-normal")}>{rest}</span>
                     </div>
                   ) : (
-                    <span className={clsx("!font-normal")}>
+                    <span className={clsx("!font-normal font-space")}>
                       {line?.includes("synthesizing") ? <span className="text-[#1ECB83]">{line}</span> : line}
                     </span>
                   )}

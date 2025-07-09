@@ -4,6 +4,7 @@ import {companies, companiesLight} from "@site/src/constants"
 import TerminalWithTabs from "../shared/TerminalWithTabs"
 import SpotlightSpan from "./SpotlightCursor"
 import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
+import clsx from "clsx"
 
 const Banner = (): JSX.Element => {
   const {theme} = useThemeContext()
@@ -12,18 +13,21 @@ const Banner = (): JSX.Element => {
       <div className="max-w-[1440px] relative px-7 pt:5 lg:pt-0 flex lg:justify-center flex-col w-full">
         <div className="flex justify-around flex-col lg:flex-row gap-40 md:gap-60 lg:gap-40 xl:gap-60 pt-20 md:pt-0 xl:pt-20">
           <div className="flex md:hidden lg:flex flex-col">
-            <p className="text-tailCall-lightMode---neutral-800 dark:text-white font-light lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
+            <p className="text-tailCall-lightMode---neutral-800 dark:text-white text-[26px] font-light lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="relative flex flex-col">
               <SpotlightSpan
                 showHighlighted
                 text="AI PAIR"
-                className="-tracking-normal font-normal absolute -top-5 text-[64px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+                className={clsx(
+                  "-tracking-normal font-normal absolute -top-5 text-[64px] min-[390px]:text-[75px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas",
+                  "min-[390px]:text-[75px]",
+                )}
               />
               <SpotlightSpan
                 text="PROGRAMMER"
-                className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-20 left-5 lg:left-0 text-[64px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
+                className="-tracking-normal absolute top-10 xl:top-32 xl:left-20 lg:top-20 left-5 lg:left-0 text-[64px] min-[390px]:text-[75px] sm:text-[75px] lg:text-[120px] xl:text-[180px] opacity-90 font-bebas"
               />
             </div>
           </div>

@@ -7,7 +7,7 @@ import SpotlightSpan from "./SpotlightCursor"
 const BuiltFor = (): JSX.Element => {
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1440px] z-30 md:mt-40 xl:mt-64 relative flex flex-col min-h-fit items-start xl:items-start lg:justify-center lg:items-start gap-10 md:gap-16 md:flex-row w-full p-5 md:px-20 lg:px-32 lg:py-16 overflow-hidden">
+      <div className="max-w-[1440px] z-30 md:mt-40 xl:mt-64 relative flex flex-col min-h-fit items-start xl:items-start lg:justify-center lg:items-start gap-10 md:gap-40 xl:gap-56 md:flex-row w-full p-5 md:px-20 lg:px-32 lg:py-16 overflow-hidden">
         <div className="flex flex-col md:gap-10 gap-5 items-start">
           {StatsForDevelopers.map(({title, stat, suffix, decimals}) => {
             return <StatCard title={title} stat={stat} suffix={suffix} key={title} decimals={decimals} />
