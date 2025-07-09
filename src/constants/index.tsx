@@ -873,7 +873,7 @@ export const COMMANDS = [
       "⏺ [21:39:59] Read docusaurus.config.ts",
       "⏺ [21:40:00] Read src/pages/index.tsx",
       "⏺ [21:40:01] Read src/components/home/index.tsx",
-      "synthesizing 20s cvtrl+C to ",
+      "synthesizing 20s ctrl+C to interrupt",
       "- Based on my analysis of the codebase, here are the main components and how they interact:",
       "Main Components Overview",
       "- This is a Docusaurus 2 based website for Forge Code - an AI coding platform. The architecture follows a modern React/TypeScript pattern with custom theming and components.",

@@ -126,9 +126,8 @@ const TerminalWithTabs = (): JSX.Element => {
               // Styling
               const lineClass = clsx(
                 "font-space text-content-tiny font-normal",
-                containsSynth && "text-cyan-400",
-                startsWithLetter &&
-                  "font-bold text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400",
+                containsSynth && "text-[#1ECB83]",
+                startsWithLetter && "font-bold",
               )
 
               return (
