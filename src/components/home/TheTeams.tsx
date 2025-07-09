@@ -114,7 +114,7 @@ const TheTeams = (): JSX.Element => {
                 className={`hover:opacity-100 cursor-pointer hover:text-tailCall-light-800 hover:dark:text-white transition-opacity duration-500 font-normal ${
                   idx === activeIdx
                     ? "text-tailCall-darkMode---neutral-900 dark:text-tailCall-lightMode---primary-400 dark:!opacity-100"
-                    : "text-tailCall-darkMode---neutral-500"
+                    : "text-tailCall-darkMode---neutral-800 opacity-70 dark:opacity-100 dark:text-tailCall-darkMode---neutral-500"
                 }`}
               >
                 {tech}
@@ -130,7 +130,7 @@ const TheTeams = (): JSX.Element => {
             <div
               key={title}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className={`w-full odd:rotate-2 even:-rotate-2 hover:rotate-0 hover:dark:rotate-0 transition-all duration-300 ${
+              className={`w-full odd:rotate-2 even:-rotate-2 hover:rotate-0 transition-all duration-300 ${
                 activeIdx === idx ? "opacity-100" : "opacity-60"
               } hover:opacity-100 ${idx === 0 ? "mt-32" : ""}`}
               style={{
@@ -152,7 +152,7 @@ const TheTeams = (): JSX.Element => {
                   className="border-none rounded-md w-full text-left px-4 py-3 bg-tailCall-lightMode---neutral-500 dark:bg-[#18171A] text-white font-semibold flex justify-between items-center"
                 >
                   <span
-                    className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-tailCall-darkMode---neutral-500"}`}
+                    className={`font-kanit text-title-tiny ${isOpen ? "text-white" : "text-tailCall-darkMode---neutral-800 opacity-70 dark:opacity-100 dark:text-tailCall-darkMode---neutral-500"}`}
                   >
                     {TECHS[idx]}
                   </span>

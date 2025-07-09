@@ -212,10 +212,10 @@ const TheBenefits = (): JSX.Element => {
               setFocusedIdx(focusIdx)
             },
             onLeave: () => {
-              if (section) section.style.height = "100vh"
+              if (section) section.style.height = "115vh"
             },
             onLeaveBack: () => {
-              if (section) section.style.height = "100vh"
+              if (section) section.style.height = "115vh"
             },
           },
         })
@@ -315,13 +315,19 @@ const TheBenefits = (): JSX.Element => {
           >
             {isMobile ? (
               <Carousel>
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
-                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}, idx) => (
+                  <BenefitsCard
+                    title={title}
+                    description={description}
+                    imageUrl={imageUrl}
+                    small={smallText}
+                    imageLightUrl={imageLightUrl}
+                  />
                 ))}
               </Carousel>
             ) : (
               <div ref={cardsRef} className="hidden md:flex flex-col gap-8">
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}, idx) => (
                   <div
                     key={title}
                     ref={(el) => (cardRefs.current[idx] = el)}
@@ -333,7 +339,13 @@ const TheBenefits = (): JSX.Element => {
                     }}
                   >
                     <div className="flex flex-col h-full">
-                      <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                      <BenefitsCard
+                        title={title}
+                        description={description}
+                        imageUrl={imageUrl}
+                        small={smallText}
+                        imageLightUrl={imageLightUrl}
+                      />
                     </div>
                   </div>
                 ))}

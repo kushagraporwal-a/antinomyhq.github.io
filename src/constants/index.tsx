@@ -743,6 +743,7 @@ export const TECHS = ["Backend", "Devops", "Security & infra", "Solo Dev"]
 export const BENEFITS = [
   {
     imageUrl: "/icons/basic/gear.svg",
+    imageLightUrl: "/icons/basic/gear-light.svg",
     title: "Use your favorite IDE",
     smallText: true,
     description:
@@ -750,6 +751,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/target.svg",
+    imageLightUrl: "/icons/basic/target-light.svg",
     title: "Control speed vs accuracy",
     smallText: true,
     description:
@@ -757,6 +759,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/puzzlePiece.svg",
+    imageLightUrl: "/icons/basic/puzzlePiece-light.svg",
     title: "Work with your existing AI providers",
     smallText: false,
     description:
@@ -764,6 +767,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/robot.svg",
+    imageLightUrl: "/icons/basic/robot-light.svg",
     title: "Create and share specialized agents",
     smallText: false,
     description:
@@ -771,6 +775,7 @@ export const BENEFITS = [
   },
   {
     imageUrl: "/icons/basic/swap.svg",
+    imageLightUrl: "/icons/basic/swap-light.svg",
     title: "Handle massive refactors",
     smallText: true,
     description:
