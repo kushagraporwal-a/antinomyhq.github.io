@@ -162,10 +162,10 @@ const WhyForge = (): JSX.Element => {
     <div className="flex justify-center">
       <div
         ref={sectionRef}
-        className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 min-h-fit md:min-h-[600px] w-full overflow-hidden flex flex-col justify-center pt-16 md:pt-20 xl:pt-24"
+        className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 min-h-fit md:min-h-[600px] w-full overflow-hidden flex flex-col justify-center md:pt-20 xl:pt-24"
       >
         <div className="flex flex-col gap-2">
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12 px-4 md:px-0">
             <div ref={whyRef} className="flex justify-start">
               <SpotlightSpan
                 showHighlighted
