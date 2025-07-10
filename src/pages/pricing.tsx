@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
-import {Theme} from "@site/src/constants"
-import {pageLinks} from "@site/src/constants/routes"
-import {analyticsHandler} from "@site/src/utils"
-import {Check, Minus, Plus} from "lucide-react"
+import { Theme } from "@site/src/constants"
+import { pageLinks } from "@site/src/constants/routes"
+import { analyticsHandler } from "@site/src/utils"
+import { Check, Minus, Plus } from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
 import OpenAILogo from "@site/src/assets/logos/openai.svg"
 import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
@@ -21,13 +21,13 @@ import Button from "../components/shared/Button"
 
 // AI Providers array for iteration
 const aiProviders = [
-  {name: "OpenAI", logo: OpenAILogo},
-  {name: "Anthropic", logo: AnthropicLogo},
-  {name: "Google", logo: GoogleLogo},
-  {name: "xAI", logo: XAILogo},
-  {name: "Meta", logo: MetaLogo},
-  {name: "Mistral", logo: MistralLogo},
-  {name: "Deepseek", logo: DeepSeekLogo},
+  { name: "OpenAI", logo: OpenAILogo },
+  { name: "Anthropic", logo: AnthropicLogo },
+  { name: "Google", logo: GoogleLogo },
+  { name: "xAI", logo: XAILogo },
+  { name: "Meta", logo: MetaLogo },
+  { name: "Mistral", logo: MistralLogo },
+  { name: "Deepseek", logo: DeepSeekLogo },
 ]
 
 const PricingPage = (): JSX.Element => {
@@ -151,37 +151,15 @@ const PricingPage = (): JSX.Element => {
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
       <div className="flex gap-[600px] h-[278px]">
-        <div>
-          <SpotlightSpan
-            showHighlighted
-            text="START FOR FREE."
-            className={clsx(
-              "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[60px] font-normal -tracking-normal",
-              "max-[390px]:text-[55px]",
-              "max-[360px]:text-[48px]",
-              "max-[320px]:text-[45px]",
-              "max-[410px]:text-[55px]",
-              "max-[425px]:text-[64px]",
-              "top-40",
-              "left-10",
-            )}
-          />
-        </div>
-        <div>
-          <SpotlightSpan
-            showHighlighted
-            text="SCALE WHEN YOU'RE READY"
-            className={clsx(
-              "absolute top-2 font-bebas text-[64px] md:text-[76px] xl:text-[60px] font-normal -tracking-normal",
-              "max-[390px]:text-[55px]",
-              "max-[360px]:text-[48px]",
-              "max-[320px]:text-[45px]",
-              "max-[410px]:text-[55px]",
-              "max-[425px]:text-[64px]",
-              "top-60",
-              "left-10",
-            )}
-          />
+        <div className="px-12 py-20">
+          <div className="max-w-3xl mx-auto text-left space-y-2">
+            <h2 className="text-4xl md:text-5xl font-[400] uppercase xl:text-[60px] text-radial-pricing-text opacity-70 font-bebas">
+              START FOR FREE.
+            </h2>
+            <h2 className="text-4xl md:text-5xl font-[400] uppercase xl:text-[60px] text-radial-pricing-text opacity-70 font-bebas">
+              SCALE WHEN YOU'RE READY.
+            </h2>
+          </div>
         </div>
         <div className="mt-[150px] text-[24px] text-[#747474]">
           No credit card required. No lock-in.
@@ -206,13 +184,12 @@ const PricingPage = (): JSX.Element => {
             {tiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${
-                  tier.popular
+                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${tier.popular
+                  ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
+                  : tier.special
                     ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                    : tier.special
-                      ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                      : "border-tailCall-darkMode---neutral-500 bg-white"
-                } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
+                    : "border-tailCall-darkMode---neutral-500 bg-white"
+                  } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
                 {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
