@@ -1,6 +1,6 @@
 import React from "react"
 
-import Navbar from "../shared/Navbar."
+import Navbar from "../shared/Navbar"
 import Banner from "./NewBanner"
 import GetStarted from "./GetStarted"
 import WhyForge from "./WhyForge"
