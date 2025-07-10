@@ -48,7 +48,6 @@ export default {
               }
             };
             
-            console.log('🔒 Bulletproof theme applied:', theme);
           } catch (e) {
             console.warn('Theme application failed:', e);
             // Fallback to dark theme

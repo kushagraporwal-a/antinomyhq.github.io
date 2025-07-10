@@ -5,7 +5,6 @@ import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
 
 const CopyCodeButton = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
-  console.log(isCopied)
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
     if (isCopied) {

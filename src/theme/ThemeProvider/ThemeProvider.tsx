@@ -162,7 +162,6 @@ class ThemeGuardian {
       }
     }
 
-    console.log("🔒 Theme Guardian activated - monitoring for interference")
   }
 
   stopMonitoring(): void {
@@ -179,7 +178,6 @@ class ThemeGuardian {
       this.mutationObserver = null
     }
 
-    console.log("🔒 Theme Guardian deactivated")
   }
 
   private checkAndFixTheme(): void {
@@ -200,7 +198,6 @@ class ThemeGuardian {
     }
 
     if (needsFix) {
-      console.log(`🔧 Theme Guardian: Fixing theme interference (expected: ${this.currentTheme})`)
       this.applyTheme()
     }
   }
