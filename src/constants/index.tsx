@@ -783,6 +783,41 @@ export const BENEFITS = [
   },
 ]
 
+export const CARDS_DATA = [
+  {
+    imageUrl: "/images/home/people1.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    imageUrl: "/images/home/people2.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    imageUrl: "/images/home/people3.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    imageUrl: "/images/home/people4.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    imageUrl: "/images/home/people1.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+  {
+    imageUrl: "/images/home/people2.png",
+    title: "Forge feels like pair programming with someone who actually understands my stack.",
+    author: "Raj, Full-Stack Developer",
+  },
+]
+
+export const FORGE_CODE_INSTALL_COMMAND = "npx forgecode@latest"
+
 export const footerItems: FooterItem[] = [
   {
     title: "Developers",

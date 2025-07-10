@@ -5,41 +5,10 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 import Card from "../shared/Card"
 import SpotlightSpan from "./SpotlightCursor"
 import Carousel from "../shared/Carousel"
+import clsx from "clsx"
+import {CARDS_DATA} from "@site/src/constants"
 
 gsap.registerPlugin(ScrollTrigger)
-
-const cardsData = [
-  {
-    imageUrl: "/images/home/people1.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people2.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people3.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people4.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people1.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people2.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-]
 
 const WhyForge = (): JSX.Element => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -49,7 +18,7 @@ const WhyForge = (): JSX.Element => {
   const [isMobile, setIsMobile] = useState(false)
 
   // Create array with cloned items for infinite loop
-  const extendedCards = [...cardsData.slice(-1), ...cardsData, ...cardsData.slice(0, 1)]
+  const extendedCards = [...CARDS_DATA.slice(-1), ...CARDS_DATA, ...CARDS_DATA.slice(0, 1)]
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -158,6 +127,13 @@ const WhyForge = (): JSX.Element => {
     }
   }, [isMobile])
 
+  const headingClasses = clsx(
+    "font-bebas !font-normal",
+    "text-display-medium md:text-display-large xl:text-[142px]",
+    "xl:leading-[120px]",
+    "max-[320px]:text-[50px]",
+  )
+
   return (
     <div className="flex justify-center">
       <div
@@ -167,17 +143,11 @@ const WhyForge = (): JSX.Element => {
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-12 px-4 md:px-0">
             <div ref={whyRef} className="flex justify-start">
-              <SpotlightSpan
-                showHighlighted
-                text="WHY THEY LOVE"
-                className="font-bebas md:font-normal max-[320px]:text-[50px] text-display-medium md:text-display-large xl:text-[142px] font-normal tracking-normal xl:leading-[120px]"
-              />
+              <SpotlightSpan showHighlighted text="WHY THEY LOVE" className={clsx(headingClasses, "tracking-normal")} />
             </div>
+
             <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-16 md:-mt-16 xl:-mt-12">
-              <SpotlightSpan
-                text="FORGE CODE"
-                className="font-bebas md:font-normal max-[320px]:text-[50px] text-display-medium md:text-display-large xl:text-[142px] font-normal -tracking-tight xl:leading-[120px]"
-              />
+              <SpotlightSpan text="FORGE CODE" className={clsx(headingClasses, "-tracking-tight")} />
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -207,7 +177,7 @@ const WhyForge = (): JSX.Element => {
               })}
             </div>
             <Carousel>
-              {cardsData.map((card, idx) => (
+              {CARDS_DATA.map((card, idx) => (
                 <Card key={idx}>
                   <div className="px-8 py-8 rounded-xl w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial hover:transition-colors hover:duration-500 overflow-hidden">
                     <div className="flex flex-col gap-3">

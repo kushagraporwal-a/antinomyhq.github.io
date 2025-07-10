@@ -188,30 +188,7 @@ export default {
 
     navbar: {
       hideOnScroll: true,
-      items: [
-        // {to: "/", label: "Home", position: "left", activeBaseRegex: "^/$"},
-        // {to: "/about", label: "About", position: "left"},
-        // {to: "/enterprise", label: "Enterprise", position: "left"},
-        // {to: "/pricing", label: "Pricing", position: "left"},
-        // {to: "/docs", label: "Docs", position: "left"},
-        // {to: "/blog", label: "Blogs", position: "left"},
-        // {to: "/releases", label: "Releases", position: "left"},
-        // {
-        //   label: "Developers",
-        //   position: "left",
-        //   items: [
-        //     {
-        //       to: "/docs",
-        //       html: getNavDropdownItemHtml("/images/home/book.svg", "Docs Icon", "Docs"),
-        //     },
-        //   ],
-        // },
-        // {
-        //   type: "search",
-        //   position: "right",
-        //   className: "hidden lg:flex search-icon-navbar",
-        // },
-      ],
+      items: [],
     },
     prism: {
       theme: prismTheme,
