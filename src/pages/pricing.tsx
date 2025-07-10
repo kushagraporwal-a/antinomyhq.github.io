@@ -71,7 +71,6 @@ const PricingPage = (): JSX.Element => {
       features: [
         "Everything in Pro",
         "Unlimited requests",
-        "Additional prompts: 1000 for $25 USD (after early access)",
         "Latest AI models",
         "24/7 priority support",
         "Advanced analytics",

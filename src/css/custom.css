@@ -63,7 +63,7 @@ body {
   --ifm-content-link-font-size: 0.875rem;
   --ifm-search-input-font-size: 0.9rem;
   --ifm-search-desc-font-size: 14px;
-  --ifm-font-weight-bold: 400;
+  --ifm-font-weight-bold: 500;
   --ifm-navbar-background-color: #f5f3eb;
 
   /* Color Tokens */
@@ -111,10 +111,13 @@ body {
 }
 
 code {
-  border: 1px solid #555;
+  border: 1px dashed #555;
   letter-spacing: 0.00001px;
   vertical-align: baseline;
-  color: #e6e6e6;
+  background-color: #eee;
+  border-radius: 0;
+  padding: 0px 4px;
+  font-size: 0.8em;
 }
 
 input[type="radio"] {
@@ -475,6 +478,31 @@ hr {
   opacity: 1;
 }
 
+.header-button.header-button-login {
+  padding: 0 1rem;
+  margin-left: 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  font-size: 0.875rem;
+  height: 2.75rem;
+  background: transparent;
+  transition: all 0.2s ease;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.header-button.header-button-login:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  background: var(--ifm-color-primary-lightest);
+}
+
 .header-button.header-button-discord {
   padding: 0 1rem;
 }
@@ -699,6 +727,11 @@ nav.menu {
     display: none !important;
   }
 
+  /* Hide Login button from main navbar on mobile */
+  .navbar__items--right .header-button-login {
+    display: none !important;
+  }
+
   /* Style GitHub button in mobile menu */
   .menu__list-item .header-button-github {
     display: flex;
@@ -724,6 +757,34 @@ nav.menu {
     text-decoration: none;
     transform: none;
     box-shadow: none;
+  }
+
+  /* Style Login button in mobile menu */
+  .menu__list-item .header-button-login {
+    display: flex;
+    width: auto;
+    max-width: 140px;
+    height: auto;
+    padding: 0.75rem 1rem;
+    margin: 0 auto 1rem auto;
+    border: 1px solid var(--ifm-color-primary);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ifm-color-primary);
+    font-weight: var(--ifm-font-weight-bold);
+    text-decoration: none;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu__list-item .header-button-login:hover {
+    border-color: var(--ifm-color-primary-dark);
+    color: var(--ifm-color-primary-dark);
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    background: var(--ifm-color-primary-lightest);
   }
 
   .navbar__item.navbar__item {
@@ -788,6 +849,59 @@ nav.menu {
   .navbar__search input {
     border-radius: 8px;
     border: 1px solid var(--ifm-color-brand-light-600);
+  }
+}
+
+/* Fix for navbar overlap at medium screen resolutions (1024px - 1206px) */
+@media (min-width: 1024px) and (max-width: 1206px) {
+  .navbar__items--right {
+    right: 2%;
+  }
+
+  .navbar__item.navbar__link {
+    margin-right: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .navbar__item.dropdown {
+    margin-right: 1.5rem;
+  }
+
+  .header-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for search icon visibility in 997px - 1023px range */
+@media (min-width: 997px) and (max-width: 1023px) {
+  .navbar__items--right {
+    right: 5%;
+  }
+
+  .navbar__item.navbar__link {
+    margin-right: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .navbar__item.dropdown {
+    margin-right: 1.25rem;
+  }
+
+  .DocSearch-Button {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .search-icon-navbar {
+    display: block !important;
+    visibility: visible !important;
+    padding: 0rem 0.5rem !important;
+  }
+
+  .header-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -1005,12 +1119,17 @@ span.token.tag.script.language-javascript {
 }
 
 pre.main-install-command {
-  background-color: rgb(48, 48, 55);
-  color: #eee;
   font-size: 1.5rem;
   font-weight: 600;
-  border-radius: 1rem;
   font-family: var(--ifm-font-family-monospace);
+  border-radius: 0;
+  color: #f5f3eb;
+}
+
+@media (min-width: 768px) {
+  pre.main-install-command {
+    font-size: 2rem;
+  }
 }
 /* Fix details element background to match theme */
 details {

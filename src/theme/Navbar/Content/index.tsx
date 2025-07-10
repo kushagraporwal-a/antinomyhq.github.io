@@ -9,6 +9,7 @@ import Search from "../../SearchBar/index"
 import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle"
 import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle"
 import NavbarLogo from "@theme/Navbar/Logo"
+
 import SearchIcon from "@site/static/icons/basic/search.svg"
 import PageSearchIcon from "@site/static/icons/basic/page-search.svg"
 import styles from "./styles.module.css"
