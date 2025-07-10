@@ -137,3 +137,9 @@ Ultimately, Grok 4's value won me over for my specific needs, but definitely tes
 ## Try Grok 4 on Forge
 
 We've enabled Grok 4 on Forge! If you're curious to experience the speed and bug-hunting capabilities we discussed, [sign up for Forge](https://app.forgecode.dev) and give it a shot. You can compare it directly with Claude 4 Opus and see which model works better for your specific coding tasks.
+
+## Related posts
+
+1. [Deepseek R1-0528 Coding experience](https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/)
+2. [Claude Sonnet 4 vs Gemini 2.5 Pro](https://forgecode.dev/blogclaude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison/)
+3. [Claude 4 initial Impression](https://forgecode.dev/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough/)
