@@ -84,7 +84,7 @@ _Figure 1: Speed and cost comparison across 15 tasks_
 | Avg Response Time         | 13-24s                           | 9-15s                  | Grok 2x faster per request         |
 | Single-Prompt Success     | 8/15                             | 9/15                   | Both reached 15/15 with follow-ups |
 | Avg Cost per Task         | $13 USD                          | $4.5 USD               | Grok cheaper for small contexts    |
-| Tool Calling Accuracy     | ~99% (1789/1803)                 | ~99% (1785/1803)       | Near-perfect for both              |
+| Tool Calling Accuracy     | ~99% (1614/1630)                 | ~99% (1785/1803)       | Near-perfect for both              |
 | XML Tool Calling Accuracy | 83%                              | 78%                    | Opus slightly better               |
 | Bug Detection             | Missed race conditions/deadlocks | Detected all           | Grok stronger in concurrency       |
 | Rule Adherence            | Excellent                        | Good (ignored in 2/15) | Opus followed custom rules better  |
