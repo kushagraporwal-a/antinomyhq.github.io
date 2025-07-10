@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
-import { Theme } from "@site/src/constants"
-import { pageLinks } from "@site/src/constants/routes"
-import { analyticsHandler } from "@site/src/utils"
-import { Check, Star, Crown } from "lucide-react"
+import {Theme} from "@site/src/constants"
+import {pageLinks} from "@site/src/constants/routes"
+import {analyticsHandler} from "@site/src/utils"
+import {Check, Star, Crown} from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
 import OpenAILogo from "@site/src/assets/logos/openai.svg"
 import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
@@ -21,13 +21,13 @@ import Button from "../components/shared/Button"
 
 // AI Providers array for iteration
 const aiProviders = [
-  { name: "OpenAI", logo: OpenAILogo },
-  { name: "Anthropic", logo: AnthropicLogo },
-  { name: "Google", logo: GoogleLogo },
-  { name: "xAI", logo: XAILogo },
-  { name: "Meta", logo: MetaLogo },
-  { name: "Mistral", logo: MistralLogo },
-  { name: "Deepseek", logo: DeepSeekLogo },
+  {name: "OpenAI", logo: OpenAILogo},
+  {name: "Anthropic", logo: AnthropicLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "xAI", logo: XAILogo},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Mistral", logo: MistralLogo},
+  {name: "Deepseek", logo: DeepSeekLogo},
 ]
 
 const PricingPage = (): JSX.Element => {
@@ -119,7 +119,8 @@ const PricingPage = (): JSX.Element => {
             )}
           />
         </div>
-        <div className="mt-[150px] text-[24px] text-[#747474]">No credit card required. No lock-in.
+        <div className="mt-[150px] text-[24px] text-[#747474]">
+          No credit card required. No lock-in.
           <div>Just productivity from day one</div>
         </div>
       </div>
@@ -141,12 +142,13 @@ const PricingPage = (): JSX.Element => {
             {tiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${tier.popular
-                  ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                  : tier.special
+                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${
+                  tier.popular
                     ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                    : "border-tailCall-darkMode---neutral-500 bg-white"
-                  } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
+                    : tier.special
+                      ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
+                      : "border-tailCall-darkMode---neutral-500 bg-white"
+                } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
                 {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

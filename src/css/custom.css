@@ -35,7 +35,9 @@
   }
 
   .text-shadow-glow {
-    text-shadow: 0 0 5px #30EDE6, 0 0 10px #30EDE6;
+    text-shadow:
+      0 0 5px #30ede6,
+      0 0 10px #30ede6;
   }
 }
 
@@ -67,7 +69,7 @@ body {
   --ifm-navbar-background-color: #f5f3eb;
 
   /* Color Tokens */
-  --ifm-color-brand: #30EDE6;
+  --ifm-color-brand: #30ede6;
   --ifm-color-brand-linkedin: #0a66c2;
   --ifm-color-brand-discord: #5865f2;
   --ifm-color-brand-dark: #000;
@@ -96,17 +98,17 @@ body {
   --docusaurus-highlighted-code-line-bg: #282828;
 
   /* Custom colors */
-  --ifm-link-color-100: #FFFFFF;
-  --ifm-menu-link-100: #A1A1A1;
-  --ifm-menu-link-active: #000000; 
+  --ifm-link-color-100: #ffffff;
+  --ifm-menu-link-100: #a1a1a1;
+  --ifm-menu-link-active: #000000;
   --ifm-hr: #666666;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-link-color-100: #000000;
-  --ifm-menu-link-100: #FFFFFF;
-  --ifm-menu-link-active: #FFFFFF; 
-  --ifm-hr: #4B4B4B;
+  --ifm-menu-link-100: #ffffff;
+  --ifm-menu-link-active: #ffffff;
+  --ifm-hr: #4b4b4b;
   --ifm-code-background: var(--tailCall-darkMode---neutral-500);
 }
 
@@ -192,7 +194,7 @@ hr {
   font-weight: var(--ifm-font-weight-semibold);
   color: #737373;
 }
-[data-theme='dark'] .menu__list-item-collapsible a,
+[data-theme="dark"] .menu__list-item-collapsible a,
 .theme-doc-sidebar-item-link-level-1 a {
   color: #737373;
 }
@@ -219,13 +221,13 @@ hr {
 
 .menu__link.menu__link--active {
   background-color: transparent;
-  color: #088C8C;
+  color: #088c8c;
   font-weight: var(--ifm-font-weight-semibold);
   box-shadow: inset 2px 0 0 0 var(--ifm-color-brand);
 }
 
-[data-theme='dark'] .menu__link.menu__link--active {
-  color: #30EDE6;
+[data-theme="dark"] .menu__link.menu__link--active {
+  color: #30ede6;
 }
 
 .menu__list-item-collapsible a {
@@ -237,11 +239,11 @@ hr {
 }
 
 .menu__link:hover {
-  color: #088C8C;
+  color: #088c8c;
 }
 
-[data-theme='dark'] .menu__link:hover {
-  color: #30EDE6;
+[data-theme="dark"] .menu__link:hover {
+  color: #30ede6;
 }
 
 .theme-doc-sidebar-item-category:not(:first-child) {
@@ -512,17 +514,17 @@ hr {
   color: #737373;
 }
 
-[data-theme='dark'] .table-of-contents__link {
-  color: #A1A1A1;
+[data-theme="dark"] .table-of-contents__link {
+  color: #a1a1a1;
 }
 
 .table-of-contents__link--active {
   font-weight: var(--ifm-font-weight-bold);
-  color: #088C8C;
+  color: #088c8c;
 }
 
-[data-theme='dark'] .table-of-contents__link--active {
-  color: #30EDE6;
+[data-theme="dark"] .table-of-contents__link--active {
+  color: #30ede6;
 }
 
 .theme-doc-toc-desktop > .table-of-contents {
@@ -543,11 +545,11 @@ hr {
 }
 
 .table-of-contents__link:hover {
-  color: #088C8C;
+  color: #088c8c;
 }
 
-[data-theme='dark'] .table-of-contents__link:hover {
-  color: #30EDE6;
+[data-theme="dark"] .table-of-contents__link:hover {
+  color: #30ede6;
 }
 
 .breadcrumbs__link:hover {
@@ -1080,14 +1082,14 @@ span.token.tag.script.language-javascript {
 }
 
 .version-update-card {
-  background-color: #EDEDED;
+  background-color: #ededed;
   background-image: linear-gradient(90deg, #545556 0.5px, transparent 0.5px),
     linear-gradient(#545556 0.5px, transparent 0.5px);
   background-size: 60px 60px;
   background-position: 3px 23px;
 }
 
-[data-theme='dark'] .version-update-card {
+[data-theme="dark"] .version-update-card {
   color: #121212;
 }
 
@@ -1141,7 +1143,7 @@ details {
 }
 
 details summary {
-  background-color: #23222D;
+  background-color: #23222d;
   padding: 1rem;
   cursor: pointer;
   border-radius: 0;
@@ -1153,13 +1155,13 @@ details[open] summary {
 }
 
 details > div {
-  background-color: #23222D;
+  background-color: #23222d;
   padding: 1rem;
   border-radius: 0;
 }
 
 details summary:hover {
-  background-color: #23222D;
+  background-color: #23222d;
 }
 /* Override details sections blue coloring */
 details {
@@ -1169,7 +1171,7 @@ details {
 }
 
 details summary {
-  color: #FFF !important;
+  color: #fff !important;
   border-radius: 0 !important;
 }
 
@@ -1188,7 +1190,7 @@ details > div {
 
 /* Override any blue text in details content */
 details code {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
 details .admonition-heading code,
@@ -1197,13 +1199,15 @@ details .admonition-content code {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Blog details code color override */
-code, code[class*="language-"] {
+code,
+code[class*="language-"] {
   color: var(--tailCall-lightMode---neutral-500) !important;
 }
-[data-theme='dark'] code, [data-theme='dark'] code[class*="language-"] {
+[data-theme="dark"] code,
+[data-theme="dark"] code[class*="language-"] {
   color: var(--tailCall-darkMode---neutral-300) !important;
 }

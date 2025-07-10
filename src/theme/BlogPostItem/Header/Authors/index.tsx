@@ -5,9 +5,9 @@ import {BlogAuthor} from "@site/src/theme/BlogAuthor"
 import styles from "./styles.module.css"
 
 type Props = {
-  className?: string;
-  textClassName?: string;
-};
+  className?: string
+  textClassName?: string
+}
 
 // Component responsible for the authors layout
 export default function BlogPostItemHeaderAuthors({className, textClassName}: Props): JSX.Element | null {

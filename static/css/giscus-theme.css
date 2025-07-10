@@ -113,11 +113,11 @@ main .gsc-comments .btn-primary {
   line-height: 20.42px;
   padding: 12px 24px;
   border-radius: 0.5rem !important;
-  color: #088C8C;
+  color: #088c8c;
 }
 
-[data-theme='dark'] main .gsc-comments .btn-primary {
-  color: #30EDE6;
+[data-theme="dark"] main .gsc-comments .btn-primary {
+  color: #30ede6;
 }
 
 main .gsc-comment-box-tabs button {
@@ -127,14 +127,13 @@ main .gsc-comment-box-tabs button {
   font-weight: 700;
   font-size: 18px;
   line-height: 22.97px;
-  border-bottom: 2px solid #088C8C !important;
-  color: #088C8C;
-
+  border-bottom: 2px solid #088c8c !important;
+  color: #088c8c;
 }
 
-[data-theme='dark'] main .gsc-comment-box-tabs button {
-  border-bottom: 2px solid #30EDE6 !important;
-  color: #30EDE6;
+[data-theme="dark"] main .gsc-comment-box-tabs button {
+  border-bottom: 2px solid #30ede6 !important;
+  color: #30ede6;
 }
 
 main .gsc-comment-box-tabs .color-text-secondary {
@@ -142,7 +141,7 @@ main .gsc-comment-box-tabs .color-text-secondary {
   font-size: 18px;
   line-height: 22.97px;
   border-bottom: none !important;
-  color: #D9D9D9;
+  color: #d9d9d9;
   opacity: 0.6;
 }
 
@@ -173,7 +172,7 @@ main .gsc-comment-box-textarea {
   line-height: 24px;
   border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  background-color: #0F0F13;
+  background-color: #0f0f13;
 }
 
 main .gsc-comment-box-textarea:focus {
@@ -181,7 +180,7 @@ main .gsc-comment-box-textarea:focus {
 }
 
 main .gsc-comment-box-write {
-  background: linear-gradient(90deg,rgba(88, 88, 88, 1) 0%, rgba(48, 237, 230, 1) 100%, rgba(87, 87, 87, 1) 100%);
+  background: linear-gradient(90deg, rgba(88, 88, 88, 1) 0%, rgba(48, 237, 230, 1) 100%, rgba(87, 87, 87, 1) 100%);
   padding: 1px;
 }
 
@@ -191,7 +190,7 @@ main .gsc-comment-box-write:focus-within {
 }
 
 main .gsc-comment-box-textarea-extras {
-  background-color: #0F0F13;
+  background-color: #0f0f13;
 }
 
 main .gsc-comment-box-preview {

@@ -11,4 +11,4 @@ export default function AdmonitionWrapper(props: Props): JSX.Element {
       <Admonition {...props} />
     </div>
   )
-} 
+}

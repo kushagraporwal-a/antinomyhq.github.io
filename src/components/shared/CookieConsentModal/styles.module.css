@@ -13,12 +13,12 @@
 
 .consentOption:hover {
   color: #e7e7e7;
-  box-shadow: 6px 6px 0px 0px #088C8C ;
+  box-shadow: 6px 6px 0px 0px #088c8c;
 }
 
-[data-theme='dark'] .consentOption:hover {
+[data-theme="dark"] .consentOption:hover {
   color: #e7e7e7;
-  box-shadow: 6px 6px 0px 0px #30EDE6;
+  box-shadow: 6px 6px 0px 0px #30ede6;
 }
 
 .consentOption::first-letter {

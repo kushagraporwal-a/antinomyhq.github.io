@@ -10,38 +10,24 @@ interface SpotlightSpanProps {
 
 const SPOTLIGHT_SIZE = 400
 
-const SpotlightSpan: React.FC<SpotlightSpanProps> = ({
-  text,
-  className = "",
-  style,
-  showHighlighted = false,
-}) => {
+const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", style, showHighlighted = false}) => {
   const {theme} = useThemeContext()
   const spanRef = useRef<HTMLSpanElement | null>(null)
 
-  const baseColor = useMemo(
-    () => (theme === "dark" ? "hsla(0, 0%, 100%, 0.2)" : "rgba(0,0,0,0.2)"),
-    [theme],
-  )
+  const baseColor = useMemo(() => (theme === "dark" ? "hsla(0, 0%, 100%, 0.2)" : "rgba(0,0,0,0.2)"), [theme])
 
-  const spotlightColor = useMemo(
-    () => (theme === "dark" ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.9)"),
-    [theme],
-  )
+  const spotlightColor = useMemo(() => (theme === "dark" ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.9)"), [theme])
 
-  const handleMouseMove = useCallback(
-    (event: React.MouseEvent<HTMLSpanElement>) => {
-      const el = spanRef.current
-      if (!el) return
+  const handleMouseMove = useCallback((event: React.MouseEvent<HTMLSpanElement>) => {
+    const el = spanRef.current
+    if (!el) return
 
-      const rect = el.getBoundingClientRect()
-      const x = event.clientX - rect.left - SPOTLIGHT_SIZE / 2
-      const y = event.clientY - rect.top - SPOTLIGHT_SIZE / 2
+    const rect = el.getBoundingClientRect()
+    const x = event.clientX - rect.left - SPOTLIGHT_SIZE / 2
+    const y = event.clientY - rect.top - SPOTLIGHT_SIZE / 2
 
-      el.style.backgroundPosition = `${x}px ${y}px`
-    },
-    [],
-  )
+    el.style.backgroundPosition = `${x}px ${y}px`
+  }, [])
 
   return (
     <span

@@ -163,7 +163,7 @@ module.exports = {
         "custom-dark-gradient-blog-border":
           "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
-        "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)"
+        "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)",
       },
     },
     fontFamily: {
@@ -289,22 +289,22 @@ module.exports = {
         {
           fontWeight: "400",
           lineHeight: "53.333px",
-          letterSpacing: "-1.08px"
-        }
+          letterSpacing: "-1.08px",
+        },
       ],
       "title-text-mini": [
         "24px",
         {
           fontWeight: "275",
-          lineHeight: "30px"
-        }
+          lineHeight: "30px",
+        },
       ],
       "title-text-large": [
         "36px",
         {
           fontWeight: "400",
-          lineHeight: "41px"
-        }
+          lineHeight: "41px",
+        },
       ],
     },
   },
