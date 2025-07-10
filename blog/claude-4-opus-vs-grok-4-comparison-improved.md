@@ -35,7 +35,7 @@ I threw both models at actual Rust projects I've been working on, focusing on th
 
 - MacBook Pro M2 Pro, 16GB RAM
 - Network: 500Mbps connection
-- Development Environment: VS Code, with [Forge](/docs/installation.mdx) running on integrated Terminal for AI interactions
+- Development Environment: VS Code, with [Forge](/docs/installation) running on integrated Terminal for AI interactions
 
 **API Configuration:**
 
