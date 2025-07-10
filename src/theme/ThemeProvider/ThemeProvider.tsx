@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState, useRef} from "react"
-import { useLocation } from "@docusaurus/router"
+import {useLocation} from "@docusaurus/router"
 
 type Theme = "light" | "dark" | undefined
 
@@ -63,7 +63,7 @@ function applyThemeBulletproof(theme: Theme): void {
 
   // Force remove any existing theme classes first
   document.documentElement.classList.remove("dark", "light", "theme-transition")
-  
+
   // Apply the correct theme
   if (theme === "dark") {
     document.documentElement.classList.add("dark")
@@ -132,12 +132,14 @@ class ThemeGuardian {
     this.mutationObserver = new MutationObserver((mutations) => {
       let shouldCheck = false
       mutations.forEach((mutation) => {
-        if (mutation.type === "attributes" && 
-            (mutation.attributeName === "class" || mutation.attributeName === "data-theme")) {
+        if (
+          mutation.type === "attributes" &&
+          (mutation.attributeName === "class" || mutation.attributeName === "data-theme")
+        ) {
           shouldCheck = true
         }
       })
-      
+
       if (shouldCheck) {
         this.checkAndFixTheme()
       }
@@ -145,7 +147,7 @@ class ThemeGuardian {
 
     this.mutationObserver.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["class", "data-theme"]
+      attributeFilter: ["class", "data-theme"],
     })
 
     // Also monitor for any script that might change theme
@@ -215,7 +217,7 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
     setIsClient(true)
     const initialTheme = getInitialTheme()
     setTheme(initialTheme)
-    
+
     // Initialize and start the theme guardian
     guardianRef.current = ThemeGuardian.getInstance()
     guardianRef.current.setTheme(initialTheme)
@@ -282,12 +284,14 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
           <div className="flex flex-col items-center space-y-4">
             <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
-            <div className="text-gray-600 dark:text-gray-300 text-sm font-medium">
-              Loading...
-            </div>
+            <div className="text-gray-600 dark:text-gray-300 text-sm font-medium">Loading...</div>
             <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 border-t-cyan-500 rounded-full animate-spin"></div>
           </div>
         </div>

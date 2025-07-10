@@ -27,9 +27,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Basic Features", // Renamed from "Core Features" for better hierarchy
+      label: "Features", // Renamed from "Core Features" for better hierarchy
       collapsed: false,
-      items: ["commands", "shell-integration", "operating-agents", "custom-rules"],
+      items: ["commands", "shell-commands", "auto-complete", "operating-agents", "custom-rules"],
+    },
+    {
+      type: "category",
+      label: "Guides",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "plan-and-act-guide",
+          label: "Plan First, Then Act",
+        },
+      ],
     },
     {
       type: "category",
@@ -44,6 +56,7 @@ const sidebars: SidebarsConfig = {
       label: "Advanced Configuration",
       collapsed: false,
       items: [
+        "workflow-config",
         "environment-configuration",
         "mcp-integration",
         "context-compaction",

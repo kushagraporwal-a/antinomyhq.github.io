@@ -62,7 +62,8 @@ const NewLinkButton = ({
         gridClasses: "hidden",
       },
       [Theme.Tailcall]: {
-        classes: "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-tailCall-lightMode---primary-600 hover:text-tailCall-dark-500",
+        classes:
+          "bg-yellow-300 border border-solid text-tailCall-dark-500 bg-tailCall-lightMode---primary-600 hover:text-tailCall-dark-500",
         gridClasses: "",
       },
     }
@@ -91,7 +92,7 @@ const NewLinkButton = ({
       )
     } else {
       // If no matching theme, return null
-      return <div className=""/>
+      return <div className="" />
     }
   }
 
@@ -112,7 +113,12 @@ const NewLinkButton = ({
       {/* {Icon && <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:h-8 lg:w-8 text-tailCall-white z-[1]" />} */}
 
       {/* Render title if provided */}
-      {title && <span className={clsx("z-20 text-white dark:text-tailCall-darkMode---neutral-900", titleClassName)}> {title}</span>}
+      {title && (
+        <span className={clsx("z-20 text-white dark:text-tailCall-darkMode---neutral-900", titleClassName)}>
+          {" "}
+          {title}
+        </span>
+      )}
     </Link>
   )
 }

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 import {useLocation} from "@docusaurus/router"
-import NewNavbar from "@site/src/components/shared/Navbar."
+import NewNavbar from "@site/src/components/shared/Navbar"
 
 export default function Navbar(props: any): JSX.Element {
   const location = useLocation()

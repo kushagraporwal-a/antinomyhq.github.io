@@ -18,6 +18,23 @@ interface TrustedByMarqueeProps {
   isHorizontal?: boolean
 }
 
+const LogoRenderer: React.FC<{logo: LogoItem["logo"]; alt: string}> = ({logo, alt}) => {
+  if (typeof logo === "string") {
+    return (
+      <img
+        src={logo}
+        alt={alt}
+        className="max-h-7 max-w-[110px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+    )
+  }
+
+  const LogoComponent = logo
+  return (
+    <LogoComponent className="max-h-7 max-w-[110px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
+  )
+}
+
 const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
   title,
   logos,
@@ -25,73 +42,54 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
   titleClassName = "text-content-small font-bold sm:text-title-tiny lg:text-title-small text-tailCall-light-600 text-center space-x-1",
   desktopClassName = "hidden sm:flex items-center px-8 mt-SPACE_10 overflow-hidden",
   mobileClassName = "sm:hidden flex items-center justify-around flex-wrap mt-SPACE_06 space-y-SPACE_02",
-  isHorizontal,
+  isHorizontal = false,
 }) => {
-  const handleClick = () => {
-    if (onClick) {
-      onClick()
-    }
-  }
+  const handleClick = () => onClick?.()
 
-  const renderLogo = (partner: LogoItem) => {
-    const LogoComponent = partner.logo
+  const renderLogo = ({logo, name, link}: LogoItem) => {
+    const content = <LogoRenderer logo={logo} alt={name} />
 
     return (
-      <div key={partner.name} className="h-12 flex items-center justify-center px-8">
-        {partner.link ? (
-          <a
-            href={partner.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center h-full"
-          >
-            {typeof LogoComponent === "string" ? (
-              <img
-                src={LogoComponent}
-                alt={partner.name}
-                className="max-h-7 max-w-[110px] object-contain opacity-70 hover:opacity-100 transition-opacity"
-              />
-            ) : (
-              <LogoComponent className="max-h-7 max-w-[110px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
-            )}
+      <div key={name} className="h-12 flex items-center justify-center px-8">
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-full">
+            {content}
           </a>
         ) : (
-          <>
-            {typeof LogoComponent === "string" ? (
-              <img src={LogoComponent} alt={partner.name} className="max-h-7 max-w-[110px] object-contain opacity-70" />
-            ) : (
-              <LogoComponent className="max-h-7 max-w-[110px] object-contain opacity-70 dark:opacity-100" />
-            )}
-          </>
+          content
         )}
       </div>
     )
   }
 
-  return isHorizontal ? (
-    <div className="flex items-center gap-5">
-      <span className="hidden lg:block min-w-[200px] font-kanit text-tailCall-lightMode---neutral-500 dark:text-white text-title-small font-normal mt-8">
-        {title}
-      </span>
-      <Marquee autoFill>
-        <div className="flex items-center px-8 mt-SPACE_10 overflow-hidden space-x-5 sm:space-x-20">
-          {logos.map(renderLogo)}
-        </div>
-      </Marquee>
-    </div>
-  ) : (
+  if (isHorizontal) {
+    return (
+      <div className="flex items-center gap-5">
+        {title && (
+          <span className="hidden lg:block min-w-[200px] font-kanit text-tailCall-lightMode---neutral-500 dark:text-white text-title-small font-normal mt-8">
+            {title}
+          </span>
+        )}
+        <Marquee autoFill>
+          <div className="flex items-center px-8 mt-SPACE_10 overflow-hidden space-x-5 sm:space-x-20">
+            {logos.map(renderLogo)}
+          </div>
+        </Marquee>
+      </div>
+    )
+  }
+
+  return (
     <section className={`px-10 md:px-0 ${onClick ? "cursor-pointer" : ""}`} onClick={handleClick}>
-      {title ? (
+      {title && (
         <div className={titleClassName}>
           <GreaterThanUnderscoreIcon className="h-4 w-6" />
           <span>{title}</span>
         </div>
-      ) : null}
-
+      )}
       <Marquee autoFill>
         <div className={desktopClassName}>{logos.map(renderLogo)}</div>
       </Marquee>
-
       <div className={mobileClassName}>{logos.map(renderLogo)}</div>
     </section>
   )

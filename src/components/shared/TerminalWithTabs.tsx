@@ -1,92 +1,116 @@
 import React, {useEffect, useRef, useState} from "react"
 import {COMMANDS, GUIDES} from "@site/src/constants"
 import {ChevronRight} from "lucide-react"
-import clsx from "clsx"
 
 const TerminalWithTabs = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
+
   const [commandIndex, setCommandIndex] = useState(0)
   const [typedText, setTypedText] = useState("")
   const [lines, setLines] = useState<string[]>([])
-  const [startTyping, setStartTyping] = useState(false)
+  const [isTyping, setIsTyping] = useState(false)
+
+  // Scroll to bottom on update
+  useEffect(() => {
+    containerRef.current?.scrollTo({top: containerRef.current.scrollHeight, behavior: "smooth"})
+  }, [typedText, lines])
 
   useEffect(() => {
-    resetAndStart()
+    startTypingCommand(0)
   }, [])
 
-  // Typing animation for user command
-  useEffect(() => {
-    if (!startTyping) return
+  const startTypingCommand = (index: number) => {
+    const command = COMMANDS[index]
+    let charIndex = 0
+    setTypedText("")
+    setIsTyping(true)
 
-    const currentCommand = COMMANDS[commandIndex]
-    let index = 0
+    const typingInterval = setInterval(() => {
+      setTypedText((prev) => prev + command.command.charAt(charIndex))
+      charIndex++
 
-    const interval = setInterval(() => {
-      setTypedText((prev) => prev + currentCommand.command.charAt(index))
-      index++
-      if (index === currentCommand.command.length) {
-        clearInterval(interval)
-        animateLines(currentCommand.output)
+      if (charIndex === command.command.length) {
+        clearInterval(typingInterval)
+        animateOutputLines(command.output, index)
       }
     }, 50)
+  }
 
-    return () => clearInterval(interval)
-  }, [startTyping, commandIndex])
-
-  // New function to animate lines one-by-one
-  const animateLines = (output: string[]) => {
+  const animateOutputLines = (output: string[], currentIndex: number) => {
     let lineIndex = 0
-    const lineInterval = setInterval(() => {
+
+    const outputInterval = setInterval(() => {
       setLines((prev) => [...prev, output[lineIndex]])
       lineIndex++
 
       if (lineIndex === output.length) {
-        clearInterval(lineInterval)
-        setStartTyping(false)
+        clearInterval(outputInterval)
+        setIsTyping(false)
 
-        const isLastCommand = commandIndex + 1 === COMMANDS.length
-
-        if (!isLastCommand) {
+        const nextIndex = currentIndex + 1
+        if (nextIndex < COMMANDS.length) {
           setTimeout(() => {
-            setTypedText("")
-            setLines((prev) => [...prev, ""])
-            setCommandIndex((prev) => prev + 1)
-            setStartTyping(true)
+            setLines((prev) => [...prev, ""]) // add space
+            setCommandIndex(nextIndex)
+            startTypingCommand(nextIndex)
           }, 1000)
         } else {
-          // ✅ Restart the whole thing
           setTimeout(() => {
-            resetAndStart() // restart from beginning
-          }, 2000) // optional pause before restart
+            resetTerminal()
+          }, 2000)
         }
       }
     }, 300)
   }
 
-  // Auto-scroll
-  useEffect(() => {
-    const el = containerRef.current
-    if (el) {
-      el.scrollTo({top: el.scrollHeight, behavior: "smooth"})
-    }
-  }, [typedText, lines])
-
-  const resetAndStart = () => {
-    setTypedText("")
+  const resetTerminal = () => {
     setLines([])
+    setTypedText("")
     setCommandIndex(0)
-    setStartTyping(true)
+    startTypingCommand(0)
+  }
+
+  const renderLine = (line: string, idx: number) => {
+    const isDotLine = line?.startsWith("⏺")
+    const content = isDotLine ? line?.slice(2) : line
+    const isSynthLine = line?.includes("synthesizing")
+
+    if (isDotLine) {
+      return (
+        <div
+          key={idx}
+          className="flex items-center gap-2 text-tailCall-darkMode---neutral-500 dark:text-[#B0BEC5] text-[14px]"
+        >
+          <div className="h-2 w-2 rounded-lg bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400" />
+          <span className="font-space text-content-tiny font-normal">{content}</span>
+        </div>
+      )
+    }
+
+    return (
+      <div
+        key={idx}
+        className="text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 max-[480px]:text-[14px]"
+      >
+        <span className="!font-normal font-space text-content-tiny">
+          {isSynthLine ? <span className="text-[#1ECB83]">{line}</span> : <span className="font-bold">{line}</span>}
+        </span>
+      </div>
+    )
   }
 
   return (
-    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full md:w-4/5 lg:w-[500px] h-auto min-h-[650px] flex flex-col font-mono">
-      {/* Terminal Header */}
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full md:w-4/5 lg:w-[500px] min-h-[650px] flex flex-col font-mono">
+      {/* Header */}
       <div className="bg-[#E8E8E8] dark:bg-tailCall-darkMode---neutral-900 w-full rounded-t-xl flex gap-2 items-center p-3">
-        <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300 rounded-full"></div>
-        <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1400 rounded-full"></div>
-        <div className="h-4 w-4 bg-tailCall-border-dark-1200 dark:bg-tailCall-darkMode---primary-400 rounded-full"></div>
+        <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300" />
+        <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1400" />
+        <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-darkMode---primary-400" />
       </div>
+
+      {/* Terminal Content */}
       <div className="bg-white dark:bg-tailCall-dark-1500 rounded-b-xl text-sm h-full relative">
+        {/* Logo */}
         <img
           src="/images/home/fc-dark.webp"
           alt="Terminal"
@@ -97,48 +121,35 @@ const TerminalWithTabs = (): JSX.Element => {
           alt="Terminal"
           className="ml-2 mt-4 block dark:hidden w-52 md:w-64 lg:w-72"
         />
+
+        {/* Guides */}
         <div className="flex w-full flex-col px-4">
-          {GUIDES.map(({title, details}) => {
-            return (
-              <div key={title} className="flex list-none w-full">
-                <span className="text-[#525252] dark:text-white font-space text-content-tiny font-normal w-2/5 inline-block max-[480px]:text-[12px]">
-                  {title}
-                </span>
-                <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-content-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
-                  {details}
-                </span>
-              </div>
-            )
-          })}
+          {GUIDES.map(({title, details}) => (
+            <div key={title} className="flex w-full">
+              <span className="w-2/5 text-[#525252] dark:text-white font-space text-content-tiny font-normal max-[480px]:text-[12px]">
+                {title}
+              </span>
+              <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-content-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
+                {details}
+              </span>
+            </div>
+          ))}
         </div>
+
+        {/* Terminal Output */}
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
           <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[40vh]">
-            {lines.map((line, idx) => {
-              const isDotLine = line?.startsWith("⏺")
-              const rest = isDotLine ? line?.slice(2) : line
-              return (
-                <div key={idx} className="text-[#525252] dark:text-[#B0BEC5] max-[480px]:text-[14px]">
-                  {isDotLine ? (
-                    <div className="flex items-center gap-2">
-                      <div className="bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 h-2 w-2 rounded-lg"></div>
-                      <span className={clsx("font-space text-content-tiny font-normal")}>{rest}</span>
-                    </div>
-                  ) : (
-                    <span className={clsx("!font-normal font-space")}>
-                      {line?.includes("synthesizing") ? <span className="text-[#1ECB83]">{line}</span> : line}
-                    </span>
-                  )}
-                </div>
-              )
-            })}
+            {lines.map(renderLine)}
           </div>
+
+          {/* Command Line */}
           <div className="bg-[#E5E5E5] dark:bg-[#1E1C21] rounded-[4px] relative border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
-            <div className="bg-[#E5E5E5] flex items-center dark:bg-tailCall-dark-1600 rounded-lg px-2 max-h-max relative">
-              <ChevronRight className="h-[100%] text-[#018284] dark:text-tailCall-lightMode---primary-400" />
-              <span className=" ml-2 text-[#018284] dark:text-tailCall-lightMode---primary-400 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
+            <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 flex items-center rounded-lg px-2">
+              <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" />
+              <span className="ml-2 text-[#018284] dark:text-tailCall-lightMode---primary-400 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
                 {typedText}
               </span>
-              {startTyping && <span className="animate-pulse">|</span>}{" "}
+              {isTyping && <span className="animate-pulse">|</span>}
             </div>
           </div>
         </div>

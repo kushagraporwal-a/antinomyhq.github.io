@@ -290,22 +290,22 @@ module.exports = {
         {
           fontWeight: "400",
           lineHeight: "53.333px",
-          letterSpacing: "-1.08px"
-        }
+          letterSpacing: "-1.08px",
+        },
       ],
       "title-text-mini": [
         "24px",
         {
           fontWeight: "275",
-          lineHeight: "30px"
-        }
+          lineHeight: "30px",
+        },
       ],
       "title-text-large": [
         "36px",
         {
           fontWeight: "400",
-          lineHeight: "41px"
-        }
+          lineHeight: "41px",
+        },
       ],
       "sub-title-text-regular": [
         "30px",

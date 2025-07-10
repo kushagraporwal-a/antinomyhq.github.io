@@ -58,7 +58,13 @@ export default function BlogPostItemHeaderInfo({className}: Props): JSX.Element 
   const formatDate = (blogDate: string) => dateTimeFormat.format(new Date(blogDate))
 
   return (
-    <div className={clsx(styles.container, "margin-vert--md text-tailCall-lightMode---neutral-500 dark:text-tailCall-darkMode---neutral-500", className)}>
+    <div
+      className={clsx(
+        styles.container,
+        "margin-vert--md text-tailCall-lightMode---neutral-500 dark:text-tailCall-darkMode---neutral-500",
+        className,
+      )}
+    >
       <DateTime date={date} formattedDate={formatDate(date)} />
       {typeof readingTime !== "undefined" && (
         <>

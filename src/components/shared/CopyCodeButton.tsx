@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Button from "./Button"
 import {Copy, CopyCheck} from "lucide-react"
+import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
 
 const CopyCodeButton = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
@@ -14,7 +15,7 @@ const CopyCodeButton = (): JSX.Element => {
   }, [isCopied])
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText("npm install -g @antinomyhq/forge")
+    await navigator.clipboard.writeText(FORGE_CODE_INSTALL_COMMAND)
     setIsCopied(true)
   }
   return (
@@ -35,7 +36,7 @@ const CopyCodeButton = (): JSX.Element => {
             Try Now
           </span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
-            npx forgecode@latest
+            {FORGE_CODE_INSTALL_COMMAND}
           </span>
           {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck color="#000000" />}
           <img src="/images/home/curly-close.svg" alt="curly close" className="dark:block hidden -mr-1" />
