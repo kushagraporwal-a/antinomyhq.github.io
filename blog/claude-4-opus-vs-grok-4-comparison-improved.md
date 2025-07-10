@@ -87,7 +87,7 @@ _Figure 1: Speed and cost comparison across 15 tasks_
 
 ## Speed and Efficiency: Grok's Edge with a Catch
 
-Grok 4 was consistently faster—9-15 seconds versus Opus's 13-24 seconds. This made quick iterations feel way snappier. But then I kept slamming into xAI's rate limits every few requests. It turned what should've been a quick test session into a stop-and-wait nightmare. I couldn't even get clean timing data because I was constantly throttled.
+Grok 4 was consistently faster, 9-15 seconds versus Opus's 13-24 seconds. This made quick iterations feel way snappier. But then I kept slamming into xAI's rate limits every few requests. It turned what should've been a quick test session into a stop-and-wait nightmare. I couldn't even get clean timing data because I was constantly throttled.
 
 ## Cost Breakdown: Savings That Scale...
 
@@ -109,7 +109,7 @@ _Figure 4: Grok 4 pricing for contexts over 128k tokens - notice the doubled rat
 
 Grok 4 impressed me by spotting a deadlock in a tokio::RwLock-based setup that Opus completely missed. In one task, Grok identified a subtle thread drop that prevented the panic hook from executing in a Rust async block. Something Opus glossed over.
 
-Both nailed tool calling at 99% accuracy—picking the right tools with valid args nearly every time. Switching to an XML-based setup dropped that: Opus hit 83%, Grok 78%. Solid, but not flawless.
+Both nailed tool calling at 99% accuracy, picking the right tools with valid args nearly every time. Switching to an XML-based setup dropped that: Opus hit 83%, Grok 78%. Solid, but not flawless.
 
 Rule-following was where things got interesting. My custom rules (tuned over months using Anthropic's eval console) worked perfectly with Opus. Grok ignored them twice out of 15 tasks. Could be because I optimized these rules specifically for Claude models, but it still broke my flow when it happened.
 
