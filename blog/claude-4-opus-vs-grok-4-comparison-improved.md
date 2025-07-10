@@ -15,6 +15,13 @@ description: "I pitted Claude 4 Opus against Grok 4 in a series of challenging c
 hide_table_of_contents: false
 ---
 
+import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
+
+<ElevenLabsAudioPlayer 
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
+  projectId="pZqcaFCVldADVQptWlZ7" 
+/>
+
 I've been knee-deep in AI-assisted coding for months, and when Grok 4 dropped, I couldn't resist throwing it into the ring with Claude 4 Opus. Using the same 15 complex tasks involving race conditions, deadlocks, and multi-file refactors in a Rust codebase of about ~28k lines of code, I put them head-to-head.
 
 The bottom line? Grok 4 is a powerhouse for identifying complicated, hard-to-find bugs like deadlocks in a complex `tokio` based async Rust project. It's significantly cheaper per task but can occasionally ignore custom instructions. Claude 4 Opus, while more expensive, is more obedient and reliable, especially when you need it to follow specific rules.
