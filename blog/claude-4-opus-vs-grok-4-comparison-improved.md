@@ -1,7 +1,7 @@
 ---
 slug: claude-4-opus-vs-grok-4-comparison-full
 title: "Claude 4 Opus vs Grok 4: Which Model Dominates Complex Coding Tasks?"
-authors: [forge]
+authors: [tushar]
 tags:
   [
     "Claude 4 Opus",
