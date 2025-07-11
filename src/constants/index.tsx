@@ -678,6 +678,10 @@ export const NavbarItems = [
     name: "Releases",
     link: "/releases",
   },
+  {
+    name: "Contact",
+    link: "/contact",
+  },
 ]
 
 export const StatsForDevelopers = [
@@ -817,6 +821,17 @@ export const CARDS_DATA = [
 ]
 
 export const FORGE_CODE_INSTALL_COMMAND = "npx forgecode@latest"
+
+export const JOB_TITLE = [
+  "Software Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "Full Stack Developer",
+  "DevOps Engineer",
+  "Tech Lead",
+]
+
+export const COMPANY_STRENGTH = ["2-10", "11-25", "26-50", "51-100", "101-250", "251-500", "501-1000", "1000+"]
 
 export const footerItems: FooterItem[] = [
   {

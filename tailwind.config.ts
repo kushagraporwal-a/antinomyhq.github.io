@@ -181,6 +181,14 @@ module.exports = {
           letterSpacing: "-3px",
         },
       ],
+      "display-large-semi": [
+        "74px",
+        {
+          lineHeight: "105.6px",
+          fontWeight: "700",
+          letterSpacing: "-3px",
+        },
+      ],
       "display-medium": [
         "64px",
         {
