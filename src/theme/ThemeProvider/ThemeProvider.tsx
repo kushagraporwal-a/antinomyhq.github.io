@@ -161,7 +161,6 @@ class ThemeGuardian {
         originalSetAttribute.call(document.documentElement, name, value)
       }
     }
-
   }
 
   stopMonitoring(): void {
@@ -177,7 +176,6 @@ class ThemeGuardian {
       this.mutationObserver.disconnect()
       this.mutationObserver = null
     }
-
   }
 
   private checkAndFixTheme(): void {

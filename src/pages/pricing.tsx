@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
-import { Theme } from "@site/src/constants"
-import { pageLinks } from "@site/src/constants/routes"
-import { analyticsHandler } from "@site/src/utils"
-import { Check, Minus, Plus } from "lucide-react"
+import {Theme} from "@site/src/constants"
+import {pageLinks} from "@site/src/constants/routes"
+import {analyticsHandler} from "@site/src/utils"
+import {Check, Minus, Plus} from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
 import OpenAILogo from "@site/src/assets/logos/openai.svg"
 import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
@@ -21,17 +21,17 @@ import Button from "../components/shared/Button"
 
 // AI Providers array for iteration
 const aiProviders = [
-  { name: "OpenAI", logo: OpenAILogo },
-  { name: "Anthropic", logo: AnthropicLogo },
-  { name: "Google", logo: GoogleLogo },
-  { name: "xAI", logo: XAILogo },
-  { name: "Meta", logo: MetaLogo },
-  { name: "Mistral", logo: MistralLogo },
-  { name: "Deepseek", logo: DeepSeekLogo },
+  {name: "OpenAI", logo: OpenAILogo},
+  {name: "Anthropic", logo: AnthropicLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "xAI", logo: XAILogo},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Mistral", logo: MistralLogo},
+  {name: "Deepseek", logo: DeepSeekLogo},
 ]
 
 const PricingPage = (): JSX.Element => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
   const tiers = [
     {
       name: "Free",
@@ -90,32 +90,32 @@ const PricingPage = (): JSX.Element => {
       question: "How do I purchase additional prompts?",
       answer: `Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your monthly limit.
                 Pro users can buy 250 additional prompts for $10 USD, while Max users (after early access) can purchase 1000 additional prompts for $25 USD.
-              These additional prompts are added to your current month's allowance.`
+              These additional prompts are added to your current month's allowance.`,
     },
     {
       question: "What's the difference between Free, Pro, and Max plans?",
       answer: `Free ($0): Basic AI model access with limited daily usage, perfect for getting started.
                Pro ($20/month): Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.
-               Max (FREE - normally $200/month): Normally 10,000 prompts per month, but unlimited access during this limited-time early access offer.`
+               Max (FREE - normally $200/month): Normally 10,000 prompts per month, but unlimited access during this limited-time early access offer.`,
     },
     {
       question: "What does '20X the Pro plan' mean for Max?",
       answer: `The Max plan offers 20 times the value of Pro at 10 times the price. While Pro gives you 500 requests
                     per month, Max normally provides 10,000 requests monthly. During this limited-time early access, Max
                     users get unlimited requests with no restrictions, plus exclusive early access features and priority
-                    support.`
+                    support.`,
     },
     {
       question: "What are 'top tier' models?",
       answer: `Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
-                  models from each provider that offer the best performance for complex coding tasks.`
+                  models from each provider that offer the best performance for complex coding tasks.`,
     },
     {
       question: "How does the Max plan unlimited usage work?",
       answer: `Max plan users get truly unlimited access to all AI models during this limited-time early access
                     offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
                     requests with no rate limits, daily caps, or usage restrictions at the special $0/month price
-                    (normally $200/month).`
+                    (normally $200/month).`,
     },
     {
       question: "What happens when I exceed my prompt limit?",
@@ -123,30 +123,30 @@ const PricingPage = (): JSX.Element => {
                     Pro users: After using your 500 included prompts, you can purchase additional
                     prompts: 250 prompts for $10 USD.
                     Max users: Currently unlimited during early access. After early access ends, you can
-                    purchase additional prompts: 1000 prompts for $25 USD.`
+                    purchase additional prompts: 1000 prompts for $25 USD.`,
     },
     {
       question: "Is my code secure and private?",
       answer: `Absolutely. ForgeCode runs entirely on your local machine using your own API keys. Your code never
-                    leaves your computer - no cloud processing, no data collection, complete privacy and security.`
+                    leaves your computer - no cloud processing, no data collection, complete privacy and security.`,
     },
     {
       question: "Can I upgrade or downgrade my plan anytime?",
       answer: `Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
                     your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
-                    Max provides 10,000 prompts per month.`
+                    Max provides 10,000 prompts per month.`,
     },
     {
       question: "Do I need my own API keys?",
       answer: `For Free users, you'll need your own API keys for AI models. Pro and Max users get included access to
                     premium models without needing separate API keys, plus the option to use your own keys for additional
-                    providers.`
-    }
-  ];
+                    providers.`,
+    },
+  ]
 
   const toggleIndex = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
@@ -184,12 +184,13 @@ const PricingPage = (): JSX.Element => {
             {tiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${tier.popular
-                  ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                  : tier.special
+                className={`relative border-solid rounded-[18px] border-[0.732px] border-[#737373] shadow-[0px 1.464px 1.464px 0px rgba(0, 0, 0, 0.08)] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 ${
+                  tier.popular
                     ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
-                    : "border-tailCall-darkMode---neutral-500 bg-white"
-                  } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
+                    : tier.special
+                      ? "border-tailCall-darkMode---neutral-500 bg-white dark:bg-tailCall-darkMode---neutral-900"
+                      : "border-tailCall-darkMode---neutral-500 bg-white"
+                } hover:shadow-xl dark:hover:shadow-none hover:shadow-tailCall-lightMode---primary-100 transition-all duration-300`}
               >
                 {/* {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -266,8 +267,8 @@ const PricingPage = (): JSX.Element => {
             ))}
           </div>
 
-          <div className="flex justify-between" style={{ alignItems: 'center' }}>
-            <div className="" style={{ marginRight: '112px' }}>
+          <div className="flex justify-between" style={{alignItems: "center"}}>
+            <div className="" style={{marginRight: "112px"}}>
               <Heading
                 as="h2"
                 className="text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
@@ -275,7 +276,8 @@ const PricingPage = (): JSX.Element => {
                 FAQ
               </Heading>
               <div className="text-sub-title-text-regular text-tailCall-border-light-300 font-kanit">
-                Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a seamless fit!
+                Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
+                seamless fit!
               </div>
             </div>
             {/* FAQ Section */}
@@ -287,22 +289,18 @@ const PricingPage = (): JSX.Element => {
                     onClick={() => toggleIndex(index)}
                   >
                     <span className="text-question-title text-white">{item.question}</span>
-                    <span className="text-white">
-                      {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
-                    </span>
+                    <span className="text-white">{openIndex === index ? <Minus size={20} /> : <Plus size={20} />}</span>
                   </button>
                   <div className="bg-gradient-border h-[1px] w-full"></div>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    }`}
                   >
-                    <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">
-                      {item.answer}
-                    </p>
+                    <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">{item.answer}</p>
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
           {/* CTA Section */}

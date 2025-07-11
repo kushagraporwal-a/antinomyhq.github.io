@@ -164,7 +164,7 @@ module.exports = {
           "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
         "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)",
-        "gradient-border": "linear-gradient(90deg, #2F2F2F -1.04%, #30EDE6 47.84%, #323232 96.72%)"
+        "gradient-border": "linear-gradient(90deg, #2F2F2F -1.04%, #30EDE6 47.84%, #323232 96.72%)",
       },
     },
     fontFamily: {
@@ -311,15 +311,15 @@ module.exports = {
         "30px",
         {
           fontWeight: "275",
-          lineHeight: "40px"
-        }
+          lineHeight: "40px",
+        },
       ],
       "question-title": [
         "28px",
         {
           fontWeight: "300",
-          lineHeight: "34px"
-        }
+          lineHeight: "34px",
+        },
       ],
     },
   },
