@@ -60,8 +60,8 @@ I threw both models at actual Rust projects I've been working on, focusing on th
 **Claude 4 Opus**
 
 - Context Window: 200,000 tokens
-- Input Cost: ~$3/1M tokens
-- Output Cost: ~$15/1M tokens
+- Input Cost: ~$15/1M tokens
+- Output Cost: ~$75/1M tokens
 - Tool Calling: Native support
 
 **Grok 4**
