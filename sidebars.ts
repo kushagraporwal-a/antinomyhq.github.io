@@ -41,6 +41,11 @@ const sidebars: SidebarsConfig = {
           id: "plan-and-act-guide",
           label: "Plan First, Then Act",
         },
+        {
+          type: "doc",
+          id: "model-selection-guide",
+          label: "Switching Models",
+        },
       ],
     },
     {
