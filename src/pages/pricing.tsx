@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
@@ -20,21 +20,21 @@ import { FAQS, tiers } from "../constants/index"
 
 // AI Providers array for iteration
 const aiProviders = [
-  { name: "OpenAI", logo: OpenAILogo },
-  { name: "Anthropic", logo: AnthropicLogo },
-  { name: "Google", logo: GoogleLogo },
-  { name: "xAI", logo: XAILogo },
-  { name: "Meta", logo: MetaLogo },
-  { name: "Mistral", logo: MistralLogo },
-  { name: "Deepseek", logo: DeepSeekLogo },
+  {name: "OpenAI", logo: OpenAILogo},
+  {name: "Anthropic", logo: AnthropicLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "xAI", logo: XAILogo},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Mistral", logo: MistralLogo},
+  {name: "Deepseek", logo: DeepSeekLogo},
 ]
 
 const PricingPage = (): JSX.Element => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleIndex = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
@@ -207,9 +207,7 @@ const PricingPage = (): JSX.Element => {
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">
-                      {item.answer}
-                    </p>
+                    <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">{item.answer}</p>
                   </div>
                   <div className="bg-gradient-border h-[1px] w-full"></div>
                 </div>

@@ -313,15 +313,15 @@ module.exports = {
         "30px",
         {
           fontWeight: "275",
-          lineHeight: "40px"
-        }
+          lineHeight: "40px",
+        },
       ],
       "question-title": [
         "28px",
         {
           fontWeight: "300",
-          lineHeight: "34px"
-        }
+          lineHeight: "34px",
+        },
       ],
       "title-small-pricing": [
         "20px",
