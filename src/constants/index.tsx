@@ -1,6 +1,6 @@
 import React from "react"
-import { pageLinks } from "./routes"
-import { Terminal, Shuffle, Key, Bot, ReplaceAll, BrainCircuit } from "lucide-react"
+import {pageLinks} from "./routes"
+import {Terminal, Shuffle, Key, Bot, ReplaceAll, BrainCircuit} from "lucide-react"
 
 export const githubRepoURL = "https://github.com/antinomyhq/forge"
 export const tailCallBenchmarkUrl = "https://github.com/tailcallhq/graphql-benchmarks#benchmark-results"
@@ -40,32 +40,32 @@ import CommvaultClientLogoLight from "@site/static/icons/client/commvault-light.
 import CoreEdgeClientLogoLight from "@site/static/icons/client/coreedge-light.svg"
 
 export const companies: PartnerImage[] = [
-  { name: "Dream11", logo: Dream11Logo },
-  { name: "Agoda", logo: AgodaLogo },
-  { name: "Amazon", logo: AmazonLogo },
-  { name: "Branch", logo: BranchLogo },
-  { name: "ClearTax", logo: ClearTaxLogo },
-  { name: "Commvault", logo: CommvaultLogo },
-  { name: "CoreEdge", logo: CoreEdgeLogo },
+  {name: "Dream11", logo: Dream11Logo},
+  {name: "Agoda", logo: AgodaLogo},
+  {name: "Amazon", logo: AmazonLogo},
+  {name: "Branch", logo: BranchLogo},
+  {name: "ClearTax", logo: ClearTaxLogo},
+  {name: "Commvault", logo: CommvaultLogo},
+  {name: "CoreEdge", logo: CoreEdgeLogo},
 ]
 
 export const companiesLight: PartnerImage[] = [
-  { name: "Dream11", logo: Dream11ClientLogoLight },
-  { name: "Agoda", logo: AgodaClientLogoLight },
-  { name: "Amazon", logo: AmazonClientLogoLight },
-  { name: "Branch", logo: BranchClientLogoLight },
-  { name: "ClearTax", logo: ClearTaxClientLogoLight },
-  { name: "Commvault", logo: CommvaultClientLogoLight },
-  { name: "CoreEdge", logo: CoreEdgeClientLogoLight },
+  {name: "Dream11", logo: Dream11ClientLogoLight},
+  {name: "Agoda", logo: AgodaClientLogoLight},
+  {name: "Amazon", logo: AmazonClientLogoLight},
+  {name: "Branch", logo: BranchClientLogoLight},
+  {name: "ClearTax", logo: ClearTaxClientLogoLight},
+  {name: "Commvault", logo: CommvaultClientLogoLight},
+  {name: "CoreEdge", logo: CoreEdgeClientLogoLight},
 ]
 export const clientLogos: PartnerImage[] = [
-  { name: "Dream11", logo: Dream11ClientLogo },
-  { name: "Agoda", logo: AgodaClientLogo },
-  { name: "Amazon", logo: AmazonClientLogo },
-  { name: "Branch", logo: BranchClientLogo },
-  { name: "ClearTax", logo: ClearTaxClientLogo },
-  { name: "Commvault", logo: CommvaultClientLogo },
-  { name: "CoreEdge", logo: CoreEdgeClientLogo },
+  {name: "Dream11", logo: Dream11ClientLogo},
+  {name: "Agoda", logo: AgodaClientLogo},
+  {name: "Amazon", logo: AmazonClientLogo},
+  {name: "Branch", logo: BranchClientLogo},
+  {name: "ClearTax", logo: ClearTaxClientLogo},
+  {name: "Commvault", logo: CommvaultClientLogo},
+  {name: "CoreEdge", logo: CoreEdgeClientLogo},
 ]
 
 export const partnerImages: PartnerImage[] = [
@@ -99,7 +99,7 @@ export const partnerImages: PartnerImage[] = [
   },
 ]
 
-const Highlight = ({ text }: { text: string }) => (
+const Highlight = ({text}: {text: string}) => (
   <>
     <span className="text-content-tiny font-bold sm:text-title-tiny lg:text-title-small bg-tailCall-yellow rounded-[4px] sm:rounded-md px-SPACE_01">
       {text}
@@ -599,7 +599,7 @@ export const pricingPlans: PricingPlans[] = [
 ]
 
 export const radioOptions: RadioOptions[] = [
-  { id: "1", name: "Evaluating", value: "evaluating" },
+  {id: "1", name: "Evaluating", value: "evaluating"},
   {
     id: "2",
     name: "Monolith",
@@ -651,7 +651,7 @@ export const testimonials: CustomerFeedback[] = [
 
 // Add the missing blogTagsMapping constant
 export const blogTagsMapping: Record<string, BlogTag[]> = {
-  "General Topics": [{ label: "Welcome", permalink: "/blog/tags/welcome" }],
+  "General Topics": [{label: "Welcome", permalink: "/blog/tags/welcome"}],
 }
 
 export enum CookiePreferenceCategory {
@@ -968,30 +968,30 @@ export const FAQS = [
     question: "How do I purchase additional prompts?",
     answer: `Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your monthly limit.
               Pro users can buy 250 additional prompts for $10 USD, while Max users (after early access) can purchase 1000 additional prompts for $25 USD.
-              These additional prompts are added to your current month's allowance.`
+              These additional prompts are added to your current month's allowance.`,
   },
   {
     question: "What's the difference between Free, Pro, and Max plans?",
     answer: `Free ($0): Basic AI model access with limited daily usage, perfect for getting started.
               Pro ($20/month): Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.
-              Max (FREE - normally $200/month): Normally 10,000 prompts per month, but unlimited access during this limited-time early access offer.`
+              Max (FREE - normally $200/month): Normally 10,000 prompts per month, but unlimited access during this limited-time early access offer.`,
   },
   {
     question: "What does '20X the Pro plan' mean for Max?",
     answer: `The Max plan offers 20 times the value of Pro at 10 times the price. While Pro gives you 500 requests
               per month, Max normally provides 10,000 requests monthly. During this limited-time early access, Max
-              users get unlimited requests with no restrictions, plus exclusive early access features and priority support.`
+              users get unlimited requests with no restrictions, plus exclusive early access features and priority support.`,
   },
   {
     question: "What are 'top tier' models?",
     answer: `Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
-              models from each provider that offer the best performance for complex coding tasks.`
+              models from each provider that offer the best performance for complex coding tasks.`,
   },
   {
     question: "How does the Max plan unlimited usage work?",
     answer: `Max plan users get truly unlimited access to all AI models during this limited-time early access
               offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
-              requests with no rate limits, daily caps, or usage restrictions at the special $0/month price (normally $200/month).`
+              requests with no rate limits, daily caps, or usage restrictions at the special $0/month price (normally $200/month).`,
   },
   {
     question: "What happens when I exceed my prompt limit?",
@@ -999,24 +999,24 @@ export const FAQS = [
               Pro users: After using your 500 included prompts, you can purchase additional
               prompts: 250 prompts for $10 USD.
               Max users: Currently unlimited during early access. After early access ends, you can
-              purchase additional prompts: 1000 prompts for $25 USD.`
+              purchase additional prompts: 1000 prompts for $25 USD.`,
   },
   {
     question: "Is my code secure and private?",
     answer: `Absolutely. ForgeCode runs entirely on your local machine using your own API keys. Your code never
-              leaves your computer - no cloud processing, no data collection, complete privacy and security.`
+              leaves your computer - no cloud processing, no data collection, complete privacy and security.`,
   },
   {
     question: "Can I upgrade or downgrade my plan anytime?",
     answer: `Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
               your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
-              Max provides 10,000 prompts per month.`
+              Max provides 10,000 prompts per month.`,
   },
   {
     question: "Do I need my own API keys?",
     answer: `For Free users, you'll need your own API keys for AI models. Pro and Max users get included access to
-              premium models without needing separate API keys, plus the option to use your own keys for additional providers.`
-  }
+              premium models without needing separate API keys, plus the option to use your own keys for additional providers.`,
+  },
 ]
 
 export const tiers = [
@@ -1029,14 +1029,12 @@ export const tiers = [
       "Access to core CLI features",
       "Smart command suggestions",
       "0 AI prompts/day",
-      "Local-only usage, no cloud sync"
+      "Local-only usage, no cloud sync",
     ],
     cta: "Get Started",
     href: pageLinks.signup,
     popular: true,
-    icons: [
-      "/icons/basic/settings_pricing.svg"
-    ]
+    icons: ["/icons/basic/settings_pricing.svg"],
   },
   {
     name: "Pro",
@@ -1053,9 +1051,7 @@ export const tiers = [
     cta: "Get Started",
     href: pageLinks.signup,
     popular: true,
-    icons: [
-      "/icons/basic/SketchLogo.svg"
-    ]
+    icons: ["/icons/basic/SketchLogo.svg"],
   },
   {
     name: "Max",
@@ -1067,15 +1063,13 @@ export const tiers = [
       "All Pro features",
       "Team-wide configuration & shared workflow",
       "Admin dashboard",
-      "Integrations: GitHub, CI/CD, Docker, etc."
+      "Integrations: GitHub, CI/CD, Docker, etc.",
     ],
     cta: "Get Started",
     href: pageLinks.signup,
     popular: true,
     special: true,
-    icons: [
-      "/icons/basic/colorfilter.svg"
-    ]
+    icons: ["/icons/basic/colorfilter.svg"],
   },
   {
     name: "Enterprise",
@@ -1087,14 +1081,12 @@ export const tiers = [
       "All Pro features",
       "Team-wide configuration & shared workflow",
       "Admin dashboard",
-      "Integrations: GitHub, CI/CD, Docker, etc."
+      "Integrations: GitHub, CI/CD, Docker, etc.",
     ],
     cta: "Contact Us",
     href: pageLinks.signup,
     popular: true,
     special: true,
-    icons: [
-      "/icons/basic/colorfilter.svg"
-    ]
-  }
+    icons: ["/icons/basic/colorfilter.svg"],
+  },
 ]

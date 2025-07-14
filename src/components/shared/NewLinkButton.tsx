@@ -1,8 +1,8 @@
 import Link from "@docusaurus/Link"
-import { Theme } from "@site/src/constants"
+import {Theme} from "@site/src/constants"
 import clsx from "clsx"
 import React from "react"
-import { SVGProps } from "react"
+import {SVGProps} from "react"
 
 type LinkButtonProps = {
   title?: string
@@ -91,7 +91,7 @@ const NewLinkButton = ({
       },
     }
 
-    return themes[theme] || { classes: "", gridClasses: "" }
+    return themes[theme] || {classes: "", gridClasses: ""}
   }
 
   return (
@@ -116,16 +116,12 @@ const NewLinkButton = ({
         `,
         setButtonWidth(),
         generateThemeClasses().classes,
-        disabled ? "cursor-not-allowed opacity-20" : ""
+        disabled ? "cursor-not-allowed opacity-20" : "",
       )}
     >
       {Icon && <Icon className="w-5 h-5 sm:w-6 sm:h-6 z-[1]" />}
 
-      {title && (
-        <span className={clsx("z-[1]", titleClassName)}>
-          {title}
-        </span>
-      )}
+      {title && <span className={clsx("z-[1]", titleClassName)}>{title}</span>}
     </Link>
   )
 }

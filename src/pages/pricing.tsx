@@ -2,10 +2,10 @@ import React, {useState} from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
-import { Theme } from "@site/src/constants"
-import { pageLinks } from "@site/src/constants/routes"
-import { analyticsHandler } from "@site/src/utils"
-import { CircleCheck, Minus, Plus } from "lucide-react"
+import {Theme} from "@site/src/constants"
+import {pageLinks} from "@site/src/constants/routes"
+import {analyticsHandler} from "@site/src/utils"
+import {CircleCheck, Minus, Plus} from "lucide-react"
 import FinalCTA from "../components/home/FinalCTA"
 import OpenAILogo from "@site/src/assets/logos/openai.svg"
 import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
@@ -16,7 +16,7 @@ import MistralLogo from "@site/src/assets/logos/mistral.svg"
 import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
 import NewLinkButton from "../components/shared/NewLinkButton"
 import clsx from "clsx"
-import { FAQS, tiers } from "../constants/index"
+import {FAQS, tiers} from "../constants/index"
 
 // AI Providers array for iteration
 const aiProviders = [
@@ -30,7 +30,7 @@ const aiProviders = [
 ]
 
 const PricingPage = (): JSX.Element => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggleIndex = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -41,15 +41,11 @@ const PricingPage = (): JSX.Element => {
       <div className="px-6 md:px-12 py-12 dark:bg-black dark:text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className="space-y-2">
-            <h2
-              className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text"
-            >
+            <h2 className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text">
               START FOR FREE.
             </h2>
 
-            <h2
-              className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text"
-            >
+            <h2 className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text">
               SCALE WHEN YOU'RE READY.
             </h2>
           </div>
@@ -69,7 +65,8 @@ const PricingPage = (): JSX.Element => {
               Plans for Your Need
             </Heading>
             <p className="text-title-small-pricing text-tailCall-border-light-300 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
-              Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a seamless fit!
+              Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
+              seamless fit!
             </p>
           </div>
 
@@ -80,18 +77,16 @@ const PricingPage = (): JSX.Element => {
                 className={clsx(
                   "relative group flex flex-col rounded-xl p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 transition-all duration-300 overflow-hidden",
                   "border-solid border-[0.732px] dark:border-[#737373]",
-                  "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300"
+                  "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300",
                 )}
               >
-                <div
-                  className="absolute left-0 bottom-0 w-full h-[25%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-gradient-procing-cards"
-                ></div>
+                <div className="absolute left-0 bottom-0 w-full h-[25%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-gradient-procing-cards"></div>
 
                 {/* Card Content */}
                 <div className="relative z-10">
                   <div className="flex gap-2 mb-4">
                     {tier.icons?.map((src, idx) => {
-                      const isFillHover = tier.name === 'Free' || tier.name === 'Pro';
+                      const isFillHover = tier.name === "Free" || tier.name === "Pro"
                       return (
                         <div
                           key={idx}
@@ -100,7 +95,7 @@ const PricingPage = (): JSX.Element => {
                             "border border-gray-600 dark:bg-[#1A1A1A]",
                             isFillHover
                               ? "group-hover:bg-white dark:group-hover:border-white"
-                              : "group-hover:ring-2 dark:group-hover:ring-white"
+                              : "group-hover:ring-2 dark:group-hover:ring-white",
                           )}
                         >
                           <img
@@ -164,7 +159,6 @@ const PricingPage = (): JSX.Element => {
                         ))}
                       </ul>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -180,7 +174,8 @@ const PricingPage = (): JSX.Element => {
                 FAQ
               </Heading>
               <div className="text-sub-title-text-regular dark:text-tailCall-border-light-300 font-kanit">
-                Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a seamless fit!
+                Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
+                seamless fit!
               </div>
             </div>
 
@@ -195,17 +190,15 @@ const PricingPage = (): JSX.Element => {
                       className={clsx(
                         "text-question-title",
                         openIndex === index ? "text-white" : "text-[#A1A1A1]",
-                        "transition-colors duration-300"
+                        "transition-colors duration-300",
                       )}
                     >
                       {item.question}
                     </span>
-                    <span className="text-white">
-                      {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
-                    </span>
+                    <span className="text-white">{openIndex === index ? <Minus size={20} /> : <Plus size={20} />}</span>
                   </div>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
+                    className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
                     <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">{item.answer}</p>
                   </div>

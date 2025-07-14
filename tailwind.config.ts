@@ -166,7 +166,7 @@ module.exports = {
         "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)",
         "gradient-border": "linear-gradient(90deg, #2F2F2F -1.04%, #30EDE6 47.84%, #323232 96.72%)",
         "gradient-pricing-title": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFFFFF 0%, #7C7C7C 100%)",
-        "gradient-procing-cards": "radial-gradient(150% 100% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.10) 100%)"
+        "gradient-procing-cards": "radial-gradient(150% 100% at 50% 100%, #30EDE6 0%, rgba(0, 0, 0, 0.10) 100%)",
       },
     },
     fontFamily: {
