@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import clsx from "clsx"
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
@@ -13,6 +13,8 @@ import BlogPostList from "../BlogPostList"
 import {BlogCategories} from "../BlogCategories"
 import {useBlogPosts} from "@site/src/utils/hooks/useBlogPosts"
 import {FrontMatter} from "@theme/BlogPostPage"
+import {useLocation} from "@docusaurus/router"
+import ReactGA from "react-ga4"
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const {metadata} = props
@@ -67,6 +69,12 @@ function BlogListPageContent({metadata, items, sidebar}: Props): JSX.Element {
 }
 
 export default function BlogListPage(props: Props): JSX.Element {
+  const location = useLocation()
+
+  useEffect(() => {
+    ReactGA.send({hitType: "pageview", page: location.pathname, title: "Blog Page"})
+  }, [])
+
   return (
     <HtmlClassNameProvider className={clsx(ThemeClassNames.wrapper.blogPages, ThemeClassNames.page.blogListPage)}>
       <BlogListPageMetadata {...props} />

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import Button from "./Button"
 import {Copy, CopyCheck} from "lucide-react"
 import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
+import ReactGA from "react-ga4"
 
 const CopyCodeButton = (): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
@@ -14,6 +15,7 @@ const CopyCodeButton = (): JSX.Element => {
   }, [isCopied])
 
   const handleCopy = async () => {
+    ReactGA.event({action: "click", category: "Copy Test", label: "Copy forge code command"})
     await navigator.clipboard.writeText(FORGE_CODE_INSTALL_COMMAND)
     setIsCopied(true)
   }

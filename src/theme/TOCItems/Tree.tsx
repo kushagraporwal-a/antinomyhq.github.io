@@ -38,7 +38,15 @@ function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChil
 
         return (
           <li className={clsx(styles.item)} key={heading.id}>
-            <div className={clsx("lg:hidden xl:block", styles.dot, isActive ? "bg-tailCall-cyan" : "bg-gray-600")} />
+            <div
+              className={clsx(
+                "lg:hidden xl:block",
+                styles.dot,
+                isActive
+                  ? "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400"
+                  : "bg-gray-600",
+              )}
+            />
             {!isLast && <div className={styles.line} />}
             <Link
               to={`#${heading.id}`}

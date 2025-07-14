@@ -21,7 +21,10 @@ const CustomTh = (props: ComponentProps<"th">) => (
 )
 
 const CustomTd = (props: ComponentProps<"td">) => (
-  <td className="px-4 py-2 text-sm text-gray-300 border-b border-gray-700" {...props} />
+  <td
+    className="px-4 py-2 text-sm text-tailCall-lightMode---neutral-600 dark:text-gray-300 border-b border-gray-700"
+    {...props}
+  />
 )
 
 const MDXComponents: MDXComponentsObject = {

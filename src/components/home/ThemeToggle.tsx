@@ -1,11 +1,21 @@
 import React from "react"
 import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
+import ReactGA from "react-ga4"
 
 const ThemeToggle: React.FC = () => {
   const {theme, toggleTheme} = useThemeContext()
+
+  const handleToggleTheme = () => {
+    ReactGA.event({
+      category: "Theme Toggle",
+      action: "Click",
+    })
+    toggleTheme()
+  }
+
   return (
     <button
-      onClick={toggleTheme}
+      onClick={handleToggleTheme}
       aria-label="Toggle Theme"
       className="
         flex items-center justify-center

@@ -1,6 +1,7 @@
 import Link from "@docusaurus/Link"
 import React from "react"
 import {useCookieConsentManager} from "./CookieConsentProvider"
+import ReactGA from "react-ga4"
 
 type FooterItemProps = {
   title: string
@@ -10,6 +11,14 @@ type FooterItemProps = {
 const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
   const {openCookieConsentModal} = useCookieConsentManager()
 
+  const handleOpenCookieConsent = () => {
+    ReactGA.event({
+      category: "Open cookie consent",
+      action: "Click",
+      label: "Cookie Settings",
+    })
+    openCookieConsentModal()
+  }
   return (
     <div className="flex flex-col mt-5 md:mt-0 gap-5 md:gap-8">
       <span className="font-kanit text-title-tiny text-tailCall-light-1000 dark:text-white opacity-40 font-normal">
@@ -20,7 +29,7 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
           return item.name === "Cookie Settings" ? (
             <button
               className="text-tailCall-light-1000 dark:text-white no-underline hover:no-underline hover:text-tailCall-lightMode---neutral-900 hover:dark:text-white border-none bg-transparent text-title-tiny font-[275] m-0 p-0 font-kanit font-normal cursor-pointer"
-              onClick={openCookieConsentModal}
+              onClick={handleOpenCookieConsent}
             >
               {item.name}
             </button>
@@ -29,6 +38,13 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
               className="font-normal text-tailCall-light-1000 dark:text-white no-underline hover:no-underline hover:text-tailCall-lightMode---neutral-900 hover:dark:text-white"
               href={item.link}
               key={item.name}
+              onClick={() =>
+                ReactGA.event({
+                  category: "Footer link",
+                  action: "Click",
+                  label: item.name,
+                })
+              }
             >
               {item.name}
             </Link>

@@ -6,6 +6,7 @@ import Link from "@docusaurus/Link"
 import {useLocation} from "@docusaurus/router"
 import {useWindowSize} from "@docusaurus/theme-common"
 import ThemeToggle from "../home/ThemeToggle"
+import ReactGA from "react-ga4"
 
 const Logo = () => (
   <Link href="/" className="flex items-center justify-center">
@@ -25,7 +26,11 @@ const NavLink = ({href, label}: {href: string; label: string}) => {
     "text-tailCall-darkMode---neutral-400 dark:text-tailCall-darkMode---neutral-500 hover:opacity-100"
 
   return (
-    <Link href={href} className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+    <Link
+      href={href}
+      onClick={() => ReactGA.event({action: "click", category: "Nav link click", label: href})}
+      className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}
+    >
       {label}
     </Link>
   )
@@ -44,6 +49,33 @@ const NewNavbar = (): JSX.Element => {
 
   const isHome = location.pathname === "/"
 
+  const handleSignUp = () => {
+    ReactGA.event({
+      category: "Sign Up",
+      action: "Click",
+      label: "Sign Up",
+    })
+    window.open("https://app.forgecode.dev/app/", "_blank")
+  }
+
+  const handeNavbarClose = () => {
+    ReactGA.event({
+      category: "Navbar close",
+      action: "Click",
+      label: "X",
+    })
+    setShowNavbar(false)
+  }
+
+  const handeNavbarToggle = () => {
+    ReactGA.event({
+      category: "Navbar toggle",
+      action: "Click",
+      label: "Menu",
+    })
+    setShowNavbar(!showNavbar)
+  }
+
   return (
     <nav
       className={`fixed top-0 left-0 z-[999] backdrop-blur-md w-full p-5 ${
@@ -59,7 +91,7 @@ const NewNavbar = (): JSX.Element => {
             <Logo />
             <Button
               variant="transparent"
-              onClick={() => setShowNavbar(false)}
+              onClick={handeNavbarClose}
               className="!bg-tailCall-cyan rounded p-2 text-white"
             >
               <X className="text-black" />
@@ -96,7 +128,7 @@ const NewNavbar = (): JSX.Element => {
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="navlink" onClick={() => window.open("https://app.forgecode.dev/app/", "_blank")}>
+              <Button variant="navlink" onClick={handleSignUp}>
                 <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
                   Signup
                 </span>
@@ -105,7 +137,7 @@ const NewNavbar = (): JSX.Element => {
             </div>
             <Button
               variant="transparent"
-              onClick={() => setShowNavbar(!showNavbar)}
+              onClick={handeNavbarToggle}
               className="md:hidden !bg-tailCall-cyan rounded p-2"
             >
               <Menu className="text-black" />

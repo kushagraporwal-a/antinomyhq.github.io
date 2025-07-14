@@ -16,7 +16,9 @@ export interface NextStepsProps {
 
 const NextSteps: React.FC<NextStepsProps> = ({items, className}) => {
   return (
-    <div className={clsx("grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-4 my-8", className)}>
+    <div
+      className={clsx("grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-8 md:gap-4 my-8", className)}
+    >
       {items.map((item, idx) => (
         <Link key={idx} to={item.link} className="flex flex-col overflow-visible !no-underline h-full">
           <div className="relative mt-5 bg-card-border-gradient rounded-3xl min-w-auto 2xl:min-w-72 h-full p-[1px]">

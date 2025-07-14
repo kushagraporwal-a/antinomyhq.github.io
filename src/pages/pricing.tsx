@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
@@ -17,6 +17,8 @@ import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
 import NewLinkButton from "../components/shared/NewLinkButton"
 import clsx from "clsx"
 import {FAQS, tiers} from "../constants/index"
+import {useLocation} from "@docusaurus/router"
+import ReactGA from "react-ga4"
 
 // AI Providers array for iteration
 const aiProviders = [
@@ -31,6 +33,11 @@ const aiProviders = [
 
 const PricingPage = (): JSX.Element => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    ReactGA.send({hitType: "pageview", page: location.pathname, title: "Pricing Page"})
+  }, [])
 
   const toggleIndex = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
