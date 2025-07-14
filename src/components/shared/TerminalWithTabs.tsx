@@ -82,7 +82,7 @@ const TerminalWithTabs = (): JSX.Element => {
           className="flex items-center gap-2 text-tailCall-darkMode---neutral-500 dark:text-[#B0BEC5] text-[14px]"
         >
           <div className="h-2 w-2 rounded-lg bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400" />
-          <span className="font-space text-content-tiny font-normal">{content}</span>
+          <span className="font-space text-content-small font-normal">{content}</span>
         </div>
       )
     }
@@ -92,8 +92,12 @@ const TerminalWithTabs = (): JSX.Element => {
         key={idx}
         className="text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 max-[480px]:text-[14px]"
       >
-        <span className="!font-normal font-space text-content-tiny">
-          {isSynthLine ? <span className="text-[#1ECB83]">{line}</span> : <span className="font-bold">{line}</span>}
+        <span className="!font-normal font-space text-content-small">
+          {isSynthLine ? (
+            <span className="text-[#1ECB83] font-bold">{line}</span>
+          ) : (
+            <span className="font-normal">{line}</span>
+          )}
         </span>
       </div>
     )
@@ -126,10 +130,10 @@ const TerminalWithTabs = (): JSX.Element => {
         <div className="flex w-full flex-col px-4">
           {GUIDES.map(({title, details}) => (
             <div key={title} className="flex w-full">
-              <span className="w-2/5 text-[#525252] dark:text-white font-space text-content-tiny font-normal max-[480px]:text-[12px]">
+              <span className="w-2/5 text-[#525252] dark:text-white font-space text-content-small font-normal max-[480px]:text-[12px]">
                 {title}
               </span>
-              <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-content-tiny font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
+              <span className="text-[#018284] dark:text-tailCall-darkMode---primary-400 font-space text-content-small font-normal leading-[150%] -tracking-[0.307px] max-[480px]:text-[12px]">
                 {details}
               </span>
             </div>
@@ -138,18 +142,20 @@ const TerminalWithTabs = (): JSX.Element => {
 
         {/* Terminal Output */}
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[40vh]">
+          <div ref={containerRef} className="mt-3 space-y-2 overflow-y-auto h-[40vh]">
             {lines.map(renderLine)}
           </div>
 
           {/* Command Line */}
           <div className="bg-[#E5E5E5] dark:bg-[#1E1C21] rounded-[4px] relative border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
-            <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 flex items-center rounded-lg px-2">
-              <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" />
-              <span className="ml-2 text-[#018284] dark:text-tailCall-lightMode---primary-400 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
+            <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-lg px-2">
+              <div className="flex items-center justify-center">
+                <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" width={24} />
+              </div>
+              <span className="py-3 ml-2 text-[#018284] dark:text-tailCall-lightMode---primary-400 font-space text-title-tiny font-normal max-[480px]:text-[14px]">
                 {typedText}
+                {isTyping && <span className="animate-pulse text-white w-5">|</span>}
               </span>
-              {isTyping && <span className="animate-pulse">|</span>}
             </div>
           </div>
         </div>

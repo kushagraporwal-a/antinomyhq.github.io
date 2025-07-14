@@ -904,7 +904,7 @@ export const gtagScriptContent = `
 
 export const COMMANDS = [
   {
-    command: "> what are the main components and how do they interact?",
+    command: " what are the main components and how do they interact?",
     output: [
       "⏺ [12:15:22] Read README.md",
       "⏺ [12:15:22] Read package.json",
@@ -920,7 +920,7 @@ export const COMMANDS = [
     ],
   },
   {
-    command: "> how do I update?",
+    command: " how do I update?",
     output: [
       "- I need clarification on what you'd like to update. Here are the common update scenarios for this Docusaurus website:",
       "1. Update Website Content",
@@ -931,11 +931,11 @@ export const COMMANDS = [
     ],
   },
   {
-    command: "> /muse",
+    command: " /muse",
     output: ["[21:40:20] - Switched to agent MUSE"],
   },
   {
-    command: "> /exit",
+    command: " /exit",
     output: ["[21:40:40] - Exiting session...", "Goodbye."],
   },
 ]
