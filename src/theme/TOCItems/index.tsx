@@ -1,9 +1,10 @@
-import React, {useMemo} from "react"
+import React, {useMemo, useState} from "react"
 import {useThemeConfig} from "@docusaurus/theme-common"
 import {useTOCHighlight, useFilteredAndTreeifiedTOC, type TOCHighlightConfig} from "@docusaurus/theme-common/internal"
 import TOCItemTree from "@theme/TOCItems/Tree"
 import type {Props} from "@theme/TOCItems"
 import {Star} from "lucide-react"
+import clsx from "clsx"
 
 export default function TOCItems({
   toc,
@@ -15,6 +16,9 @@ export default function TOCItems({
   ...props
 }: Props): JSX.Element | null {
   const themeConfig = useThemeConfig()
+
+  const [rating, setRating] = useState(0)
+  const [hovered, setHovered] = useState<number | null>(null)
 
   const minHeadingLevel = minHeadingLevelOption ?? themeConfig.tableOfContents.minHeadingLevel
   const maxHeadingLevel = maxHeadingLevelOption ?? themeConfig.tableOfContents.maxHeadingLevel
@@ -54,8 +58,22 @@ export default function TOCItems({
               Let us know how we can be helpful.
             </span>
             <div className="flex gap-1 mt-4">
-              {Array.from({length: 4}).map((_, idx) => {
-                return <Star key={idx} className="text-tailCall-dark-900" />
+              {Array.from({length: 5}).map((_, idx) => {
+                const starIndex = idx + 1
+                const isFilled = hovered ? starIndex <= hovered : starIndex <= rating
+
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => setRating(starIndex)}
+                    onMouseEnter={() => setHovered(starIndex)}
+                    onMouseLeave={() => setHovered(null)}
+                    className="focus:outline-none bg-transparent border-none"
+                    aria-label={`Rate ${starIndex} star${starIndex > 1 ? "s" : ""}`}
+                  >
+                    <Star className={clsx("w-6 h-6 transition-colors", {})} fill={isFilled ? "#30ede6" : "white"} />
+                  </button>
+                )
               })}
             </div>
           </div>
