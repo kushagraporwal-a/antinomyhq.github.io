@@ -100,7 +100,7 @@ const TerminalWithTabs = (): JSX.Element => {
   }
 
   return (
-    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full md:w-4/5 lg:w-[500px] min-h-[650px] flex flex-col font-mono">
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full md:w-4/5 lg:w-[450px] min-h-[650px] flex flex-col font-mono">
       {/* Header */}
       <div className="bg-[#E8E8E8] dark:bg-tailCall-darkMode---neutral-900 w-full rounded-t-xl flex gap-2 items-center p-3">
         <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300" />

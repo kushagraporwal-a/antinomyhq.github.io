@@ -15,7 +15,7 @@ const Banner = (): JSX.Element => {
   return (
     <div className="flex justify-center mt-10 sm:mt-[66px] md:mt-[80px] xl:mt-auto">
       <div className="max-w-[1440px] relative px-7 pt:5 lg:pt-0 flex lg:justify-center flex-col w-full">
-        <div className="flex justify-around flex-col lg:flex-row gap-40 md:gap-60 lg:gap-40 xl:gap-60 pt-20 md:pt-0 xl:pt-20">
+        <div className="flex justify-around flex-col lg:flex-row gap-40 md:gap-60 lg:gap-40 xl:gap-64 pt-20 md:pt-0 xl:pt-20">
           <div className="flex md:hidden lg:flex flex-col">
             <p className="text-tailCall-lightMode---neutral-800 dark:text-white text-[26px] font-light lg:font-light text-title-medium lg:text-display-tiny opacity-80 max-w-[500px] md:mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
@@ -31,7 +31,7 @@ const Banner = (): JSX.Element => {
           <div className="relative hidden md:flex lg:hidden flex-col">
             <div className="relative flex flex-col">
               <SpotlightSpan text="AI PAIR" className={`${spotlightBase} font-normal`} />
-              <SpotlightSpan text="PROGRAMMING" className={`${spotlightBase} top-24 left-16`} />
+              <SpotlightSpan text="PROGRAMMER" className={`${spotlightBase} top-24 left-16`} />
             </div>
             <p className="absolute left-80 -top-20 text-tailCall-lightMode---neutral-800 dark:text-white font-light text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit">
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
