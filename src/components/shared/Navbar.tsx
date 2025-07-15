@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link"
 import {useLocation} from "@docusaurus/router"
 import {useWindowSize} from "@docusaurus/theme-common"
 import ThemeToggle from "../home/ThemeToggle"
-import ReactGA from "react-ga4"
+import {analyticsHandler} from "@site/src/utils"
 
 const Logo = () => (
   <Link href="/" className="flex items-center justify-center">
@@ -28,7 +28,7 @@ const NavLink = ({href, label}: {href: string; label: string}) => {
   return (
     <Link
       href={href}
-      onClick={() => ReactGA.event({action: "click", category: "Nav link click", label: href})}
+      onClick={() => analyticsHandler("Home Page", "Click", label)}
       className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}
     >
       {label}
@@ -50,29 +50,17 @@ const NewNavbar = (): JSX.Element => {
   const isHome = location.pathname === "/"
 
   const handleSignUp = () => {
-    ReactGA.event({
-      category: "Sign Up",
-      action: "Click",
-      label: "Sign Up",
-    })
+    analyticsHandler("Home Page", "Click", "Sign Up")
     window.open("https://app.forgecode.dev/app/", "_blank")
   }
 
   const handeNavbarClose = () => {
-    ReactGA.event({
-      category: "Navbar close",
-      action: "Click",
-      label: "X",
-    })
+    analyticsHandler("Home Page", "Click", "Close Navbar")
     setShowNavbar(false)
   }
 
   const handeNavbarToggle = () => {
-    ReactGA.event({
-      category: "Navbar toggle",
-      action: "Click",
-      label: "Menu",
-    })
+    analyticsHandler("Home Page", "Click", "Menu")
     setShowNavbar(!showNavbar)
   }
 

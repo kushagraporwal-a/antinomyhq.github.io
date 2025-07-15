@@ -1,7 +1,7 @@
 import Link from "@docusaurus/Link"
 import React from "react"
 import {useCookieConsentManager} from "./CookieConsentProvider"
-import ReactGA from "react-ga4"
+import {analyticsHandler} from "@site/src/utils"
 
 type FooterItemProps = {
   title: string
@@ -12,11 +12,7 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
   const {openCookieConsentModal} = useCookieConsentManager()
 
   const handleOpenCookieConsent = () => {
-    ReactGA.event({
-      category: "Open cookie consent",
-      action: "Click",
-      label: "Cookie Settings",
-    })
+    analyticsHandler("Home Page", "Click", "Cookie Settings")
     openCookieConsentModal()
   }
   return (
@@ -38,13 +34,7 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
               className="font-normal text-tailCall-light-1000 dark:text-white no-underline hover:no-underline hover:text-tailCall-lightMode---neutral-900 hover:dark:text-white"
               href={item.link}
               key={item.name}
-              onClick={() =>
-                ReactGA.event({
-                  category: "Footer link",
-                  action: "Click",
-                  label: item.name,
-                })
-              }
+              onClick={() => analyticsHandler("Home Page", "Click", item.name)}
             >
               {item.name}
             </Link>
