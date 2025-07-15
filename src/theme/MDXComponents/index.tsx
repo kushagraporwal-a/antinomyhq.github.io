@@ -37,15 +37,17 @@ const MDXComponents: MDXComponentsObject = {
   ul: MDXUl,
   li: MDXLi,
   img: MDXImg,
-  h1: (props: ComponentProps<"h1">) => <MDXHeading as="h1" {...props} />,
-  h2: (props: ComponentProps<"h2">) => <MDXHeading as="h2" {...props} />,
-  h3: (props: ComponentProps<"h3">) => <MDXHeading as="h3" {...props} />,
+  h1: (props: ComponentProps<"h1">) => <MDXHeading className="text-[40px]" as="h1" {...props} />,
+  h2: (props: ComponentProps<"h2">) => <MDXHeading className="text-[28px]" as="h2" {...props} />,
+  h3: (props: ComponentProps<"h3">) => <MDXHeading className="!mb-3" as="h3" {...props} />,
   h4: (props: ComponentProps<"h4">) => <MDXHeading as="h4" {...props} />,
   h5: (props: ComponentProps<"h5">) => <MDXHeading as="h5" {...props} />,
   h6: (props: ComponentProps<"h6">) => <MDXHeading as="h6" {...props} />,
   admonition: Admonition,
   mermaid: Mermaid,
-  p: (props: ComponentProps<"p">) => <p className="dark:text-tailCall-darkMode---neutral-400 font-kanit" {...props} />,
+  p: (props: ComponentProps<"p">) => (
+    <p className="dark:text-tailCall-darkMode---neutral-400 font-kanit !mb-0" {...props} />
+  ),
   th: CustomTh,
   td: CustomTd,
 }

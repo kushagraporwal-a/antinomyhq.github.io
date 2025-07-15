@@ -24,7 +24,7 @@ const gradients = [
   "linear-gradient(180deg, #C985BD 0%, #D37C5C 100%)",
 ]
 
-const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, permalink, tags, bgIndex}) => {
+const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, permalink, tags, bgIndex, authors}) => {
   return (
     <Link to={permalink} className="group flex flex-col overflow-hidden !text-black !no-underline">
       <div className="flex h-full p-[1px] z-0 group-hover:bg-custom-dark-gradient-blog-border rounded-xl">
@@ -56,6 +56,13 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
             <p className="mt-2 font-kanit text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:text-[22px] xl:leading-[30px] !font-light line-clamp-3">
               {description}
             </p>
+            {authors[0] && (
+              <BlogAuthor
+                author={authors[0]}
+                containerClassName="mt-auto"
+                textClassName="text-tailCall-lightMode---neutral-400 !font-normal font-kanit dark:text-white"
+              />
+            )}
           </div>
           <div className="absolute bottom-0 left-0 group-hover:bg-radial-bottom-teal group-hover:dark:bg-custom-radial z-50 h-32 w-full"></div>
         </div>

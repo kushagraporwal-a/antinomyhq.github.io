@@ -42,58 +42,6 @@ const NewLinkButton = ({
     }
   }
 
-  // This controls the border and hover styles for LIGHT and DARK themes
-  const generateThemeClasses = () => {
-    const themes = {
-      [Theme.Light]: {
-        classes: `
-      border border-solid border-[#D4D4D4]
-      text-tailCall-dark-500
-      bg-transparent
-      group-hover:bg-white
-      group-hover:text-black
-      group-hover:border-black
-    `,
-      },
-      [Theme.Dark]: {
-        classes: `
-      border border-solid border-[#D4D4D4]
-      text-white
-      bg-transparent
-      group-hover:bg-white
-      group-hover:text-black
-      group-hover:border-white
-    `,
-      },
-      [Theme.Gray]: {
-        classes: `
-          border border-gray-400
-          bg-transparent
-          text-white
-          transition-all duration-300
-          group-hover:bg-white
-          group-hover:text-black
-          group-hover:border-white
-        `,
-        gridClasses: "hidden",
-      },
-      [Theme.Tailcall]: {
-        classes: `
-          border border-yellow-300
-          bg-transparent
-          text-black
-          transition-all duration-300
-          group-hover:bg-white
-          group-hover:text-black
-          group-hover:border-black
-        `,
-        gridClasses: "",
-      },
-    }
-
-    return themes[theme] || {classes: "", gridClasses: ""}
-  }
-
   return (
     <Link
       to={href}
@@ -113,9 +61,9 @@ const NewLinkButton = ({
         text-sm sm:text-base
         hover:no-underline
         text-content-tiny
+        border border-solid border-black dark:border-[#D4D4D4] text-black dark:text-white bg-transparent group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:dark:bg-white group-hover:dark:text-black group-hover:dark:border-white
         `,
         setButtonWidth(),
-        generateThemeClasses().classes,
         disabled ? "cursor-not-allowed opacity-20" : "",
       )}
     >

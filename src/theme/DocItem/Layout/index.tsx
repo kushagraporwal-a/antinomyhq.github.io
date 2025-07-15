@@ -58,10 +58,10 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
   )
   return (
     <div className="row pb-10">
-      <div className={clsx("col pt-2 md:pt-6 xl:pt-2", !docTOC.hidden && styles.docItemCol)}>
+      <div className={clsx("col pt-2 md:pt-6 xl:pt-4", !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
-          <article>
+          <article className="lg:mt-16">
             <DocBreadcrumbs />
             <DocVersionBadge />
             {docTOC.mobile}

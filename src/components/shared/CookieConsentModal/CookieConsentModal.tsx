@@ -170,7 +170,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         "cursor-pointer border-none bg-transparent font-kanit text-title-small font-light",
                         isCurly
                           ? "flex items-center justify-center"
-                          : "text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400",
+                          : "text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400",
                       )}
                     >
                       {isCurly ? (
@@ -187,7 +187,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                             height={60}
                             className="block dark:hidden"
                           />
-                          <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400">
+                          <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400">
                             {text}
                           </span>
                           <img
@@ -213,7 +213,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
             </div>
             <span
               onClick={handleClose}
-              className="absolute top-0 right-0 h-4 w-8 cursor-pointer text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400"
+              className="absolute top-0 right-0 h-4 w-8 cursor-pointer text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400"
             >
               [ X ]
             </span>

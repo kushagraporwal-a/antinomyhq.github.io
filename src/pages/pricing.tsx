@@ -46,7 +46,7 @@ const PricingPage = (): JSX.Element => {
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
-      <div className="px-6 md:px-20 py-12 dark:bg-black dark:text-white">
+      <div className="px-6 md:px-20 py-12 dark:bg-black bg-tailCall-light-1200">
         <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
           <div className="flex flex-col mt-2">
             <SpotlightSpan
@@ -67,7 +67,7 @@ const PricingPage = (): JSX.Element => {
         </div>
       </div>
       <main>
-        <Section className="py-16 lg:py-24 dark:bg-black bg-white">
+        <Section className="py-16 lg:py-24 dark:bg-black bg-tailCall-light-1200">
           <div className="text-center mb-20">
             <Heading
               as="h1"
@@ -75,7 +75,7 @@ const PricingPage = (): JSX.Element => {
             >
               Plans for Your Need
             </Heading>
-            <p className="text-title-small-pricing text-tailCall-border-light-300 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
+            <p className="text-title-small-pricing text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
               Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
               seamless fit!
             </p>
@@ -105,8 +105,8 @@ const PricingPage = (): JSX.Element => {
                             "relative h-8 w-8 rounded-full flex items-center justify-center transition-all duration-300",
                             "border border-gray-600 dark:bg-[#1A1A1A]",
                             isFillHover
-                              ? "group-hover:bg-white dark:group-hover:border-white"
-                              : "group-hover:ring-2 dark:group-hover:ring-white",
+                              ? "group-hover:bg-white group-hover:dark:border-white"
+                              : "group-hover:ring-2 group-hover:dark:ring-white",
                           )}
                         >
                           <img
@@ -133,7 +133,7 @@ const PricingPage = (): JSX.Element => {
                         <span className="text-title-text-large font-bold text-tailCall-lightMode---neutral-900 dark:text-white">
                           {tier.price}
                         </span>
-                        <span className="text-sm text-gray-500 dark:text-tailCall-darkMode---neutral-400 group-hover:text-white">
+                        <span className="text-sm text-gray-500 dark:text-tailCall-darkMode---neutral-400 group-hover:dark:text-white group-hover:text-gray-500">
                           {tier.period}
                         </span>
                       </div>
@@ -177,43 +177,43 @@ const PricingPage = (): JSX.Element => {
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
-            <div className="self-center">
+            <div className="items-start mt-11">
               <Heading
                 as="h2"
-                className="text-title-large font-normal md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
+                className="text-title-large !font-normal md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
               >
                 FAQ
               </Heading>
-              <div className="text-content-tiny font-normal md:text-sub-title-text-regular dark:text-tailCall-border-light-300 font-kanit">
+              <div className="text-content-tiny !font-[275] md:text-content-large dark:text-tailCall-border-light-300 font-kanit mt-5">
                 Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
                 seamless fit!
               </div>
             </div>
 
-            <div className="mt-24 w-full">
+            <div className="w-full">
               {FAQS.map((item, index) => (
                 <div key={index}>
                   <div
-                    className="flex w-full justify-between items-center py-12 text-left focus:outline-none bg-black border-none cursor-pointer"
+                    className="flex w-full justify-between items-center py-12 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer"
                     onClick={() => toggleIndex(index)}
                   >
                     <span
                       className={clsx(
                         "text-content-small md:text-question-title",
-                        openIndex === index ? "text-white" : "text-[#A1A1A1]",
+                        openIndex === index ? "text-[#262626] dark:text-white" : "text-[#A1A1A1]",
                         "transition-colors duration-300",
                       )}
                     >
                       {item.question}
                     </span>
-                    <span className="text-white flex items-center justify-center">
+                    <span className="text-tailCall-darkMode---primary-700 dark:text-white flex items-center justify-center">
                       {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                     </span>
                   </div>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
-                    <p className="text-tailCall-light-800 py-8 font-kanit text-content-tiny md:text-[23px]">
+                    <p className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-light-800 py-8 font-kanit text-content-tiny md:text-[23px] leading-7 md:leading-[35px] font-[275]">
                       {item.answer}
                     </p>
                   </div>

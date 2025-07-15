@@ -19,9 +19,10 @@ const NavLink = ({href, label}: {href: string; label: string}) => {
   const {pathname} = useLocation()
   const isActive = `${href}/` === pathname || href === pathname
 
-  const baseClass = "no-underline hover:no-underline transition-opacity duration-500 cursor-pointer"
+  const baseClass =
+    "no-underline hover:no-underline transition-opacity duration-500 cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"
   const activeClass =
-    "font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 opacity-100"
+    "font-medium text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400 opacity-100"
   const inactiveClass =
     "text-tailCall-darkMode---neutral-400 dark:text-tailCall-darkMode---neutral-500 hover:opacity-100"
 
@@ -117,7 +118,7 @@ const NewNavbar = (): JSX.Element => {
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-3">
               <Button variant="navlink" onClick={handleSignUp}>
-                <span className="text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
+                <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400">
                   Signup
                 </span>
               </Button>

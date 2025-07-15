@@ -22,7 +22,7 @@ export default function DocRootLayout({children}: Props): JSX.Element {
   return (
     <div className={styles.docsWrapper}>
       {/* <BackToTopButton /> */}
-      <div className={clsx(styles.docRoot, "bg-white dark:bg-black")}>
+      <div className={clsx(styles.docRoot, "bg-tailCall-light-1200 dark:bg-black")}>
         {sidebar && (
           <DocRootLayoutSidebar
             sidebar={sidebar.items}

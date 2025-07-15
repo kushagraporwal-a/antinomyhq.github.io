@@ -7,7 +7,7 @@ import Link from "@docusaurus/Link"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] bg-tailCall-lightMode---neutral-100 dark:bg-tailCall-darkMode---neutral-900">
+    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
       <div className="flex flex-col lg:hidden md:flex-row gap-16 md:gap-0 justify-between items-start">
         <div className="flex flex-col gap-4 w-full">
           <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-tailCall-light-1000 dark:text-white">

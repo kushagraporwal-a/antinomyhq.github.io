@@ -10,14 +10,14 @@ export default function DocRootLayoutMain({hiddenSidebarContainer, children}: Pr
   return (
     <main
       className={clsx(
-        "bg-white dark:bg-tailCall-border-dark-700",
+        "bg-tailCall-light-1200 dark:bg-tailCall-border-dark-700",
         styles.docMainContainer,
         (hiddenSidebarContainer || !sidebar) && styles.docMainContainerEnhanced,
       )}
     >
       <div
         className={clsx(
-          "container padding-bottom--lg bg-white dark:bg-black",
+          "container padding-bottom--lg bg-tailCall-light-1200 dark:bg-black",
           styles.docItemWrapper,
           hiddenSidebarContainer && styles.docItemWrapperEnhanced,
         )}

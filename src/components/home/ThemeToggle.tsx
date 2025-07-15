@@ -17,10 +17,10 @@ const ThemeToggle: React.FC = () => {
       aria-label="Toggle Theme"
       className="
         flex items-center justify-center
-        p-[1px] bg-gradient-custom-diagonal border-none rounded-sm cursor-pointer
+        p-[1px] bg-gradient-custom-diagonal border-none rounded-xl cursor-pointer
       "
     >
-      <div className="bg-white dark:bg-black p-2">
+      <div className="bg-white dark:bg-black p-2 rounded-xl">
         {theme !== "light" ? (
           <img src="/icons/basic/moon.svg" alt="moon" className="h-5 w-5" />
         ) : (

@@ -98,7 +98,7 @@ body {
   --docusaurus-highlighted-code-line-bg: #282828;
 
   /* Custom colors */
-  --ifm-link-color-100: #ffffff;
+  --ifm-link-color-100: #f1f1f1;
   --ifm-menu-link-100: #a1a1a1;
   --ifm-menu-link-active: #000000;
   --ifm-hr: #666666;
@@ -114,7 +114,7 @@ body {
   --ifm-hr: #4b4b4b;
   --ifm-sidebar-menu-link: #30ede6;
   --ifm-code-background: var(--tailCall-darkMode---neutral-500);
-  --ifm-pre-code-background: #23222d;
+  --ifm-pre-code-background: #181818;
   --ifm-details-ul-li: #b1b1b1;
 }
 
@@ -260,7 +260,7 @@ hr {
   display: flex;
   align-items: center;
   height: var(--ifm-edit-this-page-height);
-  color: var(--ifm-color-brand-light);
+  color: var(--ifm-menu-link-active);
   font-weight: var(--ifm-font-weight-bold);
 }
 
@@ -317,6 +317,7 @@ hr {
 
 .pagination-nav {
   grid-gap: 2rem;
+  margin-top: 0 !important;
 }
 
 .pagination-nav__sublabel {
@@ -587,6 +588,8 @@ ul.table-of-contents {
 
 aside.theme-doc-sidebar-container {
   margin-top: 0;
+  border-right: 1px solid #525252;
+  background-color: var(--ifm-link-color-100);
 }
 
 .algolia-docsearch-suggestion--category-header {

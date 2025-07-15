@@ -39,6 +39,7 @@ module.exports = {
             900: "#1B8783",
             1000: "#454545",
             1100: "#DDDDDD",
+            1200: "#F1F1F1",
           },
           dark: {
             100: "#545556",
@@ -325,7 +326,7 @@ module.exports = {
         },
       ],
       "question-title": [
-        "28px",
+        "26px",
         {
           fontWeight: "300",
           lineHeight: "34px",

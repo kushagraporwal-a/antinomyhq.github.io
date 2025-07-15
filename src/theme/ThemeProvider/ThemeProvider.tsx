@@ -275,7 +275,7 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
       {isClient && theme ? (
         children
       ) : (
-        <div className="h-screen w-full bg-white dark:bg-black text-black dark:text-white flex items-center justify-center transition-colors duration-300">
+        <div className="h-screen w-full bg-tailCall-light-1200 dark:bg-black text-black dark:text-white flex items-center justify-center transition-colors duration-300">
           <div className="flex flex-col items-center space-y-4">
             <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">

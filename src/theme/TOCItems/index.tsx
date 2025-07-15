@@ -43,8 +43,8 @@ export default function TOCItems({
   useTOCHighlight(tocHighlightConfig)
 
   return (
-    <div className="flex flex-col gap-3 pt-0 bg-white dark:bg-black p-2">
-      <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400">
+    <div className="flex flex-col gap-3 pt-0 bg-tailCall-light-1200 dark:bg-black p-2">
+      <span className="inline-block px-5 font-kanit uppercase text-[22px] font-medium text-tailCall-lightMode---neutral-600 dark:text-white">
         On this page
       </span>
       <TOCItemTree toc={tocTree} className={className} linkClassName={linkClassName} {...props} />

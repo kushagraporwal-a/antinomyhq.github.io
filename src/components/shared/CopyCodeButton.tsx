@@ -33,7 +33,7 @@ const CopyCodeButton = (): JSX.Element => {
             alt="curly open"
             className="dark:hidden block group-hover:absolute -left-1"
           />
-          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-600 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
+          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
             Try Now
           </span>
           <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">

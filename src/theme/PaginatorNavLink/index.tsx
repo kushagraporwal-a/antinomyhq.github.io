@@ -3,32 +3,45 @@ import Link from "@docusaurus/Link"
 import type {Props} from "@theme/PaginatorNavLink"
 import ArrowLeft from "@site/static/icons/basic/circle-arrow-left.svg"
 import ArrowRight from "@site/static/icons/basic/circle-arrow-right.svg"
+import ArrowRightLight from "@site/static/icons/basic/circle-arrow-right-light.svg"
 import ArrowLeftLight from "@site/static/icons/basic/circle-arrow-left-light.svg"
 import {useThemeContext} from "../ThemeProvider/ThemeProvider"
 
 function NavigatorIcon({isNext}: {isNext: boolean}): JSX.Element {
   const {theme} = useThemeContext()
-  return isNext ? <ArrowRight /> : theme === "dark" ? <ArrowLeft /> : <ArrowLeftLight />
+  return isNext ? (
+    theme === "dark" ? (
+      <ArrowRight />
+    ) : (
+      <ArrowRightLight />
+    )
+  ) : theme === "dark" ? (
+    <ArrowLeft />
+  ) : (
+    <ArrowLeftLight />
+  )
 }
 
 export default function PaginatorNavLink(props: Props): JSX.Element {
   const {permalink, title, subLabel, isNext} = props
   return (
     <Link className="!no-underline flex gap-3 items-center" to={permalink}>
-      {!isNext && <NavigatorIcon isNext={isNext!} />}
       <div className="hidden md:block">
         {subLabel && (
           <div
-            className={`text-tailCall-dark-100 text-[12px] font-kanit font-medium ${!isNext ? "text-end" : "text-start"}`}
+            className={`text-tailCall-darkMode---neutral-500 text-[14px] font-kanit font-medium ${!isNext ? "text-end" : "text-start"}`}
           >
             {subLabel}
           </div>
         )}
-        <div className="pagination-nav__label text-tailCall-lightMode---neutral-700 dark:text-tailCall-darkMode---neutral-300 font-kanit text-content-medium font-medium">
+        <div
+          className={`flex items-center gap-4 pagination-nav__label text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-300 font-kanit text-content-medium font-medium ${isNext ? "text-tailCall-darkMode---primary-700 dark:text-tailCall-darkMode---primary-400" : ""}`}
+        >
+          {!isNext && <NavigatorIcon isNext={isNext!} />}
           {title}
+          {isNext && <NavigatorIcon isNext={isNext} />}
         </div>
       </div>
-      {isNext && <NavigatorIcon isNext={isNext} />}
     </Link>
   )
 }
