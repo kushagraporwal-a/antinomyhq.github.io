@@ -19,6 +19,7 @@ import clsx from "clsx"
 import {FAQS, tiers} from "../constants/index"
 import {useLocation} from "@docusaurus/router"
 import ReactGA from "react-ga4"
+import SpotlightSpan from "../components/home/SpotlightCursor"
 
 // AI Providers array for iteration
 const aiProviders = [
@@ -45,21 +46,24 @@ const PricingPage = (): JSX.Element => {
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
-      <div className="px-6 md:px-12 py-12 dark:bg-black dark:text-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-          <div className="space-y-2">
-            <h2 className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text">
-              START FOR FREE.
-            </h2>
-
-            <h2 className="text-4xl md:text-5xl xl:text-[60px] font-[400] uppercase bg-gradient-pricing-title font-bebas dark:text-transparent bg-clip-text">
-              SCALE WHEN YOU'RE READY.
-            </h2>
+      <div className="px-6 md:px-20 py-12 dark:bg-black dark:text-white">
+        <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
+          <div className="flex flex-col mt-2">
+            <SpotlightSpan
+              className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
+              text="start for free."
+              showHighlighted
+            />
+            <SpotlightSpan
+              className="-mt-4 md:-mt-5 lg:-mt-2 xl:-mt-8 leading-10 md:leading-normal font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
+              text="scale when you're ready."
+              showHighlighted
+            />
           </div>
-          <div className="text-sm md:text-base dark:text-[#A3A3A3] space-y-1 text-[24px]">
-            <span>No credit card required. No lock-in.</span>
-            <p>Just productivity from day one.</p>
-          </div>
+          <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
+            No credit card required.No lock-in. <br />
+            Just productivity from day one
+          </span>
         </div>
       </div>
       <main>
@@ -67,7 +71,7 @@ const PricingPage = (): JSX.Element => {
           <div className="text-center mb-20">
             <Heading
               as="h1"
-              className="text-content-regular text-4xl mb-6 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
+              className="text-title-large !font-normal md:text-content-regular mb-6 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
             >
               Plans for Your Need
             </Heading>
@@ -77,7 +81,7 @@ const PricingPage = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 py-12">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
@@ -155,7 +159,7 @@ const PricingPage = (): JSX.Element => {
                         {tier.features.map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex gap-2 items-start text-sm text-gray-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
+                            className="flex gap-2 items-center text-sm text-gray-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
                           >
                             <CircleCheck
                               size={12}
@@ -172,15 +176,15 @@ const PricingPage = (): JSX.Element => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-32 items-start">
+          <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
             <div className="self-center">
               <Heading
                 as="h2"
-                className="text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
+                className="text-title-large font-normal md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
               >
                 FAQ
               </Heading>
-              <div className="text-sub-title-text-regular dark:text-tailCall-border-light-300 font-kanit">
+              <div className="text-content-tiny font-normal md:text-sub-title-text-regular dark:text-tailCall-border-light-300 font-kanit">
                 Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
                 seamless fit!
               </div>
@@ -195,19 +199,23 @@ const PricingPage = (): JSX.Element => {
                   >
                     <span
                       className={clsx(
-                        "text-question-title",
+                        "text-content-small md:text-question-title",
                         openIndex === index ? "text-white" : "text-[#A1A1A1]",
                         "transition-colors duration-300",
                       )}
                     >
                       {item.question}
                     </span>
-                    <span className="text-white">{openIndex === index ? <Minus size={20} /> : <Plus size={20} />}</span>
+                    <span className="text-white flex items-center justify-center">
+                      {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                    </span>
                   </div>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
-                    <p className="text-tailCall-light-800 py-8 font-kanit text-[23px]">{item.answer}</p>
+                    <p className="text-tailCall-light-800 py-8 font-kanit text-content-tiny md:text-[23px]">
+                      {item.answer}
+                    </p>
                   </div>
                   <div className="bg-gradient-border h-[1px] w-full"></div>
                 </div>

@@ -103,8 +103,8 @@ body {
   --ifm-menu-link-active: #000000;
   --ifm-hr: #666666;
   --ifm-sidebar-menu-link: #088c8c;
-  --ifm-pre-code-background: #D4D4D4;
-  --ifm-details-ul-li: #F9F9F9;
+  --ifm-pre-code-background: #d4d4d4;
+  --ifm-details-ul-li: #f9f9f9;
 }
 
 [data-theme="dark"] {
@@ -114,8 +114,8 @@ body {
   --ifm-hr: #4b4b4b;
   --ifm-sidebar-menu-link: #30ede6;
   --ifm-code-background: var(--tailCall-darkMode---neutral-500);
-   --ifm-pre-code-background: #23222D;
-  --ifm-details-ul-li: #B1B1B1;
+  --ifm-pre-code-background: #23222d;
+  --ifm-details-ul-li: #b1b1b1;
 }
 
 code {

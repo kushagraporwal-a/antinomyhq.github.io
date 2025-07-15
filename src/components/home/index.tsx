@@ -19,7 +19,7 @@ const HomePage = (): JSX.Element => {
         <WhyForge />
         <TheBenefits />
         <BuiltFor />
-        <TheTeams />
+        {/* <TheTeams /> */}
       </div>
     </ThemeProvider>
   )

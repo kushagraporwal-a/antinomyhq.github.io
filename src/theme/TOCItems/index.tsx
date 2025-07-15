@@ -48,7 +48,7 @@ export default function TOCItems({
         On this page
       </span>
       <TOCItemTree toc={tocTree} className={className} linkClassName={linkClassName} {...props} />
-      <div className="flex items-center justify-center px-5">
+      {/* <div className="flex items-center justify-center px-5">
         <div className="bg-radial-gradient rounded-xl p-[1px]">
           <div className="bg-white dark:bg-black rounded-xl px-4 py-5 flex flex-col">
             <span className="text-tailCall-lightMode---neutral-600 dark:text-white font-kanit text-title-tiny font-normal">
@@ -81,7 +81,7 @@ export default function TOCItems({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -14,11 +14,6 @@ const Footer = (): JSX.Element => {
             Get started with personal AI Assistant now.
           </span>
           <div className="flex justify-start gap-5 items-start min-[425px]:items-center flex-col min-[425px]:flex-row">
-            <Button variant="transparent" onClick={() => {}}>
-              <span className="font-kanit text-tailCall-light-1000 dark:text-white font-semibold text-title-tiny">
-                Book a demo
-              </span>
-            </Button>
             <CopyCodeButton />
           </div>
         </div>
@@ -33,11 +28,6 @@ const Footer = (): JSX.Element => {
             Get started with personal AI Assistant now.
           </span>
           <div className="flex justify-start gap-5 items-center">
-            <Button variant="transparent" onClick={() => {}}>
-              <span className="font-kanit text-tailCall-light-1000 dark:text-white font-semibold text-title-tiny">
-                Book a demo
-              </span>
-            </Button>
             <CopyCodeButton />
           </div>
         </div>
