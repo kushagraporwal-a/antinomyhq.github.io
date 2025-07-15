@@ -785,34 +785,34 @@ export const BENEFITS = [
 
 export const CARDS_DATA = [
   {
+    imageUrl: "/images/home/people.png",
+    title: "Forge keeps improving with every release. It's now part of my daily workflow. Super useful.",
+    author: "Ashish,",
+    designation: "VP Engineering, The Souled Store",
+  },
+  {
     imageUrl: "/images/home/people1.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
+    title: "Forge set a strong example by enabling AI pair programming. Looking forward to similar support in Rust",
+    author: "Rahul,",
+    designation: "Lead Software Engineer, Agoda",
   },
   {
     imageUrl: "/images/home/people2.png",
     title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
+    author: "Shouvik Ghosh,",
+    designation: "Software Developer, Mosaic Wellness",
   },
   {
     imageUrl: "/images/home/people3.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
+    title: "This is absolutely amazing.I’d love to have lifetime access.",
+    author: "Hammond Pereira,",
+    designation: "Head of Engineering, Augnito",
   },
   {
     imageUrl: "/images/home/people4.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people1.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
-  },
-  {
-    imageUrl: "/images/home/people2.png",
-    title: "Forge feels like pair programming with someone who actually understands my stack.",
-    author: "Raj, Full-Stack Developer",
+    title: "The Muse + Forge combo works great it really helps validate plans before execution.",
+    author: "Profiteer",
+    designation: "",
   },
 ]
 
