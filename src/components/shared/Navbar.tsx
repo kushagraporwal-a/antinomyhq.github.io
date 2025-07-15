@@ -17,7 +17,7 @@ const Logo = () => (
 
 const NavLink = ({href, label}: {href: string; label: string}) => {
   const {pathname} = useLocation()
-  const isActive = `${href}/` === pathname || href === pathname
+  const isActive = `${href}/` === pathname || pathname?.includes(href)
 
   const baseClass =
     "no-underline hover:no-underline transition-opacity duration-500 cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"

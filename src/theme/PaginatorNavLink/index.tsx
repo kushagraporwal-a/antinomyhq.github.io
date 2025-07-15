@@ -37,9 +37,17 @@ export default function PaginatorNavLink(props: Props): JSX.Element {
         <div
           className={`flex items-center gap-4 pagination-nav__label text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-300 font-kanit text-content-medium font-medium ${isNext ? "text-tailCall-darkMode---primary-700 dark:text-tailCall-darkMode---primary-400" : ""}`}
         >
-          {!isNext && <NavigatorIcon isNext={isNext!} />}
+          {!isNext && (
+            <span className="flex items-center flex-shrink-0 w-[26px] h-[26px]">
+              <NavigatorIcon isNext={isNext!} />
+            </span>
+          )}
           {title}
-          {isNext && <NavigatorIcon isNext={isNext} />}
+          {isNext && (
+            <span className="flex items-center flex-shrink-0 w-[26px] h-[26px]">
+              <NavigatorIcon isNext={isNext} />
+            </span>
+          )}
         </div>
       </div>
     </Link>
