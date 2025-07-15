@@ -26,7 +26,7 @@ export function BlogCategories({items, onCategoryClick, activeCategory}: BlogCat
   }, [items])
 
   return (
-    <div className="mb-4 md:mb-5 flex items-center space-x-4 border-b border-solid border-transparent  border-b-[#FFFFFF66]">
+    <div className="mb-4 mt-4 md:mb-5 flex items-center space-x-4 border-b border-solid border-transparent  border-b-[#FFFFFF66]">
       {Object.entries(categories).map(([name, count]) => (
         <div
           aria-role="button"

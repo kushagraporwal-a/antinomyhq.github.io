@@ -19,13 +19,13 @@
 
 @media (min-width: 1280px) {
   .item {
-    padding-left: 2rem;
+    padding-left: 1rem;
   }
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   position: absolute;
   left: 0;

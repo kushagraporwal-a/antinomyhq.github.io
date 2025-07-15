@@ -71,7 +71,10 @@ export default function TOCItems({
                     className="focus:outline-none bg-transparent border-none"
                     aria-label={`Rate ${starIndex} star${starIndex > 1 ? "s" : ""}`}
                   >
-                    <Star className={clsx("w-6 h-6 transition-colors", {})} fill={isFilled ? "#30ede6" : "white"} />
+                    <Star
+                      className={clsx("w-6 h-6 transition-colors text-transparent", {})}
+                      fill={isFilled ? "#30ede6" : "#D4D4D4"}
+                    />
                   </button>
                 )
               })}

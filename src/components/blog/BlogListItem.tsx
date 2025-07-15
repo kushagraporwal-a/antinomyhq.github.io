@@ -30,7 +30,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
       <div className="flex h-full p-[1px] z-0 group-hover:bg-custom-dark-gradient-blog-border rounded-xl">
         <div className="relative max-w-fill flex flex-col flex-1 px-3 py-2 border dark:border-none border-solid border-tailCall-darkMode---neutral-300 bg-white dark:bg-tailCall-darkMode---neutral-900 gap-2 md:gap-3 rounded-xl">
           <div
-            className={`w-full relative rounded-lg pt-5 pl-7 pb-16 overflow-hidden`}
+            className={`w-full relative mt-[5px] rounded-lg pt-5 pl-5 pb-16 overflow-hidden`}
             style={{background: gradients[bgIndex]}}
           >
             <div className="flex flex-col font-kanit text-white text-content-tiny md:text-content-small lg:text-title-tiny xl:text-title-small !font-normal">
@@ -46,14 +46,14 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
             </div>
             <img src="/icons/basic/forgecode-logo.svg" alt="ForgeCode" className="absolute right-0 top-0" />
           </div>
-          <div className="flex flex-col gap-5 px-3 w-full mt-3">
+          <div className="flex flex-col px-3 w-full mt-3">
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
               {tags?.map(({label}) => <Chip label={label} key={label} />)}
             </div>
-            <span className="font-kanit text-tailCall-darkMode---neutral-800 dark:text-white text-title-tiny md:text-title-small lg:text-title-medium xl:text-title-semi-large xl:text-[26px] !font-normal line-clamp-2">
+            <span className="mt-5 font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium xl:text-[26px] !font-normal line-clamp-2">
               {title}
             </span>
-            <p className="font-kanit text-tailCall-darkMode---neutral-600 dark:text-white opacity-50 text-content-small md:text-title-tiny lg:text-title-small xl:text-title-medium !font-light line-clamp-3">
+            <p className="mt-2 font-kanit text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:text-[22px] xl:leading-[30px] !font-light line-clamp-3">
               {description}
             </p>
           </div>

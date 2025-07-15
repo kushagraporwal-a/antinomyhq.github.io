@@ -54,7 +54,7 @@ function BlogListPageContent({metadata, items, sidebar}: Props): JSX.Element {
     <BlogLayout sidebar={sidebar}>
       <div className="flex flex-col md:flex-row items-start w-full">
         <div className={clsx("w-full md:w-9/12 md:pr-5", featuredItems.length == 0 ? "md:w-full" : "border-right")}>
-          <div className="flex flex-col bg-tailCall-darkMode---neutral-200 dark:bg-tailCall-darkMode---neutral-900 lg:gap-5 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-1 md:px-5 xl:px-16">
+          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
             <div className="flex flex-col mt-2">
               <SpotlightSpan
                 className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
@@ -62,12 +62,12 @@ function BlogListPageContent({metadata, items, sidebar}: Props): JSX.Element {
                 showHighlighted
               />
               <SpotlightSpan
-                className="-mt-8 md:-mt-5 lg:-mt-4 xl:-mt-3 font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
+                className="-mt-8 md:-mt-5 lg:-mt-4 xl:-mt-8 font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
                 text="to the World"
                 showHighlighted
               />
             </div>
-            <span className="max-w-[500px] font-kanit !font-medium text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
+            <span className="block -mt-5 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
               Insights, updates, and thoughts on building faster with AI in the CLI
             </span>
           </div>

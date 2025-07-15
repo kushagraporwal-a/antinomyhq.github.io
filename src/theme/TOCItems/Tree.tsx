@@ -44,7 +44,7 @@ function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChil
                 styles.dot,
                 isActive
                   ? "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400"
-                  : "bg-gray-600",
+                  : "bg-tailCall-darkMode---neutral-300 dark:bg-tailCall-darkMode---neutral-700",
               )}
             />
             {!isLast && <div className={styles.line} />}

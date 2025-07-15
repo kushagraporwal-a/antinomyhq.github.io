@@ -20,7 +20,9 @@ export default function BlogLayout(props: Props): JSX.Element {
             {toc && (
               <div className="hidden lg:block lg:w-[20.83%] pl-8 mt-12">
                 <div className="sticky top-28">
-                  <div className="border-l-solid border-gray-200 pl-4">{toc}</div>
+                  <div className="border-[2px] border-l-solid border-tailCall-darkMode---neutral-200 dark:border-tailCall-darkMode---neutral-800 pl-4">
+                    {toc}
+                  </div>
                 </div>
               </div>
             )}

@@ -5,7 +5,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 import clsx from "clsx"
 import {Copy, CopyCheck} from "lucide-react"
 import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
-import ReactGA from "react-ga4"
+import {analyticsHandler} from "@site/src/utils"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -92,7 +92,7 @@ const GetStarted = (): JSX.Element => {
   }, [isMobile]) // Re-run when isMobile changes
 
   const handleCopy = async () => {
-    ReactGA.event({action: "click", category: "Copy Test", label: "Copy forge code command"})
+    analyticsHandler("Home Page", "Click", "Copy Forge Code")
     await navigator.clipboard.writeText(FORGE_CODE_INSTALL_COMMAND)
     setIsCopied(true)
   }
