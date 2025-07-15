@@ -1069,7 +1069,7 @@ export const tiers = [
     price: "$0",
     originalPrice: "$200",
     period: "/month",
-    description: "🔥 Early access special - FREE unlimited now, normally $200/month",
+    description: "🔥 FREE unlimited now, normally $200/month",
     features: [
       "Everything in Pro",
       "Unlimited requests",

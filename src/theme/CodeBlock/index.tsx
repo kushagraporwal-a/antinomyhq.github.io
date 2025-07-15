@@ -27,7 +27,7 @@ export default function CodeBlockWrapper(props: Props): JSX.Element {
       <button
         onClick={handleCopy}
         aria-label="Copy code"
-        className="absolute top-[12px] right-4 z-20 bg-[rgba(24,24,24,0.85)] border-none rounded-none px-2 py-1 flex items-center cursor-pointer text-white font-sans"
+        className="absolute top-[12px] right-4 z-20 bg-transparent border-none rounded-none px-2 py-1 flex items-center cursor-pointer text-white font-sans"
       >
         {copied && <span className="text-xs mr-1.5 text-[#b6ffbe] opacity-85 font-sans">Copied!</span>}
         <img

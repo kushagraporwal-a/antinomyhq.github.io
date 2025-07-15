@@ -60,7 +60,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
               <BlogAuthor
                 author={authors[0]}
                 containerClassName="mt-auto"
-                textClassName="text-tailCall-lightMode---neutral-400 !font-normal font-kanit dark:text-white"
+                textClassName="text-tailCall-lightMode---neutral-800 !font-normal font-kanit dark:text-white"
               />
             )}
           </div>

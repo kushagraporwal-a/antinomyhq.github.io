@@ -73,7 +73,7 @@ function BreadcrumbsItem({
         itemType: "https://schema.org/ListItem",
       })}
       className={clsx("breadcrumbs__item", {
-        "breadcrumbs__item--active !text-tailCall-lightMode---neutral-300 !dark:text-tailCall-darkMode---neutral-300":
+        "breadcrumbs__item--active !text-tailCall-lightMode---neutral-500 !dark:text-tailCall-darkMode---neutral-300":
           active,
       })}
     >

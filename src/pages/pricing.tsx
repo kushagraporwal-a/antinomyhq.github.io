@@ -91,7 +91,7 @@ const PricingPage = (): JSX.Element => {
                   "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300",
                 )}
               >
-                <div className="absolute left-0 bottom-0 w-full h-[25%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-gradient-procing-cards"></div>
+                <div className="absolute left-0 bottom-0 w-full h-[25%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-gradient-procing-cards-light dark:bg-gradient-procing-cards-dark"></div>
 
                 {/* Card Content */}
                 <div className="relative z-10">
