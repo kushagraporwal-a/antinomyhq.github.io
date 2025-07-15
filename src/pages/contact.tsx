@@ -61,7 +61,7 @@ const contact = () => {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="flex xl:justify-between lg:items-center justify-center xl:items-center xl:flex-row w-full px-4 py-7 md:px-14 md:py-7 xl:px-28 xl:py-14">
+            <div className="flex xl:justify-evenly lg:items-center justify-center xl:items-center xl:flex-row w-full px-4 py-7 md:px-14 md:py-7 xl:px-28 xl:py-14">
               <div className="w-full xl:w-auto">
                 <h1 className="text-tailCall-darkMode---neutral-800 dark:text-white font-kanit text-display-medium !font-normal">
                   Hi
