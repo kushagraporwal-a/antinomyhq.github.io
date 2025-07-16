@@ -186,10 +186,10 @@ input[type="radio"]:checked::before {
 }
 
 hr {
-  background-color: #DBDBDB;
+  background-color: #dbdbdb;
 }
 [data-theme="dark"] hr {
-  background-color: #4B4B4B;
+  background-color: #4b4b4b;
 }
 
 .menu__list-item-collapsible:hover {
@@ -268,12 +268,12 @@ hr {
 }
 
 .theme-edit-this-page:hover {
-  color: #018B84;
+  color: #018b84;
   text-decoration: none;
 }
 
 [data-theme="dark"] .theme-edit-this-page:hover {
-  color: #30EDE6;
+  color: #30ede6;
   text-decoration: none;
 }
 
@@ -586,14 +586,14 @@ div.theme-doc-toc-desktop {
   transition: all 250ms ease-in-out;
   max-height: 100vh;
   padding-bottom: calc(var(--ifm-navbar-height) + 1rem);
-  border-left: 1px solid #DBDBDB;
+  border-left: 1px solid #dbdbdb;
   height: 100%;
   top: 80px !important;
   padding-top: 0.6rem;
 }
 
-[data-theme = "dark"] div.theme-doc-toc-desktop {
-  border-left: 1px solid #4B4B4B;
+[data-theme="dark"] div.theme-doc-toc-desktop {
+  border-left: 1px solid #4b4b4b;
 }
 
 ul.table-of-contents {
@@ -602,12 +602,12 @@ ul.table-of-contents {
 
 aside.theme-doc-sidebar-container {
   margin-top: 0;
-  border-right: 1px solid #DBDBDB;
+  border-right: 1px solid #dbdbdb;
   background-color: var(--ifm-link-color-100);
 }
 
 [data-theme="dark"] aside.theme-doc-sidebar-container {
-  border-right: 1px solid #4B4B4B;
+  border-right: 1px solid #4b4b4b;
 }
 
 .algolia-docsearch-suggestion--category-header {
@@ -1110,7 +1110,7 @@ span.token.tag.script.language-javascript {
 }
 
 .version-update-card {
-  background: radial-gradient(44.01% 76.28% at 50% 100%, #E5E5E5 0%, #D4D4D4 100%);
+  background: radial-gradient(44.01% 76.28% at 50% 100%, #e5e5e5 0%, #d4d4d4 100%);
 }
 
 [data-theme="dark"] .version-update-card {

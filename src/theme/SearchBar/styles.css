@@ -7,13 +7,13 @@
   --docsearch-hit-active-color: var(--ifm-color-primary);
   --docsearch-hit-active-color: var(--ifm-color-gray-900);
   --docsearch-search-label-color: #a1a1a1;
-  --docsearch-brand-color: #057A75;
+  --docsearch-brand-color: #057a75;
   --docsearch-input-color: #545556;
 }
 
 [data-theme="dark"] {
   --docsearch-search-label-color: #737373;
-  --docsearch-brand-color: #30EDE6;
+  --docsearch-brand-color: #30ede6;
   --docsearch-input-color: #bcbcbc;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .DocSearch-Button-Container:hover {
-  box-shadow: 0px 0px 34.624px 5.705px #30EDE6;
+  box-shadow: 0px 0px 34.624px 5.705px #30ede6;
 }
 
 .DocSearch-Cancel {
