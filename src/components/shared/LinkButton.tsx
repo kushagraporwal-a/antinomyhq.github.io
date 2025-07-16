@@ -63,7 +63,7 @@ const LinkButton = ({
       },
       [Theme.Tailcall]: {
         classes:
-          "bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400 text-white dark:text-black hover:text-tailCall-dark-500",
+          "border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400 text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black bg-transparent hover:bg-tailCall-lightMode---primary-700 hover:dark:bg-tailCall-lightMode---primary-400",
         gridClasses: "",
       },
     }
