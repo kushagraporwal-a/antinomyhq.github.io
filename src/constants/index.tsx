@@ -804,7 +804,7 @@ export const CARDS_DATA = [
   },
   {
     imageUrl: "/images/home/people3.png",
-    title: "This is absolutely amazing.I’d love to have lifetime access.",
+    title: "This is absolutely amazing. I would genuinely love lifetime access to this platform.",
     author: "Hammond Pereira,",
     designation: "Head of Engineering, Augnito",
   },
