@@ -29,10 +29,17 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
     el.style.backgroundPosition = `${x}px ${y}px`
   }, [])
 
+  const handleMouseLeave = useCallback((event: React.MouseEvent<HTMLSpanElement>) => {
+    const el = spanRef.current
+    if (!el) return
+    el.style.backgroundPosition = "left"
+  }, [])
+
   return (
     <span
       ref={spanRef}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={`text-transparent bg-clip-text cursor-default transition-all duration-0 ${className}`}
       style={{
         color: baseColor,
