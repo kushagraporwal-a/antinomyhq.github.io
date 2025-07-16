@@ -79,7 +79,7 @@ const TerminalWithTabs = (): JSX.Element => {
       return (
         <div
           key={idx}
-          className="flex items-center gap-2 text-tailCall-darkMode---neutral-500 dark:text-[#B0BEC5] text-[14px]"
+          className="flex items-center gap-2 text-tailCall-darkMode---neutral-500 dark:text-[#B0BEC5] text-[14px] !leading-3"
         >
           <div className="h-2 w-2 rounded-lg bg-tailCall-lightMode---primary-600 dark:bg-tailCall-lightMode---primary-400" />
           <span className="font-space text-content-small font-normal">{content}</span>
@@ -92,7 +92,7 @@ const TerminalWithTabs = (): JSX.Element => {
         key={idx}
         className="text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 max-[480px]:text-[14px]"
       >
-        <span className="!font-normal font-space text-content-small">
+        <span className="!font-normal font-space text-content-small !leading-3">
           {isSynthLine ? (
             <span className="text-[#1ECB83] font-bold">{line}</span>
           ) : (
@@ -104,7 +104,7 @@ const TerminalWithTabs = (): JSX.Element => {
   }
 
   return (
-    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full md:w-4/5 lg:w-[450px] min-h-[650px] flex flex-col font-mono">
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[2px] dark:bg-custom-diagonal rounded-xl w-full max-[375px]:h-[730px] md:w-4/5 lg:w-[450px] h-[685px] xl:h-[720px] flex flex-col font-mono">
       {/* Header */}
       <div className="bg-[#E8E8E8] dark:bg-tailCall-darkMode---neutral-900 w-full rounded-t-xl flex gap-2 items-center p-3">
         <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300" />
@@ -142,7 +142,7 @@ const TerminalWithTabs = (): JSX.Element => {
 
         {/* Terminal Output */}
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div ref={containerRef} className="mt-3 space-y-2 overflow-y-auto h-[40vh]">
+          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[40vh]">
             {lines.map(renderLine)}
           </div>
 
