@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
         p-[1px] bg-gradient-custom-diagonal border-none rounded-xl cursor-pointer
       "
     >
-      <div className="bg-white dark:bg-black p-2 rounded-xl">
+      <div className="bg-tailCall-light-1200 dark:bg-black p-2 rounded-xl">
         {theme !== "light" ? (
           <img src="/icons/basic/moon.svg" alt="moon" className="h-5 w-5" />
         ) : (
