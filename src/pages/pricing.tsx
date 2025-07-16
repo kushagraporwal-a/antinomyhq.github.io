@@ -47,7 +47,7 @@ const PricingPage = (): JSX.Element => {
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
       <div className="max-w-[1320px] mx-auto w-full">
-        <div className=" py-12 dark:bg-black bg-tailCall-light-1200">
+        <div className=" py-12 dark:bg-black bg-tailCall-light-1200 border-b border-solid border-transparent border-b-[#dbdbdb] dark:border-b-[#4b4b4b]">
           <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
             <div className="flex flex-col mt-2">
               <SpotlightSpan
@@ -93,33 +93,10 @@ const PricingPage = (): JSX.Element => {
                   "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300",
                 )}
               >
-                <div className="absolute left-0 bottom-0 w-full h-[25%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-gradient-procing-cards-light dark:bg-gradient-procing-cards-dark"></div>
+                <div className="absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"></div>
 
                 {/* Card Content */}
                 <div className="relative z-10">
-                  <div className="flex gap-2 mb-4">
-                    {tier.icons?.map((src, idx) => {
-                      const isFillHover = tier.name === "Free" || tier.name === "Pro"
-                      return (
-                        <div
-                          key={idx}
-                          className={clsx(
-                            "relative h-8 w-8 rounded-full flex items-center justify-center transition-all duration-300",
-                            "border border-gray-600 dark:bg-[#1A1A1A]",
-                            isFillHover
-                              ? "group-hover:bg-white group-hover:dark:border-white"
-                              : "group-hover:ring-2 group-hover:dark:ring-white",
-                          )}
-                        >
-                          <img
-                            src={src}
-                            alt={`icon-${idx}`}
-                            className="h-6 w-6 object-contain transition-all duration-300"
-                          />
-                        </div>
-                      )
-                    })}
-                  </div>
                   <div className="flex flex-col flex-grow">
                     <h3 className="text-content-small text-left text-tailCall-lightMode---neutral-900 dark:text-white mb-1 dark:group-hover:text-white">
                       {tier.name}
@@ -196,7 +173,7 @@ const PricingPage = (): JSX.Element => {
               {FAQS.map((item, index) => (
                 <div key={index}>
                   <div
-                    className="flex w-full justify-between items-center py-12 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer"
+                    className="flex w-full justify-between items-center py-8 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer"
                     onClick={() => toggleIndex(index)}
                   >
                     <span
@@ -215,7 +192,7 @@ const PricingPage = (): JSX.Element => {
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
-                    <p className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-light-800 py-8 font-kanit text-content-tiny md:text-[23px] leading-7 md:leading-[35px] font-[275]">
+                    <p className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-light-800 py-1 font-kanit text-content-tiny md:text-[23px] leading-7 md:leading-[35px] font-[275]">
                       {item.answer}
                     </p>
                   </div>
