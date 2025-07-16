@@ -192,7 +192,7 @@ const TheBenefits = (): JSX.Element => {
                     className="transition-all duration-[600ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
                     style={{
                       filter: idx === focusedIdx ? "none" : "blur(6px)",
-                      opacity: idx === focusedIdx ? 1 : 0.6,
+                      opacity: 1,
                       zIndex: idx === focusedIdx ? 10 : 1,
                     }}
                   >

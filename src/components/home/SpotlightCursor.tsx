@@ -26,7 +26,6 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
     const x = event.clientX - rect.left - SPOTLIGHT_SIZE / 2
     const y = event.clientY - rect.top - SPOTLIGHT_SIZE / 2
 
-    el.style.transition = "background-position .3s ease-in-out"
     el.style.backgroundPosition = `${x}px ${y}px`
   }, [])
 
@@ -41,7 +40,6 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
         backgroundRepeat: "no-repeat",
         backgroundSize: `${SPOTLIGHT_SIZE}px ${SPOTLIGHT_SIZE}px`,
         backgroundPosition: showHighlighted ? "left" : "",
-        transition: "background-position 0.3s ease-in-out", // fallback/default
         ...style,
       }}
     >

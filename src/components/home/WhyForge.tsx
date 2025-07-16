@@ -153,7 +153,7 @@ const WhyForge = (): JSX.Element => {
           <div className="flex flex-col gap-4">
             <div
               ref={cardsRef}
-              className={`md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-8 hidden`}
+              className={`md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-14 hidden`}
               style={{transform: "translateX(0)", willChange: "transform"}}
             >
               {CARDS_DATA.map((card, idx) => {

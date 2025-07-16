@@ -1,6 +1,7 @@
 import React from "react"
 import Marquee from "react-fast-marquee"
 import GreaterThanUnderscoreIcon from "@site/static/icons/basic/gt-undescore-gray.svg"
+import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 
 interface LogoItem {
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>> | string
@@ -45,7 +46,7 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
   isHorizontal = false,
 }) => {
   const handleClick = () => onClick?.()
-
+  const {theme} = useThemeContext()
   const renderLogo = ({logo, name, link}: LogoItem) => {
     const content = <LogoRenderer logo={logo} alt={name} />
 
@@ -70,7 +71,7 @@ const TrustedByMarquee: React.FC<TrustedByMarqueeProps> = ({
             {title}
           </span>
         )}
-        <Marquee autoFill>
+        <Marquee gradient gradientColor={theme === "dark" ? "black" : "#F1F1F1"} autoFill>
           <div className="flex items-center px-8 mt-SPACE_10 overflow-hidden space-x-5 sm:space-x-20">
             {logos.map(renderLogo)}
           </div>
