@@ -116,7 +116,7 @@ const NewNavbar = (): JSX.Element => {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-0 md:gap-3">
             <div className="hidden md:flex items-center gap-3">
               <Button variant="navlink" onClick={handleSignUp}>
                 <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400">
