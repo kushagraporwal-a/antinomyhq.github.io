@@ -7,6 +7,7 @@ import {useLocation} from "@docusaurus/router"
 import {useWindowSize} from "@docusaurus/theme-common"
 import ThemeToggle from "../home/ThemeToggle"
 import {analyticsHandler} from "@site/src/utils"
+import SearchBar from "@site/src/theme/SearchBar"
 
 const Logo = () => (
   <Link href="/" className="flex items-center justify-center">
@@ -122,6 +123,7 @@ const NewNavbar = (): JSX.Element => {
                   Signup
                 </span>
               </Button>
+              <SearchBar />
               <ThemeToggle />
             </div>
             <Button
@@ -131,6 +133,9 @@ const NewNavbar = (): JSX.Element => {
             >
               <Menu className="text-black" />
             </Button>
+            <div className="flex md:hidden">
+              <SearchBar />
+            </div>
             <div className="flex md:hidden">
               <ThemeToggle />
             </div>
