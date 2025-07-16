@@ -155,7 +155,12 @@ const TheBenefits = (): JSX.Element => {
             <img
               src="/images/home/code-logo.svg"
               alt="code"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block dark:hidden"
+            />
+            <img
+              src="/images/home/code-logo-dark.svg"
+              alt="code"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:block hidden"
             />
           </div>
           <SpotlightSpan
