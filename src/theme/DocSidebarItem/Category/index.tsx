@@ -150,7 +150,7 @@ export default function DocSidebarItemCategory({
       )}
     >
       <div
-        className={clsx("menu__list-item-collapsible", {
+        className={clsx("menu__list-item-collapsible justify-between", {
           "menu__list-item-collapsible--active": isCurrentPage,
         })}
       >
@@ -179,7 +179,7 @@ export default function DocSidebarItemCategory({
         >
           {label}
         </Link>
-        {href && collapsible && (
+        {/* {href && collapsible && ( */}
           <CollapseButton
             collapsed={collapsed}
             categoryLabel={label}
@@ -188,7 +188,7 @@ export default function DocSidebarItemCategory({
               updateCollapsed()
             }}
           />
-        )}
+        {/* )} */}
       </div>
 
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
