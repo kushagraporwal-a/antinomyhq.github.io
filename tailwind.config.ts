@@ -161,7 +161,7 @@ module.exports = {
         "benefit-light-background": "linear-gradient(180deg, #FFF 0%, #E5E5E5 100%)",
         "gradient-custom-diagonal": "linear-gradient(135deg, rgba(0, 206, 201, 1) 0%, rgba(38, 38, 38, 1) 100%)",
         "custom-radial-light":
-          "radial-gradient(58.31% 58.31% at 50% 100%, rgba(48, 237, 230, 0.5) 1%, rgba(0, 0, 0, 0) 100%)",
+          "radial-gradient(58.31% 20.31% at 50% 100%, rgba(48, 237, 230, 0.5) 1%, rgba(0, 0, 0, 0) 100%)",
         "custom-dark-gradient-blog-border":
           "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
