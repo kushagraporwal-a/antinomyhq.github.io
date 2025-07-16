@@ -169,7 +169,7 @@ const WhyForge = (): JSX.Element => {
                             {card.title}
                           </span>
                         </div>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col">
                           <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
                             {card.author}
                           </span>
@@ -194,7 +194,7 @@ const WhyForge = (): JSX.Element => {
                           {card.title}
                         </span>
                       </div>
-                      <div className="flex flex-col gap-3">
+                      <div className="flex flex-col">
                         <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
                           {card.author}
                         </span>

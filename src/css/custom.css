@@ -188,6 +188,9 @@ input[type="radio"]:checked::before {
 hr {
   background-color: #DBDBDB;
 }
+[data-theme="dark"] hr {
+  background-color: #4B4B4B;
+}
 
 .menu__list-item-collapsible:hover {
   background: transparent;
@@ -583,8 +586,14 @@ div.theme-doc-toc-desktop {
   transition: all 250ms ease-in-out;
   max-height: 100vh;
   padding-bottom: calc(var(--ifm-navbar-height) + 1rem);
-  border-left: 1px solid var(--ifm-toc-border-color);
+  border-left: 1px solid #DBDBDB;
   height: 100%;
+  top: 80px !important;
+  padding-top: 0.6rem;
+}
+
+[data-theme = "dark"] div.theme-doc-toc-desktop {
+  border-left: 1px solid #4B4B4B;
 }
 
 ul.table-of-contents {
@@ -593,8 +602,12 @@ ul.table-of-contents {
 
 aside.theme-doc-sidebar-container {
   margin-top: 0;
-  border-right: 1px solid #525252;
+  border-right: 1px solid #DBDBDB;
   background-color: var(--ifm-link-color-100);
+}
+
+[data-theme="dark"] aside.theme-doc-sidebar-container {
+  border-right: 1px solid #4B4B4B;
 }
 
 .algolia-docsearch-suggestion--category-header {
@@ -1097,17 +1110,12 @@ span.token.tag.script.language-javascript {
 }
 
 .version-update-card {
-  background-color: #ededed;
-  background-image: linear-gradient(90deg, #DBDBDB 0.5px, transparent 0.5px),
-    linear-gradient(#DBDBDB 0.5px, transparent 0.5px);
-  background-size: 60px 60px;
-  background-position: 3px 23px;
+  background: radial-gradient(44.01% 76.28% at 50% 100%, #E5E5E5 0%, #D4D4D4 100%);
 }
 
 [data-theme="dark"] .version-update-card {
   color: #121212;
-  background-image: linear-gradient(90deg, #525252 0.5px, transparent 0.5px),
-    linear-gradient(#525252 0.5px, transparent 0.5px);
+  background: radial-gradient(44.01% 76.28% at 50% 100%, rgba(152, 152, 152, 0.3) 0%, rgba(38, 38, 38, 0.5) 100%);
 }
 
 ::-webkit-scrollbar {

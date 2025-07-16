@@ -61,7 +61,7 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
       <div className={clsx("col pt-2 md:pt-6 xl:pt-4", !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
-          <article className="lg:mt-16">
+          <article className="">
             <DocBreadcrumbs />
             <DocVersionBadge />
             {docTOC.mobile}
