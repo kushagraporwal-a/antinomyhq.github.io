@@ -224,7 +224,7 @@ hr {
   align-items: center;
   color: #737373;
   border-radius: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
 }
 
@@ -525,7 +525,7 @@ hr {
 }
 
 .table-of-contents__link {
-  font-size: var(--ifm-content-link-font-size);
+  font-size: 1rem;
   color: #737373;
 }
 

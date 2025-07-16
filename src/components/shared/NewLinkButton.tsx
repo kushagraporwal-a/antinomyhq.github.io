@@ -55,13 +55,15 @@ const NewLinkButton = ({
         gap-x-2
         rounded-lg sm:rounded-xl
         h-10 sm:h-8
-        px-4 py-2 sm:px-6 lg:px-8 sm:py-3 lg:py-4
+        px-4 py-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6
         cursor-pointer
         transition-all duration-300
         text-sm sm:text-base
         hover:no-underline
         text-content-tiny
-        border border-solid border-black dark:border-[#D4D4D4] text-black dark:text-white bg-transparent group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:dark:bg-white group-hover:dark:text-black group-hover:dark:border-white
+        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
+        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black
+        bg-transparent group-hover:bg-tailCall-lightMode---primary-700 group-hover:dark:bg-tailCall-lightMode---primary-400 
         `,
         setButtonWidth(),
         disabled ? "cursor-not-allowed opacity-20" : "",

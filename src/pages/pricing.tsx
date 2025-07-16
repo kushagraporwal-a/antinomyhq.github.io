@@ -46,24 +46,26 @@ const PricingPage = (): JSX.Element => {
 
   return (
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
-      <div className="px-6 md:px-20 py-12 dark:bg-black bg-tailCall-light-1200">
-        <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
-          <div className="flex flex-col mt-2">
-            <SpotlightSpan
-              className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
-              text="start for free."
-              showHighlighted
-            />
-            <SpotlightSpan
-              className="-mt-4 md:-mt-5 lg:-mt-2 xl:-mt-8 leading-10 md:leading-normal font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
-              text="scale when you're ready."
-              showHighlighted
-            />
+      <div className="max-w-[1320px] mx-auto w-full">
+        <div className=" py-12 dark:bg-black bg-tailCall-light-1200">
+          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
+            <div className="flex flex-col mt-2">
+              <SpotlightSpan
+                className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
+                text="start for free."
+                showHighlighted
+              />
+              <SpotlightSpan
+                className="-mt-4 md:-mt-5 lg:-mt-2 xl:-mt-8 leading-10 md:leading-normal font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
+                text="scale when you're ready."
+                showHighlighted
+              />
+            </div>
+            <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
+              No credit card required.No lock-in. <br />
+              Just productivity from day one
+            </span>
           </div>
-          <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
-            No credit card required.No lock-in. <br />
-            Just productivity from day one
-          </span>
         </div>
       </div>
       <main>
