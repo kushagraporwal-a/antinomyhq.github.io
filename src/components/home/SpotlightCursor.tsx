@@ -40,6 +40,7 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
         backgroundRepeat: "no-repeat",
         backgroundSize: `${SPOTLIGHT_SIZE}px ${SPOTLIGHT_SIZE}px`,
         backgroundPosition: showHighlighted ? "left" : "",
+        transition: "all 1s cubic-bezier(.19,1,.22,1)",
         ...style,
       }}
     >
