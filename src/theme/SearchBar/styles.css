@@ -38,9 +38,9 @@
   transition-duration: 500;
 }
 
-.DocSearch-Button-Container:hover {
+/* .DocSearch-Button-Container:hover {
   box-shadow: 0px 0px 34.624px 5.705px #30ede6;
-}
+} */
 
 .DocSearch-Cancel {
   margin: 0 10px;

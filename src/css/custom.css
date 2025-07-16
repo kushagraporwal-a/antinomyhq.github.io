@@ -963,12 +963,12 @@ pre[class*="language-"],
 .codeBlock,
 .code-block,
 .theme-code-block {
-  border-radius: 12px !important;
+  border-radius: 0 !important;
 }
 
 .theme-code-block,
 pre.prism-code {
-  border-radius: 12px !important;
+  border-radius: 0 !important;
 }
 
 [class*="codeBlockTitle"] {
