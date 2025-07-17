@@ -129,9 +129,9 @@ const NewNavbar = (): JSX.Element => {
             <Button
               variant="transparent"
               onClick={handeNavbarToggle}
-              className="md:hidden !bg-tailCall-cyan rounded p-2"
+              className="md:hidden !bg-tailCall-cyan rounded p-[9px]"
             >
-              <Menu className="text-black" />
+              <Menu className="text-black h-5 w-5" />
             </Button>
             <div className="flex md:hidden">
               <SearchBar />

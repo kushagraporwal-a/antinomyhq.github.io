@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
         p-[1px] border-none rounded-[0px] cursor-pointer bg-transparent
       "
     >
-      <div className="bg-tailCall-light-1200 dark:bg-black px-[9px] py-[7px] rounded-xl border border-solid border-[--docsearch-brand-color]">
+      <div className="bg-tailCall-light-1200 dark:bg-black p-2 rounded flex items-center justify-center border border-solid border-[--docsearch-brand-color]">
         {theme !== "light" ? (
           <img src="/icons/basic/moon.svg" alt="moon" className="h-5 w-5" />
         ) : (
