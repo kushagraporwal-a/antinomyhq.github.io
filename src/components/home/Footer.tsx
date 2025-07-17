@@ -7,32 +7,13 @@ import Link from "@docusaurus/Link"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
-      <div className="flex flex-col lg:hidden md:flex-row gap-16 md:gap-0 justify-between items-start">
-        <div className="flex flex-col gap-4 w-full">
-          <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-tailCall-light-1000 dark:text-white">
-            Get started with personal AI Assistant now.
-          </span>
-          <div className="flex justify-start gap-5 items-start min-[425px]:items-center flex-col min-[425px]:flex-row">
-            <CopyCodeButton />
-          </div>
-        </div>
-      </div>
-      <hr className="bg-tailCall-light-1100 dark:bg-[#262626] lg:hidden block" />
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:flex justify-between gap-5 flex-wrap">
+    <footer className="relative flex justify-center items-center flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:flex justify-between gap-5 flex-wrap w-[1280px]">
         {footerItems.map(({items, title}) => {
           return <FooterItem key={title} items={items} title={title} />
         })}
-        <div className="hidden flex-col lg:flex gap-4 max-w-[340px] xl:max-w-max">
-          <span className="font-kanit text-title-small xl:font-normal xl:text-title-semi-large font-normal text-tailCall-light-1000 dark:text-white md:text-end">
-            Get started with personal AI Assistant now.
-          </span>
-          <div className="flex justify-start gap-5 items-center">
-            <CopyCodeButton />
-          </div>
-        </div>
       </div>
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-10 justify-between pt-5">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-10 justify-between pt-5 w-[1280px]">
         <div className="flex items-center gap-5">
           <Link href="/">
             <img

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useMemo, useState} from "react"
 import Button from "./Button"
 import {NavbarItems} from "@site/src/constants"
 import {Menu, X} from "lucide-react"
@@ -18,14 +18,20 @@ const Logo = () => (
 
 const NavLink = ({href, label}: {href: string; label: string}) => {
   const {pathname} = useLocation()
-  const isActive = `${href}/` === pathname || pathname?.includes(href)
+
+  const isActive = useMemo(() => {
+    if (href === "/") {
+      return pathname === "/"
+    }
+    return pathname === href || pathname.startsWith(`${href}/`)
+  }, [pathname, href])
 
   const baseClass =
     "no-underline hover:no-underline transition-opacity duration-500 cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"
   const activeClass =
     "font-medium text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400 opacity-100"
   const inactiveClass =
-    "text-tailCall-darkMode---neutral-400 dark:text-tailCall-darkMode---neutral-500 hover:opacity-100"
+    "text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-400 hover:opacity-100"
 
   return (
     <Link
@@ -68,7 +74,7 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] backdrop-blur-md w-full p-5 ${
+      className={`fixed top-0 left-0 z-[999] backdrop-blur-3xl w-full p-5 ${
         !isHome
           ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]"
           : ""
