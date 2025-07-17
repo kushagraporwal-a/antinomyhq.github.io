@@ -10,7 +10,7 @@ type BenefitsCardProps = {
 const BenefitsCard = ({title, description, imageUrl, small}: BenefitsCardProps) => {
   const lightImage = imageUrl.replace(/\.svg$/, "-light.svg")
   return (
-    <div className="h-full flex flex-col bg-benefit-light-background border border-solid border-tailCall-light-900  dark:bg-[linear-gradient(to_bottom_right,_#000000,_#1B8783B2)] p-[1px] rounded-xl w-full md:w-96 xl:w-[550px]">
+    <div className="h-full flex flex-col bg-benefit-light-background border border-solid border-tailCall-light-900  dark:bg-[linear-gradient(to_bottom_right,_#000000,_#1B8783B2)] p-[.5px] rounded-[13px] w-full md:w-96 xl:w-[550px]">
       <div className="flex flex-col gap-4 bg-benefit-light-background dark:bg-[linear-gradient(180deg,_#1E1C21_0%,_#000_100%)] text-white font-kanit w-full xl:max-w-[550px] rounded-xl p-4 sm:p-8 lg:px-14 lg:py-16 h-full">
         <div className="flex gap-3 items-center">
           <img src={imageUrl} alt="" className="hidden dark:block w-10 h-10 md:w-auto md:h-auto" />
