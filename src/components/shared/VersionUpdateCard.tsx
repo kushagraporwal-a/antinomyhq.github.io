@@ -5,7 +5,7 @@ import {Theme} from "@site/src/constants"
 
 const VersionUpdateCard = () => {
   return (
-    <div className="flex flex-col sm:flex-row py-8 px-6 sm:px-11 rounded-xl bg-white dark:bg-tailCall-dark-600 justify-between items-start sm:items-center gap-4 version-update-card">
+    <div className="flex flex-col sm:flex-row py-8 px-6 sm:px-11 bg-white dark:bg-tailCall-dark-600 justify-between items-start sm:items-center gap-4 version-update-card">
       <div className="flex flex-col gap-1">
         <span className="text-title-medium sm:text-title-large text-black dark:text-white ">
           Update to latest version !!
