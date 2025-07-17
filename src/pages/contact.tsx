@@ -1,10 +1,11 @@
 import Layout from "@theme/Layout"
 import React, {useEffect, useState} from "react"
 import SpotlightSpan from "../components/home/SpotlightCursor"
-import {UserIcon, IdCard, Mail, MailOpen, AlignLeft, SquarePen, BriefcaseBusiness} from "lucide-react"
+import {UserIcon, IdCard, Mail, MailOpen, AlignLeft, SquarePen, BriefcaseBusiness, ChevronDown} from "lucide-react"
 import LabeledInput from "../components/shared/Input/Input"
 import {useForm} from "react-hook-form"
 import {COMPANY_STRENGTH, JOB_TITLE} from "../constants"
+import CustomSelect from "../components/shared/CustomSelect"
 
 interface FormInputs {
   first_name: string
@@ -20,6 +21,7 @@ const contact = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: {errors},
   } = useForm<FormInputs>()
 
@@ -96,15 +98,15 @@ const contact = () => {
                     error={errors.email}
                     required
                   />
-                  <LabeledInput
+                  <CustomSelect
                     label="Job Title"
                     name="job_title"
-                    icon={<SquarePen />}
-                    type="select"
-                    options={JOB_TITLE}
                     register={register}
-                    error={errors.job_title}
-                    required
+                    defaultValue={JOB_TITLE[0].value}
+                    options={JOB_TITLE}
+                    leftIcon={<SquarePen />} // Emoji or any React component
+                    chevronIcon={<ChevronDown />}
+                    onChange={(value) => setValue("job_title", value)}
                   />
                   <div className="flex flex-col sm:flex-row gap-8">
                     <LabeledInput
@@ -116,15 +118,15 @@ const contact = () => {
                       error={errors.company}
                       required
                     />
-                    <LabeledInput
+                    <CustomSelect
                       label="Company Strength"
                       name="company_strength"
-                      type="select"
-                      icon={<UserIcon />}
-                      options={COMPANY_STRENGTH}
+                      defaultValue={COMPANY_STRENGTH[0].value}
                       register={register}
-                      error={errors.company_strength}
-                      required
+                      options={COMPANY_STRENGTH}
+                      leftIcon={<UserIcon />} // Emoji or any React component
+                      chevronIcon={<ChevronDown />}
+                      onChange={(value) => setValue("company_strength", value)}
                     />
                   </div>
                   <LabeledInput

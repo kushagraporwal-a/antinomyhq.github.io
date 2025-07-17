@@ -819,15 +819,66 @@ export const CARDS_DATA = [
 export const FORGE_CODE_INSTALL_COMMAND = "npx forgecode@latest"
 
 export const JOB_TITLE = [
-  "Software Developer",
-  "Frontend Developer",
-  "Backend Developer",
-  "Full Stack Developer",
-  "DevOps Engineer",
-  "Tech Lead",
+  {
+    label: "Software Developer",
+    value: "Software Developer",
+  },
+  {
+    label: "Frontend Developer",
+    value: "Frontend Developer",
+  },
+  {
+    label: "Backend Developer",
+    value: "Backend Developer",
+  },
+  {
+    label: "Full Stack Developer",
+    value: "Full Stack Developer",
+  },
+  {
+    label: "DevOps Engineer",
+    value: "DevOps Engineer",
+  },
+  {
+    label: "Tech Lead",
+    value: "Tech Lead",
+  },
 ]
 
-export const COMPANY_STRENGTH = ["2-10", "11-25", "26-50", "51-100", "101-250", "251-500", "501-1000", "1000+"]
+export const COMPANY_STRENGTH = [
+  {
+    value: "2-10",
+    label: "2-10",
+  },
+  {
+    value: "11-25",
+    label: "11-25",
+  },
+  {
+    value: "26-50",
+    label: "26-50",
+  },
+  {
+    value: "51-100",
+    label: "51-100",
+  },
+  {
+    value: "101-250",
+    label: "101-250",
+  },
+  {
+    value: "251-500",
+    label: "251-500",
+  },
+  {
+    value: "501-1000",
+    label: "501-1000",
+  },
+  {
+    value: "1000+",
+    label: "1000+",
+  },
+]
 
 export const footerItems: FooterItem[] = [
   {
