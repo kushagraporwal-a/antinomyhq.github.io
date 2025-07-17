@@ -7,13 +7,13 @@ import Link from "@docusaurus/Link"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex justify-center items-center flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:flex justify-between gap-5 flex-wrap w-[1280px]">
+    <footer className="relative flex xl:justify-center xl:items-center flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:flex justify-between gap-5 flex-wrap xl:w-[1280px]">
         {footerItems.map(({items, title}) => {
           return <FooterItem key={title} items={items} title={title} />
         })}
       </div>
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-10 justify-between pt-5 w-[1280px]">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-10 justify-between pt-5 xl:w-[1280px]">
         <div className="flex items-center gap-5">
           <Link href="/">
             <img
