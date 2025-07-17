@@ -48,7 +48,7 @@ const PricingPage = (): JSX.Element => {
     <Layout title="Pricing" description="Simple, transparent pricing for ForgeCode">
       <div className="max-w-[1320px] mx-auto w-full">
         <div className=" py-12 dark:bg-black bg-tailCall-light-1200 border-b border-solid border-transparent border-b-[#dbdbdb] dark:border-b-[#4b4b4b]">
-          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
+          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2">
             <div className="flex flex-col mt-2">
               <SpotlightSpan
                 className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
@@ -98,26 +98,24 @@ const PricingPage = (): JSX.Element => {
                 {/* Card Content */}
                 <div className="relative z-10">
                   <div className="flex flex-col flex-grow">
-                    <h3 className="text-content-small text-left text-tailCall-lightMode---neutral-900 dark:text-white mb-1 dark:group-hover:text-white">
+                    <h3 className="text-title-semi-large font-normal text-left text-tailCall-darkMode---neutral-600 dark:text-white mb-0 dark:group-hover:text-white">
                       {tier.name}
                     </h3>
-                    {tier.description && (
-                      <p className="text-[13px] text-left text-gray-500 dark:text-tailCall-darkMode---neutral-400 mb-6 dark:group-hover:text-white">
-                        {tier.description}
-                      </p>
-                    )}
-
-                    <div className="mb-6 text-center">
-                      <div className="flex justify-center items-baseline gap-2">
-                        <span className="text-title-text-large font-bold text-tailCall-lightMode---neutral-900 dark:text-white">
+                    <div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-title-text-large font-normal text-tailCall-darkMode---neutral-600 dark:text-white">
                           {tier.price}
                         </span>
-                        <span className="text-sm text-gray-500 dark:text-tailCall-darkMode---neutral-400 group-hover:dark:text-white group-hover:text-gray-500">
+                        <span className="text-content-tiny text-tailCall-darkMode---neutral-600 dark:text-white">
                           {tier.period}
                         </span>
                       </div>
                     </div>
-
+                    {tier.description && (
+                      <p className="text-[13px] text-left dark:text-tailCall-darkMode---neutral-600 mb-6">
+                        {tier.description}
+                      </p>
+                    )}
                     <div>
                       <NewLinkButton
                         title={tier.cta}
@@ -138,7 +136,7 @@ const PricingPage = (): JSX.Element => {
                         {tier.features.map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex gap-2 items-center text-sm text-gray-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
+                            className="flex gap-2 items-center text-sm text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
                           >
                             <CircleCheck
                               size={12}

@@ -147,7 +147,7 @@ const TerminalWithTabs = (): JSX.Element => {
           </div>
 
           {/* Command Line */}
-          <div className="bg-[#E5E5E5] dark:bg-[#1E1C21] rounded-[4px] relative border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
+          <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[4px] flex h-[75px] absolute bottom-4 w-[91%] md:w-[94%] lg:w-[93%] border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
             <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-lg px-2">
               <div className="flex items-center justify-center">
                 <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" width={24} />
