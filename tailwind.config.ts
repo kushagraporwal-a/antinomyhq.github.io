@@ -162,8 +162,12 @@ module.exports = {
         "gradient-custom-diagonal": "linear-gradient(135deg, rgba(0, 206, 201, 1) 0%, rgba(38, 38, 38, 1) 100%)",
         "custom-radial-light":
           "radial-gradient(58.31% 20.31% at 50% 100%, rgba(48, 237, 230, 0.5) 1%, rgba(0, 0, 0, 0) 100%)",
-        "custom-dark-gradient-blog-border":
+        "custom-blog-card-dark-border": "linear-gradient(358.39deg, #505050 -17.24%, #A9A9A9 84.75%)",
+        "custom-blog-card-dark-border-active":
           "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
+          "custom-blog-card-light-border": "linear-gradient(180deg, #D4D4D4 0%, #737373 100%)",
+        "custom-blog-card-light-border-active":
+          "linear-gradient(358.39deg, #D4D4D4 -17.24%, #00CEC9 33.76%, #D4D4D4 84.75%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
         "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)",
         "gradient-border": "linear-gradient(90deg, #2F2F2F -1.04%, #30EDE6 47.84%, #323232 96.72%)",
