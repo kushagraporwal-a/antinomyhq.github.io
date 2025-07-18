@@ -57,7 +57,7 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
     </div>
   )
   return (
-    <div className="row pb-10">
+    <div className="row pb-10 w-full">
       <div className={clsx("col pt-2 md:pt-6 xl:pt-4", !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
