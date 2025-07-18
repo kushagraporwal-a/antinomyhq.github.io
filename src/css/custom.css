@@ -970,7 +970,7 @@ pre[class*="language-"],
 .theme-code-block,
 pre.prism-code {
   border-radius: 12px !important;
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
   margin-top: 12px;
 }
 
