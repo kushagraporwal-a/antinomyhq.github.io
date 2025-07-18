@@ -165,14 +165,14 @@ const GetStarted = (): JSX.Element => {
           })}
         </div>
         <div className="flex flex-col items-center mt-[200px] sm:mt-[220px] md:mt-[250px] lg:mt-[280px] xl:mt-[450px]">
-          <div className="w-full max-w-[700px] dark:bg-gradient-315 rounded-2xl p-[1px]">
-            <div className="bg-tailCall-lightMode---neutral-200 dark:bg-[#1E1C21] flex flex-col rounded-2xl relative">
+          <div className="w-full max-w-[700px] dark:bg-gradient-315 rounded-[12px] p-[1px] cursor-pointer" onClick={handleCopy}>
+            <div className="bg-tailCall-lightMode---neutral-200 dark:bg-[#1E1C21] flex flex-col rounded-[12px] relative">
               <div className="flex items-center gap-1 px-4 py-3 bg-tailCall-lightMode---neutral-300 dark:bg-[#18171A] rounded-t-2xl">
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-50"></div>
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-20"></div>
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-10"></div>
               </div>
-              <button onClick={handleCopy} className="absolute right-2 top-2 border-none bg-transparent cursor-pointer">
+              <button className="absolute right-2 top-2 border-none bg-transparent">
                 {isCopied ? (
                   <CopyCheck className="h-5 w-5 text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" />
                 ) : (

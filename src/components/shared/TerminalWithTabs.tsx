@@ -104,7 +104,7 @@ const TerminalWithTabs = (): JSX.Element => {
   }
 
   return (
-    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-[13px] w-full max-[375px]:h-[730px] md:w-4/5 lg:w-[450px] h-[685px] xl:h-[720px] flex flex-col font-mono">
+    <div className="relative bg-tailCall-lightMode---primary-50 dark:bg-[#1E1C21] p-[1px] dark:bg-custom-diagonal rounded-[12px] w-full max-[375px]:h-[730px] md:w-4/5 lg:w-[450px] h-[685px] xl:h-[720px] flex flex-col font-mono">
       {/* Header */}
       <div className="bg-[#E8E8E8] dark:bg-tailCall-darkMode---neutral-900 w-full rounded-t-xl flex gap-2 items-center p-3">
         <div className="h-4 w-4 rounded-full bg-tailCall-border-dark-1200 dark:bg-tailCall-dark-1300" />
@@ -142,13 +142,13 @@ const TerminalWithTabs = (): JSX.Element => {
 
         {/* Terminal Output */}
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[40vh]">
+          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[58vh]">
             {lines.map(renderLine)}
           </div>
 
           {/* Command Line */}
-          <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[4px] flex h-[75px] absolute bottom-4 w-[91%] md:w-[94%] lg:w-[93%] border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
-            <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-lg px-2">
+          <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[12px] flex h-[75px] absolute bottom-4 w-[91%] md:w-[94%] lg:w-[93%] border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
+            <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[12px] px-2">
               <div className="flex items-center justify-center">
                 <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" width={24} />
               </div>

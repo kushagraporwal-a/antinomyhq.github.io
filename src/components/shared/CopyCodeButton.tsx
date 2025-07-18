@@ -22,26 +22,50 @@ const CopyCodeButton = (): JSX.Element => {
   return (
     <Button variant="transparent" onClick={handleCopy}>
       <div className="group">
-        <div className="relative flex w-fit items-center group group-hover:bg-tailCall-dark-1800 group-hover:dark:bg-[#30EDE6] transition-colors duration-500 rounded-xl cursor-pointer">
+        <div
+          className="relative flex w-fit items-center group 
+                    group-hover:bg-tailCall-dark-1800 
+                    group-hover:dark:bg-[#30EDE6] 
+                    transition-colors duration-300 
+                    ease-in-out 
+                    rounded-xl cursor-pointer 
+                    transition-all duration-1000"
+        >
           <img
             src="/images/home/curly-open.svg"
             alt="curly open"
-            className="dark:block hidden group-hover:absolute -left-1"
+            className="dark:block hidden group-hover:absolute -left-1 transition-all duration-1000 ease-in-out"
           />
           <img
             src="/images/home/curly-open-light.svg"
             alt="curly open"
-            className="dark:hidden block group-hover:absolute -left-1"
+            className="dark:hidden block group-hover:absolute -left-1 transition-all duration-1000 ease-in-out"
           />
-          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px]">
+
+          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px] transition-colors duration-1000 ease-in-out">
             Try Now
           </span>
-          <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small ">
+
+          <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small transition-all duration-1000 ease-in-out">
             {FORGE_CODE_INSTALL_COMMAND}
           </span>
-          {!isCopied ? <Copy className="hidden group-hover:block" color="#000000" /> : <CopyCheck color="#000000" />}
-          <img src="/images/home/curly-close.svg" alt="curly close" className="dark:block hidden -mr-1" />
-          <img src="/images/home/curly-close-light.svg" alt="curly close" className="dark:hidden block -mr-1" />
+
+          {!isCopied ? (
+            <Copy className="hidden group-hover:block transition-all duration-1000 ease-in-out" color="#000000" />
+          ) : (
+            <CopyCheck className="transition-all duration-1000 ease-in-out" color="#000000" />
+          )}
+
+          <img
+            src="/images/home/curly-close.svg"
+            alt="curly close"
+            className="dark:block hidden -mr-1 transition-all duration-1000 ease-in-out"
+          />
+          <img
+            src="/images/home/curly-close-light.svg"
+            alt="curly close"
+            className="dark:hidden block -mr-1 transition-all duration-1000 ease-in-out"
+          />
         </div>
       </div>
     </Button>

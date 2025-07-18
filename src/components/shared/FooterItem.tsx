@@ -24,14 +24,14 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
         {items.map((item) => {
           return item.name === "Cookie Settings" ? (
             <button
-              className="text-tailCall-light-1000 dark:text-white no-underline hover:no-underline hover:text-tailCall-lightMode---neutral-900 hover:dark:text-white border-none bg-transparent text-title-tiny font-[275] m-0 p-0 font-kanit font-normal cursor-pointer"
+              className="text-tailCall-light-1000 dark:text-white no-underline hover:no-underline border-none bg-transparent text-title-tiny font-[275] m-0 p-0 font-kanit font-normal cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"
               onClick={handleOpenCookieConsent}
             >
               {item.name}
             </button>
           ) : (
             <Link
-              className="font-normal text-tailCall-light-1000 dark:text-white no-underline hover:no-underline hover:text-tailCall-lightMode---neutral-900 hover:dark:text-white"
+              className="font-normal text-tailCall-light-1000 dark:text-white no-underline hover:no-underline transition-opacity duration-500 cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"
               href={item.link}
               key={item.name}
               onClick={() => analyticsHandler("Home Page", "Click", item.name)}
