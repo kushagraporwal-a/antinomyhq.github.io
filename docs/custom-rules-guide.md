@@ -1,4 +1,5 @@
 import CustomLink from '@site/src/components/shared/CustomLink'
+import Card from '@site/src/components/shared/Card'
 
 # Working with Custom Rules
 
@@ -12,9 +13,10 @@ Custom rules are persistent instructions that get injected into every AI convers
 
 When you define custom rules, they become part of the AI's system prompt, meaning they're always active and take priority over default behaviors.
 
-:::info Quick Reference
-For technical implementation details and API reference, see the <CustomLink href="/docs/custom-rules">Custom Rules feature documentation</CustomLink>.
-:::
+<Card variant="information">
+  <p><strong>Quick Reference</strong></p>
+  <span>For technical implementation details and API reference, see the <CustomLink href="/docs/custom-rules">Custom Rules feature documentation</CustomLink>.</span>
+</Card>
 
 ## Quick Start: Your First Custom Rule
 
@@ -82,9 +84,10 @@ agents:
       - Validate all input with schemas
 ```
 
-:::important Rule Priority
-Global rules override agent-specific rules when both are defined. This means your team-wide standards always take precedence over individual agent configurations.
-:::
+<Card variant="information">
+  <p><strong>Rule Priority</strong></p>
+  <span>Global rules override agent-specific rules when both are defined. This means your team-wide standards always take precedence over individual agent configurations.</span>
+</Card>
 
 ## Progressive Learning Path
 
@@ -299,8 +302,6 @@ This generates an HTML file showing exactly what context (including your custom 
 - [ ] Check the HTML context dump
 - [ ] Iterate based on results
 - [ ] Gradually add more specific rules
-
----
 
 ## Need Help?
 
