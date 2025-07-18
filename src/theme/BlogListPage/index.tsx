@@ -54,7 +54,7 @@ function BlogListPageContent({metadata, items, sidebar}: Props): JSX.Element {
     <BlogLayout sidebar={sidebar}>
       <div className="flex flex-col md:flex-row items-start w-full">
         <div className={clsx("w-full md:w-9/12 md:pr-5", featuredItems.length == 0 ? "md:w-full" : "border-right")}>
-          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
+          <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0 mt-12">
             <div className="flex flex-col mt-2">
               <SpotlightSpan
                 className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"

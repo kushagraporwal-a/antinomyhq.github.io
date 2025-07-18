@@ -73,17 +73,17 @@ const PricingPage = (): JSX.Element => {
           <div className="text-center mb-20">
             <Heading
               as="h1"
-              className="text-title-large !font-normal md:text-content-regular mb-6 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
+              className="text-title-large !font-normal md:text-content-regular mb-2 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
             >
               Plans for Your Need
             </Heading>
-            <p className="text-title-small-pricing text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
+            <p className="text-title-small-pricing !text-[22px] text-tailCall-darkMode---neutral-500 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
               Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
               seamless fit!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 pb-12 mb-24">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
@@ -112,7 +112,7 @@ const PricingPage = (): JSX.Element => {
                       </div>
                     </div>
                     {tier.description && (
-                      <p className="text-[13px] text-left dark:text-tailCall-darkMode---neutral-600 mb-6">
+                      <p className="text-[13px] text-left dark:text-tailCall-darkMode---neutral-400 mb-6">
                         {tier.description}
                       </p>
                     )}
@@ -154,7 +154,7 @@ const PricingPage = (): JSX.Element => {
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
-            <div className="items-start mt-11">
+            <div className="items-start mt-10">
               <Heading
                 as="h2"
                 className="text-title-large !font-normal md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
