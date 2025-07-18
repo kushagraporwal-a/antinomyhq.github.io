@@ -1040,6 +1040,14 @@ img[class*="img_"] {
   width: 100%;
 }
 
+.custom-cards p {
+  color: #000 !important;
+}
+
+[data-theme="dark"] .custom-cards p {
+  color: #fff !important;
+}
+
 [class*="codeBlockTitle"] {
   display: none;
 }
