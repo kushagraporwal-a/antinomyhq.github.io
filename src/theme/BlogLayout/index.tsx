@@ -18,9 +18,9 @@ export default function BlogLayout(props: Props): JSX.Element {
             {isBlogPostPage && <div className="hidden lg:block lg:w-[20.83%]"></div>}
             <div className={clsx("w-full", isBlogPostPage && "lg:w-[58.33%]")}>{children}</div>
             {toc && (
-              <div className="hidden lg:block lg:w-[20.83%] pl-8 mt-12">
+              <div className="hidden lg:block lg:w-[20.83%] pl-0 mt-12">
                 <div className="sticky top-28">
-                  <div className="border-[2px] border-l-solid border-tailCall-darkMode---neutral-200 dark:border-tailCall-darkMode---neutral-800 pl-4">
+                  <div className="border-[2px] border-l-solid border-tailCall-darkMode---neutral-200 dark:border-tailCall-darkMode---neutral-800 pl-0">
                     {toc}
                   </div>
                 </div>

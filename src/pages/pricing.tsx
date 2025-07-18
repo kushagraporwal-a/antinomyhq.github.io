@@ -88,7 +88,7 @@ const PricingPage = (): JSX.Element => {
               <div
                 key={tier.name}
                 className={clsx(
-                  "relative group flex flex-col rounded-xl p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 transition-all duration-300 overflow-hidden",
+                  "relative group flex flex-col rounded-[12px] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 transition-all duration-300 overflow-hidden",
                   "border-solid border-[0.732px] dark:border-[#737373]",
                   "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300",
                 )}

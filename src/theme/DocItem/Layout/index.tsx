@@ -72,7 +72,7 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
           {giscus}
         </div>
       </div>
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      {docTOC.desktop && <div className="col col--3 pl-0">{docTOC.desktop}</div>}
     </div>
   )
 }
