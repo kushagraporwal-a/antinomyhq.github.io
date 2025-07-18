@@ -92,16 +92,18 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       {/* Options dropdown */}
       {isOpen && (
         <ul
-          className={`absolute pl-0 list-none z-10 w-full bg-tailCall-darkMode---neutral-900 border border-solid border-[#262626] shadow-lg overflow-auto text-sm
-          ${dropdownPosition === "top" ? "bottom-10 rounded-b-none rounded-t-md" : "top-[80px] rounded-t-none rounded-b-md"}
+          className={`absolute pl-0 list-none z-10 w-full bg-tailCall-darkMode---neutral-50 dark:bg-tailCall-darkMode---neutral-900 border border-solid border-[#262626] shadow-lg overflow-auto text-sm
+          ${dropdownPosition === "top" ? "bottom-8 rounded-b-none rounded-t-md" : "top-[80px] rounded-t-none rounded-b-md"}
         `}
         >
           {options.map((option) => (
             <li
               key={option.value}
               onClick={() => handleSelect(option)}
-              className={`cursor-pointer py-2 px-3 hover:bg-tailCall-darkMode---neutral-800 ${
-                selected.value === option.value ? "bg-tailCall-darkMode---neutral-800 font-medium" : ""
+              className={`cursor-pointer py-2 px-3 text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-300 hover:bg-tailCall-darkMode---neutral-200 hover:dark:bg-tailCall-darkMode---neutral-800 ${
+                selected.value === option.value
+                  ? "text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-50 bg-tailCall-darkMode---neutral-200 dark:bg-tailCall-darkMode---neutral-800 font-medium"
+                  : ""
               }`}
             >
               {option.label}

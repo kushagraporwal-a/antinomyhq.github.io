@@ -42,7 +42,7 @@ export const ElevenLabsAudioPlayer = ({
   }, [])
 
   return (
-    <div className={`${styles.elevenLabsAudioPlayer} ${className} dark:bg-gray-300`}>
+    <div className={`${styles.elevenLabsAudioPlayer} ${className} dark:bg-tailCall-darkMode---neutral-300 my-5`}>
       <div
         id="elevenlabs-audionative-widget"
         data-height={size === "small" ? "90" : "120"}
