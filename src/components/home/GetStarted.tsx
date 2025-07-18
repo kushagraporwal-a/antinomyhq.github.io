@@ -175,7 +175,8 @@ const GetStarted = (): JSX.Element => {
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-20"></div>
                 <div className="h-4 w-4 bg-tailCall-lightMode---neutral-600 dark:bg-[#D9D9D9] rounded-full opacity-10"></div>
               </div>
-              <button className="absolute right-2 top-2 border-none bg-transparent">
+              <button className="absolute right-2 top-2 border-none bg-transparent flex items-center gap-2">
+                <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400">{isCopied?"Text Copied!":"Copy Here!"}</span>
                 {isCopied ? (
                   <CopyCheck className="h-5 w-5 text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" />
                 ) : (

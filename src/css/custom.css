@@ -988,7 +988,7 @@ code .token-line{
 }
 
 pre > code {
-  padding: 16px !important;
+  padding: 16px 48px 16px 16px !important;
 }
 
 .token.builtin {
@@ -1043,6 +1043,11 @@ img[class*="img_"] {
   margin-top: 12px;
   border-radius: 12px;
   width: 100%;
+  border: 1px solid #dbdbdb;
+}
+
+[data-theme="dark"] img[class*="img_"] {
+  border: 1px solid #4b4b4b;
 }
 
 .custom-cards p, .custom-cards span {
@@ -1308,7 +1313,7 @@ details {
   border: 1px solid var(--ifm-color-brand-light-400);
   border-radius: 8px;
   padding: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0 !important;
   box-shadow: none !important;
 }
 

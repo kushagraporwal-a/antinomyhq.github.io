@@ -77,7 +77,7 @@ const PricingPage = (): JSX.Element => {
             >
               Plans for Your Need
             </Heading>
-            <p className="text-title-small-pricing !text-[22px] text-tailCall-darkMode---neutral-500 dark:text-tailCall-darkMode---neutral-300 max-w-2xl mx-auto font-kanit">
+            <p className="text-title-small-pricing !text-[22px] font-kanit !font-normal text-[16px] text-tailCall-darkMode---neutral-500 max-w-2xl mx-auto font-kanit">
               Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
               seamless fit!
             </p>
@@ -136,13 +136,13 @@ const PricingPage = (): JSX.Element => {
                         {tier.features.map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex gap-2 items-center text-sm text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
+                            className="flex gap-2 items-center text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
                           >
                             <CircleCheck
                               size={12}
                               className="dark:text-tailCall-light-800 mt-0.5 flex-shrink-0 dark:group-hover:text-white transition-colors duration-300"
                             />
-                            <span className="text-[13px]">{feature}</span>
+                            <span className="text-[16px]">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -161,7 +161,7 @@ const PricingPage = (): JSX.Element => {
               >
                 FAQ
               </Heading>
-              <div className="text-content-tiny !font-[275] md:text-content-large dark:text-tailCall-border-light-300 font-kanit mt-5">
+              <div className="text-content-small md:text-question-title text-[#A1A1A1] !font-[275] dark:text-tailCall-border-light-300 font-kanit mt-5">
                 Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
                 seamless fit!
               </div>
@@ -171,7 +171,7 @@ const PricingPage = (): JSX.Element => {
               {FAQS.map((item, index) => (
                 <div key={index}>
                   <div
-                    className="flex w-full justify-between items-center py-8 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer"
+                    className={clsx("flex w-full justify-between items-center pt-8 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer transition-all duration-300", openIndex === index ? "pb-4" : "pb-8")}
                     onClick={() => toggleIndex(index)}
                   >
                     <span

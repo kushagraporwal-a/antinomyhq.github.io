@@ -50,10 +50,10 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
               {tags?.map(({label}) => <Chip label={label} key={label} />)}
             </div>
-            <span className="mt-5 font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium xl:text-[26px] !font-normal line-clamp-2">
+            <span className="mt-5 font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium !font-normal line-clamp-2">
               {title}
             </span>
-            <p className="mt-2 font-kanit text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:text-[22px] xl:leading-[30px] !font-light line-clamp-3">
+            <p className="mt-2 font-kanit text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:leading-[30px] !font-light line-clamp-3">
               {description}
             </p>
             {authors[0] && (
