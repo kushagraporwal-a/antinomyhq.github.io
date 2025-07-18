@@ -1036,6 +1036,8 @@ pre > code {
 
 img[class*="img_"] {
   margin-top: 12px;
+  border-radius: 12px;
+  width: 100%;
 }
 
 [class*="codeBlockTitle"] {
