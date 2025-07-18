@@ -964,11 +964,69 @@ pre[class*="language-"],
 .code-block,
 .theme-code-block {
   border-radius: 12px !important;
+  background-color: #F8F8F8 !important;
 }
 
 .theme-code-block,
 pre.prism-code {
   border-radius: 12px !important;
+  background-color: #F8F8F8 !important;
+}
+
+[data-theme="dark"] pre[class*="language-"],
+[data-theme="dark"] .codeBlock,
+[data-theme="dark"] .code-block,
+[data-theme="dark"] .theme-code-block,
+[data-theme="dark"] .pre.prism-code {
+  background-color: #18171A !important;
+}
+
+.token.builtin {
+  color: #5261FF !important;
+}
+
+[data-theme="dark"] .token.builtin {
+  color: #5968FF !important;
+}
+
+.token.function {
+  color: #A68A00 !important;
+}
+
+[data-theme="dark"] .token.function {
+  color: #FBFF00 !important;
+}
+
+.token.parameter.variable {
+  color: #F46200 !important;
+}
+
+[data-theme="dark"] .token.parameter.variable {
+  color: #FF6F0E !important;
+}
+
+.token.comment {
+  color: #158B00 !important;
+}
+
+[data-theme="dark"] .token.comment {
+  color: #22E000 !important;
+}
+
+.token.operator {
+  color: #009CA5 !important;
+}
+
+[data-theme="dark"] .token.operator {
+  color: #04D0DA !important;
+}
+
+.token.string {
+  color: #C68400 !important;
+}
+
+[data-theme="dark"] .token.string {
+  color: #F9A705 !important;
 }
 
 [class*="codeBlockTitle"] {
