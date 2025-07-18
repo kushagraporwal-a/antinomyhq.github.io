@@ -964,13 +964,13 @@ pre[class*="language-"],
 .code-block,
 .theme-code-block {
   border-radius: 12px !important;
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
 }
 
 .theme-code-block,
 pre.prism-code {
   border-radius: 12px !important;
-  background-color: #F8F8F8 !important;
+  background-color: #f8f8f8 !important;
 }
 
 [data-theme="dark"] pre[class*="language-"],
@@ -978,55 +978,55 @@ pre.prism-code {
 [data-theme="dark"] .code-block,
 [data-theme="dark"] .theme-code-block,
 [data-theme="dark"] .pre.prism-code {
-  background-color: #18171A !important;
+  background-color: #18171a !important;
 }
 
 .token.builtin {
-  color: #5261FF !important;
+  color: #5261ff !important;
 }
 
 [data-theme="dark"] .token.builtin {
-  color: #5968FF !important;
+  color: #5968ff !important;
 }
 
 .token.function {
-  color: #A68A00 !important;
+  color: #a68a00 !important;
 }
 
 [data-theme="dark"] .token.function {
-  color: #FBFF00 !important;
+  color: #fbff00 !important;
 }
 
 .token.parameter.variable {
-  color: #F46200 !important;
+  color: #f46200 !important;
 }
 
 [data-theme="dark"] .token.parameter.variable {
-  color: #FF6F0E !important;
+  color: #ff6f0e !important;
 }
 
 .token.comment {
-  color: #158B00 !important;
+  color: #158b00 !important;
 }
 
 [data-theme="dark"] .token.comment {
-  color: #22E000 !important;
+  color: #22e000 !important;
 }
 
 .token.operator {
-  color: #009CA5 !important;
+  color: #009ca5 !important;
 }
 
 [data-theme="dark"] .token.operator {
-  color: #04D0DA !important;
+  color: #04d0da !important;
 }
 
 .token.string {
-  color: #C68400 !important;
+  color: #c68400 !important;
 }
 
 [data-theme="dark"] .token.string {
-  color: #F9A705 !important;
+  color: #f9a705 !important;
 }
 
 [class*="codeBlockTitle"] {
@@ -1181,11 +1181,11 @@ span.token.tag.script.language-javascript {
 }
 
 .hash-link {
-  color: #088C8C !important;
+  color: #088c8c !important;
 }
 
 [data-theme="dark"] .hash-link {
-  color: #30EDE6 !important;
+  color: #30ede6 !important;
 }
 
 /* Blog page sticky navbar styles */

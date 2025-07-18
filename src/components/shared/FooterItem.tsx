@@ -24,6 +24,7 @@ const FooterItem = ({title, items}: FooterItemProps): JSX.Element => {
         {items.map((item) => {
           return item.name === "Cookie Settings" ? (
             <button
+              key={item.name}
               className="text-tailCall-light-1000 dark:text-white no-underline hover:no-underline border-none bg-transparent text-title-tiny font-[275] m-0 p-0 font-kanit font-normal cursor-pointer hover:dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-darkMode---primary-600"
               onClick={handleOpenCookieConsent}
             >

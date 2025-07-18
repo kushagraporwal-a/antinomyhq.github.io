@@ -64,7 +64,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
               />
             )}
           </div>
-          <div className="absolute bottom-0 left-0 group-hover:bg-custom-radial-light group-hover:dark:bg-custom-radial z-50 h-[25rem] w-full"></div>
+          <div className="absolute bottom-0 left-0 group-hover:bg-custom-radial-light group-hover:dark:bg-custom-radial z-50 h-[15rem] w-full"></div>
         </div>
       </div>
     </Link>
