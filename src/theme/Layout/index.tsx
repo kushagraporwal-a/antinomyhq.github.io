@@ -30,7 +30,7 @@ export default function Layout(props: Props): JSX.Element {
   const location = useLocation()
   useKeyboardNavigation()
 
-  const targetDate = new Date("2025-05-30T20:00:00-08:00") // Nov 25, 6:00 PM - 8:00 PM PST
+  const targetDate = new Date("2024-12-31T23:59:59-08:00") // Dec 31, 2025 - announcement visible until end of year
   const currentDate = new Date()
   const hasAnnouncement = currentDate < targetDate
 
