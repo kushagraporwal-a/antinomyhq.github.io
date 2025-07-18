@@ -1,3 +1,5 @@
+import CustomLink from '@site/src/components/shared/CustomLink'
+
 # Working with Custom Rules
 
 Every development team has its own way of doing things. Code style preferences, testing patterns, error handling approaches, naming conventions - the list goes on. The problem? AI coding assistants don't know your team's specific practices unless you tell them.
@@ -11,7 +13,7 @@ Custom rules are persistent instructions that get injected into every AI convers
 When you define custom rules, they become part of the AI's system prompt, meaning they're always active and take priority over default behaviors.
 
 :::info Quick Reference
-For technical implementation details and API reference, see the [Custom Rules feature documentation](/docs/custom-rules).
+For technical implementation details and API reference, see the <CustomLink href="/docs/custom-rules">Custom Rules feature documentation</CustomLink>.
 :::
 
 ## Quick Start: Your First Custom Rule
@@ -310,8 +312,8 @@ This generates an HTML file showing exactly what context (including your custom 
 
 ### Get Support
 
-- **Discord**: [Join our Discord community](https://discord.gg/kRZBPpkgwq)
-- **Twitter/X**: Send us a DM [@forgecodehq](https://x.com/forgecodehq)
+- **Discord**: <CustomLink href="https://discord.gg/kRZBPpkgwq">Join our Discord community</CustomLink>
+- **Twitter/X**: Send us a DM <CustomLink href="https://x.com/forgecodehq">@forgecodehq</CustomLink>
 
 ---
 

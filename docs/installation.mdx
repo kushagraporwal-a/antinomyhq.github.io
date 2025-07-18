@@ -7,6 +7,7 @@ sidebar_label: Installation
 
 import Steps, {Step} from "../components/Steps"
 import {Zap, Target, Settings} from "lucide-react"
+import CustomLink from '@site/src/components/shared/CustomLink'
 
 # Installation & Setup
 
@@ -16,7 +17,7 @@ Get Forge running on your system in under 5 minutes. This guide covers installat
 
 <Steps>
   <Step title="Install Forge">
-    Install [Node.js 16+](https://nodejs.org/en/download), then run:
+    Install <CustomLink href="https://nodejs.org/en/download">Node.js 16+</CustomLink>, then run:
 
     ```bash
     npm install -g forgecode@latest
@@ -52,9 +53,9 @@ Get Forge running on your system in under 5 minutes. This guide covers installat
     Forge offers multiple authentication options:
 
     1. **Forge Provider**: The default option. Connect through the Forge app and complete the OAuth process.
-       This will open your browser to [app.forgecode.dev](https://app.forgecode.dev/app/) where you can sign up or sign in with Google/GitHub.
+       This will open your browser to <CustomLink href="https://app.forgecode.dev/app/">app.forgecode.dev</CustomLink> where you can sign up or sign in with Google/GitHub.
 
-    2. **Other AI Providers**: Configure Forge to use [OpenAI, Anthropic, or other providers](/docs/custom-providers) with your own API keys for custom setups.
+    2. **Other AI Providers**: Configure Forge to use <CustomLink href="/docs/custom-providers">OpenAI, Anthropic, or other providers</CustomLink> with your own API keys for custom setups.
 
     To logout when needed you can run:
 
@@ -87,7 +88,7 @@ For first-time users, we recommend:
 
 ## BYOK (Bring Your Own Key)
 
-After installing Forge, you can configure additional AI providers beyond the default. Follow the [Provider Configuration](../custom-providers) guide to set up alternative providers like OpenAI, Anthropic, or OpenRouter.
+After installing Forge, you can configure additional AI providers beyond the default. Follow the <CustomLink href="../custom-providers">Provider Configuration</CustomLink> guide to set up alternative providers like OpenAI, Anthropic, or OpenRouter.
 
 ## Next Steps
 
