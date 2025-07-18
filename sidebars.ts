@@ -41,6 +41,21 @@ const sidebars: SidebarsConfig = {
           id: "plan-and-act-guide",
           label: "Plan First, Then Act",
         },
+        {
+          type: "doc",
+          id: "model-selection-guide",
+          label: "Switching Models",
+        },
+        {
+          type: "doc",
+          id: "custom-rules-guide",
+          label: "Working with Custom Rules",
+        },
+        {
+          type: "doc",
+          id: "file-tagging-guide",
+          label: "File Tagging with @",
+        },
       ],
     },
     {
