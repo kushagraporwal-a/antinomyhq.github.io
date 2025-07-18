@@ -970,7 +970,8 @@ pre[class*="language-"],
 .theme-code-block,
 pre.prism-code {
   border-radius: 12px !important;
-  background-color: #f8f8f8 !important;
+  background-color: #F8F8F8 !important;
+  margin-top: 12px;
 }
 
 [data-theme="dark"] pre[class*="language-"],
@@ -979,6 +980,10 @@ pre.prism-code {
 [data-theme="dark"] .theme-code-block,
 [data-theme="dark"] .pre.prism-code {
   background-color: #18171a !important;
+}
+
+pre > code {
+  padding: 16px !important;
 }
 
 .token.builtin {
@@ -1027,6 +1032,10 @@ pre.prism-code {
 
 [data-theme="dark"] .token.string {
   color: #f9a705 !important;
+}
+
+img[class*="img_"] {
+  margin-top: 12px;
 }
 
 [class*="codeBlockTitle"] {
