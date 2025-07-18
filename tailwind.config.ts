@@ -165,7 +165,7 @@ module.exports = {
         "custom-blog-card-dark-border": "linear-gradient(358.39deg, #505050 -17.24%, #A9A9A9 84.75%)",
         "custom-blog-card-dark-border-active":
           "linear-gradient(180deg, rgba(102, 102, 102, 1) 0%, rgba(48, 237, 230, 1) 50%, rgba(102, 102, 102, 1) 100%)",
-          "custom-blog-card-light-border": "linear-gradient(180deg, #D4D4D4 0%, #737373 100%)",
+        "custom-blog-card-light-border": "linear-gradient(180deg, #D4D4D4 0%, #737373 100%)",
         "custom-blog-card-light-border-active":
           "linear-gradient(358.39deg, #D4D4D4 -17.24%, #00CEC9 33.76%, #D4D4D4 84.75%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",

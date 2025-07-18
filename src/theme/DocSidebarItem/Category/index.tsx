@@ -180,14 +180,14 @@ export default function DocSidebarItemCategory({
           {label}
         </Link>
         {/* {href && collapsible && ( */}
-          <CollapseButton
-            collapsed={collapsed}
-            categoryLabel={label}
-            onClick={(e) => {
-              e.preventDefault()
-              updateCollapsed()
-            }}
-          />
+        <CollapseButton
+          collapsed={collapsed}
+          categoryLabel={label}
+          onClick={(e) => {
+            e.preventDefault()
+            updateCollapsed()
+          }}
+        />
         {/* )} */}
       </div>
 

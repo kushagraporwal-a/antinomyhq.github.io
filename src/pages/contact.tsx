@@ -1,7 +1,7 @@
 import Layout from "@theme/Layout"
 import React, {useEffect, useState} from "react"
 import SpotlightSpan from "../components/home/SpotlightCursor"
-import {UserIcon, IdCard, Mail, MailOpen, AlignLeft, SquarePen, BriefcaseBusiness, ChevronDown} from "lucide-react"
+import {UserIcon, IdCard, MailOpen, AlignLeft, SquarePen, BriefcaseBusiness} from "lucide-react"
 import LabeledInput from "../components/shared/Input/Input"
 import {useForm} from "react-hook-form"
 import {COMPANY_STRENGTH, JOB_TITLE} from "../constants"
@@ -22,6 +22,7 @@ const contact = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: {errors},
   } = useForm<FormInputs>()
 
@@ -38,6 +39,7 @@ const contact = () => {
 
   const onSubmit = (data: FormInputs) => {
     console.log("Form Submitted:", data)
+    reset()
   }
   return (
     <Layout title="Contact" description="Contact Us">
@@ -105,7 +107,6 @@ const contact = () => {
                     defaultValue={JOB_TITLE[0].value}
                     options={JOB_TITLE}
                     leftIcon={<SquarePen />} // Emoji or any React component
-                    chevronIcon={<ChevronDown />}
                     onChange={(value) => setValue("job_title", value)}
                   />
                   <div className="flex flex-col sm:flex-row gap-8">
@@ -125,7 +126,6 @@ const contact = () => {
                       register={register}
                       options={COMPANY_STRENGTH}
                       leftIcon={<UserIcon />} // Emoji or any React component
-                      chevronIcon={<ChevronDown />}
                       onChange={(value) => setValue("company_strength", value)}
                     />
                   </div>

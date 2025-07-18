@@ -13,7 +13,6 @@ interface CustomSelectProps {
   defaultValue: string
   options: Option[]
   leftIcon?: React.ReactNode
-  chevronIcon?: React.ReactNode
   onChange?: (value: string) => void
   register: UseFormRegister<any>
 }
@@ -24,7 +23,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   defaultValue,
   options,
   leftIcon,
-  chevronIcon = <ChevronDown className="w-4 h-4" />,
   onChange,
   register,
 }) => {
@@ -87,7 +85,18 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       </button>
 
       {/* Chevron */}
-      <div className="absolute top-11 right-5 pointer-events-none text-gray-400">{chevronIcon}</div>
+      <div className={`absolute top-11 right-5 pointer-events-none text-gray-400`}>
+        <div
+          className={`
+      transition-transform duration-500 ease-in-out 
+      transform origin-center
+     flex items-center justify-center
+      ${isOpen ? "rotate-180" : "rotate-0"}
+    `}
+        >
+          <ChevronDown />
+        </div>
+      </div>
 
       {/* Options dropdown */}
       {isOpen && (
