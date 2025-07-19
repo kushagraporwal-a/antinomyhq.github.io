@@ -37,7 +37,13 @@ const MDXComponents: MDXComponentsObject = {
   ul: MDXUl,
   li: MDXLi,
   img: MDXImg,
-  h1: (props: ComponentProps<"h1">) => <MDXHeading className="text-[36px] font-medium !mb-2 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50" as="h1" {...props} />,
+  h1: (props: ComponentProps<"h1">) => (
+    <MDXHeading
+      className="text-[36px] font-medium !mb-2 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
+      as="h1"
+      {...props}
+    />
+  ),
   h2: (props: ComponentProps<"h2">) => (
     <MDXHeading
       className="text-[28px] font-medium !mb-0 !mt-12 !pt-12 border-t border-t-solid border-t-[#dbdbdb] dark:border-t-[#4b4b4b] text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
@@ -45,14 +51,41 @@ const MDXComponents: MDXComponentsObject = {
       {...props}
     />
   ),
-  h3: (props: ComponentProps<"h3">) => <MDXHeading className="text-[24px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50" as="h3" {...props} />,
-  h4: (props: ComponentProps<"h4">) => <MDXHeading className="text-[20px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50" as="h4" {...props} />,
-  h5: (props: ComponentProps<"h5">) => <MDXHeading className="text-[16px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50" as="h5" {...props} />,
-  h6: (props: ComponentProps<"h6">) => <MDXHeading className="text-[14px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50" as="h6" {...props} />,
+  h3: (props: ComponentProps<"h3">) => (
+    <MDXHeading
+      className="text-[24px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
+      as="h3"
+      {...props}
+    />
+  ),
+  h4: (props: ComponentProps<"h4">) => (
+    <MDXHeading
+      className="text-[20px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
+      as="h4"
+      {...props}
+    />
+  ),
+  h5: (props: ComponentProps<"h5">) => (
+    <MDXHeading
+      className="text-[16px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
+      as="h5"
+      {...props}
+    />
+  ),
+  h6: (props: ComponentProps<"h6">) => (
+    <MDXHeading
+      className="text-[14px] font-medium !mb-0 !mt-9 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-50"
+      as="h6"
+      {...props}
+    />
+  ),
   admonition: Admonition,
   mermaid: Mermaid,
   p: (props: ComponentProps<"p">) => (
-    <p className="text-[18px] font-light text-tailCall-lightMode---neutral-500 dark:text-tailCall-darkMode---neutral-400 font-kanit !mb-0" {...props} />
+    <p
+      className="text-[18px] font-light text-tailCall-lightMode---neutral-500 dark:text-tailCall-darkMode---neutral-400 font-kanit !mb-0"
+      {...props}
+    />
   ),
   th: CustomTh,
   td: CustomTd,

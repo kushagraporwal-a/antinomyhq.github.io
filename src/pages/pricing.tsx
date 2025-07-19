@@ -88,9 +88,7 @@ const PricingPage = (): JSX.Element => {
               <div className="bg-gradient-315 rounded-[13px] group p-[2px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
                 <div
                   key={tier.name}
-                  className={clsx(
-                    "p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full",
-                  )}
+                  className={clsx("p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full")}
                 >
                   <div className="absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"></div>
 
@@ -171,7 +169,10 @@ const PricingPage = (): JSX.Element => {
               {FAQS.map((item, index) => (
                 <div key={index}>
                   <div
-                    className={clsx("flex w-full justify-between items-center pt-8 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer transition-all duration-300", openIndex === index ? "pb-4" : "pb-8")}
+                    className={clsx(
+                      "flex w-full justify-between items-center pt-8 text-left focus:outline-none bg-transparent dark:bg-black border-none cursor-pointer transition-all duration-300",
+                      openIndex === index ? "pb-4" : "pb-8",
+                    )}
                     onClick={() => toggleIndex(index)}
                   >
                     <span

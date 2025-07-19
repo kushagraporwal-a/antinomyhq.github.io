@@ -188,7 +188,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
                         bg-transparent `}
                     >
-                        {text}
+                      {text}
                     </button>
                   )
                 })}

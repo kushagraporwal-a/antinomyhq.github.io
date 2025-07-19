@@ -987,8 +987,8 @@ pre.prism-code {
   background-color: #18171a !important;
 }
 
-code .token-line{
-  white-space: break-spaces
+code .token-line {
+  white-space: break-spaces;
 }
 
 pre > code {
@@ -1054,12 +1054,14 @@ img[class*="img_"] {
   border: 1px solid #4b4b4b;
 }
 
-.custom-cards p, .custom-cards span {
+.custom-cards p,
+.custom-cards span {
   color: #000 !important;
   font-size: 18px !important;
 }
 
-[data-theme="dark"] .custom-cards p, [data-theme="dark"] .custom-cards span {
+[data-theme="dark"] .custom-cards p,
+[data-theme="dark"] .custom-cards span {
   color: #fff !important;
 }
 
@@ -1160,36 +1162,37 @@ span.token.tag.script.language-javascript {
   border: 0;
 }
 
-[class^="docItemContainer"] thead tr, [class^="docItemContainer"] thead tr th{
+[class^="docItemContainer"] thead tr,
+[class^="docItemContainer"] thead tr th {
   border: none !important;
   color: #000 !important;
 }
 
-[data-theme="dark"] [class^="docItemContainer"] thead tr, [data-theme="dark"] [class^="docItemContainer"] thead tr th{
+[data-theme="dark"] [class^="docItemContainer"] thead tr,
+[data-theme="dark"] [class^="docItemContainer"] thead tr th {
   color: #fff !important;
 }
 
-[class^="docItemContainer"] tbody tr:not(:last-child){
-  border-bottom: 1px solid #D4D4D4 !important;
+[class^="docItemContainer"] tbody tr:not(:last-child) {
+  border-bottom: 1px solid #d4d4d4 !important;
   border-top: none !important;
 }
 
-[data-theme="dark"] [class^="docItemContainer"] tbody tr:not(:last-child){
+[data-theme="dark"] [class^="docItemContainer"] tbody tr:not(:last-child) {
   border-bottom: 1px solid #404040 !important;
 }
 
-[class^="docItemContainer"] tbody tr td{
+[class^="docItemContainer"] tbody tr td {
   border: none !important;
   color: #737373;
 }
 
-[data-theme="dark"] [class^="docItemContainer"] tbody tr td{
-  color: #A1A1A1;
+[data-theme="dark"] [class^="docItemContainer"] tbody tr td {
+  color: #a1a1a1;
 }
 
-
 [class^="docItemContainer"] thead tr th {
-  background-color: #E5E5E5 !important;
+  background-color: #e5e5e5 !important;
 }
 
 [data-theme="dark"] [class^="docItemContainer"] thead tr th {
@@ -1197,7 +1200,7 @@ span.token.tag.script.language-javascript {
 }
 
 [class^="docItemContainer"] tbody tr:nth-child(even) {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 [data-theme="dark"] [class^="docItemContainer"] tbody tr:nth-child(even) {
@@ -1205,13 +1208,12 @@ span.token.tag.script.language-javascript {
 }
 
 [class^="docItemContainer"] tbody tr:nth-child(odd) {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 [data-theme="dark"] [class^="docItemContainer"] tbody tr:nth-child(odd) {
   background-color: #000000;
 }
-
 
 @media (min-width: 768px) {
   .border-right {
@@ -1322,7 +1324,7 @@ details {
 }
 
 details summary {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 16px 16px 16px 30px !important;
   cursor: pointer;
   border-radius: 12px;
@@ -1337,23 +1339,24 @@ details summary {
 details[open] summary {
   border-radius: 12px 12px 0 0;
 }
-details[open]>div{
+details[open] > div {
   border-radius: 0 0 12px 12px;
 }
 
 details > div {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 1rem;
   border-radius: 0;
 }
-details > div p, details > div li{
+details > div p,
+details > div li {
   color: #000 !important;
 }
 
-[data-theme="dark"] details > div p, [data-theme="dark"] details > div li{
+[data-theme="dark"] details > div p,
+[data-theme="dark"] details > div li {
   color: #fff !important;
 }
-
 
 [data-theme="dark"] details > div {
   background-color: #171717;
@@ -1374,14 +1377,14 @@ details summary::before {
 /* Override any blue text in details content */
 details code {
   color: #000 !important;
-  background-color: #F8F8F8 !important;
-  border: 1px solid #E5E5E5 !important;
+  background-color: #f8f8f8 !important;
+  border: 1px solid #e5e5e5 !important;
   border-radius: 12px;
 }
 
 [data-theme="dark"] details code {
   color: #fff !important;
-  background-color: #18171A !important;
+  background-color: #18171a !important;
   border: 1px solid #404040 !important;
   border-radius: 12px;
 }

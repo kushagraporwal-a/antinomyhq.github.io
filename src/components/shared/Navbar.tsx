@@ -58,14 +58,14 @@ const NewNavbar = (): JSX.Element => {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (showNavbar) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset"
     }
 
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset"
     }
   }, [showNavbar])
 

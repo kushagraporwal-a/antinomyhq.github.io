@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react"
 import clsx from "clsx"
 import {analyticsHandler} from "@site/src/utils"
-import { FORGE_CODE_INSTALL_COMMAND } from "@site/src/constants"
-import { Copy, CopyCheck } from "lucide-react"
+import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
+import {Copy, CopyCheck} from "lucide-react"
 
 type LinkButtonProps = {
   title?: string

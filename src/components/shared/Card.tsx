@@ -18,8 +18,7 @@ const Card = ({children, variant = "default"}: CardProps): JSX.Element => {
       "custom-cards bg-[#FFF6E6] dark:bg-[#282215] border-l-4 border-l-solid border-[#C68400] dark:border-[#F9A705] p-8 rounded-[12px] text-black dark:text-white mt-4 mb-[20px]",
     information:
       "custom-cards bg-[#EBF2F9] dark:bg-[#151E28] border-l-4 border-l-solid border-[#5261FF] dark:border-[#5968FF] p-8 rounded-[12px] text-black dark:text-white mt-4 mb-[20px]",
-    tip:
-      "custom-cards bg-[#E5FFF7] dark:bg-[#152822] border-l-4 border-l-solid border-[#158B00] dark:border-[#22E000] p-8 rounded-[12px] text-black dark:text-white mt-4 mb-[20px]",
+    tip: "custom-cards bg-[#E5FFF7] dark:bg-[#152822] border-l-4 border-l-solid border-[#158B00] dark:border-[#22E000] p-8 rounded-[12px] text-black dark:text-white mt-4 mb-[20px]",
   }
   return (
     <div className={`text-justify text-title-small font-normal h-[100%] ${CardVariant[variant]}`}>
