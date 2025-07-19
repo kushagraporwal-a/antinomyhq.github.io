@@ -55,6 +55,20 @@ const NewNavbar = (): JSX.Element => {
     }
   }, [windowSize])
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (showNavbar) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [showNavbar])
+
   const isHome = location.pathname === "/"
 
   const handleSignUp = () => {
@@ -81,9 +95,9 @@ const NewNavbar = (): JSX.Element => {
       }`}
     >
       {showNavbar ? (
-        <div className="h-screen bg-[#F1F1F1] dark:bg-black z-[998] flex flex-col">
+        <div className="fixed inset-0 w-screen h-screen bg-[#F1F1F1] dark:bg-black z-[998] flex flex-col overflow-hidden">
           {/* Mobile Menu Header */}
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 p-5 flex-shrink-0">
             <Logo />
             <Button
               variant="transparent"
@@ -94,16 +108,18 @@ const NewNavbar = (): JSX.Element => {
             </Button>
           </div>
 
-          {/* Mobile Nav Links */}
-          <ul className="flex flex-col gap-5 font-kanit text-white text-[20px] list-none">
-            {NavbarItems.map((item) => (
-              <li key={item.name}>
-                <NavLink href={item.link} label={item.name} />
-              </li>
-            ))}
-          </ul>
+          {/* Mobile Nav Links - Scrollable container */}
+          <div className="flex-1 overflow-y-auto px-5 pb-5">
+            <ul className="flex flex-col gap-5 font-kanit text-white text-[20px] list-none">
+              {NavbarItems.map((item) => (
+                <li key={item.name}>
+                  <NavLink href={item.link} label={item.name} />
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Spotlight Glow */}
+          {/* Spotlight Glow - Fixed at bottom */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-[radial-gradient(505.31%_54.98%_at_50%_151.87%,rgba(48,237,230,0.5)_0%,rgba(0,0,0,0)_100%)] pointer-events-none" />
         </div>
       ) : (
