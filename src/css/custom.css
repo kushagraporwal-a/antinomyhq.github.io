@@ -975,6 +975,10 @@ pre.prism-code {
   margin-bottom: 40px !important;
 }
 
+.theme-code-block {
+  box-shadow: none !important;
+}
+
 [data-theme="dark"] pre[class*="language-"],
 [data-theme="dark"] .codeBlock,
 [data-theme="dark"] .code-block,
