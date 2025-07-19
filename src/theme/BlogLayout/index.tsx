@@ -15,7 +15,7 @@ export default function BlogLayout(props: Props): JSX.Element {
       <div className="bg-tailCall-light-1200 dark:bg-black min-h-screen w-full">
         <div className="container mb-10">
           <div className="flex flex-row">
-            {isBlogPostPage && <div className="hidden lg:block w-[20%]"></div>}
+            {isBlogPostPage && <div className="hidden lg:block w-[10%]"></div>}
             <div className={clsx("w-full", isBlogPostPage && "w-[60%] pr-5")}>{children}</div>
             {toc && (
               <div className="hidden lg:block w-20% pl-0 border-[2px] border-l-solid border-tailCall-darkMode---neutral-200 dark:border-tailCall-darkMode---neutral-800">
