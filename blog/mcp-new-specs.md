@@ -25,8 +25,6 @@ import CustomLink from '@site/src/components/shared/CustomLink'
 
 The Model Context Protocol has faced significant criticism in the past due to its security vulnerabilities. Anthropic recently released a new specification update (MCP v2025-06-18)<sup><a id="ref-1" href="#footnote-1">1</a></sup> and I have been reviewing it, especially around security. Here are the important changes you should know.
 
----
-
 <!-- truncate -->
 
 ## TL;DR
@@ -50,8 +48,6 @@ Here's a quick summary of everything new in MCP Spec v2025-06-18:
 - New `resource_link` type lets tools point to URIs instead of inlining everything. The client can then subscribe to or fetch this URI as needed.
 
 - Removed support for JSON-RPC batching (breaking change).
-
----
 
 ## What's MCP and Why Should I Care?
 
@@ -81,8 +77,6 @@ Now that MCP adoption is growing, the team is addressing these gaps while the ec
 
 There are definitely core security vulnerabilities (tool description injection, supply chain risks) that are still not addressed but you can follow some practical mitigation strategies that might help<sup><a id="ref-4" href="#footnote-4">4</a></sup>.
 
----
-
 ## OAuth 2.0 Resource Server Classification
 
 MCP servers (the systems that protect your data or services) are now officially classified as OAuth 2.0 Resource Servers. This isn't a new idea conceptually since many developers already treated MCP servers as protected resources but the spec now formalizes this with explicit OAuth 2.0 classification.
@@ -90,8 +84,6 @@ MCP servers (the systems that protect your data or services) are now officially 
 Each MCP server must now indicate the location of its authorization server using protected resource metadata (RFC9728)<sup><a id="ref-5" href="#footnote-5">5</a></sup>. By embedding an authorization endpoint URL in the MCP server’s metadata, ambiguity is removed and token requests are securely directed to the intended issuer.
 
 Read more about Authorization Server Location<sup><a id="ref-6" href="#footnote-6">6</a></sup>. Token binding is explained in detail in the next section.
-
----
 
 ## Resource Indicators (RFC 8707) to prevent Token Misuse
 
@@ -118,8 +110,6 @@ POST /oauth/token
   "resource": "https://mcp.example.com/analytics"
 }
 ```
-
----
 
 ## Updated Security Documentation
 
@@ -175,8 +165,6 @@ This vulnerability has two critical dimensions: Audience validation failures & T
 - Tokens issued for other services must be rejected.
 - Token passthrough to downstream APIs is explicitly forbidden.
 
----
-
 ## New Security Best Practices page
 
 They have included a new Security best practices page<sup><a id="ref-9" href="#footnote-9">9</a></sup>. These sections consolidate actionable advice (explicit consent flows, minimal data scopes, human-in-the-loop prompts, etc.) for MCP implementers. It outlines security guidance for developers and implementers working with MCP. Here are all the things covered:
@@ -187,8 +175,6 @@ They have included a new Security best practices page<sup><a id="ref-9" href="#f
 - Also covers session-ID compromise scenarios including prompt injection and impersonation attacks.
 
 As per official docs, this section should be read alongside the MCP Authorization specification and OAuth 2.0 security best practices<sup><a id="ref-10" href="#footnote-10">10</a></sup>.
-
----
 
 ## Structured Tool Output
 
@@ -286,8 +272,6 @@ Example valid response for this tool:
 }
 ```
 
----
-
 ## Support for Elicitation (Interactive User Input)
 
 The new update adds elicitation support<sup><a id="ref-11" href="#footnote-11">11</a></sup>. A server can now ask the user for additional information mid-session by sending an `elicitation/create` request with a message and a JSON schema for expected data.
@@ -368,8 +352,6 @@ Here is the message flow.
 
 If you are interested in reading more about response actions, request schema, and more security considerations, check the official docs.
 
----
-
 ## Resource Links in Tool Results
 
 Tools can now return **resource links** as part of their results. A `resource_link` contains a URI plus metadata (name, description, mimeType) pointing to additional context or data.
@@ -389,8 +371,6 @@ For example:
 The client can then subscribe to or fetch this URI as needed. Like a tool telling the client: “Here’s a file you might want to explore, download, or open when needed.”
 
 Resource links allow servers to “point” to files or resources instead of inlining them. They are not guaranteed to appear in the results of a `resources/list` request, they are more like meant for direct client retrieval when the link is provided.
-
----
 
 ## Protocol Version Enforcement (HTTP)
 
@@ -413,8 +393,6 @@ MCP-Protocol-Version: 2025-06-18
 ```
 
 For backward compatibility, if the server doesn’t get the `MCP-Protocol-Version` header and can’t detect the version in any other way (by relying on the protocol version negotiated during initialization), it should assume the version is `2025-03-26`.
-
----
 
 ## JSON-RPC batching removed
 
@@ -442,8 +420,6 @@ I think removing JSON-RPC batching support when the protocol version is `>= 2025
 
 This change is also not backward compatible (breaking for older clients/servers) so any MCP client that supports `2025-03-26` might not work with an MCP server that only supports `2025-06-18`.
 
----
-
 ## Other Notable Changes
 
 Several new fields were added for flexibility:
@@ -456,8 +432,6 @@ Several new fields were added for flexibility:
 
 They also changed `SHOULD` to `MUST` in Lifecycle Operation which says both parties must respect the negotiated protocol version<sup><a id="ref-14" href="#footnote-14">14</a></sup>.
 
----
-
 ## The Bottom Line
 
 These updates are a step forward for the MCP ecosystem. These directly affect how secure, stable and forward-compatible your MCP integrations will be. Ignoring them could lead to broken client-server interactions, token misuse or rejected requests.
@@ -465,8 +439,6 @@ These updates are a step forward for the MCP ecosystem. These directly affect ho
 This made MCP integrations much more secure (using OAuth 2.0 conventions and token binding) and more capable because of structured data and user prompts.
 
 All these changes are active as of `2025-06-18`. Any MCP server or client that doesn’t adopt the updated practices risks non-compliance with the current spec and future compatibility issues.
-
----
 
 ## Footnotes
 

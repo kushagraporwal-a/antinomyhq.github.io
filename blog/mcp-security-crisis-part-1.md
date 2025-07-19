@@ -149,8 +149,6 @@ Part 2 will cover specific mitigation strategies and some tools I've been buildi
 
 If you're building MCP tools or have seen other security issues, let me know. This ecosystem is still small enough that we can actually fix problems before they become disasters.
 
----
-
 ## Footnotes
 
 <a id="footnote-1"></a>**1.** Anthropic. "Model Context Protocol Specification." GitHub Repository. <CustomLink href="https://github.com/modelcontextprotocol/specification">https://github.com/modelcontextprotocol/specification</CustomLink> <CustomLink href="#ref-1">↩</CustomLink>

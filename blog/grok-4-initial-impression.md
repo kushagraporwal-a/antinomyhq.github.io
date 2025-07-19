@@ -77,8 +77,6 @@ But how do you access it? It's available via both API and a paid subscription. Y
 
 Even better, if you just want to test the models, it's also available on OpenRouter, so if you have an API key, you're good to go.
 
----
-
 ## Does Grok 4 Achieve AGI?
 
 If you're not sure what AGI (Artificial General Intelligence) is, let me give you a brief idea. Basically, Generative AI, which we use, like the OpenAI models, Claude Sonnet models, and others, generates content based on learned patterns or what they've been trained on.
@@ -98,8 +96,6 @@ xAI also tested Grok 4 in a real-world simulation called Vending Bench. Basicall
 As you can see, Grok 4 is generating more than twice the revenue and scale compared to the top competitor, Claude Opus 4.
 
 There's no comparison between Grok 4 and the other AI models here, and it's doing it all at a lower price. So yeah, this is a great step toward AGI, but it's simply not there yet.
-
----
 
 ## Community Impressions and Future Plans from xAI
 
@@ -129,8 +125,6 @@ We're expected to see the following in the coming months:
 
 So, if your main purpose with an AI model is coding, it might be worth waiting one more month to see if that's even better for your use case.
 
----
-
 ## Pros and Cons of Grok 4
 
 Grok 4 has about 99% accuracy in picking the right tools and making tool calls with proper arguments almost every single time.
@@ -140,8 +134,6 @@ It's designed to be agentic, which means that with single or multiple agents wor
 However, when it comes to multi-modal capabilities, especially with image generation and analysis, it's not much better and performs poorer than the top multi-modal capabilities AI models like o3, Claude 4, etc. Although this will significantly improve in the coming days.
 
 Another thing I really hate about this model is the rate limit that's implemented on top of xAI. Almost every 2-3 continuous prompts, you get rate limited for a few minutes, and that's really frustrating, especially considering that you'd be using this model in a more research-based situation where you'll likely be making multiple prompts to the model to get the answer you expect.
-
----
 
 ## Conclusion
 
@@ -153,21 +145,15 @@ With great power comes great responsibility! 😉
 
 Let me know what you think of Grok 4 so far, and if you've tested it yourself, how it performed. Let me know in the comments below!
 
----
-
 ## Try Grok 4 on Forge
 
 We've recently added support for Grok 4 on Forge. If this sounds interesting to you, you'll definitely want to try it on Forge. You can <CustomLink href="https://app.forgecode.dev/">create an account</CustomLink> and get started in just a minute. See for yourself if it performs as well as the benchmarks suggest and if you’d like to add this model to your daily workflow.
-
----
 
 ## Related Posts
 
 1. <CustomLink href="https://forgecode.dev/blog/claude-4-opus-vs-grok-4-comparison-full">Claude Opus 4 vs. Grok 4 Coding Comparison</CustomLink>
 2. <CustomLink href="https://forgecode.dev/blog/claude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison">Claude Opus 4 vs. Gemini 2.5 Pro</CustomLink>
 3. <CustomLink  href="https://forgecode.dev/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough">First Look at Claude 4</CustomLink>
-
----
 
 ## Footnotes
 

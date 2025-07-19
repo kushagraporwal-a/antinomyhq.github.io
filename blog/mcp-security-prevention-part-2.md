@@ -38,8 +38,6 @@ Trail of Bits dropped a bomb & MCP servers are getting wrecked by these attacks:
 - **ANSI terminal code attacks**<sup><a id="ref-3" href="#footnote-3">3</a></sup> - escape sequences hide malicious instructions. Your terminal can show false or misleading information due to hidden instructions.
 - **Insecure credential storage**<sup><a id="ref-4" href="#footnote-4">4</a></sup> - API keys sitting in plaintext with world-readable permissions. This leaves sensitive data exposed.
 
----
-
 ## The Security Gap
 
 The OWASP Top 10 for Large Language Model Applications (2025)<sup><a id="ref-5" href="#footnote-5">5</a></sup> puts prompt injection at #1. Meanwhile, most security teams are still treating AI like it's another web app.
@@ -277,8 +275,6 @@ Security pros at OWASP and NIST keep hammering this: no prod creds in AI, period
 We're building systems that run commands based on natural language and connect to live infrastructure. The risks are well-known, the methods of attack are out there, and researchers are constantly finding new exploits.
 
 Fix this now, or enjoy the breach headlines later.
-
----
 
 ## Footnotes
 
