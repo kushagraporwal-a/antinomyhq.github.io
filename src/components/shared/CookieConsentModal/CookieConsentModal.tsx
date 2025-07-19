@@ -134,78 +134,61 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                 )}
               >
                 {consentOptions.map(({text, onClick}) => {
-                  // Special styling for "Accept All" (with background image)
                   if (text === "Accept All") {
                     return (
                       <button
                         key={text}
                         onClick={onClick}
-                        className="cursor-pointer relative flex items-center justify-center border-none bg-transparent"
+                        className={`
+                          rounded-[12px]
+                          px-6 py-4
+                          cursor-pointer
+                          transition-all duration-300
+                          text-[16px]
+                          border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
+                          text-white dark:text-black
+                          bg-tailCall-lightMode---primary-700 dark:bg-tailCall-lightMode---primary-400 `}
                       >
-                        <img
-                          src="/images/home/curly-background.svg"
-                          alt="curly-background"
-                          height={60}
-                          className="hidden dark:block"
-                        />
-                        <img
-                          src="/images/home/curly-background-light.svg"
-                          alt="curly-background"
-                          height={60}
-                          className="block dark:hidden"
-                        />
-                        <span className="text-black font-kanit text-title-small font-light absolute">{text}</span>
+                        {text}
                       </button>
                     )
                   }
 
-                  // Buttons with curly brackets around text
-                  const isCurly = text === "Accept Selected" || text === "Manage Settings"
+                  if (text === "Deny") {
+                    return (
+                      <button
+                        key={text}
+                        onClick={onClick}
+                        className={`
+                          rounded-[12px]
+                        px-6 py-4
+                        cursor-pointer
+                        transition-all duration-300
+                        text-[16px]
+                        border-none
+                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
+                        bg-transparent`}
+                      >
+                        {text}
+                      </button>
+                    )
+                  }
 
                   return (
                     <button
                       key={text}
                       onClick={onClick}
-                      className={clsx(
-                        "cursor-pointer border-none bg-transparent font-kanit text-title-small font-light",
-                        isCurly
-                          ? "flex items-center justify-center"
-                          : "text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400",
-                      )}
+                      className={`
+                        rounded-[12px]
+                        px-6 py-4
+                        cursor-pointer
+                        transition-all duration-300
+                        text-[16px]
+                        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
+                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
+                        bg-transparent `}
                     >
-                      {isCurly ? (
-                        <div className="flex items-center px-3 py-4">
-                          <img
-                            src="/images/home/curly-open.svg"
-                            alt="curly open"
-                            height={60}
-                            className="hidden dark:block"
-                          />
-                          <img
-                            src="/images/home/curly-open-light.svg"
-                            alt="curly open"
-                            height={60}
-                            className="block dark:hidden"
-                          />
-                          <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400">
-                            {text}
-                          </span>
-                          <img
-                            src="/images/home/curly-close.svg"
-                            alt="curly close"
-                            height={60}
-                            className="hidden dark:block"
-                          />
-                          <img
-                            src="/images/home/curly-close-light.svg"
-                            alt="curly close"
-                            height={60}
-                            className="block dark:hidden"
-                          />
-                        </div>
-                      ) : (
-                        text
-                      )}
+                        {text}
                     </button>
                   )
                 })}

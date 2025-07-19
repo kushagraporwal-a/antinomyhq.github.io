@@ -61,7 +61,7 @@ const PricingPage = (): JSX.Element => {
                 showHighlighted
               />
             </div>
-            <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
+            <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[20px] xl:text-[22px] text-tailCall-darkMode---neutral-500 tracking-normal">
               No credit card required.No lock-in. <br />
               Just productivity from day one
             </span>
@@ -85,67 +85,67 @@ const PricingPage = (): JSX.Element => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 pb-12 mb-24">
             {tiers.map((tier) => (
-              <div
-                key={tier.name}
-                className={clsx(
-                  "relative group flex flex-col rounded-[12px] p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 transition-all duration-300 overflow-hidden",
-                  "border-solid border-[0.732px] dark:border-[#737373]",
-                  "hover:-translate-y-4 hover:shadow-2xl dark:hover:border-cyan-300",
-                )}
-              >
-                <div className="absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"></div>
+              <div className="bg-gradient-315 rounded-[13px] group p-[2px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
+                <div
+                  key={tier.name}
+                  className={clsx(
+                    "p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full",
+                  )}
+                >
+                  <div className="absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"></div>
 
-                {/* Card Content */}
-                <div className="relative z-10">
-                  <div className="flex flex-col flex-grow">
-                    <h3 className="text-title-semi-large font-normal text-left text-tailCall-darkMode---neutral-600 dark:text-white mb-0 dark:group-hover:text-white">
-                      {tier.name}
-                    </h3>
-                    <div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-title-text-large font-normal text-tailCall-darkMode---neutral-600 dark:text-white">
-                          {tier.price}
-                        </span>
-                        <span className="text-content-tiny text-tailCall-darkMode---neutral-600 dark:text-white">
-                          {tier.period}
-                        </span>
+                  {/* Card Content */}
+                  <div className="relative z-10">
+                    <div className="flex flex-col flex-grow">
+                      <h3 className="text-title-semi-large font-normal text-left text-tailCall-darkMode---neutral-600 dark:text-white mb-0 dark:group-hover:text-white">
+                        {tier.name}
+                      </h3>
+                      <div>
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-title-text-large font-normal text-tailCall-darkMode---neutral-600 dark:text-white">
+                            {tier.price}
+                          </span>
+                          <span className="text-content-tiny text-tailCall-darkMode---neutral-600 dark:text-white">
+                            {tier.period}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    {tier.description && (
-                      <p className="text-[13px] text-left dark:text-tailCall-darkMode---neutral-400 mb-6">
-                        {tier.description}
-                      </p>
-                    )}
-                    <div>
-                      <NewLinkButton
-                        title={tier.cta}
-                        href={tier.href}
-                        theme={tier.popular ? Theme.Dark : Theme.Light}
-                        width="full"
-                        onClick={() => analyticsHandler("Pricing Page", "Click", tier.cta)}
-                      />
-                    </div>
+                      {tier.description && (
+                        <p className="text-[13px] text-left dark:text-tailCall-darkMode---neutral-400 mb-6">
+                          {tier.description}
+                        </p>
+                      )}
+                      <div>
+                        <NewLinkButton
+                          title={tier.cta}
+                          href={tier.href}
+                          theme={tier.popular ? Theme.Dark : Theme.Light}
+                          width="full"
+                          onClick={() => analyticsHandler("Pricing Page", "Click", tier.cta)}
+                        />
+                      </div>
 
-                    <hr className="border-gray-300 dark:border-gray-700 mb-4" />
+                      <hr className="border-gray-300 dark:border-gray-700 mb-4" />
 
-                    <div>
-                      <p className="text-sm font-normal text-[15px] mb-3 text-tailCall-lightMode---neutral-900 dark:text-tailCall-light-800 group-hover:text-white transition-colors duration-300">
-                        Features
-                      </p>
-                      <ul className="space-y-2">
-                        {tier.features.map((feature, idx) => (
-                          <li
-                            key={idx}
-                            className="flex gap-2 items-center text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
-                          >
-                            <CircleCheck
-                              size={12}
-                              className="dark:text-tailCall-light-800 mt-0.5 flex-shrink-0 dark:group-hover:text-white transition-colors duration-300"
-                            />
-                            <span className="text-[16px]">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div>
+                        <p className="text-sm font-normal text-[15px] mb-3 text-tailCall-lightMode---neutral-900 dark:text-tailCall-light-800 group-hover:text-white transition-colors duration-300">
+                          Features
+                        </p>
+                        <ul className="space-y-2">
+                          {tier.features.map((feature, idx) => (
+                            <li
+                              key={idx}
+                              className="flex gap-2 items-center text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
+                            >
+                              <CircleCheck
+                                size={12}
+                                className="dark:text-tailCall-light-800 mt-0.5 flex-shrink-0 dark:group-hover:text-white transition-colors duration-300"
+                              />
+                              <span className="text-[16px]">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

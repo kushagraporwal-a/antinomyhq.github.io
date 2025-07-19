@@ -1,11 +1,40 @@
 import React, {useEffect, useState} from "react"
-import Button from "./Button"
-import {Copy, CopyCheck} from "lucide-react"
-import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
+import clsx from "clsx"
 import {analyticsHandler} from "@site/src/utils"
+import { FORGE_CODE_INSTALL_COMMAND } from "@site/src/constants"
+import { Copy, CopyCheck } from "lucide-react"
 
-const CopyCodeButton = (): JSX.Element => {
+type LinkButtonProps = {
+  title?: string
+  titleClassName?: string
+  width?: "small" | "medium" | "large" | "auto" | "full"
+  disabled?: boolean
+}
+
+const CopyCodeButton = ({
+  title = FORGE_CODE_INSTALL_COMMAND,
+  titleClassName,
+  width = "auto",
+  disabled,
+}: LinkButtonProps): JSX.Element => {
   const [isCopied, setIsCopied] = useState(false)
+  const setButtonWidth = () => {
+    switch (width) {
+      case "small":
+        return "w-[228px]"
+      case "medium":
+        return "w-[300px]"
+      case "large":
+        return "w-[500px]"
+      case "full":
+        return "w-full"
+      case "auto":
+        return "w-fit"
+      default:
+        return "w-fit"
+    }
+  }
+
   useEffect(() => {
     let interval: string | number | NodeJS.Timeout | undefined
     if (isCopied) {
@@ -19,56 +48,36 @@ const CopyCodeButton = (): JSX.Element => {
     await navigator.clipboard.writeText(FORGE_CODE_INSTALL_COMMAND)
     setIsCopied(true)
   }
+
   return (
-    <Button variant="transparent" onClick={handleCopy}>
-      <div className="group">
-        <div
-          className="relative flex w-fit items-center group 
-                    group-hover:bg-tailCall-dark-1800 
-                    group-hover:dark:bg-[#30EDE6] 
-                    transition-colors duration-300 
-                    ease-in-out 
-                    rounded-xl cursor-pointer 
-                    transition-all duration-1000"
-        >
-          <img
-            src="/images/home/curly-open.svg"
-            alt="curly open"
-            className="dark:block hidden group-hover:absolute -left-1 transition-all duration-1000 ease-in-out"
-          />
-          <img
-            src="/images/home/curly-open-light.svg"
-            alt="curly open"
-            className="dark:hidden block group-hover:absolute -left-1 transition-all duration-1000 ease-in-out"
-          />
+    <button
+      onClick={handleCopy}
+      className={clsx(
+        `
+        group relative
+        flex items-center justify-center
+        gap-x-2
+        rounded-[12px]
+        px-4 py-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6
+        cursor-pointer
+        transition-all duration-300
+        text-lg
+        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
+        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black
+        bg-transparent hover:bg-tailCall-lightMode---primary-700 hover:dark:bg-tailCall-lightMode---primary-400 
+        `,
+        setButtonWidth(),
+        disabled ? "cursor-not-allowed opacity-20" : "",
+      )}
+    >
+      {title && <span className={clsx("z-[1] text-[18px]", titleClassName)}>{title}</span>}
 
-          <span className="font-kanit text-title-medium font-light text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-black group-hover:hidden text-[20px] transition-colors duration-1000 ease-in-out">
-            Try Now
-          </span>
-
-          <span className="text-black hidden font-kanit group-hover:block px-3 ml-3 xl:text-content-medium sm:text-content-small transition-all duration-1000 ease-in-out">
-            {FORGE_CODE_INSTALL_COMMAND}
-          </span>
-
-          {!isCopied ? (
-            <Copy className="hidden group-hover:block transition-all duration-1000 ease-in-out" color="#000000" />
-          ) : (
-            <CopyCheck className="transition-all duration-1000 ease-in-out" color="#000000" />
-          )}
-
-          <img
-            src="/images/home/curly-close.svg"
-            alt="curly close"
-            className="dark:block hidden -mr-1 transition-all duration-1000 ease-in-out"
-          />
-          <img
-            src="/images/home/curly-close-light.svg"
-            alt="curly close"
-            className="dark:hidden block -mr-1 transition-all duration-1000 ease-in-out"
-          />
-        </div>
-      </div>
-    </Button>
+      {!isCopied ? (
+        <Copy className="stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+      ) : (
+        <CopyCheck className="stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+      )}
+    </button>
   )
 }
 

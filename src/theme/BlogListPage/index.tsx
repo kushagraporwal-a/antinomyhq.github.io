@@ -38,9 +38,20 @@ function LoadMoreButton({handleLoadMore}: {handleLoadMore: () => void}): JSX.Ele
     <div className="flex justify-center">
       <button
         onClick={handleLoadMore}
-        className="mt-4 h-12 cursor-pointer rounded-lg border-2 border-solid border-tailCall-border-dark-100 bg-transparent px-4 py-2 text-title-tiny font-bold text-black"
-      >
-        Load more blogs
+        className={`
+          mt-10
+          rounded-[12px]
+          px-4 py-3 sm:px-6 lg:px-8 sm:py-5 lg:py-6
+          cursor-pointer
+          transition-all duration-300
+          text-[18px]
+          border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
+          text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black
+          bg-transparent hover:bg-tailCall-lightMode---primary-700 hover:dark:bg-tailCall-lightMode---primary-400 
+        `
+        } 
+        >
+        Load More Blogs
       </button>
     </div>
   )

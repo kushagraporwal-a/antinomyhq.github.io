@@ -142,13 +142,13 @@ const TerminalWithTabs = (): JSX.Element => {
 
         {/* Terminal Output */}
         <div className="flex-1 text-white p-4 text-sm whitespace-pre-wrap">
-          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[58vh]">
+          <div ref={containerRef} className="mt-3 space-y-1 overflow-y-auto h-[320px]">
             {lines.map(renderLine)}
           </div>
 
           {/* Command Line */}
-          <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[10px] flex h-[75px] absolute bottom-4 w-[91%] md:w-[94%] lg:w-[93%] border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
-            <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[10px] px-2">
+          <div className="bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[8px] flex h-[75px] absolute bottom-4 w-[91%] md:w-[94%] lg:w-[93%] border border-solid border-tailCall-dark-1800 dark:border-tailCall-lightMode---primary-400">
+            <div className="flex items-center bg-[#E5E5E5] dark:bg-tailCall-dark-1600 rounded-[8px] px-2">
               <div className="flex items-center justify-center">
                 <ChevronRight className="text-[#018284] dark:text-tailCall-lightMode---primary-400" width={24} />
               </div>

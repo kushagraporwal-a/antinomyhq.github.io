@@ -156,6 +156,7 @@ module.exports = {
         "radial-gradient": "linear-gradient(136deg,rgba(0, 0, 0, 1) 0%, rgba(60, 227, 221, 1) 100%)",
         "custom-radial-gradient": "radial-gradient(97.79% 94.15% at 15.05% 0%, #FFF 0%, #2A2A2A 100%)",
         "gradient-315": "linear-gradient(278.83deg, #555555 67.54%, #30EDE6 95.6%);",
+        "gradient-border-card": "linear-gradient(280.23deg, #525252 53.49%, #30EDE6 90.2%);",
         "custom-diagonal":
           "linear-gradient(135deg, rgba(62, 62, 62, 1) 0%, rgba(50, 208, 202, 1) 51%, rgba(102, 102, 102, 1) 100%)",
         "benefit-light-background": "linear-gradient(180deg, #FFF 0%, #E5E5E5 100%)",
