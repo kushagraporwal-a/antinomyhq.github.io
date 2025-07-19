@@ -44,28 +44,28 @@ const contact = () => {
   return (
     <Layout title="Contact" description="Contact Us">
       <div className="flex justify-center">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col justify-center bg-tailCall-darkMode---neutral-200 dark:bg-[rgba(212,212,212,0.1)] px-4 py-7 md:px-14 md:py-7 xl:px-28 xl:py-14">
-            <div className="flex flex-col items-start xl:items-center xl:flex-row justify-between w-full max-w-[1440px]">
-              <div className="flex flex-col">
+        <div className="flex flex-col w-full xl:max-w-[1320px] mx-auto">
+          <div className="flex flex-col items-center px-4 py-7 md:px-14 md:py-7 xl:px-5 xl:py-10">
+            <div className="flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2 md:px-0">
+              <div className="flex flex-col mt-2">
                 <SpotlightSpan
-                  className="font-bebas !font-normal text-[45px] md:text-[55px] lg:text-[64px] xl:text-display-large-semi tracking-normal"
+                  className="font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
                   text="Have a questions?"
                   showHighlighted
                 />
                 <SpotlightSpan
-                  className="-mt-8 md:-mt-10 lg:-mt-10 xl:-mt-9 font-bebas !font-normal text-[45px] md:text-[55px] lg:text-[64px] xl:text-display-large-semi tracking-normal"
+                  className="-mt-8 md:-mt-5 lg:-mt-4 xl:-mt-8 font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
                   text="Let's talk code."
                   showHighlighted
                 />
               </div>
-              <span className="max-w-[600px] lg:max-w-[500px] xl:max-w-[50%] font-kanit !font-medium xl:text-title-semi-large text-[16px] md:text-[20px] lg:text-[24px] text-tailCall-darkMode---neutral-500 tracking-normal">
+              <span className="block -mt-5 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
                 Whether it's support, feedback, or partnerships we're all ears (and keyboards).
               </span>
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="flex xl:justify-evenly lg:items-center justify-center xl:items-center xl:flex-row w-full px-4 py-7 md:px-14 md:py-7 xl:px-28 xl:py-14">
+            <div className="flex xl:justify-evenly lg:items-center justify-center xl:items-center xl:flex-row w-full px-4 py-7 md:px-14 md:py-7 xl:px-0 xl:py-14">
               <div className="w-full xl:w-auto">
                 <h1 className="text-tailCall-darkMode---neutral-800 dark:text-white font-kanit text-display-medium !font-normal">
                   Hi
