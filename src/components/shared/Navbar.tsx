@@ -96,9 +96,6 @@ const NewNavbar = (): JSX.Element => {
 
           {/* Mobile Nav Links */}
           <ul className="flex flex-col gap-5 font-kanit text-white text-[20px] list-none">
-            <li>
-              <NavLink href="/" label="Home" />
-            </li>
             {NavbarItems.map((item) => (
               <li key={item.name}>
                 <NavLink href={item.link} label={item.name} />
