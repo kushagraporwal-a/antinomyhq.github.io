@@ -4,6 +4,7 @@ import clsx from "clsx"
 import {CookiePreferenceCategory} from "@site/src/constants"
 import Link from "@docusaurus/Link"
 import {pageLinks} from "@site/src/constants/routes"
+import {X} from "lucide-react"
 
 interface CookieConsentModalProps {
   open: boolean
@@ -126,7 +127,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                 </div>
               )}
             </div>
-            <div className="flex items-end">
+            <div className="flex items-center">
               <div
                 className={clsx(
                   "flex flex-col sm:flex-row flex-1 gap-6 h-fit sm:justify-end",
@@ -145,6 +146,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                           cursor-pointer
                           transition-all duration-300
                           text-[16px]
+                          font-kanit
                           border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
                           text-white dark:text-black
                           bg-tailCall-lightMode---primary-700 dark:bg-tailCall-lightMode---primary-400 `}
@@ -165,6 +167,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         cursor-pointer
                         transition-all duration-300
                         text-[16px]
+                        font-kanit
                         border-none
                         text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
                         bg-transparent`}
@@ -184,6 +187,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         cursor-pointer
                         transition-all duration-300
                         text-[16px]
+                        font-kanit
                         border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
                         text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
                         bg-transparent `}
@@ -193,13 +197,12 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                   )
                 })}
               </div>
-            </div>
-            <span
+
+              <X
               onClick={handleClose}
-              className="absolute top-0 right-0 h-4 w-8 cursor-pointer text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400"
-            >
-              [ X ]
-            </span>
+              className="ml-3 cursor-pointer text-tailCall-lightMode---neutral-500 dark:text-tailCall-lightMode---neutral-500"
+            />
+            </div>
           </div>
         </>
       ) : null}

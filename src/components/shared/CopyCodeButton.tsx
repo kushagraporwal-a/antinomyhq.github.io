@@ -58,24 +58,25 @@ const CopyCodeButton = ({
         flex items-center justify-center
         gap-x-2
         rounded-[12px]
+        w-[300px] overflow-hidden
         px-4 py-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6
         cursor-pointer
-        transition-all duration-300
+        transition-all duration-800
         text-lg
         border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
         text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black
         bg-transparent hover:bg-tailCall-lightMode---primary-700 hover:dark:bg-tailCall-lightMode---primary-400 
         `,
-        setButtonWidth(),
         disabled ? "cursor-not-allowed opacity-20" : "",
       )}
     >
-      {title && <span className={clsx("z-[1] text-[18px]", titleClassName)}>{title}</span>}
+      {title && <span className={clsx("absolute -translate-x-[400px] group-hover:translate-x-0 z-[1] text-[18px] font-kanit transition-all duration-800", titleClassName)}>{title}</span>}
+      {title && <span className={clsx("absolute translate-x-0 group-hover:translate-x-[400px] z-[1] text-[18px] font-kanit transition-all duration-800", titleClassName)}>Try Now</span>}
 
       {!isCopied ? (
-        <Copy className="stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+        <Copy className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[105px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
       ) : (
-        <CopyCheck className="stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+        <CopyCheck className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[105px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
       )}
     </button>
   )

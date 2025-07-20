@@ -1,6 +1,7 @@
 import React from "react"
 import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 import {analyticsHandler} from "@site/src/utils"
+import { MoonStar, Sun } from "lucide-react"
 
 const ThemeToggle: React.FC = () => {
   const {theme, toggleTheme} = useThemeContext()
@@ -22,9 +23,9 @@ const ThemeToggle: React.FC = () => {
     >
       <div className="bg-tailCall-light-1200 dark:bg-black p-2 rounded flex items-center justify-center border border-solid border-[--docsearch-brand-color]">
         {theme !== "light" ? (
-          <img src="/icons/basic/moon.svg" alt="moon" className="h-5 w-5" />
+          <MoonStar className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" /> 
         ) : (
-          <img src="/icons/basic/sun.svg" alt="moon" className="h-5 w-5" />
+          <Sun className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" /> 
         )}
       </div>
     </button>
