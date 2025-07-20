@@ -83,7 +83,7 @@ const PricingPage = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 pb-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 pb-12 mb-24">
             {tiers.map((tier) => (
               <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
                 <div

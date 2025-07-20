@@ -180,6 +180,7 @@ module.exports = {
           "radial-gradient(62.55% 79.85% at 47.58% 100.04%, #30EDE6 0%, rgba(0, 0, 0, 0.1) 100%)",
         "gradient-procing-cards-light":
           "radial-gradient(62.55% 79.85% at 47.58% 100.04%, #30EDE6 0%, rgba(255, 255, 255, 0.1) 100%)",
+        "card-border-gradient-nextStep-light": "linear-gradient(180deg, #DBDBDB 0%, #DBDBDB 100%)",
         "card-border-gradient-nextStep": "linear-gradient(180deg, #404040 0%, #262626 100%)",
       },
     },

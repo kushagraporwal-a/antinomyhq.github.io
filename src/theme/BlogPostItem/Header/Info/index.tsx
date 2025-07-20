@@ -79,7 +79,7 @@ export default function BlogPostItemHeaderInfo({className}: Props): JSX.Element 
               <Link
                 key={tag.permalink}
                 to={tag.permalink}
-                className="border border-1 border-solid border-tailCall-lightMode---primary-600 bg-white dark:bg-tailCall-darkMode---primary-400 text-tailCall-lightMode---neutral-900 dark:text-tailCall-darkMode---neutral-700 !no-underline px-3 py-2 rounded-full cursor-pointer"
+                className="border border-1 border-solid border-tailCall-lightMode---primary-600 bg-white dark:bg-tailCall-darkMode---primary-800 text-tailCall-lightMode---neutral-900 dark:text-white !no-underline px-5 py-2 rounded-full cursor-pointer"
               >
                 {tag.label}
               </Link>

@@ -130,7 +130,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
             <div className="flex items-center">
               <div
                 className={clsx(
-                  "flex flex-col sm:flex-row flex-1 gap-6 h-fit sm:justify-end",
+                  "flex flex-col sm:flex-row flex-1 gap-6 h-fit sm:justify-end items-center",
                   styles.consentOptionsContainer,
                 )}
               >
@@ -142,7 +142,8 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         onClick={onClick}
                         className={`
                           rounded-[12px]
-                          px-6 py-4
+                          px-3 py-4
+                          w-[200px]
                           cursor-pointer
                           transition-all duration-300
                           text-[16px]
@@ -163,7 +164,8 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                         onClick={onClick}
                         className={`
                           rounded-[12px]
-                        px-6 py-4
+                        px-3 py-4
+                        w-[100px]
                         cursor-pointer
                         transition-all duration-300
                         text-[16px]
@@ -183,7 +185,8 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                       onClick={onClick}
                       className={`
                         rounded-[12px]
-                        px-6 py-4
+                        px-3 py-4
+                        w-[200px]
                         cursor-pointer
                         transition-all duration-300
                         text-[16px]
@@ -200,7 +203,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
 
               <X
               onClick={handleClose}
-              className="ml-3 cursor-pointer text-tailCall-lightMode---neutral-500 dark:text-tailCall-lightMode---neutral-500"
+              className="ml-3 cursor-pointer text-tailCall-lightMode---neutral-500 dark:text-tailCall-lightMode---neutral-500 md:relative md:top-0 md:right-0 absolute top-4 right-4"
             />
             </div>
           </div>

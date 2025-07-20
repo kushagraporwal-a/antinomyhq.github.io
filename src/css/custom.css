@@ -1086,6 +1086,10 @@ pre > code {
   border: 1px solid #2B2B2B;
 }
 
+.toc-highlight strong{
+  font-weight: 100 !important;
+}
+
 .custom-cards p,
 .custom-cards span {
   color: #000 !important;
@@ -1410,10 +1414,15 @@ details summary::before {
   font-size: 40px !important;
   font-weight: 100 !important;
   transform: none !important;
+  color: #057A75 !important;
 }
 
 [class*="details"][data-collapsed="false"] > summary::before {
   content: '-' !important;
+}
+
+[data-theme="dark"] details summary::before {
+  color: #30EDE6 !important;
 }
 
 /* Override any blue text in details content */
@@ -1451,4 +1460,12 @@ code[class*="language-"] {
 
 code > span.token-line {
   color: var(--ifm-menu-link-active) !important;
+}
+
+.react-tweet-theme{
+  border: 1px solid #dbdbdb !important;
+}
+
+[data-theme="dark"] .react-tweet-theme{
+  border: 1px solid #2B2B2B !important;
 }

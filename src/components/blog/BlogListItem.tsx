@@ -27,10 +27,10 @@ const gradients = [
 const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, permalink, tags, bgIndex, authors}) => {
   return (
     <Link to={permalink} className="group flex flex-col overflow-hidden !text-black !no-underline">
-      <div className="flex h-full p-[1px] z-0 bg-custom-blog-card-light-border group-hover:bg-custom-blog-card-light-border-active dark:bg-custom-blog-card-dark-border group-hover:dark:bg-custom-blog-card-dark-border-active rounded-[13px]">
-        <div className="relative max-w-fill flex flex-col flex-1 px-2 py-2 border dark:border-none border-solid border-tailCall-darkMode---neutral-300 bg-[#f1f1f1] dark:bg-black gap-2 md:gap-3 rounded-[12px]">
+      <div className="flex h-full p-[1px] z-0 bg-custom-blog-card-light-border group-hover:bg-custom-blog-card-light-border-active dark:bg-card-border-gradient-nextStep group-hover:dark:bg-custom-blog-card-dark-border-active rounded-[13px]">
+        <div className="relative max-w-fill flex flex-col flex-1 px-1 py-1 border dark:border-none border-solid border-tailCall-darkMode---neutral-300 bg-[#f1f1f1] dark:bg-black gap-2 md:gap-3 rounded-[12px]">
           <div
-            className={`w-full relative mt-[5px] rounded-lg pt-5 pl-5 pb-16 overflow-hidden`}
+            className={`w-full relative rounded-lg pt-5 pl-5 pb-16 overflow-hidden`}
             style={{background: gradients[bgIndex]}}
           >
             <div className="flex flex-col font-kanit text-white text-content-tiny md:text-content-small lg:text-title-tiny xl:text-title-small !font-normal">

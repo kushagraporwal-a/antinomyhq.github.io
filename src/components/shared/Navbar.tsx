@@ -88,7 +88,7 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] backdrop-blur-3xl w-full p-5 ${
+      className={`fixed top-0 left-0 z-[999] backdrop-blur-3xl w-full p-5 bg-white/50 dark:bg-black/50 ${
         !isHome
           ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]"
           : ""
