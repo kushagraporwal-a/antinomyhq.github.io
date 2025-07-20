@@ -277,17 +277,17 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
       ) : (
         <div className="h-screen w-full bg-tailCall-light-1200 dark:bg-black text-black dark:text-white flex items-center justify-center transition-colors duration-300">
           <div className="flex flex-col items-center space-y-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div className="text-gray-600 dark:text-gray-300 text-sm font-medium">Loading...</div>
-            <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 border-t-cyan-500 rounded-full animate-spin"></div>
+            <img
+              src="/images/home/loading-light.svg"
+              alt="code"
+              className=" block dark:hidden w-20 h-20"
+            />
+            <img
+              src="/images/home/loading-dark.svg"
+              alt="code"
+              className=" dark:block hidden w-20 h-20"
+            />
+            <div className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 text-md font-light">{"{ Loading }"}</div>
           </div>
         </div>
       )}
