@@ -191,8 +191,13 @@ export default {
     },
 
     navbar: {
-      hideOnScroll: true,
-      items: [],
+      hideOnScroll: false,
+      items: [
+        {to: "/", label: "Home", position: "left"},
+        {to: "/pricing", label: "Pricing", position: "left"},
+        {to: "/docs", label: "Docs", position: "left"},
+        {to: "/blog", label: "Blogs", position: "left"},
+      ],
     },
     prism: {
       theme: prismTheme,

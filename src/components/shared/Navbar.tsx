@@ -8,6 +8,7 @@ import {useWindowSize} from "@docusaurus/theme-common"
 import ThemeToggle from "../home/ThemeToggle"
 import {analyticsHandler} from "@site/src/utils"
 import SearchBar from "@site/src/theme/SearchBar"
+import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle"
 
 const Logo = () => (
   <Link href="/" className="flex items-center justify-center">
@@ -88,7 +89,7 @@ const NewNavbar = (): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[999] backdrop-blur-3xl w-full p-5 bg-white/50 dark:bg-black/50 ${
+      className={`fixed top-0 left-0 backdrop-blur-3xl w-full p-5 ${
         !isHome
           ? "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]"
           : ""
@@ -127,7 +128,7 @@ const NewNavbar = (): JSX.Element => {
           {/* Logo + Desktop Nav */}
           <div className="flex gap-5 items-center">
             <Logo />
-            <ul className="m-0 hidden md:flex font-kanit list-none items-center gap-SPACE_07 text-white font-normal text-title-small">
+            <ul className="m-0 hidden lg:flex font-kanit list-none items-center gap-SPACE_07 text-white font-normal text-title-small">
               {NavbarItems.map((item) => (
                 <NavLink key={item.name} href={item.link} label={item.name} />
               ))}
@@ -135,8 +136,8 @@ const NewNavbar = (): JSX.Element => {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-0 md:gap-3">
-            <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-0 lg:gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <Button variant="navlink" onClick={handleSignUp}>
                 <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400">
                   Signup
@@ -145,19 +146,13 @@ const NewNavbar = (): JSX.Element => {
               <SearchBar />
               <ThemeToggle />
             </div>
-            <Button
-              variant="transparent"
-              onClick={handeNavbarToggle}
-              className="md:hidden !bg-tailCall-lightMode---primary-700 dark:!bg-tailCall-darkMode---primary-400 rounded p-[9px]"
-            >
-              <Menu className="text-white dark:text-black h-5 w-5" />
-            </Button>
-            <div className="flex md:hidden">
+            <div className="flex lg:hidden">
               <SearchBar />
             </div>
-            <div className="flex md:hidden">
+            <div className="flex lg:hidden">
               <ThemeToggle />
             </div>
+            <NavbarMobileSidebarToggle />
           </div>
         </div>
       )}

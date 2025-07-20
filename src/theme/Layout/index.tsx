@@ -60,13 +60,7 @@ export default function Layout(props: Props): JSX.Element {
 
         <div
           id={SkipToContentFallbackId}
-          className={clsx(
-            ThemeClassNames.wrapper.main,
-            styles.mainWrapper,
-            wrapperClassName,
-            `${location.pathname !== "/" ? "mt-[81px]" : "mt-auto"}`,
-            `${location.pathname !== "/" ? "mb-[100px]" : ""}`,
-          )}
+          className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
         >
           <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
         </div>
