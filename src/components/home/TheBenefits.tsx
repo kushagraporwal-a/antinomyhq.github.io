@@ -143,12 +143,12 @@ const TheBenefits = (): JSX.Element => {
         >
           <div className="relative">
             <img
-              src="/images/home/black-circle.svg"
+              src="/images/home/Black-Circle.svg"
               alt="ellipse"
               className={clsx("circle-logo", "w-full h-screen dark:block hidden")}
             />
             <img
-              src="/images/home/light-circle.svg"
+              src="/images/home/Light-Circle.svg"
               alt="ellipse"
               className={clsx("circle-logo", "w-full h-screen block dark:hidden")}
             />
