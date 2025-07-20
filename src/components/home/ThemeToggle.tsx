@@ -21,7 +21,7 @@ const ThemeToggle: React.FC = () => {
         p-[1px] border-none rounded-[0px] cursor-pointer bg-transparent
       "
     >
-      <div className="bg-tailCall-light-1200 dark:bg-black p-2 rounded flex items-center justify-center border border-solid border-[--docsearch-brand-color]">
+      <div className="bg-tailCall-light-1200 dark:bg-black p-[6px] rounded flex items-center justify-center border border-solid border-[--docsearch-brand-color]">
         {theme !== "light" ? (
           <MoonStar className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" /> 
         ) : (
