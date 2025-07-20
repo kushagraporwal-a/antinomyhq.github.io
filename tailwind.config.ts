@@ -157,6 +157,8 @@ module.exports = {
         "custom-radial-gradient": "radial-gradient(97.79% 94.15% at 15.05% 0%, #FFF 0%, #2A2A2A 100%)",
         "gradient-315": "linear-gradient(320deg, #555555 67.54%, #30EDE6 95.6%);",
         "gradient-315-light": "linear-gradient(320deg, #018284 67.54%, #30EDE6 95.6%);",
+        "gradient-315-inactive": "linear-gradient(180deg, #525252 0%, #4B4B4B 100%);",
+        "gradient-315-light-inactive": "linear-gradient(180deg, #DBDBDB 0%, #B1B1B1 100%);",
         "gradient-border-card": "linear-gradient(280.23deg, #525252 53.49%, #30EDE6 90.2%);",
         "custom-diagonal":
           "linear-gradient(135deg, rgba(62, 62, 62, 1) 0%, rgba(50, 208, 202, 1) 51%, rgba(102, 102, 102, 1) 100%)",
@@ -172,7 +174,7 @@ module.exports = {
           "linear-gradient(358.39deg, #D4D4D4 -17.24%, #00CEC9 33.76%, #D4D4D4 84.75%)",
         "radial-bottom-teal": "radial-gradient(54.35% 37.56% at 50% 106.61%, #30EDE6 0%, rgba(255, 255, 255, 0) 100%)",
         "radial-pricing-text": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFF 0%, #7C7C7C 100%)",
-        "gradient-border": "linear-gradient(90deg, #2F2F2F -1.04%, #30EDE6 47.84%, #323232 96.72%)",
+        "gradient-border": "linear-gradient(90deg, #A1A1A1 0%, #00CEE9 50%, #A1A1A1 100%)",
         "gradient-pricing-title": "radial-gradient(3039.26% 162.31% at 88.96% 175.81%, #FFFFFF 0%, #7C7C7C 100%)",
         "gradient-procing-cards-dark":
           "radial-gradient(62.55% 79.85% at 47.58% 100.04%, #30EDE6 0%, rgba(0, 0, 0, 0.1) 100%)",

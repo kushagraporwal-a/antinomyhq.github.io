@@ -45,6 +45,7 @@ function LoadMoreButton({handleLoadMore}: {handleLoadMore: () => void}): JSX.Ele
           cursor-pointer
           transition-all duration-300
           text-[18px]
+          font-kanit
           border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
           text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black
           bg-transparent hover:bg-tailCall-lightMode---primary-700 hover:dark:bg-tailCall-lightMode---primary-400 

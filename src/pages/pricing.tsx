@@ -70,7 +70,7 @@ const PricingPage = (): JSX.Element => {
       </div>
       <main>
         <Section className="py-16 lg:py-24 dark:bg-black bg-tailCall-light-1200">
-          <div className="text-center mb-20">
+          <div className="text-center mb-14">
             <Heading
               as="h1"
               className="text-title-large !font-normal md:text-content-regular mb-2 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
@@ -85,7 +85,7 @@ const PricingPage = (): JSX.Element => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 pb-12 mb-24">
             {tiers.map((tier) => (
-              <div className="bg-gradient-315 rounded-[13px] group p-[2px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
+              <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
                 <div
                   key={tier.name}
                   className={clsx("p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full")}
@@ -155,7 +155,7 @@ const PricingPage = (): JSX.Element => {
             <div className="items-start mt-10">
               <Heading
                 as="h2"
-                className="text-title-large !font-normal md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
+                className="text-title-large !font-medium md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
               >
                 FAQ
               </Heading>
@@ -178,7 +178,7 @@ const PricingPage = (): JSX.Element => {
                     <span
                       className={clsx(
                         "text-content-small md:text-question-title",
-                        openIndex === index ? "text-[#262626] dark:text-white" : "text-[#A1A1A1]",
+                        openIndex === index ? "text-[#262626] dark:text-white" : "text-tailCall-lightMode---neutral-500",
                         "transition-colors duration-300",
                       )}
                     >

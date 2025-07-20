@@ -133,7 +133,7 @@ export const BlogAuthor: React.FC<AuthorDisplayProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className={clsx(
-              "font-semibold text-gray-900 hover:text-blue-600 transition-colors no-underline",
+              "font-semibold text-gray-900 hover:text-tailCall-lightMode---primary-700 dark:hover:text-tailCall-darkMode---primary-400 transition-colors no-underline",
               textClassName,
             )}
             onClick={(e) => e.stopPropagation()}
