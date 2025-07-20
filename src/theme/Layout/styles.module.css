@@ -19,4 +19,5 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--ifm-link-color-100);
+  zoom: 0.85;
 }
