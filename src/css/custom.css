@@ -855,6 +855,10 @@ nav.menu {
     height: 1rem;
   }
 
+  html.dark .navbar-sidebar__item .menu__link:not(.header-button)::after {
+    background: url("../../static/icons/basic/chevron-right-dark.svg") no-repeat;
+  }
+
   .navbar-sidebar__item .menu__list-item-collapsible .menu__link:after {
     display: none !important;
   }

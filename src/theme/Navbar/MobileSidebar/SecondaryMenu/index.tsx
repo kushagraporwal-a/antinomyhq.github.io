@@ -5,7 +5,11 @@ import Translate from "@docusaurus/Translate"
 
 function SecondaryMenuBackButton(props: ComponentProps<"button">) {
   return (
-    <button {...props} type="button" className="clean-btn navbar-sidebar__back dark:text-black">
+    <button
+      {...props}
+      type="button"
+      className="clean-btn navbar-sidebar__back dark:text-tailCall-darkMode---neutral-500"
+    >
       <Translate
         id="theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel"
         description="The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"

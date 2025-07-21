@@ -31,14 +31,14 @@ export default function NavbarLayout({children}: Props): ReactNode {
       className={clsx(
         ThemeClassNames.layout.navbar.container,
         "navbar",
-        "navbar--fixed-top",
+        "navbar--fixed-top fixed w-full",
         hideOnScroll && [styles.navbarHideable, !isNavbarVisible && styles.navbarHidden],
         {
           "navbar--dark": style === "dark",
           "navbar--primary": style === "primary",
           "navbar-sidebar--show": mobileSidebar.shown,
         },
-        "bg-tailCall-light-1200 dark:bg-black",
+        "bg-tailCall-light-1200 dark:bg-black lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-3xl",
         {
           "bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]":
             !isHome,

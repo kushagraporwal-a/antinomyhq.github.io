@@ -29,7 +29,7 @@ function NavbarMobileSidebarPanel({children, inert}: {children: ReactNode; inert
 export default function NavbarMobileSidebarLayout({header, primaryMenu, secondaryMenu}: Props): ReactNode {
   const {shown: secondaryMenuShown} = useNavbarSecondaryMenu()
   return (
-    <div className={clsx(ThemeClassNames.layout.navbar.mobileSidebar.container, "navbar-sidebar z-10")}>
+    <div className={clsx(ThemeClassNames.layout.navbar.mobileSidebar.container, "navbar-sidebar z-10 dark:bg-black")}>
       {header}
       <div
         className={clsx("navbar-sidebar__items", {
