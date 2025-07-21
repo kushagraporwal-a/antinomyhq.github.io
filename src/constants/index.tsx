@@ -683,19 +683,20 @@ export const NavbarItems = [
 export const StatsForDevelopers = [
   {
     title: "Code Generated",
-    stat: 50000,
-    suffix: "+",
+    stat: 1.4,
+    suffix: "M+",
   },
   {
     title: "Consumed Tokens",
-    stat: 99.7,
-    suffix: "%",
+    stat: 1.8,
+    suffix: "B+",
     decimals: 1,
   },
 
   {
     title: "Stars",
-    stat: 3554,
+    stat: 3.8,
+    suffix: "K+",
   },
 ]
 
