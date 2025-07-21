@@ -61,7 +61,8 @@ const CopyCodeButton = ({
         w-[250px] overflow-hidden
         px-2 py-4 sm:px-6 lg:px-4 sm:py-5 lg:py-6
         cursor-pointer
-        transition-all duration-800
+        transition-all duration-1000
+        ease-in-out
         text-lg
         border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
         text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 hover:text-white hover:dark:text-black
@@ -70,13 +71,31 @@ const CopyCodeButton = ({
         disabled ? "cursor-not-allowed opacity-20" : "",
       )}
     >
-      {title && <span className={clsx("absolute -translate-x-[400px] group-hover:translate-x-[-15px] z-[1] text-[18px] font-kanit transition-all duration-800", titleClassName)}>{title}</span>}
-      {title && <span className={clsx("absolute translate-x-0 group-hover:translate-x-[400px] z-[1] text-[18px] font-kanit transition-all duration-800", titleClassName)}>Try Now</span>}
+      {title && (
+        <span
+          className={clsx(
+            "absolute -translate-x-[400px] group-hover:translate-x-[-15px] z-[1] text-[18px] font-kanit transition-all duration-[1000ms]",
+            titleClassName,
+          )}
+        >
+          {title}
+        </span>
+      )}
+      {title && (
+        <span
+          className={clsx(
+            "absolute translate-x-0 group-hover:translate-x-[400px] z-[1] text-[18px] font-kanit transition-all duration-[500ms]",
+            titleClassName,
+          )}
+        >
+          Try Now
+        </span>
+      )}
 
       {!isCopied ? (
-        <Copy className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[95px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+        <Copy className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[95px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black transition-all duration-[1000ms]" />
       ) : (
-        <CopyCheck className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[95px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black" />
+        <CopyCheck className="opacity-0 group-hover:opacity-100 -translate-x-[400px] group-hover:translate-x-[95px] stroke-current text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 group-hover:text-white group-hover:dark:text-black transition-all duration-[1000ms]" />
       )}
     </button>
   )

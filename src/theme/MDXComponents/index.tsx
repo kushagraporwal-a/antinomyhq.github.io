@@ -15,14 +15,14 @@ import type {MDXComponentsObject} from "@theme/MDXComponents"
 
 const CustomTh = (props: ComponentProps<"th">) => (
   <th
-    className="px-4 py-2 text-left text-sm font-semibold text-white bg-gray-700 border-b border-gray-600"
+    className="px-4 py-4 text-left text-sm font-semibold text-white bg-gray-700 border-gray-600 first:rounded-tl-xl last:rounded-tr-xl !border !border-b !border-solid border-b-tailCall-darkMode---neutral-300 dark:border-b-tailCall-darkMode---neutral-700"
     {...props}
   />
 )
 
 const CustomTd = (props: ComponentProps<"td">) => (
   <td
-    className="px-4 py-2 text-sm text-tailCall-lightMode---neutral-600 dark:text-gray-300 border-b border-gray-700"
+    className="px-4 py-4 text-sm text-tailCall-lightMode---neutral-600 dark:text-gray-300 border-b border-gray-700 border border-solid border-b-tailCall-darkMode---neutral-300 dark:border-b-tailCall-darkMode---neutral-700 bg-tailCall-darkMode---neutral-100"
     {...props}
   />
 )

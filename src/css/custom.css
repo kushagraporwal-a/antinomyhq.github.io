@@ -108,6 +108,7 @@ body {
   --ifm-navlink: #525252;
   --ifm-navlink-active: #057A75;
   --ifm-navlink-hover: #06A6A6;
+  --ifm-table-td: #E5E5E5;
 }
 
 [data-theme="dark"] {
@@ -122,6 +123,7 @@ body {
   --ifm-navlink:#A1A1A1;
   --ifm-navlink-active: #30EDE6;
   --ifm-navlink-hover: #30EDE6;
+  --ifm-table-td: #0A0A0A;
 }
 
 code {
@@ -1211,13 +1213,12 @@ span.token.tag.script.language-javascript {
 
 [class^="docItemContainer"] thead tr,
 [class^="docItemContainer"] thead tr th {
-  border: none !important;
-  color: #000 !important;
+  color: #171717 !important;
 }
 
 [data-theme="dark"] [class^="docItemContainer"] thead tr,
 [data-theme="dark"] [class^="docItemContainer"] thead tr th {
-  color: #fff !important;
+  color: #fafafa !important;
 }
 
 [class^="docItemContainer"] tbody tr:not(:last-child) {
@@ -1479,4 +1480,37 @@ code > span.token-line {
 
 [data-theme="dark"] .react-tweet-theme{
   border: 1px solid #2B2B2B !important;
+}
+
+table thead {
+  background-color: transparent !important;
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 0.75rem; /* matching rounded-bl-xl */
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 0.75rem; /* matching rounded-br-xl */
+}
+
+table tbody tr:nth-child(even) td {
+  background-color: var(--ifm-table-td) !important;
+}
+
+[data-theme="dark"] table tbody tr td {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] table tbody tr:nth-child(even) td {
+  background-color: #171717 !important;
+}
+table thead tr th {
+  border: transparent !important;
+}
+
+table thead tr {
+  border: 1px solid !important;
 }

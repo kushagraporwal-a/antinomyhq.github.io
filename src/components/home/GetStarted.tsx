@@ -139,9 +139,9 @@ const GetStarted = (): JSX.Element => {
             className: clsx(
               "text-title-tiny xl:text-title-large xl:font-normal font-kanit absolute top-14 left-64 md:top-20 md:left-72 xl:top-28 xl:left-[560px]",
               "max-[390px]:left-[70%]",
-              "max-[360px]:left-[66%]",
+              "max-[360px]:left-[70%]",
               "max-[320px]:left-[63%]",
-              "max-[425px]:left-[65%]",
+              "max-[425px]:left-[70%]",
             ),
           })}
 
@@ -160,7 +160,7 @@ const GetStarted = (): JSX.Element => {
               "absolute top-8 left-0 sm:left-40 md:top-32 xl:top-56 xl:left-[300px] font-bebas font-normal -tracking-normal",
               "max-md:top-[120px] max-md:left-[0%]",
               "max-[300px]:top-[120px]",
-              sharedTextSizes.replace("text-[64px]", "text-[64px] max-[390px]:text-[58px]"),
+              sharedTextSizes.replace("text-[64px]", "text-[64px] max-[390px]:text-[55px]"),
             ),
           })}
         </div>

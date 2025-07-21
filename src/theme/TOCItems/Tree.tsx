@@ -20,6 +20,8 @@ function TOCItemTree({toc, className, linkClassName, linkActiveClassName, isChil
       const el = document.querySelector(".table-of-contents__link--active") as HTMLAnchorElement
       if (el?.hash) {
         setActiveId(el.hash.replace("#", ""))
+      } else {
+        setActiveId(null)
       }
     })
 

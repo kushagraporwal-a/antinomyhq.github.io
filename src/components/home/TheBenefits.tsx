@@ -141,16 +141,16 @@ const TheBenefits = (): JSX.Element => {
             zIndex: 2,
           }}
         >
-          <div className="relative">
+          <div className="relative flex items-center justify-center xl:-top-[75px]">
             <img
               src="/images/home/Black-Circle.svg"
               alt="ellipse"
-              className={clsx("circle-logo", "w-full h-screen dark:block hidden")}
+              className={clsx("circle-logo", "w-[75%] h-screen dark:block hidden")}
             />
             <img
               src="/images/home/Light-Circle.svg"
               alt="ellipse"
-              className={clsx("circle-logo", "w-full h-screen block dark:hidden")}
+              className={clsx("circle-logo", "w-[75%] h-screen block dark:hidden")}
             />
             <img
               src="/images/home/code-logo.svg"
