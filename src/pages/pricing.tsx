@@ -90,8 +90,18 @@ const PricingPage = (): JSX.Element => {
                   key={tier.name}
                   className={clsx("p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full")}
                 >
-                  <div className="absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"></div>
+                  <div
+                    className={clsx(
+                      "absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial",
+                      {"opacity-100": tier.name === "Max"},
+                    )}
+                  ></div>
 
+                  {tier.name === "Max" && (
+                    <div className="bg-[#4FDB1C38] absolute right-[1px] px-4 rounded-tl-[40px] rounded-bl-[40px]">
+                      <span className="font-kanit text-white text-content-mini leading-10">Limited Time Only</span>
+                    </div>
+                  )}
                   {/* Card Content */}
                   <div className="relative z-10">
                     <div className="flex flex-col flex-grow">
@@ -106,6 +116,11 @@ const PricingPage = (): JSX.Element => {
                           <span className="text-content-tiny text-tailCall-darkMode---neutral-600 dark:text-white">
                             {tier.period}
                           </span>
+                          {tier.name === "Max" && (
+                            <span className="text-content-medium leading-[14px] font-kanit font-light text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-400 line-through decoration-from-font">
+                              $200/month
+                            </span>
+                          )}
                         </div>
                       </div>
                       {tier.description && (

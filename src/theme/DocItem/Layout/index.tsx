@@ -49,7 +49,11 @@ export default function DocItemLayout({children}: DocItemLayoutProps) {
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme={theme === "dark" ? "dark" : "light"}
+        theme={
+          theme === "dark"
+            ? "https://antinomyhq-github-io.vercel.app/giscus-dark.css"
+            : "https://antinomyhq-github-io.vercel.app/giscus-light.css"
+        }
         lang="en"
         strict="0"
         loading="lazy"
