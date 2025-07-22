@@ -9,6 +9,15 @@ description: "Why per-seat pricing is the closest we can get to fair, outcome-ba
 hide_table_of_contents: false
 ---
 
+import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
+
+<ElevenLabsAudioPlayer 
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
+  projectId="1BZC5A0EIcDSQiNFeZmi" 
+/>
+
+
+
 I've been watching the AI tools space for two years now, and I keep seeing the same pattern: companies launch with simple pricing, then gradually make it more complex and user-hostile. Token-based pricing is the worst offender.
 
 Here's why it's broken, and what we're trying instead with Forge.
