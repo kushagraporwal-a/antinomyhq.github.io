@@ -41,7 +41,7 @@ main {
   --color-btn-active-bg: hsl(212deg 12% 18% / 100%);
   --color-btn-active-border: #6e7681;
   --color-btn-selected-bg: #161b22;
-  --color-btn-primary-text: #fff;
+  --color-btn-primary-text: #000;
   --color-btn-primary-bg: #30EDE6;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
