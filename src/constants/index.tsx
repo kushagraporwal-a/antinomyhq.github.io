@@ -682,21 +682,22 @@ export const NavbarItems = [
 
 export const StatsForDevelopers = [
   {
-    title: "Code Generated",
-    stat: 1.4,
-    suffix: "M+",
-  },
-  {
-    title: "Consumed Tokens",
+    title: "Tokens / day",
     stat: 1.8,
     suffix: "B+",
     decimals: 1,
   },
-
   {
-    title: "Stars",
+    title: "Lines of code / day",
+    stat: 1.4,
+    suffix: "M+",
+    decimals: 1,
+  },
+  {
+    title: "Github Stars",
     stat: 3.8,
     suffix: "K+",
+    decimals: 1,
   },
 ]
 
