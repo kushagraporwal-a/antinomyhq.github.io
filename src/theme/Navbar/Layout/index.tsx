@@ -9,7 +9,13 @@ import type {Props} from "@theme/Navbar/Layout"
 import styles from "./styles.module.css"
 
 function NavbarBackdrop(props: ComponentProps<"div">) {
-  return <div role="presentation" {...props} className={clsx("navbar-sidebar__backdrop", props.className)} />
+  return (
+    <div
+      role="presentation"
+      {...props}
+      className={clsx("navbar-sidebar__backdrop !bg-[rgb(64,64,64,0.5)]", props.className)}
+    />
+  )
 }
 
 export default function NavbarLayout({children}: Props): ReactNode {

@@ -26,7 +26,7 @@ function CloseButton() {
 
 export default function NavbarMobileSidebarHeader(): ReactNode {
   return (
-    <div className="relative navbar-sidebar__brand dark:bg-black bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]">
+    <div className="relative navbar-sidebar__brand !h-[72px] dark:bg-black bg-[radial-gradient(40.27%_100.55%_at_50%_100%,_rgba(48,237,230,0.5)_0%,_rgba(0,0,0,0)_100%)] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[.6px] after:bg-[linear-gradient(90deg,rgba(212,212,212,1)_0%,rgba(0,206,201,1)_62%,rgba(212,212,212,1)_100%)] after:dark:bg-[linear-gradient(90deg,rgba(75,75,75,1)_0%,rgba(0,206,201,1)_62%,rgba(75,75,75,1)_100%)]">
       <NavbarLogo />
       <NavbarColorModeToggle className="margin-right--md" />
       <CloseButton />

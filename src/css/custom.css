@@ -110,6 +110,7 @@ body {
   --ifm-navlink-hover: #06A6A6;
   --ifm-table-td: #E5E5E5;
   --ifm-pre-border: #E5E5E5;
+  --ifm-table-even: #FAFAFA;
 }
 
 [data-theme="dark"] {
@@ -119,13 +120,14 @@ body {
   --ifm-hr: #4b4b4b;
   --ifm-sidebar-menu-link: #30ede6;
   --ifm-code-background: var(--tailCall-darkMode---neutral-500);
-  --ifm-pre-code-background: #181818;
+  --ifm-pre-code-background: #404040;
   --ifm-details-ul-li: #b1b1b1;
   --ifm-navlink:#A1A1A1;
   --ifm-navlink-active: #30EDE6;
   --ifm-navlink-hover: #30EDE6;
   --ifm-table-td: #0A0A0A;
   --ifm-pre-border: #404040;
+  --ifm-table-even: #1D1D1D;
 }
 
 code {
@@ -444,6 +446,10 @@ hr {
 .navbar__item.dropdown.navbar__link--active {
   color: var(--ifm-navlink-active);
   border-radius: 6px;
+}
+
+.navbar-sidebar {
+  width: 85vw !important;
 }
 
 .navbar-sidebar__item .menu__link:hover {
@@ -1232,7 +1238,7 @@ span.token.tag.script.language-javascript {
 
 [data-theme="dark"] [class^="docItemContainer"] thead tr,
 [data-theme="dark"] [class^="docItemContainer"] thead tr th {
-  color: #fafafa !important;
+  color: #e6e6e6 !important;
 }
 
 [class^="docItemContainer"] tbody tr:not(:last-child) {
@@ -1258,7 +1264,7 @@ span.token.tag.script.language-javascript {
 }
 
 [data-theme="dark"] [class^="docItemContainer"] thead tr th {
-  background-color: #171717 !important;
+  background-color: #262626 !important;
 }
 
 [class^="docItemContainer"] tbody tr:nth-child(even) {
@@ -1479,9 +1485,15 @@ code,
 code[class*="language-"] {
   color: var(--tailCall-lightMode---neutral-500) !important;
 }
+
+code,
+code[class*="language-"] {
+  color: black !important;
+}
+
 [data-theme="dark"] code,
 [data-theme="dark"] code[class*="language-"] {
-  color: var(--tailCall-darkMode---neutral-300) !important;
+  color: #D4D4D4 !important;
 }
 
 code > span.token-line {
@@ -1496,8 +1508,16 @@ code > span.token-line {
   border: 1px solid #2B2B2B !important;
 }
 
+table {
+  margin-top: 10px !important;
+}
+
 table thead {
   background-color: transparent !important;
+}
+
+[data-theme="dark"] table thead tr th {
+  background-color: #262626;
 }
 
 table tbody tr:last-child td:first-child {
@@ -1511,15 +1531,19 @@ table tbody tr:last-child td:last-child {
 }
 
 table tbody tr:nth-child(even) td {
-  background-color: var(--ifm-table-td) !important;
+  background-color: var(--ifm-table-even) !important;
+}
+
+table tbody tr td {
+  background-color: #F5F5F5 !important;
 }
 
 [data-theme="dark"] table tbody tr td {
-  background-color: #000 !important;
+  background-color: #171717 !important;
 }
 
 [data-theme="dark"] table tbody tr:nth-child(even) td {
-  background-color: #171717 !important;
+  background-color: var(--ifm-table-even) !important;
 }
 table thead tr th {
   border: transparent !important;
