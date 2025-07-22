@@ -227,7 +227,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
-  color: var(--docsearch-input-color);
+  color: var(--docsearch-hit-a-color) !important;
 }
 
 input[type="search"]::placeholder {
