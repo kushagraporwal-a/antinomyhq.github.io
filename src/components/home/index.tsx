@@ -13,8 +13,8 @@ const HomePage = (): JSX.Element => {
     <div className="relative flex flex-col dark:bg-tailCall-dark-700 bg-[#F1F1F1]">
       <Banner />
       <GetStarted />
-      <WhyForge />
       <TheBenefits />
+      <WhyForge />
       <BuiltFor />
       {/* <TheTeams /> */}
     </div>

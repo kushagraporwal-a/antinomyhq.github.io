@@ -10,6 +10,10 @@
   --docsearch-brand-color: #057a75;
   --docsearch-input-color: #545556;
   --docsearch-form-hr-color: #cececf;
+  --docsearch-search-result-bg: #E6E6E6;
+  --docsearch-footer-bg: #fff;
+  --docsearch-hit-title-hover: #018B84;
+  --docsearch-hit-a-color: #525252;
 }
 
 [data-theme="dark"] {
@@ -17,6 +21,10 @@
   --docsearch-brand-color: #30ede6;
   --docsearch-input-color: #bcbcbc;
   --docsearch-form-hr-color: #4b4b4b;
+  --docsearch-search-result-bg: #FFFFFF1C;
+  --docsearch-footer-bg: #000;
+  --docsearch-hit-title-hover: #30EDE6;
+  --docsearch-hit-a-color: white;
 }
 
 .DocSearch-Button {
@@ -37,10 +45,6 @@
   transition: all;
   transition-duration: 500;
 }
-
-/* .DocSearch-Button-Container:hover {
-  box-shadow: 0px 0px 34.624px 5.705px #30ede6;
-} */
 
 .DocSearch-Cancel {
   margin: 0 10px;
@@ -69,16 +73,18 @@
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-text,
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-title,
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Tree {
-  color: var(--ifm-color-gray-900);
+  color: var(--docsearch-hit-a-color);
 }
 
 .DocSearch-Hits ul li a {
-  background-color: white;
+  background-color: var(--docsearch-search-result-bg);
   box-shadow: none;
+  color: var(--docsearch-hit-a-color) !important;
 }
 
 .DocSearch-Hit[aria-selected="true"] a {
-  background-color: var(--ifm-color-brand-light-200);
+  background-color: var(--docsearch-search-result-bg);
+  color: var(--docsearch-hit-a-color);
 }
 
 .DocSearch-Commands-Key {
@@ -134,6 +140,7 @@
 .DocSearch-Footer {
   border-top: 1px solid var(--docsearch-form-hr-color);
   box-shadow: none;
+  background-color: var(--docsearch-footer-bg);
 }
 
 .DocSearch-HitsFooter {
@@ -178,11 +185,19 @@
 }
 
 .DocSearch-Hit-title {
-  color: var(--ifm-color-brand-dark) !important;
+  color: var(--docsearch-hit-a-color) !important;
   font-family: var(--ifm-font-family-base);
   font-size: 16px;
   line-height: 25px;
   font-weight: 500;
+}
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title {
+  color: var(--docsearch-hit-a-color) !important;
+}
+
+.DocSearch-Hit-Container:hover .DocSearch-Hit-title {
+  color: var(--docsearch-hit-title-hover) !important;
 }
 
 .DocSearch-Hit-path {

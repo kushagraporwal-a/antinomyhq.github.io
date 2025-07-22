@@ -128,10 +128,10 @@ const TheBenefits = (): JSX.Element => {
   )
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center z-0">
       <div
         ref={sectionRef}
-        className="xl:max-w-[1440px] relative w-full h-[110vh] md:h-[120vh] flex flex-col pt-10 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-40"
+        className="xl:max-w-[1440px] relative w-full h-[110vh] md:h-[120vh] flex flex-col pt-10 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-64"
       >
         <div
           className="sticky top-0 flex flex-col items-center bg-[#F1F1F1] dark:bg-black"
