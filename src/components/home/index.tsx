@@ -16,7 +16,7 @@ const HomePage = (): JSX.Element => {
       <TheBenefits />
       <WhyForge />
       <BuiltFor />
-      <div className="bg-[#E76D6D6E] py-2 px-4 fixed -right-16 top-48 flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
+      <div className="bg-[#632F2F] py-2 px-4 fixed -right-16 top-48 flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
         <span className="bg-[#FFFFFF33] p-1 h-6 w-6 rounded-full text-white flex items-center justify-center text-content-mini">
           P
         </span>
@@ -25,7 +25,7 @@ const HomePage = (): JSX.Element => {
           <span className="text-white font-kanit text-title-tiny">Product Hunt</span>
         </div>
       </div>
-      <div className="bg-[#FFFFFF54] py-2 px-4 fixed -right-12 top-[22.5rem] flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
+      <div className="bg-[#545454] py-2 px-4 fixed -right-12 top-[22.5rem] flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
         <span className="bg-[#FFFFFF33] p-1 h-6 w-6 rounded-full text-white flex items-center justify-center text-content-mini">
           <img src="/icons/basic/GithubLogo.svg" alt="Github Logo" />
         </span>

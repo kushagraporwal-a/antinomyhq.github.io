@@ -1,13 +1,11 @@
 import React from "react"
-import CopyCodeButton from "../shared/CopyCodeButton"
-import Button from "../shared/Button"
 import {footerItems} from "@site/src/constants"
 import FooterItem from "../shared/FooterItem"
 import Link from "@docusaurus/Link"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="relative flex xl:justify-center xl:items-center flex-col gap-14 px-6 py-10 z-[99] bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
+    <footer className="relative flex xl:justify-center xl:items-center flex-col gap-14 px-6 py-10 z-10 bg-white dark:bg-black border-t-[1px] border-t-solid border-[#DDDDDD33]">
       <div className="grid grid-cols-2 sm:grid-cols-4 md:flex justify-between gap-5 flex-wrap xl:w-[1280px]">
         {footerItems.map(({items, title}) => {
           return <FooterItem key={title} items={items} title={title} />
