@@ -19,7 +19,7 @@ export default function BlogRecentPosts({sidebar}: {sidebar: Props["sidebar"]}):
 
   return isBlogPostPage ? (
     <div className="">
-      <div className="ml-[15%] mr-[17%]">
+      <div className="mx-[5%] lg:ml-[15%] lg:mr-[17%]">
         <div className="">
           <hr className="h-[1px]" />
           <h1 className="text-[22px] text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400 font-medium">

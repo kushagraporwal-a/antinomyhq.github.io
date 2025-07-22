@@ -109,6 +109,7 @@ body {
   --ifm-navlink-active: #057A75;
   --ifm-navlink-hover: #06A6A6;
   --ifm-table-td: #E5E5E5;
+  --ifm-pre-border: #E5E5E5;
 }
 
 [data-theme="dark"] {
@@ -124,6 +125,7 @@ body {
   --ifm-navlink-active: #30EDE6;
   --ifm-navlink-hover: #30EDE6;
   --ifm-table-td: #0A0A0A;
+  --ifm-pre-border: #404040;
 }
 
 code {
@@ -345,6 +347,15 @@ hr {
 
 [data-theme="dark"] .blogPage-container .pagination-nav {
   background-color: #18171A;
+}
+
+@media screen and (max-width: 425px) {
+  .blogPage-container .pagination-nav {
+    background-color: transparent;
+  }
+  [data-theme="dark"] .blogPage-container .pagination-nav {
+  background-color: transparent;
+}
 }
 
 .pagination-nav__sublabel {
@@ -991,6 +1002,10 @@ pre[class*="language-"],
   background-color: #f8f8f8 !important;
 }
 
+.theme-code-block pre {
+  border: 1px solid var(--ifm-pre-border);
+}
+
 .theme-code-block,
 pre.prism-code {
   border-radius: 12px !important;
@@ -1002,14 +1017,13 @@ pre.prism-code {
 pre.prism-code code {
   color: #000 !important;
   background-color: #f8f8f8 !important;
-  border: 1px solid #e5e5e5 !important;
   border-radius: 12px;
 }
 
 [data-theme="dark"] pre.prism-code code {
   color: #fff !important;
   background-color: #18171a !important;
-  border: 1px solid #404040 !important;
+  border: none !important;
 }
 
 .theme-code-block {
@@ -1373,7 +1387,7 @@ details {
 
 details summary {
   background-color: #f5f5f5;
-  padding: 16px 16px 16px 30px !important;
+  padding: 16px 32px 16px 30px !important;
   cursor: pointer;
   border-radius: 12px;
   font-weight: var(--ifm-font-weight-semibold);

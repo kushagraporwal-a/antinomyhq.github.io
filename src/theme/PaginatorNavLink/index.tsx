@@ -50,6 +50,18 @@ export default function PaginatorNavLink(props: Props): JSX.Element {
           )}
         </div>
       </div>
+      <div className="md:hidden">
+        {!isNext && (
+          <span className="flex items-center flex-shrink-0 w-[26px] h-[26px]">
+            <NavigatorIcon isNext={isNext!} />
+          </span>
+        )}
+        {isNext && (
+          <span className="flex items-center flex-shrink-0 w-[26px] h-[26px]">
+            <NavigatorIcon isNext={isNext} />
+          </span>
+        )}
+      </div>
     </Link>
   )
 }
