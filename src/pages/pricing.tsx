@@ -77,13 +77,13 @@ const PricingPage = (): JSX.Element => {
             >
               Plans for Your Need
             </Heading>
-            <p className="text-title-small-pricing !text-[22px] font-kanit !font-normal text-[16px] text-tailCall-darkMode---neutral-500 max-w-2xl mx-auto font-kanit">
+            <p className="text-title-small-pricing !text-[22px] font-kanit !font-normal text-tailCall-darkMode---neutral-500 max-w-2xl mx-auto">
               Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
               seamless fit!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 pb-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 max-w-7xl mx-auto pb-12 mb-24">
             {tiers.map((tier) => (
               <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
                 <div
@@ -178,7 +178,9 @@ const PricingPage = (): JSX.Element => {
                     <span
                       className={clsx(
                         "text-content-small md:text-question-title",
-                        openIndex === index ? "text-[#262626] dark:text-white" : "text-tailCall-lightMode---neutral-500",
+                        openIndex === index
+                          ? "text-[#262626] dark:text-white"
+                          : "text-tailCall-lightMode---neutral-500",
                         "transition-colors duration-300",
                       )}
                     >
