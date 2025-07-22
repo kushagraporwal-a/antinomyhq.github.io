@@ -16,8 +16,6 @@ import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPl
   projectId="1BZC5A0EIcDSQiNFeZmi" 
 />
 
-
-
 I've been watching the AI tools space for two years now, and I keep seeing the same pattern: companies launch with simple pricing, then gradually make it more complex and user-hostile. Token-based pricing is the worst offender.
 
 Here's why it's broken, and what we're trying instead with Forge.
