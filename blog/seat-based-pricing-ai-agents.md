@@ -41,6 +41,8 @@ This is backwards. The tool should encourage exploration, not ration it.
 
 Token pricing also creates weird incentives. The vendor profits when you use more tokens, so they have no reason to be concise or efficient. Meanwhile, you're trying to minimize usage to control costs. Your goals are misaligned from day one.
 
+Developers are vocally frustrated with these limitations. In a recent Cursor forum thread, users complained about [100,000 tokens being consumed for a single edit](https://forum.cursor.com/t/why-is-a-simple-edit-eating-100-000-tokens-let-s-talk-about-this/120025), highlighting the arbitrary and opaque nature of token consumption. Another thread detailed [user frustration with sudden token drain and access restrictions](https://forum.cursor.com/t/frustrated-with-cursor-s-sudden-token-drain-and-access-restrictions/118086), underscoring how token-based pricing creates unnecessary stress and unpredictability.
+
 ## What We Actually Want: Outcome-Based Pricing
 
 Ideally, you'd pay based on results. Bugs fixed, features shipped, code quality improvements. That would align everyone's incentives perfectly.
