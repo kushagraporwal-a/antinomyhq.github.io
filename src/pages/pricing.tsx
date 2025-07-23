@@ -87,7 +87,7 @@ const PricingPage = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 max-w-7xl mx-auto pb-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-4 max-w-7xl mx-auto pb-12 mb-24">
             {tiers.map((tier) => (
               <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-visible hover:-translate-y-4 hover:shadow-2xl">
                 <div
@@ -108,7 +108,7 @@ const PricingPage = (): JSX.Element => {
                           <span className="font-kanit text-white text-content-mini leading-10">Limited Time Only</span>
                         </div>
                       </div>
-                      <div className="absolute -right-[10px] top-[60px] md:top-[3.8rem] lg:top-[60px] xl:top-[3.8rem]">
+                      <div className="absolute -right-[10px] top-[60px] md:top-[3.8rem] lg:top-[60px] xl:top-[3.7rem]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" viewBox="0 0 11 9" fill="none">
                           <path d="M0.5 8.5L10.5 0H0.5V8.5Z" fill="#67815E" />
                         </svg>
