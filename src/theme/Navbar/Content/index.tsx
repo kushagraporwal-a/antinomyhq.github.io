@@ -210,7 +210,7 @@ const NavbarContent = (): JSX.Element => {
           {!mobileSidebar.shouldRender && (
             <Button variant="navlink" onClick={handleSignUp}>
               <span className="text-tailCall-lightMode---primary-700 dark:text-tailCall-darkMode---primary-400">
-                Signup
+                Sign up
               </span>
             </Button>
           )}
