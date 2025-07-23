@@ -1030,26 +1030,20 @@ export const GUIDES = [
 export const FAQS = [
   {
     question: "How do I purchase additional prompts?",
-    answer: `Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your monthly limit.
-              Pro users can buy 250 additional prompts for $10 USD, while Max users (after early access) can purchase 1000 additional prompts for $25 USD.
-              These additional prompts are added to your current month's allowance.`,
+    answer: `Additional prompts can be purchased directly through your ForgeCode dashboard when you approach your
+              monthly limit.<strong>Pro users</strong> can buy 250 additional prompts for $10 USD, while These additional prompts are added to
+              your current month's allowance.`,
   },
   {
     question: "What's the difference between Free, Pro, and Max plans?",
-    answer: `Free ($0): Basic AI model access with limited daily usage, perfect for getting started.
-              Pro ($20/month): Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.
-              Max (FREE - normally $200/month): Normally 10,000 prompts per month, but unlimited access during this limited-time early access offer.`,
-  },
-  {
-    question: "What does '20X the Pro plan' mean for Max?",
-    answer: `The Max plan offers 20 times the value of Pro at 10 times the price. While Pro gives you 500 requests
-              per month, Max normally provides 10,000 requests monthly. During this limited-time early access, Max
-              users get unlimited requests with no restrictions, plus exclusive early access features and priority support.`,
+    answer: `<strong>Free ($0):</strong> Basic AI model access with limited daily usage, perfect for getting started.
+              <strong>Pro ($20/month):</strong> Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.<br/>
+              <strong>Max (FREE - normally $200/month):</strong> Unlimited access.`,
   },
   {
     question: "What are 'top tier' models?",
-    answer: `Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium
-              models from each provider that offer the best performance for complex coding tasks.`,
+    answer: `Top tier models include the most advanced AI models like GPT-4, Claude-4, and Gemini 2.5 - the premium models
+              from each provider that offer the best performance for complex coding tasks.`,
   },
   {
     question: "How does the Max plan unlimited usage work?",
@@ -1058,28 +1052,23 @@ export const FAQS = [
               requests with no rate limits, daily caps, or usage restrictions at the special $0/month price (normally $200/month).`,
   },
   {
-    question: "What happens when I exceed my prompt limit?",
-    answer: `Free users: Hit daily usage limits and need to wait for reset or upgrade.
-              Pro users: After using your 500 included prompts, you can purchase additional
-              prompts: 250 prompts for $10 USD.
-              Max users: Currently unlimited during early access. After early access ends, you can
-              purchase additional prompts: 1000 prompts for $25 USD.`,
+    question: "What happens when I exceed my monthly prompt limit?",
+    answer: `<strong>Free users:</strong> Hit daily usage limits and need to wait for reset or upgrade.
+            <strong>Pro users:</strong> After using your 500 included prompts, you can purchase additional prompts: 250 prompts for $10 USD.`,
   },
   {
     question: "Is my code secure and private?",
-    answer: `Absolutely. ForgeCode runs entirely on your local machine using your own API keys. Your code never
-              leaves your computer - no cloud processing, no data collection, complete privacy and security.`,
+    answer: `Absolutely. ForgeCode runs entirely on your local machine using your own API keys. Your code never 
+              leaves your computer - no cloud processing, complete privacy and security.`,
   },
   {
     question: "Can I upgrade or downgrade my plan anytime?",
-    answer: `Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at
-              your next billing cycle. The Max plan unlimited access is a limited-time early access offer - normally
-              Max provides 10,000 prompts per month.`,
+    answer: `Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at your next billing cycle.`,
   },
   {
     question: "Do I need my own API keys?",
-    answer: `For Free users, you'll need your own API keys for AI models. Pro and Max users get included access to
-              premium models without needing separate API keys, plus the option to use your own keys for additional providers.`,
+    answer: `For Free users, you'll need your own API keys for AI models. Pro and Max users get included access to premium
+             models without needing separate API keys, plus the option to use your own keys for additional providers.`,
   },
 ]
 
@@ -1087,15 +1076,10 @@ export const tiers = [
   {
     name: "Free",
     price: "$0",
-    period: "/month",
+    period: "forever",
     description: "Best for personal use",
-    features: [
-      "Access to core CLI features",
-      "Smart command suggestions",
-      "0 AI prompts/day",
-      "Local-only usage, no cloud sync",
-    ],
-    cta: "Get Started",
+    features: ["Basic AI model access", "Community support", "Local processing"],
+    cta: "Get Started Free",
     href: pageLinks.signup,
     popular: true,
     icons: ["/icons/basic/settings_pricing.svg"],
@@ -1109,12 +1093,12 @@ export const tiers = [
     features: [
       "Everything in Pro",
       "Unlimited requests",
-      "Latest AI models",
+      "Latest AI models (Sonnet4, Gemini-2.5 pro, Grok-4, Gpt-4 series)",
       "24/7 priority support",
       "Advanced analytics",
       "Custom integrations",
     ],
-    cta: "Get Started",
+    cta: "Get Unlimited Access",
     href: pageLinks.signup,
     popular: true,
     special: true,
@@ -1123,7 +1107,7 @@ export const tiers = [
   {
     name: "Pro",
     price: "$20",
-    period: "/per month",
+    period: "/month",
     description: "Most popular for individual developers",
     features: [
       "Everything in Free",
@@ -1132,7 +1116,7 @@ export const tiers = [
       "Additional prompts: 250 for $10 USD",
       "Priority support",
     ],
-    cta: "Get Started",
+    cta: "Start Pro Plan",
     href: pageLinks.signup,
     popular: true,
     icons: ["/icons/basic/SketchLogo.svg"],

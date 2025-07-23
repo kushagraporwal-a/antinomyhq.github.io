@@ -75,17 +75,16 @@ const PricingPage = (): JSX.Element => {
               as="h1"
               className="text-title-large !font-normal md:text-content-regular mb-2 text-tailCall-lightMode---neutral-900 dark:text-white font-kanit"
             >
-              Plans for Your Need
+              Simple Pricing
             </Heading>
             <p className="text-title-small-pricing !text-[22px] font-kanit !font-normal text-tailCall-darkMode---neutral-500 max-w-2xl mx-auto">
-              Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
-              seamless fit!
+              Start free, upgrade when you're ready. No hidden fees.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 max-w-7xl mx-auto pb-12 mb-24">
             {tiers.map((tier) => (
-              <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-hidden hover:-translate-y-4 hover:shadow-2xl">
+              <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-visible hover:-translate-y-4 hover:shadow-2xl">
                 <div
                   key={tier.name}
                   className={clsx("p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full")}
@@ -98,9 +97,18 @@ const PricingPage = (): JSX.Element => {
                   ></div>
 
                   {tier.name === "Max" && (
-                    <div className="bg-[#4FDB1C38] absolute right-[1px] px-4 rounded-tl-[40px] rounded-bl-[40px]">
-                      <span className="font-kanit text-white text-content-mini leading-10">Limited Time Only</span>
-                    </div>
+                    <>
+                      <div className="absolute -right-[10px] rounded-tl-[40px] rounded-bl-[40px] p-[2px] bg-[linear-gradient(90deg,rgba(177,_192,_172,_1)_0%,_rgba(83,_90,_81,_1)_100%)] dark:bg-[linear-gradient(90deg,rgba(102,_102,_102,_1)_0%,_rgba(10,_31,_3,_1)_100%)]">
+                        <div className="bg-[#8AA780] dark:bg-[#41503C] px-4 rounded-tl-[40px] rounded-bl-[40px]">
+                          <span className="font-kanit text-white text-content-mini leading-10">Limited Time Only</span>
+                        </div>
+                      </div>
+                      <div className="absolute -right-[10px] top-[60px] md:top-[3.8rem] lg:top-[60px] xl:top-[3.8rem]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" viewBox="0 0 11 9" fill="none">
+                          <path d="M0.5 8.5L10.5 0H0.5V8.5Z" fill="#67815E" />
+                        </svg>
+                      </div>
+                    </>
                   )}
                   {/* Card Content */}
                   <div className="relative z-10">
@@ -170,9 +178,9 @@ const PricingPage = (): JSX.Element => {
             <div className="items-start mt-10">
               <Heading
                 as="h2"
-                className="text-title-large !font-medium md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white"
+                className="text-title-large !font-medium md:text-content-regular text-left mb-1 text-tailCall-lightMode---neutral-900 dark:text-tailCall-white !leading-[65px]"
               >
-                FAQ
+                Frequently Asked Questions
               </Heading>
               <div className="text-content-small md:text-question-title text-[#A1A1A1] !font-[275] dark:text-tailCall-border-light-300 font-kanit mt-5">
                 Select from best plan, ensuring a perfect match. Need more or less? Customize your subscription for a
@@ -208,9 +216,10 @@ const PricingPage = (): JSX.Element => {
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
-                    <p className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-light-800 py-1 font-kanit text-content-tiny md:text-[23px] leading-7 md:leading-[35px] font-[275]">
-                      {item.answer}
-                    </p>
+                    <p
+                      dangerouslySetInnerHTML={{__html: item.answer}}
+                      className="text-tailCall-darkMode---neutral-600 dark:text-tailCall-light-800 py-1 font-kanit text-content-tiny md:text-[23px] leading-7 md:leading-[35px] font-[275]"
+                    ></p>
                   </div>
                   <div className="bg-gradient-border h-[1px] w-full"></div>
                 </div>
