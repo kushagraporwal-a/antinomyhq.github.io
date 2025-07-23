@@ -202,9 +202,9 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
               </div>
 
               <X
-              onClick={handleClose}
-              className="ml-3 cursor-pointer text-tailCall-lightMode---neutral-500 dark:text-tailCall-lightMode---neutral-500 md:relative md:top-0 md:right-0 absolute top-4 right-4"
-            />
+                onClick={handleClose}
+                className="ml-3 cursor-pointer text-tailCall-lightMode---neutral-500 dark:text-tailCall-lightMode---neutral-500 md:relative md:top-0 md:right-0 absolute top-4 right-4"
+              />
             </div>
           </div>
         </>

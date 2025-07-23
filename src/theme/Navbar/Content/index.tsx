@@ -195,9 +195,9 @@ const NavbarContent = (): JSX.Element => {
           {mobileSidebar.shouldRender && <ThemeToggle />}
 
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
-          <div className="flex items-center lg:ml-48">          
-          <NavbarLogo />
-          <NavbarItems items={leftItems} />
+          <div className="flex items-center lg:ml-48">
+            <NavbarLogo />
+            <NavbarItems items={leftItems} />
           </div>
         </>
       }

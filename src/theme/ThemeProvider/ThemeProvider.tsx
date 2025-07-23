@@ -277,17 +277,11 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
       ) : (
         <div className="h-screen w-full bg-tailCall-light-1200 dark:bg-black text-black dark:text-white flex items-center justify-center transition-colors duration-300">
           <div className="flex flex-col items-center space-y-4">
-            <img
-              src="/images/home/loading-light.svg"
-              alt="code"
-              className=" block dark:hidden w-20 h-20"
-            />
-            <img
-              src="/images/home/loading-dark.svg"
-              alt="code"
-              className=" dark:block hidden w-20 h-20"
-            />
-            <div className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 text-md font-light">{"{ Loading }"}</div>
+            <img src="/images/home/loading-light.svg" alt="code" className=" block dark:hidden w-20 h-20" />
+            <img src="/images/home/loading-dark.svg" alt="code" className=" dark:block hidden w-20 h-20" />
+            <div className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400 text-md font-light">
+              {"{ Loading }"}
+            </div>
           </div>
         </div>
       )}

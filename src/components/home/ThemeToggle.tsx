@@ -1,7 +1,7 @@
 import React from "react"
 import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 import {analyticsHandler} from "@site/src/utils"
-import { MoonStar, Sun } from "lucide-react"
+import {MoonStar, Sun} from "lucide-react"
 
 const ThemeToggle: React.FC = () => {
   const {theme, toggleTheme} = useThemeContext()
@@ -23,9 +23,9 @@ const ThemeToggle: React.FC = () => {
     >
       <div className="bg-tailCall-light-1200 dark:bg-black p-[6px] rounded flex items-center justify-center border border-solid border-[--docsearch-brand-color]">
         {theme !== "light" ? (
-          <MoonStar className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" /> 
+          <MoonStar className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" />
         ) : (
-          <Sun className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" /> 
+          <Sun className="text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400" />
         )}
       </div>
     </button>

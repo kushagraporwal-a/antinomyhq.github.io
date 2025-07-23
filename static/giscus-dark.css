@@ -42,11 +42,11 @@ main {
   --color-btn-active-border: #6e7681;
   --color-btn-selected-bg: #161b22;
   --color-btn-primary-text: #000;
-  --color-btn-primary-bg: #30EDE6;
+  --color-btn-primary-bg: #30ede6;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
-  --color-btn-primary-hover-bg: #30EDE6;
+  --color-btn-primary-hover-bg: #30ede6;
   --color-btn-primary-hover-border: rgb(240 246 252 / 10%);
   --color-btn-primary-selected-bg: #238636;
   --color-btn-primary-selected-shadow: 0 0 transparent;

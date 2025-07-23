@@ -1,40 +1,40 @@
-import React, {type ReactNode} from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
-import {translate} from '@docusaurus/Translate';
-import {useLocation} from '@docusaurus/router';
-import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import IconLanguage from '@theme/Icon/Language';
-import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
-import type {Props} from '@theme/NavbarItem/LocaleDropdownNavbarItem';
+import React, {type ReactNode} from "react"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import {useAlternatePageUtils} from "@docusaurus/theme-common/internal"
+import {translate} from "@docusaurus/Translate"
+import {useLocation} from "@docusaurus/router"
+import DropdownNavbarItem from "@theme/NavbarItem/DropdownNavbarItem"
+import IconLanguage from "@theme/Icon/Language"
+import type {LinkLikeNavbarItemProps} from "@theme/NavbarItem"
+import type {Props} from "@theme/NavbarItem/LocaleDropdownNavbarItem"
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css"
 
 export default function LocaleDropdownNavbarItem({
   mobile,
   dropdownItemsBefore,
   dropdownItemsAfter,
-  queryString = '',
+  queryString = "",
   ...props
 }: Props): ReactNode {
   const {
     i18n: {currentLocale, locales, localeConfigs},
-  } = useDocusaurusContext();
-  const alternatePageUtils = useAlternatePageUtils();
-  const {search, hash} = useLocation();
+  } = useDocusaurusContext()
+  const alternatePageUtils = useAlternatePageUtils()
+  const {search, hash} = useLocation()
 
   const localeItems = locales.map((locale): LinkLikeNavbarItemProps => {
     const baseTo = `pathname://${alternatePageUtils.createUrl({
       locale,
       fullyQualified: false,
-    })}`;
+    })}`
     // preserve ?search#hash suffix on locale switches
-    const to = `${baseTo}${search}${hash}${queryString}`;
+    const to = `${baseTo}${search}${hash}${queryString}`
     return {
       label: localeConfigs[locale]!.label,
       lang: localeConfigs[locale]!.htmlLang,
       to,
-      target: '_self',
+      target: "_self",
       autoAddBaseUrl: false,
       className:
         // eslint-disable-next-line no-nested-ternary
@@ -43,22 +43,22 @@ export default function LocaleDropdownNavbarItem({
             // class name. This cannot be substituted with isActive, because the
             // target URLs contain `pathname://` and therefore are not NavLinks!
             mobile
-            ? 'menu__link--active'
-            : 'dropdown__link--active'
-          : '',
-    };
-  });
+            ? "menu__link--active"
+            : "dropdown__link--active"
+          : "",
+    }
+  })
 
-  const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter];
+  const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter]
 
   // Mobile is handled a bit differently
   const dropdownLabel = mobile
     ? translate({
-        message: 'Languages',
-        id: 'theme.navbar.mobileLanguageDropdown.label',
-        description: 'The label for the mobile language switcher dropdown',
+        message: "Languages",
+        id: "theme.navbar.mobileLanguageDropdown.label",
+        description: "The label for the mobile language switcher dropdown",
       })
-    : localeConfigs[currentLocale]!.label;
+    : localeConfigs[currentLocale]!.label
 
   return (
     <DropdownNavbarItem
@@ -72,5 +72,5 @@ export default function LocaleDropdownNavbarItem({
       }
       items={items}
     />
-  );
+  )
 }
