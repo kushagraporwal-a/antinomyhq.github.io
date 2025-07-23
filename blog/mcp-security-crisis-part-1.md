@@ -1,10 +1,19 @@
 ---
 slug: prevent-attacks-on-mcp
-title: "MCP Security Vulnerabilities and Attack Vectors"
+title: "MCP Security Crisis: Uncovering Vulnerabilities and Attack Vectors - Part 1"
 authors: [tushar]
-tags: ["Security", "MCP", "AI Safety", "Vulnerabilities"]
+tags:
+  [
+    "Security",
+    "MCP",
+    "AI Safety",
+    "Vulnerabilities",
+    "Prompt Injection",
+    "Supply Chain Security",
+    "Authentication",
+  ]
 date: 2025-06-17
-description: "Found some concerning security patterns in MCP implementations. Here's what I've been seeing and why you should care."
+description: "A deep dive into critical security vulnerabilities found in Model Context Protocol (MCP) implementations, including tool description injection, authentication weaknesses, and supply chain risks, highlighting why these issues demand immediate attention in AI development."
 hide_table_of_contents: false
 ---
 
@@ -150,6 +159,12 @@ Part 2 will cover specific mitigation strategies and some tools I've been buildi
 If you're building MCP tools or have seen other security issues, let me know. This ecosystem is still small enough that we can actually fix problems before they become disasters.
 
 ## Footnotes
+
+## Related Articles
+
+- <CustomLink href="/blog/prevent-attacks-on-mcp-part2">MCP Security Prevention: Practical Strategies for AI Development - Part 2</CustomLink>
+- <CustomLink href="/blog/mcp-spec-updates">MCP New Specs: AI Agent Capabilities and Security Enhancements</CustomLink>
+- <CustomLink href="/blog/ai-agent-best-practices">AI Agent Best Practices: Maximizing Productivity with Forge</CustomLink>
 
 <a id="footnote-1"></a>**1.** Anthropic. "Model Context Protocol Specification." GitHub Repository. <CustomLink href="https://github.com/modelcontextprotocol/specification">https://github.com/modelcontextprotocol/specification</CustomLink> <CustomLink href="#ref-1">↩</CustomLink>
 

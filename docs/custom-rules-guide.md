@@ -1,7 +1,7 @@
 import CustomLink from '@site/src/components/shared/CustomLink'
 import Card from '@site/src/components/shared/Card'
 
-# Working with Custom Rules
+# Working with Custom Rules: AI-Driven Code Standards for Development Teams
 
 Every development team has its own way of doing things. Code style preferences, testing patterns, error handling approaches, naming conventions - the list goes on. The problem? AI coding assistants don't know your team's specific practices unless you tell them.
 
@@ -335,3 +335,11 @@ A: You can copy rules between `forge.yaml` files, or create a template for your 
 ---
 
 Custom rules transform AI coding from a series of corrections into a smooth, standards-compliant workflow. Your AI learns your team's way of doing things once, then applies that knowledge consistently across every project.
+
+## Related Guides
+
+To maximize your team's productivity with Forge, explore these complementary guides:
+
+- **<CustomLink href="/docs/model-selection-guide">Model Selection Guide</CustomLink>** - Choose the right AI models for your specific development tasks
+- **<CustomLink href="/docs/file-tagging-guide">File Tagging Guide</CustomLink>** - Use @ mentions to provide better context for AI code generation
+- **<CustomLink href="/docs/plan-and-act-guide">Plan and Act Guide</CustomLink>** - Structure your development workflow with AI planning before implementation
