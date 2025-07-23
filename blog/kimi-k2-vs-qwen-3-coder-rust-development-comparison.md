@@ -1,5 +1,5 @@
 ---
-slug: kimi-k2-vs-qwen-3-coder-rust-development-comparison
+slug: kimi-k2-vs-qwen-3-coder-coding-comparison
 title: "Kimi K2 vs Qwen-3 Coder: Testing Two AI Models on Coding Tasks"
 authors: [tushar]
 tags:
@@ -17,6 +17,13 @@ date: 2025-07-23
 description: "I tested Kimi K2 and Qwen-3 Coder on 13 Rust development tasks across a 38k-line codebase and 2 Frontend refactor tasks. The results reveal differences in code quality, instruction following, and development capabilities."
 hide_table_of_contents: false
 ---
+
+import ElevenLabsAudioPlayer from '@site/src/components/shared/ElevenLabsAudioPlayer';
+
+<ElevenLabsAudioPlayer 
+  publicUserId="96e32731df14f1442beaf5041eec1125596de23ef9ff6ef5d151d28a1464da1b"
+  projectId="bL9DGmPWEC6PQ6Ynux6P" 
+/>
 
 After spending 12 hours testing Kimi K2 and Qwen-3 Coder on identical Rust development tasks and Frontend Refactor tasks, I discovered something that benchmark scores don't reveal: In this testing environment, one model consistently delivered working code while the other struggled with basic instruction following. These findings challenge the hype around Qwen-3 Coder's benchmark performance and show why testing on your codebase matters more than synthetic scores.
 
