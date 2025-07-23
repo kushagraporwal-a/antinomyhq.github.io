@@ -6,30 +6,35 @@ import {Theme} from "@site/src/constants"
 import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {CircleCheck, Minus, Plus} from "lucide-react"
-import FinalCTA from "../components/home/FinalCTA"
-import OpenAILogo from "@site/src/assets/logos/openai.svg"
-import AnthropicLogo from "@site/src/assets/logos/anthropic.svg"
-import GoogleLogo from "@site/src/assets/logos/google.svg"
-import XAILogo from "@site/src/assets/logos/xai.svg"
-import MetaLogo from "@site/src/assets/logos/meta.svg"
-import MistralLogo from "@site/src/assets/logos/mistral.svg"
-import DeepSeekLogo from "@site/src/assets/logos/deepseek.svg"
 import NewLinkButton from "../components/shared/NewLinkButton"
 import clsx from "clsx"
 import {FAQS, tiers} from "../constants/index"
 import {useLocation} from "@docusaurus/router"
 import ReactGA from "react-ga4"
 import SpotlightSpan from "../components/home/SpotlightCursor"
+import AIProviderCard from "../components/shared/AIProviderCard"
 
 // AI Providers array for iteration
-const aiProviders = [
-  {name: "OpenAI", logo: OpenAILogo},
-  {name: "Anthropic", logo: AnthropicLogo},
-  {name: "Google", logo: GoogleLogo},
-  {name: "xAI", logo: XAILogo},
-  {name: "Meta", logo: MetaLogo},
-  {name: "Mistral", logo: MistralLogo},
-  {name: "Deepseek", logo: DeepSeekLogo},
+const AI_PROVIDERS = [
+  {title: "OpenAI", darkLogoUrl: "/images/pricing/openai-dark.svg", lightLogoUrl: "/images/pricing/openai-light.svg"},
+  {
+    title: "Anthropic",
+    darkLogoUrl: "/images/pricing/anthropic-dark.svg",
+    lightLogoUrl: "/images/pricing/anthropic-light.svg",
+  },
+  {title: "Google", darkLogoUrl: "/images/pricing/google-dark.svg", lightLogoUrl: "/images/pricing/google-light.svg"},
+  {title: "xAI", darkLogoUrl: "/images/pricing/xai-dark.svg", lightLogoUrl: "/images/pricing/xai-light.svg"},
+  {title: "Meta", darkLogoUrl: "/images/pricing/meta-dark.svg", lightLogoUrl: "/images/pricing/meta-light.svg"},
+  {
+    title: "Mistral",
+    darkLogoUrl: "/images/pricing/mistral-dark.svg",
+    lightLogoUrl: "/images/pricing/mistral-light.svg",
+  },
+  {
+    title: "Deepseek",
+    darkLogoUrl: "/images/pricing/deepseek-dark.svg",
+    lightLogoUrl: "/images/pricing/deepseek-light.svg",
+  },
 ]
 
 const PricingPage = (): JSX.Element => {
@@ -172,6 +177,24 @@ const PricingPage = (): JSX.Element => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex flex-col gap-10 xl:my-20">
+            <div className="bg-gradient-border h-[1px] w-full"></div>
+            <div className="flex flex-col items-center text-center xl:mt-10">
+              <span className="font-kanit text-[32px] lg:text-[37px] text-display-tiny font-normal text-tailCall-darkMode---neutral-800 dark:text-white">
+                Works with every model offered by leading AI providers.
+              </span>
+              <span className="font-kanit text-[16px] lg:text-[26px] text-question-title text-tailCall-darkMode---neutral-400 font-light max-w-[50rem] text-center">
+                Seamlessly integrate with OpenAI, Anthropic, Google, xAI, Meta, Mistral, and Deepseek models.
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6 max-w-5xl mx-auto xl:mb-10">
+              {AI_PROVIDERS.map(({title, lightLogoUrl, darkLogoUrl}) => (
+                <AIProviderCard title={title} lightLogoUrl={lightLogoUrl} darkLogoUrl={darkLogoUrl} />
+              ))}
+            </div>
+            <div className="bg-gradient-border h-[1px] w-full"></div>
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
