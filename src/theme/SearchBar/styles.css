@@ -40,7 +40,7 @@
 
 .DocSearch-Button-Container {
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid var(--docsearch-brand-color);
   transition: all;
   transition-duration: 500;

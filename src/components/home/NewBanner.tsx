@@ -45,7 +45,7 @@ const Banner = (): JSX.Element => {
               <button
                 onClick={handleSignUp}
                 className={`
-                          rounded-md
+                          rounded-lg
                           px-1 py-2 lg:px-8 lg:py-3 min-w-32
                           cursor-pointer
                           transition-all duration-300
@@ -60,7 +60,7 @@ const Banner = (): JSX.Element => {
               <button
                 onClick={handleGetStarted}
                 className={`
-                        rounded-md
+                        rounded-lg
                         px-1 py-2 lg:px-8 lg:py-3 min-w-32
                         cursor-pointer
                         transition-all duration-300

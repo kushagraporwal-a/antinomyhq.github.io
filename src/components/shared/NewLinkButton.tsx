@@ -53,7 +53,7 @@ const NewLinkButton = ({
         disabled:cursor-not-allowed
         flex items-center justify-center
         gap-x-2
-        rounded-[12px] sm:rounded-[12px]
+        rounded-[10px]
         h-10 sm:h-8
         px-4 py-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6
         cursor-pointer
