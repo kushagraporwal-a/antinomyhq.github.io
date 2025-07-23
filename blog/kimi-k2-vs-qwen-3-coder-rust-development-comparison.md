@@ -18,13 +18,13 @@ description: "I tested Kimi K2 and Qwen-3 Coder on 13 Rust development tasks acr
 hide_table_of_contents: false
 ---
 
-After spending 12 hours testing Kimi K2 and Qwen-3 Coder on identical Rust development tasks and Frontend Refactor tasks, I discovered something that benchmark scores don't reveal: in this testing environment, one model consistently delivered working code while the other struggled with basic instruction following. These findings challenge the hype around Qwen-3 Coder's benchmark performance and show why testing on your own codebase matters more than synthetic scores.
+After spending 12 hours testing Kimi K2 and Qwen-3 Coder on identical Rust development tasks and Frontend Refactor tasks, I discovered something that benchmark scores don't reveal: In this testing environment, one model consistently delivered working code while the other struggled with basic instruction following. These findings challenge the hype around Qwen-3 Coder's benchmark performance and show why testing on your codebase matters more than synthetic scores.
 
 <!--truncate-->
 
 ## Testing Methodology: Real Development Scenarios
 
-I designed this comparison around actual development scenarios that mirror daily Rust development work. No synthetic benchmarks or toy problems, just 13 challenging Rust tasks across a mature 38,000 line Rust codebase with complex async patterns, error handling, and architectural constraints, plus 2 frontend refactoring tasks across a 12,000 line React codebase.
+I designed this comparison around actual development scenarios that mirror daily Rust development work. No synthetic benchmarks or toy problems, just 13 challenging Rust tasks across a mature 38,000-line Rust codebase with complex async patterns, error handling, and architectural constraints, plus 2 frontend refactoring tasks across a 12,000-line React codebase.
 
 ### Test Environment Specifications
 
@@ -36,7 +36,7 @@ I designed this comparison around actual development scenarios that mirror daily
 - Extensive use of traits, generics, and async/await patterns
 - Comprehensive test suite with integration tests
 - React frontend with 12,000 lines using modern hooks and component patterns
-- Well documented coding guidelines (provided as [custom rules](/docs/custom-rules-guide/)/ cursor rules/ claude rules etc in different coding agents)
+- Well-documented coding guidelines (provided as [custom rules](/docs/custom-rules-guide/)/ cursor rules/ claude rules, in different coding agents)
 
 **Testing Categories:**
 
