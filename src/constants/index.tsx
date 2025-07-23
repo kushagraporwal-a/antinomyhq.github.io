@@ -1036,7 +1036,7 @@ export const FAQS = [
   },
   {
     question: "What's the difference between Free, Pro, and Max plans?",
-    answer: `<strong>Free ($0):</strong> Basic AI model access with limited daily usage, perfect for getting started.
+    answer: `<strong>Free ($0):</strong> Basic AI model access with limited daily usage, perfect for getting started.<br/>
               <strong>Pro ($20/month):</strong> Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.<br/>
               <strong>Max (FREE - normally $200/month):</strong> Unlimited access.`,
   },
@@ -1053,7 +1053,7 @@ export const FAQS = [
   },
   {
     question: "What happens when I exceed my monthly prompt limit?",
-    answer: `<strong>Free users:</strong> Hit daily usage limits and need to wait for reset or upgrade.
+    answer: `<strong>Free users:</strong> Hit daily usage limits and need to wait for reset or upgrade.<br/>
             <strong>Pro users:</strong> After using your 500 included prompts, you can purchase additional prompts: 250 prompts for $10 USD.`,
   },
   {
