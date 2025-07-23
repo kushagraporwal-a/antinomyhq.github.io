@@ -89,14 +89,7 @@ const PricingPage = (): JSX.Element => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-4 max-w-7xl mx-auto pb-12 mb-24">
             {tiers.map((tier) => (
-              <div
-                className={clsx(
-                  "bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-visible hover:-translate-y-4 hover:shadow-2xl",
-                  {
-                    "xl:-translate-y-4": tier.name === "Max",
-                  },
-                )}
-              >
+              <div className="bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col  transition-all duration-300 overflow-visible hover:-translate-y-4 hover:shadow-2xl">
                 <div
                   key={tier.name}
                   className={clsx("p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full")}
