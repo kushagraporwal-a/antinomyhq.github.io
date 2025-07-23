@@ -104,7 +104,7 @@ const PricingPage = (): JSX.Element => {
                   <div
                     className={clsx(
                       "absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial",
-                      {"opacity-100": tier.name === "Max"},
+                      {"!opacity-100": tier.name === "Max"},
                     )}
                   ></div>
 
