@@ -159,7 +159,7 @@ npx forgecode@latest
 
 ## Resources
 
-- [Documentation](https://forgecode.dev/docs) - Setup guides and API reference
+- [Documentation](/docs) - Setup guides and API reference
 - [GitHub Repository](https://github.com/antinomyhq/forge) - Source code and issues
 - [Discord Community](https://discord.gg/kRZBPpkgwq) - Support and discussions
 - [Release Notes](https://github.com/antinomyhq/forge/releases/tag/v0.98.0) - Complete changelog
