@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from "react"
-import SpotlightSpan from "./SpotlightCursor"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import clsx from "clsx"
 import {Copy, CopyCheck} from "lucide-react"
 import {FORGE_CODE_INSTALL_COMMAND} from "@site/src/constants"
 import {analyticsHandler} from "@site/src/utils"
+import SpotlightSpan from "../components/SpotlightCursor"
 
 gsap.registerPlugin(ScrollTrigger)
 

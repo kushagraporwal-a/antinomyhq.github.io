@@ -1,12 +1,12 @@
 import React, {useEffect, useRef} from "react"
-import TrustedByMarquee from "./TrustedByMarquee"
 import {companies, companiesLight} from "@site/src/constants"
-import TerminalWithTabs from "../shared/TerminalWithTabs"
-import SpotlightSpan from "./SpotlightCursor"
 import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 import clsx from "clsx"
 import {analyticsHandler} from "@site/src/utils"
 import {useHistory} from "@docusaurus/router"
+import SpotlightSpan from "../components/SpotlightCursor"
+import TerminalWithTabs from "../../shared/TerminalWithTabs"
+import TrustedByMarquee from "../components/TrustedByMarquee"
 
 const spotlightBase = "absolute -tracking-normal text-[118px] opacity-90 font-bebas"
 const sharedClasses =

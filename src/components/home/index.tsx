@@ -1,12 +1,5 @@
 import React from "react"
-
-import Navbar from "../shared/Navbar"
-import Banner from "./NewBanner"
-import GetStarted from "./GetStarted"
-import WhyForge from "./WhyForge"
-import TheBenefits from "./TheBenefits"
-import BuiltFor from "./BuiltFor"
-import TheTeams from "./TheTeams"
+import {Banner, TheBenefits, BuiltFor, GetStarted, WhyForge} from "./sections"
 
 const HomePage = (): JSX.Element => {
   return (

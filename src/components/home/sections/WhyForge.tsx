@@ -2,11 +2,11 @@ import React, {useEffect, useRef, useState} from "react"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
-import Card from "../shared/Card"
-import SpotlightSpan from "./SpotlightCursor"
-import Carousel from "../shared/Carousel"
 import clsx from "clsx"
 import {CARDS_DATA} from "@site/src/constants"
+import SpotlightSpan from "../components/SpotlightCursor"
+import Card from "../../shared/Card"
+import Carousel from "../../shared/Carousel"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -63,7 +63,7 @@ const WhyForge = (): JSX.Element => {
       // Calculate total scroll distance including all extended cards
       const totalCardsWidth = cards.scrollWidth
       // Add extra padding for larger screens
-      const extraPadding = viewportWidth >= 1440 ? cardWidth : cardWidth / 2
+      const extraPadding = viewportWidth >= 1440 ? cardWidth / 2 : cardWidth / 2
       // Calculate exact space needed for all cards to be visible
       const totalScroll = totalCardsWidth - viewportWidth + (cardWidth + gap) + extraPadding
 

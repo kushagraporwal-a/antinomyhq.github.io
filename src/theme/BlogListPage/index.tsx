@@ -15,7 +15,7 @@ import {useBlogPosts} from "@site/src/utils/hooks/useBlogPosts"
 import {FrontMatter} from "@theme/BlogPostPage"
 import {useLocation} from "@docusaurus/router"
 import ReactGA from "react-ga4"
-import SpotlightSpan from "@site/src/components/home/SpotlightCursor"
+import SpotlightSpan from "@site/src/components/home/components/SpotlightCursor"
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const {metadata} = props

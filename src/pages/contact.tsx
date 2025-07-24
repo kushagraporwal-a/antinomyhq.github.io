@@ -1,6 +1,6 @@
 import Layout from "@theme/Layout"
 import React, {useEffect, useState} from "react"
-import SpotlightSpan from "../components/home/SpotlightCursor"
+import SpotlightSpan from "../components/home/components/SpotlightCursor"
 import {UserIcon, IdCard, MailOpen, AlignLeft, SquarePen, BriefcaseBusiness} from "lucide-react"
 import LabeledInput from "../components/shared/Input/Input"
 import {useForm} from "react-hook-form"

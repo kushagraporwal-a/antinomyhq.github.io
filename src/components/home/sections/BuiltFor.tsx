@@ -1,8 +1,8 @@
 import React from "react"
-import CopyCodeButton from "../shared/CopyCodeButton"
 import {StatsForDevelopers} from "@site/src/constants"
-import StatCard from "../shared/StatCard"
-import SpotlightSpan from "./SpotlightCursor"
+import StatCard from "../../shared/StatCard"
+import SpotlightSpan from "../components/SpotlightCursor"
+import CopyCodeButton from "../../shared/CopyCodeButton"
 
 const BuiltFor = (): JSX.Element => {
   return (

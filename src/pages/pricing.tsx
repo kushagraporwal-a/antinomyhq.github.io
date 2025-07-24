@@ -11,7 +11,7 @@ import clsx from "clsx"
 import {FAQS, tiers} from "../constants/index"
 import {useLocation} from "@docusaurus/router"
 import ReactGA from "react-ga4"
-import SpotlightSpan from "../components/home/SpotlightCursor"
+import SpotlightSpan from "../components/home/components/SpotlightCursor"
 import AIProviderCard from "../components/shared/AIProviderCard"
 
 // AI Providers array for iteration

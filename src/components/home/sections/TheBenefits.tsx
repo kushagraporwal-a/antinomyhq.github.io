@@ -2,11 +2,11 @@ import React, {useState, useEffect, useRef} from "react"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
-import BenefitsCard from "../shared/BenefitsCard"
 import {BENEFITS} from "@site/src/constants"
-import SpotlightSpan from "./SpotlightCursor"
 import clsx from "clsx"
-import Carousel from "../shared/Carousel"
+import SpotlightSpan from "../components/SpotlightCursor"
+import Carousel from "../../shared/Carousel"
+import BenefitsCard from "../../shared/BenefitsCard"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
