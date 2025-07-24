@@ -140,6 +140,6 @@ We've enabled Grok 4 on Forge! If you're curious to experience the speed and bug
 
 ## Related posts
 
-1. [Deepseek R1-0528 Coding experience](https://forgecode.dev/blog/deepseek-r1-0528-coding-experience-review/)
-2. [Claude Sonnet 4 vs Gemini 2.5 Pro](https://forgecode.dev/blogclaude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison/)
-3. [Claude 4 initial Impression](https://forgecode.dev/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough/)
+1. [Deepseek R1-0528 Coding experience](/blog/deepseek-r1-0528-coding-experience-review/)
+2. [Claude Sonnet 4 vs Gemini 2.5 Pro](/blog/claude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison/)
+3. [Claude 4 initial Impression](/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough/)
