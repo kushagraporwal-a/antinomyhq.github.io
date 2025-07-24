@@ -10,6 +10,7 @@ const project = "antinomyhq.github.io"
 const mainDescription =
   "AI coding assistant that helps developers write better code faster. Get AI-powered code suggestions, refactoring, and debugging directly in your terminal."
 export default {
+  // Configuration updated to fix duplicate descriptions
   title,
   trailingSlash: true,
   tagline: "Forge: The AI Coding Assistant for Your Terminal",
@@ -59,13 +60,7 @@ export default {
         url: "https://forgecode.dev/",
       }),
     },
-    {
-      tagName: "meta",
-      attributes: {
-        name: "description",
-        content: mainDescription,
-      },
-    },
+
     {
       tagName: "meta",
       attributes: {
@@ -81,13 +76,7 @@ export default {
         content: title,
       },
     },
-    {
-      tagName: "meta",
-      attributes: {
-        property: "og:description",
-        content: mainDescription,
-      },
-    },
+
     {
       tagName: "meta",
       attributes: {
@@ -109,13 +98,7 @@ export default {
         content: title,
       },
     },
-    {
-      tagName: "meta",
-      attributes: {
-        name: "twitter:description",
-        content: mainDescription,
-      },
-    },
+
     {
       tagName: "script",
       attributes: {},
