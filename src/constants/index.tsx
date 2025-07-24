@@ -30,6 +30,15 @@ import BranchClientLogo from "@site/static/icons/client/branch.svg"
 import ClearTaxClientLogo from "@site/static/icons/client/cleartax.svg"
 import CommvaultClientLogo from "@site/static/icons/client/commvault.svg"
 import CoreEdgeClientLogo from "@site/static/icons/client/coreedge.svg"
+import AirbnbLogo from "@site/static/icons/client/airbnb-dark.svg"
+import DeelLogo from "@site/static/icons/client/deel-dark.svg"
+import DoordashLogo from "@site/static/icons/client/doordash-dark.svg"
+import GoogleLogo from "@site/static/icons/client/google-dark.svg"
+import MetaLogo from "@site/static/icons/client/meta-dark.svg"
+import NetflixLogo from "@site/static/icons/client/netflix-dark.svg"
+import RedditLogo from "@site/static/icons/client/reddit-dark.svg"
+import SalesforceLogo from "@site/static/icons/client/salesforce-dark.svg"
+import XLogo from "@site/static/icons/client/x-dark.svg"
 
 import Dream11ClientLogoLight from "@site/static/icons/client/dream11-light.svg"
 import AgodaClientLogoLight from "@site/static/icons/client/agoda-light.svg"
@@ -38,8 +47,29 @@ import BranchClientLogoLight from "@site/static/icons/client/branch-light.svg"
 import ClearTaxClientLogoLight from "@site/static/icons/client/cleartax-light.svg"
 import CommvaultClientLogoLight from "@site/static/icons/client/commvault-light.svg"
 import CoreEdgeClientLogoLight from "@site/static/icons/client/coreedge-light.svg"
+import AirbnbLogoLight from "@site/static/icons/client/airbnb.svg"
+import DeelLogoLight from "@site/static/icons/client/deel.svg"
+import DoordashLogoLight from "@site/static/icons/client/doordash.svg"
+import GoogleLogoLight from "@site/static/icons/client/google.svg"
+import MetaLogoLight from "@site/static/icons/client/meta.svg"
+import NetflixLogoLight from "@site/static/icons/client/netflix.svg"
+import RedditLogoLight from "@site/static/icons/client/reddit.svg"
+import SalesforceLogoLight from "@site/static/icons/client/salesforce.svg"
+import XLogoLight from "@site/static/icons/client/x.svg"
 
 export const companies: PartnerImage[] = [
+  {name: "Airbnb", logo: AirbnbLogoLight},
+  {name: "Apple", logo: "/icons/client/apple.svg"},
+  {name: "Deel", logo: DeelLogoLight},
+  {name: "Doordash", logo: DoordashLogoLight},
+  {name: "Google", logo: GoogleLogoLight},
+  {name: "Instacart", logo: "/icons/client/instacart.svg"},
+  {name: "Meta", logo: MetaLogoLight},
+  {name: "Microsoft", logo: "/icons/client/microsoft.svg"},
+  {name: "Netflix", logo: NetflixLogoLight},
+  {name: "Reddit", logo: RedditLogoLight},
+  {name: "Salesforce", logo: SalesforceLogoLight},
+  {name: "X", logo: XLogoLight},
   {name: "Dream11", logo: Dream11Logo},
   {name: "Agoda", logo: AgodaLogo},
   {name: "Amazon", logo: AmazonLogo},
@@ -50,6 +80,18 @@ export const companies: PartnerImage[] = [
 ]
 
 export const companiesLight: PartnerImage[] = [
+  {name: "Airbnb", logo: AirbnbLogo},
+  {name: "Apple", logo: "/icons/client/apple-dark.svg"},
+  {name: "Deel", logo: DeelLogo},
+  {name: "Doordash", logo: DoordashLogo},
+  {name: "Google", logo: GoogleLogo},
+  {name: "Instacart", logo: "/icons/client/instacart-dark.svg"},
+  {name: "Meta", logo: MetaLogo},
+  {name: "Microsoft", logo: "/icons/client/microsoft-dark.svg"},
+  {name: "Netflix", logo: NetflixLogo},
+  {name: "Reddit", logo: RedditLogo},
+  {name: "Salesforce", logo: SalesforceLogo},
+  {name: "X", logo: XLogo},
   {name: "Dream11", logo: Dream11ClientLogoLight},
   {name: "Agoda", logo: AgodaClientLogoLight},
   {name: "Amazon", logo: AmazonClientLogoLight},
@@ -58,6 +100,7 @@ export const companiesLight: PartnerImage[] = [
   {name: "Commvault", logo: CommvaultClientLogoLight},
   {name: "CoreEdge", logo: CoreEdgeClientLogoLight},
 ]
+
 export const clientLogos: PartnerImage[] = [
   {name: "Dream11", logo: Dream11ClientLogo},
   {name: "Agoda", logo: AgodaClientLogo},
