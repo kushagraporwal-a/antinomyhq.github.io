@@ -16,7 +16,7 @@ const HomePage = (): JSX.Element => {
       <TheBenefits />
       <WhyForge />
       <BuiltFor />
-      <div className="bg-[#632F2F] py-2 px-4 fixed -right-16 top-[170px] flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
+      {/* <div className="bg-[#632F2F] py-2 px-4 fixed -right-16 top-[170px] flex items-center gap-2 rounded-b-[8px] rotate-90 z-50">
         <span className="bg-[#FFFFFF33] p-1 h-6 w-6 rounded-full text-white flex items-center justify-center text-content-mini">
           P
         </span>
@@ -33,7 +33,7 @@ const HomePage = (): JSX.Element => {
           <span className="text-white uppercase font-kanit text-content-mini font-semibold">Featured on</span>
           <span className="text-white font-kanit text-title-tiny">Github</span>
         </div>
-      </div>
+      </div> */}
       {/* <TheTeams /> */}
     </div>
   )

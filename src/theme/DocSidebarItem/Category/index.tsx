@@ -174,7 +174,7 @@ export default function DocSidebarItemCategory({
           aria-current={isCurrentPage ? "page" : undefined}
           role={collapsible && !href ? "button" : undefined}
           aria-expanded={collapsible && !href ? !collapsed : undefined}
-          href={collapsible ? hrefWithSSRFallback ?? "#" : hrefWithSSRFallback}
+          href={collapsible ? (hrefWithSSRFallback ?? "#") : hrefWithSSRFallback}
           {...props}
         >
           {label}
