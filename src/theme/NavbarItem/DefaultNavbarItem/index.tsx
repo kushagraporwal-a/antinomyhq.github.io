@@ -20,9 +20,7 @@ export default function DefaultNavbarItem({
     return pathname === props.to || pathname.startsWith(`${props.to}/`)
   }, [pathname, props.to])
 
-  const ACTIVE_CLASS = isActive
-    ? (props.activeClassName ?? (mobile ? "menu__link--active" : "navbar__link--active"))
-    : ""
+  const ACTIVE_CLASS = isActive ? props.activeClassName ?? (mobile ? "menu__link--active" : "navbar__link--active") : ""
 
   return <Comp {...props} activeClassName={ACTIVE_CLASS} />
 }

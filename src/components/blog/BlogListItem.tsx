@@ -48,9 +48,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
           </div>
           <div className={`flex flex-col px-3 w-full ${tags ? "mt-3" : "mt-0"}`}>
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
-              {tags?.map(({label}) => (
-                <Chip label={label} key={label} />
-              ))}
+              {tags?.map(({label}) => <Chip label={label} key={label} />)}
             </div>
             <span
               className={`${tags ? "mt-5" : "mt-2"} font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium !font-normal line-clamp-2`}
