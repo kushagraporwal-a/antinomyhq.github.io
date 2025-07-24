@@ -26,11 +26,11 @@ Here's why it's broken, and what we're trying instead with Forge.
 
 Every few months, another AI company "optimizes" their pricing:
 
-| Company            | What They Did                                | How Users Reacted                                                                                                                    |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **Cursor**         | Replace simple Pro plan with "compute packs" | [Community revolt, CEO apology](https://cursor.com/blog/june-2025-pricing)                                                           |
-| **Claude Code**    | Cut token limits mid-billing cycle           | [Mass exodus, HN firestorm](https://techcruch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/) |
-| **GitHub Copilot** | Flat $19/user, soft quota nobody hits        | Users actually happy to pay                                                                                                          |
+| Company            | What They Did                                | How Users Reacted                                                                                                                     |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cursor**         | Replace simple Pro plan with "compute packs" | [Community revolt, CEO apology](https://cursor.com/blog/june-2025-pricing)                                                            |
+| **Claude Code**    | Cut token limits mid-billing cycle           | [Mass exodus, HN firestorm](https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/) |
+| **GitHub Copilot** | Flat $19/user, soft quota nobody hits        | Users actually happy to pay                                                                                                           |
 
 Notice the pattern? Developers will pay for value, but they hate metered anxiety.
 
