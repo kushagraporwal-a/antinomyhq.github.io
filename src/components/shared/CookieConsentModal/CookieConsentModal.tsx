@@ -5,6 +5,7 @@ import {CookiePreferenceCategory} from "@site/src/constants"
 import Link from "@docusaurus/Link"
 import {pageLinks} from "@site/src/constants/routes"
 import {X} from "lucide-react"
+import PrimaryButton from "../PrimaryButton"
 
 interface CookieConsentModalProps {
   open: boolean
@@ -137,66 +138,29 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({open, onAccept, 
                 {consentOptions.map(({text, onClick}) => {
                   if (text === "Accept All") {
                     return (
-                      <button
-                        key={text}
-                        onClick={onClick}
-                        className={`
-                          rounded-[12px]
-                          px-3 py-4
-                          w-[200px]
-                          cursor-pointer
-                          transition-all duration-300
-                          text-[16px]
-                          font-kanit
-                          border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                          text-white dark:text-black
-                          bg-tailCall-lightMode---primary-700 dark:bg-tailCall-lightMode---primary-400 `}
-                      >
+                      <PrimaryButton key={text} onClick={onClick} variant="solid" className="px-3 py-4">
                         {text}
-                      </button>
+                      </PrimaryButton>
                     )
                   }
 
                   if (text === "Deny") {
                     return (
-                      <button
+                      <PrimaryButton
                         key={text}
                         onClick={onClick}
-                        className={`
-                          rounded-[12px]
-                        px-3 py-4
-                        w-[100px]
-                        cursor-pointer
-                        transition-all duration-300
-                        text-[16px]
-                        font-kanit
-                        border-none
-                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
-                        bg-transparent`}
+                        variant="ghost"
+                        className="rounded-[12px] px-3 py-4 w-[100px]"
                       >
                         {text}
-                      </button>
+                      </PrimaryButton>
                     )
                   }
 
                   return (
-                    <button
-                      key={text}
-                      onClick={onClick}
-                      className={`
-                        rounded-[12px]
-                        px-3 py-4
-                        w-[200px]
-                        cursor-pointer
-                        transition-all duration-300
-                        text-[16px]
-                        font-kanit
-                        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
-                        bg-transparent `}
-                    >
+                    <PrimaryButton key={text} onClick={onClick} variant="outline" className="px-3 py-4">
                       {text}
-                    </button>
+                    </PrimaryButton>
                   )
                 })}
               </div>

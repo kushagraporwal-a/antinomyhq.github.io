@@ -7,6 +7,7 @@ import {useHistory} from "@docusaurus/router"
 import SpotlightSpan from "../components/SpotlightCursor"
 import TerminalWithTabs from "../../shared/TerminalWithTabs"
 import TrustedByMarquee from "../components/TrustedByMarquee"
+import PrimaryButton from "../../shared/PrimaryButton"
 
 const spotlightBase = "absolute -tracking-normal text-[118px] opacity-90 font-bebas"
 const sharedClasses =
@@ -42,36 +43,12 @@ const Banner = (): JSX.Element => {
               />
             </div>
             <div className="flex gap-4 mt-36 max-[375px]:ml-0 ml-5 md:ml-0 lg:mt-60 xl:mt-[22rem] xl:ml-20 z-10">
-              <button
-                onClick={handleSignUp}
-                className={`
-                          rounded-lg
-                          px-1 py-2 lg:px-8 lg:py-3 min-w-32
-                          cursor-pointer
-                          transition-all duration-300
-                          text-[16px]
-                          font-kanit
-                          border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                          text-white dark:text-black
-                          bg-tailCall-lightMode---primary-700 dark:bg-tailCall-lightMode---primary-400 `}
-              >
+              <PrimaryButton onClick={handleSignUp} variant="solid">
                 Sign up
-              </button>
-              <button
-                onClick={handleGetStarted}
-                className={`
-                        rounded-lg
-                        px-1 py-2 lg:px-8 lg:py-3 min-w-32
-                        cursor-pointer
-                        transition-all duration-300
-                        text-[16px]
-                        font-kanit
-                        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
-                        bg-transparent `}
-              >
+              </PrimaryButton>
+              <PrimaryButton onClick={handleGetStarted} variant="outline">
                 Get Started
-              </button>
+              </PrimaryButton>
             </div>
           </div>
           <div className="relative hidden md:flex lg:hidden flex-col">
@@ -83,36 +60,12 @@ const Banner = (): JSX.Element => {
               Forge is a non-intrusive light-weight AI assistant for - the terminal.
             </p>
             <div className="flex gap-4 md:mx-auto md:mt-64 z-10">
-              <button
-                onClick={handleSignUp}
-                className={`
-                          rounded-md
-                          px-1 py-2 md:px-8 md:py-3 min-w-32
-                          cursor-pointer
-                          transition-all duration-300
-                          text-[16px]
-                          font-kanit
-                          border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                          text-white dark:text-black
-                          bg-tailCall-lightMode---primary-700 dark:bg-tailCall-lightMode---primary-400 `}
-              >
+              <PrimaryButton onClick={handleSignUp} variant="solid">
                 Sign up
-              </button>
-              <button
-                onClick={handleGetStarted}
-                className={`
-                        rounded-md
-                        px-1 py-2 md:px-8 md:py-3 min-w-32
-                        cursor-pointer
-                        transition-all duration-300
-                        text-[16px]
-                        font-kanit
-                        border border-solid border-tailCall-lightMode---primary-700 dark:border-tailCall-lightMode---primary-400
-                        text-tailCall-lightMode---primary-700 dark:text-tailCall-lightMode---primary-400
-                        bg-transparent `}
-              >
+              </PrimaryButton>
+              <PrimaryButton onClick={handleGetStarted} variant="outline">
                 Get Started
-              </button>
+              </PrimaryButton>
             </div>
           </div>
           <div className="flex justify-center md:mt-8 md:ml-8">
