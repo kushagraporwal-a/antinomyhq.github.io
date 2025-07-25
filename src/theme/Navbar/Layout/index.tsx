@@ -3,6 +3,7 @@ import clsx from "clsx"
 import {ThemeClassNames, useThemeConfig} from "@docusaurus/theme-common"
 import {useHideableNavbar, useNavbarMobileSidebar} from "@docusaurus/theme-common/internal"
 import {translate} from "@docusaurus/Translate"
+import {useLocation} from "@docusaurus/router"
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar"
 import type {Props} from "@theme/Navbar/Layout"
 
@@ -24,6 +25,7 @@ export default function NavbarLayout({children}: Props): ReactNode {
   } = useThemeConfig()
   const mobileSidebar = useNavbarMobileSidebar()
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll)
+  const location = useLocation()
   const isHome = location.pathname === "/"
 
   return (
