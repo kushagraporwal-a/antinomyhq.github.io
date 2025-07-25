@@ -141,7 +141,7 @@ export default {
       attributes: {
         property: "og:description",
         content:
-          "Forge is a lightweight, non-intrusive AI coding assistant that integrates seamlessly with your terminal to boost developer productivity.",
+          "AI coding assistant that helps developers write better code faster. Get AI-powered code suggestions, refactoring, and debugging directly in your terminal.",
       },
     },
     {
