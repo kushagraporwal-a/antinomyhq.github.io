@@ -9,7 +9,7 @@ interface CustomLinkProps {
   onClick?: MouseEventHandler<HTMLAnchorElement> | undefined
 }
 
-const CustomLink: React.FC<CustomLinkProps> = ({href, children, className = "", external = false, onClick}) => {
+export const CustomLink: React.FC<CustomLinkProps> = ({href, children, className = "", external = false, onClick}) => {
   const baseClasses =
     "text-tailCall-lightMode---primary-600 dark:text-tailCall-darkMode---primary-400 hover:text-tailCall-lightMode---primary-700 dark:hover:text-tailCall-darkMode---primary-300 transition-colors duration-300"
 
