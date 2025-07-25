@@ -77,7 +77,23 @@ export default {
         media: "(prefers-color-scheme: dark)",
       },
     },
-
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        href: "/images/favicon-light.svg",
+        type: "image/svg+xml",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        href: "/images/favicon-dark.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    },
     {
       tagName: "script",
       attributes: {
@@ -117,10 +133,16 @@ export default {
       tagName: "meta",
       attributes: {
         property: "og:title",
-        content: title,
+        content: "The AI Coding Assistant for Your Terminal | Forge Code",
       },
     },
-
+    {
+      tagName: "meta",
+      attributes: {
+        property: "og:description",
+        content: "Forge is a non-intrusive light-weight AI coding assistant for the terminal.",
+      },
+    },
     {
       tagName: "meta",
       attributes: {
@@ -139,7 +161,7 @@ export default {
       tagName: "meta",
       attributes: {
         name: "twitter:title",
-        content: title,
+        content: "The AI Coding Assistant for Your Terminal | Forge Code",
       },
     },
 
@@ -290,6 +312,10 @@ export default {
     metadata: [
       {name: "twitter:card", content: "summary_large_image"},
       {name: "twitter:image", content: "/images/opengraph.png"},
+      {
+        property: "og:description",
+        content: "Forge is a non-intrusive light-weight AI coding assistant for the terminal.",
+      },
       {property: "og:image", content: "https://forgecode.dev/images/opengraph.png"},
       {property: "og:image:width", content: "1200"},
       {property: "og:image:height", content: "630"},
@@ -306,6 +332,7 @@ export default {
 
     navbar: {
       hideOnScroll: false,
+      title: "The AI Coding Assistant for Your Terminal | Forge Code",
       items: [
         {to: "/", label: "Home", position: "left"},
         {to: "/pricing", label: "Pricing", position: "left"},

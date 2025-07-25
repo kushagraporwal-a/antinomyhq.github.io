@@ -12,7 +12,7 @@ const SPOTLIGHT_SIZE = 400
 
 const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", style, showHighlighted = false}) => {
   const {theme} = useThemeContext()
-  const spanRef = useRef<HTMLSpanElement | null>(null)
+  const spanRef = useRef<HTMLHeadingElement | null>(null)
 
   const baseColor = useMemo(() => (theme === "dark" ? "hsla(0, 0%, 100%, 0.2)" : "rgba(0,0,0,0.2)"), [theme])
 
@@ -36,7 +36,7 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
   }, [])
 
   return (
-    <span
+    <h1
       ref={spanRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -52,7 +52,7 @@ const SpotlightSpan: React.FC<SpotlightSpanProps> = ({text, className = "", styl
       }}
     >
       {text}
-    </span>
+    </h1>
   )
 }
 

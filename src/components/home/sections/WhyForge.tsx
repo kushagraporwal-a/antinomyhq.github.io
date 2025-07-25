@@ -165,9 +165,9 @@ const WhyForge = (): JSX.Element => {
                       <div className="flex flex-col justify-between h-full gap-3">
                         <div className="flex flex-col gap-3">
                           <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                          <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light break-words text-left">
+                          <p className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light break-words text-left">
                             {card.title}
-                          </span>
+                          </p>
                         </div>
                         <div className="flex flex-col">
                           <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
@@ -190,9 +190,9 @@ const WhyForge = (): JSX.Element => {
                     <div className="flex flex-col justify-between h-full gap-3">
                       <div className="flex flex-col gap-3">
                         <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                        <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words text-left">
+                        <p className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words text-left">
                           {card.title}
-                        </span>
+                        </p>
                       </div>
                       <div className="flex flex-col">
                         <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
