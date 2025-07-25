@@ -19,11 +19,11 @@ const BenefitsCard = ({title, description, imageUrl, small}: BenefitsCardProps) 
             alt={`logo-light-${title}`}
             className="block dark:hidden w-10 h-10 md:w-auto md:h-auto"
           />
-          <span
+          <h3
             className={`font-kanit leading-7 text-tailCall-lightMode---neutral-800 dark:text-tailCall-lightMode---neutral-50 text-content-medium md:text-title-semi-large md:font-normal font-normal ${small ? "w-36 md:w-52" : "w-auto"} whitespace-normal break-words`}
           >
             {title}
-          </span>
+          </h3>
         </div>
         <p className="!mb-0 font-kanit text-title-tiny md:text-title-medium md:font-extralight font-light text-tailCall-lightMode---neutral-700 dark:text-tailCall-light-800 xl:tracking-[.5px] whitespace-normal break-words">
           {description}
