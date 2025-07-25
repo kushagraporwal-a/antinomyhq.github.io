@@ -148,9 +148,9 @@ We've recently added support for Grok 4 on Forge. If this sounds interesting to 
 
 ## Related Posts
 
-1. <CustomLink href="https://forgecode.dev/blog/claude-4-opus-vs-grok-4-comparison-full">Claude Opus 4 vs. Grok 4 Coding Comparison</CustomLink>
-2. <CustomLink href="https://forgecode.dev/blog/claude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison">Claude Opus 4 vs. Gemini 2.5 Pro</CustomLink>
-3. <CustomLink  href="https://forgecode.dev/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough">First Look at Claude 4</CustomLink>
+1. <CustomLink href="/blog/claude-4-opus-vs-grok-4-comparison-full">Claude Opus 4 vs. Grok 4 Coding Comparison</CustomLink>
+2. <CustomLink href="/blog/claude-sonnet-4-vs-gemini-2-5-pro-preview-coding-comparison">Claude Opus 4 vs. Gemini 2.5 Pro</CustomLink>
+3. <CustomLink  href="/blog/claude-4-initial-impressions-anthropic-ai-coding-breakthrough">First Look at Claude 4</CustomLink>
 
 ## Footnotes
 

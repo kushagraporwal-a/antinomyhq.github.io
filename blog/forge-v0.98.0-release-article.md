@@ -161,7 +161,7 @@ npx forgecode@latest
 
 ## Resources
 
-- <CustomLink href="https://forgecode.dev/docs">Documentation</CustomLink> - Setup guides and API reference
+- <CustomLink href="/docs">Documentation</CustomLink> - Setup guides and API reference
 - <CustomLink href="https://github.com/antinomyhq/forge">GitHub Repository</CustomLink> - Source code and issues
 - <CustomLink href="https://discord.gg/kRZBPpkgwq">Discord Community</CustomLink> - Support and discussions
 - <CustomLink href="https://github.com/antinomyhq/forge/releases/tag/v0.98.0">Release Notes</CustomLink> - Complete changelog

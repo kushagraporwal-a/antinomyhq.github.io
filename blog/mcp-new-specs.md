@@ -448,7 +448,7 @@ All these changes are active as of `2025-06-18`. Any MCP server or client that d
 
 <a id="footnote-3"></a>**3.** ByteByteGo. "What is MCP?" Blog. <CustomLink href="https://blog.bytebytego.com/p/ep154-what-is-mcp">https://blog.bytebytego.com/p/ep154-what-is-mcp</CustomLink> <CustomLink href="#ref-3">↩</CustomLink>
 
-<a id="footnote-4"></a>**4.** Forge. "MCP Security is Broken: Here's How to Fix It". <CustomLink href="https://forgecode.dev/blog/prevent-attacks-on-mcp-part2/">https://forgecode.dev/blog/prevent-attacks-on-mcp-part2/</CustomLink> <CustomLink href="#ref-4">↩</CustomLink>
+<a id="footnote-4"></a>**4.** Forge. "MCP Security is Broken: Here's How to Fix It". [/blog/prevent-attacks-on-mcp-part2/](/blog/prevent-attacks-on-mcp-part2/) [↩](#ref-4)
 
 <a id="footnote-5"></a>**5.** IETF. “Protected Resource Metadata.” RFC 9728. <CustomLink href="https://datatracker.ietf.org/doc/html/rfc9728">https://datatracker.ietf.org/doc/html/rfc9728</CustomLink> <CustomLink href="#ref-5">↩</CustomLink>
 
