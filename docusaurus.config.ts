@@ -140,7 +140,8 @@ export default {
       tagName: "meta",
       attributes: {
         property: "og:description",
-        content: "Forge is a non-intrusive light-weight AI coding assistant for the terminal.",
+        content:
+          "Forge is a lightweight, non-intrusive AI coding assistant that integrates seamlessly with your terminal to boost developer productivity.",
       },
     },
     {
@@ -312,10 +313,6 @@ export default {
     metadata: [
       {name: "twitter:card", content: "summary_large_image"},
       {name: "twitter:image", content: "/images/opengraph.png"},
-      {
-        property: "og:description",
-        content: "Forge is a non-intrusive light-weight AI coding assistant for the terminal.",
-      },
       {property: "og:image", content: "https://forgecode.dev/images/opengraph.png"},
       {property: "og:image:width", content: "1200"},
       {property: "og:image:height", content: "630"},
