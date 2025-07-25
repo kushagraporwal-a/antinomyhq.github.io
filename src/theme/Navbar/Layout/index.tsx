@@ -24,8 +24,7 @@ export default function NavbarLayout({children}: Props): ReactNode {
   } = useThemeConfig()
   const mobileSidebar = useNavbarMobileSidebar()
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll)
-  const isHome = window.location.pathname === "/"
-
+  const isHome = typeof window !== "undefined" && window.location.pathname === "/"
   return (
     <nav
       ref={navbarRef}
