@@ -98,6 +98,8 @@ const CustomSearch = () => {
   }
 
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     // Check if the current page is within the "/docs/" path to show or hide the search icon
     location.pathname.includes("/docs/") ? setShowSearchIcon(true) : setShowSearchIcon(false)
 
@@ -182,6 +184,7 @@ const NavbarContent = (): JSX.Element => {
   const [leftItems, rightItems] = splitNavbarItems(items)
 
   const handleSignUp = () => {
+    if (typeof window === "undefined") return
     analyticsHandler("Home Page", "Click", "Sign Up")
     window.open("https://app.forgecode.dev/app/", "_blank")
   }
