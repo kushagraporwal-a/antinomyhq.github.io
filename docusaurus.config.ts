@@ -132,21 +132,6 @@ export default {
     {
       tagName: "meta",
       attributes: {
-        property: "og:title",
-        content: "The AI Coding Assistant for Your Terminal | Forge Code",
-      },
-    },
-    {
-      tagName: "meta",
-      attributes: {
-        property: "og:description",
-        content:
-          "AI coding assistant that helps developers write better code faster. Get AI-powered code suggestions, refactoring, and debugging directly in your terminal.",
-      },
-    },
-    {
-      tagName: "meta",
-      attributes: {
         property: "og:type",
         content: "website",
       },
@@ -329,7 +314,6 @@ export default {
 
     navbar: {
       hideOnScroll: false,
-      title: "The AI Coding Assistant for Your Terminal | Forge Code",
       items: [
         {to: "/", label: "Home", position: "left"},
         {to: "/pricing", label: "Pricing", position: "left"},
@@ -355,8 +339,9 @@ export default {
       {
         path: "blog",
         editLocalizedFiles: false,
-        blogTitle: "Feed of ForgeCode blogs",
-        blogDescription: "List of blog posts on ForgeCode blog",
+        blogTitle: "ForgeCode Blog Feed – Terminal Dev Tips & AI Insights",
+        blogDescription:
+          "Discover helpful blog posts on terminal productivity, AI coding tools, and updates from the ForgeCode team.",
         blogSidebarCount: 10,
         blogSidebarTitle: "Recent Blog Posts",
         routeBasePath: "blog",
