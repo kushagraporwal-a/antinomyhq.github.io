@@ -58,7 +58,6 @@ If you're experiencing issues with forge:
 
 - <CustomLink href="/docs/custom-rules-guide">Custom Rules Guide: Extending Forge's Capabilities</CustomLink>
 - <CustomLink href="/docs/plan-and-act-guide">Plan and Act Guide: Automating Complex Workflows with Forge</CustomLink>
-- <CustomLink href="/blog/seat-based-pricing-ai-agents">Understanding Forge's Pricing for AI Agents</CustomLink>
 
 1. **Export your session context:**
 
