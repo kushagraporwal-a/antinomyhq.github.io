@@ -3,7 +3,6 @@ import Layout from "@theme/Layout"
 import Heading from "@theme/Heading"
 import Section from "../components/shared/Section"
 import {Theme} from "@site/src/constants"
-import {pageLinks} from "@site/src/constants/routes"
 import {analyticsHandler} from "@site/src/utils"
 import {CircleCheck, Minus, Plus} from "lucide-react"
 import NewLinkButton from "../components/shared/NewLinkButton"
@@ -100,22 +99,6 @@ const PricingPage = (): JSX.Element => {
                       {"!opacity-100": tier.name === "Max"},
                     )}
                   ></div>
-
-                  {tier.name === "Max" && (
-                    <>
-                      <div className="absolute -right-[10px] rounded-tl-[40px] rounded-bl-[40px] p-[2px] bg-[linear-gradient(90deg,rgba(177,_192,_172,_1)_0%,_rgba(83,_90,_81,_1)_100%)] dark:bg-[linear-gradient(90deg,rgba(102,_102,_102,_1)_0%,_rgba(10,_31,_3,_1)_100%)]">
-                        <div className="bg-[#8AA780] dark:bg-[#41503C] px-4 rounded-tl-[40px] rounded-bl-[40px]">
-                          <span className="font-kanit text-white text-content-mini leading-10">Limited Time Only</span>
-                        </div>
-                      </div>
-                      <div className="absolute -right-[10px] top-[60px] md:top-[3.8rem] lg:top-[60px] xl:top-[3.7rem]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" viewBox="0 0 11 9" fill="none">
-                          <path d="M0.5 8.5L10.5 0H0.5V8.5Z" fill="#67815E" />
-                        </svg>
-                      </div>
-                    </>
-                  )}
-                  {/* Card Content */}
                   <div className="relative z-10">
                     <div className="flex flex-col flex-grow">
                       <h3 className="text-title-semi-large font-normal text-left text-tailCall-darkMode---neutral-600 dark:text-white mb-0 dark:group-hover:text-white">
@@ -129,11 +112,11 @@ const PricingPage = (): JSX.Element => {
                           <span className="text-content-tiny text-tailCall-darkMode---neutral-600 dark:text-white">
                             {tier.period}
                           </span>
-                          {tier.name === "Max" && (
+                          {/* {tier.name === "Max" && (
                             <span className="text-content-medium leading-[14px] font-kanit font-light text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-400 line-through decoration-from-font">
                               $200/month
                             </span>
-                          )}
+                          )} */}
                         </div>
                       </div>
                       {tier.description && (

@@ -1081,7 +1081,7 @@ export const FAQS = [
     question: "What's the difference between Free, Pro, and Max plans?",
     answer: `<strong>Free ($0):</strong> Basic AI model access with limited daily usage, perfect for getting started.<br/>
               <strong>Pro ($20/month):</strong> Access to premium models (OpenAI, Claude, Gemini) with 500 requests per month and priority support.<br/>
-              <strong>Max (FREE - normally $200/month):</strong> Unlimited access.`,
+              <strong>Max ($200/month):</strong> Unlimited access.`,
   },
   {
     question: "What are 'top tier' models?",
@@ -1092,7 +1092,7 @@ export const FAQS = [
     question: "How does the Max plan unlimited usage work?",
     answer: `Max plan users get truly unlimited access to all AI models during this limited-time early access
               offer. Normally, Max provides 10,000 prompts per month, but early access users enjoy unlimited
-              requests with no rate limits, daily caps, or usage restrictions at the special $0/month price (normally $200/month).`,
+              requests with no rate limits, daily caps, or usage restrictions at $200/month price.`,
   },
   {
     question: "What happens when I exceed my monthly prompt limit?",
@@ -1128,26 +1128,6 @@ export const tiers = [
     icons: ["/icons/basic/settings_pricing.svg"],
   },
   {
-    name: "Max",
-    price: "$0",
-    originalPrice: "$200",
-    period: "/month",
-    description: "🔥 FREE unlimited now, normally $200/month",
-    features: [
-      "Everything in Pro",
-      "Unlimited requests",
-      "Latest AI models (Sonnet4, Gemini-2.5 pro, Grok-4, Gpt-4 series)",
-      "24/7 priority support",
-      "Advanced analytics",
-      "Custom integrations",
-    ],
-    cta: "Get Unlimited Access",
-    href: pageLinks.signup,
-    popular: true,
-    special: true,
-    icons: ["/icons/basic/colorfilter.svg"],
-  },
-  {
     name: "Pro",
     price: "$20",
     period: "/month",
@@ -1163,5 +1143,25 @@ export const tiers = [
     href: pageLinks.signup,
     popular: true,
     icons: ["/icons/basic/SketchLogo.svg"],
+  },
+  {
+    name: "Max",
+    price: "$200",
+    // originalPrice: "$200",
+    period: "/month",
+    description: "Best for power users",
+    features: [
+      "Everything in Pro",
+      "Unlimited requests",
+      "Latest AI models (Sonnet4, Gemini-2.5 pro, Grok-4, Gpt-4 series)",
+      "24/7 priority support",
+      "Advanced analytics",
+      "Custom integrations",
+    ],
+    cta: "Comming Soon",
+    // href: pageLinks.signup,
+    popular: true,
+    special: true,
+    icons: ["/icons/basic/colorfilter.svg"],
   },
 ]
