@@ -1121,7 +1121,7 @@ export const tiers = [
     price: "$0",
     period: "forever",
     description: "Best for personal use",
-    features: ["Limited AI requests", "Community support", "BYOK (Bring Your Own Key)"],
+    features: ["Limited AI requests per day", "Community support", "BYOK (Bring Your Own Key)"],
     cta: "Get Started Free",
     href: pageLinks.signup,
     popular: true,
