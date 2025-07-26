@@ -1158,7 +1158,7 @@ export const tiers = [
       "Advanced analytics",
       "Custom integrations",
     ],
-    cta: "Comming Soon",
+    cta: "Coming Soon",
     // href: pageLinks.signup,
     popular: true,
     special: true,
