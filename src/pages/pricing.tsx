@@ -125,13 +125,15 @@ const PricingPage = (): JSX.Element => {
                         </p>
                       )}
                       <div>
-                        <NewLinkButton
-                          title={tier.cta}
-                          href={tier.href}
-                          theme={tier.popular ? Theme.Dark : Theme.Light}
-                          width="full"
-                          onClick={() => analyticsHandler("Pricing Page", "Click", tier.cta)}
-                        />
+                        {tier.cta && (
+                          <NewLinkButton
+                            title={tier.cta}
+                            href={tier.href}
+                            theme={tier.popular ? Theme.Dark : Theme.Light}
+                            width="full"
+                            onClick={() => analyticsHandler("Pricing Page", "Click", tier.cta)}
+                          />
+                        )}
                       </div>
 
                       <hr className="border-gray-300 dark:border-gray-700 mb-4" />
@@ -180,7 +182,7 @@ const PricingPage = (): JSX.Element => {
             <div className="bg-gradient-border h-[1px] w-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
+          {/* <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start">
             <div className="items-start mt-10">
               <Heading
                 as="h2"
@@ -231,7 +233,7 @@ const PricingPage = (): JSX.Element => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
           {/* CTA Section */}
         </Section>
         {/* <FinalCTA showPricingButton={false} /> */}
