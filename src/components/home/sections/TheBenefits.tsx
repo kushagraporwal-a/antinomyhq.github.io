@@ -29,29 +29,16 @@ const TheBenefits = (): JSX.Element => {
   }, [])
 
   useEffect(() => {
-    // Only run animation if not mobile and isMobile is known
     if (isMobile === undefined) return
-    if (isMobile) {
-      // Clean up all ScrollTriggers and transforms on mobile
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-      if (cardsRef.current) {
-        gsap.set(cardsRef.current, {clearProps: "all"})
-      }
-      if (sectionRef.current) {
-        sectionRef.current.style.height = ""
-      }
-      return
-    }
-    const section = sectionRef.current
-    const cards = cardsRef.current
-    if (!section || !cards) return
-    function getViewportHeight() {
-      return window.visualViewport?.height || window.innerHeight
-    }
-    function setupScrollTrigger() {
+
+    let ctx: gsap.Context | null = null
+
+    const setup = () => {
+      const section = sectionRef.current
+      const cards = cardsRef.current
       if (!section || !cards) return
-      const isMobile = window.innerWidth < 768
-      const viewportHeight = getViewportHeight()
+
+      const viewportHeight = window.visualViewport?.height || window.innerHeight
       const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
       const cardHeight = cards.children[0]?.clientHeight || 1
       const gap = 32
@@ -60,14 +47,16 @@ const TheBenefits = (): JSX.Element => {
       const extraScroll = isMobile ? visibleHeight * 0.8 : 0
       const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
       section.style.height = `${visibleHeight + totalScroll}px`
-      const ctx = gsap.context(() => {
+
+      // Create context to isolate ScrollTriggers to this component
+      ctx = gsap.context(() => {
         gsap.to(cards, {
           y: `-${totalScroll}px`,
           ease: "none",
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => `+=${totalScroll}`,
+            end: `+=${totalScroll}`,
             scrub: true,
             pin: true,
             anticipatePin: 1,
@@ -95,28 +84,38 @@ const TheBenefits = (): JSX.Element => {
             },
           },
         })
+
         gsap.to(".circle-logo", {
           rotation: 360,
           ease: "none",
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => `+=${totalScroll}`,
+            end: `+=${totalScroll}`,
             scrub: true,
           },
         })
       }, section)
     }
-    setupScrollTrigger()
-    window.addEventListener("resize", setupScrollTrigger)
-    window.addEventListener("orientationchange", setupScrollTrigger)
-    window.addEventListener("resize", () => ScrollTrigger.refresh())
-    window.addEventListener("orientationchange", () => ScrollTrigger.refresh())
+
+    const debouncedResize = () => {
+      clearTimeout((debouncedResize as any)._t)
+      ;(debouncedResize as any)._t = setTimeout(() => {
+        if (ctx) ctx.revert()
+        setup()
+        ScrollTrigger.refresh()
+      }, 150)
+    }
+
+    setup()
+
+    window.addEventListener("resize", debouncedResize)
+    window.addEventListener("orientationchange", debouncedResize)
+
     return () => {
-      window.removeEventListener("resize", setupScrollTrigger)
-      window.removeEventListener("orientationchange", setupScrollTrigger)
-      window.removeEventListener("resize", () => ScrollTrigger.refresh())
-      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh())
+      if (ctx) ctx.revert()
+      window.removeEventListener("resize", debouncedResize)
+      window.removeEventListener("orientationchange", debouncedResize)
     }
   }, [isMobile])
 
