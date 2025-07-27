@@ -10,6 +10,7 @@ const Chip = ({label, onClick}: ChipProps) => {
     <div
       role="button"
       onClick={(e) => {
+        e.preventDefault()
         e.stopPropagation()
         onClick?.()
       }}
