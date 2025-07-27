@@ -50,7 +50,7 @@ main {
   --color-btn-primary-hover-border: rgb(240 246 252 / 10%);
   --color-btn-primary-selected-bg: #30ede6;
   --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgb(255 255 255 / 50%);
+  --color-btn-primary-disabled-text: rgb(255 255 255 / 90%);
   --color-btn-primary-disabled-bg: #30ede6;
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
   --color-action-list-item-default-hover-bg: rgb(177 186 196 / 12%);
