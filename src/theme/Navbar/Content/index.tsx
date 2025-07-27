@@ -195,13 +195,15 @@ const NavbarContent = (): JSX.Element => {
         // TODO stop hardcoding items? (added by docusaurus)
         // Render left navbar items
         <>
-          {mobileSidebar.shouldRender && <Search />}
-          {mobileSidebar.shouldRender && <ThemeToggle />}
+          <div className="flex items-center min-[997px]:hidden">
+            <Search />
+            <ThemeToggle />
+          </div>
 
           <div className={styles.showSidebarToggle}>
             <NavbarMobileSidebarToggle />
           </div>
-          <div className="flex items-center lg:ml-48">
+          <div className="flex items-center min-[996px]:ml-48">
             <NavbarLogo />
             <NavbarItems items={leftItems} />
           </div>

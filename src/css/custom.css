@@ -773,20 +773,29 @@ nav.menu {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .navbar__item.navbar__item {
+    display: none !important;
+  }
+  .navbar__item {
+    display: none !important;
+  }
+}
+
 @media (max-width: 996px) {
   .grid-bg-section {
     background-size: var(--ifm-grid-bg-size-md) var(--ifm-grid-bg-size-md);
-  }
-
-  .navbar__items {
-    margin-left: auto;
-    justify-content: flex-end;
   }
 
   .header-button {
     width: auto;
     display: inline-flex;
     margin-left: 1rem;
+  }
+
+  .navbar__items {
+    margin-left: auto;
+    justify-content: flex-start;
   }
 
   /* Hide GitHub button from main navbar on mobile */
@@ -852,10 +861,6 @@ nav.menu {
     transform: none;
     box-shadow: none;
     background: var(--ifm-color-primary-lightest);
-  }
-
-  .navbar__item.navbar__item {
-    display: none;
   }
 
   .navbar-sidebar__item .menu__link {
