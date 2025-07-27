@@ -29,6 +29,11 @@ const TheBenefits = (): JSX.Element => {
   }, [])
 
   useEffect(() => {
+    if (isMobile) {
+      const section = sectionRef.current
+      if (!section) return
+      section.style.height = "auto"
+    }
     if (isMobile === undefined) return
 
     let ctx: gsap.Context | null = null
@@ -47,6 +52,13 @@ const TheBenefits = (): JSX.Element => {
       const extraScroll = isMobile ? visibleHeight * 0.8 : 0
       const totalScroll = cards.scrollHeight - visibleHeight + lastCardOffset + extraScroll
       section.style.height = `${visibleHeight + totalScroll}px`
+
+      if (isMobile) {
+        ctx?.revert()
+        section.style.height = "auto"
+        gsap.set(cards, {clearProps: "all"}) // remove gsap `y` transforms
+        return
+      }
 
       // Create context to isolate ScrollTriggers to this component
       ctx = gsap.context(() => {

@@ -7,8 +7,25 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({children}) => {
   const [currentIndex, setCurrentIndex] = useState(1)
   const [clonedChildren, setClonedChildren] = useState<ReactNode[]>([])
+  const [isMobile, setIsMobile] = useState(false)
+
   const carouselRef = useRef<HTMLDivElement>(null)
   const isTransitioningRef = useRef(false)
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkScreenSize()
+    window.addEventListener("resize", checkScreenSize)
+    return () => window.removeEventListener("resize", checkScreenSize)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) {
+      scrollToIndex(0)
+    }
+  }, [isMobile])
 
   useEffect(() => {
     if (!children || children.length === 0) return
