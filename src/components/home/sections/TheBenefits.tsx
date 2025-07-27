@@ -10,7 +10,7 @@ import BenefitsCard from "../../shared/BenefitsCard"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
-const HEADING_HEIGHT = 120
+const HEADING_HEIGHT = 125
 
 const TheBenefits = (): JSX.Element => {
   const [focusedIdx, setFocusedIdx] = useState(0)
