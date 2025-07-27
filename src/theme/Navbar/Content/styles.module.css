@@ -1,8 +1,17 @@
 /*
 Hide color mode toggle in small viewports
  */
-@media (max-width: 996px) {
+@media (max-width: 768px) {
   .colorModeToggle {
+    display: none;
+  }
+  .showSidebarToggle {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .showSidebarToggle {
     display: none;
   }
 }
