@@ -5,6 +5,7 @@ import {BlogAuthor} from "@site/src/theme/BlogAuthor"
 import {Author} from "@docusaurus/plugin-content-blog"
 import type {TagMetadata} from "@docusaurus/utils"
 import Chip from "../shared/Chip"
+import {useHistory} from "@docusaurus/router"
 export interface BlogListItemProps {
   date: string
   title: string
@@ -25,6 +26,7 @@ const gradients = [
 ]
 
 const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, permalink, tags, bgIndex, authors}) => {
+  const history = useHistory()
   return (
     <Link to={permalink} className="group flex flex-col overflow-hidden !text-black !no-underline">
       <div className="flex h-full p-[1px] z-0 bg-custom-blog-card-light-border group-hover:bg-custom-blog-card-light-border-active dark:bg-card-border-gradient-nextStep group-hover:dark:bg-custom-blog-card-dark-border-active rounded-[13px]">
@@ -46,9 +48,15 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
             </div>
             <img src="/icons/basic/forgecode-logo.svg" alt="ForgeCode" className="absolute right-0 top-0" />
           </div>
-          <div className={`flex flex-col px-3 w-full ${tags ? "mt-3" : "mt-0"}`}>
+          <div className={`z-10 flex flex-col px-3 w-full ${tags ? "mt-3" : "mt-0"}`}>
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
-              {tags?.map(({label}) => <Chip label={label} key={label} />)}
+              {tags?.map(({label}) => (
+                <Chip
+                  onClick={() => history.push(`/blog/tags/${decodeURIComponent(label)}`)}
+                  label={label}
+                  key={label}
+                />
+              ))}
             </div>
             <span
               className={`${tags ? "mt-5" : "mt-2"} font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium !font-normal line-clamp-2`}
@@ -66,7 +74,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
               />
             )}
           </div>
-          <div className="absolute bottom-0 left-0 group-hover:bg-custom-radial-light group-hover:dark:bg-custom-radial z-50 h-[15rem] w-full"></div>
+          <div className="absolute bottom-0 left-0 group-hover:bg-custom-radial-light group-hover:dark:bg-custom-radial z-0 h-[15rem] w-full"></div>
         </div>
       </div>
     </Link>
