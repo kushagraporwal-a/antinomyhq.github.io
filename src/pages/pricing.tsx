@@ -66,7 +66,7 @@ const PricingPage = (): JSX.Element => {
               />
             </div>
             <span className="block mt-2 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[20px] xl:text-[22px] text-tailCall-darkMode---neutral-500 tracking-normal">
-              No credit card required.No lock-in. <br />
+              No credit card required. No lock-in. <br />
               Just productivity from day one
             </span>
           </div>
