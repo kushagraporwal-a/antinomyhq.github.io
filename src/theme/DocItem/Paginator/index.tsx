@@ -9,7 +9,7 @@ import DocPaginator from "@theme/DocPaginator"
 export default function DocItemPaginator(): JSX.Element {
   const {metadata} = useDoc()
   return (
-    <div className="bg-transparent rounded-[12px] px-3 py-6 mt-5">
+    <div className="bg-transparent px-3 py-6 mt-5 border-t border-t-solid border-tailCall-lightMode---neutral-300 dark:border-tailCall-darkMode---neutral-700">
       <DocPaginator
         className={!metadata.previous || !metadata.next ? "pagination-nav-single" : ""}
         previous={metadata.previous}
