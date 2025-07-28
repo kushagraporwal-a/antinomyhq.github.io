@@ -341,14 +341,9 @@ hr {
 }
 
 .blogPage-container .pagination-nav {
-  background-color: white;
   border-radius: 12px;
   padding: 24px 12px;
   margin-top: 20px !important;
-}
-
-[data-theme="dark"] .blogPage-container .pagination-nav {
-  background-color: #18171a;
 }
 
 @media screen and (max-width: 425px) {
