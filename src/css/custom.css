@@ -1593,55 +1593,55 @@ table thead tr {
 }
 
 .theme-admonition-caution {
-  border-left-color: #C68400;
-  background-color: #DED7CA;
+  border-left-color: #c68400;
+  background-color: #ded7ca;
 }
 
-.theme-admonition-caution svg{
-  fill: #C68400 !important;
+.theme-admonition-caution svg {
+  fill: #c68400 !important;
 }
 
 [data-theme="dark"] .theme-admonition-caution {
-  border-left-color: #F9A705;
-  background-color: #2F2D2A;
+  border-left-color: #f9a705;
+  background-color: #2f2d2a;
 }
 
 [data-theme="dark"] .theme-admonition-caution svg {
-  fill: #F9A705 !important;
+  fill: #f9a705 !important;
 }
 
 .theme-admonition-info {
-  border-left-color: #158B00;
-  background-color: #D5E7DB;
+  border-left-color: #158b00;
+  background-color: #d5e7db;
 }
 
 .theme-admonition-info svg {
-  fill: #158B00 !important;
+  fill: #158b00 !important;
 }
 
 [data-theme="dark"] .theme-admonition-info {
-  border-left-color: #22E000;
-  background-color: #272D29;
+  border-left-color: #22e000;
+  background-color: #272d29;
 }
 
 [data-theme="dark"] .theme-admonition-info svg {
-  fill: #22E000 !important;
+  fill: #22e000 !important;
 }
 
 .theme-admonition-tip {
-  border-left-color: #5261FF;
-  background-color: #DAE3ED;
+  border-left-color: #5261ff;
+  background-color: #dae3ed;
 }
 
 .theme-admonition-tip svg {
-  fill: #5261FF !important;
+  fill: #5261ff !important;
 }
 
 [data-theme="dark"] .theme-admonition-tip {
-  border-left-color: #5968FF;
-  background-color: #151E28;
+  border-left-color: #5968ff;
+  background-color: #151e28;
 }
 
 [data-theme="dark"] .theme-admonition-tip svg {
-  fill: #5968FF !important;
+  fill: #5968ff !important;
 }
