@@ -1571,3 +1571,77 @@ table thead tr th {
 table thead tr {
   border: 1px solid !important;
 }
+
+/* Update styling for Admonitions cards */
+.theme-admonition {
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.theme-admonition a {
+  text-decoration: none;
+}
+.theme-admonition a:hover {
+  text-decoration: underline;
+}
+.theme-admonition svg {
+  height: 1.5rem !important;
+}
+
+.theme-admonition-caution {
+  border-left-color: #C68400;
+  background-color: #DED7CA;
+}
+
+.theme-admonition-caution svg{
+  fill: #C68400 !important;
+}
+
+[data-theme="dark"] .theme-admonition-caution {
+  border-left-color: #F9A705;
+  background-color: #2F2D2A;
+}
+
+[data-theme="dark"] .theme-admonition-caution svg {
+  fill: #F9A705 !important;
+}
+
+.theme-admonition-info {
+  border-left-color: #158B00;
+  background-color: #D5E7DB;
+}
+
+.theme-admonition-info svg {
+  fill: #158B00 !important;
+}
+
+[data-theme="dark"] .theme-admonition-info {
+  border-left-color: #22E000;
+  background-color: #272D29;
+}
+
+[data-theme="dark"] .theme-admonition-info svg {
+  fill: #22E000 !important;
+}
+
+.theme-admonition-tip {
+  border-left-color: #5261FF;
+  background-color: #DAE3ED;
+}
+
+.theme-admonition-tip svg {
+  fill: #5261FF !important;
+}
+
+[data-theme="dark"] .theme-admonition-tip {
+  border-left-color: #5968FF;
+  background-color: #151E28;
+}
+
+[data-theme="dark"] .theme-admonition-tip svg {
+  fill: #5968FF !important;
+}
