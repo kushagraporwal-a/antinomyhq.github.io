@@ -30,7 +30,16 @@ const WhyForge = (): JSX.Element => {
   }, [])
 
   useEffect(() => {
-    if (isMobile) return // Disable all animation logic on mobile
+    if (isMobile) {
+      // Clean up transform values that might exist from previous renders
+      const section = sectionRef.current
+      const why = whyRef.current
+      const forge = forgeRef.current
+
+      if (!section || !why || !forge) return
+      gsap.set([why, forge], {clearProps: "transform"})
+      return
+    } // Disable all animation logic on mobile
 
     const section = sectionRef.current
     const cards = cardsRef.current
