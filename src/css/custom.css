@@ -1552,3 +1552,12 @@ table thead tr th {
 table thead tr {
   border: 1px solid !important;
 }
+
+.faq-answers a {
+  color: var(--ifm-sidebar-menu-link) !important;
+}
+
+.faq-answers a:hover {
+  color: var(--ifm-navlink-active) !important;
+  text-decoration: none !important;
+}
