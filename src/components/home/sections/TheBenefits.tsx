@@ -10,7 +10,7 @@ import BenefitsCard from "../../shared/BenefitsCard"
 
 gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
-const HEADING_HEIGHT = 125
+const HEADING_HEIGHT = 130
 
 const TheBenefits = (): JSX.Element => {
   const [focusedIdx, setFocusedIdx] = useState(0)
@@ -142,7 +142,7 @@ const TheBenefits = (): JSX.Element => {
     <div className="flex justify-center z-0">
       <div
         ref={sectionRef}
-        className="xl:max-w-[1440px] relative w-full h-[110vh] md:h-[120vh] flex flex-col pt-10 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-64"
+        className="xl:max-w-[1440px] relative w-full h-[110vh] md:h-[120vh] flex flex-col pb-10 md:pb-0 z-10 xl:pt-24 overflow-hidden mb-0 md:mb-64"
       >
         <div
           className="sticky top-0 flex flex-col items-center bg-[#F1F1F1] dark:bg-black"

@@ -23,9 +23,19 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
 
   useEffect(() => {
     if (isMobile) {
-      scrollToIndex(0)
+      setTimeout(() => {
+        scrollToIndex(currentIndex, false)
+      }, 50)
     }
-  }, [isMobile])
+  }, [isMobile, currentIndex])
+
+  useEffect(() => {
+    const handleResize = () => {
+      scrollToIndex(currentIndex, false)
+    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [currentIndex])
 
   useEffect(() => {
     if (!children || children.length === 0) return
@@ -88,12 +98,14 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
 
     let startX = 0
 
-    const handleTouchStart = (e: TouchEvent) => {
-      startX = e.touches[0].clientX
+    const handleTouchStart = (e: TouchEvent | MouseEvent) => {
+      startX = "touches" in e ? e.touches[0].clientX : e.clientX
     }
 
-    const handleTouchEnd = (e: TouchEvent) => {
-      const diff = e.changedTouches[0].clientX - startX
+    const handleTouchEnd = (e: TouchEvent | MouseEvent) => {
+      const endX = "changedTouches" in e ? e.changedTouches[0].clientX : e.clientX
+      const diff = endX - startX
+
       if (Math.abs(diff) < 30 || isTransitioningRef.current) return
       if (diff < 0) next()
       else prev()
@@ -101,9 +113,15 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
 
     carousel.addEventListener("touchstart", handleTouchStart)
     carousel.addEventListener("touchend", handleTouchEnd)
+
+    carousel.addEventListener("mousedown", handleTouchStart)
+    carousel.addEventListener("mouseup", handleTouchEnd)
+
     return () => {
       carousel.removeEventListener("touchstart", handleTouchStart)
       carousel.removeEventListener("touchend", handleTouchEnd)
+      carousel.removeEventListener("mousedown", handleTouchStart)
+      carousel.removeEventListener("mouseup", handleTouchEnd)
     }
   }, [currentIndex])
 
