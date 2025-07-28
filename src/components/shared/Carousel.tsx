@@ -15,6 +15,9 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
+      setTimeout(() => {
+        scrollToIndex(1, false)
+      }, 50)
     }
     checkScreenSize()
     window.addEventListener("resize", checkScreenSize)
@@ -24,18 +27,10 @@ const Carousel: React.FC<CarouselProps> = ({children}) => {
   useEffect(() => {
     if (isMobile) {
       setTimeout(() => {
-        scrollToIndex(currentIndex, false)
+        scrollToIndex(1, false)
       }, 50)
     }
-  }, [isMobile, currentIndex])
-
-  useEffect(() => {
-    const handleResize = () => {
-      scrollToIndex(currentIndex, false)
-    }
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [currentIndex])
+  }, [isMobile])
 
   useEffect(() => {
     if (!children || children.length === 0) return
