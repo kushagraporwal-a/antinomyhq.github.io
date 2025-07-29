@@ -241,7 +241,7 @@ const FAQSection: React.FC<{
 
 const AIProvidersSection: React.FC = () => (
   <div className={AI_PROVIDERS_SECTION_CLASSES}>
-    <div className="bg-gradient-border h-[1px] w-full" />
+    <div className="bg-[#dbdbdb] dark:bg-[#4b4b4b] h-[1px] w-full" />
     <div className={AI_PROVIDERS_HEADER_CLASSES}>
       <span className={AI_PROVIDERS_TITLE_CLASSES}>Works with every model offered by leading AI providers.</span>
       <span className={AI_PROVIDERS_SUBTITLE_CLASSES}>
