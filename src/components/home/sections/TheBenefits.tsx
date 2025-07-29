@@ -12,6 +12,33 @@ gsap.registerPlugin(ScrollTrigger)
 const VISIBLE_HEIGHT = 0.8 // 60% of viewport height
 const HEADING_HEIGHT = 130
 
+const BackgroundImages = () => {
+  return (
+    <div className="relative flex items-center justify-center xl:-top-[75px]">
+      <img
+        src="/images/home/Black-Circle.svg"
+        alt="ellipse"
+        className={clsx("circle-logo", "w-[75%] h-screen dark:block hidden")}
+      />
+      <img
+        src="/images/home/Light-Circle.svg"
+        alt="ellipse"
+        className={clsx("circle-logo", "w-[75%] h-screen block dark:hidden")}
+      />
+      <img
+        src="/images/home/code-logo.svg"
+        alt="code"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block dark:hidden w-[20%] md:w-auto"
+      />
+      <img
+        src="/images/home/code-logo-dark.svg"
+        alt="code"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:block hidden w-[20%] md:w-auto"
+      />
+    </div>
+  )
+}
+
 const TheBenefits = (): JSX.Element => {
   const [focusedIdx, setFocusedIdx] = useState(0)
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -138,6 +165,25 @@ const TheBenefits = (): JSX.Element => {
     "-tracking-normal",
   )
 
+  const SpotlightText = () => {
+    return (
+      <>
+        <SpotlightSpan
+          showHighlighted
+          text="THE"
+          className={clsx(spotlightHeadingClasses, "absolute top-20 left-8 xl:left-28")}
+        />
+        <SpotlightSpan
+          text="BENEFITS"
+          className={clsx(
+            spotlightHeadingClasses,
+            "absolute top-36 md:top-[10.5rem] md:left-28 xl:top-52 left-24 xl:left-60",
+          )}
+        />
+      </>
+    )
+  }
+
   return (
     <div className="flex justify-center z-0">
       <div
@@ -152,40 +198,8 @@ const TheBenefits = (): JSX.Element => {
             zIndex: 2,
           }}
         >
-          <div className="relative flex items-center justify-center xl:-top-[75px]">
-            <img
-              src="/images/home/Black-Circle.svg"
-              alt="ellipse"
-              className={clsx("circle-logo", "w-[75%] h-screen dark:block hidden")}
-            />
-            <img
-              src="/images/home/Light-Circle.svg"
-              alt="ellipse"
-              className={clsx("circle-logo", "w-[75%] h-screen block dark:hidden")}
-            />
-            <img
-              src="/images/home/code-logo.svg"
-              alt="code"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block dark:hidden w-[20%] md:w-auto"
-            />
-            <img
-              src="/images/home/code-logo-dark.svg"
-              alt="code"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:block hidden w-[20%] md:w-auto"
-            />
-          </div>
-          <SpotlightSpan
-            showHighlighted
-            text="THE"
-            className={clsx(spotlightHeadingClasses, "absolute top-20 left-8 xl:left-28")}
-          />
-          <SpotlightSpan
-            text="BENEFITS"
-            className={clsx(
-              spotlightHeadingClasses,
-              "absolute top-36 md:top-[10.5rem] md:left-28 xl:top-52 left-24 xl:left-60",
-            )}
-          />
+          <BackgroundImages />
+          <SpotlightText />
           <div
             className={clsx(
               "absolute md:left-auto md:right-10 xl:left-[850px] w-full md:w-auto lg:right-20 top-[500px] flex flex-col md:items-center",

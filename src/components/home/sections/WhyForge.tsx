@@ -4,11 +4,20 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 import clsx from "clsx"
 import {CARDS_DATA} from "@site/src/constants"
-import SpotlightSpan from "../components/SpotlightCursor"
-import Card from "../../shared/Card"
+import {SpotlightSpan, UserFeedbackCard} from "../components"
 import Carousel from "../../shared/Carousel"
 
 gsap.registerPlugin(ScrollTrigger)
+
+const USER_FEEDBACK = CARDS_DATA.map((card) => (
+  <UserFeedbackCard
+    key={card.title}
+    title={card.title}
+    imageUrl={card.imageUrl}
+    author={card.author}
+    designation={card.designation}
+  />
+))
 
 const WhyForge = (): JSX.Element => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -16,9 +25,6 @@ const WhyForge = (): JSX.Element => {
   const whyRef = useRef<HTMLDivElement | null>(null)
   const forgeRef = useRef<HTMLDivElement | null>(null)
   const [isMobile, setIsMobile] = useState(false)
-
-  // Create array with cloned items for infinite loop
-  const extendedCards = [...CARDS_DATA.slice(-1), ...CARDS_DATA, ...CARDS_DATA.slice(0, 1)]
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -143,79 +149,37 @@ const WhyForge = (): JSX.Element => {
     "max-[320px]:text-[50px]",
   )
 
+  const SpotlightText = () => {
+    return (
+      <div className="flex flex-col gap-12 px-4 md:px-0">
+        <div ref={whyRef} className="flex justify-start">
+          <SpotlightSpan showHighlighted text="WHY THEY LOVE" className={clsx(headingClasses, "tracking-normal")} />
+        </div>
+
+        <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-16 md:-mt-16 xl:-mt-12">
+          <SpotlightSpan text="FORGE CODE" className={clsx(headingClasses, "-tracking-tight")} />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="flex justify-center">
       <div
         ref={sectionRef}
         className="max-w-[1440px] z-0 relative p-0 md:px-20 xl:pl-28 min-h-fit md:min-h-[600px] w-full overflow-hidden flex flex-col justify-center md:pt-20 xl:pt-24"
       >
+        <SpotlightText />
         <div className="flex flex-col gap-2">
-          <div className="flex flex-col gap-12 px-4 md:px-0">
-            <div ref={whyRef} className="flex justify-start">
-              <SpotlightSpan showHighlighted text="WHY THEY LOVE" className={clsx(headingClasses, "tracking-normal")} />
-            </div>
-
-            <div ref={forgeRef} className="flex justify-start pl-[15%] -mt-16 md:-mt-16 xl:-mt-12">
-              <SpotlightSpan text="FORGE CODE" className={clsx(headingClasses, "-tracking-tight")} />
-            </div>
-          </div>
           <div className="flex flex-col gap-4">
             <div
               ref={cardsRef}
               className={`card-container md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-14 hidden`}
               style={{transform: "translateX(0)", willChange: "transform"}}
             >
-              {CARDS_DATA.map((card, idx) => {
-                return (
-                  <Card key={card.title}>
-                    <div
-                      className={`px-8 py-8 rounded-[12px] h-[100%] w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial transition-all duration-100 ease-in overflow-hidden`}
-                    >
-                      <div className="flex flex-col justify-between h-full gap-3">
-                        <div className="flex flex-col gap-3">
-                          <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                          <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light break-words text-left">
-                            {card.title}
-                          </span>
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
-                            {card.author}
-                          </span>
-                          <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal text-left">
-                            {card.designation}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                )
-              })}
+              {USER_FEEDBACK}
             </div>
-            <Carousel>
-              {CARDS_DATA.map((card, idx) => (
-                <Card key={idx}>
-                  <div className="px-8 py-8 h-[100%] rounded-[12px] w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-[#181D27] border-solid bg-transparent shadow-[0px_0px_4px_0px_#088C8C] dark:shadow-[0px_0px_4px_0px_#30EDE6] hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial transition-all duration-500 overflow-hidden ease-in">
-                    <div className="flex flex-col justify-between h-full gap-3">
-                      <div className="flex flex-col gap-3">
-                        <img src={card.imageUrl} alt="Feedback" height={80} width={80} className="grayscale" />
-                        <span className="text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light whitespace-normal break-words text-left">
-                          {card.title}
-                        </span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal">
-                          {card.author}
-                        </span>
-                        <span className="text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal text-left">
-                          {card.designation}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </Carousel>
+            <Carousel>{USER_FEEDBACK}</Carousel>
           </div>
         </div>
       </div>
