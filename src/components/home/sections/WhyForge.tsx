@@ -50,10 +50,6 @@ const WhyForge = (): JSX.Element => {
 
     let ctx: gsap.Context | null = null
 
-    function getViewportHeight() {
-      return window.visualViewport?.height || window.innerHeight
-    }
-
     function setupScrollTrigger() {
       if (!section || !cards || !why || !forge) return
 
@@ -64,7 +60,7 @@ const WhyForge = (): JSX.Element => {
           trigger.kill()
         }
       })
-
+      let totalScroll = 0
       const card = cards.querySelector("div")
       const cardWidth = card ? card.offsetWidth : 0
       const gap = 24 // gap-6 = 24px
@@ -72,10 +68,12 @@ const WhyForge = (): JSX.Element => {
       // Calculate total scroll distance including all extended cards
       const totalCardsWidth = cards.scrollWidth
       // Add extra padding for larger screens
-      const extraPadding = viewportWidth >= 1440 ? cardWidth / 2 : cardWidth / 2
+      const extraPadding = viewportWidth >= 1440 ? cardWidth + 150 : cardWidth / 2 + 50
       // Calculate exact space needed for all cards to be visible
-      const totalScroll = totalCardsWidth - viewportWidth + (cardWidth + gap) + extraPadding
-
+      const cardContainer = document.querySelector(".card-container")
+      if (cardContainer) {
+        totalScroll = cardContainer.scrollWidth - window.innerWidth + extraPadding
+      }
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
         gsap.set([why, forge], {x: -viewportWidth})
@@ -122,16 +120,18 @@ const WhyForge = (): JSX.Element => {
     }
 
     setupScrollTrigger()
-    window.addEventListener("resize", setupScrollTrigger)
-    window.addEventListener("orientationchange", setupScrollTrigger)
-    window.addEventListener("resize", () => ScrollTrigger.refresh())
-    window.addEventListener("orientationchange", () => ScrollTrigger.refresh())
+
+    const handleResize = () => {
+      setupScrollTrigger()
+      ScrollTrigger.refresh()
+    }
+
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("orientationchange", handleResize)
 
     return () => {
-      window.removeEventListener("resize", setupScrollTrigger)
-      window.removeEventListener("orientationchange", setupScrollTrigger)
-      window.removeEventListener("resize", () => ScrollTrigger.refresh())
-      window.removeEventListener("orientationchange", () => ScrollTrigger.refresh())
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("orientationchange", handleResize)
       if (ctx) ctx.revert()
     }
   }, [isMobile])
@@ -162,7 +162,7 @@ const WhyForge = (): JSX.Element => {
           <div className="flex flex-col gap-4">
             <div
               ref={cardsRef}
-              className={`md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-14 hidden`}
+              className={`card-container md:flex gap-6 p-3 -mt-12 md:-mt-16 xl:-mt-14 hidden`}
               style={{transform: "translateX(0)", willChange: "transform"}}
             >
               {CARDS_DATA.map((card, idx) => {
