@@ -1,6 +1,5 @@
 import React from "react"
 import {Banner, TheBenefits, BuiltFor, GetStarted, WhyForge} from "./sections"
-// import {VerticalBadge} from "./components/VerticalBadge"
 
 const HomePage = (): JSX.Element => {
   return (
@@ -10,22 +9,7 @@ const HomePage = (): JSX.Element => {
       <TheBenefits />
       <WhyForge />
       <BuiltFor />
-      {/* <VerticalBadge
-        icon={<span>P</span>}
-        bgColor="#632F2F"
-        rightOffset="-right-14"
-        top="top-[170px]"
-        title="Featured on"
-        subtitle="Product Hunt"
-      />
-      <VerticalBadge
-        icon={<img src="/icons/basic/GithubLogo.svg" alt="Github Logo" />}
-        bgColor="#545454"
-        rightOffset="-right-14"
-        top="top-[340px]"
-        title="Featured on"
-        subtitle="Github"
-      /> */}
+      {/* <FloatingWidget /> */}
       {/* <TheTeams /> */}
     </div>
   )
