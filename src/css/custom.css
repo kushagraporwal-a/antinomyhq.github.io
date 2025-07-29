@@ -217,7 +217,7 @@ hr {
 }
 [data-theme="dark"] .menu__list-item-collapsible a,
 .theme-doc-sidebar-item-link-level-1 a {
-  color: #737373;
+  color: #e6e6e6;
 }
 
 .theme-doc-sidebar-item-link-level-1 {
@@ -238,6 +238,10 @@ hr {
   border-radius: 0;
   font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
+}
+
+[data-theme="dark"] .menu__link {
+  color: #d4d4d4;
 }
 
 .menu__link.menu__link--active {
