@@ -24,5 +24,4 @@ const Chip = ({label, onClick}: ChipProps) => {
     </div>
   )
 }
-
 export default Chip

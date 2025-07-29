@@ -1,6 +1,5 @@
-import React, {useEffect, useRef} from "react"
-import {companies, companiesLight} from "@site/src/constants"
-import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
+import React from "react"
+import {companies} from "@site/src/constants"
 import clsx from "clsx"
 import {analyticsHandler} from "@site/src/utils"
 import {useHistory} from "@docusaurus/router"
@@ -14,7 +13,6 @@ const sharedClasses =
   "-tracking-normal font-normal absolute opacity-90 font-bebas text-[64px] min-[390px]:text-[75px] sm:text-[75px] lg:text-[120px] xl:text-[180px]"
 
 const Banner = (): JSX.Element => {
-  const {theme} = useThemeContext()
   const history = useHistory()
 
   const handleSignUp = () => {
@@ -73,11 +71,7 @@ const Banner = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full px-0 mt-10">
-          <TrustedByMarquee
-            title="Trusted by Engineers"
-            logos={theme === "dark" ? companies : companiesLight}
-            isHorizontal
-          />
+          <TrustedByMarquee title="Trusted by Engineers" logos={companies} isHorizontal />
         </div>
       </div>
     </div>
