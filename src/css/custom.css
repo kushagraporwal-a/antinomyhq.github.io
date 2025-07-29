@@ -1645,3 +1645,11 @@ table thead tr {
 [data-theme="dark"] .theme-admonition-tip svg {
   fill: #5968FF !important;
 }
+.faq-answers a {
+  color: var(--ifm-sidebar-menu-link) !important;
+}
+
+.faq-answers a:hover {
+  color: var(--ifm-navlink-active) !important;
+  text-decoration: none !important;
+}

@@ -80,10 +80,10 @@ const PRICING_SUBTITLE_CLASSES =
 const PRICING_GRID_CLASSES =
   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-4 max-w-7xl mx-auto pb-12 mb-24"
 const CARD_CONTAINER_CLASSES =
-  "bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col transition-all duration-300 overflow-visible hover:-translate-y-4 hover:shadow-2xl"
+  "bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col transition-all duration-700 overflow-visible hover:shadow-2xl"
 const CARD_CONTENT_CLASSES = "p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full"
 const CARD_BACKGROUND_CLASSES =
-  "absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"
+  "absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"
 const CARD_TITLE_CLASSES =
   "text-title-semi-large font-normal text-left text-tailCall-darkMode---neutral-600 dark:text-white mb-0 dark:group-hover:text-white"
 const PRICE_CONTAINER_CLASSES = "flex items-baseline gap-2"
@@ -95,9 +95,9 @@ const FEATURES_TITLE_CLASSES =
   "text-sm font-normal text-[15px] mb-3 text-tailCall-lightMode---neutral-900 dark:text-tailCall-light-800 group-hover:text-white transition-colors duration-300"
 const FEATURES_LIST_CLASSES = "space-y-2"
 const FEATURE_ITEM_CLASSES =
-  "flex gap-2 items-center text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
+  "flex gap-2 items-start text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
 const FEATURE_ICON_CLASSES =
-  "dark:text-tailCall-light-800 mt-0.5 flex-shrink-0 dark:group-hover:text-white transition-colors duration-300"
+  "dark:text-tailCall-light-800 mt-2 flex-shrink-0 dark:group-hover:text-white transition-colors duration-300"
 const FEATURE_TEXT_CLASSES = "text-[16px]"
 const FAQ_SECTION_CLASSES = "grid grid-cols-1 xl:grid-cols-[300px_1fr] xl:gap-32 items-start"
 const FAQ_HEADER_CLASSES = "items-start mt-10"
@@ -150,7 +150,7 @@ const PricingHeader: React.FC = () => (
 const PricingCard: React.FC<{tier: PricingTier}> = ({tier}) => (
   <div className={CARD_CONTAINER_CLASSES}>
     <div className={CARD_CONTENT_CLASSES}>
-      <div className={clsx(CARD_BACKGROUND_CLASSES, {"!opacity-100": tier.name === "Max"})} />
+      <div className={clsx(CARD_BACKGROUND_CLASSES, {"!opacity-100": tier.name === "Pro"})} />
       <div className="relative z-10">
         <div className="flex flex-col flex-grow">
           <h3 className={CARD_TITLE_CLASSES}>{tier.name}</h3>
@@ -213,9 +213,9 @@ const FAQItem: React.FC<{
       </span>
     </div>
     <div className={`${FAQ_ANSWER_CLASSES} ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
-      <p dangerouslySetInnerHTML={{__html: item.answer}} className={FAQ_ANSWER_TEXT_CLASSES} />
+      <p dangerouslySetInnerHTML={{__html: item.answer}} className={`faq-answers ${FAQ_ANSWER_TEXT_CLASSES}`} />
     </div>
-    <div className="bg-gradient-border h-[1px] w-full" />
+    {index < FAQS.length - 1 && <div className="bg-gradient-border h-[1px] w-full" />}
   </div>
 )
 
