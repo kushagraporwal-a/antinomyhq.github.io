@@ -72,7 +72,7 @@ const WhyForge = (): JSX.Element => {
       // Calculate exact space needed for all cards to be visible
       const cardContainer = document.querySelector(".card-container")
       if (cardContainer) {
-        totalScroll = cardContainer.scrollWidth - window.innerWidth + extraPadding
+        totalScroll = Math.max(0, cardContainer.scrollWidth - window.innerWidth + extraPadding)
       }
       ctx = gsap.context(() => {
         // Phase 1: Text fly in from left
@@ -105,7 +105,7 @@ const WhyForge = (): JSX.Element => {
         ScrollTrigger.create({
           trigger: section,
           start: "center center",
-          end: `+=${totalScroll}`,
+          end: `+=${Math.max(totalScroll, 100)}`,
           pin: true,
           pinSpacing: true,
           scrub: 1,
