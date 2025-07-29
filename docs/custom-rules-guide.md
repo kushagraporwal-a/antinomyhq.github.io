@@ -1,5 +1,4 @@
 import CustomLink from '@site/src/components/shared/CustomLink'
-import Card from '@site/src/components/shared/Card'
 
 # Working with Custom Rules: AI-Driven Code Standards for Development Teams
 
