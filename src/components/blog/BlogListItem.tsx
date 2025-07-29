@@ -6,6 +6,7 @@ import {Author} from "@docusaurus/plugin-content-blog"
 import type {TagMetadata} from "@docusaurus/utils"
 import Chip from "../shared/Chip"
 import {useHistory} from "@docusaurus/router"
+import {useReadingTimePluralForBlogs} from "@site/src/utils/hooks/useReadingTime"
 export interface BlogListItemProps {
   date: string
   title: string
@@ -14,6 +15,7 @@ export interface BlogListItemProps {
   permalink: string
   tags: TagMetadata[]
   bgIndex: number
+  readingTime?: number
 }
 
 const gradients = [
@@ -25,8 +27,18 @@ const gradients = [
   "linear-gradient(180deg, #C985BD 0%, #D37C5C 100%)",
 ]
 
-const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, permalink, tags, bgIndex, authors}) => {
+const BlogListItem: React.FC<BlogListItemProps> = ({
+  date,
+  title,
+  description,
+  permalink,
+  tags,
+  bgIndex,
+  authors,
+  readingTime,
+}) => {
   const history = useHistory()
+  const getReadingTime = useReadingTimePluralForBlogs()
   return (
     <Link to={permalink} className="group flex flex-col overflow-hidden !text-black !no-underline">
       <div className="flex h-full p-[1px] z-0 bg-custom-blog-card-light-border group-hover:bg-custom-blog-card-light-border-active dark:bg-card-border-gradient-nextStep group-hover:dark:bg-custom-blog-card-dark-border-active rounded-[13px]">
@@ -44,7 +56,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
                   timeZone: "UTC",
                 })}
               </span>
-              <span>7 min read</span>
+              <span>{getReadingTime(readingTime)}</span>
             </div>
             <img src="/icons/basic/forgecode-logo.svg" alt="ForgeCode" className="absolute right-0 top-0" />
           </div>
@@ -52,7 +64,7 @@ const BlogListItem: React.FC<BlogListItemProps> = ({date, title, description, pe
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
               {tags?.map(({label}) => (
                 <Chip
-                  onClick={() => history.push(`/blog/tags/${decodeURIComponent(label)}`)}
+                  onClick={() => history.push(`/blog/tags/${decodeURIComponent(label).replaceAll(" ", "-")}`)}
                   label={label}
                   key={label}
                 />
