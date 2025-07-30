@@ -5,7 +5,7 @@ import ArrowLeft from "@site/static/icons/basic/circle-arrow-left.svg"
 import ArrowRight from "@site/static/icons/basic/circle-arrow-right.svg"
 import ArrowRightLight from "@site/static/icons/basic/circle-arrow-right-light.svg"
 import ArrowLeftLight from "@site/static/icons/basic/circle-arrow-left-light.svg"
-import {useThemeContext} from "../ThemeProvider/ThemeProvider"
+import {useThemeContext} from "../ThemeProvider"
 
 function NavigatorIcon({isNext}: {isNext: boolean}): JSX.Element {
   const {theme} = useThemeContext()

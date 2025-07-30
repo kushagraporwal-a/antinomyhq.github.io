@@ -14,8 +14,8 @@ import GlobalLayout from "@site/src/components/shared/GlobalLayout"
 import Announcement from "@site/src/components/shared/Announcement"
 import {FloatingCta} from "@site/src/components/cta"
 import {useLocation} from "@docusaurus/router"
-import {ThemeProvider} from "../ThemeProvider/ThemeProvider"
 import Footer from "@site/src/components/home/Footer"
+import ThemeProvider from "@theme/ThemeProvider"
 
 export default function Layout(props: Props): JSX.Element {
   const {

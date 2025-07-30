@@ -12,7 +12,7 @@ import DocItemContent from "@theme/DocItem/Content"
 import DocBreadcrumbs from "@theme/DocBreadcrumbs"
 import styles from "./styles.module.css"
 import Giscus from "@giscus/react"
-import {useThemeContext} from "../../ThemeProvider/ThemeProvider"
+import {useThemeContext} from "../../ThemeProvider"
 
 interface DocItemLayoutProps {
   children: React.JSX.Element

@@ -15,48 +15,19 @@ export default {
   trailingSlash: true,
   tagline: "Forge: The AI Coding Assistant for Your Terminal",
   headTags: [
-    // Bulletproof theme script - prevents any interference from the start
     {
       tagName: "script",
       attributes: {},
       innerHTML: `
-        (function() {
-          // Immediately apply theme before anything else loads
-          try {
-            var match = document.cookie.match(/theme-preference=(dark|light)/);
-            var theme = match ? match[1] : 'dark';
-            
-            // Force apply theme
-            document.documentElement.classList.remove('dark', 'light');
-            if (theme === 'dark') {
-              document.documentElement.classList.add('dark');
-            } else {
-              document.documentElement.classList.add('light');
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.style.setProperty('--theme-mode', theme);
-            
-            // Prevent any other scripts from changing theme
-            var originalSetAttribute = document.documentElement.setAttribute;
-            document.documentElement.setAttribute = function(name, value) {
-              if (name === 'class' || name === 'data-theme') {
-                // Only allow theme changes if they match our stored preference
-                var storedTheme = document.cookie.match(/theme-preference=(dark|light)/);
-                if (storedTheme && storedTheme[1] === theme) {
-                  originalSetAttribute.call(this, name, value);
-                }
-              } else {
-                originalSetAttribute.call(this, name, value);
-              }
-            };
-            
-          } catch (e) {
-            console.warn('Theme application failed:', e);
-            // Fallback to dark theme
-            document.documentElement.classList.add('dark');
-            document.documentElement.setAttribute('data-theme', 'dark');
-          }
-        })();
+(function() {
+                try {
+                  const theme = localStorage.getItem("app.theme");
+                  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                  const actualTheme = theme === "dark" || (!theme && systemDark) ? "dark" : "light";
+                  document.documentElement.classList.add(actualTheme);
+                  document.documentElement.dataset.theme = actualTheme;
+                } catch(e) {}
+              })();
       `,
     },
     // Adaptive favicon implementation - automatically switches based on system theme
@@ -104,7 +75,6 @@ export default {
         url: "https://forgecode.dev/",
       }),
     },
-
     {
       tagName: "meta",
       attributes: {

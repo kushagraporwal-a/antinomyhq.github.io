@@ -1,5 +1,5 @@
+import { useThemeContext } from "@site/src/theme/ThemeProvider"
 import React, {CSSProperties, useRef, useCallback, useMemo} from "react"
-import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
 
 interface SpotlightSpanProps {
   text: string

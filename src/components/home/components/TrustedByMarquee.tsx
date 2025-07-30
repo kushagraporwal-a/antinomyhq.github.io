@@ -1,7 +1,7 @@
 import React from "react"
 import Marquee from "react-fast-marquee"
 import GreaterThanUnderscoreIcon from "@site/static/icons/basic/gt-undescore-gray.svg"
-import {useThemeContext} from "@site/src/theme/ThemeProvider/ThemeProvider"
+import {useThemeContext} from "@site/src/theme/ThemeProvider"
 
 interface LogoItem {
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>> | string
