@@ -91,7 +91,7 @@ const PERIOD_CLASSES = "text-content-tiny text-tailCall-darkMode---neutral-600 d
 const DESCRIPTION_CLASSES = "text-[13px] text-left dark:text-tailCall-darkMode---neutral-400 mb-6"
 const FEATURES_SECTION_CLASSES = "border-gray-300 dark:border-gray-700 mb-4"
 const FEATURES_TITLE_CLASSES =
-  "text-sm font-normal text-[15px] mb-3 text-tailCall-lightMode---neutral-900 dark:text-tailCall-light-800 group-hover:text-white transition-colors duration-300"
+  "text-sm font-normal text-[15px] mb-3 text-tailCall-lightMode---neutral-900 dark:text-tailCall-light-800 dark:group-hover:text-white transition-colors duration-300"
 const FEATURES_LIST_CLASSES = "space-y-2"
 const FEATURE_ITEM_CLASSES =
   "flex gap-2 items-start text-lg text-tailCall-darkMode---neutral-700 dark:text-tailCall-darkMode---neutral-400 dark:group-hover:text-white transition-colors duration-300 font-kanit"
