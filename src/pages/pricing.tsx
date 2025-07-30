@@ -60,11 +60,10 @@ const AI_PROVIDERS: AIProvider[] = [
 ]
 
 // CSS Class Constants
-const HERO_CONTAINER_CLASSES = "max-w-[1320px] mx-auto w-full"
+const HERO_CONTAINER_CLASSES = "mx-auto w-full"
 const HERO_SECTION_CLASSES =
-  "py-12 dark:bg-black bg-tailCall-light-1200 border-b border-solid border-transparent border-b-[#dbdbdb] dark:border-b-[#4b4b4b]"
-const HERO_CONTENT_CLASSES =
-  "flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full py-5 px-2"
+  "px-8 py-16 md:px-24 lg:px-36 lg:py-24  dark:bg-black bg-tailCall-light-1200 border-b border-solid border-transparent border-b-[#dbdbdb] dark:border-b-[#4b4b4b]"
+const HERO_CONTENT_CLASSES = "flex flex-col lg:gap-0 items-start xl:items-center xl:flex-row justify-between w-full"
 const HERO_TITLE_CONTAINER_CLASSES = "flex flex-col mt-2"
 const HERO_TITLE_CLASSES =
   "font-bebas !font-normal text-[45px] md:text-display-small lg:text-display-medium xl:text-display-large-semi tracking-normal"
