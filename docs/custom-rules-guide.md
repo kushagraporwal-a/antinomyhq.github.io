@@ -13,6 +13,7 @@ Custom rules are persistent instructions that get injected into every AI convers
 When you define custom rules, they become part of the AI's system prompt, meaning they're always active and take priority over default behaviors.
 
 :::info
+
   <p><strong>Quick Reference</strong></p>
   For technical implementation details and API reference, see the <CustomLink href="/docs/custom-rules">Custom Rules feature documentation</CustomLink>.
 :::
@@ -84,6 +85,7 @@ agents:
 ```
 
 :::info
+
   <p><strong>Rule Priority</strong></p>
   Global rules override agent-specific rules when both are defined. This means your team-wide standards always take precedence over individual agent configurations.
 :::
