@@ -217,7 +217,7 @@ hr {
 }
 [data-theme="dark"] .menu__list-item-collapsible a,
 .theme-doc-sidebar-item-link-level-1 a {
-  color: #737373;
+  color: #e6e6e6;
 }
 
 .theme-doc-sidebar-item-link-level-1 {
@@ -238,6 +238,10 @@ hr {
   border-radius: 0;
   font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
+}
+
+[data-theme="dark"] .menu__link {
+  color: #d4d4d4;
 }
 
 .menu__link.menu__link--active {
@@ -341,14 +345,9 @@ hr {
 }
 
 .blogPage-container .pagination-nav {
-  background-color: white;
   border-radius: 12px;
   padding: 24px 12px;
   margin-top: 20px !important;
-}
-
-[data-theme="dark"] .blogPage-container .pagination-nav {
-  background-color: #18171a;
 }
 
 @media screen and (max-width: 425px) {
@@ -567,7 +566,7 @@ hr {
 }
 
 [data-theme="dark"] .table-of-contents__link {
-  color: #737373;
+  color: #e6e6e6;
 }
 
 .table-of-contents__link--active {
@@ -1524,6 +1523,10 @@ table thead {
 [data-theme="dark"] table thead tr th {
   background-color: #262626 !important;
   color: #e6e6e6 !important;
+}
+
+table tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 table tbody tr:last-child td:first-child {
