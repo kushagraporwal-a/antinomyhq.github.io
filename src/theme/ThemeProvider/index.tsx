@@ -33,7 +33,7 @@ export default function ThemeProvider({children}: Props): ReactNode {
 
       document.documentElement.classList.remove("light", "dark")
       document.documentElement.classList.add(actualTheme)
-      document.documentElement.dataset.theme = actualTheme;
+      document.documentElement.dataset.theme = actualTheme
     }
 
     updateResolved()
