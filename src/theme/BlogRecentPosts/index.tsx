@@ -15,8 +15,6 @@ export default function BlogRecentPosts({sidebar}: {sidebar: Props["sidebar"]}):
     setIsBlogPostPage(isBlogPost())
   }, [location.pathname])
 
-  console.log(recentBlogPostsMetadata)
-
   return isBlogPostPage ? (
     <div className="">
       <div className="mx-[5%] lg:ml-[15%] lg:mr-[17%]">
