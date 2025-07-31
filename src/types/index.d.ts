@@ -154,7 +154,6 @@ type CustomerFeedback = {
 type BlogTag = {
   label: string
   permalink: string
-  count?: number
 }
 
 declare module "docusaurus-lunr-search/src/theme/SearchBar"
