@@ -22,8 +22,16 @@ const BenefitsCard = ({title, description, imageUrl, small, lightImage}: Benefit
             {description}
           </p>
         </div>
-        <img src={imageUrl} alt={`${title}-image`} className="hidden dark:block w-full h-[250px] md:h-auto object-contain" />
-        <img src={lightImage} alt={`${title}-image-light`} className="block dark:hidden w-full h-[250px] md:h-auto object-contain" />
+        <img
+          src={imageUrl}
+          alt={`${title}-image`}
+          className="hidden dark:block w-full h-[250px] md:h-auto object-contain"
+        />
+        <img
+          src={lightImage}
+          alt={`${title}-image-light`}
+          className="block dark:hidden w-full h-[250px] md:h-auto object-contain"
+        />
       </div>
     </div>
   )
