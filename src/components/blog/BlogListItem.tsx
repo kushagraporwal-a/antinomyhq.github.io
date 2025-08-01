@@ -62,12 +62,8 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
           </div>
           <div className={`z-10 flex flex-col px-3 w-full ${tags ? "mt-3" : "mt-0"}`}>
             <div className="flex gap-3 overflow-x-auto max-w-full whitespace-nowrap no-scrollbar">
-              {tags?.map(({label}) => (
-                <Chip
-                  onClick={() => history.push(`/blog/tags/${decodeURIComponent(label).replaceAll(" ", "-")}`)}
-                  label={label}
-                  key={label}
-                />
+              {tags?.map(({label, permalink}) => (
+                <Chip onClick={() => history.push(permalink)} label={label} key={label} />
               ))}
             </div>
             <span

@@ -664,11 +664,6 @@ export const testimonials: CustomerFeedback[] = [
   },
 ]
 
-// Add the missing blogTagsMapping constant
-export const blogTagsMapping: Record<string, BlogTag[]> = {
-  "General Topics": [{label: "Welcome", permalink: "/blog/tags/welcome"}],
-}
-
 export enum CookiePreferenceCategory {
   NECESSARY = "Necessary",
   ANALYTICS = "Analytics",
