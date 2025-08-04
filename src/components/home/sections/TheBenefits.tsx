@@ -68,7 +68,8 @@ const TheBenefits = (): JSX.Element => {
     const setup = () => {
       const section = sectionRef.current
       const cards = cardsRef.current
-      if (!section || !cards) return
+      const allCardsReady = cardRefs.current.every(Boolean)
+      if (!section || !cards || !allCardsReady) return
 
       const viewportHeight = window.visualViewport?.height || window.innerHeight
       const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
@@ -118,8 +119,8 @@ const TheBenefits = (): JSX.Element => {
             onLeave: () => {
               if (section) section.style.height = "115vh"
             },
-            onLeaveBack: () => {
-              if (section) section.style.height = "115vh"
+            onload: () => {
+              if (section) section.style.height = "auto"
             },
           },
         })
