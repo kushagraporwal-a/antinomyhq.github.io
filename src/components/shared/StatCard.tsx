@@ -10,7 +10,7 @@ type StatCardProps = {
 
 const StatCard = ({title, stat, suffix, decimals}: StatCardProps): JSX.Element => {
   return (
-    <div className="flex flex-col">
+    <div className="flex__column">
       <span className="font-space font-bold text-title-tiny md:font-normal md:text-title-medium text-tailCall-darkGray whitespace-nowrap">
         {title}
       </span>

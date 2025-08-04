@@ -55,7 +55,7 @@ const CopyCodeButton = ({
       className={clsx(
         `
         group relative
-        flex items-center justify-center
+        flex__centered
         gap-x-2
         rounded-[12px]
         w-[250px] overflow-hidden
