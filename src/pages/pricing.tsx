@@ -80,7 +80,7 @@ const PRICING_GRID_CLASSES =
   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-4 max-w-7xl mx-auto pb-12 mb-24"
 const CARD_CONTAINER_CLASSES =
   "bg-gradient-315-light-inactive dark:bg-gradient-315-inactive hover:bg-gradient-315-light hover:dark:bg-gradient-315 rounded-[13px] group p-[1px] relative flex flex-col transition-all duration-700 overflow-visible hover:shadow-2xl"
-const CARD_CONTENT_CLASSES = "p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-[12px] h-full"
+const CARD_CONTENT_CLASSES = "p-6 bg-white dark:bg-tailCall-darkMode---neutral-900 rounded-xl h-full"
 const CARD_BACKGROUND_CLASSES =
   "absolute left-0 bottom-0 w-full h-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0 bg-custom-radial-light dark:bg-custom-radial"
 const CARD_TITLE_CLASSES =
