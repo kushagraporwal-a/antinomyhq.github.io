@@ -772,7 +772,8 @@ export const BENEFITS = [
     imageLightUrl: "/images/benefits/ben-3.svg",
     title: "Work with your existing AI providers",
     smallText: false,
-    description: "Already have API keys? Forge lets teams use self-hosted or cloud LLMs with full control and visibility.",
+    description:
+      "Already have API keys? Forge lets teams use self-hosted or cloud LLMs with full control and visibility.",
   },
   {
     imageUrl: "/images/benefits/ben-4-dark.svg",
