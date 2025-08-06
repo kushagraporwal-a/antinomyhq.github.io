@@ -55,6 +55,22 @@ const TheBenefits = (): JSX.Element => {
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
+  const waitForImagesToLoad = (container: HTMLElement) => {
+    const images = container.querySelectorAll("img")
+    const promises = Array.from(images).map(
+      (img) =>
+        new Promise<void>((resolve) => {
+          if (img.complete) {
+            resolve()
+          } else {
+            img.onload = () => resolve()
+            img.onerror = () => resolve()
+          }
+        }),
+    )
+    return Promise.all(promises)
+  }
+
   useEffect(() => {
     if (isMobile) {
       const section = sectionRef.current
@@ -65,12 +81,12 @@ const TheBenefits = (): JSX.Element => {
 
     let ctx: gsap.Context | null = null
 
-    const setup = () => {
+    const setup = async () => {
       const section = sectionRef.current
       const cards = cardsRef.current
       const allCardsReady = cardRefs.current.every(Boolean)
       if (!section || !cards || !allCardsReady) return
-
+      await waitForImagesToLoad(cards)
       const viewportHeight = window.visualViewport?.height || window.innerHeight
       const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
       const cardHeight = cards.children[0]?.clientHeight || 1
@@ -119,9 +135,6 @@ const TheBenefits = (): JSX.Element => {
             onLeave: () => {
               if (section) section.style.height = "115vh"
             },
-            onload: () => {
-              if (section) section.style.height = "auto"
-            },
           },
         })
 
@@ -148,6 +161,7 @@ const TheBenefits = (): JSX.Element => {
     }
 
     setup()
+    ScrollTrigger.refresh()
 
     window.addEventListener("resize", debouncedResize)
     window.addEventListener("orientationchange", debouncedResize)
