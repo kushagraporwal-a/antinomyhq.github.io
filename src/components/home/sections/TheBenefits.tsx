@@ -55,6 +55,22 @@ const TheBenefits = (): JSX.Element => {
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
+  const waitForImagesToLoad = (container: HTMLElement) => {
+    const images = container.querySelectorAll("img")
+    const promises = Array.from(images).map(
+      (img) =>
+        new Promise<void>((resolve) => {
+          if (img.complete) {
+            resolve()
+          } else {
+            img.onload = () => resolve()
+            img.onerror = () => resolve()
+          }
+        }),
+    )
+    return Promise.all(promises)
+  }
+
   useEffect(() => {
     if (isMobile) {
       const section = sectionRef.current
@@ -65,11 +81,12 @@ const TheBenefits = (): JSX.Element => {
 
     let ctx: gsap.Context | null = null
 
-    const setup = () => {
+    const setup = async () => {
       const section = sectionRef.current
       const cards = cardsRef.current
-      if (!section || !cards) return
-
+      const allCardsReady = cardRefs.current.every(Boolean)
+      if (!section || !cards || !allCardsReady) return
+      await waitForImagesToLoad(cards)
       const viewportHeight = window.visualViewport?.height || window.innerHeight
       const visibleHeight = isMobile ? viewportHeight * 0.8 : viewportHeight * 0.6
       const cardHeight = cards.children[0]?.clientHeight || 1
@@ -118,9 +135,6 @@ const TheBenefits = (): JSX.Element => {
             onLeave: () => {
               if (section) section.style.height = "115vh"
             },
-            onLeaveBack: () => {
-              if (section) section.style.height = "115vh"
-            },
           },
         })
 
@@ -147,6 +161,7 @@ const TheBenefits = (): JSX.Element => {
     }
 
     setup()
+    ScrollTrigger.refresh()
 
     window.addEventListener("resize", debouncedResize)
     window.addEventListener("orientationchange", debouncedResize)
@@ -203,19 +218,25 @@ const TheBenefits = (): JSX.Element => {
           <div
             className={clsx(
               "absolute md:left-auto md:right-10 xl:left-[850px] w-full md:w-auto lg:right-20 top-[500px] flex flex-col md:items-center",
-              "max-md:top-[52%]",
+              "max-md:top-[42%]",
             )}
             style={{height: "100%", overflow: "visible"}} // set visible area
           >
             {isMobile ? (
               <Carousel>
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}) => (
-                  <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}) => (
+                  <BenefitsCard
+                    title={title}
+                    description={description}
+                    imageUrl={imageUrl}
+                    small={smallText}
+                    lightImage={imageLightUrl}
+                  />
                 ))}
               </Carousel>
             ) : (
               <div ref={cardsRef} className="hidden md:flex flex-col gap-8">
-                {BENEFITS.map(({title, description, imageUrl = "", smallText}, idx) => (
+                {BENEFITS.map(({title, description, imageUrl = "", smallText, imageLightUrl}, idx) => (
                   <div
                     key={title}
                     ref={(el) => (cardRefs.current[idx] = el)}
@@ -227,7 +248,13 @@ const TheBenefits = (): JSX.Element => {
                     }}
                   >
                     <div className="flex flex-col h-full">
-                      <BenefitsCard title={title} description={description} imageUrl={imageUrl} small={smallText} />
+                      <BenefitsCard
+                        title={title}
+                        description={description}
+                        imageUrl={imageUrl}
+                        small={smallText}
+                        lightImage={imageLightUrl}
+                      />
                     </div>
                   </div>
                 ))}
