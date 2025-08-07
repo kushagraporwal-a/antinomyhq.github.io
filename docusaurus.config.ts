@@ -205,23 +205,8 @@ export default {
     {
       tagName: "meta",
       attributes: {
-        property: "og:title",
-        content: title,
-      },
-    },
-
-    {
-      tagName: "meta",
-      attributes: {
         property: "og:type",
         content: "website",
-      },
-    },
-    {
-      tagName: "meta",
-      attributes: {
-        property: "og:url",
-        content: "https://forgecode.dev",
       },
     },
     {
