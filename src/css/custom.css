@@ -868,8 +868,9 @@ nav.menu {
     font-weight: var(--ifm-font-weight-bold);
   }
 
-  .navbar-sidebar__item .hide-chevron::after {
-    background: none !important;
+  .navbar-sidebar__item .menu__link.hide-chevron.hide-chevron::after {
+    background: none;
+    content: none;
   }
 
   .navbar-sidebar__item .menu__link:not(.header-button):after {
