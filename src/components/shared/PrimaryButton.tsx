@@ -17,7 +17,6 @@ const PrimaryButton = ({children, onClick, variant = "solid", className = ""}: P
     cursor-pointer
     transition-all duration-300
     text-[16px]
-    font-kanit
     border border-solid
     ${theme_border}
   `

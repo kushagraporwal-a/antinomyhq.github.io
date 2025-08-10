@@ -24,7 +24,7 @@ const mobileCTAButtons = "mt-36 ml-5 lg:mt-60 xl:mt-[22rem] xl:ml-20"
 const tabletWrapper = "relative hidden md:flex lg:hidden flex-col"
 const tabletHeaderSection = `relative ${FLEX_COLUMN}`
 const tabletDescriptionText =
-  "absolute left-80 -top-20 text-tailCall-lightMode---neutral-800 dark:text-white font-light text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24 font-kanit"
+  "absolute left-80 -top-20 text-tailCall-lightMode---neutral-800 dark:text-white font-light text-title-semi-large lg:text-display-tiny opacity-80 max-w-[500px] mt-24"
 const tabletCTAButtons = "md:mx-auto md:mt-64"
 
 const terminalWrapper = `${FLEX_ROW_CENTER} md:mt-8 md:ml-8`

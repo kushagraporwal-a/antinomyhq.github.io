@@ -80,7 +80,7 @@ function BlogListPageContent({metadata, items, sidebar}: Props): JSX.Element {
                 showHighlighted
               />
             </div>
-            <span className="block -mt-5 md:mt-0 max-w-[500px] xl:mt-20 font-kanit !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
+            <span className="block -mt-5 md:mt-0 max-w-[500px] xl:mt-20 !font-normal lg:leading-8 xl:leading-[32px] text-[16px] md:text-title-small lg:text-[24px] xl:text-[26px] text-tailCall-darkMode---neutral-500 tracking-normal">
               Insights, updates, and thoughts on building faster with AI in the CLI
             </span>
           </div>
