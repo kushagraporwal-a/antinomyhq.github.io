@@ -11,10 +11,10 @@ type UserFeedbackCardProps = {
 const containerClass =
   "px-8 py-8 rounded-[12px] h-full w-full md:w-[380px] border-[11px] border-tailCall-lightMode---neutral-50 dark:border-tailCall-darkMode---neutral-1000 border-solid bg-transparent shadow-brand-light dark:shadow-brand-dark hover:cursor-pointer hover:bg-custom-radial-light hover:dark:bg-custom-radial transition-all duration-100 ease-in overflow-hidden"
 
-const innerWrapperClass = "flex flex-col justify-between h-full gap-3"
-const topContentClass = "flex flex-col gap-3"
+const innerWrapperClass = "flex__column justify-between h-full gap-3"
+const topContentClass = "flex__column gap-3"
 const titleClass =
-  "text-tailCall-darkMode---neutral-700 dark:text-white font-kanit text-title-small font-light break-words text-left"
+  "text-tailCall-darkMode---neutral-700 dark:text-white text-title-small font-light break-words text-left"
 const authorClass = "text-tailCall-darkMode---neutral-500 dark:text-white dark:opacity-50 text-title-tiny font-normal"
 
 const UserFeedbackCard = ({title, imageUrl, author, designation}: UserFeedbackCardProps) => (

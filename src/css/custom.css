@@ -44,11 +44,17 @@
 html,
 body {
   background-color: #f5f3eb;
+  font-family: "Kanit", sans-serif;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: "Kanit", sans-serif;
 }
 
 :root {
   /* Font and Dimension Tokens */
-  --ifm-font-family-base: "Rubik";
+  --ifm-font-family-base: "Kanit";
   --header-height: 5rem;
   --ifm-navbar-height: 5rem;
   --ifm-navbar-height-sm: 4.5rem;
@@ -176,6 +182,33 @@ body {
   --ifm-token-comment: #22e000;
   --ifm-token-operator: #04d0da;
   --ifm-token-string: #f9a705;
+}
+
+/* Custom classes */
+.flex__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex__centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex__row__center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex__column__center {
+  display: flex;
+  align-items: center;
 }
 
 code {
@@ -1099,7 +1132,7 @@ pre > code {
 }
 
 .toc-highlight strong {
-  font-weight: 100 !important;
+  font-weight: 400 !important;
 }
 
 .custom-cards p,

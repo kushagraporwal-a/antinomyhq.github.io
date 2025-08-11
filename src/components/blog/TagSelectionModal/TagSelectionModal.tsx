@@ -81,7 +81,7 @@ const TagSelectionModal: React.FC<TagSelectionModalProps> = ({open, onClose}) =>
         )}
       >
         <div className="flex items-center justify-between">
-          <span className="text-title-medium !font-normal font-kanit lg:text-title-large text-black dark:text-white">
+          <span className="text-title-medium !font-normal lg:text-title-large text-black dark:text-white">
             Explore All Tags
           </span>
           <X width={24} height={24} className="cursor-pointer" onClick={handleClose} />
@@ -89,7 +89,7 @@ const TagSelectionModal: React.FC<TagSelectionModalProps> = ({open, onClose}) =>
 
         <div className="flex flex-col gap-5 pb-36">
           {/* Search Bar */}
-          <div className="flex items-center gap-2 border border-solid border-tailCall-border-light-500 rounded-lg py-2 px-5">
+          <div className="flex items-center gap-3 border border-solid border-tailCall-border-light-500 rounded-lg py-2 px-6">
             <Search width={20} height={20} className="text-tailCall-light-500" />
             <input
               name="tag"
@@ -97,13 +97,13 @@ const TagSelectionModal: React.FC<TagSelectionModalProps> = ({open, onClose}) =>
               value={query}
               onChange={handleQueryChange}
               placeholder="Search Tags"
-              className="text-black dark:text-white placeholder:text-tailCall-light-500 bg-transparent border-none outline-none font-kanit text-content-small w-full"
+              className="text-black dark:text-white placeholder:text-tailCall-light-500 bg-transparent border-none outline-none font-kanit text-content-small"
             />
           </div>
 
           {/* Tag Results */}
           <div className="overflow-scroll max-h-[70vh]">
-            <div className="flex flex-wrap gap-2 font-kanit">
+            <div className="flex flex-wrap gap-2">
               {query.length === 0 ? (
                 <div className="flex flex-col gap-2">
                   <p>Most talked about</p>
