@@ -45,6 +45,7 @@ html,
 body {
   background-color: #f5f3eb;
   font-family: "Kanit", sans-serif;
+  overscroll-behavior: none;
 }
 
 button {
