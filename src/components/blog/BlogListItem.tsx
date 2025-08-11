@@ -42,12 +42,12 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
   return (
     <Link to={permalink} className="group flex flex-col overflow-hidden !text-black !no-underline">
       <div className="flex h-full p-[1px] z-0 bg-custom-blog-card-light-border group-hover:bg-custom-blog-card-light-border-active dark:bg-card-border-gradient-nextStep group-hover:dark:bg-custom-blog-card-dark-border-active rounded-[13px]">
-        <div className="relative max-w-fill flex flex-col flex-1 px-1 py-1 border dark:border-none border-solid border-tailCall-darkMode---neutral-300 bg-[#f1f1f1] dark:bg-black gap-2 md:gap-3 rounded-[12px]">
+        <div className="relative max-w-fill flex flex-col flex-1 px-1 py-1 border dark:border-none border-solid border-tailCall-darkMode---neutral-300 bg-[#f1f1f1] dark:bg-black gap-2 md:gap-3 rounded-xl">
           <div
             className={`w-full relative rounded-lg pt-5 pl-5 pb-16 overflow-hidden`}
             style={{background: gradients[bgIndex]}}
           >
-            <div className="flex flex-col font-kanit text-white text-content-tiny md:text-content-small lg:text-title-tiny xl:text-title-small !font-normal">
+            <div className="flex flex-col text-white text-content-tiny md:text-content-small lg:text-title-tiny xl:text-title-small !font-normal">
               <span>
                 {new Date(date).toLocaleDateString("en-US", {
                   month: "long",
@@ -67,18 +67,18 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
               ))}
             </div>
             <span
-              className={`${tags ? "mt-5" : "mt-2"} font-kanit text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium !font-normal line-clamp-2`}
+              className={`${tags ? "mt-5" : "mt-2"} text-tailCall-darkMode---neutral-800 dark:text-tailCall-darkMode---neutral-300 text-title-tiny md:text-title-small lg:text-title-medium !font-normal line-clamp-2`}
             >
               {title}
             </span>
-            <p className="mt-2 font-kanit text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:leading-[30px] !font-light line-clamp-3">
+            <p className="mt-2 text-tailCall-darkMode---neutral-600 dark:text-tailCall-darkMode---neutral-500 text-content-small md:text-title-tiny lg:text-title-small xl:leading-[30px] !font-light line-clamp-3">
               {description}
             </p>
             {authors[0] && (
               <BlogAuthor
                 author={authors[0]}
                 containerClassName="mt-auto"
-                textClassName="text-tailCall-lightMode---neutral-800 !font-normal font-kanit dark:text-white"
+                textClassName="text-tailCall-lightMode---neutral-800 !font-normal dark:text-white"
               />
             )}
           </div>
