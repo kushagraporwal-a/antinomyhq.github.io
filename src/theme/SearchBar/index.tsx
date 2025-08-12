@@ -110,7 +110,7 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}: DocSearchProp
   const openModal = useCallback(() => {
     // Prevent duplicate modal opening using global state
     if (globalIsOpen) return
-    
+
     globalIsOpen = true
     prepareSearchContainer()
     importDocSearchModalIfNeeded().then(() => setIsOpen(true))
@@ -120,7 +120,7 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}: DocSearchProp
     setIsOpen(false)
     globalIsOpen = false
     searchButtonRef.current?.focus()
-    
+
     // Clean up the global search container after a delay to ensure modal is fully closed
     setTimeout(() => {
       if (globalSearchContainer && !isOpen) {
