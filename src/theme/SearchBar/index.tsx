@@ -171,6 +171,7 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}: DocSearchProp
     (event) => {
       event.preventDefault()
       if (!isOpen) {
+        setInitialQuery("")
         openModal()
       }
     },
@@ -178,7 +179,7 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}: DocSearchProp
       enableOnFormTags: false, // Don't trigger when typing in forms
       preventDefault: true,
     },
-    [isOpen, openModal],
+    [isOpen, openModal, setInitialQuery],
   )
 
   // Handle Escape key to close modal
