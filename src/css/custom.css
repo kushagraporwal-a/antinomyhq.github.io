@@ -39,8 +39,8 @@
       0 0 5px #30ede6,
       0 0 10px #30ede6;
   }
-  
-  .backdrop-blur-3xl{
+
+  .backdrop-blur-3xl {
     -webkit-backdrop-filter: blur(64px);
   }
 }
